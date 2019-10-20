@@ -7,7 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PromoComponent implements OnInit {
 
-  title = 'kinderkulturUx77';
+  title = 'NEVA';
   constructor() { }
 
   ngOnInit() {

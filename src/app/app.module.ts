@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { ScrollSpyDirective } from '../directives/scroll-spy.directive';
 import { HeaderComponent } from './header/header.component';
 import { PromoComponent } from './promo/promo.component';
 import { GigsComponent } from './gigs/gigs.component';
@@ -17,6 +18,7 @@ import { InfoComponent } from './info/info.component';
 @NgModule({
   declarations: [
     AppComponent,
+    ScrollSpyDirective,
     HeaderComponent,
     PromoComponent,
     GigsComponent,
