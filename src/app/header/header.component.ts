@@ -9,6 +9,8 @@ import { scrollspy } from 'node_modules/bootstrap/js/dist';
 
 export class HeaderComponent implements AfterViewInit {
 
+  currentSection = 'promo';
+
   constructor(private renderer: Renderer2) {
 
     /* ======= Fixed Header animation ======= */
@@ -19,6 +21,15 @@ export class HeaderComponent implements AfterViewInit {
         this.renderer.removeClass(document.getElementById('header'), 'header-scrolled');
       }
     });
+  }
+
+  onSectionChange(sectionId: string) {
+    this.currentSection = sectionId;
+  }
+
+  scrollTo(section) {
+    document.querySelector('#' + section)
+    .scrollIntoView();
   }
 
   ngAfterViewInit(): void {

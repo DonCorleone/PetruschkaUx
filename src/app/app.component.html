@@ -1,5 +1,6 @@
 <!-- ******HEADER****** -->
 <app-header></app-header>
+<main scrollSpy [spiedTags]="['DIV']" (sectionChange)="onSectionChange($event)" style="overflow-y: scroll;">
 
 <!-- ******Promo Section****** -->
 <section id="promo" class="promo-section section">
@@ -30,7 +31,7 @@
 <div id="contact" class="contact-section section text-center">
   <app-contact></app-contact>
 </div>
-
+</main>
 <!-- ******FOOTER****** -->
 <footer class="footer">
   <app-footer></app-footer>
