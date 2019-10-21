@@ -1,68 +1,68 @@
 /* ======= Fixed Header animation ======= */
 
-$(window).on('load', function() {
+// $(window).on('load', function() {
 
-     if ($(window).scrollTop() > 0 ) {
-         $('#header').addClass('header-scrolled');
-     }
-     else {
-         $('#header').removeClass('header-scrolled');
-     }
-});
+//      if ($(window).scrollTop() > 0 ) {
+//          $('#header').addClass('header-scrolled');
+//      }
+//      else {
+//          $('#header').removeClass('header-scrolled');
+//      }
+// });
 
 
 $(document).ready(function() {
 
-    /* ======= Scrollspy ======= */
-    $('body').scrollspy({ target: '#header', offset: 100});
+  //   /* ======= Scrollspy ======= */
+  //   $('body').scrollspy({ target: '#header', offset: 100});
 
-    /* ======= ScrollTo ======= */
-    $('a.scrollto').on('click', function(e){
+  //   /* ======= ScrollTo ======= */
+  //   $('a.scrollto').on('click', function(e){
 
-        //store hash
-        var target = this.hash;
+  //       //store hash
+  //       var target = this.hash;
 
-        e.preventDefault();
+  //       e.preventDefault();
 
-		$('body').scrollTo(target, 800, {offset: -50, 'axis':'y'});
-        //Collapse mobile menu after clicking
-		if ($('.navbar-collapse').hasClass('show')){
-			$('.navbar-collapse').removeClass('show');
-		}
+	// 	$('body').scrollTo(target, 800, {offset: -50, 'axis':'y'});
+  //       //Collapse mobile menu after clicking
+	// 	if ($('.navbar-collapse').hasClass('show')){
+	// 		$('.navbar-collapse').removeClass('show');
+	// 	}
 
-	});
+	// });
 
-	/* ======= Fixed Header animation ======= */
+	// /* ======= Fixed Header animation ======= */
 
-    $(window).on('scroll', function() {
+  //   $(window).on('scroll', function() {
 
-         if ($(window).scrollTop() > 0 ) {
-             $('#header').addClass('header-scrolled');
-         }
-         else {
-             $('#header').removeClass('header-scrolled');
-         }
-    });
+  //        if ($(window).scrollTop() > 0 ) {
+  //            $('#header').addClass('header-scrolled');
+  //        }
+  //        else {
+  //            $('#header').removeClass('header-scrolled');
+  //        }
+  //   });
 
-	/* ======= Vegas Plugin ======= */
-    /* Ref: http://vegas.jaysalvat.com/index.html */
-    $('#promo').vegas({
-        delay: 8000,
-        overlay: 'assets/plugins/vegas/dist/overlays/06.png',
-        color: '#101113',
-        transition: 'zoomOut',
-        transitionDuration: 3000,
-        slides: [
-            { src: 'assets/images/hero/hero-1.jpg' },
-            { src: 'assets/images/hero/hero-2.jpg' },
-            { src: 'assets/images/hero/hero-3.jpg' },
-            { src: 'assets/images/hero/hero-4.jpg' },
-            { src: 'assets/images/hero/hero-5.jpg' },
-            { src: 'assets/images/hero/hero-6.jpg' },
-            { src: 'assets/images/hero/hero-7.jpg' },
-            { src: 'assets/images/hero/hero-8.jpg' }
-        ]
-    });
+	// /* ======= Vegas Plugin ======= */
+  //   /* Ref: http://vegas.jaysalvat.com/index.html */
+  //   $('promo', 'body').vegas({
+  //       delay: 8000,
+  //       overlay: 'assets/plugins/vegas/dist/overlays/06.png',
+  //       color: '#101113',
+  //       transition: 'zoomOut',
+  //       transitionDuration: 3000,
+  //       slides: [
+  //           { src: 'assets/images/hero/hero-1.jpg' },
+  //           { src: 'assets/images/hero/hero-2.jpg' },
+  //           { src: 'assets/images/hero/hero-3.jpg' },
+  //           { src: 'assets/images/hero/hero-4.jpg' },
+  //           { src: 'assets/images/hero/hero-5.jpg' },
+  //           { src: 'assets/images/hero/hero-6.jpg' },
+  //           { src: 'assets/images/hero/hero-7.jpg' },
+  //           { src: 'assets/images/hero/hero-8.jpg' }
+  //       ]
+  //   });
 
   //   /* ======= Countdown ========= */
 	// // set the date we're counting down to
@@ -72,7 +72,7 @@ $(document).ready(function() {
   //   var days, hours, minutes, seconds;
 
   //   // get tag element
-  //   var countdown = document.getElementById("countdown-box");
+  //   var countdown =  document.getElementById("countdown-box");
   //   var days_span = document.createElement("SPAN");
   //   days_span.className = 'days';
   //   countdown.appendChild(days_span);
@@ -113,24 +113,24 @@ $(document).ready(function() {
 
     /* ======= Play/Stop YouTube Video in Bootstrpa Modal ======= */
 
-    $('#video-play-triggger').on('click', function() {
+    // $('#video-play-triggger').on('click', function() {
 
-        var theModal = $(this).data("target");
-        var theVideo = $(theModal + ' iframe').attr('src');
-        var theVideoAuto = theVideo + "&autoplay=1";
+    //     var theModal = $(this).data("target");
+    //     var theVideo = $(theModal + ' iframe').attr('src');
+    //     var theVideoAuto = theVideo + "&autoplay=1";
 
-        $(theModal).on('shown.bs.modal', function () {
-            $(theModal + ' iframe').attr('src', theVideoAuto);
-        });
+    //     $(theModal).on('shown.bs.modal', function () {
+    //         $(theModal + ' iframe').attr('src', theVideoAuto);
+    //     });
 
-        $(theModal).on('hide.bs.modal', function () {
-            $(theModal + ' iframe').attr('src', '');
-        });
+    //     $(theModal).on('hide.bs.modal', function () {
+    //         $(theModal + ' iframe').attr('src', '');
+    //     });
 
-        $(theModal).on('hidden.bs.modal', function () {
-            $(theModal + ' iframe').attr('src', theVideo);
-        });
+    //     $(theModal).on('hidden.bs.modal', function () {
+    //         $(theModal + ' iframe').attr('src', theVideo);
+    //     });
 
-    });
+    // });
 
 });
