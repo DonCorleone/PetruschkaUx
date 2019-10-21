@@ -1,5 +1,4 @@
 import { Component, OnInit, Renderer2, AfterViewInit } from '@angular/core';
-import { formatNumber } from '@angular/common';
 /// <reference path ="../../node_modules/@types/jquery/index.d.ts"/>
 declare var $: any;
 
