@@ -15,7 +15,15 @@ export class HeaderComponent implements AfterViewInit {
 
     /* ======= Fixed Header animation ======= */
     this.renderer.listen(window, 'load', (event) => {
-      if (window.scrollX > 0) {
+      if (window.scrollY > 0) {
+        this.renderer.addClass(document.getElementById('header'), 'header-scrolled');
+      } else {
+        this.renderer.removeClass(document.getElementById('header'), 'header-scrolled');
+      }
+    });
+
+    this.renderer.listen(window, 'scroll', (event) => {
+      if (window.scrollY > 0) {
         this.renderer.addClass(document.getElementById('header'), 'header-scrolled');
       } else {
         this.renderer.removeClass(document.getElementById('header'), 'header-scrolled');
@@ -29,7 +37,7 @@ export class HeaderComponent implements AfterViewInit {
 
   scrollTo(section) {
     document.querySelector('#' + section)
-    .scrollIntoView();
+    .scrollIntoView({behavior: 'smooth'});
   }
 
   ngAfterViewInit(): void {

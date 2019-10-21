@@ -40,7 +40,8 @@
               "node_modules/@fortawesome/fontawesome-free/js/all.min.js",
               "node_modules/jquery.scrollto/jquery.scrollTo.min.js",
               "node_modules/vegas/dist/vegas.min.js",
-              "src/assets/plugins/back-to-top.js"
+              "src/assets/plugins/back-to-top.js",
+              "src/assets/plugins/main.js"
             ]
           },
           "configurations": {
