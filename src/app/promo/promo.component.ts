@@ -10,6 +10,7 @@ declare var $: any;
 })
 export class PromoComponent implements OnInit, AfterViewInit {
 
+  title: string;
   constructor(private renderer: Renderer2) {
 
   }
@@ -31,10 +32,7 @@ export class PromoComponent implements OnInit, AfterViewInit {
       $(theModal).on('hidden.bs.modal', (event4) => {
         $(theModal + ' iframe').attr('src', theVideo);
       });
-   });
-  }
-
-  ngOnInit() {
+    });
     /* ======= Vegas Plugin ======= */
     /* Ref: http://vegas.jaysalvat.com/index.html */
     $('#promo').vegas({
@@ -74,6 +72,13 @@ export class PromoComponent implements OnInit, AfterViewInit {
     secsSpan.className = 'secs';
     countdown.appendChild(secsSpan);
     setInterval(() => this.refreshCountDown(targetDate, daysSpan, hoursSpan, minutesSpan, secsSpan), 1000);
+
+  }
+
+  ngOnInit() {
+
+
+    this.title = 'Petruschka';
   }
 
   refreshCountDown(targetDate: any, daysSpan: HTMLElement, hoursSpan: HTMLElement, minutesSpan: HTMLElement, secsSpan: HTMLElement) {
