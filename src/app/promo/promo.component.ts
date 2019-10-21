@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Renderer2, AfterViewInit } from '@angular/core';
 import { formatNumber } from '@angular/common';
 /// <reference path ="../../node_modules/@types/jquery/index.d.ts"/>
 declare var $: any;
@@ -8,17 +8,38 @@ declare var $: any;
   templateUrl: './promo.component.html',
   styleUrls: ['./promo.component.scss']
 })
-export class PromoComponent implements OnInit {
+export class PromoComponent implements OnInit, AfterViewInit {
 
-  title = 'NEVA';
-  constructor() { }
+  constructor(private renderer: Renderer2) {
+
+  }
+
+  ngAfterViewInit(): void {
+    this.renderer.listen(document.getElementById('video-play-trigger'), 'click', (event) => {
+      const theModal = $(this).data('target');
+      const theVideo = $(theModal + ' iframe').attr('src');
+      const theVideoAuto = theVideo + '&autoplay=1';
+
+      $(theModal).on('shown.bs.modal', (event2) => {
+        $(theModal + ' iframe').attr('src', theVideoAuto);
+      });
+
+      $(theModal).on('hide.bs.modal', (event3) => {
+        $(theModal + ' iframe').attr('src', '');
+      });
+
+      $(theModal).on('hidden.bs.modal', (event4) => {
+        $(theModal + ' iframe').attr('src', theVideo);
+      });
+   });
+  }
 
   ngOnInit() {
     /* ======= Vegas Plugin ======= */
     /* Ref: http://vegas.jaysalvat.com/index.html */
     $('#promo').vegas({
       delay: 8000,
-      overlay: 'assets/plugins/vegas/dist/overlays/06.png',
+      overlay: 'assets/images/overlays/06.png',
       color: '#101113',
       transition: 'zoomOut',
       transitionDuration: 3000,
@@ -38,8 +59,6 @@ export class PromoComponent implements OnInit {
     // set the date we're counting down to
     const targetDate = new Date('July 18, 2020').getTime();
 
-
-
     // get tag element
     const countdown = document.getElementById('countdown-box');
     const daysSpan = document.createElement('SPAN');
@@ -54,10 +73,10 @@ export class PromoComponent implements OnInit {
     const secsSpan = document.createElement('SPAN');
     secsSpan.className = 'secs';
     countdown.appendChild(secsSpan);
-    setInterval(() => this.startGame2(targetDate, daysSpan, hoursSpan, minutesSpan, secsSpan), 1000);
+    setInterval(() => this.refreshCountDown(targetDate, daysSpan, hoursSpan, minutesSpan, secsSpan), 1000);
   }
-  startGame2(targetDate: any, daysSpan: HTMLElement, hoursSpan: HTMLElement, minutesSpan: HTMLElement, secsSpan: HTMLElement) {
 
+  refreshCountDown(targetDate: any, daysSpan: HTMLElement, hoursSpan: HTMLElement, minutesSpan: HTMLElement, secsSpan: HTMLElement) {
 
     // variables for time units
     let days;
@@ -84,7 +103,5 @@ export class PromoComponent implements OnInit {
     hoursSpan.innerHTML = '<span class="number">' + hours + '</span>' + '<span class="unit">Hrs</span>';
     minutesSpan.innerHTML = '<span class="number">' + minutes + '</span>' + '<span class="unit">Mins</span>';
     secsSpan.innerHTML = '<span class="number">' + seconds + '</span>' + '<span class="unit">Secs</span>';
-
   }
-
 }
