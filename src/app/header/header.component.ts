@@ -1,5 +1,4 @@
 import { Component, Renderer2, AfterViewInit } from '@angular/core';
-import { scrollspy } from 'node_modules/bootstrap/js/dist';
 
 @Component({
   selector: 'app-header',
@@ -41,12 +40,6 @@ export class HeaderComponent implements AfterViewInit {
   }
 
   ngAfterViewInit(): void {
-    /* ======= Scrollspy ======= */
-
-        /* ======= Scrollspy ======= */
-       // $('body').scrollspy({ target: '#header', offset: 100});
-
-   // this.renderer.setAttribute(document.getElementsByTagName('body')[0].scrollspy({ target: '#header', offset: 100});
 
     /* ======= ScrollTo ======= */
     const scrollTos: HTMLCollectionOf<Element> = document.getElementsByClassName('scrollto');

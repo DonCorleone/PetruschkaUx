@@ -1,37 +1,18 @@
 <!-- ******HEADER****** -->
 <app-header></app-header>
-<main scrollSpy [spiedTags]="['DIV']" (sectionChange)="onSectionChange($event)" style="overflow-y: scroll;">
+<!--main scrollSpy [spiedTags]="['DIV']" (sectionChange)="onSectionChange($event)" style="overflow-y: scroll;"-->
 
-<!-- ******Promo Section****** -->
-<section id="promo" class="promo-section section">
-  <app-promo></app-promo>
-</section>
-<!--//promo-section-->
+<app-promo></app-promo>
 
-<section id="gigs" class="gigs-section section">
-  <app-gigs></app-gigs>
-</section>
-<!--//gigs-section-->
+<app-gigs></app-gigs>
 
-<section id="music" class="music-section section text-center">
-  <app-music></app-music>
-</section>
-<!--//music-section-->
+<app-music></app-music>
 
-<section id="about" class="about-section section text-center">
-  <app-about></app-about>
-</section>
-<!--//about-section-->
+<app-about></app-about>
 
-<section id="merch" class="merch-section section text-center">
-  <app-merch></app-merch>
-</section>
-<!--//merch-section-->
+<app-merch></app-merch>
 
-<div id="contact" class="contact-section section text-center">
-  <app-contact></app-contact>
-</div>
-</main>
+<app-contact></app-contact>
 <!-- ******FOOTER****** -->
 <footer class="footer">
   <app-footer></app-footer>
