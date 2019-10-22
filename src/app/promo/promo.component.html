@@ -1,9 +1,14 @@
 <!-- ******Promo Section****** -->
-<section id="promo" class="promo-section section">
+<section id="promo" class="promo-section section" [ngStyle]="{background: 'url(assets/images/hero/hero-1.jpg)'}">
   <div class="container text-center promo-content">
     <div class="upper-wrapper">
       <h1 class="logo-holder"></h1>
-      <h2 class="headline">{{title}}</h2>
+      <ul style="list-style: none;">
+          <li *ngFor="let play of plays | async">
+              <h2 class="headline">{{play.displayText}}</h2>
+          </li>
+        </ul>
+
       <div class="tagline">The Perfect Bootstrap Template to Promote Your Music</div>
     </div>
   </div>

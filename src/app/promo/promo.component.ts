@@ -1,6 +1,37 @@
 import { Component, OnInit, Renderer2, AfterViewInit } from '@angular/core';
+import { Apollo } from 'apollo-angular';
+import gql from 'graphql-tag';
+import { Observable } from 'rxjs';
+import { map } from 'rxjs/operators';
+
 /// <reference path ="../../node_modules/@types/jquery/index.d.ts"/>
 declare var $: any;
+
+const GET_PLAYS = gql`
+  {
+    play {
+      author
+      displayText
+    }
+  }
+`;
+
+// tslint:disable-next-line:interface-over-type-literal
+type play = {
+  author: string;
+  displayText: string;
+};
+
+// tslint:disable-next-line:interface-over-type-literal
+type Response = {
+  play: play[];
+};
+
+// tslint:disable-next-line:interface-over-type-literal
+type Variables = {
+  episode: string
+};
+
 
 @Component({
   selector: 'app-promo',
@@ -9,10 +40,12 @@ declare var $: any;
 })
 export class PromoComponent implements OnInit, AfterViewInit {
 
+  plays: Observable<play[]>;
   title: string;
-  constructor(private renderer: Renderer2) {
 
-  }
+  constructor(private renderer: Renderer2, private apollo: Apollo) {
+
+   }
 
   ngAfterViewInit(): void {
     this.renderer.listen(document.getElementById('video-play-trigger'), 'click', (event) => {
@@ -32,25 +65,26 @@ export class PromoComponent implements OnInit, AfterViewInit {
         $(theModal + ' iframe').attr('src', theVideo);
       });
     });
-    /* ======= Vegas Plugin ======= */
+
+       /* ======= Vegas Plugin ======= */
     /* Ref: http://vegas.jaysalvat.com/index.html */
-    $('#promo').vegas({
-      delay: 8000,
-      overlay: 'assets/images/overlays/06.png',
-      color: '#101113',
-      transition: 'zoomOut',
-      transitionDuration: 3000,
-      slides: [
-        { src: 'assets/images/hero/hero-1.jpg' },
-        { src: 'assets/images/hero/hero-2.jpg' },
-        { src: 'assets/images/hero/hero-3.jpg' },
-        { src: 'assets/images/hero/hero-4.jpg' },
-        { src: 'assets/images/hero/hero-5.jpg' },
-        { src: 'assets/images/hero/hero-6.jpg' },
-        { src: 'assets/images/hero/hero-7.jpg' },
-        { src: 'assets/images/hero/hero-8.jpg' }
-      ]
-    });
+    // $('#promo').vegas({
+    //   delay: 8000,
+    //   overlay: 'assets/images/overlays/06.png',
+    //   color: '#101113',
+    //   transition: 'zoomOut',
+    //   transitionDuration: 3000,
+    //   slides: [
+    //     { src: 'assets/images/hero/hero-1.jpg' },
+    //     { src: 'assets/images/hero/hero-2.jpg' },
+    //     { src: 'assets/images/hero/hero-3.jpg' },
+    //     { src: 'assets/images/hero/hero-4.jpg' },
+    //     { src: 'assets/images/hero/hero-5.jpg' },
+    //     { src: 'assets/images/hero/hero-6.jpg' },
+    //     { src: 'assets/images/hero/hero-7.jpg' },
+    //     { src: 'assets/images/hero/hero-8.jpg' }
+    //   ]
+    // });
 
     /* ======= Countdown ========= */
     // set the date we're counting down to
@@ -76,8 +110,11 @@ export class PromoComponent implements OnInit, AfterViewInit {
 
   ngOnInit() {
 
-
-    this.title = 'Petruschka';
+    this.plays = this.apollo
+    .watchQuery<Response>({
+      query: GET_PLAYS,
+    })
+    .valueChanges.pipe(map(result => result.data && result.data.play));
   }
 
   refreshCountDown(targetDate: any, daysSpan: HTMLElement, hoursSpan: HTMLElement, minutesSpan: HTMLElement, secsSpan: HTMLElement) {
