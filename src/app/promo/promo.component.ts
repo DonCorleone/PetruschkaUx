@@ -39,7 +39,7 @@ type Variables = {
 })
 export class PromoComponent implements OnInit, AfterViewInit {
 
-  plays: Observable<blogPost[]>;
+  blogPosts: Observable<blogPost[]>;
   title: string;
 
   constructor(private renderer: Renderer2, private apollo: Apollo) {
@@ -109,7 +109,7 @@ export class PromoComponent implements OnInit, AfterViewInit {
 
   ngOnInit() {
 
-    this.plays = this.apollo
+    this.blogPosts = this.apollo
     .watchQuery<Response>({
       query: GET_PLAYS,
     })
