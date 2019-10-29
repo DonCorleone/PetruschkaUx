@@ -21,7 +21,7 @@ steps:
 
 - task: ArchiveFiles@2
   inputs:
-    rootFolderOrFile: '$(System.DefaultWorkingDirectory)/dist/PetruschkaUx/'
+    rootFolderOrFile: '$(System.DefaultWorkingDirectory)/dist/kinderkulturUx/'
     includeRootFolder: false
 
 - task: PublishBuildArtifacts@1
