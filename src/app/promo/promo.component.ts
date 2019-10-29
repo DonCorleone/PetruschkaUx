@@ -9,22 +9,21 @@ declare var $: any;
 
 const GET_PLAYS = gql`
   {
-    play {
-      author
+    blogPost {
       displayText
     }
   }
 `;
 
 // tslint:disable-next-line:interface-over-type-literal
-type play = {
+type blogPost = {
   author: string;
   displayText: string;
 };
 
 // tslint:disable-next-line:interface-over-type-literal
 type Response = {
-  play: play[];
+  blogPost: blogPost[];
 };
 
 // tslint:disable-next-line:interface-over-type-literal
@@ -40,7 +39,7 @@ type Variables = {
 })
 export class PromoComponent implements OnInit, AfterViewInit {
 
-  plays: Observable<play[]>;
+  plays: Observable<blogPost[]>;
   title: string;
 
   constructor(private renderer: Renderer2, private apollo: Apollo) {
@@ -114,7 +113,7 @@ export class PromoComponent implements OnInit, AfterViewInit {
     .watchQuery<Response>({
       query: GET_PLAYS,
     })
-    .valueChanges.pipe(map(result => result.data && result.data.play));
+    .valueChanges.pipe(map(result => result.data && result.data.blogPost));
   }
 
   refreshCountDown(targetDate: any, daysSpan: HTMLElement, hoursSpan: HTMLElement, minutesSpan: HTMLElement, secsSpan: HTMLElement) {
