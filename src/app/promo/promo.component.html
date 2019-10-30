@@ -3,12 +3,7 @@
   <div class="container text-center promo-content">
     <div class="upper-wrapper">
       <h1 class="logo-holder"></h1>
-      <ul style="list-style: none;">
-          <li *ngFor="let post of blogPosts | async">
-              <h2 class="headline">{{post.displayText}}</h2>
-          </li>
-        </ul>
-
+        <h2 class="headline">{{(blogPost$ | async)?.displayText}}</h2>        
       <div class="tagline">Figurentheater</div>
     </div>
   </div>

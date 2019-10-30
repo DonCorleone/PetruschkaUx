@@ -39,12 +39,19 @@ type Variables = {
 })
 export class PromoComponent implements OnInit, AfterViewInit {
 
-  blogPosts: Observable<blogPost[]>;
+  // tslint:disable-next-line:variable-name
+  private _blogPost$: Observable<blogPost>;
+  public get blogPost$(): Observable<blogPost> {
+    return this._blogPost$;
+  }
+  public set blogPost$(value: Observable<blogPost>) {
+    this._blogPost$ = value;
+  }
   title: string;
 
   constructor(private renderer: Renderer2, private apollo: Apollo) {
 
-   }
+  }
 
   ngAfterViewInit(): void {
     this.renderer.listen(document.getElementById('video-play-trigger'), 'click', (event) => {
@@ -64,26 +71,6 @@ export class PromoComponent implements OnInit, AfterViewInit {
         $(theModal + ' iframe').attr('src', theVideo);
       });
     });
-
-       /* ======= Vegas Plugin ======= */
-    /* Ref: http://vegas.jaysalvat.com/index.html */
-    // $('#promo').vegas({
-    //   delay: 8000,
-    //   overlay: 'assets/images/overlays/06.png',
-    //   color: '#101113',
-    //   transition: 'zoomOut',
-    //   transitionDuration: 3000,
-    //   slides: [
-    //     { src: 'assets/images/hero/hero-1.jpg' },
-    //     { src: 'assets/images/hero/hero-2.jpg' },
-    //     { src: 'assets/images/hero/hero-3.jpg' },
-    //     { src: 'assets/images/hero/hero-4.jpg' },
-    //     { src: 'assets/images/hero/hero-5.jpg' },
-    //     { src: 'assets/images/hero/hero-6.jpg' },
-    //     { src: 'assets/images/hero/hero-7.jpg' },
-    //     { src: 'assets/images/hero/hero-8.jpg' }
-    //   ]
-    // });
 
     /* ======= Countdown ========= */
     // set the date we're counting down to
@@ -109,11 +96,11 @@ export class PromoComponent implements OnInit, AfterViewInit {
 
   ngOnInit() {
 
-    this.blogPosts = this.apollo
+    this.blogPost$ = this.apollo
     .watchQuery<Response>({
       query: GET_PLAYS,
     })
-    .valueChanges.pipe(map(result => result.data && result.data.blogPost));
+    .valueChanges.pipe(map(result => result.data && result.data.blogPost[0]));
   }
 
   refreshCountDown(targetDate: any, daysSpan: HTMLElement, hoursSpan: HTMLElement, minutesSpan: HTMLElement, secsSpan: HTMLElement) {
@@ -143,5 +130,27 @@ export class PromoComponent implements OnInit, AfterViewInit {
     hoursSpan.innerHTML = '<span class="number">' + hours + '</span>' + '<span class="unit">Hrs</span>';
     minutesSpan.innerHTML = '<span class="number">' + minutes + '</span>' + '<span class="unit">Mins</span>';
     secsSpan.innerHTML = '<span class="number">' + seconds + '</span>' + '<span class="unit">Secs</span>';
+  }
+
+  startVegas() {
+       /* ======= Vegas Plugin ======= */
+    /* Ref: http://vegas.jaysalvat.com/index.html */
+    $('#promo').vegas({
+      delay: 8000,
+      overlay: 'assets/images/overlays/06.png',
+      color: '#101113',
+      transition: 'zoomOut',
+      transitionDuration: 3000,
+      slides: [
+        { src: 'assets/images/hero/hero-1.jpg' },
+        { src: 'assets/images/hero/hero-2.jpg' },
+        { src: 'assets/images/hero/hero-3.jpg' },
+        { src: 'assets/images/hero/hero-4.jpg' },
+        { src: 'assets/images/hero/hero-5.jpg' },
+        { src: 'assets/images/hero/hero-6.jpg' },
+        { src: 'assets/images/hero/hero-7.jpg' },
+        { src: 'assets/images/hero/hero-8.jpg' }
+      ]
+    });
   }
 }
