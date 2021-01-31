@@ -15,23 +15,23 @@ export class PromoComponent implements OnInit, AfterViewInit {
   }
 
   ngAfterViewInit(): void {
-    this.renderer.listen(document.getElementById('video-play-trigger'), 'click', (event) => {
-      const theModal = $(this).data('target');
-      const theVideo = $(theModal + ' iframe').attr('src');
-      const theVideoAuto = theVideo + '&autoplay=1';
+    // this.renderer.listen(document.getElementById('video-play-trigger'), 'click', (event) => {
+    //   const theModal = $(this).data('target');
+    //   const theVideo = $(theModal + ' iframe').attr('src');
+    //   const theVideoAuto = theVideo + '&autoplay=1';
 
-      $(theModal).on('shown.bs.modal', (event2) => {
-        $(theModal + ' iframe').attr('src', theVideoAuto);
-      });
+    //   $(theModal).on('shown.bs.modal', (event2) => {
+    //     $(theModal + ' iframe').attr('src', theVideoAuto);
+    //   });
 
-      $(theModal).on('hide.bs.modal', (event3) => {
-        $(theModal + ' iframe').attr('src', '');
-      });
+    //   $(theModal).on('hide.bs.modal', (event3) => {
+    //     $(theModal + ' iframe').attr('src', '');
+    //   });
 
-      $(theModal).on('hidden.bs.modal', (event4) => {
-        $(theModal + ' iframe').attr('src', theVideo);
-      });
-    });
+    //   $(theModal).on('hidden.bs.modal', (event4) => {
+    //     $(theModal + ' iframe').attr('src', theVideo);
+    //   });
+    // });
     /* ======= Vegas Plugin ======= */
     /* Ref: http://vegas.jaysalvat.com/index.html */
     $('#promo').vegas({
@@ -41,20 +41,20 @@ export class PromoComponent implements OnInit, AfterViewInit {
       transition: 'zoomOut',
       transitionDuration: 3000,
       slides: [
-        { src: 'assets/images/hero/hero-1.jpg' },
-        { src: 'assets/images/hero/hero-2.jpg' },
-        { src: 'assets/images/hero/hero-3.jpg' },
-        { src: 'assets/images/hero/hero-4.jpg' },
-        { src: 'assets/images/hero/hero-5.jpg' },
-        { src: 'assets/images/hero/hero-6.jpg' },
-        { src: 'assets/images/hero/hero-7.jpg' },
-        { src: 'assets/images/hero/hero-8.jpg' }
+        { src: 'assets/images/main/01.jpg' },
+        { src: 'assets/images/main/02.jpg' },
+        { src: 'assets/images/main/03.jpg' },
+        { src: 'assets/images/main/04.jpg' },
+        { src: 'assets/images/main/05.jpg' },
+        { src: 'assets/images/main/06.jpg' },
+        { src: 'assets/images/main/07.jpg' },
+        { src: 'assets/images/main/08.jpg' }
       ]
     });
 
     /* ======= Countdown ========= */
     // set the date we're counting down to
-    const targetDate = new Date('July 18, 2020').getTime();
+    const targetDate = new Date('July 18, 2021').getTime();
 
     // get tag element
     const countdown = document.getElementById('countdown-box');
