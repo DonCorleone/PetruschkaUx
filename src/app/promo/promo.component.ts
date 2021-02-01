@@ -1,6 +1,6 @@
 import { Component, OnInit, Renderer2, AfterViewInit } from '@angular/core';
 /// <reference path ="../../node_modules/@types/jquery/index.d.ts"/>
-declare var $: any;
+// declare var $: any;
 
 @Component({
   selector: 'app-promo',
@@ -34,23 +34,23 @@ export class PromoComponent implements OnInit, AfterViewInit {
     // });
     /* ======= Vegas Plugin ======= */
     /* Ref: http://vegas.jaysalvat.com/index.html */
-    $('#promo').vegas({
-      delay: 8000,
-      overlay: 'assets/images/overlays/06.png',
-      color: '#101113',
-      transition: 'zoomOut',
-      transitionDuration: 3000,
-      slides: [
-        { src: 'assets/images/main/01.jpg' },
-        { src: 'assets/images/main/02.jpg' },
-        { src: 'assets/images/main/03.jpg' },
-        { src: 'assets/images/main/04.jpg' },
-        { src: 'assets/images/main/05.jpg' },
-        { src: 'assets/images/main/06.jpg' },
-        { src: 'assets/images/main/07.jpg' },
-        { src: 'assets/images/main/08.jpg' }
-      ]
-    });
+    // $('#promo').vegas({
+    //   delay: 8000,
+    //   overlay: 'assets/images/overlays/06.png',
+    //   color: '#101113',
+    //   transition: 'zoomOut',
+    //   transitionDuration: 3000,
+    //   slides: [
+    //     { src: 'assets/images/main/01.jpg' },
+    //     { src: 'assets/images/main/02.jpg' },
+    //     { src: 'assets/images/main/03.jpg' },
+    //     { src: 'assets/images/main/04.jpg' },
+    //     { src: 'assets/images/main/05.jpg' },
+    //     { src: 'assets/images/main/06.jpg' },
+    //     { src: 'assets/images/main/07.jpg' },
+    //     { src: 'assets/images/main/08.jpg' }
+    //   ]
+    // });
 
     /* ======= Countdown ========= */
     // set the date we're counting down to

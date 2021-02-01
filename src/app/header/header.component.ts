@@ -9,6 +9,7 @@ import { Component, Renderer2, AfterViewInit } from '@angular/core';
 export class HeaderComponent implements AfterViewInit {
 
   currentSection = 'promo';
+  public isMenuCollapsed = true;
 
   constructor(private renderer: Renderer2) {
 
@@ -37,6 +38,7 @@ export class HeaderComponent implements AfterViewInit {
   scrollTo(section) {
     document.querySelector('#' + section)
     .scrollIntoView({behavior: 'smooth'});
+    this.isMenuCollapsed = true;
   }
 
   ngAfterViewInit(): void {

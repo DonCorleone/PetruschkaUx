@@ -28,18 +28,13 @@
               "src/assets"
             ],
             "styles": [
-              "node_modules/bootstrap/dist/css/bootstrap.min.css",
               "node_modules/@fortawesome/fontawesome-free/css/all.min.css",
-              "node_modules/vegas/dist/vegas.min.css",
               "src/styles.scss",
               "src/scss/theme-1.scss"
             ],
             "scripts": [
-              "node_modules/jquery/dist/jquery.min.js",
-              "node_modules/bootstrap/dist/js/bootstrap.min.js",
+              "node_modules/bootstrap.native/dist/bootstrap-native.min.js",
               "node_modules/@fortawesome/fontawesome-free/js/all.min.js",
-              "node_modules/jquery.scrollto/jquery.scrollTo.min.js",
-              "node_modules/vegas/dist/vegas.min.js",
               "src/assets/plugins/back-to-top.js"
             ]
           },
