@@ -34,8 +34,7 @@
             ],
             "scripts": [
               "node_modules/bootstrap.native/dist/bootstrap-native.min.js",
-              "node_modules/@fortawesome/fontawesome-free/js/all.min.js",
-              "src/assets/plugins/back-to-top.js"
+              "node_modules/@fortawesome/fontawesome-free/js/all.min.js"
             ]
           },
           "configurations": {
