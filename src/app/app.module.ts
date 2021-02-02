@@ -16,6 +16,7 @@ import { VideoComponent } from './video/video.component';
 import { InfoComponent } from './info/info.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { PromoCarouselComponent } from './promo-carousel/promo-carousel.component';
+import { GigsItemComponent } from './gigs-item/gigs-item.component';
 
 @NgModule({
   declarations: [
@@ -31,7 +32,8 @@ import { PromoCarouselComponent } from './promo-carousel/promo-carousel.componen
     FooterComponent,
     VideoComponent,
     InfoComponent,
-    PromoCarouselComponent
+    PromoCarouselComponent,
+    GigsItemComponent
   ],
   imports: [
     BrowserModule,
