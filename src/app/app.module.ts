@@ -18,6 +18,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { PromoCarouselComponent } from './promo-carousel/promo-carousel.component';
 import { GigsItemComponent } from './gigs-item/gigs-item.component';
 
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -40,6 +41,7 @@ import { GigsItemComponent } from './gigs-item/gigs-item.component';
     AppRoutingModule,
     NgbModule
   ],
+  entryComponents: [InfoComponent],
   providers: [],
   bootstrap: [AppComponent]
 })

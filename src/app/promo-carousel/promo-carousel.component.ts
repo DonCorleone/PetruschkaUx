@@ -1,5 +1,6 @@
 import { AfterViewInit, Component, OnInit } from '@angular/core';
-import { NgbCarouselConfig } from '@ng-bootstrap/ng-bootstrap';
+import { NgbCarouselConfig, NgbModal } from '@ng-bootstrap/ng-bootstrap';
+import { InfoComponent } from '../info/info.component';
 
 @Component({
   selector: 'app-promo-carousel',
@@ -11,7 +12,9 @@ import { NgbCarouselConfig } from '@ng-bootstrap/ng-bootstrap';
 export class PromoCarouselComponent  implements AfterViewInit {
   images = [700, 533, 807, 124].map((n) => `https://picsum.photos/id/${n}/900/500`);
 
-  constructor(config: NgbCarouselConfig) {
+  constructor(config: NgbCarouselConfig,
+    private modalService: NgbModal) {
+
     // customize default values of carousels used by this component tree
     config.interval = 6000;
     config.keyboard = false;
@@ -106,6 +109,10 @@ export class PromoCarouselComponent  implements AfterViewInit {
     hoursSpan.innerHTML = '<span class="number">' + hours + '</span>' + '<span class="unit">Hrs</span>';
     minutesSpan.innerHTML = '<span class="number">' + minutes + '</span>' + '<span class="unit">Mins</span>';
     secsSpan.innerHTML = '<span class="number">' + seconds + '</span>' + '<span class="unit">Secs</span>';
+  }
+  open() {
+    const modalRef = this.modalService.open(InfoComponent);
+    modalRef.componentInstance.name = 'World';
   }
 }
 
