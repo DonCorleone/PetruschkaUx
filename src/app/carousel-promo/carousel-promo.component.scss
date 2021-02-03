@@ -1,0 +1,22 @@
+@-webkit-keyframes zoom {
+  from {
+    -webkit-transform: scale(2, 2);
+  }
+  to {
+    -webkit-transform: scale(1, 1);
+  }
+}
+
+@keyframes zoom {
+  from {
+    transform: scale(2, 2);
+  }
+  to {
+    transform: scale(1, 1);
+  }
+}
+
+.carousel-inner .item > img {
+  -webkit-animation: zoom 20s;
+  animation: zoom 20s;
+}

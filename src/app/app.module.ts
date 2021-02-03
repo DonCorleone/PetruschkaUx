@@ -17,6 +17,8 @@ import { InfoComponent } from './info/info.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { PromoCarouselComponent } from './promo-carousel/promo-carousel.component';
 import { GigsItemComponent } from './gigs-item/gigs-item.component';
+import { CarouselPromoComponent } from './carousel-promo/carousel-promo.component';
+import { CarouselUpdateComponent } from './carousel-update/carousel-update.component';
 
 
 @NgModule({
@@ -34,7 +36,9 @@ import { GigsItemComponent } from './gigs-item/gigs-item.component';
     VideoComponent,
     InfoComponent,
     PromoCarouselComponent,
-    GigsItemComponent
+    GigsItemComponent,
+    CarouselPromoComponent,
+    CarouselUpdateComponent
   ],
   imports: [
     BrowserModule,
