@@ -9,7 +9,7 @@ import { InfoComponent } from '../info/info.component';
   providers: [NgbCarouselConfig]
 })
 
-export class PromoCarouselComponent  implements AfterViewInit {
+export class PromoCarouselComponent implements AfterViewInit {
   images = [700, 533, 807, 124].map((n) => `https://picsum.photos/id/${n}/900/500`);
 
   constructor(config: NgbCarouselConfig,
