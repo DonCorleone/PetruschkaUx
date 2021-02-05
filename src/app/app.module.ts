@@ -18,7 +18,24 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { GigsItemComponent } from './gigs-item/gigs-item.component';
 import { CarouselPromoComponent } from './carousel-promo/carousel-promo.component';
 import { CarouselUpdateComponent } from './carousel-update/carousel-update.component';
+import { ApolloClientOptions, InMemoryCache } from '@apollo/client/core';
+import { HttpLink } from 'apollo-angular/http';
 
+import * as realm from './realm';
+import { HttpClientModule, HttpHeaders } from '@angular/common/http';
+import { APOLLO_OPTIONS } from 'apollo-angular';
+
+const uri = realm.graphqlUrl;
+
+export function createApollo(httpLink: HttpLink): ApolloClientOptions<any> {
+  return {
+    link: httpLink.create({
+      uri,
+      headers: new HttpHeaders().set('Authorization', `Bearer ${localStorage.getItem('token')}`)
+    }),
+    cache: new InMemoryCache()
+  };
+}
 
 @NgModule({
   declarations: [
@@ -41,10 +58,17 @@ import { CarouselUpdateComponent } from './carousel-update/carousel-update.compo
   imports: [
     BrowserModule,
     AppRoutingModule,
+    HttpClientModule,
     NgbModule
   ],
   entryComponents: [InfoComponent],
-  providers: [],
+  providers: [
+    {
+      provide: APOLLO_OPTIONS,
+      useFactory: createApollo,
+      deps: [HttpLink],
+    }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
