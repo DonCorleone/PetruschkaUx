@@ -24,6 +24,8 @@ import { HttpLink } from 'apollo-angular/http';
 import * as realm from './realm';
 import { HttpClientModule, HttpHeaders } from '@angular/common/http';
 import { APOLLO_OPTIONS } from 'apollo-angular';
+import { AboutItemComponent } from './about-item/about-item.component';
+import { FlexLayoutModule } from '@angular/flex-layout';
 
 const uri = realm.graphqlUrl;
 
@@ -53,13 +55,15 @@ export function createApollo(httpLink: HttpLink): ApolloClientOptions<any> {
     InfoComponent,
     GigsItemComponent,
     CarouselPromoComponent,
-    CarouselUpdateComponent
+    CarouselUpdateComponent,
+    AboutItemComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    NgbModule
+    NgbModule,
+    FlexLayoutModule
   ],
   entryComponents: [InfoComponent],
   providers: [
