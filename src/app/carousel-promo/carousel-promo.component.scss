@@ -1,51 +1,98 @@
 @-webkit-keyframes zoom {
   from {
-    -webkit-transform: scale(2, 2);
+      -webkit-transform: scale(1.5, 1.5);
   }
   to {
-    -webkit-transform: scale(1, 1);
+     -webkit-transform: scale(1, 1);
   }
 }
 
 @keyframes zoom {
   from {
-    transform: scale(2, 2);
+      transform: scale(1.5, 1.5);
   }
   to {
-    transform: scale(1, 1);
+      transform: scale(1, 1);
   }
 }
 
-.carousel-inner .item > img {
-  -webkit-animation: zoom 20s;
-  animation: zoom 20s;
-}
-#slide-ngb-slide-0 {
-  background: url("../../assets/images/hero/hero-1.jpg") no-repeat center center;
-  background-size: auto;
-  background-size: cover;
+.fade-out {
+  animation: fadeOut ease 8s;
+  -webkit-animation: fadeOut ease 8s;
+  -moz-animation: fadeOut ease 8s;
+  -o-animation: fadeOut ease 8s;
+  -ms-animation: fadeOut ease 8s;
 }
 
-#slide-ngb-slide-1 {
-  background: url("../../assets/images/hero/hero-2.jpg") no-repeat center center;
-  background-size: auto;
-  background-size: cover;
+@keyframes fadeOut {
+  0% {
+    z-index:1;
+  }
+  80% {
+    z-index:-1;
+  }
 }
 
-#slide-ngb-slide-2 {
-  background: url("../../assets/images/hero/hero-3.jpg") no-repeat center center;
-  background-size: auto;
-  background-size: cover;
+@-moz-keyframes fadeOut {
+  0% {
+    z-index:1;
+  }
+  80% {
+    z-index:-1;
+  }
 }
 
-#slide-ngb-slide-3 {
-  background: url("../../assets/images/hero/hero-4.jpg") no-repeat center center;
-  background-size: auto;
-  background-size: cover;
+@-webkit-keyframes fadeOut {
+  0% {
+    z-index:1;
+  }
+  80% {
+    z-index:-1;
+  }
 }
 
-#slide-ngb-slide-4 {
-  background: url("../../assets/images/hero/hero-5.jpg") no-repeat center center;
-  background-size: auto;
-  background-size: cover;
+.promo-carousel-holder .carousel-item
+{
+
+  display:block;
+  transition: opacity 1s;
+  transition-property: opacity;
 }
+
+.promo-carousel-holder .carousel-item.active
+{
+  display:block;
+  opacity:0.4;
+  transition: opacity 1s;
+}
+
+.promo-carousel-holder .carousel-item {
+  -webkit-animation: zoom 7.7s ease-in-out infinite;
+  animation: zoom 7.7s ease-in-out infinite;
+}
+
+
+#slide-ngb-slide-0{
+  background-image: url("../../assets/images/main/01.jpg");
+}
+
+#slide-ngb-slide-1{
+  background-image: url("../../assets/images/main/02.jpg");
+}
+
+#slide-ngb-slide-2{
+  background-image: url("../../assets/images/main/03.jpg");
+}
+
+#slide-ngb-slide-3{
+  background-image: url("../../assets/images/main/04.jpg");
+}
+
+#slide-ngb-slide-4{
+  background-image: url("../../assets/images/main/05.jpg");
+}
+
+#slide-ngb-slide-5{
+  background-image: url("../../assets/images/main/06.jpg");
+}
+

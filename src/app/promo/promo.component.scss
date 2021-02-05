@@ -1,12 +1,15 @@
 .logo-holder {
   height: 150px;
   margin-bottom: 3px;
-  opacity: 0.5;
+  opacity: 0.6;
 }
 
 .updates-block {
   height: 160px;
+  position: absolute;
+  z-index:30;
 }
+
 .promo-carousel-holder {
   position: absolute;
   left: 0;

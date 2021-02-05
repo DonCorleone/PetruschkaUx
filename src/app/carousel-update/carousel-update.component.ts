@@ -14,10 +14,11 @@ export class CarouselUpdateComponent  implements AfterViewInit {
     private modalService: NgbModal) {
 
     // customize default values of carousels used by this component tree
-    config.interval = 6000;
+    config.interval = 7500;
     config.keyboard = false;
     config.pauseOnHover = false;
     config.showNavigationIndicators = false;
+    config.animation = false;
   }
 
   ngAfterViewInit(): void {

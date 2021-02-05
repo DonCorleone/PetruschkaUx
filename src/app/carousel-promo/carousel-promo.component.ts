@@ -1,10 +1,11 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 import { NgbCarouselConfig } from '@ng-bootstrap/ng-bootstrap';
 
 @Component({
   selector: 'app-carousel-promo',
   templateUrl: './carousel-promo.component.html',
-  styleUrls: ['./carousel-promo.component.scss']
+  styleUrls: ['./carousel-promo.component.scss'],
+  encapsulation: ViewEncapsulation.None
 })
 export class CarouselPromoComponent {
 
@@ -13,10 +14,11 @@ export class CarouselPromoComponent {
   constructor(config: NgbCarouselConfig) {
 
     // customize default values of carousels used by this component tree
-    config.interval = 6000;
+    config.interval = 7500;
     config.keyboard = false;
     config.pauseOnHover = false;
     config.showNavigationIndicators = false;
     config.showNavigationArrows = false;
+    config.animation = false;
   }
 }

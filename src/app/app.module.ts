@@ -15,7 +15,6 @@ import { FooterComponent } from './footer/footer.component';
 import { VideoComponent } from './video/video.component';
 import { InfoComponent } from './info/info.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
-import { PromoCarouselComponent } from './promo-carousel/promo-carousel.component';
 import { GigsItemComponent } from './gigs-item/gigs-item.component';
 import { CarouselPromoComponent } from './carousel-promo/carousel-promo.component';
 import { CarouselUpdateComponent } from './carousel-update/carousel-update.component';
@@ -35,7 +34,6 @@ import { CarouselUpdateComponent } from './carousel-update/carousel-update.compo
     FooterComponent,
     VideoComponent,
     InfoComponent,
-    PromoCarouselComponent,
     GigsItemComponent,
     CarouselPromoComponent,
     CarouselUpdateComponent
