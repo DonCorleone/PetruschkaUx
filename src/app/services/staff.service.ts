@@ -7,9 +7,12 @@ import { Staff } from '../models/staff';
 
 const GET_STAFFS = gql`
   query GetStaffByName {
-    staffs {
+    staffs (sortBy: SORTORDER_DESC){
       name
       bio
+      topic
+      sortOrder
+      active
     }
   }
 `;
@@ -33,7 +36,8 @@ export class StaffService {
           variables: {
             name: nameIn
           },})
-        .valueChanges.pipe(map((result) => result.data.staffs.filter(nameIn? p => p.name == nameIn : o => o.name != "")));
+        .valueChanges.pipe(map((result) => result.data.staffs.filter(
+          nameIn? p => p.name == nameIn : o => o.name != "").filter(p => p.active === true).sort(p => p.sortOrder)));
   }
 }
 

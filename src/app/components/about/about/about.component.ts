@@ -14,27 +14,23 @@ import { StaffService } from 'src/app/services/staff.service';
 export class AboutComponent implements OnInit {
 
   staffs$: Observable<Staff[]>;
+  staffMain$: Observable<Staff[]>;
+  staffSecond$: Observable<Staff[]>;
+  staffThird$: Observable<Staff[]>;
   staffTitle:string = "Mitwirkende";
-
-  getStaffMain():Observable<Staff[]>{
-    return this.staffs$.pipe(map(p => p.filter(order => order.sortOrder < 200)));
-  }
-  getStaffSecond():Observable<Staff[]>{
-    return this.staffs$.pipe(map(p => p.filter(order => order.sortOrder >= 200 && order.sortOrder < 600)));
-  }
-  getStaffThird():Observable<Staff[]>{
-    return this.staffs$.pipe(map(p => p.filter(order => order.sortOrder >= 600)));
-  }
 
   constructor(private route: ActivatedRoute, private staffService: StaffService, private sanitizer: DomSanitizer ) { }
   @Input() staffName:string;
+
   ngOnInit(): void {
 
     this.route.params
       .pipe(map(p => p.staffName))
       .subscribe(nameIn => {
         this.staffName = nameIn;
-        this.staffs$ = this.staffService.GetStaffs(nameIn);
+        this.staffMain$ = this.staffService.GetStaffs(nameIn).pipe(map(p => p.filter(order => order.sortOrder < 200)));
+        this.staffSecond$ = this.staffService.GetStaffs(nameIn).pipe(map(p => p.filter(order => order.sortOrder >= 200 && order.sortOrder < 600)));
+        this.staffThird$ = this.staffService.GetStaffs(nameIn).pipe(map(p => p.filter(order => order.sortOrder >= 600)));
       });
   }
 }

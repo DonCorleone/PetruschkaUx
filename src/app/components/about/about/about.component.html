@@ -7,7 +7,7 @@
     <div class="members-block">
       <div class="row">
         <div class="card-columns">
-          <div *ngFor="let staff of getStaffMain() | async; index as i;">
+          <div *ngFor="let staff of staffMain$ | async; index as i;">
             <div *ngIf="i%2===0" class="clearfix visible-xs"></div>
             <app-about-item [staff]="staff">
             </app-about-item>
@@ -16,7 +16,7 @@
       </div>
       <div class="row">
         <div class="card-columns">
-          <div *ngFor="let staff of getStaffSecond() | async; index as i;">
+          <div *ngFor="let staff of staffSecond$ | async; index as i;">
             <div *ngIf="i%2===0" class="clearfix visible-xs"></div>
             <app-about-item [staff]="staff">
             </app-about-item>
@@ -25,7 +25,7 @@
       </div>
       <div class="row">
         <div class="card-columns">
-          <div *ngFor="let staff of getStaffThird() | async; index as i;">
+          <div *ngFor="let staff of staffThird$ | async; index as i;">
             <div *ngIf="i%2===0" class="clearfix visible-xs"></div>
             <app-about-item [staff]="staff">
             </app-about-item>
