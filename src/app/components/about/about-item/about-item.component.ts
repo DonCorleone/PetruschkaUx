@@ -1,5 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { Staff } from '../models/staff';
+import { Staff } from 'src/app/models/staff';
+
 
 @Component({
   selector: 'app-about-item',
@@ -15,6 +16,6 @@ export class AboutItemComponent implements OnInit {
   ngOnInit(): void {
   }
   GetImageUrl(name: string): string {
-    return '../assets/images/' + encodeURIComponent(name) + '.jpg'
+    return '../assets/images/members/' + encodeURIComponent(name) + '.jpg'
   }
 }

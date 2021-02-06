@@ -3,8 +3,8 @@ import { DomSanitizer } from '@angular/platform-browser';
 import { ActivatedRoute } from '@angular/router';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
-import { Staff } from '../models/staff';
-import { StaffService } from '../services/staff.service';
+import { Staff } from 'src/app/models/staff';
+import { StaffService } from 'src/app/services/staff.service';
 
 @Component({
   selector: 'app-about',
@@ -15,6 +15,16 @@ export class AboutComponent implements OnInit {
 
   staffs$: Observable<Staff[]>;
   staffTitle:string = "Mitwirkende";
+
+  getStaffMain():Observable<Staff[]>{
+    return this.staffs$.pipe(map(p => p.filter(order => order.sortOrder < 200)));
+  }
+  getStaffSecond():Observable<Staff[]>{
+    return this.staffs$.pipe(map(p => p.filter(order => order.sortOrder >= 200 && order.sortOrder < 600)));
+  }
+  getStaffThird():Observable<Staff[]>{
+    return this.staffs$.pipe(map(p => p.filter(order => order.sortOrder >= 600)));
+  }
 
   constructor(private route: ActivatedRoute, private staffService: StaffService, private sanitizer: DomSanitizer ) { }
   @Input() staffName:string;
