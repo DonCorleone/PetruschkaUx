@@ -8,13 +8,13 @@ import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
-// import { ApolloClientOptions, InMemoryCache } from '@apollo/client/core';
+import { ApolloClientOptions, InMemoryCache } from '@apollo/client/core';
 
-// import { HttpLink } from 'apollo-angular/http';
+import { HttpLink } from 'apollo-angular/http';
 
 import * as realm from './realm';
 import { HttpClientModule, HttpHeaders } from '@angular/common/http';
-// import { APOLLO_OPTIONS } from 'apollo-angular';
+import { APOLLO_OPTIONS } from 'apollo-angular';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { GigsComponent } from './components/gigs/gigs/gigs.component';
 import { AboutComponent } from './components/about/about/about.component';
@@ -31,15 +31,15 @@ import { VideoComponent } from './components/video/video.component';
 
 const uri = realm.graphqlUrl;
 
-// export function createApollo(httpLink: HttpLink): ApolloClientOptions<any> {
-//   return {
-//     link: httpLink.create({
-//       uri,
-//       headers: new HttpHeaders().set('Authorization', `Bearer ${localStorage.getItem('token')}`)
-//     }),
-//     cache: new InMemoryCache()
-//   };
-// }
+export function createApollo(httpLink: HttpLink): ApolloClientOptions<any> {
+  return {
+    link: httpLink.create({
+      uri,
+      headers: new HttpHeaders().set('Authorization', `Bearer ${localStorage.getItem('token')}`)
+    }),
+    cache: new InMemoryCache()
+  };
+}
 
 @NgModule({
   declarations: [
@@ -69,11 +69,11 @@ const uri = realm.graphqlUrl;
   ],
   entryComponents: [InfoComponent],
   providers: [
-    // {
-    //   provide: APOLLO_OPTIONS,
-    //   useFactory: createApollo,
-    //   deps: [HttpLink],
-    // }
+    {
+      provide: APOLLO_OPTIONS,
+      useFactory: createApollo,
+      deps: [HttpLink],
+    }
   ],
   bootstrap: [AppComponent]
 })

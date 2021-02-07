@@ -28,9 +28,9 @@ export class AboutComponent implements OnInit {
       .pipe(map(p => p.staffName))
       .subscribe(nameIn => {
         this.staffName = nameIn;
-        // this.staffMain$ = this.staffService.GetStaffs(nameIn).pipe(map(p => p.filter(order => order.sortOrder < 200)));
-        // this.staffSecond$ = this.staffService.GetStaffs(nameIn).pipe(map(p => p.filter(order => order.sortOrder >= 200 && order.sortOrder < 600)));
-        // this.staffThird$ = this.staffService.GetStaffs(nameIn).pipe(map(p => p.filter(order => order.sortOrder >= 600)));
+        this.staffMain$ = this.staffService.GetStaffs(nameIn).pipe(map(p => p.filter(order => order.sortOrder < 200)));
+        this.staffSecond$ = this.staffService.GetStaffs(nameIn).pipe(map(p => p.filter(order => order.sortOrder >= 200 && order.sortOrder < 600)));
+        this.staffThird$ = this.staffService.GetStaffs(nameIn).pipe(map(p => p.filter(order => order.sortOrder >= 600)));
       });
   }
 }
