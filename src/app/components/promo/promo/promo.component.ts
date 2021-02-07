@@ -1,6 +1,5 @@
-import { Component, OnInit, Renderer2, AfterViewInit } from '@angular/core';
-/// <reference path ="../../node_modules/@types/jquery/index.d.ts"/>
-// declare var $: any;
+import { Component, OnInit, Renderer2 } from '@angular/core';
+
 
 @Component({
   selector: 'app-promo',

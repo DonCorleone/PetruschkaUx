@@ -26,7 +26,6 @@ import { ContactComponent } from './components/contact/contact.component';
 import { InfoComponent } from './components/info/info.component';
 import { MerchComponent } from './components/merch/merch.component';
 import { VideoComponent } from './components/video/video.component';
-import { LayoutComponent } from './layout/layout.component';
 
 const uri = realm.graphqlUrl;
 
@@ -57,8 +56,7 @@ export function createApollo(httpLink: HttpLink): ApolloClientOptions<any> {
     GigsItemComponent,
     CarouselPromoComponent,
     CarouselUpdateComponent,
-    AboutItemComponent,
-    LayoutComponent
+    AboutItemComponent
   ],
   imports: [
     BrowserModule,
