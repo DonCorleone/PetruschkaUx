@@ -10,6 +10,10 @@ import { InfoComponent } from '../../info/info.component';
 })
 export class UpdateSlideComponent implements AfterViewInit {
 
+  get name() {
+    return (this.eventDetail && this.eventDetail.eventInfos[0]) ? this.eventDetail.eventInfos[0].name: null;
+  }
+
   @Input() eventDetail: EventDetail;
   @Input() usage: string;
 
