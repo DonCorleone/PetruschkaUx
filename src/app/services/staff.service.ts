@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { Apollo, gql } from 'apollo-angular';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
-import { Staff } from '../models/staff';
+import { Staff } from '../models/staff.models';
 
 const GET_STAFFS = gql`
   query GetStaffByName {

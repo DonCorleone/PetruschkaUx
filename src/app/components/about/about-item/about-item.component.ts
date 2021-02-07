@@ -1,5 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { Staff } from 'src/app/models/staff';
+import { Staff } from 'src/app/models/staff.models';
 
 
 @Component({

@@ -3,7 +3,7 @@ import { DomSanitizer } from '@angular/platform-browser';
 import { ActivatedRoute } from '@angular/router';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
-import { Staff } from 'src/app/models/staff';
+import { Staff } from 'src/app/models/staff.models';
 import { StaffService } from 'src/app/services/staff.service';
 
 @Component({
