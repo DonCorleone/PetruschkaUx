@@ -26,6 +26,7 @@
     "apollo-angular": "^2.1.0",
     "bootstrap.native": "^3.0.14",
     "codelyzer": "^6.0.1",
+    "graphql": "^15.5.0",
     "realm-web": "^1.2.0",
     "rxjs": "~6.6.3",
     "tslib": "^2.0.0",
