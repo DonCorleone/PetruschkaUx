@@ -12,7 +12,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 // import { HttpLink } from 'apollo-angular/http';
 
-// import * as realm from './realm';
+import * as realm from './realm';
 import { HttpClientModule, HttpHeaders } from '@angular/common/http';
 // import { APOLLO_OPTIONS } from 'apollo-angular';
 import { FlexLayoutModule } from '@angular/flex-layout';
@@ -29,7 +29,7 @@ import { InfoComponent } from './components/info/info.component';
 import { MerchComponent } from './components/merch/merch.component';
 import { VideoComponent } from './components/video/video.component';
 
-// const uri = realm.graphqlUrl;
+const uri = realm.graphqlUrl;
 
 // export function createApollo(httpLink: HttpLink): ApolloClientOptions<any> {
 //   return {
