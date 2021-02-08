@@ -6,30 +6,21 @@
       mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim.</div>
     <div class="members-block">
       <div class="row">
-        <div class="card-columns">
-          <div *ngFor="let staff of staffMain$ | async; index as i;">
-            <div *ngIf="i%2===0" class="clearfix visible-xs"></div>
-            <app-about-item [staff]="staff">
+        <div class="col" *ngFor="let staff of staffMain$ | async; index as i;">
+            <app-about-item [staff]="staff" class="flex">
             </app-about-item>
-          </div>
         </div>
       </div>
       <div class="row">
-        <div class="card-columns">
-          <div *ngFor="let staff of staffSecond$ | async; index as i;">
-            <div *ngIf="i%2===0" class="clearfix visible-xs"></div>
-            <app-about-item [staff]="staff">
-            </app-about-item>
-          </div>
+        <div class="col" *ngFor="let staff of staffSecond$ | async; index as i;">
+          <app-about-item [staff]="staff" class="flex">
+          </app-about-item>
         </div>
       </div>
-      <div class="row">
-        <div class="card-columns">
-          <div *ngFor="let staff of staffThird$ | async; index as i;">
-            <div *ngIf="i%2===0" class="clearfix visible-xs"></div>
-            <app-about-item [staff]="staff">
+        <div class="row">
+          <div class="col" *ngFor="let staff of staffThird$ | async; index as i;">
+            <app-about-item [staff]="staff" class="flex">
             </app-about-item>
-          </div>
         </div>
       </div>
       <!--//row-->
