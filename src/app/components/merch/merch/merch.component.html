@@ -1,0 +1,18 @@
+<section id="merch" class="merch-section section text-center">
+  <div class="container">
+    <h2 class="section-title">Tournee-Stücke</h2>
+    <div class="row">
+      <div class="item col-12 col-md-6" *ngFor="let eventDetail of eventDetailsTournee$ | async">
+        <app-merch-item [eventDetail]="eventDetail" usage="Tournee"></app-merch-item>
+      </div>
+    </div>
+    <!--//row-->
+
+    <div class="merch-action">
+      <a class="btn btn-ghost-primary" href="#">View All Items</a>
+    </div>
+
+  </div>
+  <!--//container-->
+</section>
+<!--//merch-section-->
