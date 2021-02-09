@@ -22,7 +22,6 @@ import { GigsItemComponent } from './components/gigs/gigs-item/gigs-item.compone
 import { AboutItemComponent } from './components/about/about-item/about-item.component';
 import { PromoComponent } from './components/promo/promo/promo.component';
 import { CarouselPromoComponent } from './components/promo/carousel-promo/carousel-promo.component';
-import { MusicComponent } from './components/music/music.component';
 import { CarouselUpdateComponent } from './components/update/carousel-update/carousel-update.component';
 import { ContactComponent } from './components/contact/contact.component';
 import { InfoComponent } from './components/info/info.component';
@@ -30,6 +29,8 @@ import { VideoComponent } from './components/video/video.component';
 import { UpdateSlideComponent } from './components/update/update-slide/update-slide.component';
 import { MerchItemComponent } from './components/merch/merch-item/merch-item.component';
 import { MerchComponent } from './components/merch/merch/merch.component';
+import { MusicItemComponent } from './components/music/music-item/music-item.component';
+import { MusicComponent } from './components/music/music/music.component';
 
 const uri = realm.graphqlUrl;
 
@@ -62,7 +63,8 @@ export function createApollo(httpLink: HttpLink): ApolloClientOptions<any> {
     CarouselUpdateComponent,
     UpdateSlideComponent,
     AboutItemComponent,
-    MerchItemComponent
+    MerchItemComponent,
+    MusicItemComponent
   ],
   imports: [
     BrowserModule,

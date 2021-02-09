@@ -1,0 +1,23 @@
+<div class="item-inner">
+  <h3 class="album-title">
+    {{ name }}
+  </h3>
+  <div class="cover-holder">
+
+    <a class="cover-figure" href="#">
+      <div class="arrow-holder" *ngIf="comingSoon"></div>
+      <div class="record-holder"><img class="img-fluid" src="assets/images/record.png" alt=""></div>
+      <img class="cover-image img-fluid" src="assets/images/albums/album-cover-1.jpg" alt="">
+      <div class="cover-label" *ngIf="comingSoon" >Coming Soon</div>
+      <!--//cover-label-->
+    </a>
+    <!--//cover-figure-->
+
+    <a href="#" class="btn btn-sm btn-secondary">Buy</a>
+
+  </div>
+  <!--//cover-holder-->
+
+
+</div>
+<!--//item-inner-->
