@@ -4,6 +4,7 @@ import { Observable } from 'rxjs';
 import { Apollo, gql, QueryRef } from 'apollo-angular';
 import { EventDetail } from '../models/event.models';
 import { EmptyObject } from 'apollo-angular/types';
+import { DatePipe } from '@angular/common';
 
 const GET_EVENTDETAILS_BYTAG = gql`
   query {
@@ -13,6 +14,7 @@ const GET_EVENTDETAILS_BYTAG = gql`
         name
         bannerImagePath
         flyerImagePath
+        shortDescription
       }
       notificationEmail
       facebookPixelId
@@ -44,6 +46,26 @@ const GET_EVENTINFO_BYEVENTID = gql`
   }
 `;
 
+const GET_UPCOMING_EVENTS = gql`
+    query {
+      eventDetails (
+        query: {
+          AND: [
+            {facebookPixelId: ""}
+            {OR: [{googleAnalyticsTracker: ""}{googleAnalyticsTracker: "Premiere"}]}
+            {start_gte: "2021-01-01T00:00:00Z"}
+          ]}){
+        _id,
+        eventInfos{
+          name
+          location
+          longDescription
+        }
+        start
+      }
+    }
+`;
+
 interface GetEventInfoById {
   eventDetails: EventDetail[];
   notificationEmail: String;
@@ -70,6 +92,12 @@ export class EventService {
     });
   }
 
+  GetUpcomingEventDetails(startDate: Date): Observable<EventDetail[]>{
+    return this.apollo
+      .watchQuery<GetEventDetailPrototypes>({query: GET_UPCOMING_EVENTS})
+      .valueChanges.pipe(map((result) => result.data.eventDetails));
+    }
+
   GetEventDetails(filterPredicateIn: any): Observable<EventDetail[]>{
     return this.apollo
       .watchQuery<GetEventDetailPrototypes>({query: GET_EVENTDETAILS_BYTAG})
@@ -88,5 +116,39 @@ export class EventService {
       && eventDetail.eventInfos[0]
       && eventDetail.eventInfos[0].flyerImagePath ?
       eventDetail.eventInfos[0].flyerImagePath : null);
+  }
+
+  static GetShortDescFromEventDetail(eventDetail: EventDetail): string{
+    return (eventDetail
+      && eventDetail.eventInfos[0]
+      && eventDetail.eventInfos[0].shortDescription ?
+      eventDetail.eventInfos[0].shortDescription : null);
+  }
+
+  static GetNameFromEventDetail(eventDetail: EventDetail): string{
+    return (eventDetail
+      && eventDetail.eventInfos[0]
+      && eventDetail.eventInfos[0].name ?
+      eventDetail.eventInfos[0].name : null);
+  }
+
+  static GetLongDescriptionFromEventDetail(eventDetail: EventDetail): string{
+    return (eventDetail
+      && eventDetail.eventInfos[0]
+      && eventDetail.eventInfos[0].longDescription ?
+      eventDetail.eventInfos[0].longDescription : null);
+  }
+
+  static GetLocationFromEventDetail(eventDetail: EventDetail): string{
+    return (eventDetail
+      && eventDetail.eventInfos[0]
+      && eventDetail.eventInfos[0].location ?
+      eventDetail.eventInfos[0].location : null);
+  }
+
+  static GetStartFromEventDetail(eventDetail: EventDetail): Date{
+    return (eventDetail
+      && eventDetail.start ?
+      eventDetail.start : null);
   }
 }
