@@ -1,6 +1,7 @@
 import { AfterViewInit, Component, Input, OnInit } from '@angular/core';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { EventDetail } from 'src/app/models/event.models';
+import { EventService } from 'src/app/services/event.service';
 import { InfoComponent } from '../../info/info.component';
 
 @Component({
@@ -13,6 +14,11 @@ export class UpdateSlideComponent implements AfterViewInit {
   get name() {
     return (this.eventDetail && this.eventDetail.eventInfos[0]) ? this.eventDetail.eventInfos[0].name: null;
   }
+
+  get imagePath(): string {
+    return EventService.GetPicBannerPathFromEventDetail(this.eventDetail);
+  }
+
 
   @Input() eventDetail: EventDetail;
   @Input() usage: string;

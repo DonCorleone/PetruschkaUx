@@ -12,11 +12,17 @@ const GET_EVENTDETAILS_BYTAG = gql`
       eventInfos{
         name
         bannerImagePath
+        flyerImagePath
       }
       notificationEmail
       facebookPixelId
       googleAnalyticsTracker
       start
+      ticketTypes{
+        ticketTypeInfos{
+          imageUrl
+        }
+      }
     }
   }
 `;
@@ -51,6 +57,9 @@ interface GetEventDetailPrototypes {
   providedIn: 'root'
 })
 export class EventService {
+
+  constructor(private apollo: Apollo) { }
+
   GetEventInfo(id: number) : QueryRef<GetEventInfoById, EmptyObject> {
     return this.apollo
     .watchQuery<GetEventInfoById>({
@@ -67,5 +76,17 @@ export class EventService {
       .valueChanges.pipe(map((result) => result.data.eventDetails.filter(filterPredicateIn)));
     }
 
-  constructor(private apollo: Apollo) { }
+  static GetPicSqrPathFromEventDetail(eventDetail: EventDetail): string{
+    return (eventDetail
+      && eventDetail.ticketTypes[0]
+      && eventDetail.ticketTypes[0].ticketTypeInfos[0] ?
+      eventDetail.ticketTypes[0].ticketTypeInfos[0].imageUrl : null);
+  }
+
+  static GetPicBannerPathFromEventDetail(eventDetail: EventDetail): string{
+    return (eventDetail
+      && eventDetail.eventInfos[0]
+      && eventDetail.eventInfos[0].flyerImagePath ?
+      eventDetail.eventInfos[0].flyerImagePath : null);
+  }
 }

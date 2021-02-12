@@ -1,5 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { EventDetail } from 'src/app/models/event.models';
+import { EventService } from 'src/app/services/event.service';
 
 @Component({
   selector: 'app-merch-item',
@@ -8,9 +9,14 @@ import { EventDetail } from 'src/app/models/event.models';
 })
 export class MerchItemComponent implements OnInit {
 
-  get name() {
+  get name(): string {
     return (this.eventDetail && this.eventDetail.eventInfos[0]) ? this.eventDetail.eventInfos[0].name: null;
   }
+
+  get imagePath(): string {
+    return EventService.GetPicSqrPathFromEventDetail(this.eventDetail);
+  }
+
 
   @Input() eventDetail: EventDetail;
   @Input() usage: string;
@@ -19,5 +25,4 @@ export class MerchItemComponent implements OnInit {
 
   ngOnInit(): void {
   }
-
 }

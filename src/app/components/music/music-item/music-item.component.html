@@ -7,13 +7,12 @@
     <a class="cover-figure" href="#">
       <div class="arrow-holder" *ngIf="comingSoon"></div>
       <div class="record-holder"><img class="img-fluid" src="assets/images/record.png" alt=""></div>
-      <img class="cover-image img-fluid" src="assets/images/albums/album-cover-1.jpg" alt="">
+      <img class="cover-image img-fluid" [src]="imagePath" alt="">
       <div class="cover-label" *ngIf="comingSoon" >Coming Soon</div>
-      <!--//cover-label-->
-    </a>
+      <!--//cover-label-->   </a>
     <!--//cover-figure-->
-
-    <a href="#" class="btn btn-sm btn-secondary">Buy</a>
+    <a href="#" class="btn btn-sm btn-ghost-secondary" *ngIf="comingSoon">Pre-Order Album</a>
+    <a href="#" class="btn btn-sm btn-secondary" *ngIf="!comingSoon">Buy Album</a>
 
   </div>
   <!--//cover-holder-->

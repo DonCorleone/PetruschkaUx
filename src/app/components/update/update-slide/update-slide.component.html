@@ -1,15 +1,24 @@
-
-  <h3 class="title">{{name}}</h3>
-  <div class="desc">
-    <div class="countdown">
-      <span id="countdown-box" class="countdown-box"></span>till release
+<div class="">
+  <div class="media-holder">
+    <div class="media-thumb">
+      <img [src]="imagePath" alt="">
     </div>
-    <!--//countdown-->
-    <p class="intro">
-      Our forthcoming EP is available for pre-order via <a href="#">pledgemusic.com</a> now
-    </p>
-    <!--//intro-->
   </div>
-  <!--//desc-->
-  <a href="#" class="more-link" (click)="open()">Find out more</a>
-
+  <!--//media-holder-->
+  <div class="carousel-content">
+    <h3 class="title">{{name}}</h3>
+    <div class="desc">
+      <div class="countdown">
+        <span id="countdown-box" class="countdown-box"></span>till release
+      </div>
+      <!--//countdown-->
+      <p class="intro">
+        Our forthcoming EP is available for pre-order via <a href="#">pledgemusic.com</a> now
+      </p>
+      <!--//intro-->
+    </div>
+    <!--//desc-->
+    <a href="#" class="more-link" (click)="open()">Find out more</a>
+  </div>
+  <!--//content-container-->
+</div>
