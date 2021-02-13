@@ -33,7 +33,6 @@
               "src/scss/theme-1.scss"
             ],
             "scripts": [
-              "node_modules/bootstrap.native/dist/bootstrap-native.min.js",
               "node_modules/@fortawesome/fontawesome-free/js/all.min.js"
             ]
           },

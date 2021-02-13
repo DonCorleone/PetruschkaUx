@@ -25,13 +25,11 @@
     "@apollo/client": "^3.3.8",
     "@ng-bootstrap/ng-bootstrap": "^9.0.2",
     "apollo-angular": "^2.2.0",
-    "bootstrap.native": "^3.0.14",
     "codelyzer": "^6.0.1",
     "graphql": "^15.5.0",
     "realm-web": "^1.2.0",
     "rxjs": "~6.6.3",
     "tslib": "^2.0.0",
-    "vegas": "^2.5.4",
     "zone.js": "~0.10.2"
   },
   "devDependencies": {
