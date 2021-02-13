@@ -1,6 +1,8 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { EventDetail } from 'src/app/models/event.models';
+import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
+import { EventDetail, EventDetailEventInfo } from 'src/app/models/event.models';
 import { EventService } from 'src/app/services/event.service';
+import { InfoComponent } from '../../info/info.component';
 
 @Component({
   selector: 'app-gigs-item',
@@ -10,26 +12,28 @@ import { EventService } from 'src/app/services/event.service';
 export class GigsItemComponent implements OnInit {
 
   public isCollapsed = true;
-  @Input() eventDetail: EventDetail;
+  @Input() start: Date;
+  @Input() eventInfoDe: EventDetailEventInfo;
 
-  get location():string {
-    return EventService.GetLocationFromEventDetail(this.eventDetail);
-  }
+  // get location():string {
+  //   return EventService.GetLocationFromEventDetail(this.eventDetail);
+  // }
 
-  get name():string {
-    return EventService.GetNameFromEventDetail(this.eventDetail);
-  }
+  // get name():string {
+  //   return EventService.GetNameFromEventDetail(this.eventDetail);
+  // }
 
-  get longDescription():string {
-    return EventService.GetLongDescriptionFromEventDetail(this.eventDetail);
-  }
+  // get longDescription():string {
+  //   return EventService.GetLongDescriptionFromEventDetail(this.eventDetail);
+  // }
 
-  get start():Date {
-    return EventService.GetStartFromEventDetail(this.eventDetail);
-  }
-
-  constructor() { }
+  constructor(private modalService: NgbModal) { }
 
   ngOnInit(): void {
+  }
+
+  open() {
+    const modalRef = this.modalService.open(InfoComponent);
+    modalRef.componentInstance.name = 'World';
   }
 }

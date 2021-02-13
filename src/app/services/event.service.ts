@@ -15,6 +15,7 @@ const GET_EVENTDETAILS_BYTAG = gql`
         bannerImagePath
         flyerImagePath
         shortDescription
+        languageId
       }
       notificationEmail
       facebookPixelId
@@ -60,6 +61,8 @@ const GET_UPCOMING_EVENTS = gql`
           name
           location
           longDescription
+          shortDescription
+          languageId
         }
         start
       }
@@ -120,9 +123,7 @@ export class EventService {
 
   static GetShortDescFromEventDetail(eventDetail: EventDetail): string{
     return (eventDetail
-      && eventDetail.eventInfos[0]
-      && eventDetail.eventInfos[0].shortDescription ?
-      eventDetail.eventInfos[0].shortDescription : null);
+      && eventDetail.eventInfos.find( p => p.languageId == 1)?.shortDescription);
   }
 
   static GetNameFromEventDetail(eventDetail: EventDetail): string{
@@ -134,9 +135,7 @@ export class EventService {
 
   static GetLongDescriptionFromEventDetail(eventDetail: EventDetail): string{
     return (eventDetail
-      && eventDetail.eventInfos[0]
-      && eventDetail.eventInfos[0].longDescription ?
-      eventDetail.eventInfos[0].longDescription : null);
+      && eventDetail.eventInfos.find( p => p.languageId == 1)?.longDescription);
   }
 
   static GetLocationFromEventDetail(eventDetail: EventDetail): string{

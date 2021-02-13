@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
 import { NgbCarouselConfig } from '@ng-bootstrap/ng-bootstrap';
-import { Apollo } from 'apollo-angular';
 import { EventDetail } from 'src/app/models/event.models';
 import { EventService } from 'src/app/services/event.service';
 
@@ -11,7 +10,7 @@ import { EventService } from 'src/app/services/event.service';
   styleUrls: ['./carousel-update.component.scss']
 })
 export class CarouselUpdateComponent  implements OnInit {
-  images = [700, 533, 807, 124].map((n) => `https://picsum.photos/id/${n}/900/500`);
+  images = [];
 
   eventDetails$: Observable<EventDetail[]>;
 

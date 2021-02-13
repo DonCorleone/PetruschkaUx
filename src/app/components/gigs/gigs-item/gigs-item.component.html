@@ -6,11 +6,11 @@
   <!--//date-label-->
   <div class="gig-info">
     <div class="info-content">
-      <h3 class="gig-title">{{ name }}</h3>
+      <h3 class="gig-title">{{ eventInfoDe.name }}</h3>
       <div class="meta">
         <ul class="meta-list list-inline">
           <li class="list-inline-item location">
-            <i class="fas fa-map-marker-alt"></i><a href="#">{{ location }}</a>
+            <i class="fas fa-map-marker-alt"></i><a href="#">{{ eventInfoDe.location }}</a>
           </li>
           <li class="list-inline-item time">
             <i class="far fa-clock"></i>{{ start | date:'EE' : '' :'de-CH'}} {{ start | date:'HH:mm' : '' :'de-CH' }}
@@ -22,12 +22,17 @@
     <!--//info-content-->
     <div class="gig-actions">
       <a class="btn btn-xs btn-ghost-secondary" (click)="collapse.toggle()" [attr.aria-expanded]="!isCollapsed"
-      aria-controls="collapseExample">More info</a>
-      <a class="btn btn-xs btn-secondary" href="#">Buy Tickets</a>
+      aria-controls="collapseExample">Info</a>
+      <a class="btn btn-xs btn-secondary" href="#">Tickets</a>
     </div>
     <!--//gig-actions-->
     <div #collapse="ngbCollapse" [(ngbCollapse)]="isCollapsed">
-      {{ longDescription }}
+      <div>
+        {{ eventInfoDe.shortDescription }}
+      </div>
+      <div>
+        <a class="more-link" (click)="open()">Mehr..</a>
+      </div>
     </div>
   </div>
   <!--//info-extra-->

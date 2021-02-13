@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
-import { EventDetail } from 'src/app/models/event.models';
+import { EventDetail, EventDetailEventInfo } from 'src/app/models/event.models';
 import { EventService } from 'src/app/services/event.service';
 
 @Component({
@@ -16,5 +16,9 @@ export class GigsComponent implements OnInit {
 
   ngOnInit() {
     this.eventDetailsUpcoming$ = this.eventService.GetUpcomingEventDetails(new Date());
+  }
+
+  GetEventInfoFromEventDetail(eventDetail: EventDetail): EventDetailEventInfo {
+    return eventDetail.eventInfos.find( p => p.languageId == 1);
   }
 }
