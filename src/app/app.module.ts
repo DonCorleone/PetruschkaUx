@@ -32,6 +32,7 @@ import { MerchComponent } from './components/merch/merch/merch.component';
 import { MusicItemComponent } from './components/music/music-item/music-item.component';
 import { MusicComponent } from './components/music/music/music.component';
 import { LayoutComponent } from './layout/layout.component';
+import { ScullyLibModule } from '@scullyio/ng-lib';
 
 const uri = realm.graphqlUrl;
 
@@ -73,7 +74,8 @@ export function createApollo(httpLink: HttpLink): ApolloClientOptions<any> {
     AppRoutingModule,
     HttpClientModule,
     NgbModule,
-    FlexLayoutModule
+    FlexLayoutModule,
+    ScullyLibModule
   ],
   entryComponents: [InfoComponent],
   providers: [
