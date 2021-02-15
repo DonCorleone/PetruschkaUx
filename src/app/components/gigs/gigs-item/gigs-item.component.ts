@@ -15,18 +15,6 @@ export class GigsItemComponent implements OnInit {
   @Input() start: Date;
   @Input() eventInfoDe: EventDetailEventInfo;
 
-  // get location():string {
-  //   return EventService.GetLocationFromEventDetail(this.eventDetail);
-  // }
-
-  // get name():string {
-  //   return EventService.GetNameFromEventDetail(this.eventDetail);
-  // }
-
-  // get longDescription():string {
-  //   return EventService.GetLongDescriptionFromEventDetail(this.eventDetail);
-  // }
-
   constructor(private modalService: NgbModal) { }
 
   ngOnInit(): void {
