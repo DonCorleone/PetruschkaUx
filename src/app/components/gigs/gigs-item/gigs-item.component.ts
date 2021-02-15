@@ -17,6 +17,7 @@ export class GigsItemComponent implements OnInit {
 
   public isCollapsed = true;
   @Input() start: Date;
+  @Input() eventId: number;
   @Input() eventInfoDe: EventDetailEventInfo;
 
   constructor(private modalService: NgbModal) { }
@@ -32,5 +33,13 @@ export class GigsItemComponent implements OnInit {
   openLocation(locationName:string) {
     const modalRef = this.modalService.open(LocationModalComponent);
     modalRef.componentInstance.eventLocationName = locationName;
+  }
+
+  get eventLink(){
+    return this.eventInfoDe ? "https://www.ticketino.com/de/Event/" + this.eventInfoDe.name + "/" + this.eventId: "";
+  }
+
+  get showBuyButton(): boolean{
+    return (new Date(this.start) > new Date());
   }
 }
