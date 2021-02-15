@@ -18,7 +18,7 @@ export class LocationComponent implements OnInit {
   @Input() eventLocationName:string;
 
   GetImageUrl(name: string): string{
-    return '../assets/images/' + encodeURIComponent(name) + '.jpg'
+    return '../assets/images/members/' + encodeURIComponent(name) + '.jpg'
   }
   ngOnInit(): void {
 

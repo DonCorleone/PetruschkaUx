@@ -38,6 +38,7 @@ export class HeaderComponent implements AfterViewInit {
   scrollTo(section) {
     document.querySelector('#' + section)
     .scrollIntoView({behavior: 'smooth'});
+    this.onSectionChange(section);
     this.isMenuCollapsed = true;
   }
 

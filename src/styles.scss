@@ -3,3 +3,36 @@
 
 /* Importing Bootstrap SCSS file. */
 @import 'scss/bootstrap/bootstrap';
+@import '/src/scss/theme-1.scss';
+
+/* ======= Modals ======= */
+.modal-body {
+
+  .modal-item {
+      position: relative;
+      padding-left: 30px;
+      padding-top: 15px;
+      padding-bottom: 15px;
+      border-bottom: 1px solid $divider;
+  }
+
+  .modal-item-title {
+      font-size: 16px;
+      margin-top: 0;
+      margin-bottom: 10px;
+      font-weight: 700;
+  }
+
+  img {
+    padding-top: 30px;
+    margin: -30px -30px -30px;
+    width: 100%;
+    width: -moz-available;          /* WebKit-based browsers will ignore this. */
+    width: -webkit-fill-available;  /* Mozilla-based browsers will ignore this. */
+    width: fill-available;
+  }
+}
+
+.location-link, .nav-link {
+  cursor: pointer;
+}

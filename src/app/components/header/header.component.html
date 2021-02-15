@@ -6,13 +6,13 @@
             <span class="navbar-toggler-icon"></span>
           </button>
           <div id="navbar-collapse" [ngbCollapse]="isMenuCollapsed" class="navbar-collapse collapse text-center justify-content-center">
-            <ul class="navbar-nav">
-              <li class="nav-item"><div class="active nav-link scrollto" (click)="scrollTo('promo')" [ngClass]="{ 'current-section': currentSection === 'promo' }" >Home</div></li>
-              <li class="nav-item"><div class="nav-link scrollto" (click)="scrollTo('gigs')" [ngClass]="{ 'current-section': currentSection === 'gigs' }">Aufführungen</div></li>
-              <li class="nav-item"><div class="nav-link scrollto" (click)="scrollTo('merch')" [ngClass]="{ 'current-section': currentSection === 'merch' }">Torneestücke</div></li>
-              <li class="nav-item"><div class="nav-link scrollto" (click)="scrollTo('music')" [ngClass]="{ 'current-section': currentSection === 'music' }">Hörspiele</div></li>
-              <li class="nav-item"><div class="nav-link scrollto" (click)="scrollTo('about')" [ngClass]="{ 'current-section': currentSection === 'about' }">Team</div></li>
-              <li class="nav-item"><div class="nav-link scrollto" (click)="scrollTo('contact')" [ngClass]="{ 'current-section': currentSection === 'contact' }">Kontakt</div></li>
+            <ul class="nav navbar-nav">
+              <li class="nav-item"><a class="nav-link" [ngClass]="{ 'active': currentSection === 'promo' }" (click)="scrollTo('promo')">Home</a></li>
+              <li class="nav-item"><a class="nav-link" [ngClass]="{ 'active': currentSection === 'gigs' }" (click)="scrollTo('gigs')">Aufführungen</a></li>
+              <li class="nav-item"><a class="nav-link" [ngClass]="{ 'active': currentSection === 'merch' }" (click)="scrollTo('merch')">Tourneestücke</a></li>
+              <li class="nav-item"><a class="nav-link" [ngClass]="{ 'active': currentSection === 'music' }" (click)="scrollTo('music')">Hörspiele</a></li>
+              <li class="nav-item"><a class="nav-link" [ngClass]="{ 'active': currentSection === 'about' }" (click)="scrollTo('about')">Team</a></li>
+              <li class="nav-item"><a class="nav-link" [ngClass]="{ 'active': currentSection === 'contact' }" (click)="scrollTo('contact')">Kontakt</a></li>
             </ul>
             <!--//nav-->
           </div>

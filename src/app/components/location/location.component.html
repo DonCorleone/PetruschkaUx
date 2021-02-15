@@ -1,10 +1,10 @@
 <div *ngIf="( eventLocation$ | async ) as eventLocation">
-  <div class="card">
-    <div class="card-title">
+  <div class="modal-item">
+    <h5 class="modal-item-title">
       Address
-    </div>
+    </h5>
     <div>
-      <div class="card-content">
+      <div class="modal-item-content">
         <address>
           {{ eventLocation.name }} <br>
           {{ eventLocation.street }} <br>
@@ -14,27 +14,27 @@
     </div>
   </div>
 
-  <img class="responsive-img" [src]="GetImageUrl(eventLocation.name)">
-
-  <div class="card">
-    <div class="card-title">
+  <div class="modal-item">
+    <h5 class="modal-item-title">
       Directions
-    </div>
+    </h5>
     <div>
-      <div class="card-content">
+      <div class="modal-item-content">
         <div [innerHTML]="eventLocation.directions"></div>
       </div>
     </div>
   </div>
 
-  <div class="card">
-    <div class="card-title">
+  <div class="modal-item">
+    <h5 class="modal-item-title">
       Info
-    </div>
+    </h5>
     <div>
-      <div class="card-content">
+      <div class="modal-item-content">
         <div [innerHTML]="eventLocation.info"></div>
       </div>
     </div>
   </div>
+
+  <img class="responsive-img" [src]="GetImageUrl(eventLocation.name)">
 </div>
