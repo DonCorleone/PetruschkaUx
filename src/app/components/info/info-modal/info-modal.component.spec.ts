@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { GigsItemComponent } from './gigs-item.component';
+import { InfoModalComponent } from './info-modal.component';
 
-describe('GigsItemComponent', () => {
-  let component: GigsItemComponent;
-  let fixture: ComponentFixture<GigsItemComponent>;
+describe('InfoModalComponent', () => {
+  let component: InfoModalComponent;
+  let fixture: ComponentFixture<InfoModalComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ GigsItemComponent ]
+      declarations: [ InfoModalComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(GigsItemComponent);
+    fixture = TestBed.createComponent(InfoModalComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

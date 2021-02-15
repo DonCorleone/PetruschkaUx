@@ -1,0 +1,40 @@
+<div *ngIf="( eventLocation$ | async ) as eventLocation">
+  <div class="card">
+    <div class="card-title">
+      Address
+    </div>
+    <div>
+      <div class="card-content">
+        <address>
+          {{ eventLocation.name }} <br>
+          {{ eventLocation.street }} <br>
+          {{ eventLocation.postalCode }} {{ eventLocation.city }}
+        </address>
+      </div>
+    </div>
+  </div>
+
+  <img class="responsive-img" [src]="GetImageUrl(eventLocation.name)">
+
+  <div class="card">
+    <div class="card-title">
+      Directions
+    </div>
+    <div>
+      <div class="card-content">
+        <div [innerHTML]="eventLocation.directions"></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-title">
+      Info
+    </div>
+    <div>
+      <div class="card-content">
+        <div [innerHTML]="eventLocation.info"></div>
+      </div>
+    </div>
+  </div>
+</div>

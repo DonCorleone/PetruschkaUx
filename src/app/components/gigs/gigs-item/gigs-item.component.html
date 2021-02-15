@@ -10,7 +10,7 @@
       <div class="meta">
         <ul class="meta-list list-inline">
           <li class="list-inline-item location">
-            <i class="fas fa-map-marker-alt"></i><a href="#">{{ eventInfoDe.location }}</a>
+            <i class="fas fa-map-marker-alt"></i><a (click)="openLocation(eventInfoDe.location)">{{ eventInfoDe.location }}</a>
           </li>
           <li class="list-inline-item time">
             <i class="far fa-clock"></i>{{ start | date:'EE' : '' :'de-CH'}} {{ start | date:'HH:mm' : '' :'de-CH' }}
@@ -27,7 +27,7 @@
     </div>
     <!--//gig-actions-->
     <div #collapse="ngbCollapse" [(ngbCollapse)]="isCollapsed">
-      <div>
+      <div class="shortDesc">
         {{ eventInfoDe.shortDescription }}
       </div>
       <div>

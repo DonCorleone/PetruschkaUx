@@ -32,6 +32,10 @@ import { MusicItemComponent } from './components/music/music-item/music-item.com
 import { MusicComponent } from './components/music/music/music.component';
 import { LayoutComponent } from './layout/layout.component';
 import { ScullyLibModule } from '@scullyio/ng-lib';
+import { LocationComponent } from './components/location/location.component';
+import { ModalComponent } from './components/modal/modal.component';
+import { InfoModalComponent } from './components/info/info-modal/info-modal.component';
+import { LocationModalComponent } from './components/location/location-modal/location-modal.component';
 
 const uri = realm.graphqlUrl;
 
@@ -66,7 +70,11 @@ export function createApollo(httpLink: HttpLink): ApolloClientOptions<any> {
     AboutItemComponent,
     MerchItemComponent,
     MusicItemComponent,
-    LayoutComponent
+    LayoutComponent,
+    LocationComponent,
+    ModalComponent,
+    InfoModalComponent,
+    LocationModalComponent
   ],
   imports: [
     BrowserModule,

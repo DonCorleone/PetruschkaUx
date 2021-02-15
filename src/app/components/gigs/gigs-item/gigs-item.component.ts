@@ -2,7 +2,11 @@ import { Component, Input, OnInit } from '@angular/core';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { EventDetail, EventDetailEventInfo } from 'src/app/models/event.models';
 import { EventService } from 'src/app/services/event.service';
+import { InfoModalComponent } from '../../info/info-modal/info-modal.component';
 import { InfoComponent } from '../../info/info.component';
+import { LocationModalComponent } from '../../location/location-modal/location-modal.component';
+import { LocationComponent } from '../../location/location.component';
+import { ModalComponent } from '../../modal/modal.component';
 
 @Component({
   selector: 'app-gigs-item',
@@ -21,7 +25,12 @@ export class GigsItemComponent implements OnInit {
   }
 
   open() {
-    const modalRef = this.modalService.open(InfoComponent);
-    modalRef.componentInstance.name = 'World';
+    const modalRef = this.modalService.open(InfoModalComponent);
+    modalRef.componentInstance.innerHtml = document.getElementsByClassName("shortDescription").item[0];
+  }
+
+  openLocation(locationName:string) {
+    const modalRef = this.modalService.open(LocationModalComponent);
+    modalRef.componentInstance.eventLocationName = locationName;
   }
 }
