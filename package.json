@@ -18,7 +18,6 @@
     "@angular/common": "~11.1.2",
     "@angular/compiler": "~11.1.2",
     "@angular/core": "~11.1.2",
-    "@angular/flex-layout": "^11.0.0-beta.33",
     "@angular/forms": "~11.1.2",
     "@angular/localize": "~11.1.2",
     "@angular/platform-browser": "~11.1.2",

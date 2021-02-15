@@ -4,8 +4,8 @@ import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ScrollSpyDirective } from '../directives/scroll-spy.directive';
-import { HeaderComponent } from './header/header.component';
-import { FooterComponent } from './footer/footer.component';
+import { HeaderComponent } from './components/header/header.component';
+import { FooterComponent } from './components/footer/footer.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 import { ApolloClientOptions, InMemoryCache } from '@apollo/client/core';
@@ -15,7 +15,6 @@ import { HttpLink } from 'apollo-angular/http';
 import * as realm from './realm';
 import { HttpClientModule, HttpHeaders } from '@angular/common/http';
 import { APOLLO_OPTIONS } from 'apollo-angular';
-import { FlexLayoutModule } from '@angular/flex-layout';
 import { GigsComponent } from './components/gigs/gigs/gigs.component';
 import { AboutComponent } from './components/about/about/about.component';
 import { GigsItemComponent } from './components/gigs/gigs-item/gigs-item.component';
@@ -74,7 +73,6 @@ export function createApollo(httpLink: HttpLink): ApolloClientOptions<any> {
     AppRoutingModule,
     HttpClientModule,
     NgbModule,
-    FlexLayoutModule,
     ScullyLibModule
   ],
   entryComponents: [InfoComponent],
