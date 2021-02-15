@@ -31,6 +31,7 @@ import { MerchItemComponent } from './components/merch/merch-item/merch-item.com
 import { MerchComponent } from './components/merch/merch/merch.component';
 import { MusicItemComponent } from './components/music/music-item/music-item.component';
 import { MusicComponent } from './components/music/music/music.component';
+import { LayoutComponent } from './layout/layout.component';
 
 const uri = realm.graphqlUrl;
 
@@ -64,7 +65,8 @@ export function createApollo(httpLink: HttpLink): ApolloClientOptions<any> {
     UpdateSlideComponent,
     AboutItemComponent,
     MerchItemComponent,
-    MusicItemComponent
+    MusicItemComponent,
+    LayoutComponent
   ],
   imports: [
     BrowserModule,

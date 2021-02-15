@@ -2,11 +2,12 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { AppComponent } from './app.component';
 import { RealmAuthGuardGuard } from './guards/realm-auth-guard.guard';
+import { LayoutComponent } from './layout/layout.component';
 
 
 const routes: Routes = [  {
   path: '',
-  component: AppComponent,
+  component: LayoutComponent,
   canActivate: [ RealmAuthGuardGuard ]
 }];
 
