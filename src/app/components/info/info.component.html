@@ -1,12 +1,85 @@
-<div>
-  <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum
-    sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies
-    nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel,
-    aliquet nec, vulputate eget, arcu. In enim <a href="#">mollis pretium</a> justo, rhoncus ut, imperdiet a,
-    venenatis vitae, justo. Nullam dictum felis eu pede.</p>
-  <div class="center-block text-center">
-    <iframe
-      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2486.319931873737!2d-2.59156458423205!3d51.45228217962615!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x48718e7bd5fd30fd%3A0x9acbbf4d84e5ca8c!2sThe+Fleece!5e0!3m2!1sen!2sus!4v1454805283508"
-      width="640" height="360" frameborder="0" style="border:0" allowfullscreen></iframe>
+<div class="modal-item">
+  <div>
+      <div class="modal-item-content">
+        <div class="shortDesc">{{ shortDesc }}</div>
+      </div>
+  </div>
+</div>
+
+<img [src]="flyerImagePath" class="bannerImage" />
+
+<div class="modal-item">
+  <div class="modal-item-title">
+     Plot
+  </div>
+  <div>
+      <div class="modal-item-content">
+        <div [innerHTML]="plot"></div>
+      </div>
+  </div>
+</div>
+
+<div class="modal-item">
+  <div class="modal-item-title">
+      {{ locationLabel }}
+  </div>
+  <div>
+      <div class="modal-item-content">
+        {{ locationName }}
+        <!-- <a [routerLink]="['/locations', locationName]">{{ locationName }}</a> -->
+      </div>
+  </div>
+</div>
+
+<div class="modal-item">
+  <div class="modal-item-title">
+    Mitwirkende
+  </div>
+  <div>
+      <div class="modal-item-content">
+        <div *ngFor="let job of artistsArray">
+          <div>
+            {{ job.name }} {{ job.name !== '' ? ' : ' : '' }}
+            <span *ngFor="let jobsharer of job.jobsharers; let isLast=last">
+              {{ jobsharer }}
+              <!-- <a [routerLink]="['/staff', jobsharer]">{{ jobsharer }}</a> {{isLast ? '' : ' & '}} -->
+            </span>
+          </div>
+        </div>
+      </div>
+  </div>
+</div>
+<!-- <div class="modal-item" *ngIf="usage=='Premiere'">
+  <div class="modal-item-title">
+    Aufführungen
+  </div>
+  <div class="modal-item-content">
+    <div class="event-list">
+      <ul *ngFor="let eventInfo of eventInfos$ | async" class="collection">
+        <app-event-modal-item  [eventInfo]="eventInfo">
+        </app-event-modal-item>
+      </ul>
+    </div>
+  </div>
+</div> -->
+<div class="modal-item" *ngIf="usage=='CD'">
+  <div class="modal-item-title">
+    Bestellung CD - Preis: CHF 22.00 (inkl. Porto)
+  </div>
+  <div class="modal-item-content">
+    <!--<a href="mailto:nathaliehildebrand@kinderkultur.ch?subject=Bestellung_CD_Das_Drachenei"></a> -->
+    <p>Per E-Mail an <a target="_blank" [href]="'mailto:nathaliehildebrand?subject=Bestellung CD ' + eventInfo.name">nathaliehildebrand@kinderkultur.ch</a></p>
+    <p>Betreff: Bestellung CD '{{ eventInfo.name }}'</p>
+    <p>Zusätzliche Angaben in der Mail: Anzahl CDs, Name und Adresse</p>
+  </div>
+</div>
+<div class="modal-item" *ngIf="usage=='Tournee'">
+  <div class="modal-item-title">
+    Buchungsanfrage
+  </div>
+  <div class="modal-item-content">
+    <!-- <a href="mailto:regulaaufdermaur@kinderkultur.ch?subject=Buchungsanfrage_Drachenei">regulaaufdermaur@kinderkultur.ch</a> -->
+    <p>Per E-Mail an <a target="_blank" [href]="'mailto:' + reservationMail + '?subject=Buchungsanfrage ' + eventInfo.name">{{ reservationMail }}</a></p>
+    <p>Betreff: Buchungsanfrage '{{ eventInfo.name }}'</p>
   </div>
 </div>

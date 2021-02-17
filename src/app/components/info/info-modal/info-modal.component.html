@@ -2,10 +2,10 @@
   <button type="button" class="close" aria-label="Close button" aria-describedby="modal-title" (click)="activeModal.dismiss('Cross click')">
     <span aria-hidden="true">&times;</span>
   </button>
-  <h4 class="modal-title text-center" id="infoModalLabel">We are performing at The Fleece, Bristol</h4>
+  <h4 class="modal-title text-center" id="infoModalLabel" *ngIf="eventInfo">{{ eventInfo.name }}</h4>
 </div>
 <!--//modal-header-->
 <div class="modal-body" ngbAutoFocus>
-  <app-info></app-info>
+  <app-info [eventInfo] = "eventInfo"></app-info>
 </div>
 <!--//modal-body-->

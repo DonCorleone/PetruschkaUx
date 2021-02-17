@@ -25,9 +25,9 @@ export class GigsItemComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  open() {
+  openInfo() {
     const modalRef = this.modalService.open(InfoModalComponent);
-    modalRef.componentInstance.innerHtml = document.getElementsByClassName("shortDescription").item[0];
+    modalRef.componentInstance.eventDetailId = this.eventId;
   }
 
   openLocation(locationName:string) {

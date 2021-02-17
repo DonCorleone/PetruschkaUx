@@ -32,8 +32,9 @@ const GET_EVENTDETAILS_BYTAG = gql`
 
 const GET_EVENTINFO_BYEVENTID = gql`
   query GetEventByGroupId($eventId: Int!){
-    eventDetails(query:{_id:$eventId}){
+    eventDetail(query:{_id:$eventId}){
       eventInfos{
+        name
         languageId
         shortDescription
         longDescription
@@ -70,7 +71,7 @@ const GET_UPCOMING_EVENTS = gql`
 `;
 
 interface GetEventInfoById {
-  eventDetails: EventDetail[];
+  eventDetail: EventDetail;
   notificationEmail: String;
 }
 
@@ -85,14 +86,15 @@ export class EventService {
 
   constructor(private apollo: Apollo) { }
 
-  GetEventInfo(id: number) : QueryRef<GetEventInfoById, EmptyObject> {
+  GetEventInfo(id: number) : Observable<EventDetail> {
     return this.apollo
     .watchQuery<GetEventInfoById>({
       query: GET_EVENTINFO_BYEVENTID,
       variables: {
         eventId: id,
       },
-    });
+    })
+    .valueChanges.pipe(map((result) => result.data.eventDetail));
   }
 
   GetUpcomingEventDetails(startDate: Date): Observable<EventDetail[]>{
