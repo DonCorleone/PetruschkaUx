@@ -1,6 +1,8 @@
 import { Component, Input, OnChanges, OnInit } from '@angular/core';
 import { DomSanitizer } from '@angular/platform-browser';
+import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { EventDetail, EventDetailEventInfo } from 'src/app/models/event.models';
+import { LocationModalComponent } from '../location/location-modal/location-modal.component';
 
 interface job {
   name: string,
@@ -21,7 +23,7 @@ export class InfoComponent implements OnChanges{
   private usageProp:string;
 
   constructor(
-    private sanitizer: DomSanitizer ) { }
+    private sanitizer: DomSanitizer, private modalService: NgbModal ) { }
 
   ngOnChanges(): void {
     if (this.eventInfo && this.eventInfo.artists){
@@ -59,6 +61,11 @@ export class InfoComponent implements OnChanges{
     } else {
       return "Das Stück wurde aufgeführt im";
     }
+  }
+
+  openLocation(locationName:string) {
+    const modalRef = this.modalService.open(LocationModalComponent);
+    modalRef.componentInstance.eventLocationName = locationName;
   }
 
   transformHtml(htmlTextWithStyle) {

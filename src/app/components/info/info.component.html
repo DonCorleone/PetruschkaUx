@@ -25,8 +25,7 @@
   </div>
   <div>
       <div class="modal-item-content">
-        {{ locationName }}
-        <!-- <a [routerLink]="['/locations', locationName]">{{ locationName }}</a> -->
+        <a class="location-link" (click)="openLocation(locationName)">{{ locationName }}</a>
       </div>
   </div>
 </div>
