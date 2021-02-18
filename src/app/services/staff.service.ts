@@ -6,7 +6,7 @@ import { Staff } from '../models/staff.models';
 
 const GET_STAFFS = gql`
   query GetStaffByName {
-    staffs (sortBy: SORTORDER_DESC){
+    staffs (sortBy: SORTORDER_ASC){
       name
       bio
       topic

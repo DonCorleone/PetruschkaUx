@@ -1,24 +1,14 @@
 <section id="about" class="about-section section text-center">
   <div class="container">
     <h2 class="section-title">Team</h2>
-    <div class="section-intro ml-auto mr-auto">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo
-      ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus
-      mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim.</div>
+    <div class="section-intro ml-auto mr-auto">
+      <p>Der Name Petruschka kommt von der Hauptfigur des traditionellen, russischen Jahrmarkttheaters. Eigentlich aber haben wir nur eines mit dieser Art Theater gemeinsam: Die spontane, zum Teil improvisierte Art des Spiels und den Einbezug der Zuschauer.</p>
+      <p>Wenn wir aber mit unseren Figuren, der Bühne und allem Drum und Dran unterwegs in eine Schule oder ein Kleintheater sind, dann kommt schon so etwas wie Jahrmarkts-Theaterstimmung bei uns auf.</p>
+      <p>Figuren, Bühne, Lieder, Musik- und Lichtgestaltung entstehen in einem langen Prozess und basieren auf fundierten Recherchen. Die Kinder nehmen an einem lebendigen, spannenden und informativen Theater teil und werden aktiv ins Geschehen miteinbezogen.</p>
+      </div>
     <div class="members-block">
       <div class="row">
-        <div class="col" *ngFor="let staff of staffMain$ | async; index as i;">
-            <app-about-item [staff]="staff" class="flex">
-            </app-about-item>
-        </div>
-      </div>
-      <div class="row">
-        <div class="col" *ngFor="let staff of staffSecond$ | async; index as i;">
-          <app-about-item [staff]="staff" class="flex">
-          </app-about-item>
-        </div>
-      </div>
-        <div class="row">
-          <div class="col" *ngFor="let staff of staffThird$ | async; index as i;">
+        <div class="col" *ngFor="let staff of staffs$ | async; index as i;">
             <app-about-item [staff]="staff" class="flex">
             </app-about-item>
         </div>

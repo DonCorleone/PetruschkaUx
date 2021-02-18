@@ -1,6 +1,10 @@
 <section id="merch" class="merch-section section text-center">
   <div class="container">
     <h2 class="section-title">Tournee-Stücke</h2>
+    <div class="merch-contact text-center">
+      <h4 class="title">Tourneestück buchen?</h4>
+      <p class="intro center-block"><strong>Erfordernisse Saal: </strong>Platz für Bühne (Verdunkelung sehr wichtig) | Bestuhlung, ev. Teppiche für Bodensitzplätze für Kinder | Stromanschluss für mindestens 4000 Watt | Bühnen-, Licht- und Tontechnik werden mitgebracht</p>
+    </div><!--//merch-->
     <div class="row">
       <div class="item col-12 col-md-6" *ngFor="let eventDetail of eventDetailsTournee$ | async">
         <app-merch-item [eventDetail]="eventDetail" usage="Tournee"></app-merch-item>

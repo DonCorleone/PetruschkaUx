@@ -32,14 +32,14 @@
             color: rgba(256, 256, 256, 0.8);
         }
     }
-    
+
     .gig-title {
         font-size: 16px;
         margin-top: 0;
         margin-bottom: 10px;
         font-weight: 700;
     }
-    
+
     .meta-list {
         color: $text-color-grey;
         a {
@@ -51,7 +51,7 @@
             font-size: 16px;
         }
     }
-    
+
     .gig-actions {
         position: absolute;
         right: 0;
@@ -66,22 +66,5 @@
     .info-extra {
         color: $text-color-secondary;
         font-size: 16px;
-    }
-    
-    .gigs-contact {
-        margin-top: 60px;
-        .title {
-            font-size: 18px;
-            margin-top: 0;
-            margin-bottom: 15px;
-        }
-        .intro {
-            font-size: 16px;
-            color: $text-color-secondary;
-            max-width: 800px;
-        }
-        .btn {
-            margin-top: 15px;
-        }
     }
 }

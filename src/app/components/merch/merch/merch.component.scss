@@ -1,0 +1,20 @@
+@import '/src/scss/theme-1.scss';
+
+.merch-section {
+  .merch-contact {
+    margin-top: 60px;
+    .title {
+      font-size: 18px;
+      margin-top: 0;
+      margin-bottom: 15px;
+    }
+    .intro {
+      font-size: 16px;
+      color: $text-color-secondary;
+      max-width: 800px;
+    }
+    .btn {
+      margin-top: 15px;
+    }
+  }
+}
