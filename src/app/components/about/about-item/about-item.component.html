@@ -1,14 +1,16 @@
-<div class="card item">
-  <div class="item-inner" *ngIf="staff">
-    <div class="member-profile">
-      <img class="img-fluid" [src]="GetImageUrl(staff.name)" alt="">
+<div class="about-detail text-center">
+  <div class="card item">
+    <div class="item-inner" *ngIf="staff">
+      <div class="member-profile">
+        <img class="img-fluid" [src]="GetImageUrl(staff.name)" alt="">
+      </div>
+      <!--//member-profile-->
+      <div class="member-label">{{staff.topic}}</div>
+      <h3 class="member-name">
+        {{staff.name}}
+      </h3>
+      <div class="member-desc" [innerHTML]="staff.bio"></div>
     </div>
-    <!--//member-profile-->
-    <div class="member-label">{{staff.topic}}</div>
-    <h3 class="member-name">
-      {{staff.name}}
-    </h3>
-    <div class="member-desc" [innerHTML]="staff.bio"></div>
+    <!--//item-inner-->
   </div>
-  <!--//item-inner-->
 </div>

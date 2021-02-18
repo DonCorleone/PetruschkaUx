@@ -14,6 +14,10 @@
       padding-top: 15px;
       padding-bottom: 15px;
       border-bottom: 1px solid $divider;
+
+      &.last {
+        border-bottom: none;
+      }
   }
 
   .modal-item-title {
@@ -30,6 +34,6 @@
   }
 }
 
-.location-link, .nav-link, .staff-link {
+.location-link, .nav-link, .staff-link, .info-link {
   cursor: pointer;
 }
