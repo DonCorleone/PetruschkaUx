@@ -16,8 +16,24 @@ const GET_STAFFS = gql`
   }
 `;
 
+const GET_STAFFBYNAME = gql`
+  query GetStaffByName($name: String!) {
+    staff (query:{name:$name}){
+      name
+      bio
+      topic
+      sortOrder
+      active
+    }
+  }
+`;
+
 interface GetStaffs{
   staffs: Staff[];
+};
+
+interface GetStaff {
+  staff: Staff;
 };
 
 @Injectable({
@@ -37,6 +53,17 @@ export class StaffService {
           },})
         .valueChanges.pipe(map((result) => result.data.staffs.filter(
           nameIn? p => p.name == nameIn : o => o.name != "").filter(p => p.active === true).sort(p => p.sortOrder)));
+  }
+
+  public GetStaff(nameIn: string): Observable<Staff>  {
+
+    return this.apollo
+        .watchQuery<GetStaff>({
+          query: GET_STAFFBYNAME,
+          variables: {
+            name: nameIn
+          },})
+        .valueChanges.pipe(map((result) => result.data.staff));
   }
 }
 

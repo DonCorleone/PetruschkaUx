@@ -40,7 +40,7 @@
           <div>
             {{ job.name }} {{ job.name !== '' ? ' : ' : '' }}
             <span *ngFor="let jobsharer of job.jobsharers; let isLast=last">
-              {{ jobsharer }}
+              <a class="staff-link" (click)="openStaff(jobsharer)">{{ jobsharer }}</a> {{isLast ? '' : ' & '}}
               <!-- <a [routerLink]="['/staff', jobsharer]">{{ jobsharer }}</a> {{isLast ? '' : ' & '}} -->
             </span>
           </div>

@@ -2,6 +2,7 @@ import { Component, Input, OnChanges, OnInit } from '@angular/core';
 import { DomSanitizer } from '@angular/platform-browser';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { EventDetail, EventDetailEventInfo } from 'src/app/models/event.models';
+import { AboutModalComponent } from '../about/about-modal/about-modal.component';
 import { LocationModalComponent } from '../location/location-modal/location-modal.component';
 
 interface job {
@@ -61,6 +62,11 @@ export class InfoComponent implements OnChanges{
     } else {
       return "Das Stück wurde aufgeführt im";
     }
+  }
+
+  openStaff(staffName:string) {
+    const modalRef = this.modalService.open(AboutModalComponent);
+    modalRef.componentInstance.staffName = staffName;
   }
 
   openLocation(locationName:string) {

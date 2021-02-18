@@ -1,5 +1,5 @@
 <div class="card item">
-  <div class="item-inner">
+  <div class="item-inner" *ngIf="staff">
     <div class="member-profile">
       <img class="img-fluid" [src]="GetImageUrl(staff.name)" alt="">
     </div>

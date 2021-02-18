@@ -36,6 +36,7 @@ import { LocationComponent } from './components/location/location.component';
 import { ModalComponent } from './components/modal/modal.component';
 import { InfoModalComponent } from './components/info/info-modal/info-modal.component';
 import { LocationModalComponent } from './components/location/location-modal/location-modal.component';
+import { AboutModalComponent } from './components/about/about-modal/about-modal.component';
 
 const uri = realm.graphqlUrl;
 
@@ -74,7 +75,8 @@ export function createApollo(httpLink: HttpLink): ApolloClientOptions<any> {
     LocationComponent,
     ModalComponent,
     InfoModalComponent,
-    LocationModalComponent
+    LocationModalComponent,
+    AboutModalComponent
   ],
   imports: [
     BrowserModule,
