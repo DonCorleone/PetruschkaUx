@@ -21,12 +21,13 @@ export class GigsItemComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  openInfo() {
+  openInfo():void {
     const modalRef = this.modalService.open(InfoModalComponent);
     modalRef.componentInstance.eventDetailId = this.eventId;
+    modalRef.componentInstance.usage = ""; // else case
   }
 
-  openLocation(locationName:string) {
+  openLocation(locationName:string):void {
     const modalRef = this.modalService.open(LocationModalComponent);
     modalRef.componentInstance.eventLocationName = locationName;
   }

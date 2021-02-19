@@ -30,6 +30,17 @@
   </div>
 </div>
 
+<div class="modal-item">
+  <div class="modal-item-title">
+      {{ playDateLabel }}
+  </div>
+  <div>
+      <div class="modal-item-content">
+        {{ this.playDate | date:'fullDate' : '' :'de-CH'}}
+      </div>
+  </div>
+</div>
+
 <div class="modal-item last">
   <div class="modal-item-title">
     Mitwirkende
@@ -67,8 +78,8 @@
   </div>
   <div class="modal-item-content">
     <!--<a href="mailto:nathaliehildebrand@kinderkultur.ch?subject=Bestellung_CD_Das_Drachenei"></a> -->
-    <p>Per E-Mail an <a target="_blank" [href]="'mailto:nathaliehildebrand?subject=Bestellung CD ' + eventInfo.name">nathaliehildebrand@kinderkultur.ch</a></p>
-    <p>Betreff: Bestellung CD '{{ eventInfo.name }}'</p>
+    <p>Per E-Mail an <a target="_blank" [href]="'mailto:nathaliehildebrand?subject=Bestellung CD ' + name">nathaliehildebrand@kinderkultur.ch</a></p>
+    <p>Betreff: Bestellung CD '{{ name }}'</p>
     <p>Zusätzliche Angaben in der Mail: Anzahl CDs, Name und Adresse</p>
   </div>
 </div>
@@ -78,7 +89,7 @@
   </div>
   <div class="modal-item-content">
     <!-- <a href="mailto:regulaaufdermaur@kinderkultur.ch?subject=Buchungsanfrage_Drachenei">regulaaufdermaur@kinderkultur.ch</a> -->
-    <p>Per E-Mail an <a target="_blank" [href]="'mailto:' + reservationMail + '?subject=Buchungsanfrage ' + eventInfo.name">{{ reservationMail }}</a></p>
-    <p>Betreff: Buchungsanfrage '{{ eventInfo.name }}'</p>
+    <p>Per E-Mail an <a target="_blank" [href]="'mailto:' + reservationMail + '?subject=Buchungsanfrage ' + name">{{ reservationMail }}</a></p>
+    <p>Betreff: Buchungsanfrage '{{ name }}'</p>
   </div>
 </div>

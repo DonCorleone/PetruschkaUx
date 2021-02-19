@@ -1,0 +1,12 @@
+<div>
+  <h3>{{ eventName }}</h3>
+  <img class="img-fluid" [src]="imagePath" alt="">
+  <div class="card-content">
+  <br/>
+    <!-- <a href="mailto:regulaaufdermaur@kinderkultur.ch?subject=Buchungsanfrage_Drachenei">regulaaufdermaur@kinderkultur.ch</a> -->
+    <p>Buchungsanfrage per E-Mail an <a target="_blank"
+        [href]="'mailto:' + reservationMail + '?subject=Buchungsanfrage ' + eventName">{{ reservationMail }}</a><br/>
+    Betreff: Buchungsanfrage '{{ eventName }}'</p>
+  </div>
+  <a class="btn btn-xs btn-ghost-secondary" (click)="openInfo()">Infos zum Stück</a>
+</div>

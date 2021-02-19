@@ -19,9 +19,11 @@ export class InfoComponent implements OnChanges{
 
   @Input() eventInfo: EventDetailEventInfo;
   @Input() reservationMail: string;
+  @Input() usage: string;
+  @Input() playDate: Date;
+
 
   artistsArray: job[];
-  private usageProp:string;
 
   constructor(
     private sanitizer: DomSanitizer, private modalService: NgbModal ) { }
@@ -40,6 +42,10 @@ export class InfoComponent implements OnChanges{
     return (this.artistsArray && this.artistsArray.length > 0) ? this.artistsArray : null;
   }
 
+  get name() {
+    return (this.eventInfo && this.eventInfo.name) ? this.eventInfo.name : null;
+  }
+
   get shortDesc() : string {
     return (this.eventInfo && this.eventInfo.shortDescription) ? this.eventInfo.shortDescription : null;
   }
@@ -52,15 +58,21 @@ export class InfoComponent implements OnChanges{
     return (this.eventInfo && this.eventInfo.bannerImagePath) ? this.eventInfo.bannerImagePath : null;
   }
 
-  get usage(): string {
-    return this.usageProp;
-  }
-
   get locationLabel (): string{
     if (this.usage == "Premiere") {
       return "Spielstätte";
     } else {
-      return "Das Stück wurde aufgeführt im";
+      return `Das Stück ${  (new Date(this.playDate) < new Date()) ? 'wurde' : 'wird' } aufgeführt im`;
+    }
+  }
+
+  get playDateLabel (): string{
+    if (this.usage == "Premiere") {
+      return "Premiere";
+    } else if (this.usage == "CD" || this.usage == "Tournee" ) {
+      return `Urauführung`;
+    } else {
+      return `Das Stück ${  (new Date(this.playDate) < new Date()) ? 'wurde' : 'wird' } aufgeführt am`;
     }
   }
 

@@ -1,6 +1,8 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { EventDetail } from 'src/app/models/event.models';
 import { EventService } from 'src/app/services/event.service';
+import { MerchModalComponent } from '../merch-modal/merch-modal.component';
 
 @Component({
   selector: 'app-merch-item',
@@ -17,12 +19,15 @@ export class MerchItemComponent implements OnInit {
     return EventService.GetPicSqrPathFromEventDetail(this.eventDetail);
   }
 
-
   @Input() eventDetail: EventDetail;
-  @Input() usage: string;
 
-  constructor() { }
+  constructor(private modalService: NgbModal) { }
 
   ngOnInit(): void {
+  }
+
+  openDetail():void  {
+    const modalRef = this.modalService.open(MerchModalComponent);
+    modalRef.componentInstance.eventDetail = this.eventDetail;
   }
 }

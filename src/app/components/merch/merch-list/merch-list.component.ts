@@ -17,5 +17,4 @@ export class MerchListComponent implements OnInit {
   ngOnInit() {
     this.eventDetailsTournee$ = this.eventService.GetEventDetails(p=>p.googleAnalyticsTracker == "Tournee");
   }
-
 }

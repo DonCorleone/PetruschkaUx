@@ -2,10 +2,10 @@
   <button type="button" class="close" aria-label="Close button" aria-describedby="modal-title" (click)="activeModal.dismiss('Cross click')">
     <span aria-hidden="true">&times;</span>
   </button>
-  <h4 class="modal-title text-center" id="infoModalLabel">Mitwirkende</h4>
+  <h4 class="modal-title text-center" id="infoModalLabel">Buchungsanfrage</h4>
 </div>
 <!--//modal-header-->
 <div class="modal-body" ngbAutoFocus>
-  <app-about-item [staff] = "staff$ | async"></app-about-item>
+  <app-merch-detail [eventDetail] = "eventDetail"></app-merch-detail>
 </div>
 <!--//modal-body-->
