@@ -4,11 +4,11 @@ import { EventDetail } from 'src/app/models/event.models';
 import { EventService } from 'src/app/services/event.service';
 
 @Component({
-  selector: 'app-music',
-  templateUrl: './music.component.html',
-  styleUrls: ['./music.component.scss']
+  selector: 'app-music-list',
+  templateUrl: './music-list.component.html',
+  styleUrls: ['./music-list.component.scss']
 })
-export class MusicComponent implements OnInit {
+export class MusicListComponent implements OnInit {
 
   eventDetailsCD$: Observable<EventDetail[]>;
 

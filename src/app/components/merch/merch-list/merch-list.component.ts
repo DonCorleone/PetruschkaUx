@@ -4,11 +4,11 @@ import { EventDetail } from 'src/app/models/event.models';
 import { EventService } from 'src/app/services/event.service';
 
 @Component({
-  selector: 'app-merch',
-  templateUrl: './merch.component.html',
-  styleUrls: ['./merch.component.scss']
+  selector: 'app-merch-list',
+  templateUrl: './merch-list.component.html',
+  styleUrls: ['./merch-list.component.scss']
 })
-export class MerchComponent implements OnInit {
+export class MerchListComponent implements OnInit {
 
   eventDetailsTournee$: Observable<EventDetail[]>;
 

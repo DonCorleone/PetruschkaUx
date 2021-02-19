@@ -2,12 +2,12 @@ import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 import { NgbCarouselConfig } from '@ng-bootstrap/ng-bootstrap';
 
 @Component({
-  selector: 'app-carousel-promo',
-  templateUrl: './carousel-promo.component.html',
-  styleUrls: ['./carousel-promo.component.scss'],
+  selector: 'app-promo-carousel',
+  templateUrl: './promo-carousel.component.html',
+  styleUrls: ['./promo-carousel.component.scss'],
   encapsulation: ViewEncapsulation.None
 })
-export class CarouselPromoComponent {
+export class PromoCarouselComponent {
 
   images = [700, 533, 807, 124].map((n) => `https://picsum.photos/id/${n}/900/500`);
 

@@ -20,19 +20,19 @@ import { AboutListComponent } from './components/about/about-list/about-list.com
 import { GigsItemComponent } from './components/gigs/gigs-item/gigs-item.component';
 import { AboutItemComponent } from './components/about/about-item/about-item.component';
 import { PromoComponent } from './components/promo/promo/promo.component';
-import { CarouselPromoComponent } from './components/promo/carousel-promo/carousel-promo.component';
+import { PromoCarouselComponent } from './components/promo/promo-carousel/promo-carousel.component';
 import { CarouselUpdateComponent } from './components/update/carousel-update/carousel-update.component';
 import { ContactComponent } from './components/contact/contact.component';
 import { InfoComponent } from './components/info/info-item/info-item.component';
 import { VideoComponent } from './components/video/video.component';
 import { UpdateSlideComponent } from './components/update/update-slide/update-slide.component';
 import { MerchItemComponent } from './components/merch/merch-item/merch-item.component';
-import { MerchComponent } from './components/merch/merch/merch.component';
+import { MerchListComponent } from './components/merch/merch-list/merch-list.component';
 import { MusicItemComponent } from './components/music/music-item/music-item.component';
-import { MusicComponent } from './components/music/music/music.component';
+import { MusicListComponent } from './components/music/music-list/music-list.component';
 import { LayoutComponent } from './layout/layout.component';
 import { ScullyLibModule } from '@scullyio/ng-lib';
-import { LocationComponent } from './components/location/location.component';
+import { LocationItemComponent } from './components/location/location-item/location-item.component';
 import { InfoModalComponent } from './components/info/info-modal/info-modal.component';
 import { LocationModalComponent } from './components/location/location-modal/location-modal.component';
 import { AboutModalComponent } from './components/about/about-modal/about-modal.component';
@@ -56,22 +56,22 @@ export function createApollo(httpLink: HttpLink): ApolloClientOptions<any> {
     HeaderComponent,
     PromoComponent,
     GigsListComponent,
-    MusicComponent,
+    MusicListComponent,
     AboutListComponent,
-    MerchComponent,
+    MerchListComponent,
     ContactComponent,
     FooterComponent,
     VideoComponent,
     InfoComponent,
     GigsItemComponent,
-    CarouselPromoComponent,
+    PromoCarouselComponent,
     CarouselUpdateComponent,
     UpdateSlideComponent,
     AboutItemComponent,
     MerchItemComponent,
     MusicItemComponent,
     LayoutComponent,
-    LocationComponent,
+    LocationItemComponent,
     InfoModalComponent,
     LocationModalComponent,
     AboutModalComponent

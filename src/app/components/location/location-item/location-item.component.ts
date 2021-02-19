@@ -5,11 +5,11 @@ import { EventLocation } from 'src/app/models/location.models';
 import { LocationsService } from 'src/app/services/locations.service';
 
 @Component({
-  selector: 'app-location',
-  templateUrl: './location.component.html',
-  styleUrls: ['./location.component.scss']
+  selector: 'app-location-item',
+  templateUrl: './location-item.component.html',
+  styleUrls: ['./location-item.component.scss']
 })
-export class LocationComponent implements OnInit {
+export class LocationItemComponent implements OnInit {
 
   eventLocation$: Observable<EventLocation>;
 
