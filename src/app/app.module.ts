@@ -16,7 +16,7 @@ import * as realm from './realm';
 import { HttpClientModule, HttpHeaders } from '@angular/common/http';
 import { APOLLO_OPTIONS } from 'apollo-angular';
 import { GigsComponent } from './components/gigs/gigs/gigs.component';
-import { AboutComponent } from './components/about/about/about.component';
+import { AboutListComponent } from './components/about/about-list/about-list.component';
 import { GigsItemComponent } from './components/gigs/gigs-item/gigs-item.component';
 import { AboutItemComponent } from './components/about/about-item/about-item.component';
 import { PromoComponent } from './components/promo/promo/promo.component';
@@ -58,7 +58,7 @@ export function createApollo(httpLink: HttpLink): ApolloClientOptions<any> {
     PromoComponent,
     GigsComponent,
     MusicComponent,
-    AboutComponent,
+    AboutListComponent,
     MerchComponent,
     ContactComponent,
     FooterComponent,

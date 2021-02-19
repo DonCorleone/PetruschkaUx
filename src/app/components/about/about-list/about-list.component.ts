@@ -7,11 +7,11 @@ import { Staff } from 'src/app/models/staff.models';
 import { StaffService } from 'src/app/services/staff.service';
 
 @Component({
-  selector: 'app-about',
-  templateUrl: './about.component.html',
-  styleUrls: ['./about.component.scss']
+  selector: 'app-about-list',
+  templateUrl: './about-list.component.html',
+  styleUrls: ['./about-list.component.scss']
 })
-export class AboutComponent implements OnInit {
+export class AboutListComponent implements OnInit {
 
   staffs$: Observable<Staff[]>;
 
