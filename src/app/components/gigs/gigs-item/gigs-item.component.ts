@@ -25,6 +25,7 @@ export class GigsItemComponent implements OnInit {
     const modalRef = this.modalService.open(InfoModalComponent);
     modalRef.componentInstance.eventDetailId = this.eventId;
     modalRef.componentInstance.usage = ""; // else case
+    modalRef.componentInstance.playDate = this.start; // else case
   }
 
   openLocation(locationName:string):void {

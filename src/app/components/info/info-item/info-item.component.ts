@@ -62,8 +62,12 @@ export class InfoComponent implements OnChanges{
     if (this.usage == "Premiere") {
       return "Spielstätte";
     } else {
-      return `Das Stück ${  (new Date(this.playDate) < new Date()) ? 'wurde' : 'wird' } aufgeführt im`;
+      return `Das Stück ${ this.isFutureEvent ?  'wird' : 'wurde' } aufgeführt im`;
     }
+  }
+
+  get isFutureEvent(): Boolean{
+    return new Date(this.playDate) > new Date();
   }
 
   get playDateLabel (): string{
@@ -72,7 +76,7 @@ export class InfoComponent implements OnChanges{
     } else if (this.usage == "CD" || this.usage == "Tournee" ) {
       return `Urauführung`;
     } else {
-      return `Das Stück ${  (new Date(this.playDate) < new Date()) ? 'wurde' : 'wird' } aufgeführt am`;
+      return `Das Stück ${ this.isFutureEvent ? 'wird' : 'wurde' } aufgeführt am`;
     }
   }
 

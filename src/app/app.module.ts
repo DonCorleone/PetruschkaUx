@@ -38,6 +38,8 @@ import { LocationModalComponent } from './components/location/location-modal/loc
 import { AboutModalComponent } from './components/about/about-modal/about-modal.component';
 import { MerchModalComponent } from './components/merch/merch-modal/merch-modal.component';
 import { MerchDetailComponent } from './components/merch/merch-detail/merch-detail.component';
+import { MusicModalComponent } from './components/music/music-modal/music-modal.component';
+import { MusicDetailComponent } from './components/music/music-detail/music-detail.component';
 
 const uri = realm.graphqlUrl;
 
@@ -78,7 +80,9 @@ export function createApollo(httpLink: HttpLink): ApolloClientOptions<any> {
     LocationModalComponent,
     AboutModalComponent,
     MerchModalComponent,
-    MerchDetailComponent
+    MerchDetailComponent,
+    MusicModalComponent,
+    MusicDetailComponent
   ],
   imports: [
     BrowserModule,

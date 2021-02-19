@@ -36,7 +36,7 @@
   </div>
   <div>
       <div class="modal-item-content">
-        {{ this.playDate | date:'fullDate' : '' :'de-CH'}}
+        <span>{{ this.playDate | date:'fullDate' : '' :'de-CH'}}</span> <span *ngIf ="isFutureEvent"> um {{ this.playDate | date:'HH:mm' : '' :'de-CH' }}</span>
       </div>
   </div>
 </div>
@@ -57,39 +57,5 @@
           </div>
         </div>
       </div>
-  </div>
-</div>
-<!-- <div class="modal-item" *ngIf="usage=='Premiere'">
-  <div class="modal-item-title">
-    Aufführungen
-  </div>
-  <div class="modal-item-content">
-    <div class="event-list">
-      <ul *ngFor="let eventInfo of eventInfos$ | async" class="collection">
-        <app-event-modal-item  [eventInfo]="eventInfo">
-        </app-event-modal-item>
-      </ul>
-    </div>
-  </div>
-</div> -->
-<div class="modal-item" *ngIf="usage=='CD'">
-  <div class="modal-item-title">
-    Bestellung CD - Preis: CHF 22.00 (inkl. Porto)
-  </div>
-  <div class="modal-item-content">
-    <!--<a href="mailto:nathaliehildebrand@kinderkultur.ch?subject=Bestellung_CD_Das_Drachenei"></a> -->
-    <p>Per E-Mail an <a target="_blank" [href]="'mailto:nathaliehildebrand?subject=Bestellung CD ' + name">nathaliehildebrand@kinderkultur.ch</a></p>
-    <p>Betreff: Bestellung CD '{{ name }}'</p>
-    <p>Zusätzliche Angaben in der Mail: Anzahl CDs, Name und Adresse</p>
-  </div>
-</div>
-<div class="modal-item" *ngIf="usage=='Tournee'">
-  <div class="modal-item-title">
-    Buchungsanfrage
-  </div>
-  <div class="modal-item-content">
-    <!-- <a href="mailto:regulaaufdermaur@kinderkultur.ch?subject=Buchungsanfrage_Drachenei">regulaaufdermaur@kinderkultur.ch</a> -->
-    <p>Per E-Mail an <a target="_blank" [href]="'mailto:' + reservationMail + '?subject=Buchungsanfrage ' + name">{{ reservationMail }}</a></p>
-    <p>Betreff: Buchungsanfrage '{{ name }}'</p>
   </div>
 </div>
