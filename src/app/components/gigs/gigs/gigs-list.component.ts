@@ -4,11 +4,11 @@ import { EventDetail, EventDetailEventInfo } from 'src/app/models/event.models';
 import { EventService } from 'src/app/services/event.service';
 
 @Component({
-  selector: 'app-gigs',
-  templateUrl: './gigs.component.html',
-  styleUrls: ['./gigs.component.scss']
+  selector: 'app-gigs-list',
+  templateUrl: './gigs-list.component.html',
+  styleUrls: ['./gigs-list.component.scss']
 })
-export class GigsComponent implements OnInit {
+export class GigsListComponent implements OnInit {
 
   eventDetailsUpcoming$: Observable<EventDetail[]>;
 

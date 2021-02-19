@@ -15,7 +15,7 @@ import { HttpLink } from 'apollo-angular/http';
 import * as realm from './realm';
 import { HttpClientModule, HttpHeaders } from '@angular/common/http';
 import { APOLLO_OPTIONS } from 'apollo-angular';
-import { GigsComponent } from './components/gigs/gigs/gigs.component';
+import { GigsListComponent } from './components/gigs/gigs/gigs-list.component';
 import { AboutListComponent } from './components/about/about-list/about-list.component';
 import { GigsItemComponent } from './components/gigs/gigs-item/gigs-item.component';
 import { AboutItemComponent } from './components/about/about-item/about-item.component';
@@ -33,7 +33,6 @@ import { MusicComponent } from './components/music/music/music.component';
 import { LayoutComponent } from './layout/layout.component';
 import { ScullyLibModule } from '@scullyio/ng-lib';
 import { LocationComponent } from './components/location/location.component';
-import { ModalComponent } from './components/modal/modal.component';
 import { InfoModalComponent } from './components/info/info-modal/info-modal.component';
 import { LocationModalComponent } from './components/location/location-modal/location-modal.component';
 import { AboutModalComponent } from './components/about/about-modal/about-modal.component';
@@ -56,7 +55,7 @@ export function createApollo(httpLink: HttpLink): ApolloClientOptions<any> {
     ScrollSpyDirective,
     HeaderComponent,
     PromoComponent,
-    GigsComponent,
+    GigsListComponent,
     MusicComponent,
     AboutListComponent,
     MerchComponent,
@@ -73,7 +72,6 @@ export function createApollo(httpLink: HttpLink): ApolloClientOptions<any> {
     MusicItemComponent,
     LayoutComponent,
     LocationComponent,
-    ModalComponent,
     InfoModalComponent,
     LocationModalComponent,
     AboutModalComponent

@@ -1,12 +1,8 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
-import { EventDetail, EventDetailEventInfo } from 'src/app/models/event.models';
-import { EventService } from 'src/app/services/event.service';
+import { EventDetailEventInfo } from 'src/app/models/event.models';
 import { InfoModalComponent } from '../../info/info-modal/info-modal.component';
-import { InfoComponent } from '../../info/info.component';
 import { LocationModalComponent } from '../../location/location-modal/location-modal.component';
-import { LocationComponent } from '../../location/location.component';
-import { ModalComponent } from '../../modal/modal.component';
 
 @Component({
   selector: 'app-gigs-item',
