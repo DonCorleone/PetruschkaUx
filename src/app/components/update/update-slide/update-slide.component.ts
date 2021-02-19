@@ -2,7 +2,7 @@ import { AfterViewInit, Component, Input, OnInit } from '@angular/core';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { EventDetail } from 'src/app/models/event.models';
 import { EventService } from 'src/app/services/event.service';
-import { InfoComponent } from '../../info/info.component';
+import { InfoComponent } from '../../info/info-item/info-item.component';
 
 @Component({
   selector: 'app-update-slide',

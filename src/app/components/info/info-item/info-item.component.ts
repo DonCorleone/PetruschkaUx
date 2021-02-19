@@ -2,8 +2,8 @@ import { Component, Input, OnChanges, OnInit } from '@angular/core';
 import { DomSanitizer } from '@angular/platform-browser';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { EventDetail, EventDetailEventInfo } from 'src/app/models/event.models';
-import { AboutModalComponent } from '../about/about-modal/about-modal.component';
-import { LocationModalComponent } from '../location/location-modal/location-modal.component';
+import { AboutModalComponent } from '../../about/about-modal/about-modal.component';
+import { LocationModalComponent } from '../../location/location-modal/location-modal.component';
 
 interface job {
   name: string,
@@ -11,9 +11,9 @@ interface job {
 }
 
 @Component({
-  selector: 'app-info',
-  templateUrl: './info.component.html',
-  styleUrls: ['./info.component.scss']
+  selector: 'app-info-item',
+  templateUrl: './info-item.component.html',
+  styleUrls: ['./info-item.component.scss']
 })
 export class InfoComponent implements OnChanges{
 
