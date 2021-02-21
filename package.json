@@ -33,6 +33,8 @@
     "graphql": "^15.5.0",
     "realm-web": "^1.2.0",
     "rxjs": "~6.6.3",
+    "scully-plugin-disable-angular": "^6.2.0",
+    "scully-plugin-minify-html": "^5.0.0",
     "tslib": "^2.0.0",
     "zone.js": "~0.10.2"
   },
