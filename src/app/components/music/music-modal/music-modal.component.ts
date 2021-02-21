@@ -1,15 +1,14 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { Observable } from 'rxjs';
 import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
-import { EventDetail, EventDetailEventInfo } from 'src/app/models/event.models';
+import { EventDetail } from 'src/app/models/event.models';
 import { EventService } from 'src/app/services/event.service';
 
 @Component({
-  selector: 'app-merch-modal',
-  templateUrl: './merch-modal.component.html',
-  styleUrls: ['./merch-modal.component.scss']
+  selector: 'app-music-modal',
+  templateUrl: './music-modal.component.html',
+  styleUrls: ['./music-modal.component.scss']
 })
-export class MerchModalComponent implements OnInit {
+export class MusicModalComponent implements OnInit {
 
   @Input() eventDetail: EventDetail;
 

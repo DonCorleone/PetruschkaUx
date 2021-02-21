@@ -1,6 +1,8 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { EventDetail } from 'src/app/models/event.models';
 import { EventService } from 'src/app/services/event.service';
+import { MusicModalComponent } from '../music-modal/music-modal.component';
 
 @Component({
   selector: 'app-music-item',
@@ -10,7 +12,6 @@ import { EventService } from 'src/app/services/event.service';
 export class MusicItemComponent implements OnInit {
 
   @Input() eventDetail: EventDetail;
-  @Input() usage: string;
 
   get comingSoon(): boolean {
     return (this.eventDetail && this.eventDetail.start && this.eventDetail.start > new Date() ? true : false);
@@ -24,8 +25,13 @@ export class MusicItemComponent implements OnInit {
     return EventService.GetPicSqrPathFromEventDetail(this.eventDetail);
   }
 
-  constructor() { }
+  constructor(private modalService: NgbModal) { }
 
   ngOnInit(): void {
+  }
+
+  openDetail():void  {
+    const modalRef = this.modalService.open(MusicModalComponent);
+    modalRef.componentInstance.eventDetail = this.eventDetail;
   }
 }
