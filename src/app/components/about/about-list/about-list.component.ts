@@ -2,7 +2,7 @@ import { Component, Input, OnInit } from '@angular/core';
 import { DomSanitizer } from '@angular/platform-browser';
 import { ActivatedRoute } from '@angular/router';
 import { Observable } from 'rxjs';
-import { map } from 'rxjs/operators';
+import { map, tap } from 'rxjs/operators';
 import { Staff } from 'src/app/models/staff.models';
 import { StaffService } from 'src/app/services/staff.service';
 
@@ -26,7 +26,7 @@ export class AboutListComponent implements OnInit {
       .pipe(map(p => p.staffName))
       .subscribe(nameIn => {
         this.staffName = nameIn;
-        this.staffs$ = this.staffService.GetStaffs(nameIn);
+        this.staffs$ = this.staffService.GetStaffs(nameIn).pipe(tap(res => res.sort((x,y) => x.sortOrder < y.sortOrder ? -1 : 1)));
      });
   }
 }
