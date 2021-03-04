@@ -12,6 +12,7 @@ import {MerchModalComponent} from '../merch-modal/merch-modal.component';
 export class MerchItemComponent implements OnInit {
 
 	@Input() eventDetail: EventDetail;
+	@Input() usage: string;
 
 	constructor(private modalService: NgbModal) {
 	}
