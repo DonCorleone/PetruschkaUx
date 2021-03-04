@@ -1,10 +1,8 @@
-import { Injectable } from '@angular/core';
-import { map } from 'rxjs/operators';
-import { Observable } from 'rxjs';
-import { Apollo, gql, QueryRef } from 'apollo-angular';
-import { EventDetail } from '../models/event.models';
-import { EmptyObject } from 'apollo-angular/types';
-import { DatePipe } from '@angular/common';
+import {Injectable} from '@angular/core';
+import {map} from 'rxjs/operators';
+import {Observable} from 'rxjs';
+import {Apollo, gql} from 'apollo-angular';
+import {EventDetail} from '../models/event.models';
 
 const GET_EVENTDETAILS_BYTAG = gql`
   query {
@@ -71,85 +69,86 @@ const GET_UPCOMING_EVENTS = gql`
 `;
 
 interface GetEventInfoById {
-  eventDetail: EventDetail;
-  notificationEmail: String;
+	eventDetail: EventDetail;
+	notificationEmail: string;
 }
 
 interface GetEventDetailPrototypes {
-  eventDetails: EventDetail[];
+	eventDetails: EventDetail[];
 }
 
 @Injectable({
-  providedIn: 'root'
+	providedIn: 'root'
 })
 export class EventService {
 
-  constructor(private apollo: Apollo) { }
+	constructor(private apollo: Apollo) {
+	}
 
-  GetEventInfo(id: number) : Observable<EventDetail> {
-    return this.apollo
-    .watchQuery<GetEventInfoById>({
-      query: GET_EVENTINFO_BYEVENTID,
-      variables: {
-        eventId: id,
-      },
-    })
-    .valueChanges.pipe(map((result) => result.data.eventDetail));
-  }
+	static GetPicSqrPathFromEventDetail(eventDetail: EventDetail): string {
+		return (eventDetail
+		&& eventDetail.ticketTypes[0]
+		&& eventDetail.ticketTypes[0].ticketTypeInfos[0] ?
+			eventDetail.ticketTypes[0].ticketTypeInfos[0].imageUrl : null);
+	}
 
-  GetUpcomingEventDetails(startDate: Date): Observable<EventDetail[]>{
-    return this.apollo
-      .watchQuery<GetEventDetailPrototypes>({query: GET_UPCOMING_EVENTS})
-      .valueChanges.pipe(map((result) => result.data.eventDetails));
-    }
+	static GetPicBannerPathFromEventDetail(eventDetail: EventDetail): string {
+		return (eventDetail
+		&& eventDetail.eventInfos[0]
+		&& eventDetail.eventInfos[0].flyerImagePath ?
+			eventDetail.eventInfos[0].flyerImagePath : null);
+	}
 
-  GetEventDetails(filterPredicateIn: any): Observable<EventDetail[]>{
-    return this.apollo
-      .watchQuery<GetEventDetailPrototypes>({query: GET_EVENTDETAILS_BYTAG})
-      .valueChanges.pipe(map((result) => result.data.eventDetails.filter(filterPredicateIn)));
-    }
+	static GetShortDescFromEventDetail(eventDetail: EventDetail): string {
+		return (eventDetail
+			&& eventDetail.eventInfos.find(p => p.languageId === 1)?.shortDescription);
+	}
 
-  static GetPicSqrPathFromEventDetail(eventDetail: EventDetail): string{
-    return (eventDetail
-      && eventDetail.ticketTypes[0]
-      && eventDetail.ticketTypes[0].ticketTypeInfos[0] ?
-      eventDetail.ticketTypes[0].ticketTypeInfos[0].imageUrl : null);
-  }
+	static GetNameFromEventDetail(eventDetail: EventDetail): string {
+		return (eventDetail
+		&& eventDetail.eventInfos[0]
+		&& eventDetail.eventInfos[0].name ?
+			eventDetail.eventInfos[0].name : null);
+	}
 
-  static GetPicBannerPathFromEventDetail(eventDetail: EventDetail): string{
-    return (eventDetail
-      && eventDetail.eventInfos[0]
-      && eventDetail.eventInfos[0].flyerImagePath ?
-      eventDetail.eventInfos[0].flyerImagePath : null);
-  }
+	static GetLongDescriptionFromEventDetail(eventDetail: EventDetail): string {
+		return (eventDetail
+			&& eventDetail.eventInfos.find(p => p.languageId === 1)?.longDescription);
+	}
 
-  static GetShortDescFromEventDetail(eventDetail: EventDetail): string{
-    return (eventDetail
-      && eventDetail.eventInfos.find( p => p.languageId == 1)?.shortDescription);
-  }
+	static GetLocationFromEventDetail(eventDetail: EventDetail): string {
+		return (eventDetail
+		&& eventDetail.eventInfos[0]
+		&& eventDetail.eventInfos[0].location ?
+			eventDetail.eventInfos[0].location : null);
+	}
 
-  static GetNameFromEventDetail(eventDetail: EventDetail): string{
-    return (eventDetail
-      && eventDetail.eventInfos[0]
-      && eventDetail.eventInfos[0].name ?
-      eventDetail.eventInfos[0].name : null);
-  }
+	static GetStartFromEventDetail(eventDetail: EventDetail): Date {
+		return (eventDetail
+		&& eventDetail.start ?
+			eventDetail.start : null);
+	}
 
-  static GetLongDescriptionFromEventDetail(eventDetail: EventDetail): string{
-    return (eventDetail
-      && eventDetail.eventInfos.find( p => p.languageId == 1)?.longDescription);
-  }
+	GetEventInfo(id: number): Observable<EventDetail> {
+		return this.apollo
+			.watchQuery<GetEventInfoById>({
+				query: GET_EVENTINFO_BYEVENTID,
+				variables: {
+					eventId: id,
+				},
+			})
+			.valueChanges.pipe(map((result) => result.data.eventDetail));
+	}
 
-  static GetLocationFromEventDetail(eventDetail: EventDetail): string{
-    return (eventDetail
-      && eventDetail.eventInfos[0]
-      && eventDetail.eventInfos[0].location ?
-      eventDetail.eventInfos[0].location : null);
-  }
+	GetUpcomingEventDetails(): Observable<EventDetail[]> {
+		return this.apollo
+			.watchQuery<GetEventDetailPrototypes>({query: GET_UPCOMING_EVENTS})
+			.valueChanges.pipe(map((result) => result.data.eventDetails));
+	}
 
-  static GetStartFromEventDetail(eventDetail: EventDetail): Date{
-    return (eventDetail
-      && eventDetail.start ?
-      eventDetail.start : null);
-  }
+	GetEventDetails(filterPredicateIn: any): Observable<EventDetail[]> {
+		return this.apollo
+			.watchQuery<GetEventDetailPrototypes>({query: GET_EVENTDETAILS_BYTAG})
+			.valueChanges.pipe(map((result) => result.data.eventDetails.filter(filterPredicateIn)));
+	}
 }

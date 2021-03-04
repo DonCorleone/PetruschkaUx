@@ -1,8 +1,8 @@
-import { Injectable } from '@angular/core';
-import { Apollo, gql } from 'apollo-angular';
-import { Observable } from 'rxjs';
-import { map } from 'rxjs/operators';
-import { Staff } from '../models/staff.models';
+import {Injectable} from '@angular/core';
+import {Apollo, gql} from 'apollo-angular';
+import {Observable} from 'rxjs';
+import {map} from 'rxjs/operators';
+import {Staff} from '../models/staff.models';
 
 const GET_STAFFS = gql`
   query GetStaffByName {
@@ -28,42 +28,45 @@ const GET_STAFFBYNAME = gql`
   }
 `;
 
-interface GetStaffs{
-  staffs: Staff[];
-};
+interface GetStaffs {
+	staffs: Staff[];
+}
 
 interface GetStaff {
-  staff: Staff;
-};
+	staff: Staff;
+}
 
 @Injectable({
-  providedIn: 'root'
+	providedIn: 'root'
 })
 export class StaffService {
 
-  constructor(private apollo: Apollo) { }
+	constructor(private apollo: Apollo) {
+	}
 
-  public GetStaffs(nameIn: string): Observable<Staff[]>  {
+	public GetStaffs(nameIn: string): Observable<Staff[]> {
 
-    return this.apollo
-        .watchQuery<GetStaffs>({
-          query: GET_STAFFS,
-          variables: {
-            name: nameIn
-          },})
-        .valueChanges.pipe(map((result) => result.data.staffs.filter(
-          nameIn? p => p.name == nameIn : o => o.name != "").filter(p => p.active === true).sort(p => p.sortOrder)));
-  }
+		return this.apollo
+			.watchQuery<GetStaffs>({
+				query: GET_STAFFS,
+				variables: {
+					name: nameIn
+				},
+			})
+			.valueChanges.pipe(map((result) => result.data.staffs.filter(
+				nameIn ? p => p.name === nameIn : o => o.name !== '').filter(p => p.active === true).sort(p => p.sortOrder)));
+	}
 
-  public GetStaff(nameIn: string): Observable<Staff>  {
+	public GetStaff(nameIn: string): Observable<Staff> {
 
-    return this.apollo
-        .watchQuery<GetStaff>({
-          query: GET_STAFFBYNAME,
-          variables: {
-            name: nameIn
-          },})
-        .valueChanges.pipe(map((result) => result.data.staff));
-  }
+		return this.apollo
+			.watchQuery<GetStaff>({
+				query: GET_STAFFBYNAME,
+				variables: {
+					name: nameIn
+				},
+			})
+			.valueChanges.pipe(map((result) => result.data.staff));
+	}
 }
 

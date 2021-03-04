@@ -1,33 +1,34 @@
-import { Component, Input, OnInit } from '@angular/core';
-import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
-import { EventDetail } from 'src/app/models/event.models';
-import { EventService } from 'src/app/services/event.service';
-import { MerchModalComponent } from '../merch-modal/merch-modal.component';
+import {Component, Input, OnInit} from '@angular/core';
+import {NgbModal} from '@ng-bootstrap/ng-bootstrap';
+import {EventDetail} from 'src/app/models/event.models';
+import {EventService} from 'src/app/services/event.service';
+import {MerchModalComponent} from '../merch-modal/merch-modal.component';
 
 @Component({
-  selector: 'app-merch-item',
-  templateUrl: './merch-item.component.html',
-  styleUrls: ['./merch-item.component.scss']
+	selector: 'app-merch-item',
+	templateUrl: './merch-item.component.html',
+	styleUrls: ['./merch-item.component.scss']
 })
 export class MerchItemComponent implements OnInit {
 
-  get name(): string {
-    return (this.eventDetail && this.eventDetail.eventInfos[0]) ? this.eventDetail.eventInfos[0].name: null;
-  }
+	@Input() eventDetail: EventDetail;
 
-  get imagePath(): string {
-    return EventService.GetPicSqrPathFromEventDetail(this.eventDetail);
-  }
+	constructor(private modalService: NgbModal) {
+	}
 
-  @Input() eventDetail: EventDetail;
+	get name(): string {
+		return (this.eventDetail && this.eventDetail.eventInfos[0]) ? this.eventDetail.eventInfos[0].name : null;
+	}
 
-  constructor(private modalService: NgbModal) { }
+	get imagePath(): string {
+		return EventService.GetPicSqrPathFromEventDetail(this.eventDetail);
+	}
 
-  ngOnInit(): void {
-  }
+	ngOnInit(): void {
+	}
 
-  openDetail():void  {
-    const modalRef = this.modalService.open(MerchModalComponent);
-    modalRef.componentInstance.eventDetail = this.eventDetail;
-  }
+	openDetail(): void {
+		const modalRef = this.modalService.open(MerchModalComponent);
+		modalRef.componentInstance.eventDetail = this.eventDetail;
+	}
 }

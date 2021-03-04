@@ -1,17 +1,19 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 
 
 @Component({
-  selector: 'app-promo',
-  templateUrl: './promo.component.html',
-  styleUrls: ['./promo.component.scss']
+	selector: 'app-promo',
+	templateUrl: './promo.component.html',
+	styleUrls: ['./promo.component.scss']
 })
 export class PromoComponent implements OnInit {
 
-  title: string;
-  constructor() {}
+	title: string;
 
-  ngOnInit(): void {
-    this.title="Petruschka";
-  }
+	constructor() {
+	}
+
+	ngOnInit(): void {
+		this.title = 'Petruschka';
+	}
 }

@@ -1,25 +1,25 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
+import {ComponentFixture, TestBed} from '@angular/core/testing';
 
-import { MusicItemComponent } from './music-item.component';
+import {MusicItemComponent} from './music-item.component';
 
 describe('MusicItemComponent', () => {
-  let component: MusicItemComponent;
-  let fixture: ComponentFixture<MusicItemComponent>;
+	let component: MusicItemComponent;
+	let fixture: ComponentFixture<MusicItemComponent>;
 
-  beforeEach(async () => {
-    await TestBed.configureTestingModule({
-      declarations: [ MusicItemComponent ]
-    })
-    .compileComponents();
-  });
+	beforeEach(async () => {
+		await TestBed.configureTestingModule({
+			declarations: [MusicItemComponent]
+		})
+			.compileComponents();
+	});
 
-  beforeEach(() => {
-    fixture = TestBed.createComponent(MusicItemComponent);
-    component = fixture.componentInstance;
-    fixture.detectChanges();
-  });
+	beforeEach(() => {
+		fixture = TestBed.createComponent(MusicItemComponent);
+		component = fixture.componentInstance;
+		fixture.detectChanges();
+	});
 
-  it('should create', () => {
-    expect(component).toBeTruthy();
-  });
+	it('should create', () => {
+		expect(component).toBeTruthy();
+	});
 });
