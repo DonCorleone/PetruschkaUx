@@ -9,7 +9,8 @@
       <div class="record-holder"><img class="img-fluid" src="assets/images/record.png" alt=""></div>
       <img class="cover-image img-fluid" [src]="imagePath" alt="">
       <div class="cover-label" *ngIf="comingSoon" >Coming Soon</div>
-      <!--//cover-label-->   </a>
+      <!--//cover-label-->
+    </a>
     <!--//cover-figure-->
     <a (click)="openDetail()" class="btn btn-sm btn-ghost-secondary" *ngIf="comingSoon">Vorbestellen</a>
     <a (click)="openDetail()" class="btn btn-sm btn-secondary" *ngIf="!comingSoon">Bestellen</a>

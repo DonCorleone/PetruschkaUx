@@ -15,7 +15,7 @@ export class UpdateSlideComponent implements AfterViewInit {
     return EventService.GetNameFromEventDetail(this.eventDetail);
   }
 
-  get shortDescription():string {
+  get shortDescription(): string {
     return EventService.GetShortDescFromEventDetail(this.eventDetail);
   }
 
