@@ -1,26 +1,33 @@
-<header id="header" class="header fixed-top">
-    <div class="container ">
-        <nav class="main-nav navbar navbar-expand-md" role="navigation">
-          <button class="navbar-toggler navbar-dark " type="button"  (click)="isMenuCollapsed = !isMenuCollapsed">
-            <span class="toggle-title">Menu</span>
-            <span class="navbar-toggler-icon"></span>
-          </button>
-          <div id="navbar-collapse" [ngbCollapse]="isMenuCollapsed" class="navbar-collapse collapse text-center justify-content-center">
-            <ul class="nav navbar-nav">
-              <li class="nav-item"><a class="nav-link" [ngClass]="{ 'active': currentSection === 'promo' }" (click)="scrollTo('promo')">Home</a></li>
-              <li class="nav-item"><a class="nav-link" [ngClass]="{ 'active': currentSection === 'gigs' }" (click)="scrollTo('gigs')">Aufführungen</a></li>
-              <li class="nav-item"><a class="nav-link" [ngClass]="{ 'active': currentSection === 'merch' }" (click)="scrollTo('merch')">Tourneestücke</a></li>
-              <li class="nav-item"><a class="nav-link" [ngClass]="{ 'active': currentSection === 'music' }" (click)="scrollTo('music')">Hörspiele</a></li>
-              <li class="nav-item"><a class="nav-link" [ngClass]="{ 'active': currentSection === 'about' }" (click)="scrollTo('about')">Team</a></li>
-              <li class="nav-item"><a class="nav-link" [ngClass]="{ 'active': currentSection === 'contact' }" (click)="scrollTo('contact')">Kontakt</a></li>
-            </ul>
-            <!--//nav-->
-          </div>
-          <!--//navabr-collapse-->
-        </nav>
-        <!--//main-nav-->
-      </div>
-      <!--//container-->
+<header class="header fixed-top" id="header">
+	<div class="container ">
+		<nav class="main-nav navbar navbar-expand-md" role="navigation">
+			<button (click)="isMenuCollapsed = !isMenuCollapsed" class="navbar-toggler navbar-dark " type="button">
+				<span class="toggle-title">Menu</span>
+				<span class="navbar-toggler-icon"></span>
+			</button>
+			<div [ngbCollapse]="isMenuCollapsed" class="navbar-collapse collapse text-center justify-content-center"
+					 id="navbar-collapse">
+				<ul class="nav navbar-nav">
+					<li class="nav-item"><a (click)="scrollTo('promo')" [ngClass]="{ 'active': currentSection === 'promo' }"
+																	class="nav-link">Home</a></li>
+					<li class="nav-item"><a (click)="scrollTo('gigs')" [ngClass]="{ 'active': currentSection === 'gigs' }"
+																	class="nav-link">Aufführungen</a></li>
+					<li class="nav-item"><a (click)="scrollTo('merch')" [ngClass]="{ 'active': currentSection === 'merch' }"
+																	class="nav-link">Tourneestücke</a></li>
+					<li class="nav-item"><a (click)="scrollTo('music')" [ngClass]="{ 'active': currentSection === 'music' }"
+																	class="nav-link">Hörspiele</a></li>
+					<li class="nav-item"><a (click)="scrollTo('about')" [ngClass]="{ 'active': currentSection === 'about' }"
+																	class="nav-link">Team</a></li>
+					<li class="nav-item"><a (click)="scrollTo('contact')" [ngClass]="{ 'active': currentSection === 'contact' }"
+																	class="nav-link">Kontakt</a></li>
+				</ul>
+				<!--//nav-->
+			</div>
+			<!--//navabr-collapse-->
+		</nav>
+		<!--//main-nav-->
+	</div>
+	<!--//container-->
 
 </header>
 

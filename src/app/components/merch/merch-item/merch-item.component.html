@@ -1,11 +1,11 @@
 <div class="item-inner">
-  <img class="img-fluid" [src]="imagePath" alt="">
-  <a class="mask" href="#">
+	<img [src]="imagePath" alt="" class="img-fluid">
+	<a class="mask" href="#">
     <span class="mask-inner">
       <span class="item-title">{{ name }}</span>
       <span class="desc">Dieses Stück kann gebucht werden!</span>
-      <span class="btn btn-primary btn-cta" (click)="openDetail()">Buchen</span>
+      <span (click)="openDetail()" class="btn btn-primary btn-cta">Buchen</span>
     </span>
-  </a>
+	</a>
 </div>
 <!--//item-inner-->

@@ -1,11 +1,12 @@
 <div class="modal-header">
-  <button type="button" class="close" aria-label="Close button" aria-describedby="modal-title" (click)="activeModal.dismiss('Cross click')">
-    <span aria-hidden="true">&times;</span>
-  </button>
-  <h4 class="modal-title text-center" id="infoModalLabel" *ngIf="eventInfo">{{ eventInfo.name }}</h4>
+	<button (click)="activeModal.dismiss('Cross click')" aria-describedby="modal-title" aria-label="Close button" class="close"
+					type="button">
+		<span aria-hidden="true">&times;</span>
+	</button>
+	<h4 *ngIf="eventInfo" class="modal-title text-center" id="infoModalLabel">{{ eventInfo.name }}</h4>
 </div>
 <!--//modal-header-->
 <div class="modal-body" ngbAutoFocus>
-  <app-info-item [eventInfo] = "eventInfo" [usage]=usage [playDate] = playDate></app-info-item>
+	<app-info-item [eventInfo]="eventInfo" [playDate]=playDate [usage]=usage></app-info-item>
 </div>
 <!--//modal-body-->

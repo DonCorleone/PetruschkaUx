@@ -1,17 +1,17 @@
-<section id="music" class="music-section section text-center">
-  <div class="container">
-    <h2 class="section-title">Hörspiele</h2>
-    <!--//sc-block-->
-    <div class="albums-block">
-      <div class="row">
-        <div class="item col-6 col-lg-4" *ngFor="let eventDetail of eventDetailsCD$ | async">
-          <app-music-item [eventDetail]="eventDetail" usage="CD"></app-music-item>
-        </div>
-        <!--//item-->
-      </div>
-      <!--//row-->
-    </div>
-  </div>
-  <!--//container-->
+<section class="music-section section text-center" id="music">
+	<div class="container">
+		<h2 class="section-title">Hörspiele</h2>
+		<!--//sc-block-->
+		<div class="albums-block">
+			<div class="row">
+				<div *ngFor="let eventDetail of eventDetailsCD$ | async" class="item col-6 col-lg-4">
+					<app-music-item [eventDetail]="eventDetail" usage="CD"></app-music-item>
+				</div>
+				<!--//item-->
+			</div>
+			<!--//row-->
+		</div>
+	</div>
+	<!--//container-->
 </section>
 <!--//music-section-->

@@ -1,61 +1,62 @@
 <div class="modal-item">
-  <div>
-      <div class="modal-item-content">
-        <div class="shortDesc">{{ shortDesc }}</div>
-      </div>
-  </div>
+	<div>
+		<div class="modal-item-content">
+			<div class="shortDesc">{{ shortDesc }}</div>
+		</div>
+	</div>
 </div>
 
-<img [src]="flyerImagePath" class="bannerImage img-wide" />
+<img [src]="flyerImagePath" class="bannerImage img-wide"/>
 
 <div class="modal-item">
-  <div class="modal-item-title">
-     Plot
-  </div>
-  <div>
-      <div class="modal-item-content">
-        <div [innerHTML]="plot"></div>
-      </div>
-  </div>
-</div>
-
-<div class="modal-item">
-  <div class="modal-item-title">
-      {{ locationLabel }}
-  </div>
-  <div>
-      <div class="modal-item-content">
-        <a class="location-link" (click)="openLocation(locationName)">{{ locationName }}</a>
-      </div>
-  </div>
+	<div class="modal-item-title">
+		Plot
+	</div>
+	<div>
+		<div class="modal-item-content">
+			<div [innerHTML]="plot"></div>
+		</div>
+	</div>
 </div>
 
 <div class="modal-item">
-  <div class="modal-item-title">
-      {{ playDateLabel }}
-  </div>
-  <div>
-      <div class="modal-item-content">
-        <span>{{ this.playDate | date:'fullDate' : '' :'de-CH'}}</span> <span *ngIf ="isFutureEvent"> um {{ this.playDate | date:'HH:mm' : '' :'de-CH' }}</span>
-      </div>
-  </div>
+	<div class="modal-item-title">
+		{{ locationLabel }}
+	</div>
+	<div>
+		<div class="modal-item-content">
+			<a (click)="openLocation(locationName)" class="location-link">{{ locationName }}</a>
+		</div>
+	</div>
+</div>
+
+<div class="modal-item">
+	<div class="modal-item-title">
+		{{ playDateLabel }}
+	</div>
+	<div>
+		<div class="modal-item-content">
+			<span>{{ this.playDate | date:'fullDate' : '' :'de-CH'}}</span> <span
+			*ngIf="isFutureEvent"> um {{ this.playDate | date:'HH:mm' : '' :'de-CH' }}</span>
+		</div>
+	</div>
 </div>
 
 <div class="modal-item last">
-  <div class="modal-item-title">
-    Mitwirkende
-  </div>
-  <div>
-      <div class="modal-item-content">
-        <div *ngFor="let job of artistsArray">
-          <div>
-            {{ job.name }} {{ job.name !== '' ? ' : ' : '' }}
-            <span *ngFor="let jobsharer of job.jobsharers; let isLast=last">
-              <a class="staff-link" (click)="openStaff(jobsharer)">{{ jobsharer }}</a> {{isLast ? '' : ' & '}}
-              <!-- <a [routerLink]="['/staff', jobsharer]">{{ jobsharer }}</a> {{isLast ? '' : ' & '}} -->
+	<div class="modal-item-title">
+		Mitwirkende
+	</div>
+	<div>
+		<div class="modal-item-content">
+			<div *ngFor="let job of artistsArray">
+				<div>
+					{{ job.name }} {{ job.name !== '' ? ' : ' : '' }}
+					<span *ngFor="let jobsharer of job.jobsharers; let isLast=last">
+              <a (click)="openStaff(jobsharer)" class="staff-link">{{ jobsharer }}</a> {{isLast ? '' : ' & '}}
+						<!-- <a [routerLink]="['/staff', jobsharer]">{{ jobsharer }}</a> {{isLast ? '' : ' & '}} -->
             </span>
-          </div>
-        </div>
-      </div>
-  </div>
+				</div>
+			</div>
+		</div>
+	</div>
 </div>

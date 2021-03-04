@@ -1,22 +1,27 @@
-<section id="about" class="about-section section text-center">
-  <div class="container">
-    <h2 class="section-title">Team</h2>
-    <div class="section-intro ml-auto mr-auto">
-      <p>Der Name Petruschka kommt von der Hauptfigur des traditionellen, russischen Jahrmarkttheaters. Eigentlich aber haben wir nur eines mit dieser Art Theater gemeinsam: Die spontane, zum Teil improvisierte Art des Spiels und den Einbezug der Zuschauer.</p>
-      <p>Wenn wir aber mit unseren Figuren, der Bühne und allem Drum und Dran unterwegs in eine Schule oder ein Kleintheater sind, dann kommt schon so etwas wie Jahrmarkts-Theaterstimmung bei uns auf.</p>
-      <p>Figuren, Bühne, Lieder, Musik- und Lichtgestaltung entstehen in einem langen Prozess und basieren auf fundierten Recherchen. Die Kinder nehmen an einem lebendigen, spannenden und informativen Theater teil und werden aktiv ins Geschehen miteinbezogen.</p>
-      </div>
-    <div class="members-block">
-      <div class="row">
-        <div class="col-12 col-md-6 col-lg-4" *ngFor="let staff of staffs$ | async; index as i;">
-            <app-about-item [staff]="staff" class="flex">
-            </app-about-item>
-        </div>
-      </div>
-      <!--//row-->
-    </div>
-    <!--//members-block-->
-  </div>
-  <!--//container-->
+<section class="about-section section text-center" id="about">
+	<div class="container">
+		<h2 class="section-title">Team</h2>
+		<div class="section-intro ml-auto mr-auto">
+			<p>Der Name Petruschka kommt von der Hauptfigur des traditionellen, russischen Jahrmarkttheaters. Eigentlich aber
+				haben wir nur eines mit dieser Art Theater gemeinsam: Die spontane, zum Teil improvisierte Art des Spiels und
+				den Einbezug der Zuschauer.</p>
+			<p>Wenn wir aber mit unseren Figuren, der Bühne und allem Drum und Dran unterwegs in eine Schule oder ein
+				Kleintheater sind, dann kommt schon so etwas wie Jahrmarkts-Theaterstimmung bei uns auf.</p>
+			<p>Figuren, Bühne, Lieder, Musik- und Lichtgestaltung entstehen in einem langen Prozess und basieren auf
+				fundierten Recherchen. Die Kinder nehmen an einem lebendigen, spannenden und informativen Theater teil und
+				werden aktiv ins Geschehen miteinbezogen.</p>
+		</div>
+		<div class="members-block">
+			<div class="row">
+				<div *ngFor="let staff of staffs$ | async; index as i;" class="col-12 col-md-6 col-lg-4">
+					<app-about-item [staff]="staff" class="flex">
+					</app-about-item>
+				</div>
+			</div>
+			<!--//row-->
+		</div>
+		<!--//members-block-->
+	</div>
+	<!--//container-->
 </section>
 <!--//about-section-->

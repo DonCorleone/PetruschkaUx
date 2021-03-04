@@ -1,14 +1,15 @@
 <div class="modal-item">
-  <h3>{{ eventName }}</h3>
-  <img class="img-fluid" [src]="imagePath" alt="">
-  <div class="modal-item-title">
-    Bestellung CD - Preis: CHF 22.00 (inkl. Porto)
-  </div>
-  <div class="modal-item-content">
-    <!--<a href="mailto:nathaliehildebrand@kinderkultur.ch?subject=Bestellung_CD_Das_Drachenei"></a> -->
-    <p>Per E-Mail an <a target="_blank" [href]="'mailto:nathaliehildebrand?subject=Bestellung CD ' + eventName">nathaliehildebrand@kinderkultur.ch</a></p>
-    <p>Betreff: Bestellung CD '{{ eventName }}'</p>
-    <p>Zusätzliche Angaben in der Mail: Anzahl CDs, Name und Adresse</p>
-  </div>
-  <a class="btn btn-xs btn-ghost-secondary" (click)="openInfo()">Infos zum Stück</a>
+	<h3>{{ eventName }}</h3>
+	<img [src]="imagePath" alt="" class="img-fluid">
+	<div class="modal-item-title">
+		Bestellung CD - Preis: CHF 22.00 (inkl. Porto)
+	</div>
+	<div class="modal-item-content">
+		<!--<a href="mailto:nathaliehildebrand@kinderkultur.ch?subject=Bestellung_CD_Das_Drachenei"></a> -->
+		<p>Per E-Mail an <a [href]="'mailto:nathaliehildebrand?subject=Bestellung CD ' + eventName" target="_blank">nathaliehildebrand@kinderkultur.ch</a>
+		</p>
+		<p>Betreff: Bestellung CD '{{ eventName }}'</p>
+		<p>Zusätzliche Angaben in der Mail: Anzahl CDs, Name und Adresse</p>
+	</div>
+	<a (click)="openInfo()" class="btn btn-xs btn-ghost-secondary">Infos zum Stück</a>
 </div>

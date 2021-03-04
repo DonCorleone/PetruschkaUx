@@ -1,45 +1,46 @@
 <div class="item">
-  <div class="date-label">
-    <div class="number">{{ start | date:'dd' : '' :'de-CH'}}</div>
-    <div class="month">{{ start | date:'MMM' : '' :'de-CH' }}</div>
-  </div>
-  <!--//date-label-->
-  <div class="gig-info">
-    <div class="info-content">
-      <h3 class="gig-title info-link" (click)="openInfo()" >{{ eventInfoDe.name }}</h3>
-      <div class="meta">
-        <ul class="meta-list list-inline">
-          <li class="list-inline-item location">
-            <i class="fas fa-map-marker-alt"></i><a class="location-link" (click)="openLocation(eventInfoDe.location)">{{ eventInfoDe.location }}</a>
-          </li>
-          <li class="list-inline-item time">
-            <i class="far fa-clock"></i>{{ start | date:'EE' : '' :'de-CH'}} {{ start | date:'HH:mm' : '' :'de-CH' }}
-          </li>
-        </ul>
-      </div>
-      <!--//meta-->
-    </div>
-    <!--//info-content-->
-    <div class="gig-actions">
-      <a class="btn btn-xs btn-ghost-secondary" (click)="collapse.toggle()" [attr.aria-expanded]="!isCollapsed"
-      aria-controls="collapseExample">Info</a>
+	<div class="date-label">
+		<div class="number">{{ start | date:'dd' : '' :'de-CH'}}</div>
+		<div class="month">{{ start | date:'MMM' : '' :'de-CH' }}</div>
+	</div>
+	<!--//date-label-->
+	<div class="gig-info">
+		<div class="info-content">
+			<h3 (click)="openInfo()" class="gig-title info-link">{{ eventInfoDe.name }}</h3>
+			<div class="meta">
+				<ul class="meta-list list-inline">
+					<li class="list-inline-item location">
+						<i class="fas fa-map-marker-alt"></i><a (click)="openLocation(eventInfoDe.location)"
+																										class="location-link">{{ eventInfoDe.location }}</a>
+					</li>
+					<li class="list-inline-item time">
+						<i class="far fa-clock"></i>{{ start | date:'EE' : '' :'de-CH'}} {{ start | date:'HH:mm' : '' :'de-CH' }}
+					</li>
+				</ul>
+			</div>
+			<!--//meta-->
+		</div>
+		<!--//info-content-->
+		<div class="gig-actions">
+			<a (click)="collapse.toggle()" [attr.aria-expanded]="!isCollapsed" aria-controls="collapseExample"
+				 class="btn btn-xs btn-ghost-secondary">Info</a>
 
-      <span>
-        <a class="btn btn-xs btn-secondary" [href]="[eventLink]" target="_blank" *ngIf="showBuyButton">Tickets</a>
+			<span>
+        <a *ngIf="showBuyButton" [href]="[eventLink]" class="btn btn-xs btn-secondary" target="_blank">Tickets</a>
       </span>
-      <span *ngIf="!showBuyButton" class="secondary-content">
+			<span *ngIf="!showBuyButton" class="secondary-content">
         Vorstellung vorüber.
       </span>
-    </div>
-    <!--//gig-actions-->
-    <div #collapse="ngbCollapse" [(ngbCollapse)]="isCollapsed">
-      <div class="shortDesc">
-        {{ eventInfoDe.shortDescription }}
-      </div>
-      <div>
-        <p><a class="more-link" (click)="openInfo()">Mehr..</a></p>
-      </div>
-    </div>
-  </div>
-  <!--//info-extra-->
+		</div>
+		<!--//gig-actions-->
+		<div #collapse="ngbCollapse" [(ngbCollapse)]="isCollapsed">
+			<div class="shortDesc">
+				{{ eventInfoDe.shortDescription }}
+			</div>
+			<div>
+				<p><a (click)="openInfo()" class="more-link">Mehr..</a></p>
+			</div>
+		</div>
+	</div>
+	<!--//info-extra-->
 </div>

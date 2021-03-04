@@ -1,24 +1,24 @@
 <div class="">
-  <div class="media-holder">
-    <div class="media-thumb">
-      <img [src]="imagePath" alt="">
-    </div>
-  </div>
-  <!--//media-holder-->
-  <div class="carousel-content">
-    <h3 class="title">{{name}}</h3>
-    <div class="desc">
-      <div class="countdown">
-        <span id="countdown-box" class="countdown-box"></span>till release
-      </div>
-      <!--//countdown-->
-      <p class="intro">
-        {{ shortDescription }}
-      </p>
-      <!--//intro-->
-    </div>
-    <!--//desc-->
-    <a href="#" class="more-link" (click)="open()">Find out more</a>
-  </div>
-  <!--//content-container-->
+	<div class="media-holder">
+		<div class="media-thumb">
+			<img [src]="imagePath" alt="">
+		</div>
+	</div>
+	<!--//media-holder-->
+	<div class="carousel-content">
+		<h3 class="title">{{name}}</h3>
+		<div class="desc">
+			<div class="countdown">
+				<span class="countdown-box" id="countdown-box"></span>till release
+			</div>
+			<!--//countdown-->
+			<p class="intro">
+				{{ shortDescription }}
+			</p>
+			<!--//intro-->
+		</div>
+		<!--//desc-->
+		<a (click)="open()" class="more-link" href="#">Find out more</a>
+	</div>
+	<!--//content-container-->
 </div>
