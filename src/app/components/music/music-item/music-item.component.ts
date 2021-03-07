@@ -26,7 +26,7 @@ export class MusicItemComponent implements OnInit {
 	}
 
 	get imagePath(): string {
-		return EventService.GetPicSqrPathFromEventDetail(this.eventDetail);
+		return EventService.GetPicSqrPathFromEventDetail(this.eventDetail, 'CD');
 	}
 
 	ngOnInit(): void {

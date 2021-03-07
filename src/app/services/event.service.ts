@@ -2,7 +2,8 @@ import {Injectable} from '@angular/core';
 import {map} from 'rxjs/operators';
 import {Observable} from 'rxjs';
 import {Apollo, gql} from 'apollo-angular';
-import {EventDetail} from '../models/event.models';
+import {EventDetail, TicketType, TicketTypeInfo} from '../models/event.models';
+import {tick} from '@angular/core/testing';
 
 const GET_EVENTDETAILS_BYTAG = gql`
   query {
@@ -20,8 +21,11 @@ const GET_EVENTDETAILS_BYTAG = gql`
       googleAnalyticsTracker
       start
       ticketTypes{
+        sortOrder
         ticketTypeInfos{
+          languageId
           imageUrl
+          name
         }
       }
     }
@@ -85,11 +89,56 @@ export class EventService {
 	constructor(private apollo: Apollo) {
 	}
 
-	static GetPicSqrPathFromEventDetail(eventDetail: EventDetail): string {
-		return (eventDetail
-		&& eventDetail.ticketTypes[0]
-		&& eventDetail.ticketTypes[0].ticketTypeInfos[0] ?
-			eventDetail.ticketTypes[0].ticketTypeInfos[0].imageUrl : null);
+	static GetPicSqrPathFromEventDetail(eventDetail: EventDetail, usage: string): string {
+
+		if (!eventDetail || !eventDetail.ticketTypes || eventDetail.ticketTypes.length === 0){
+			return null;
+		}
+
+		let usageTicketTypes: TicketTypeInfo[];
+
+		if (eventDetail.ticketTypes.length === 1) {
+			usageTicketTypes = eventDetail.ticketTypes[0].ticketTypeInfos
+				.filter(p => p.name.toLowerCase() === usage.toLowerCase() && p.languageId === 1);
+		}else{
+
+			for (const ticketType of eventDetail.ticketTypes) {
+				usageTicketTypes = ticketType.ticketTypeInfos
+					.filter(p => p.name.toLowerCase() === usage.toLowerCase() && p.languageId === 1);
+				if (usageTicketTypes && usageTicketTypes.length > 0){
+					break;
+				}
+			}
+			// const sortedArray = eventDetail.ticketTypes.slice().sort((a, b) => b.sortOrder - a.sortOrder);
+			// const sortedArray = eventDetail.ticketTypes.slice().sort((n1, n2) => {
+			// 	if (n1.sortOrder < n2.sortOrder) {
+			// 		return 1;
+			// 	}
+			//
+			// 	if (n1.sortOrder > n2.sortOrder) {
+			// 		return -1;
+			// 	}
+			//
+			// 	return 0;
+			// });
+			//
+			// if (sortedArray){
+			// 	ticketTypeInfos = sortedArray[0].ticketTypeInfos;
+			// }
+		}
+		return usageTicketTypes != null && usageTicketTypes.length > 0 ? usageTicketTypes[0].imageUrl : null;
+	}
+
+
+	static getSortedTicketType(eventDetail: EventDetail): TicketType[] {
+
+		if (!eventDetail || !eventDetail.ticketTypes){
+			return null;
+		}
+
+		if (eventDetail.ticketTypes.length === 1) {
+			return eventDetail.ticketTypes;
+		}
 	}
 
 	static GetPicBannerPathFromEventDetail(eventDetail: EventDetail): string {

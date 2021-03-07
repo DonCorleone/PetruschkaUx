@@ -22,7 +22,7 @@ export class MerchItemComponent implements OnInit {
 	}
 
 	get imagePath(): string {
-		return EventService.GetPicSqrPathFromEventDetail(this.eventDetail);
+		return EventService.GetPicSqrPathFromEventDetail(this.eventDetail, 'Tournee');
 	}
 
 	ngOnInit(): void {
