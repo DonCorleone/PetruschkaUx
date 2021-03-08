@@ -2,7 +2,7 @@ import {Injectable} from '@angular/core';
 import {Apollo, gql} from 'apollo-angular';
 import {Observable} from 'rxjs';
 import {map} from 'rxjs/operators';
-import {Staff} from '../models/staff.models';
+import {Job, Staff} from '../models/staff.models';
 
 const GET_STAFFS = gql`
   query GetStaffByName {
@@ -67,6 +67,35 @@ export class StaffService {
 				},
 			})
 			.valueChanges.pipe(map((result) => result.data.staff));
+	}
+
+	public GetStaffLinks(staff: string): Job [] {
+
+		const jobs = staff.split('|');
+		const returnval: Job [] = [];
+
+		jobs.forEach(job => {
+			const ixOfSplitter = job.indexOf(':');
+
+			const jobsharerArray: string[] = [];
+
+			const jobdesc: string = job.slice(0, ixOfSplitter);
+			const jobsharers = job.substring(ixOfSplitter + 1).split('&');
+
+			jobsharers.forEach(jobsharePartner => {
+
+				jobsharerArray.push(jobsharePartner.trim());
+			});
+
+			const jobObject: Job = {
+				name: jobdesc.trim(),
+				jobsharers: jobsharerArray
+			};
+
+			returnval.push(jobObject);
+		});
+
+		return returnval;
 	}
 }
 

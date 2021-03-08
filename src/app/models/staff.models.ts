@@ -5,3 +5,8 @@ export interface Staff {
 	active: boolean;
 	sortOrder: number;
 }
+
+export interface Job {
+	name: string;
+	jobsharers: string[];
+}

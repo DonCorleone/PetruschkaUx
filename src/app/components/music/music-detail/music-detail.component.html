@@ -4,8 +4,17 @@
 		<p>{{ shortDesc }}</p>
 	</div>
 	<img [src]="imagePath" alt="" class="img-fluid">
-	<div>
-		<p>{{ cdDesc }}</p>
+
+	<div class="modal-item-content">
+		<div *ngFor="let job of artistsArray">
+			<div>
+				{{ job.name }} {{ job.name !== '' ? ' : ' : '' }}
+				<span *ngFor="let jobsharer of job.jobsharers; let isLast=last">
+              <a (click)="openStaff(jobsharer)" class="staff-link">{{ jobsharer }}</a> {{isLast ? '' : ' & '}}
+					<!-- <a [routerLink]="['/staff', jobsharer]">{{ jobsharer }}</a> {{isLast ? '' : ' & '}} -->
+            </span>
+			</div>
+		</div>
 	</div>
 	<div class="modal-item-title">
 		Bestellung CD - Preis: CHF 22.00 (inkl. Porto)

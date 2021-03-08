@@ -4,11 +4,8 @@ import {NgbModal} from '@ng-bootstrap/ng-bootstrap';
 import {EventDetailEventInfo} from 'src/app/models/event.models';
 import {AboutModalComponent} from '../../about/about-modal/about-modal.component';
 import {LocationModalComponent} from '../../location/location-modal/location-modal.component';
-
-interface Job {
-	name: string;
-	jobsharers: string[];
-}
+import {Job} from '../../../models/staff.models';
+import {StaffService} from '../../../services/staff.service';
 
 @Component({
 	selector: 'app-info-item',
@@ -22,11 +19,10 @@ export class InfoComponent implements OnChanges {
 	@Input() usage: string;
 	@Input() playDate: Date;
 
-
 	artistsArray: Job[];
 
 	constructor(
-		private sanitizer: DomSanitizer, private modalService: NgbModal) {
+		private sanitizer: DomSanitizer, private modalService: NgbModal, private staffService: StaffService) {
 	}
 
 	get locationName(): string {
@@ -77,7 +73,7 @@ export class InfoComponent implements OnChanges {
 
 	ngOnChanges(): void {
 		if (this.eventInfo && this.eventInfo.artists) {
-			this.artistsArray = this.GetStaffLinks(this.eventInfo.artists);
+			this.artistsArray = this.staffService.GetStaffLinks(this.eventInfo.artists);
 		}
 	}
 
@@ -93,34 +89,5 @@ export class InfoComponent implements OnChanges {
 
 	transformHtml(htmlTextWithStyle) {
 		return this.sanitizer.bypassSecurityTrustHtml(htmlTextWithStyle);
-	}
-
-	GetStaffLinks(staff: string): Job [] {
-
-		const jobs = staff.split('|');
-		const returnval: Job [] = [];
-
-		jobs.forEach(job => {
-			const ixOfSplitter = job.indexOf(':');
-
-			const jobsharerArray: string[] = [];
-
-			const jobdesc: string = job.slice(0, ixOfSplitter);
-			const jobsharers = job.substring(ixOfSplitter + 1).split('&');
-
-			jobsharers.forEach(jobsharePartner => {
-
-				jobsharerArray.push(jobsharePartner.trim());
-			});
-
-			const jobObject: Job = {
-				name: jobdesc.trim(),
-				jobsharers: jobsharerArray
-			};
-
-			returnval.push(jobObject);
-		});
-
-		return returnval;
 	}
 }

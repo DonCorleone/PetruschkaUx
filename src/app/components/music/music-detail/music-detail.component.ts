@@ -4,6 +4,8 @@ import {EventDetail, EventDetailEventInfo, TicketTypeInfo} from 'src/app/models/
 import {EventService} from 'src/app/services/event.service';
 import {InfoModalComponent} from '../../info/info-modal/info-modal.component';
 import {AboutModalComponent} from '../../about/about-modal/about-modal.component';
+import {Job} from '../../../models/staff.models';
+import {StaffService} from '../../../services/staff.service';
 
 @Component({
 	selector: 'app-music-detail',
@@ -14,10 +16,27 @@ export class MusicDetailComponent implements OnInit {
 
 	@Input() eventDetail: EventDetail;
 
-	ticketTypeInfo: TicketTypeInfo;
-	eventInfo: EventDetailEventInfo;
+	private ticketTypeInfoProp: TicketTypeInfo;
 
-	constructor(private modalService: NgbModal) {
+	set ticketTypeInfo(value: TicketTypeInfo) {
+		this.ticketTypeInfoProp = value;
+		if (value) {
+			this.artistsArray = this.staffService.GetStaffLinks(this.ticketTypeInfo.description);
+		}
+	}
+
+	get ticketTypeInfo(): TicketTypeInfo {
+		return this.ticketTypeInfoProp;
+	}
+
+	eventInfo: EventDetailEventInfo;
+	artistsArray: Job[];
+
+	constructor(private modalService: NgbModal, private staffService: StaffService) {
+	}
+
+	get artists(): Job[] {
+		return (this.artistsArray && this.artistsArray.length > 0) ? this.artistsArray : null;
 	}
 
 	get eventName(): string {
@@ -34,10 +53,6 @@ export class MusicDetailComponent implements OnInit {
 
 	get shortDesc(): string {
 		return this.eventInfo?.shortDescription;
-	}
-
-	get cdDesc(): string {
-		return this.ticketTypeInfo?.description;
 	}
 
 	ngOnInit(): void {

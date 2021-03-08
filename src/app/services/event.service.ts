@@ -3,7 +3,6 @@ import {map} from 'rxjs/operators';
 import {Observable} from 'rxjs';
 import {Apollo, gql} from 'apollo-angular';
 import {EventDetail, EventDetailEventInfo, TicketType, TicketTypeInfo} from '../models/event.models';
-import {tick} from '@angular/core/testing';
 
 const GET_EVENTDETAILS_BYTAG = gql`
   query {
