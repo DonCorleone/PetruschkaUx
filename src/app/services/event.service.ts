@@ -2,7 +2,7 @@ import {Injectable} from '@angular/core';
 import {map} from 'rxjs/operators';
 import {Observable} from 'rxjs';
 import {Apollo, gql} from 'apollo-angular';
-import {EventDetail, TicketType, TicketTypeInfo} from '../models/event.models';
+import {EventDetail, EventDetailEventInfo, TicketType, TicketTypeInfo} from '../models/event.models';
 import {tick} from '@angular/core/testing';
 
 const GET_EVENTDETAILS_BYTAG = gql`
@@ -26,6 +26,7 @@ const GET_EVENTDETAILS_BYTAG = gql`
           languageId
           imageUrl
           name
+          description
         }
       }
     }
@@ -89,7 +90,18 @@ export class EventService {
 	constructor(private apollo: Apollo) {
 	}
 
-	static GetPicSqrPathFromEventDetail(eventDetail: EventDetail, usage: string): string {
+	static GetEventInfoFromEventDetail(eventDetail: EventDetail): EventDetailEventInfo {
+
+		if (!eventDetail || !eventDetail.eventInfos || eventDetail.eventInfos.length === 0){
+			return null;
+		}
+
+		return (eventDetail.eventInfos.filter(
+				p => p.languageId === 1))?.length > 0 ? eventDetail.eventInfos.filter(
+				p => p.languageId === 1)[0] : null;
+		}
+
+	static GetTicketTypeInfoFromEventDetail(eventDetail: EventDetail, usage: string): TicketTypeInfo {
 
 		if (!eventDetail || !eventDetail.ticketTypes || eventDetail.ticketTypes.length === 0){
 			return null;
@@ -109,24 +121,8 @@ export class EventService {
 					break;
 				}
 			}
-			// const sortedArray = eventDetail.ticketTypes.slice().sort((a, b) => b.sortOrder - a.sortOrder);
-			// const sortedArray = eventDetail.ticketTypes.slice().sort((n1, n2) => {
-			// 	if (n1.sortOrder < n2.sortOrder) {
-			// 		return 1;
-			// 	}
-			//
-			// 	if (n1.sortOrder > n2.sortOrder) {
-			// 		return -1;
-			// 	}
-			//
-			// 	return 0;
-			// });
-			//
-			// if (sortedArray){
-			// 	ticketTypeInfos = sortedArray[0].ticketTypeInfos;
-			// }
 		}
-		return usageTicketTypes != null && usageTicketTypes.length > 0 ? usageTicketTypes[0].imageUrl : null;
+		return usageTicketTypes != null && usageTicketTypes.length > 0 ? usageTicketTypes[0] : null;
 	}
 
 

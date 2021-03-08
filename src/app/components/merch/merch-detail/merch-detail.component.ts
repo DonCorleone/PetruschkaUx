@@ -1,6 +1,6 @@
 import {Component, Input, OnInit} from '@angular/core';
 import {NgbModal} from '@ng-bootstrap/ng-bootstrap';
-import {EventDetail} from 'src/app/models/event.models';
+import {EventDetail, TicketTypeInfo} from 'src/app/models/event.models';
 import {EventService} from 'src/app/services/event.service';
 import {InfoModalComponent} from '../../info/info-modal/info-modal.component';
 
@@ -12,6 +12,7 @@ import {InfoModalComponent} from '../../info/info-modal/info-modal.component';
 export class MerchDetailComponent implements OnInit {
 
 	@Input() eventDetail: EventDetail;
+	ticketTypeInfo: TicketTypeInfo;
 
 	constructor(private modalService: NgbModal) {
 	}
@@ -27,10 +28,15 @@ export class MerchDetailComponent implements OnInit {
 	}
 
 	get imagePath(): string {
-		return EventService.GetPicSqrPathFromEventDetail(this.eventDetail, 'Tournee');
+		return this.ticketTypeInfo?.imageUrl;
+	}
+
+	get description(): string {
+		return this.ticketTypeInfo?.description;
 	}
 
 	ngOnInit(): void {
+		this.ticketTypeInfo = EventService.GetTicketTypeInfoFromEventDetail(this.eventDetail, 'Tournee');
 	}
 
 	openInfo(): void {

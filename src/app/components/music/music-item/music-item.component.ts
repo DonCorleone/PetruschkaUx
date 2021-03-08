@@ -1,6 +1,6 @@
 import {Component, Input, OnInit} from '@angular/core';
 import {NgbModal} from '@ng-bootstrap/ng-bootstrap';
-import {EventDetail} from 'src/app/models/event.models';
+import {EventDetail, TicketTypeInfo} from 'src/app/models/event.models';
 import {EventService} from 'src/app/services/event.service';
 import {MusicModalComponent} from '../music-modal/music-modal.component';
 
@@ -14,6 +14,8 @@ export class MusicItemComponent implements OnInit {
 	@Input() eventDetail: EventDetail;
 	@Input() usage: string;
 
+	ticketTypeInfo: TicketTypeInfo;
+
 	constructor(private modalService: NgbModal) {
 	}
 
@@ -26,10 +28,15 @@ export class MusicItemComponent implements OnInit {
 	}
 
 	get imagePath(): string {
-		return EventService.GetPicSqrPathFromEventDetail(this.eventDetail, 'CD');
+		return this.ticketTypeInfo?.imageUrl;
+	}
+
+	get description(): string {
+		return this.ticketTypeInfo?.description;
 	}
 
 	ngOnInit(): void {
+		this.ticketTypeInfo = EventService.GetTicketTypeInfoFromEventDetail(this.eventDetail, 'CD');
 	}
 
 	openDetail(): void {
