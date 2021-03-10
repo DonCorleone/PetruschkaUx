@@ -1,11 +1,11 @@
 // Extra small devices (portrait phones, less than 576px)
-@media (max-width: 575.98px) { 
+@media (max-width: 575.98px) {
 
 }
 
 // Small devices (landscape phones, less than 768px)
-@media (max-width: 767.98px) { 
-    
+@media (max-width: 767.98px) {
+
     .header {
         background:rgba(0, 0, 0, 0.9);
         padding-top: 0;
@@ -18,7 +18,7 @@
     .nav > li.active > a {
         color: $theme-color;
     }
-    
+
    .promo-section {
        min-height: 900px;
    }
@@ -63,32 +63,32 @@
   .about-section .item-inner {
       padding: 15px;
   }
-  
+
   .merch-section .mask-inner {
       padding-top: 30px;
   }
-  
-  .music-section .albums-block .item-inner {
-      padding: 0px;
-  }
-  
-  .music-section .albums-block .album-title {
-      @include truncate(100px);
-  }
-  
-  .music-section .albums-block .cover-figure {
-      max-width:100%;
-      max-height:inherit;
-  }
-  
-  .music-section .albums-block .cover-figure .record-holder {
-      display: none;
-  }
-  
+
+  // .music-section .albums-block .item-inner {
+  //     padding: 0px;
+  // }
+
+  // .music-section .albums-block .album-title {
+  //     @include truncate(100px);
+  // }
+
+  // .music-section .albums-block .cover-figure {
+  //     max-width:100%;
+  //     max-height:inherit;
+  // }
+
+  // .music-section .albums-block .cover-figure .record-holder {
+  //     display: none;
+  // }
+
   .contact-section .channels-list .icon {
       //height: 15px;
   }
-  
+
   .updates-block .carousel .carousel-item {
        height: inherit;
    }
@@ -96,7 +96,7 @@
 }
 
 // Small devices (landscape phones, 576px and up)
-@media (min-width: 576px) { 
+@media (min-width: 576px) {
 	.modal-video .modal-dialog {
 		max-width: inherit;
 	}
@@ -107,17 +107,17 @@
 
 
 // Medium devices (tablets, 768px and up)
-@media (min-width: 768px) { 
-    
+@media (min-width: 768px) {
+
     .navbar-expand-md .navbar-nav .nav-link {
         padding-left: 15px;
         padding-right: 15px;
     }
-    
+
     .modal-dialog {
         width: 700px;
     }
-    
+
     .navbar-nav {
         float: none;
     }
@@ -139,21 +139,21 @@
     .updates-block .glyphicon-chevron-left {
        left: -45px;
     }
-    .music-section .albums-block .cover-figure .record-holder {
-        right: -60px;
-    }
-    .music-section .albums-block .cover-figure:hover .record-holder {
-        right: -80px;
-    }
+    // .music-section .albums-block .cover-figure .record-holder {
+    //     right: -60px;
+    // }
+    // .music-section .albums-block .cover-figure:hover .record-holder {
+    //     right: -80px;
+    // }
 }
 
 // Large devices (desktops, 992px and up)
 @media (min-width: 992px) {
-    
+
     .promo-content {
         padding-top: 80px;
     }
-    
+
     .updates-block {
        height: 160px;
     }
@@ -169,19 +169,16 @@
     .updates-block .glyphicon-chevron-left {
        left: -60px;
     }
-    .music-section .albums-block .cover-figure .record-holder {
-        right: -80px;
-    }
-    .music-section .albums-block .cover-figure:hover .record-holder {
-        right: -118px;
-    }
+//     .music-section .albums-block .cover-figure .record-holder {
+//         right: -80px;
+//     }
+//     .music-section .albums-block .cover-figure:hover .record-holder {
+//         right: -118px;
+//     }
 }
 
 // Extra large devices (large desktops, 1200px and up)
 @media (min-width: 1200px) {
 
-    
+
 }
-
-
-
