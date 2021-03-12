@@ -1,10 +1,12 @@
 <section class="gigs-section section" id="gigs">
 	<div class="container">
 		<h2 class="section-title text-center">Anstehende Aufführungen</h2>
-		<div *ngFor="let eventDetail of eventDetailsUpcoming$ | async" class="gigs-container">
-			<app-gigs-item [eventId]="eventDetail._id" [eventInfoDe]="GetEventInfoFromEventDetail(eventDetail)"
-										 [start]="eventDetail.start">
-			</app-gigs-item>
+		<div class="gigs-container">
+			<div *ngFor="let eventDetail of eventDetailsUpcoming$ | async" class="item">
+				<app-gigs-item [eventId]="eventDetail._id" [eventInfoDe]="GetEventInfoFromEventDetail(eventDetail)"
+											 [start]="eventDetail.start">
+				</app-gigs-item>
+			</div>
 		</div>
 		<!--//gigs-container-->
 	</div>

@@ -1,0 +1,14 @@
+@import "/src/scss/theme-1.scss";
+.gigs-section {
+	.container {
+		max-width: 860px;
+
+		.item {
+			position: relative;
+			padding-left: 60px;
+			padding-top: 15px;
+			padding-bottom: 15px;
+			border-bottom: 1px solid $divider;
+		}
+	}
+}

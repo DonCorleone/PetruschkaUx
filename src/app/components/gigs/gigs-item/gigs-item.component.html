@@ -1,4 +1,4 @@
-<div class="item">
+
 	<div class="date-label">
 		<div class="number">{{ start | date:'dd' : '' :'de-CH'}}</div>
 		<div class="month">{{ start | date:'MMM' : '' :'de-CH' }}</div>
@@ -33,7 +33,7 @@
       </span>
 		</div>
 		<!--//gig-actions-->
-		<div #collapse="ngbCollapse" [(ngbCollapse)]="isCollapsed">
+		<div #collapse="ngbCollapse" [(ngbCollapse)]="isCollapsed" class="info-extra">
 			<div class="shortDesc">
 				{{ eventInfoDe.shortDescription }}
 			</div>
@@ -43,4 +43,3 @@
 		</div>
 	</div>
 	<!--//info-extra-->
-</div>
