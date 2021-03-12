@@ -1,18 +1,14 @@
-@import '../../../../scss/bootstrap/functions';
-@import '../../../../scss/bootstrap/variables';
-@import '../../../../scss/bootstrap/mixins/breakpoints';
+@import "/src/scss/theme-1.scss";
 
-.card-columns {
-   @include media-breakpoint-up(xs) {
-      column-count: 1;
-   }
-   @include media-breakpoint-up(sm) {
-      column-count: 1;
-   }
-   @include media-breakpoint-up(md) {
-      column-count: 2;
-   }
-   @include media-breakpoint-up(lg) {
-      column-count: 3;
-   }
+/* ======= About Section ======= */
+.about-section {
+  .section-title {
+    margin-bottom: 30px;
+  }
+  .section-intro {
+    margin-bottom: 60px;
+    max-width: 800px;
+    font-size: 16px;
+    color: $text-color-secondary;
+  }
 }
