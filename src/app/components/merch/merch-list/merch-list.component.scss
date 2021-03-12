@@ -1,23 +1,16 @@
-@import '/src/scss/theme-1.scss';
-
-.row {
-	justify-content: center;
-}
+@import "/src/scss/theme-1.scss";
 
 .merch-section {
-  .merch-contact {
-    margin-top: 60px;
-    .title {
-      font-size: 18px;
-      margin-top: 0;
-      margin-bottom: 15px;
-    }
-    .intro {
-      font-size: 16px;
-      color: $text-color-secondary;
-    }
-    .btn {
-      margin-top: 15px;
-    }
-  }
+	background: $smoky-white;
+
+	.row {
+		justify-content: center;
+		.item {
+			margin-bottom: 30px;
+		}
+	}
+
+	.merch-action {
+		// margin-top: 30px;
+	}
 }
