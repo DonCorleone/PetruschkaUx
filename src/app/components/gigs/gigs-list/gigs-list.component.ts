@@ -16,7 +16,7 @@ export class GigsListComponent implements OnInit {
 	}
 
 	ngOnInit() {
-		this.eventDetailsUpcoming$ = this.eventService.GetUpcomingEventDetails();
+		this.eventDetailsUpcoming$ = this.eventService.GetUpcomingGigs();
 	}
 
 	GetEventInfoFromEventDetail(eventDetail: EventDetail): EventDetailEventInfo {

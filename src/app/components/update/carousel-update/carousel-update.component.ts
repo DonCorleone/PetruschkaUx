@@ -27,6 +27,6 @@ export class CarouselUpdateComponent implements OnInit {
 	}
 
 	ngOnInit() {
-		this.eventDetails$ = this.eventService.GetEventDetails(p => p.googleAnalyticsTracker === 'Premiere');
+		this.eventDetails$ = this.eventService.GetUpcomingEventDetails();
 	}
 }

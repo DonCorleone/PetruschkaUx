@@ -32,6 +32,42 @@ const GET_EVENTDETAILS_BYTAG = gql`
   }
 `;
 
+const GET_UPCOMING_EVENTS = gql`
+	query GetUpcomingEvents($today: DateTime!){
+		eventDetails (
+			query: {
+				AND: [
+								{facebookPixelId: ""}
+								{googleAnalyticsTracker: "Premiere"}
+								{start_gte: $today}
+							]
+			})
+		{
+			_id,
+			eventInfos{
+				name
+				bannerImagePath
+				flyerImagePath
+				shortDescription
+				languageId
+			}
+			notificationEmail
+			facebookPixelId
+			googleAnalyticsTracker
+			start
+			ticketTypes{
+				sortOrder
+				ticketTypeInfos {
+					languageId
+					imageUrl
+					name
+					description
+				}
+			}
+		}
+	}
+`;
+
 const GET_EVENTINFO_BYEVENTID = gql`
   query GetEventByGroupId($eventId: Int!){
     eventDetail(query:{_id:$eventId}){
@@ -50,14 +86,14 @@ const GET_EVENTINFO_BYEVENTID = gql`
   }
 `;
 
-const GET_UPCOMING_EVENTS = gql`
-    query {
+const GET_UPCOMING_GIGS = gql`
+    query GetUpcomingGigs ($today: DateTime!) {
       eventDetails (
         query: {
           AND: [
             {facebookPixelId: ""}
             {OR: [{googleAnalyticsTracker: ""}{googleAnalyticsTracker: "Premiere"}]}
-            {start_gte: "2021-01-01T00:00:00Z"}
+            {start_gte: $today}
           ]}){
         _id,
         eventInfos{
@@ -184,15 +220,33 @@ export class EventService {
 			.valueChanges.pipe(map((result) => result.data.eventDetail));
 	}
 
-	GetUpcomingEventDetails(): Observable<EventDetail[]> {
+	GetUpcomingGigs(): Observable<EventDetail[]> {
 		return this.apollo
-			.watchQuery<GetEventDetailPrototypes>({query: GET_UPCOMING_EVENTS})
+			.watchQuery<GetEventDetailPrototypes>({
+				query: GET_UPCOMING_GIGS,
+				variables: {
+					today: new Date()
+				},
+			})
 			.valueChanges.pipe(map((result) => result.data.eventDetails));
 	}
 
 	GetEventDetails(filterPredicateIn: any): Observable<EventDetail[]> {
 		return this.apollo
-			.watchQuery<GetEventDetailPrototypes>({query: GET_EVENTDETAILS_BYTAG})
+			.watchQuery<GetEventDetailPrototypes>({
+				query: GET_EVENTDETAILS_BYTAG
+			})
 			.valueChanges.pipe(map((result) => result.data.eventDetails.filter(filterPredicateIn)));
+	}
+
+	GetUpcomingEventDetails(): Observable<EventDetail[]> {
+		return this.apollo
+			.watchQuery<GetEventDetailPrototypes>({
+				query: GET_UPCOMING_EVENTS,
+				variables: {
+					today: new Date()
+				},
+			})
+			.valueChanges.pipe(map((result) => result.data.eventDetails));
 	}
 }
