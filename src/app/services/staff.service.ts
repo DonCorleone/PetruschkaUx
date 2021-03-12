@@ -75,21 +75,23 @@ export class StaffService {
 		const returnval: Job [] = [];
 
 		jobs.forEach(job => {
-			const ixOfSplitter = job.indexOf(':');
+			const ixOfSplitterColon = job.indexOf(':');
+			const ixOfSplitterDash = job.indexOf('-');
 
-			const jobsharerArray: string[] = [];
+			const sharerArray: string[] = [];
 
-			const jobdesc: string = job.slice(0, ixOfSplitter);
-			const jobsharers = job.substring(ixOfSplitter + 1).split('&');
+			const name: string = job.slice(0, ixOfSplitterColon > 0 ? ixOfSplitterColon : ixOfSplitterDash) ;
+			const sharersRaw = job.substring(ixOfSplitterColon > 0 ? ixOfSplitterColon + 1 : ixOfSplitterDash + 1).split('&');
 
-			jobsharers.forEach(jobsharePartner => {
+			sharersRaw.forEach(sharerRaw => {
 
-				jobsharerArray.push(jobsharePartner.trim());
+				sharerArray.push(sharerRaw.trim());
 			});
 
 			const jobObject: Job = {
-				name: jobdesc.trim(),
-				jobsharers: jobsharerArray
+				isJobSharing: ixOfSplitterColon > 0,
+				name: name.trim(),
+				values: sharerArray
 			};
 
 			returnval.push(jobObject);

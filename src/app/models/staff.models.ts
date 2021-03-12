@@ -7,6 +7,7 @@ export interface Staff {
 }
 
 export interface Job {
+	isJobSharing: boolean;
 	name: string;
-	jobsharers: string[];
+	values: string[];
 }

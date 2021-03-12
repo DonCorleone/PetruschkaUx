@@ -49,11 +49,17 @@
 	<div>
 		<div class="modal-item-content">
 			<div *ngFor="let job of artistsArray">
-				<div>
+				<div *ngIf="job.isJobSharing">
 					{{ job.name }} {{ job.name !== '' ? ' : ' : '' }}
-					<span *ngFor="let jobsharer of job.jobsharers; let isLast=last">
-              <a (click)="openStaff(jobsharer)" class="staff-link">{{ jobsharer }}</a> {{isLast ? '' : ' & '}}
+					<span *ngFor="let jobValue of job.values; let isLast=last">
+              <a (click)="openStaff(jobValue)" class="staff-link">{{ jobValue }}</a> {{isLast ? '' : ' & '}}
 						<!-- <a [routerLink]="['/staff', jobsharer]">{{ jobsharer }}</a> {{isLast ? '' : ' & '}} -->
+            </span>
+				</div>
+				<div *ngIf="!job.isJobSharing">
+					<a (click)="openStaff(job.name)" class="staff-link">{{ job.name }}</a> {{ job.name !== '' ? ' : ' : '' }}
+					<span *ngFor="let jobValue of job.values; let isLast=last">
+						{{ jobValue }} {{isLast ? '' : ' & '}}
             </span>
 				</div>
 			</div>
