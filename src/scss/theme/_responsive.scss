@@ -4,27 +4,27 @@
 
 // Small devices (landscape phones, less than 768px)
 @media (max-width: 767.98px) {
-	.header {
-		background: rgba(0, 0, 0, 0.9);
-		padding-top: 0;
-	}
+	// .header {
+	// 	background: rgba(0, 0, 0, 0.9);
+	// 	padding-top: 0;
+	// }
 
-	.navbar-collapse {
-		@include box-shadow(none);
-	}
-	.nav > li.active > a {
-		color: $theme-color;
-	}
+	// .navbar-collapse {
+	// 	@include box-shadow(none);
+	// }
+	// .nav > li.active > a {
+	// 	color: $theme-color;
+	// }
 
-	.promo-section {
-		min-height: 900px;
-	}
-	.promo-content {
-		padding-top: 0px;
-	}
-	.promo-content .headline {
-		font-size: 36px;
-	}
+	// .promo-section {
+	// 	min-height: 900px;
+	// }
+	// .promo-content {
+	// 	padding-top: 0px;
+	// }
+	// .promo-content .headline {
+	// 	font-size: 36px;
+	// }
 	.updates-block {
 		position: static;
 		height: inherit;
@@ -103,18 +103,18 @@
 
 // Medium devices (tablets, 768px and up)
 @media (min-width: 768px) {
-	.navbar-expand-md .navbar-nav .nav-link {
-		padding-left: 15px;
-		padding-right: 15px;
-	}
+	// .navbar-expand-md .navbar-nav .nav-link {
+	// 	padding-left: 15px;
+	// 	padding-right: 15px;
+	// }
 
-	.modal-dialog {
-		width: 700px;
-	}
+	// .modal-dialog {
+	// 	width: 700px;
+	// }
 
-	.navbar-nav {
-		float: none;
-	}
+	// .navbar-nav {
+	// 	float: none;
+	// }
 	.promo-content {
 		padding-top: 30px;
 	}
