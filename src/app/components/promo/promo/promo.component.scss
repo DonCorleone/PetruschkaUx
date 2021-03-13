@@ -1,7 +1,7 @@
 @import "/src/scss/theme-1.scss";
-.vegas-timer-progress {
-	background: $theme-color;
-}
+// .vegas-timer-progress {
+// 	background: $theme-color;
+// }
 .promo-section {
 	height: 100%;
 	min-height: 660px;
@@ -69,16 +69,16 @@
 	// .carousel-inner {
 	// 	min-height: 100px;
 	// }
-	.media-holder {
-		display: inline-block;
-		position: absolute;
-		width: 170px;
-		height: 100px;
-		left: 0;
-	}
-	.media-thumb {
-		position: relative;
-	}
+	// .media-holder {
+	// 	display: inline-block;
+	// 	position: absolute;
+	// 	width: 170px;
+	// 	height: 100px;
+	// 	left: 0;
+	// }
+	// .media-thumb {
+	// 	position: relative;
+	// }
 	.video-play-trigger {
 		position: absolute;
 		width: 36px;
@@ -133,6 +133,85 @@
 	// }
 }
 
+// Large devices (desktops, 992px and up)
+@media (min-width: 992px) {
+
+		.promo-content {
+		padding-top: 80px;
+	}
+
+	.updates-block {
+		height: 160px;
+	}
+	.updates-block .carousel-content .btn-cta {
+		position: absolute;
+	}
+	.updates-block .carousel .item {
+		height: 100px;
+	}
+	.updates-block .glyphicon-chevron-right {
+		right: -60px;
+	}
+	.updates-block .glyphicon-chevron-left {
+		left: -60px;
+	}
+}
+
+// Small devices (landscape phones, less than 768px)
+@media (max-width: 767.98px) {
+
+	.updates-block {
+		position: static;
+		height: inherit;
+		min-height: 400px;
+	}
+	.updates-block .media-holder {
+		position: static;
+		margin: 0 auto;
+		margin-bottom: 30px;
+	}
+	.updates-block .carousel-content {
+		padding-left: 0;
+	}
+
+	.updates-block .carousel-content .btn-cta {
+		position: static;
+	}
+	.updates-block .carousel .item {
+		height: inherit;
+	}
+	.updates-block .glyphicon-chevron-right {
+		right: -45px;
+	}
+	.updates-block .glyphicon-chevron-left {
+		left: -45px;
+	}
+
+	.updates-block .carousel .carousel-item {
+		height: inherit;
+	}
+}
+// Medium devices (tablets, 768px and up)
+@media (min-width: 768px) {
+	.promo-content {
+		padding-top: 30px;
+	}
+	.updates-block {
+		height: 260px;
+	}
+	.updates-block .carousel-content .btn-cta {
+		position: static;
+	}
+	.updates-block .carousel .item {
+		height: 200px;
+	}
+	.updates-block .glyphicon-chevron-right {
+		right: -45px;
+	}
+	.updates-block .glyphicon-chevron-left {
+		left: -45px;
+	}
+}
 .countdown-box {
 	font-size: 16px;
 	.number {

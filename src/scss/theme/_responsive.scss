@@ -25,32 +25,32 @@
 	// .promo-content .headline {
 	// 	font-size: 36px;
 	// }
-	.updates-block {
-		position: static;
-		height: inherit;
-		min-height: 400px;
-	}
-	.updates-block .media-holder {
-		position: static;
-		margin: 0 auto;
-		margin-bottom: 30px;
-	}
-	.updates-block .carousel-content {
-		padding-left: 0;
-	}
+	// .updates-block {
+	// 	position: static;
+	// 	height: inherit;
+	// 	min-height: 400px;
+	// }
+	// .updates-block .media-holder {
+	// 	position: static;
+	// 	margin: 0 auto;
+	// 	margin-bottom: 30px;
+	// }
+	// .updates-block .carousel-content {
+	// 	padding-left: 0;
+	// }
 
-	.updates-block .carousel-content .btn-cta {
-		position: static;
-	}
-	.updates-block .carousel .item {
-		height: inherit;
-	}
-	.updates-block .glyphicon-chevron-right {
-		right: -45px;
-	}
-	.updates-block .glyphicon-chevron-left {
-		left: -45px;
-	}
+	// .updates-block .carousel-content .btn-cta {
+	// 	position: static;
+	// }
+	// .updates-block .carousel .item {
+	// 	height: inherit;
+	// }
+	// .updates-block .glyphicon-chevron-right {
+	// 	right: -45px;
+	// }
+	// .updates-block .glyphicon-chevron-left {
+	// 	left: -45px;
+	// }
 	// .gigs-section .gig-actions {
 	// 	position: static;
 	// 	margin-top: 15px;
@@ -86,20 +86,20 @@
 	//     //height: 15px;
 	// }
 
-	.updates-block .carousel .carousel-item {
-		height: inherit;
-	}
+	// .updates-block .carousel .carousel-item {
+	// 	height: inherit;
+	// }
 }
 
 // Small devices (landscape phones, 576px and up)
-@media (min-width: 576px) {
-	.modal-video .modal-dialog {
-		max-width: inherit;
-	}
-	.modal-info .modal-dialog {
-		max-width: inherit;
-	}
-}
+// @media (min-width: 576px) {
+// 	.modal-video .modal-dialog {
+// 		max-width: inherit;
+// 	}
+// 	.modal-info .modal-dialog {
+// 		max-width: inherit;
+// 	}
+// }
 
 // Medium devices (tablets, 768px and up)
 @media (min-width: 768px) {
@@ -115,24 +115,24 @@
 	// .navbar-nav {
 	// 	float: none;
 	// }
-	.promo-content {
-		padding-top: 30px;
-	}
-	.updates-block {
-		height: 260px;
-	}
-	.updates-block .carousel-content .btn-cta {
-		position: static;
-	}
-	.updates-block .carousel .item {
-		height: 200px;
-	}
-	.updates-block .glyphicon-chevron-right {
-		right: -45px;
-	}
-	.updates-block .glyphicon-chevron-left {
-		left: -45px;
-	}
+	// .promo-content {
+	// 	padding-top: 30px;
+	// }
+	// .updates-block {
+	// 	height: 260px;
+	// }
+	// .updates-block .carousel-content .btn-cta {
+	// 	position: static;
+	// }
+	// .updates-block .carousel .item {
+	// 	height: 200px;
+	// }
+	// .updates-block .glyphicon-chevron-right {
+	// 	right: -45px;
+	// }
+	// .updates-block .glyphicon-chevron-left {
+	// 	left: -45px;
+	// }
 	// .music-section .albums-block .cover-figure .record-holder {
 	//     right: -60px;
 	// }
@@ -143,25 +143,25 @@
 
 // Large devices (desktops, 992px and up)
 @media (min-width: 992px) {
-	.promo-content {
-		padding-top: 80px;
-	}
+	// .promo-content {
+	// 	padding-top: 80px;
+	// }
 
-	.updates-block {
-		height: 160px;
-	}
-	.updates-block .carousel-content .btn-cta {
-		position: absolute;
-	}
-	.updates-block .carousel .item {
-		height: 100px;
-	}
-	.updates-block .glyphicon-chevron-right {
-		right: -60px;
-	}
-	.updates-block .glyphicon-chevron-left {
-		left: -60px;
-	}
+	// .updates-block {
+	// 	height: 160px;
+	// }
+	// .updates-block .carousel-content .btn-cta {
+	// 	position: absolute;
+	// }
+	// .updates-block .carousel .item {
+	// 	height: 100px;
+	// }
+	// .updates-block .glyphicon-chevron-right {
+	// 	right: -60px;
+	// }
+	// .updates-block .glyphicon-chevron-left {
+	// 	left: -60px;
+	// }
 	//     .music-section .albums-block .cover-figure .record-holder {
 	//         right: -80px;
 	//     }
