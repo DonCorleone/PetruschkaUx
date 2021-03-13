@@ -2,6 +2,32 @@
 
 .media-thumb{
   max-height: 100px;
+
+
+	.video-play-trigger {
+		position: absolute;
+		width: 36px;
+		height: 36px;
+		left: 50%;
+		margin-left: -18px;
+		text-align: center;
+		z-index: 5;
+		top: 50%;
+		margin-top: -18px;
+		color: #fff;
+		background: rgba(0, 0, 0, 0.8);
+		@include border-radius(50%);
+		cursor: pointer;
+		&:hover {
+			background: rgba(red($theme-color), green($theme-color), blue($theme-color), 0.6);
+		}
+		.svg-inline--fa {
+			color: #fff;
+			font-size: 14px;
+			margin-top: 11px;
+			margin-left: 4px;
+		}
+	}
 }
 .media-holder {
 	display: inline-block;
@@ -16,6 +42,21 @@
 .carousel-content {
 	padding-left: 200px;
 	max-width: 760px;
+
+	.countdown-box {
+		font-size: 16px;
+		.number {
+			font-weight: 700;
+			color: $theme-color;
+			font-size: 24px;
+		}
+		.unit {
+			color: rgba(256, 256, 256, 0.6);
+			padding-left: 5px;
+			padding-right: 5px;
+			font-size: 14px;
+		}
+	}
 
 	&.no-media-holder {
 		padding-left: 0;
@@ -53,3 +94,51 @@
 		color: $theme-color;
 	}
 }
+// Small devices (landscape phones, less than 768px)
+@media (max-width: 767.98px) {
+
+	.promo-section {
+
+
+	}
+	.updates-block .media-holder {
+		position: static;
+		margin: 0 auto;
+		margin-bottom: 30px;
+	}
+	.updates-block .carousel-content {
+		padding-left: 0;
+	}
+	.updates-block .carousel-content .btn-cta {
+		position: static;
+	}
+	.updates-block .carousel .item {
+		height: inherit;
+	}
+	.updates-block .glyphicon-chevron-right {
+		right: -45px;
+	}
+	.updates-block .glyphicon-chevron-left {
+		left: -45px;
+	}
+	.updates-block .carousel .carousel-item {
+		height: inherit;
+	}
+}
+
+// Large devices (desktops, 992px and up)
+@media (min-width: 992px) {
+	.updates-block .carousel-content .btn-cta {
+		position: absolute;
+	}
+	.updates-block .carousel .item {
+		height: 100px;
+	}
+	.updates-block .glyphicon-chevron-right {
+		right: -60px;
+	}
+	.updates-block .glyphicon-chevron-left {
+		left: -60px;
+	}
+}
+
