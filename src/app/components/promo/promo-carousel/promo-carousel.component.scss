@@ -1,7 +1,5 @@
 @import "/src/scss/theme-1.scss";
 
-:host-context(.promo-carousel-holder) {
-	.fade-out {
 		@keyframes fadeOut {
 			0% {
 				z-index: 1;
@@ -29,88 +27,115 @@
 			}
 		}
 
-		animation: fadeOut ease 8s;
-		-webkit-animation: fadeOut ease 8s;
-		-moz-animation: fadeOut ease 8s;
-		-o-animation: fadeOut ease 8s;
-		-ms-animation: fadeOut ease 8s;
+// :host-context(.promo-carousel-holder .carousel) {
+// 	.carousel-item {
+// 		height: 100px;
+// 	}
+// }
+
+// :host-context(.promo-carousel-holder) {
+// 	.carousel-item {
+// 		display: block;
+// 		transition: opacity 1s;
+// 		transition-property: opacity;
+// 	}
+// }
+
+// :host-context(.promo-carousel-holder) {
+// 	.carousel-item.active {
+// 		display: block;
+// 		opacity: 0.4;
+// 		transition: opacity 1s;
+// 	}
+// }
+
+@keyframes zoom {
+	from {
+		transform: scale(1.5, 1.5);
+	}
+	to {
+		transform: scale(1, 1);
 	}
 }
-:host-context(.promo-carousel-holder) {
-	.carousel {
-		.carousel-item {
-			height: 100px;
-		}
+@-webkit-keyframes zoom {
+	from {
+		-webkit-transform: scale(1.5, 1.5);
+	}
+	to {
+		-webkit-transform: scale(1, 1);
+	}
+}
+@-moz-keyframes zoom {
+	from {
+		-moz-transform: scale(1.5, 1.5);
+	}
+	to {
+		-moz-transform: scale(1, 1);
 	}
 }
 
-:host-context(.promo-carousel-holder) {
-	.carousel-item {
-		display: block;
-		transition: opacity 1s;
-		transition-property: opacity;
-	}
-}
-
-:host-context(.promo-carousel-holder) {
-	.carousel-item.active {
-		display: block;
-		opacity: 0.4;
-		transition: opacity 1s;
-	}
-}
-
-:host-context(.promo-carousel-holder) {
-	.carousel-item {
-		@keyframes zoom {
-			from {
-				transform: scale(1.5, 1.5);
-			}
-			to {
-				transform: scale(1, 1);
-			}
-		}
-		@-webkit-keyframes zoom {
-			from {
-				-webkit-transform: scale(1.5, 1.5);
-			}
-			to {
-				-webkit-transform: scale(1, 1);
-			}
-		}
-		@-moz-keyframes zoom {
-			from {
-				-moz-transform: scale(1.5, 1.5);
-			}
-			to {
-				-moz-transform: scale(1, 1);
-			}
-		}
-
-		-webkit-animation: zoom 7.7s ease-in-out infinite;
-		animation: zoom 7.7s ease-in-out infinite;
-	}
-}
 #slide-ngb-slide-0 {
 	background-image: url("../../../../assets/images/main/01.jpg");
+	-webkit-animation: zoom 7.7s ease-in-out infinite;
+	animation: zoom 7.7s ease-in-out infinite;
+	// animation: fadeOut ease 8s;
+	// -webkit-animation: fadeOut ease 8s;
+	// -moz-animation: fadeOut ease 8s;
+	// -o-animation: fadeOut ease 8s;
+	// -ms-animation: fadeOut ease 8s;
 }
 
 #slide-ngb-slide-1 {
 	background-image: url("../../../../assets/images/main/02.jpg");
+	-webkit-animation: zoom 7.7s ease-in-out infinite;
+	animation: zoom 7.7s ease-in-out infinite;
+	// animation: fadeOut ease 8s;
+	// -webkit-animation: fadeOut ease 8s;
+	// -moz-animation: fadeOut ease 8s;
+	// -o-animation: fadeOut ease 8s;
+	// -ms-animation: fadeOut ease 8s;
 }
 
 #slide-ngb-slide-2 {
 	background-image: url("../../../../assets/images/main/03.jpg");
+	-webkit-animation: zoom 7.7s ease-in-out infinite;
+	animation: zoom 7.7s ease-in-out infinite;
+	// animation: fadeOut ease 8s;
+	// -webkit-animation: fadeOut ease 8s;
+	// -moz-animation: fadeOut ease 8s;
+	// -o-animation: fadeOut ease 8s;
+	// -ms-animation: fadeOut ease 8s;
 }
 
 #slide-ngb-slide-3 {
 	background-image: url("../../../../assets/images/main/04.jpg");
+	-webkit-animation: zoom 7.7s ease-in-out infinite;
+	animation: zoom 7.7s ease-in-out infinite;
+	// animation: fadeOut ease 8s;
+	// -webkit-animation: fadeOut ease 8s;
+	// -moz-animation: fadeOut ease 8s;
+	// -o-animation: fadeOut ease 8s;
+	// -ms-animation: fadeOut ease 8s;
 }
 
 #slide-ngb-slide-4 {
 	background-image: url("../../../../assets/images/main/05.jpg");
+	-webkit-animation: zoom 7.7s ease-in-out infinite;
+	animation: zoom 7.7s ease-in-out infinite;
+	// animation: fadeOut ease 8s;
+	// -webkit-animation: fadeOut ease 8s;
+	// -moz-animation: fadeOut ease 8s;
+	// -o-animation: fadeOut ease 8s;
+	// -ms-animation: fadeOut ease 8s;
 }
 
 #slide-ngb-slide-5 {
 	background-image: url("../../../../assets/images/main/06.jpg");
+	-webkit-animation: zoom 7.7s ease-in-out infinite;
+	animation: zoom 7.7s ease-in-out infinite;
+	// animation: fadeOut ease 8s;
+	// -webkit-animation: fadeOut ease 8s;
+	// -moz-animation: fadeOut ease 8s;
+	// -o-animation: fadeOut ease 8s;
+	// -ms-animation: fadeOut ease 8s;
 }
