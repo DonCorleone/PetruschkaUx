@@ -1,80 +1,92 @@
 @import "/src/scss/theme-1.scss";
 
-@-webkit-keyframes zoom {
-	from {
-		-webkit-transform: scale(1.5, 1.5);
-	}
-	to {
-		-webkit-transform: scale(1, 1);
+:host-context(.promo-carousel-holder) {
+	.fade-out {
+		@keyframes fadeOut {
+			0% {
+				z-index: 1;
+			}
+			80% {
+				z-index: -1;
+			}
+		}
+
+		@-moz-keyframes fadeOut {
+			0% {
+				z-index: 1;
+			}
+			80% {
+				z-index: -1;
+			}
+		}
+
+		@-webkit-keyframes fadeOut {
+			0% {
+				z-index: 1;
+			}
+			80% {
+				z-index: -1;
+			}
+		}
+
+		animation: fadeOut ease 8s;
+		-webkit-animation: fadeOut ease 8s;
+		-moz-animation: fadeOut ease 8s;
+		-o-animation: fadeOut ease 8s;
+		-ms-animation: fadeOut ease 8s;
 	}
 }
-
-@keyframes zoom {
-	from {
-		transform: scale(1.5, 1.5);
-	}
-	to {
-		transform: scale(1, 1);
-	}
-}
-
-.fade-out {
-	animation: fadeOut ease 8s;
-	-webkit-animation: fadeOut ease 8s;
-	-moz-animation: fadeOut ease 8s;
-	-o-animation: fadeOut ease 8s;
-	-ms-animation: fadeOut ease 8s;
-}
-
-@keyframes fadeOut {
-	0% {
-		z-index: 1;
-	}
-	80% {
-		z-index: -1;
-	}
-}
-
-@-moz-keyframes fadeOut {
-	0% {
-		z-index: 1;
-	}
-	80% {
-		z-index: -1;
-	}
-}
-
-@-webkit-keyframes fadeOut {
-	0% {
-		z-index: 1;
-	}
-	80% {
-		z-index: -1;
-	}
-}
-
 :host-context(.promo-carousel-holder) {
 	.carousel {
 		.carousel-item {
 			height: 100px;
 		}
 	}
+}
 
-
-
+:host-context(.promo-carousel-holder) {
 	.carousel-item {
 		display: block;
 		transition: opacity 1s;
 		transition-property: opacity;
 	}
+}
 
+:host-context(.promo-carousel-holder) {
 	.carousel-item.active {
 		display: block;
 		opacity: 0.4;
 		transition: opacity 1s;
 	}
+}
 
+:host-context(.promo-carousel-holder) {
 	.carousel-item {
+		@keyframes zoom {
+			from {
+				transform: scale(1.5, 1.5);
+			}
+			to {
+				transform: scale(1, 1);
+			}
+		}
+		@-webkit-keyframes zoom {
+			from {
+				-webkit-transform: scale(1.5, 1.5);
+			}
+			to {
+				-webkit-transform: scale(1, 1);
+			}
+		}
+		@-moz-keyframes zoom {
+			from {
+				-moz-transform: scale(1.5, 1.5);
+			}
+			to {
+				-moz-transform: scale(1, 1);
+			}
+		}
+
 		-webkit-animation: zoom 7.7s ease-in-out infinite;
 		animation: zoom 7.7s ease-in-out infinite;
 	}
