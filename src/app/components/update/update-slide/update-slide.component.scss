@@ -1,8 +1,9 @@
 @import "/src/scss/theme-1.scss";
 
-:host-context(.updates-block){
+:host-context(.updates-block) {
 	.media-thumb {
 		position: relative;
+		cursor: pointer;
 
 		.video-play-trigger {
 			position: absolute;
@@ -31,7 +32,7 @@
 	}
 
 	.carousel-content {
-		padding-left: 200px;
+		padding-left: 20px;
 		max-width: 760px;
 
 		.countdown-box {
@@ -96,7 +97,7 @@
 			margin-bottom: 30px;
 		}
 		.carousel-content {
-			padding-left: 0;
+			padding-left: 15px;
 			.btn-cta {
 				position: static;
 			}
@@ -121,6 +122,10 @@
 // Large devices (desktops, 992px and up)
 @media (min-width: 992px) {
 	:host-context(.updates-block) {
+
+		.carousel-content {
+			padding-left: 30px;
+		}
 		.carousel-content .btn-cta {
 			position: absolute;
 		}
@@ -134,4 +139,8 @@
 			left: -60px;
 		}
 	}
+}
+
+.slide {
+	display: flex;
 }

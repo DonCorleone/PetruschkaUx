@@ -1,7 +1,7 @@
 <div class="updates-carousel slide">
-	<div class="media-holder">
+	<div class="media-holder" (click)="openInfo()">
 		<div class="media-thumb">
-			<img [src]="imagePath" alt="">
+			<img [src]="imagePath" alt="update image">
 		</div>
 		<!--div class="media-thumb">
 			<img src="assets/images/video-thumb-1.jpg" alt="">
@@ -10,19 +10,20 @@
 	</div>
 	<!--//media-holder-->
 	<div class="carousel-content">
-		<h3 class="title">{{name}}</h3>
+		<h3 class="title" (click)="openInfo()">{{name}}</h3>
 		<div class="desc">
 			<div class="countdown">
 				<span class="countdown-box" id="countdown-box"></span>till release
 			</div>
 			<!--//countdown-->
 			<p class="intro">
-				{{ shortDescription }}
+				{{ shortDescription }}<a (click)="openInfo()" class="more-link" href="#"> Mehr dazu</a>
 			</p>
+			<a class="btn btn-primary btn-cta" (click)="scrollTo('gigs')">Buy Tickets</a>
+
 			<!--//intro-->
 		</div>
 		<!--//desc-->
-		<a (click)="open()" class="more-link" href="#">Find out more</a>
 	</div>
 	<!--//content-container-->
 </div>

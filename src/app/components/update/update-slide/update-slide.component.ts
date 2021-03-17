@@ -3,6 +3,7 @@ import {NgbModal} from '@ng-bootstrap/ng-bootstrap';
 import {EventDetail} from 'src/app/models/event.models';
 import {EventService} from 'src/app/services/event.service';
 import {InfoComponent} from '../../info/info-item/info-item.component';
+import { InfoModalComponent } from '../../info/info-modal/info-modal.component';
 
 @Component({
 	selector: 'app-update-slide',
@@ -52,6 +53,11 @@ export class UpdateSlideComponent implements AfterViewInit {
 
 	}
 
+	scrollTo(section) {
+		document.querySelector('#' + section)
+			.scrollIntoView({behavior: 'smooth'});
+	}
+
 	refreshCountDown(targetDate: any, daysSpan: HTMLElement, hoursSpan: HTMLElement, minutesSpan: HTMLElement, secsSpan: HTMLElement) {
 
 		// variables for time units
@@ -81,8 +87,10 @@ export class UpdateSlideComponent implements AfterViewInit {
 		secsSpan.innerHTML = '<span class="number">' + seconds + '</span>' + '<span class="unit">Secs</span>';
 	}
 
-	open() {
-		const modalRef = this.modalService.open(InfoComponent);
-		modalRef.componentInstance.name = 'World';
+	openInfo(): void {
+		const modalRef = this.modalService.open(InfoModalComponent);
+		modalRef.componentInstance.eventDetailId = this.eventDetail._id;
+		modalRef.componentInstance.usage = ''; // else case
+		modalRef.componentInstance.playDate = this.eventDetail.start; // else case
 	}
 }
