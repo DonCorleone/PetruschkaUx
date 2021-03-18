@@ -58,9 +58,7 @@
 
 }
 
-
 .nav>li>a {
-	color: #fff;
 	color: rgba(256, 256, 256, 0.7);
 	font-size: 14px;
 	font-weight: 600;
@@ -73,7 +71,7 @@
 }
 
 .nav>li>a.active {
-	color: #fff;
+	color: $theme-color !important;
 }
 
 // Small devices (landscape phones, less than 768px)
