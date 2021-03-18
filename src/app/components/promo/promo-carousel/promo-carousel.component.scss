@@ -1,54 +1,5 @@
 @import "/src/scss/theme-1.scss";
 
-@keyframes fadeOut {
-	0% {
-		z-index: 1;
-	}
-	80% {
-		z-index: -1;
-	}
-}
-
-@-moz-keyframes fadeOut {
-	0% {
-		z-index: 1;
-	}
-	80% {
-		z-index: -1;
-	}
-}
-
-@-webkit-keyframes fadeOut {
-	0% {
-		z-index: 1;
-	}
-	80% {
-		z-index: -1;
-	}
-}
-
-// :host-context(.promo-carousel-holder .carousel) {
-// 	.carousel-item {
-// 		height: 100px;
-// 	}
-// }
-
-// :host-context(.promo-carousel-holder) {
-// 	.carousel-item {
-// 		display: block;
-// 		transition: opacity 1s;
-// 		transition-property: opacity;
-// 	}
-// }
-
-// :host-context(.promo-carousel-holder) {
-// 	.carousel-item.active {
-// 		display: block;
-// 		opacity: 0.4;
-// 		transition: opacity 1s;
-// 	}
-// }
-
 @keyframes zoom {
 	from {
 		transform: scale(1.4, 1.4);
@@ -73,86 +24,36 @@
 		-moz-transform: scale(1, 1);
 	}
 }
-
-// animation: fadeOut ease 8s;
-// -webkit-animation: fadeOut ease 8s;
-// -moz-animation: fadeOut ease 8s;
-// -o-animation: fadeOut ease 8s;
-// -ms-animation: fadeOut ease 8s;
-
-#slide-ngb-slide-0 {
-	background: url("../../../../assets/images/main/01.jpg") no-repeat center center fixed;
-	animation: zoom 7.7s ease-in-out infinite;
-	-webkit-animation: zoom 7.7s ease-in-out infinite;
-	-moz-animation: zoom 7.7s ease-in-out infinite;
-	-o-animation: zoom 7.7s ease-in-out infinite;
-	-ms-animation: zoom 7.7s ease-in-out infinite;
-	-webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
+@media only screen and (orientation: landscape) {
+	@for $i from 0 through 5 {
+		#slide-ngb-slide-#{$i} {
+			background: url("../../../../assets/images/bg/landscape/0#{$i + 1}.jpg") no-repeat center center fixed;
+			animation: zoom 7.7s ease-in-out infinite;
+			-webkit-animation: zoom 7.7s ease-in-out infinite;
+			-moz-animation: zoom 7.7s ease-in-out infinite;
+			-o-animation: zoom 7.7s ease-in-out infinite;
+			-ms-animation: zoom 7.7s ease-in-out infinite;
+			-webkit-background-size: cover;
+			-moz-background-size: cover;
+			-o-background-size: cover;
+			background-size: cover;
+		}
+	}
 }
 
-#slide-ngb-slide-1 {
-	background: url("../../../../assets/images/main/02.jpg") no-repeat center center fixed;
-	animation: zoom 7.7s ease-in-out infinite;
-	-webkit-animation: zoom 7.7s ease-in-out infinite;
-	-moz-animation: zoom 7.7s ease-in-out infinite;
-	-o-animation: zoom 7.7s ease-in-out infinite;
-	-ms-animation: zoom 7.7s ease-in-out infinite;
-	-webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
-}
-
-#slide-ngb-slide-2 {
-	background: url("../../../../assets/images/main/03.jpg") no-repeat center center fixed;
-	animation: zoom 7.7s ease-in-out infinite;
-	-webkit-animation: zoom 7.7s ease-in-out infinite;
-	-moz-animation: zoom 7.7s ease-in-out infinite;
-	-o-animation: zoom 7.7s ease-in-out infinite;
-	-ms-animation: zoom 7.7s ease-in-out infinite;
-	-webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
-}
-
-#slide-ngb-slide-3 {
-	background: url("../../../../assets/images/main/04.jpg") no-repeat center center fixed;
-	animation: zoom 7.7s ease-in-out infinite;
-	-webkit-animation: zoom 7.7s ease-in-out infinite;
-	-moz-animation: zoom 7.7s ease-in-out infinite;
-	-o-animation: zoom 7.7s ease-in-out infinite;
-	-ms-animation: zoom 7.7s ease-in-out infinite;
-	-webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
-}
-#slide-ngb-slide-4 {
-	background: url("../../../../assets/images/main/05.jpg") no-repeat center center fixed;
-	animation: zoom 7.7s ease-in-out infinite;
-	-webkit-animation: zoom 7.7s ease-in-out infinite;
-	-moz-animation: zoom 7.7s ease-in-out infinite;
-	-o-animation: zoom 7.7s ease-in-out infinite;
-	-ms-animation: zoom 7.7s ease-in-out infinite;
-	-webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
-}
-
-#slide-ngb-slide-5 {
-	background: url("../../../../assets/images/main/06.jpg") no-repeat center center fixed;
-	animation: zoom 7.7s ease-in-out infinite;
-	-webkit-animation: zoom 7.7s ease-in-out infinite;
-	-moz-animation: zoom 7.7s ease-in-out infinite;
-	-o-animation: zoom 7.7s ease-in-out infinite;
-	-ms-animation: zoom 7.7s ease-in-out infinite;
-	-webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
+@media only screen and (orientation: portrait) {
+	@for $i from 0 through 5 {
+		#slide-ngb-slide-#{$i} {
+			background: url("../../../../assets/images/bg/portrait/0#{$i + 1}.jpg") no-repeat center center fixed;
+			animation: zoom 7.7s ease-in-out infinite;
+			-webkit-animation: zoom 7.7s ease-in-out infinite;
+			-moz-animation: zoom 7.7s ease-in-out infinite;
+			-o-animation: zoom 7.7s ease-in-out infinite;
+			-ms-animation: zoom 7.7s ease-in-out infinite;
+			-webkit-background-size: cover;
+			-moz-background-size: cover;
+			-o-background-size: cover;
+			background-size: cover;
+		}
+	}
 }
