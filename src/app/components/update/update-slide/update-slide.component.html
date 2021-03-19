@@ -13,13 +13,13 @@
 		<h3 class="title" (click)="openInfo()">{{name}}</h3>
 		<div class="desc">
 			<div class="countdown">
-				<span class="countdown-box" id="countdown-box"></span>till release
+				<div class="countdown-box" (click)="openInfo()"><span>Premiere: </span><span class="number">{{ start | date:'dd.MM.YY, HH:mm' : '' :'de-CH'}}</span></div>
 			</div>
 			<!--//countdown-->
 			<p class="intro">
 				{{ shortDescription }}<a (click)="openInfo()" class="more-link" href="#"> Mehr dazu</a>
 			</p>
-			<a class="btn btn-primary btn-cta" (click)="scrollTo('gigs')">Buy Tickets</a>
+			<a class="btn btn-xs btn-primary" (click)="scrollTo('gigs')">Tickets</a>
 
 			<!--//intro-->
 		</div>

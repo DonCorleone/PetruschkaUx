@@ -38,6 +38,7 @@
 		.countdown-box {
 			font-size: 16px;
 			.number {
+				white-space: nowrap;
 				font-weight: 700;
 				color: $theme-color;
 				font-size: 24px;
