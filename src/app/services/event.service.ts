@@ -172,11 +172,18 @@ export class EventService {
 		}
 	}
 
-	static GetPicBannerPathFromEventDetail(eventDetail: EventDetail): string {
+	static GetBannerImagePathPathFromEventDetail(eventDetail: EventDetail): string {
+		return (eventDetail
+		&& eventDetail.eventInfos[0]
+		&& eventDetail.eventInfos[0].bannerImagePath ?
+		"https://images.weserv.nl/?url=" + eventDetail.eventInfos[0].bannerImagePath + "&w=1140&h=340" : null);
+	}
+
+	static GetFlyerImagePathFromEventDetail(eventDetail: EventDetail): string {
 		return (eventDetail
 		&& eventDetail.eventInfos[0]
 		&& eventDetail.eventInfos[0].flyerImagePath ?
-			eventDetail.eventInfos[0].flyerImagePath : null);
+		"https://images.weserv.nl/?url=" + eventDetail.eventInfos[0].flyerImagePath + "&w=196&h=270" : null);
 	}
 
 	static GetShortDescFromEventDetail(eventDetail: EventDetail): string {

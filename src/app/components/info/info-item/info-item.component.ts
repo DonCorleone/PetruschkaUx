@@ -46,6 +46,10 @@ export class InfoComponent implements OnChanges {
 	}
 
 	get flyerImagePath(): string {
+		return (this.eventInfo && this.eventInfo.flyerImagePath) ? this.eventInfo.flyerImagePath : null;
+	}
+
+	get bannerImagePath(): string {
 		return (this.eventInfo && this.eventInfo.bannerImagePath) ? this.eventInfo.bannerImagePath : null;
 	}
 

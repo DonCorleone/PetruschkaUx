@@ -1,5 +1,9 @@
 @import "/src/scss/theme-1.scss";
 
+img {
+	width: 105px;
+}
+
 :host-context(.updates-block) {
 	.media-thumb {
 		position: relative;

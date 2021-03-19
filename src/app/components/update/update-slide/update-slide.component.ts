@@ -27,7 +27,7 @@ export class UpdateSlideComponent implements AfterViewInit {
 	}
 
 	get imagePath(): string {
-		return EventService.GetPicBannerPathFromEventDetail(this.eventDetail);
+		return EventService.GetFlyerImagePathFromEventDetail(this.eventDetail);
 	}
 
 	get start(): Date {
