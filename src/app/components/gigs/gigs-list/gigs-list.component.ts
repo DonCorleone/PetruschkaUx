@@ -1,7 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {Observable} from 'rxjs';
 import {EventDetail, EventDetailEventInfo} from 'src/app/models/event.models';
-import {EventService} from 'src/app/services/event.service';
+import {EventService, TicketPrice} from 'src/app/services/event.service';
 
 @Component({
 	selector: 'app-gigs-list',
@@ -23,7 +23,7 @@ export class GigsListComponent implements OnInit {
 		return eventDetail.eventInfos.find(p => p.languageId === 1);
 	}
 
-	GetPricesStringFromEventDetail(eventDetail: EventDetail): string {
+	GetPricesStringFromEventDetail(eventDetail: EventDetail): TicketPrice[] {
 		return EventService.GetPricesStringFromEventDetail(eventDetail);
 	}
 }

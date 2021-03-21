@@ -17,7 +17,11 @@
 						<i class="far fa-clock"></i>{{ start | date:'EE' : '' :'de-CH'}} {{ start | date:'HH:mm' : '' :'de-CH' }}
 					</li>
 					<li class="list-inline-item price">
-						<i class="far fa-money-bill-alt"></i>{{priceString}}
+						<i class="far fa-money-bill-alt"></i>
+						<span *ngFor="let ticketPrice of ticketPrices; let isLast=last">
+							{{ ticketPrice.name }}:
+							{{ ticketPrice.price | currency:'CHF ' }} {{isLast ? '' : ' | '}}
+						</span>
 					</li>
 				</ul>
 			</div>

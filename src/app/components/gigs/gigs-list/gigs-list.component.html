@@ -5,7 +5,7 @@
 			<div *ngFor="let eventDetail of eventDetailsUpcoming$ | async" class="item">
 				<app-gigs-item 	[eventId]="eventDetail._id"
 												[eventInfoDe]="GetEventInfoFromEventDetail(eventDetail)"
-												[priceString]="GetPricesStringFromEventDetail(eventDetail)"
+												[ticketPrices]="GetPricesStringFromEventDetail(eventDetail)"
 											 	[start]="eventDetail.start">
 				</app-gigs-item>
 			</div>

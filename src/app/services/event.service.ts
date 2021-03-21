@@ -126,6 +126,12 @@ interface GetEventDetailPrototypes {
 	eventDetails: EventDetail[];
 }
 
+export interface TicketPrice {
+	name:string,
+	currency:string,
+	price:number
+}
+
 @Injectable({
 	providedIn: 'root'
 })
@@ -169,13 +175,13 @@ export class EventService {
 		return usageTicketTypes != null && usageTicketTypes.length > 0 ? usageTicketTypes[0] : null;
 	}
 
-	static GetPricesStringFromEventDetail(eventDetail: EventDetail): string {
+	static GetPricesStringFromEventDetail(eventDetail: EventDetail): TicketPrice[] {
 
 		if (!eventDetail || !eventDetail.ticketTypes || eventDetail.ticketTypes.length === 0) {
 			return null;
 		}
 
-		let returnArray: string[] = [];
+		let returnArray: TicketPrice[] = [];
 
 		for (const ticketType of eventDetail.ticketTypes) {
 
@@ -186,11 +192,17 @@ export class EventService {
 
 			let unit = ticketType.currency;
 
-			let ticketPrice = `${name}: ${unit} ${price}`;
+			let ticketPrice: TicketPrice = {
+				name: name,
+				currency: unit,
+				price: price
+
+			};
+
 			returnArray.push(ticketPrice);
 		}
 
-		return returnArray.join(", ");
+		return returnArray;
 	}
 
 	static getSortedTicketType(eventDetail: EventDetail): TicketType[] {
