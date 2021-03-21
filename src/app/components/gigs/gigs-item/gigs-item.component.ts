@@ -1,6 +1,7 @@
 import {Component, Input, OnInit} from '@angular/core';
 import {NgbModal} from '@ng-bootstrap/ng-bootstrap';
-import {EventDetailEventInfo} from 'src/app/models/event.models';
+import {EventDetailEventInfo, TicketType} from 'src/app/models/event.models';
+import { EventService } from 'src/app/services/event.service';
 import {InfoModalComponent} from '../../info/info-modal/info-modal.component';
 import {LocationModalComponent} from '../../location/location-modal/location-modal.component';
 
@@ -15,6 +16,7 @@ export class GigsItemComponent implements OnInit {
 	@Input() start: Date;
 	@Input() eventId: number;
 	@Input() eventInfoDe: EventDetailEventInfo;
+	@Input() priceString: string;
 
 	constructor(private modalService: NgbModal) {
 	}

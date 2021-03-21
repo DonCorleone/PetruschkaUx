@@ -1,8 +1,8 @@
-import {Injectable} from '@angular/core';
-import {map} from 'rxjs/operators';
-import {Observable} from 'rxjs';
-import {Apollo, gql} from 'apollo-angular';
-import {EventDetail, EventDetailEventInfo, TicketType, TicketTypeInfo} from '../models/event.models';
+import { Injectable } from '@angular/core';
+import { map } from 'rxjs/operators';
+import { Observable } from 'rxjs';
+import { Apollo, gql } from 'apollo-angular';
+import { EventDetail, EventDetailEventInfo, TicketType, TicketTypeInfo } from '../models/event.models';
 
 const GET_EVENTDETAILS_BYTAG = gql`
   query {
@@ -102,7 +102,16 @@ const GET_UPCOMING_GIGS = gql`
           longDescription
           shortDescription
           languageId
-        }
+        },
+				ticketTypes{
+					sortOrder
+					price
+					currency
+					ticketTypeInfos{
+						name,
+						languageId
+					}
+				},
         start
       }
     }
@@ -127,18 +136,18 @@ export class EventService {
 
 	static GetEventInfoFromEventDetail(eventDetail: EventDetail): EventDetailEventInfo {
 
-		if (!eventDetail || !eventDetail.eventInfos || eventDetail.eventInfos.length === 0){
+		if (!eventDetail || !eventDetail.eventInfos || eventDetail.eventInfos.length === 0) {
 			return null;
 		}
 
 		return (eventDetail.eventInfos.filter(
-				p => p.languageId === 1))?.length > 0 ? eventDetail.eventInfos.filter(
+			p => p.languageId === 1))?.length > 0 ? eventDetail.eventInfos.filter(
 				p => p.languageId === 1)[0] : null;
-		}
+	}
 
 	static GetTicketTypeInfoFromEventDetail(eventDetail: EventDetail, usage: string): TicketTypeInfo {
 
-		if (!eventDetail || !eventDetail.ticketTypes || eventDetail.ticketTypes.length === 0){
+		if (!eventDetail || !eventDetail.ticketTypes || eventDetail.ticketTypes.length === 0) {
 			return null;
 		}
 
@@ -147,12 +156,12 @@ export class EventService {
 		if (eventDetail.ticketTypes.length === 1) {
 			usageTicketTypes = eventDetail.ticketTypes[0].ticketTypeInfos
 				.filter(p => p.name.toLowerCase() === usage.toLowerCase() && p.languageId === 1);
-		}else{
+		} else {
 
 			for (const ticketType of eventDetail.ticketTypes) {
 				usageTicketTypes = ticketType.ticketTypeInfos
 					.filter(p => p.name.toLowerCase() === usage.toLowerCase() && p.languageId === 1);
-				if (usageTicketTypes && usageTicketTypes.length > 0){
+				if (usageTicketTypes && usageTicketTypes.length > 0) {
 					break;
 				}
 			}
@@ -160,10 +169,33 @@ export class EventService {
 		return usageTicketTypes != null && usageTicketTypes.length > 0 ? usageTicketTypes[0] : null;
 	}
 
+	static GetPricesStringFromEventDetail(eventDetail: EventDetail): string {
+
+		if (!eventDetail || !eventDetail.ticketTypes || eventDetail.ticketTypes.length === 0) {
+			return null;
+		}
+
+		let returnArray: string[] = [];
+
+		for (const ticketType of eventDetail.ticketTypes) {
+
+			let name = ticketType.ticketTypeInfos
+				.filter(p => p.languageId === 1)[0].name;
+
+			let price = ticketType.price;
+
+			let unit = ticketType.currency;
+
+			let ticketPrice = `${name}: ${unit} ${price}`;
+			returnArray.push(ticketPrice);
+		}
+
+		return returnArray.join(", ");
+	}
 
 	static getSortedTicketType(eventDetail: EventDetail): TicketType[] {
 
-		if (!eventDetail || !eventDetail.ticketTypes){
+		if (!eventDetail || !eventDetail.ticketTypes) {
 			return null;
 		}
 
@@ -174,16 +206,16 @@ export class EventService {
 
 	static GetBannerImagePathPathFromEventDetail(eventDetail: EventDetail): string {
 		return (eventDetail
-		&& eventDetail.eventInfos[0]
-		&& eventDetail.eventInfos[0].bannerImagePath ?
-		"https://images.weserv.nl/?url=" + eventDetail.eventInfos[0].bannerImagePath + "&w=1140&h=340" : null);
+			&& eventDetail.eventInfos[0]
+			&& eventDetail.eventInfos[0].bannerImagePath ?
+			"https://images.weserv.nl/?url=" + eventDetail.eventInfos[0].bannerImagePath + "&w=1140&h=340" : null);
 	}
 
 	static GetFlyerImagePathFromEventDetail(eventDetail: EventDetail): string {
 		return (eventDetail
-		&& eventDetail.eventInfos[0]
-		&& eventDetail.eventInfos[0].flyerImagePath ?
-		"https://images.weserv.nl/?url=" + eventDetail.eventInfos[0].flyerImagePath + "&w=196&h=270" : null);
+			&& eventDetail.eventInfos[0]
+			&& eventDetail.eventInfos[0].flyerImagePath ?
+			"https://images.weserv.nl/?url=" + eventDetail.eventInfos[0].flyerImagePath + "&w=196&h=270" : null);
 	}
 
 	static GetShortDescFromEventDetail(eventDetail: EventDetail): string {
@@ -193,8 +225,8 @@ export class EventService {
 
 	static GetNameFromEventDetail(eventDetail: EventDetail): string {
 		return (eventDetail
-		&& eventDetail.eventInfos[0]
-		&& eventDetail.eventInfos[0].name ?
+			&& eventDetail.eventInfos[0]
+			&& eventDetail.eventInfos[0].name ?
 			eventDetail.eventInfos[0].name : null);
 	}
 
@@ -205,14 +237,14 @@ export class EventService {
 
 	static GetLocationFromEventDetail(eventDetail: EventDetail): string {
 		return (eventDetail
-		&& eventDetail.eventInfos[0]
-		&& eventDetail.eventInfos[0].location ?
+			&& eventDetail.eventInfos[0]
+			&& eventDetail.eventInfos[0].location ?
 			eventDetail.eventInfos[0].location : null);
 	}
 
 	static GetStartFromEventDetail(eventDetail: EventDetail): Date {
 		return (eventDetail
-		&& eventDetail.start ?
+			&& eventDetail.start ?
 			eventDetail.start : null);
 	}
 

@@ -22,4 +22,8 @@ export class GigsListComponent implements OnInit {
 	GetEventInfoFromEventDetail(eventDetail: EventDetail): EventDetailEventInfo {
 		return eventDetail.eventInfos.find(p => p.languageId === 1);
 	}
+
+	GetPricesStringFromEventDetail(eventDetail: EventDetail): string {
+		return EventService.GetPricesStringFromEventDetail(eventDetail);
+	}
 }

@@ -3,8 +3,10 @@
 		<h2 class="section-title text-center">Anstehende Aufführungen</h2>
 		<div class="gigs-container">
 			<div *ngFor="let eventDetail of eventDetailsUpcoming$ | async" class="item">
-				<app-gigs-item [eventId]="eventDetail._id" [eventInfoDe]="GetEventInfoFromEventDetail(eventDetail)"
-											 [start]="eventDetail.start">
+				<app-gigs-item 	[eventId]="eventDetail._id"
+												[eventInfoDe]="GetEventInfoFromEventDetail(eventDetail)"
+												[priceString]="GetPricesStringFromEventDetail(eventDetail)"
+											 	[start]="eventDetail.start">
 				</app-gigs-item>
 			</div>
 		</div>
