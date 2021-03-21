@@ -107,6 +107,7 @@ const GET_UPCOMING_GIGS = gql`
 					sortOrder
 					price
 					currency
+          preSaleStart
 					ticketTypeInfos{
 						name,
 						languageId
@@ -214,6 +215,8 @@ export class EventService {
 		if (eventDetail.ticketTypes.length === 1) {
 			return eventDetail.ticketTypes;
 		}
+
+		return eventDetail.ticketTypes;
 	}
 
 	static GetBannerImagePathPathFromEventDetail(eventDetail: EventDetail): string {

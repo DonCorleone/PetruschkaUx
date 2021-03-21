@@ -35,9 +35,14 @@
 			<span>
         <a *ngIf="showBuyButton" [href]="[eventLink]" class="btn btn-xs btn-secondary" target="_blank">Tickets</a>
       </span>
-			<span *ngIf="!showBuyButton" class="secondary-content">
+			<span *ngIf="showIsGone" class="secondary-content">
         Vorstellung vorüber.
       </span>
+
+			<span *ngIf="preSaleInFuture" class="secondary-content">
+        Vorverkauf ab {{ preSaleStart | date:'shortDate' : '' :'de-CH'}}
+      </span>
+
 		</div>
 		<!--//gig-actions-->
 		<div #collapse="ngbCollapse" [(ngbCollapse)]="isCollapsed" class="info-extra">

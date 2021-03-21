@@ -64,8 +64,8 @@ export interface TicketType {
 	maxMemberTickets: number;
 	bookWithTicketTypeId: number;
 	sortOrder: number;
-	presaleStart: Date;
-	presaleEnd: Date;
+	preSaleStart: Date;
+	preSaleEnd: Date;
 	openDoor: Date;
 	invoiceEnd: Date;
 	callcenterEnd: Date;

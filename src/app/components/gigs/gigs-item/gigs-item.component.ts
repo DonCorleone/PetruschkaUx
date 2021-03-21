@@ -14,6 +14,7 @@ export class GigsItemComponent implements OnInit {
 
 	public isCollapsed = true;
 	@Input() start: Date;
+	@Input() preSaleStart: Date;
 	@Input() eventId: number;
 	@Input() eventInfoDe: EventDetailEventInfo;
 	@Input() ticketPrices: TicketPrice[];
@@ -26,7 +27,15 @@ export class GigsItemComponent implements OnInit {
 	}
 
 	get showBuyButton(): boolean {
-		return (new Date(this.start) > new Date());
+		return (new Date(this.preSaleStart) <= new Date() && new Date(this.start) >= new Date());
+	}
+
+	get showIsGone(): boolean {
+		return new Date(this.start) < new Date();
+	}
+
+	get preSaleInFuture(): boolean {
+		return new Date(this.preSaleStart) > new Date() ;
 	}
 
 	ngOnInit(): void {

@@ -26,4 +26,9 @@ export class GigsListComponent implements OnInit {
 	GetPricesStringFromEventDetail(eventDetail: EventDetail): TicketPrice[] {
 		return EventService.GetPricesStringFromEventDetail(eventDetail);
 	}
+
+	GetPreSaleStartFromEventDetail(eventDetail: EventDetail): Date {
+		const ticketTypes = EventService.getSortedTicketType(eventDetail);
+		return ticketTypes && ticketTypes?.length > 0 ? ticketTypes[0].preSaleStart : null;
+	}
 }

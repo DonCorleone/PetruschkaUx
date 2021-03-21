@@ -6,7 +6,8 @@
 				<app-gigs-item 	[eventId]="eventDetail._id"
 												[eventInfoDe]="GetEventInfoFromEventDetail(eventDetail)"
 												[ticketPrices]="GetPricesStringFromEventDetail(eventDetail)"
-											 	[start]="eventDetail.start">
+											 	[start]="eventDetail.start"
+											 	[preSaleStart]="GetPreSaleStartFromEventDetail(eventDetail)">
 				</app-gigs-item>
 			</div>
 		</div>
