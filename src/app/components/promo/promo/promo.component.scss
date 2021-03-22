@@ -38,27 +38,29 @@
 		z-index: 20;
 
 		.headline {
-			opacity: 0.6;
+			color: black;
+			opacity: 0.9;
 			font-size: 48px;
 			text-transform: uppercase;
-			text-shadow: 6px 6px 4px rgba(0, 0, 0, .6);
+			text-shadow: 0px 0px 15px rgba(255, 255, 255, 0.9);
 		}
 		.tagline {
-			opacity: 0.8;
+			color: white;
+			opacity: 0.9;
 			font-size: 24px;
+			font-weight: 600;
 			margin-bottom: 90px;
-			text-shadow: 6px 6px 4px rgba(0, 0, 0, .6);
+			text-shadow: 0px 0px 10px rgba(0, 0, 0, 0.9);
 		}
 
 		.logo-holder {
-			-webkit-filter: drop-shadow( 6px 6px 4px rgba(0, 0, 0, .6));
-			filter: drop-shadow( 6px 6px 4px rgba(0, 0, 0, .6));
+			-webkit-filter:drop-shadow(0px 0px 20px rgba(255, 255, 2555, 0.9));
+			filter: drop-shadow(0px 0px 20px rgba(255, 255, 2555, 0.9));
 			/* Similar syntax to box-shadow */
+			opacity: 0.7;
 			height: 150px;
 			margin-bottom: 3px;
-			opacity: 0.6;
 			text-align: center;
-			background-color: transparent;
 			background-position: center center;
 			background-repeat: no-repeat;
 			margin-top: 0;
