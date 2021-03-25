@@ -45,7 +45,7 @@ export class MerchDetailComponent implements OnInit {
 	}
 
 	get imagePath(): string {
-		return "https://images.weserv.nl/?url=" + this.ticketTypeInfo?.imageUrl + "&w=900&h=900";
+		return "https://images.weserv.nl/?url=" + this.ticketTypeInfo?.imageUrl + "&w=899&h=899";
 	}
 
 	get description(): string {

@@ -223,14 +223,14 @@ export class EventService {
 		return (eventDetail
 			&& eventDetail.eventInfos[0]
 			&& eventDetail.eventInfos[0].bannerImagePath ?
-			"https://images.weserv.nl/?url=" + eventDetail.eventInfos[0].bannerImagePath + "&w=1140&h=340" : null);
+			"https://images.weserv.nl/?url=" + eventDetail.eventInfos[0].bannerImagePath + "&w=1137&h=339" : null);
 	}
 
 	static GetFlyerImagePathFromEventDetail(eventDetail: EventDetail): string {
 		return (eventDetail
 			&& eventDetail.eventInfos[0]
 			&& eventDetail.eventInfos[0].flyerImagePath ?
-			"https://images.weserv.nl/?url=" + eventDetail.eventInfos[0].flyerImagePath + "&w=196&h=270" : null);
+			"https://images.weserv.nl/?url=" + eventDetail.eventInfos[0].flyerImagePath + "&w=195&h=269" : null);
 	}
 
 	static GetShortDescFromEventDetail(eventDetail: EventDetail): string {
