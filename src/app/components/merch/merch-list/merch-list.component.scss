@@ -10,7 +10,14 @@
 		}
 	}
 
-	.merch-action {
-		// margin-top: 30px;
+	.section-logo {
+    padding: 0 30% 30px 30%;
+	}
+
+	// Small devices (landscape phones, less than 768px)
+	@media (max-width: 767.98px) {
+		.section-logo {
+			padding: 0 10% 10px 10%;
+		}
 	}
 }
