@@ -99,7 +99,6 @@ const GET_UPCOMING_GIGS = gql`
         eventInfos{
           name
           location
-          longDescription
           shortDescription
           languageId
         },
