@@ -27,6 +27,7 @@ import {PromoCarouselComponent} from '../components/promo/promo-carousel/promo-c
 import {PromoComponent} from '../components/promo/promo/promo.component';
 import {CarouselUpdateComponent} from '../components/update/carousel-update/carousel-update.component';
 import {UpdateSlideComponent} from '../components/update/update-slide/update-slide.component';
+import { GalleryModalComponent } from '../components/gallery/gallery-modal/gallery-modal.component';
 import {VideoComponent} from '../components/video/video.component';
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 
@@ -59,7 +60,8 @@ import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 		MerchModalComponent,
 		MerchDetailComponent,
 		MusicModalComponent,
-		MusicDetailComponent
+		MusicDetailComponent,
+		GalleryModalComponent
 	],
 	imports: [
 		CommonModule,

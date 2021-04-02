@@ -1,7 +1,8 @@
 import {AfterViewInit, Component, Input} from '@angular/core';
-import {NgbModal} from '@ng-bootstrap/ng-bootstrap';
+import {NgbModal, NgbModalOptions} from '@ng-bootstrap/ng-bootstrap';
 import {EventDetail} from 'src/app/models/event.models';
 import {EventService} from 'src/app/services/event.service';
+import { GalleryModalComponent } from '../../gallery/gallery-modal/gallery-modal.component';
 import {InfoComponent} from '../../info/info-item/info-item.component';
 import { InfoModalComponent } from '../../info/info-modal/info-modal.component';
 
@@ -91,9 +92,17 @@ export class UpdateSlideComponent implements AfterViewInit {
 	// }
 
 	openInfo(): void {
-		const modalRef = this.modalService.open(InfoModalComponent);
+		const modalRef = this.modalService.open(InfoModalComponent, { size:'lg' });
 		modalRef.componentInstance.eventDetailId = this.eventDetail._id;
 		modalRef.componentInstance.usage = ''; // else case
 		modalRef.componentInstance.playDate = this.eventDetail.start; // else case
+	}
+
+	openGallery():void{
+
+		const modalRef = this.modalService.open(GalleryModalComponent, { size:'xl' });
+		// modalRef.componentInstance.eventDetailId = this.eventDetail._id;
+		// modalRef.componentInstance.usage = ''; // else case
+		// modalRef.componentInstance.playDate = this.eventDetail.start; // else case
 	}
 }

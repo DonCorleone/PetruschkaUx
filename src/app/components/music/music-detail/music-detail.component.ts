@@ -61,14 +61,14 @@ export class MusicDetailComponent implements OnInit {
 	}
 
 	openInfo(): void {
-		const modalRef = this.modalService.open(InfoModalComponent);
+		const modalRef = this.modalService.open(InfoModalComponent, { size:'lg' });
 		modalRef.componentInstance.eventDetailId = this.eventDetail._id;
 		modalRef.componentInstance.usage = 'Tournee'; // else case
 		modalRef.componentInstance.playDate = this.eventDetail.start;
 	}
 
 	openStaff(staffName: string) {
-		const modalRef = this.modalService.open(AboutModalComponent);
+		const modalRef = this.modalService.open(AboutModalComponent, { size:'sm' });
 		modalRef.componentInstance.staffName = staffName;
 	}
 }

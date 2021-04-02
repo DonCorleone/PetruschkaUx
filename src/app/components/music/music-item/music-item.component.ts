@@ -40,7 +40,7 @@ export class MusicItemComponent implements OnInit {
 	}
 
 	openDetail(): void {
-		const modalRef = this.modalService.open(MusicModalComponent);
+		const modalRef = this.modalService.open(MusicModalComponent, { size:'lg' });
 		modalRef.componentInstance.eventDetail = this.eventDetail;
 	}
 }

@@ -36,7 +36,7 @@ export class MerchItemComponent implements OnInit {
 	}
 
 	openDetail(): void {
-		const modalRef = this.modalService.open(MerchModalComponent);
+		const modalRef = this.modalService.open(MerchModalComponent, { size:'lg' });
 		modalRef.componentInstance.eventDetail = this.eventDetail;
 	}
 }

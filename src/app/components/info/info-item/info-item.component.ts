@@ -82,12 +82,12 @@ export class InfoComponent implements OnChanges {
 	}
 
 	openStaff(staffName: string) {
-		const modalRef = this.modalService.open(AboutModalComponent);
+		const modalRef = this.modalService.open(AboutModalComponent, { size:'sm' });
 		modalRef.componentInstance.staffName = staffName;
 	}
 
 	openLocation(locationName: string) {
-		const modalRef = this.modalService.open(LocationModalComponent);
+		const modalRef = this.modalService.open(LocationModalComponent, { size:'lg' });
 		modalRef.componentInstance.eventLocationName = locationName;
 	}
 
