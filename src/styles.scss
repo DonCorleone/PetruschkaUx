@@ -109,15 +109,17 @@
             }
         }
     }
-}
 
 
-// Medium devices (tablets, 768px and up)
-@media (min-width: 768px) {
-	.modal-dialog {
-		width: 700px;
+	// Medium devices (tablets, 768px and up)
+	@media (min-width: 768px) {
+		.modal-dialog {
+			max-width: 700px;
+		}
 	}
 }
+
+
 
 .location-link, .nav-link, .staff-link, .info-link {
   cursor: pointer;
