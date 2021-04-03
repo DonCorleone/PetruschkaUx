@@ -30,6 +30,7 @@ import {UpdateSlideComponent} from '../components/update/update-slide/update-sli
 import { GalleryModalComponent } from '../components/gallery/gallery-modal/gallery-modal.component';
 import {VideoComponent} from '../components/video/video.component';
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
+import { NgxMasonryModule } from 'ngx-masonry';
 
 
 @NgModule({
@@ -67,6 +68,7 @@ import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 		CommonModule,
 		HomeRoutingModule,
 		NgbModule,
+		NgxMasonryModule
 	]
 })
 export class HomeModule {

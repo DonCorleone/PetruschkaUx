@@ -7,6 +7,11 @@
 </div>
 <!--//modal-header-->
 <div class="modal-body" ngbAutoFocus>
-	Hello WOrld
+  <ngx-masonry [options]="masonryOptions" [ordered]="true" (itemsLoaded)="itemsLoaded()">
+    <div ngxMasonryItem [prepend]="image[0]" *ngFor="let image of masonryImages;index as idx" class="masonry-row">
+      <div class="masonry-vertical-gutter"></div>
+      <img [src]="image[1]" width="100%">
+    </div>
+  </ngx-masonry>
 </div>
 <!--//modal-body-->

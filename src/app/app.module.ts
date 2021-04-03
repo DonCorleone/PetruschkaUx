@@ -1,4 +1,6 @@
 import {BrowserModule} from '@angular/platform-browser';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
 import {NgModule} from '@angular/core';
 
 import {AppRoutingModule} from './app-routing.module';
@@ -37,7 +39,8 @@ export function createApollo(httpLink: HttpLink): ApolloClientOptions<any> {
 		BrowserModule,
 		AppRoutingModule,
 		HttpClientModule,
-		ScullyLibModule
+		ScullyLibModule,
+		BrowserAnimationsModule
 	],
 	entryComponents: [InfoComponent],
 	providers: [
