@@ -6,7 +6,7 @@ import { EventDetail, EventDetailEventInfo, TicketType, TicketTypeInfo } from '.
 
 const GET_EVENTDETAILS_BYTAG = gql`
   query {
-    eventDetails (query: { OR: [{facebookPixelId_ne: ""} {googleAnalyticsTracker_ne: ""}]}){
+    eventDetails (query: {googleAnalyticsTracker_ne: ""}){
       _id,
       eventInfos{
         name
@@ -37,8 +37,7 @@ const GET_UPCOMING_EVENTS = gql`
 		eventDetails (
 			query: {
 				AND: [
-								{facebookPixelId: ""}
-								{googleAnalyticsTracker: "Premiere"}
+								{googleAnalyticsTracker_in: "Premiere"}
 								{start_gte: $today}
 							]
 			})
@@ -91,8 +90,7 @@ const GET_UPCOMING_GIGS = gql`
       eventDetails (
         query: {
           AND: [
-            {facebookPixelId: ""}
-            {OR: [{googleAnalyticsTracker: ""}{googleAnalyticsTracker: "Premiere"}]}
+            {OR: [{googleAnalyticsTracker: ""}{googleAnalyticsTracker_in: "Premiere"}]}
             {start_gte: $today}
           ]}){
         _id,
