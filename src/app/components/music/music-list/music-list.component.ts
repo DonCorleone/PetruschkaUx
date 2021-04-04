@@ -16,7 +16,7 @@ export class MusicListComponent implements OnInit {
 	}
 
 	ngOnInit() {
-		this.eventDetailsCD$ = this.eventService.GetEventDetails(p => p.facebookPixelId === 'CD');
+		this.eventDetailsCD$ = this.eventService.GetEventDetails(p => p.googleAnalyticsTracker.includes('CD'));
 	}
 
 }
