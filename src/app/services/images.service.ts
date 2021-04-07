@@ -17,7 +17,7 @@ export class ImagesService {
 		const httpOptions = {
 			headers: new HttpHeaders({
 				'Content-Type':  'application/json',
-				'Authorization': 'Basic ' + ')
+				'Authorization': 'Basic '
 			})
 		};
 
