@@ -20,7 +20,7 @@
 				{{ shortDescription }}<a (click)="openInfo()" class="more-link" href="#"> Mehr dazu</a>
 			</p>
 			<a class="btn btn-xs btn-primary" (click)="scrollTo('gigs')">Tickets</a>
-			<a class="btn btn-xs btn-secondary" (click)="openGallery()">Impressionen</a>
+			<a class="btn btn-xs btn-secondary" (click)="openGallery()" *ngIf="eventDetail.facebookPixelId">Impressionen</a>
 
 			<!--//intro-->
 		</div>

@@ -1,11 +1,13 @@
 import {Component, Input, OnChanges} from '@angular/core';
 import {DomSanitizer} from '@angular/platform-browser';
+import {Observable} from 'rxjs';
 import {NgbModal} from '@ng-bootstrap/ng-bootstrap';
 import {EventDetailEventInfo} from 'src/app/models/event.models';
 import {AboutModalComponent} from '../../about/about-modal/about-modal.component';
 import {LocationModalComponent} from '../../location/location-modal/location-modal.component';
 import {Job} from '../../../models/staff.models';
 import {StaffService} from '../../../services/staff.service';
+import { GalleryModalComponent } from '../../gallery/gallery-modal/gallery-modal.component';
 
 @Component({
 	selector: 'app-info-item',
@@ -18,6 +20,7 @@ export class InfoComponent implements OnChanges {
 	@Input() reservationMail: string;
 	@Input() usage: string;
 	@Input() playDate: Date;
+	@Input() facebookPixelId: string;
 
 	artistsArray: Job[];
 
@@ -94,4 +97,10 @@ export class InfoComponent implements OnChanges {
 	transformHtml(htmlTextWithStyle) {
 		return this.sanitizer.bypassSecurityTrustHtml(htmlTextWithStyle);
 	}
+
+	openGallery():void{
+		const modalRef = this.modalService.open(GalleryModalComponent, { size:'xl' });
+		modalRef.componentInstance.albumHash = this.facebookPixelId;
+	}
+
 }

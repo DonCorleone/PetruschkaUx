@@ -1,5 +1,6 @@
 import {Component, Input, OnInit} from '@angular/core';
 import {Observable} from 'rxjs';
+import {map} from 'rxjs/operators';
 import {NgbActiveModal} from '@ng-bootstrap/ng-bootstrap';
 import {EventDetail, EventDetailEventInfo} from 'src/app/models/event.models';
 import {EventService} from 'src/app/services/event.service';
@@ -14,6 +15,7 @@ export class InfoModalComponent implements OnInit {
 	@Input() eventDetailId: number;
 	@Input() usage: string;
 	@Input() playDate: Date;
+	@Input() facebookPixelId: string;
 
 	eventDetail$: Observable<EventDetail>;
 	eventInfo: EventDetailEventInfo;
@@ -23,7 +25,8 @@ export class InfoModalComponent implements OnInit {
 
 	ngOnInit() {
 
-		this.eventDetail$ = this.eventService.GetEventInfo(this.eventDetailId);
-		this.eventDetail$.subscribe(({eventInfos}) => this.eventInfo = eventInfos.find(l => l.languageId === 1));
+		this.eventService.GetEventDetail(this.eventDetailId)
+			.pipe(p => this.eventDetail$ = p)
+			.subscribe(({eventInfos}) => this.eventInfo = eventInfos.find(l => l.languageId === 1))
 	}
 }

@@ -110,7 +110,8 @@ const GET_UPCOMING_GIGS = gql`
 						languageId
 					}
 				},
-        start
+        start,
+				facebookPixelId
       }
     }
 `;
@@ -260,7 +261,7 @@ export class EventService {
 			eventDetail.start : null);
 	}
 
-	GetEventInfo(id: number): Observable<EventDetail> {
+	GetEventDetail(id: number): Observable<EventDetail> {
 		return this.apollo
 			.watchQuery<GetEventInfoById>({
 				query: GET_EVENTINFO_BYEVENTID,

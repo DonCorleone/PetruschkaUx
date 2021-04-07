@@ -18,6 +18,7 @@ export class GigsItemComponent implements OnInit {
 	@Input() eventId: number;
 	@Input() eventInfoDe: EventDetailEventInfo;
 	@Input() ticketPrices: TicketPrice[];
+	@Input() facebookPixelId: string;
 
 	constructor(private modalService: NgbModal) {
 	}
@@ -44,8 +45,10 @@ export class GigsItemComponent implements OnInit {
 	openInfo(): void {
 		const modalRef = this.modalService.open(InfoModalComponent, { size:'lg' });
 		modalRef.componentInstance.eventDetailId = this.eventId;
-		modalRef.componentInstance.usage = ''; // else case
-		modalRef.componentInstance.playDate = this.start; // else case
+		modalRef.componentInstance.usage = '';
+		modalRef.componentInstance.playDate = this.start;
+		modalRef.componentInstance.facebookPixelId = this.facebookPixelId;
+
 	}
 
 	openLocation(locationName: string): void {

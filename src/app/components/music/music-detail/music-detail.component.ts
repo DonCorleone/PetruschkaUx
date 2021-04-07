@@ -65,6 +65,7 @@ export class MusicDetailComponent implements OnInit {
 		modalRef.componentInstance.eventDetailId = this.eventDetail._id;
 		modalRef.componentInstance.usage = 'Tournee'; // else case
 		modalRef.componentInstance.playDate = this.eventDetail.start;
+		modalRef.componentInstance.facebookPixelId = this.eventDetail.facebookPixelId;
 	}
 
 	openStaff(staffName: string) {

@@ -7,10 +7,10 @@
 </div>
 <!--//modal-header-->
 <div class="modal-body" ngbAutoFocus>
-  <ngx-masonry [options]="masonryOptions" [ordered]="true" (itemsLoaded)="itemsLoaded()">
-    <div ngxMasonryItem [prepend]="image[0]" *ngFor="let image of masonryImages;index as idx" class="masonry-row">
+  <ngx-masonry [options]="masonryOptions" [ordered]="true" (itemsLoaded)="itemsLoaded()" *ngIf="image4Images">
+    <div ngxMasonryItem [prepend]="image4Images[0]" *ngFor="let image of image4Images | async;index as idx" class="masonry-row">
       <div class="masonry-vertical-gutter"></div>
-      <img [src]="image[1]" width="100%">
+      <img [src]="'https://cdn.image4.io/petruschka' + image.name" width="100%">
     </div>
   </ngx-masonry>
 </div>

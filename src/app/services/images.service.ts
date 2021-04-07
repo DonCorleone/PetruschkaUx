@@ -21,7 +21,7 @@ export class ImagesService {
 			})
 		};
 
-		return this.http.get<Image4Response>(`https://api.image4.io/v0.1/listFolder?path=/test/`, httpOptions);
+		return this.http.get<Image4Response>(`https://api.image4.io/v0.1/listFolder?path=/${albumHash}/`, httpOptions);
 	}
 }
 

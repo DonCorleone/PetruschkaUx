@@ -153,7 +153,7 @@ export interface EventDetail {
 	showLinkToGoogleMap: boolean;
 	latitude: number;
 	longitude: number;
-	facebookPixelId?: any;
+	facebookPixelId?: string;
 	stay22Active: boolean;
 	isBankInternalEvent: boolean;
 	externalEventCode?: any;
