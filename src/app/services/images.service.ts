@@ -2,6 +2,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable, throwError } from 'rxjs';
 import { catchError, retry, map } from 'rxjs/operators';
+import { environment } from './../../environments/environment';
 
 @Injectable({
   providedIn: 'root'
@@ -17,11 +18,11 @@ export class ImagesService {
 		const httpOptions = {
 			headers: new HttpHeaders({
 				'Content-Type':  'application/json',
-				'Authorization': 'Basic '
+				'Authorization': 'Basic ' + btoa(environment.apiKey + ':' + environment.apiSecret)
 			})
 		};
 
-		return this.http.get<Image4Response>(`https://api.image4.io/v0.1/listFolder?path=/${albumHash}/`, httpOptions);
+		return this.http.get<Image4Response>(environment.apiUrl + `/listFolder?path=/${albumHash}/`, httpOptions);
 	}
 }
 
