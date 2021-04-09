@@ -10,19 +10,22 @@ import { environment } from './../../environments/environment';
 export class ImagesService {
 
   constructor(private http:HttpClient) {
-
+	//	require('dotenv').config();
 	}
 
 	getAlbum(albumHash:String):Observable<Image4Response> {
 
+		const apiKey = ''; //
+		const apiSecret = ''; //
+		const apiUrl = ''; //
 		const httpOptions = {
 			headers: new HttpHeaders({
 				'Content-Type':  'application/json',
-				'Authorization': 'Basic ' + btoa(environment.apiKey + ':' + environment.apiSecret)
+				'Authorization': 'Basic ' + btoa(apiKey + ':' + apiSecret)
 			})
 		};
 
-		return this.http.get<Image4Response>(environment.apiUrl + `/listFolder?path=/${albumHash}/`, httpOptions);
+		return this.http.get<Image4Response>(apiUrl + `/listFolder?path=/${albumHash}/`, httpOptions);
 	}
 }
 
