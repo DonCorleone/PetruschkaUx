@@ -17,6 +17,7 @@ import {APOLLO_OPTIONS} from 'apollo-angular';
 import {InfoComponent} from './components/info/info-item/info-item.component';
 // import { LayoutComponent } from './layout/layout.component';
 import {ScullyLibModule} from '@scullyio/ng-lib';
+import { EnvServiceProvider } from 'src/app/services/env.service.provider';
 
 const uri = realm.graphqlUrl;
 
@@ -47,8 +48,9 @@ export function createApollo(httpLink: HttpLink): ApolloClientOptions<any> {
 		{
 			provide: APOLLO_OPTIONS,
 			useFactory: createApollo,
-			deps: [HttpLink],
-		}
+			deps: [HttpLink]
+		},
+		EnvServiceProvider
 	],
 	bootstrap: [AppComponent]
 })

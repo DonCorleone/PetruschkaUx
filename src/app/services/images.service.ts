@@ -3,14 +3,17 @@ import { Injectable } from '@angular/core';
 import { Observable, throwError } from 'rxjs';
 import { catchError, retry, map } from 'rxjs/operators';
 import { environment } from './../../environments/environment';
+import { EnvService } from './env.service';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ImagesService {
 
-  constructor(private http:HttpClient) {
-	//	require('dotenv').config();
+  constructor(private http:HttpClient, private env: EnvService) {
+    if(env.enableDebug) {
+      console.log('Debug mode enabled!');
+    }
 	}
 
 	getAlbum(albumHash:String):Observable<Image4Response> {
