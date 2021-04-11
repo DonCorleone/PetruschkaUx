@@ -1,4 +1,6 @@
 import {BrowserModule} from '@angular/platform-browser';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
 import {NgModule} from '@angular/core';
 
 import {AppRoutingModule} from './app-routing.module';
@@ -15,6 +17,7 @@ import {APOLLO_OPTIONS} from 'apollo-angular';
 import {InfoComponent} from './components/info/info-item/info-item.component';
 // import { LayoutComponent } from './layout/layout.component';
 import {ScullyLibModule} from '@scullyio/ng-lib';
+import { EnvServiceProvider } from 'src/app/services/env.service.provider';
 
 const uri = realm.graphqlUrl;
 
@@ -37,15 +40,17 @@ export function createApollo(httpLink: HttpLink): ApolloClientOptions<any> {
 		BrowserModule,
 		AppRoutingModule,
 		HttpClientModule,
-		ScullyLibModule
+		ScullyLibModule,
+		BrowserAnimationsModule
 	],
 	entryComponents: [InfoComponent],
 	providers: [
 		{
 			provide: APOLLO_OPTIONS,
 			useFactory: createApollo,
-			deps: [HttpLink],
-		}
+			deps: [HttpLink]
+		},
+		EnvServiceProvider
 	],
 	bootstrap: [AppComponent]
 })

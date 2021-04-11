@@ -3,7 +3,6 @@ import {NgbModal, NgbModalOptions} from '@ng-bootstrap/ng-bootstrap';
 import {EventDetail} from 'src/app/models/event.models';
 import {EventService} from 'src/app/services/event.service';
 import { GalleryModalComponent } from '../../gallery/gallery-modal/gallery-modal.component';
-import {InfoComponent} from '../../info/info-item/info-item.component';
 import { InfoModalComponent } from '../../info/info-modal/info-modal.component';
 
 @Component({
@@ -96,13 +95,11 @@ export class UpdateSlideComponent implements AfterViewInit {
 		modalRef.componentInstance.eventDetailId = this.eventDetail._id;
 		modalRef.componentInstance.usage = ''; // else case
 		modalRef.componentInstance.playDate = this.eventDetail.start; // else case
+		modalRef.componentInstance.facebookPixelId = this.eventDetail.facebookPixelId;
 	}
 
 	openGallery():void{
-
 		const modalRef = this.modalService.open(GalleryModalComponent, { size:'xl' });
-		// modalRef.componentInstance.eventDetailId = this.eventDetail._id;
-		// modalRef.componentInstance.usage = ''; // else case
-		// modalRef.componentInstance.playDate = this.eventDetail.start; // else case
+		modalRef.componentInstance.albumHash = this.eventDetail.facebookPixelId;
 	}
 }
