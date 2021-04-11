@@ -4,6 +4,7 @@ import { Observable, throwError } from 'rxjs';
 import { catchError, retry, map } from 'rxjs/operators';
 import { environment } from './../../environments/environment';
 import { EnvService } from './env.service';
+import * as dotenv from 'dotenv';
 
 @Injectable({
   providedIn: 'root'
@@ -11,9 +12,13 @@ import { EnvService } from './env.service';
 export class ImagesService {
 
   constructor(private http:HttpClient, private env: EnvService) {
+		dotenv.config();
+
     if(env.enableDebug) {
+
+
       console.log('Debug mode enabled!');
-			console.log(process.env.PORT);
+			console.log(process.env.API_KEY_IMAGE4IO);
 			console.log(process.env.REPOSITORY_URL);
 			console.log(env.apiUrl);
     }
