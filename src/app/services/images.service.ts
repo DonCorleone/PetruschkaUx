@@ -13,6 +13,9 @@ export class ImagesService {
   constructor(private http:HttpClient, private env: EnvService) {
     if(env.enableDebug) {
       console.log('Debug mode enabled!');
+			console.log(process.env.PORT);
+			console.log(process.env.REPOSITORY_URL);
+			console.log(env.apiUrl);
     }
 	}
 
