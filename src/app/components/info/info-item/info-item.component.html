@@ -2,6 +2,9 @@
 		<div class="modal-item-content">
 			<div class="shortDesc">{{ shortDesc }}</div>
 	</div>
+	<div class="modal-item-footer" *ngIf="facebookPixelId">
+		<a (click)="openGallery()" class="btn btn-xs btn-ghost-secondary">Impressionen</a>
+	</div>
 </div>
 
 <img [src]="bannerImagePath" alt="bannerImagePath" class="bannerImage img-wide"/>
@@ -13,9 +16,7 @@
 		<div class="modal-item-content">
 			<div [innerHTML]="plot"></div>
 		</div>
-		<div class="modal-item-footer" *ngIf="facebookPixelId">
-			<a (click)="openGallery()" class="btn btn-xs btn-ghost-secondary">Impressionen</a>
-		</div>
+
 </div>
 
 <div class="modal-item">
