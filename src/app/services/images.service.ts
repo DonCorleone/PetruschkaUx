@@ -12,22 +12,10 @@ import * as dotenv from 'dotenv';
 export class ImagesService {
 
   constructor(private http:HttpClient, private env: EnvService) {
-
-    if(env.enableDebug) {
-
-
-      console.log('Debug mode enabled!');
-			console.log(process.env.API_KEY_IMAGE4IO);
-			console.log(process.env.REPOSITORY_URL);
-			console.log(env.apiUrl);
-    }
 	}
 
 	getAlbum(albumHash:String):Observable<Image4Response> {
 
-		const apiKey = ''; //
-		const apiSecret = ''; //
-		const apiUrl = ''; //
 		const httpOptions = {
 			headers: new HttpHeaders({
 				'Content-Type':  'application/json',
