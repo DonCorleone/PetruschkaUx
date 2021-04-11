@@ -4,9 +4,6 @@
 
 export const environment = {
 	production: false,
-// 	apiUrl: 'https://api.image4.io/v0.1',
-// 	apiKey: '4Yy9ZWYNl/HKYOwSIMI9LQ==',
-// 	apiSecret: 'FQw/fSWJTedUN36rXBBxAXsG+DKuM+Sz3xvk9m+IhRU='
 };
 
 /*
