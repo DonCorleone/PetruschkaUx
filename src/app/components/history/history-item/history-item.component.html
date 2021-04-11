@@ -1,0 +1,26 @@
+<div class="updates-carousel slide">
+	<div class="media-holder" (click)="openInfo()">
+		<div class="media-thumb">
+			<img [src]="imagePath" alt="update image">
+		</div>
+	</div>
+	<!--//media-holder-->
+	<div class="carousel-content">
+		<h3 class="title" (click)="openInfo()">{{name}}</h3>
+		<div class="desc">
+			<div class="countdown">
+				<div class="countdown-box" (click)="openInfo()"><span>Premiere: </span><span class="number">{{ start | date:'dd.MM.YY, HH:mm' : '' :'de-CH'}}</span></div>
+			</div>
+			<!--//countdown-->
+			<p class="intro">
+				{{ shortDescription }}<a (click)="openInfo()" class="more-link" href="#"> Mehr dazu</a>
+			</p>
+			<a class="btn btn-xs btn-primary" (click)="scrollTo('gigs')">Tickets</a>
+			<a class="btn btn-xs btn-secondary" (click)="openGallery()" *ngIf="eventDetail.facebookPixelId">Impressionen</a>
+
+			<!--//intro-->
+		</div>
+		<!--//desc-->
+	</div>
+	<!--//content-container-->
+</div>

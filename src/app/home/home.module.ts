@@ -27,7 +27,9 @@ import {PromoCarouselComponent} from '../components/promo/promo-carousel/promo-c
 import {PromoComponent} from '../components/promo/promo/promo.component';
 import {CarouselUpdateComponent} from '../components/update/carousel-update/carousel-update.component';
 import {UpdateSlideComponent} from '../components/update/update-slide/update-slide.component';
-import { GalleryModalComponent } from '../components/gallery/gallery-modal/gallery-modal.component';
+import { GalleryModalComponent } from '../components/gallery/gallery-modal/gallery-modal.component';;
+import { HistoryListComponent } from '../components/history/history-list/history-list.component';
+import { HistoryItemComponent } from '../components/history/history-item/history-item.component';
 import {VideoComponent} from '../components/video/video.component';
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import { NgxMasonryModule } from 'ngx-masonry';
@@ -62,7 +64,9 @@ import { NgxMasonryModule } from 'ngx-masonry';
 		MerchDetailComponent,
 		MusicModalComponent,
 		MusicDetailComponent,
-		GalleryModalComponent
+		GalleryModalComponent,
+		HistoryListComponent,
+		HistoryItemComponent
 	],
 	imports: [
 		CommonModule,
