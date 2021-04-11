@@ -12,7 +12,6 @@ import * as dotenv from 'dotenv';
 export class ImagesService {
 
   constructor(private http:HttpClient, private env: EnvService) {
-		dotenv.config();
 
     if(env.enableDebug) {
 
@@ -32,11 +31,11 @@ export class ImagesService {
 		const httpOptions = {
 			headers: new HttpHeaders({
 				'Content-Type':  'application/json',
-				'Authorization': 'Basic ' + btoa(apiKey + ':' + apiSecret)
+				'Authorization': 'Basic ' + btoa(process.env.API_KEY_IMAGE4IO + ':' + process.env.API_SECRET_IMAGE4IO)
 			})
 		};
 
-		return this.http.get<Image4Response>(apiUrl + `/listFolder?path=/${albumHash}/`, httpOptions);
+		return this.http.get<Image4Response>(process.env.API_URL_IMAGE4IO + `/listFolder?path=/${albumHash}/`, httpOptions);
 	}
 }
 
