@@ -25,7 +25,7 @@ import { MusicListComponent } from '../components/music/music-list/music-list.co
 import { MusicModalComponent } from '../components/music/music-modal/music-modal.component';
 import { PromoCarouselComponent } from '../components/promo/promo-carousel/promo-carousel.component';
 import { PromoComponent } from '../components/promo/promo/promo.component';
-import { CrslUpdateComponent } from '../components/update/crsl-update/crsl-update.component';
+import { UpdateListComponent } from '../components/update/update-list/update-list.component';
 import { UpdateSlideComponent } from '../components/update/update-slide/update-slide.component';
 import { GalleryModalComponent } from '../components/gallery/gallery-modal/gallery-modal.component';;
 import { HistoryListComponent } from '../components/history/history-list/history-list.component';
@@ -49,7 +49,7 @@ import { NgxMasonryModule } from 'ngx-masonry';
 		InfoComponent,
 		GigsItemComponent,
 		PromoCarouselComponent,
-		CrslUpdateComponent,
+		UpdateListComponent,
 		UpdateSlideComponent,
 		AboutItemComponent,
 		MerchItemComponent,

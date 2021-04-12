@@ -4,11 +4,11 @@ import {EventDetail} from 'src/app/models/event.models';
 import {EventService} from 'src/app/services/event.service';
 
 @Component({
-	selector: 'app-crsl-update',
-	templateUrl: './crsl-update.component.html',
-	styleUrls: ['./crsl-update.component.scss']
+	selector: 'app-update-list',
+	templateUrl: './update-list.component.html',
+	styleUrls: ['./update-list.component.scss']
 })
-export class CrslUpdateComponent implements OnInit {
+export class UpdateListComponent implements OnInit {
 
 
 	@Input() dateGte: Date;

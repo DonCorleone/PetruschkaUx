@@ -42,7 +42,7 @@ img {
 	}
 }
 
-.crsl-content {
+.list-content {
 	text-align: left;
 	padding-left: 20px;
 
@@ -108,13 +108,13 @@ img {
 			margin-bottom: 30px;
 		}
 	}
-	.crsl-content {
+	.list-content {
 		padding-left: 15px;
 		.btn-cta {
 			position: static;
 		}
 	}
-	.crsl .item {
+	.update-list .item {
 		height: inherit;
 	}
 
@@ -125,7 +125,7 @@ img {
 		left: -45px;
 	}
 
-	.crsl .crsl-item {
+	.update-list .list-item {
 		height: inherit;
 	}
 
@@ -137,13 +137,13 @@ img {
 
 // Large devices (desktops, 992px and up)
 @media (min-width: 992px) {
-	.crsl-content {
+	.list-content {
 		padding-left: 30px;
 	}
-	.crsl-content .btn-cta {
+	.list-content .btn-cta {
 		position: absolute;
 	}
-	.crsl .item {
+	.update-list .item {
 		height: 100px;
 	}
 	.glyphicon-chevron-right {
