@@ -35,7 +35,7 @@ img {
 		}
 	}
 
-	.carousel-content {
+	.crsl-content {
 		padding-left: 20px;
 		max-width: 760px;
 
@@ -101,13 +101,13 @@ img {
 			margin: 0 auto;
 			margin-bottom: 30px;
 		}
-		.carousel-content {
+		.crsl-content {
 			padding-left: 15px;
 			.btn-cta {
 				position: static;
 			}
 		}
-		.carousel .item {
+		.crsl .item {
 			height: inherit;
 		}
 
@@ -118,7 +118,7 @@ img {
 			left: -45px;
 		}
 
-		.carousel .carousel-item {
+		.crsl .crsl-item {
 			height: inherit;
 		}
 	}
@@ -128,13 +128,13 @@ img {
 @media (min-width: 992px) {
 	:host-context(.updates-block) {
 
-		.carousel-content {
+		.crsl-content {
 			padding-left: 30px;
 		}
-		.carousel-content .btn-cta {
+		.crsl-content .btn-cta {
 			position: absolute;
 		}
-		.carousel .item {
+		.crsl .item {
 			height: 100px;
 		}
 		.glyphicon-chevron-right {

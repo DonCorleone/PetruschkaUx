@@ -4,11 +4,11 @@ import {EventDetail} from 'src/app/models/event.models';
 import {EventService} from 'src/app/services/event.service';
 
 @Component({
-	selector: 'app-carousel-update',
-	templateUrl: './carousel-update.component.html',
-	styleUrls: ['./carousel-update.component.scss']
+	selector: 'app-crsl-update',
+	templateUrl: './crsl-update.component.html',
+	styleUrls: ['./crsl-update.component.scss']
 })
-export class CarouselUpdateComponent implements OnInit {
+export class CrslUpdateComponent implements OnInit {
 
 
 	@Input() dateGte: Date;
