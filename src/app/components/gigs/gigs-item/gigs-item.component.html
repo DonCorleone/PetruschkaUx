@@ -30,10 +30,10 @@
 		<!--//info-content-->
 		<div class="gig-actions">
 			<a (click)="collapse.toggle()" [attr.aria-expanded]="!isCollapsed" aria-controls="collapseExample"
-				 class="btn btn-xs btn-ghost-secondary">Info</a>
+				 class="btn btn-sm btn-ghost-secondary">Info</a>
 
 			<span>
-        <a *ngIf="showBuyButton" [href]="[eventLink]" class="btn btn-xs btn-secondary" target="_blank">Tickets</a>
+        <a *ngIf="showBuyButton" [href]="[eventLink]" class="btn btn-sm btn-secondary" target="_blank">Tickets</a>
       </span>
 			<span *ngIf="showIsGone" class="secondary-content">
         Vorstellung vorüber.
