@@ -1,6 +1,5 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
 import {Observable} from 'rxjs';
-import {NgbCarouselConfig} from '@ng-bootstrap/ng-bootstrap';
 import {EventDetail} from 'src/app/models/event.models';
 import {EventService} from 'src/app/services/event.service';
 
@@ -10,23 +9,18 @@ import {EventService} from 'src/app/services/event.service';
 	styleUrls: ['./carousel-update.component.scss']
 })
 export class CarouselUpdateComponent implements OnInit {
-	images = [];
+
+
+	@Input() dateGte: Date;
+	@Input() dateLt: Date;
 
 	eventDetails$: Observable<EventDetail[]>;
 
-	loading: boolean;
+	constructor(private eventService: EventService) {
 
-	constructor(private eventService: EventService, config: NgbCarouselConfig) {
-
-		// customize default values of carousels used by this component tree
-		config.interval = 7500;
-		config.keyboard = false;
-		config.pauseOnHover = false;
-		config.showNavigationIndicators = false;
-		config.animation = false;
 	}
 
 	ngOnInit() {
-		this.eventDetails$ = this.eventService.GetUpcomingEventDetails();
+		this.eventDetails$ = this.eventService.GetUpcomingEventDetails(this.dateGte, this.dateLt);
 	}
 }

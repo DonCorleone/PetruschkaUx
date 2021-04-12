@@ -32,14 +32,15 @@ const GET_EVENTDETAILS_BYTAG = gql`
   }
 `;
 
-const GET_UPCOMING_EVENTS = gql`
-	query GetUpcomingEvents($today: DateTime!){
+const GET_DATEFILTERED_EVENTS = gql`
+	query GetUpcomingEvents($startGte: DateTime!, $startLt: DateTime!){
 		eventDetails (
 			query: {
 				AND: [
-								{googleAnalyticsTracker_in: "Premiere"}
-								{start_gte: $today}
-							]
+					{googleAnalyticsTracker_in: "Premiere"}
+					{start_gte: $startGte}
+					{start_lt: $startLt}
+				]
 			})
 		{
 			_id,
@@ -291,12 +292,13 @@ export class EventService {
 			.valueChanges.pipe(map((result) => result.data.eventDetails.filter(filterPredicateIn)));
 	}
 
-	GetUpcomingEventDetails(): Observable<EventDetail[]> {
+	GetUpcomingEventDetails(start_gte: Date, start_lt: Date): Observable<EventDetail[]> {
 		return this.apollo
 			.watchQuery<GetEventDetailPrototypes>({
-				query: GET_UPCOMING_EVENTS,
+				query: GET_DATEFILTERED_EVENTS,
 				variables: {
-					today: new Date()
+					startGte: start_gte,
+					startLt: start_lt
 				},
 			})
 			.valueChanges.pipe(map((result) => result.data.eventDetails));

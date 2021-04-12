@@ -1,21 +1,15 @@
-import { Component, OnInit } from '@angular/core';
-import {Observable} from 'rxjs';
-import { EventDetail } from 'src/app/models/event.models';
-import { EventService } from 'src/app/services/event.service';
+import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-history-list',
   templateUrl: './history-list.component.html',
   styleUrls: ['./history-list.component.scss']
 })
-export class HistoryListComponent implements OnInit {
+export class HistoryListComponent {
 
-	eventDetailsPremiere$: Observable<EventDetail[]>;
+	dateGte: Date = new Date('1970-01-01Z00:00:00:000');
+	dateLt: Date = new Date();
 
-	constructor(private eventService: EventService) {
-	}
-
-	ngOnInit() {
-		this.eventDetailsPremiere$ = this.eventService.GetEventDetails(p => p.googleAnalyticsTracker.includes('Premiere'));
+	constructor() {
 	}
 }

@@ -1,11 +1,7 @@
 <section class="history-section section text-center" id="history">
 	<div class="container">
 		<h2 class="section-title">Vergangene Stücke</h2>
-		<div class = "row">
-			<div *ngFor="let eventDetail of eventDetailsPremiere$ | async">
-				<app-history-item [eventDetail]="eventDetail"></app-history-item>
-			</div>
-		</div>
+		<app-carousel-update [dateGte] = dateGte [dateLt] = dateLt></app-carousel-update>
 		<!--//row-->
 	</div>
 	<!--//container-->
