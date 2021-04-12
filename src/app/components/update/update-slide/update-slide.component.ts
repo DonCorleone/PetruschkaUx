@@ -18,6 +18,10 @@ export class UpdateSlideComponent implements AfterViewInit {
 	constructor(private modalService: NgbModal) {
 	}
 
+	get futureEvent():boolean {
+		return new Date(this.eventDetail.start) > new Date();
+	}
+
 	get name() {
 		return EventService.GetNameFromEventDetail(this.eventDetail);
 	}

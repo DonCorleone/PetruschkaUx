@@ -12,16 +12,16 @@
 	<div class="crsl-content">
 		<h3 class="title" (click)="openInfo()">{{name}}</h3>
 		<div class="desc">
-			<div class="countdown">
+			<div class="countdown" *ngIf="futureEvent">
 				<div class="countdown-box" (click)="openInfo()"><span>Premiere: </span><span class="number">{{ start | date:'dd.MM.YY, HH:mm' : '' :'de-CH'}}</span></div>
 			</div>
 			<!--//countdown-->
 			<p class="intro">
-				{{ shortDescription }}<a (click)="openInfo()" class="more-link" href="#"> Mehr dazu</a>
+				{{ shortDescription }}
 			</p>
-			<a class="btn btn-xs btn-primary" (click)="scrollTo('gigs')">Tickets</a>
-			<a class="btn btn-xs btn-secondary" (click)="openGallery()" *ngIf="eventDetail.facebookPixelId">Impressionen</a>
-
+			<a class="btn btn-xs btn-ghost-primary" (click)="openInfo()">Info</a>
+			<a class="btn btn-xs btn-primary" (click)="openGallery()" *ngIf="eventDetail.facebookPixelId">Impressionen</a>
+			<a class="btn btn-xs btn-secondary" (click)="scrollTo('gigs')" *ngIf="futureEvent">Tickets</a>
 			<!--//intro-->
 		</div>
 		<!--//desc-->
