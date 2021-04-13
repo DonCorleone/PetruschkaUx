@@ -7,7 +7,7 @@ import { Component } from '@angular/core';
 })
 export class HistoryListComponent {
 
-	dateGte: Date = new Date('1970-01-01Z00:00:00:000');
+	dateGte: Date = new Date(new Date().setFullYear(1753));;
 	dateLt: Date = new Date();
 
 	constructor() {

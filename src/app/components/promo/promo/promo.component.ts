@@ -11,7 +11,7 @@ export class PromoComponent implements OnInit {
 	title: string;
 
 	dateGte: Date = new Date();
-	dateLt: Date = new Date('2099-12-31Z23:59:59:999');
+	dateLt: Date = new Date(new Date().setFullYear(2099));;
 
 	constructor() {
 	}
