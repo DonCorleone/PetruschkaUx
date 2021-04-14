@@ -1,17 +1,13 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable, throwError } from 'rxjs';
-import { catchError, retry, map } from 'rxjs/operators';
-import { environment } from './../../environments/environment';
-import { EnvService } from './env.service';
-import * as dotenv from 'dotenv';
+import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ImagesService {
 
-  constructor(private http:HttpClient, private env: EnvService) {
+  constructor(private http:HttpClient) {
 	}
 
 	getAlbum(albumHash:String):Observable<Image4Response> {
