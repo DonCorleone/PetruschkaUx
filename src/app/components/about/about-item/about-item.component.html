@@ -9,7 +9,8 @@
 			<h3 class="member-name">
 				{{staff.name}}
 			</h3>
-			<div [innerHTML]="staff.bio" class="member-desc"></div>
+			<div [innerHTML]="staff.bio" class="member-desc" *ngIf="isModal"></div>
+			<a class="btn btn-sm btn-primary" (click)="openStaff(staff.name)" *ngIf="!(isModal)">Biografie</a>
 		</div>
 		<!--//item-inner-->
 	</div>

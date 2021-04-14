@@ -47,6 +47,15 @@
 		}
 	}
 }
+:host-context(.modal-body) {
+	.about-detail {
+		.card {
+			.item-inner {
+				padding: unset;
+			}
+		}
+	}
+}
 
 .social-block {
 	padding-top: 90px;

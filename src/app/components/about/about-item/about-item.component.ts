@@ -1,5 +1,7 @@
 import {Component, Input, OnInit} from '@angular/core';
+import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import {Staff} from 'src/app/models/staff.models';
+import { AboutModalComponent } from '../about-modal/about-modal.component';
 
 
 @Component({
@@ -10,8 +12,9 @@ import {Staff} from 'src/app/models/staff.models';
 export class AboutItemComponent implements OnInit {
 
 	@Input() staff: Staff;
+	@Input() isModal: boolean;
 
-	constructor() {
+	constructor(private modalService: NgbModal) {
 	}
 
 	ngOnInit(): void {
@@ -19,5 +22,10 @@ export class AboutItemComponent implements OnInit {
 
 	GetImageUrl(name: string): string {
 		return '../assets/images/members/' + encodeURIComponent(name) + '.jpg';
+	}
+
+	openStaff(staffName: string) {
+		const modalRef = this.modalService.open(AboutModalComponent, { size:'sm' });
+		modalRef.componentInstance.staffName = staffName;
 	}
 }
