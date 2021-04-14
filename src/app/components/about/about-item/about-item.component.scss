@@ -36,13 +36,22 @@
 				display: inline-block;
 				width: 100%;
 				padding: 5px 10px;
-				background: $text-color-primary;
+				background: $text-color-grey;
 				color: #fff;
 				font-family: "Raleway", sans-serif;
 				text-transform: uppercase;
 				font-weight: 700;
 				font-size: 14px;
 				margin-bottom: 30px;
+			}
+		}
+	}
+}
+:host-context(.modal-body) {
+	.about-detail {
+		.card {
+			.item-inner {
+				padding: unset;
 			}
 		}
 	}
