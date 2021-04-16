@@ -2,6 +2,9 @@
 
 .contact-section {
 	background: $text-color-primary;
+	text-align-last:center;
+
+
 	color: rgba(256, 256, 256, 0.75);
 	a {
 		color: rgba(256, 256, 256, 0.75);
@@ -44,6 +47,22 @@
 		}
 	}
 
+	.history-plays{
+    display: flex;
+    flex-direction: row;
+    flex-flow: wrap;
+    justify-content: space-evenly;
+
+		.history-play{
+			padding: 1px 6px;
+			margin: 6px 4px;
+			border-left: 1px solid $text-color-grey;
+			border-right: 1px solid $text-color-grey;
+			color: $text-color-grey;
+			flex-grow: 4;
+			text-align-last: center;
+		}
+	}
 	.channels-list {
 		margin-bottom: 45px;
 		a {
