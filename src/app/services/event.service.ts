@@ -33,39 +33,39 @@ const GET_EVENTDETAILS_BYTAG = gql`
 `;
 
 const GET_DATEFILTERED_EVENTS = gql`
-	query GetUpcomingEvents($startGte: DateTime!, $startLt: DateTime!){
-		eventDetails (
-			query: {
-				AND: [
-					{googleAnalyticsTracker_in: "Premiere"}
-					{start_gte: $startGte}
-					{start_lt: $startLt}
-				]
-			})
-		{
-			_id,
-			eventInfos{
-				name
-				bannerImagePath
-				flyerImagePath
-				shortDescription
+query GetUpcomingEvents($startGte: DateTime!, $startLt: DateTime!){
+	eventDetails (
+		query: {
+			AND: [
+				{googleAnalyticsTracker_in: "Premiere"}
+				{start_gte: $startGte}
+				{start_lt: $startLt}
+			]
+		}, sortBy: START_DESC)
+	{
+		_id,
+		eventInfos{
+			name
+			bannerImagePath
+			flyerImagePath
+			shortDescription
+			languageId
+		}
+		notificationEmail
+		facebookPixelId
+		googleAnalyticsTracker
+		start
+		ticketTypes{
+			sortOrder
+			ticketTypeInfos {
 				languageId
-			}
-			notificationEmail
-			facebookPixelId
-			googleAnalyticsTracker
-			start
-			ticketTypes{
-				sortOrder
-				ticketTypeInfos {
-					languageId
-					imageUrl
-					name
-					description
-				}
+				imageUrl
+				name
+				description
 			}
 		}
 	}
+}
 `;
 
 const GET_EVENTINFO_BYEVENTID = gql`

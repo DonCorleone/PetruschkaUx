@@ -74,7 +74,7 @@ export class InfoComponent implements OnChanges {
 		} else if (this.usage === 'CD' || this.usage === 'Tournee') {
 			return `Urauführung`;
 		} else {
-			return `Das Stück ${this.isFutureEvent ? 'wird' : 'wurde'} aufgeführt am`;
+			return `Das Stück ${this.isFutureEvent ? 'wird aufgeführt' : 'wurde uraufgeführt'} am`;
 		}
 	}
 

@@ -10,10 +10,11 @@
 	</div>
 	<!--//media-holder-->
 	<div class="list-content">
-		<h3 class="title" (click)="openInfo()">{{name}}</h3>
+		<h3 class="title">{{name}}</h3>
 		<div class="desc">
-			<div class="countdown" *ngIf="futureEvent">
-				<div class="countdown-box" (click)="openInfo()"><span>Premiere: </span><span class="number">{{ start | date:'dd.MM.YY, HH:mm' : '' :'de-CH'}}</span></div>
+			<div class="countdown">
+				<div class="countdown-box" *ngIf="futureEvent"><span>Premiere: </span><span class="number">{{ start | date:'dd.MM.YY, HH:mm' : '' :'de-CH'}}</span></div>
+				<div class="countdown-box" *ngIf="!(futureEvent)"><span>Uraufführung: </span><span class="number">{{ start | date:'MMMM YYYY' : '' :'de-CH'}}</span></div>
 			</div>
 			<!--//countdown-->
 			<p class="intro">
