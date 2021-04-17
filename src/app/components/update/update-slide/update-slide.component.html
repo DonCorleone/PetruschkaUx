@@ -20,6 +20,7 @@
 			<p class="intro">
 				{{ shortDescription }}
 			</p>
+			<p class="imprtant" *ngIf="importantNotes"> {{ importantNotes }} </p>
 			<a class="btn btn-sm btn-ghost-primary" (click)="openInfo()">Info</a>
 			<a class="btn btn-sm btn-primary" (click)="openGallery()" *ngIf="eventDetail.facebookPixelId">Impressionen</a>
 			<a class="btn btn-sm btn-secondary" (click)="scrollTo('gigs')" *ngIf="futureEvent">Tickets</a>

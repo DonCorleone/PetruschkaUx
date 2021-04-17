@@ -30,6 +30,10 @@ export class UpdateSlideComponent implements AfterViewInit {
 		return EventService.GetShortDescFromEventDetail(this.eventDetail);
 	}
 
+	get importantNotes(): string {
+		return EventService.GetImportantNotesFromEventDetail(this.eventDetail);
+	}
+
 	get imagePath(): string {
 		return EventService.GetFlyerImagePathFromEventDetail(this.eventDetail);
 	}

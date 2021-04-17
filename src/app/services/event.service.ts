@@ -50,6 +50,7 @@ query GetUpcomingEvents($startGte: DateTime!, $startLt: DateTime!){
 			flyerImagePath
 			shortDescription
 			languageId
+			importantNotes
 		}
 		notificationEmail
 		facebookPixelId
@@ -247,6 +248,11 @@ export class EventService {
 	static GetLongDescriptionFromEventDetail(eventDetail: EventDetail): string {
 		return (eventDetail
 			&& eventDetail.eventInfos.find(p => p.languageId === 1)?.longDescription);
+	}
+
+	static GetImportantNotesFromEventDetail(eventDetail: EventDetail): string {
+		return (eventDetail
+			&& eventDetail.eventInfos.find(p => p.languageId === 1)?.importantNotes);
 	}
 
 	static GetLocationFromEventDetail(eventDetail: EventDetail): string {
