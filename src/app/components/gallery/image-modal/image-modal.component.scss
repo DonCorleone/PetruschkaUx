@@ -1,0 +1,26 @@
+@import "/src/scss/theme-1.scss";
+
+.flex-view{
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: center;
+	background-color: $black;
+}
+
+.flex-wrapper{
+	display: flex;
+	flex-direction: row-reverse;
+	align-items: flex-start;
+	flex-wrap: nowrap;
+}
+
+button.close{
+	background-color: $text-color-grey;
+	min-width: 50px;
+	min-height: 50px;
+}
+
+img {
+	height:100vh;
+}

@@ -17,6 +17,7 @@ import {APOLLO_OPTIONS} from 'apollo-angular';
 import {InfoComponent} from './components/info/info-item/info-item.component';
 // import { LayoutComponent } from './layout/layout.component';
 import {ScullyLibModule} from '@scullyio/ng-lib';
+import { ImageModalComponent } from './components/gallery/image-modal/image-modal.component';
 const uri = realm.graphqlUrl;
 
 export function createApollo(httpLink: HttpLink): ApolloClientOptions<any> {
@@ -32,7 +33,8 @@ export function createApollo(httpLink: HttpLink): ApolloClientOptions<any> {
 @NgModule({
 	declarations: [
 		AppComponent,
-		ScrollSpyDirective
+		ScrollSpyDirective,
+		ImageModalComponent
 	],
 	imports: [
 		BrowserModule,
