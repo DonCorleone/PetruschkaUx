@@ -6,6 +6,7 @@
 	align-items: center;
 	justify-content: center;
 	background-color: $black;
+	height: 100vh;
 }
 
 .flex-wrapper{
@@ -21,6 +22,10 @@ button.close{
 	min-height: 50px;
 }
 
-img {
+img.image-strech-height {
 	height:100vh;
+}
+
+img.image-strech-width {
+	width:100vw;
 }

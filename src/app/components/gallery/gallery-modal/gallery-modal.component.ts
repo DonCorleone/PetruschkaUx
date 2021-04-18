@@ -40,7 +40,8 @@ export class GalleryModalComponent implements OnInit {
 	openImage(image: File) {
 		const modalRef = this.modalService.open(ImageModalComponent, {
 			size: 'xl' as 'lg',
-			windowClass: 'modal-xxl'
+			windowClass: 'modal-xxl',
+			centered: true
 		});
 		modalRef.componentInstance.image = image;
 	}
