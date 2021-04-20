@@ -18,7 +18,7 @@ export class LocationItemComponent implements OnInit {
 	}
 
 	GetImageUrl(name: string): string {
-		let imageUrl = 'https://petruschka-dev.netlify.app' + 'assets/images/members/' + encodeURIComponent(name) + '.jpg';
+		let imageUrl = 'https://petruschka-dev.netlify.app/' + 'assets/images/members/' + encodeURIComponent(name) + '.jpg';
 		return "https://images.weserv.nl/?url=" + imageUrl + "&w583&h=738";
 	}
 
