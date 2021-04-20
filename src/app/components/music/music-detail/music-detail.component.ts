@@ -14,9 +14,18 @@ import {StaffService} from '../../../services/staff.service';
 })
 export class MusicDetailComponent implements OnInit {
 
-	@Input() eventDetail: EventDetail;
-
+	@Input() eventDetailId: number;
+	private eventDetailProp: EventDetail;
 	private ticketTypeInfoProp: TicketTypeInfo;
+
+	set eventDetail(value: EventDetail){
+		this.eventDetailProp = value;
+		this.ticketTypeInfo = EventService.GetTicketTypeInfoFromEventDetail(value, 'CD');
+	}
+
+	get eventDetail(): EventDetail{
+		return this.eventDetailProp;
+	}
 
 	set ticketTypeInfo(value: TicketTypeInfo) {
 		this.ticketTypeInfoProp = value;
@@ -29,10 +38,9 @@ export class MusicDetailComponent implements OnInit {
 		return this.ticketTypeInfoProp;
 	}
 
-	eventInfo: EventDetailEventInfo;
 	artistsArray: Job[];
 
-	constructor(private modalService: NgbModal, private staffService: StaffService) {
+	constructor(private modalService: NgbModal, private staffService: StaffService, private eventService: EventService) {
 	}
 
 	get artists(): Job[] {
@@ -40,7 +48,9 @@ export class MusicDetailComponent implements OnInit {
 	}
 
 	get eventName(): string {
-		return this.eventInfo?.name;
+		return (this.eventDetail && this.eventDetail.eventInfos.filter(
+			p => p.languageId === 1))?.length > 0 ? this.eventDetail.eventInfos.filter(
+				p => p.languageId === 1)[0].name : null;
 	}
 
 	get reservationMail(): string {
@@ -52,18 +62,21 @@ export class MusicDetailComponent implements OnInit {
 	}
 
 	get shortDesc(): string {
-		return this.eventInfo?.shortDescription;
+		return (this.eventDetail && this.eventDetail.eventInfos.filter(
+			p => p.languageId === 1))?.length > 0 ? this.eventDetail.eventInfos.filter(
+				p => p.languageId === 1)[0].shortDescription : null;
 	}
 
 	ngOnInit(): void {
-		this.ticketTypeInfo = EventService.GetTicketTypeInfoFromEventDetail(this.eventDetail, 'CD');
-		this.eventInfo = EventService.GetEventInfoFromEventDetail(this.eventDetail);
+
+		this.eventService.GetEventDetail(this.eventDetailId)
+			.subscribe(p => this.eventDetail = p);
 	}
 
 	openInfo(): void {
 		const modalRef = this.modalService.open(InfoModalComponent, { size:'lg' });
-		modalRef.componentInstance.eventDetailId = this.eventDetail._id;
-		modalRef.componentInstance.usage = 'Tournee'; // else case
+		modalRef.componentInstance.eventDetailId = this.eventDetailId
+		modalRef.componentInstance.usage = 'CD'; // else case
 		modalRef.componentInstance.playDate = this.eventDetail.start;
 		modalRef.componentInstance.facebookPixelId = this.eventDetail.facebookPixelId;
 	}

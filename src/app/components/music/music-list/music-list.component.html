@@ -12,7 +12,13 @@
 		<div class="albums-block">
 			<div class="row">
 				<div *ngFor="let eventDetail of eventDetailsCD$ | async" class="item col-12 col-md-6 col-lg-4">
-					<app-music-item [eventDetail]="eventDetail" usage="CD"></app-music-item>
+					<app-music-item
+					[eventDetailId]="eventDetail._id"
+					[name]="GetName(eventDetail)"
+					[imageUrl]="GetImageUrl(eventDetail)"
+					[usage]="'Tournee'"
+					[start]="eventDetail.start">
+				</app-music-item>
 				</div>
 				<!--//item-->
 			</div>

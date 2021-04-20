@@ -40,7 +40,6 @@ export class MerchDetailComponent implements OnInit {
 		return this.ticketTypeInfoProp;
 	}
 
-	eventInfo: EventDetailEventInfo;
 	artistsArray: Job[];
 
 	constructor(private modalService: NgbModal, private staffService: StaffService, private eventService: EventService) {
