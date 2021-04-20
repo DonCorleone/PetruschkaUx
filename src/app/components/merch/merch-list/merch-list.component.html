@@ -11,7 +11,12 @@
 		</div>
 		<div class = "row">
 			<div *ngFor="let eventDetail of eventDetailsTournee$ | async" class="item col-12 col-md-6 col-lg-4">
-				<app-merch-item [eventDetail]="eventDetail" usage="Tournee"></app-merch-item>
+				<app-merch-item
+					[eventDetailId]="eventDetail._id"
+					[name]="GetName(eventDetail)"
+					[imageUrl]="GetImageUrl(eventDetail)"
+					[usage]="'Tournee'">
+				</app-merch-item>
 			</div>
 		</div>
 		<!--//row-->

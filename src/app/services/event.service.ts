@@ -5,31 +5,35 @@ import { Apollo, gql } from 'apollo-angular';
 import { EventDetail, EventDetailEventInfo, TicketType, TicketTypeInfo } from '../models/event.models';
 
 const GET_EVENTDETAILS_BYTAG = gql`
-  query {
-    eventDetails (query: {googleAnalyticsTracker_ne: ""}){
-      _id,
-      eventInfos{
-        name
-        bannerImagePath
-        flyerImagePath
-        shortDescription
-        languageId
-      }
-      notificationEmail
-      facebookPixelId
-      googleAnalyticsTracker
-      start
-      ticketTypes{
-        sortOrder
-        ticketTypeInfos{
-          languageId
-          imageUrl
-          name
-          description
-        }
-      }
-    }
-  }
+query {
+	eventDetails (
+		query: {
+			OR: [
+				{googleAnalyticsTracker_in: "CD"}
+				{googleAnalyticsTracker_in: "Tournee"}
+				{googleAnalyticsTracker_in: "CD|Tournee"}
+				{googleAnalyticsTracker_in: "Tournee|CD"}
+			]
+		}
+	)
+	{
+		_id,
+		eventInfos{
+			name
+			languageId
+		}
+		facebookPixelId
+		googleAnalyticsTracker
+		ticketTypes{
+			sortOrder
+			ticketTypeInfos{
+				languageId
+				imageUrl
+				name
+			}
+		}
+	}
+}
 `;
 
 const GET_DATEFILTERED_EVENTS = gql`
@@ -37,16 +41,16 @@ query GetUpcomingEvents($startGte: DateTime!, $startLt: DateTime!){
 	eventDetails (
 		query: {
 			AND: [
-				{googleAnalyticsTracker_in: "Premiere"}
-				{start_gte: $startGte}
-				{start_lt: $startLt}
-			]
-		}, sortBy: START_DESC)
+					{googleAnalyticsTracker_in: "Premiere"}
+					{start_gte: $startGte}
+					{start_lt: $startLt}
+				]
+			}, sortBy: START_DESC
+		)
 	{
 		_id,
 		eventInfos{
 			name
-			bannerImagePath
 			flyerImagePath
 			shortDescription
 			languageId
@@ -56,15 +60,6 @@ query GetUpcomingEvents($startGte: DateTime!, $startLt: DateTime!){
 		facebookPixelId
 		googleAnalyticsTracker
 		start
-		ticketTypes{
-			sortOrder
-			ticketTypeInfos {
-				languageId
-				imageUrl
-				name
-				description
-			}
-		}
 	}
 }
 `;
@@ -82,7 +77,19 @@ const GET_EVENTINFO_BYEVENTID = gql`
         bannerImagePath
         artists
       }
-      notificationEmail
+			notificationEmail
+			facebookPixelId
+			googleAnalyticsTracker
+			start
+			ticketTypes{
+				sortOrder
+				ticketTypeInfos {
+					languageId
+					imageUrl
+					name
+					description
+				}
+			}
     }
   }
 `;
@@ -99,7 +106,6 @@ const GET_UPCOMING_GIGS = gql`
         eventInfos{
           name
           location
-          shortDescription
           languageId
         },
 				ticketTypes{
@@ -112,8 +118,7 @@ const GET_UPCOMING_GIGS = gql`
 						languageId
 					}
 				},
-        start,
-				facebookPixelId
+        start
       }
     }
 `;

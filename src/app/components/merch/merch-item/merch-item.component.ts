@@ -11,7 +11,9 @@ import {MerchModalComponent} from '../merch-modal/merch-modal.component';
 })
 export class MerchItemComponent implements OnInit {
 
-	@Input() eventDetail: EventDetail;
+	@Input() eventDetailId: number;
+	@Input() imageUrl: string;
+	@Input() name: string;
 	@Input() usage: string;
 
 	ticketTypeInfo: TicketTypeInfo;
@@ -19,12 +21,8 @@ export class MerchItemComponent implements OnInit {
 	constructor(private modalService: NgbModal) {
 	}
 
-	get name(): string {
-		return (this.eventDetail && this.eventDetail.eventInfos[0]) ? this.eventDetail.eventInfos[0].name : null;
-	}
-
 	get imagePath(): string {
-		return "https://images.weserv.nl/?url=" + this.ticketTypeInfo?.imageUrl + "&w=899&h=899";
+		return "https://images.weserv.nl/?url=" + this.imageUrl + "&w=899&h=899";
 	}
 
 	get description(): string {
@@ -32,11 +30,10 @@ export class MerchItemComponent implements OnInit {
 	}
 
 	ngOnInit(): void {
-		this.ticketTypeInfo = EventService.GetTicketTypeInfoFromEventDetail(this.eventDetail, 'Tournee');
 	}
 
 	openDetail(): void {
 		const modalRef = this.modalService.open(MerchModalComponent, { size:'lg' });
-		modalRef.componentInstance.eventDetail = this.eventDetail;
+		modalRef.componentInstance.eventDetailId = this.eventDetailId;
 	}
 }

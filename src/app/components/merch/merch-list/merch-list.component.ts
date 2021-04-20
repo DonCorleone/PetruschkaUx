@@ -18,4 +18,12 @@ export class MerchListComponent implements OnInit {
 	ngOnInit() {
 		this.eventDetailsTournee$ = this.eventService.GetEventDetails(p => p.googleAnalyticsTracker.includes('Tournee'));
 	}
+
+	GetName(eventDetail: EventDetail):string{
+		return EventService.GetNameFromEventDetail(eventDetail);
+	}
+
+	GetImageUrl(eventDetail: EventDetail):string{
+		return EventService.GetTicketTypeInfoFromEventDetail(eventDetail, 'Tournee').imageUrl;
+	}
 }
