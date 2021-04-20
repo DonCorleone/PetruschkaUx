@@ -21,7 +21,7 @@ export class AboutItemComponent implements OnInit {
 	}
 
 	GetImageUrl(name: string): string {
-		let imageUrl = document.location + 'assets/images/members/' + encodeURIComponent(name) + '.jpg';
+		let imageUrl = 'https://www.petruschka.ch/' + 'assets/images/members/' + encodeURIComponent(name) + '.jpg';
 		return "https://images.weserv.nl/?url=" + imageUrl + "&w=178&h=239";
 	}
 
