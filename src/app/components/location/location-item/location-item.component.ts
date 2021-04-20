@@ -18,7 +18,8 @@ export class LocationItemComponent implements OnInit {
 	}
 
 	GetImageUrl(name: string): string {
-		return '../assets/images/members/' + encodeURIComponent(name) + '.jpg';
+		let imageUrl = document.location + 'assets/images/members/' + encodeURIComponent(name) + '.jpg';
+		return "https://images.weserv.nl/?url=" + imageUrl + "&w583&h=738";
 	}
 
 	ngOnInit(): void {

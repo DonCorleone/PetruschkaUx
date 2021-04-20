@@ -19,6 +19,11 @@ export class MerchListComponent implements OnInit {
 		this.eventDetailsTournee$ = this.eventService.GetEventDetails(p => p.googleAnalyticsTracker.includes('Tournee'));
 	}
 
+	get LogoWanderTheater():string{
+		let imageUrl = document.location + 'assets/images/members/' + encodeURIComponent('logo-wandertheater.png');
+		return "https://images.weserv.nl/?url=" + imageUrl + "&w=444&h=126";
+	}
+
 	GetName(eventDetail: EventDetail):string{
 		return EventService.GetNameFromEventDetail(eventDetail);
 	}
