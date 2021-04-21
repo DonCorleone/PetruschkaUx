@@ -18,8 +18,8 @@ export class LocationItemComponent implements OnInit {
 	}
 
 	GetImageUrl(name: string): string {
-		return '../assets/images/members/' + encodeURIComponent(name) + '.jpg';
-		//	return "https://images.weserv.nl/?url=" + imageUrl + "&w583&h=738";
+		let imageUrl = 'https://petruschka-dev.netlify.app/' + 'assets/images/members/' + encodeURIComponent(name) + '.jpg';
+		return "https://images.weserv.nl/?url=" + imageUrl + "&w583&h=738";
 	}
 
 	ngOnInit(): void {
