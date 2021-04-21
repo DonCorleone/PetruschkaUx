@@ -21,8 +21,8 @@ export class AboutItemComponent implements OnInit {
 	}
 
 	GetImageUrl(name: string): string {
-		let imageUrl = document.location + 'assets/images/members/' + encodeURIComponent(name) + '.jpg';
-		return "https://images.weserv.nl/?url=" + imageUrl + "&w=178&h=239";
+		return '../assets/images/members/' + encodeURIComponent(name) + '.jpg';
+		//return "https://images.weserv.nl/?url=" + imageUrl + "&w=178&h=239";
 	}
 
 	openStaff(staffName: string) {
