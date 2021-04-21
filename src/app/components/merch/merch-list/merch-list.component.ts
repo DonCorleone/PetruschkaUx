@@ -18,4 +18,17 @@ export class MerchListComponent implements OnInit {
 	ngOnInit() {
 		this.eventDetailsTournee$ = this.eventService.GetEventDetails(p => p.googleAnalyticsTracker.includes('Tournee'));
 	}
+
+	get LogoWanderTheater():string{
+		let imageUrl = 'https://petruschka-dev.netlify.app/' + 'assets/images/' + encodeURIComponent('logo-wandertheater.png');
+		return "https://images.weserv.nl/?url=" + imageUrl + "&w=444&h=126";
+	}
+
+	GetName(eventDetail: EventDetail):string{
+		return EventService.GetNameFromEventDetail(eventDetail);
+	}
+
+	GetImageUrl(eventDetail: EventDetail):string{
+		return EventService.GetTicketTypeInfoFromEventDetail(eventDetail, 'Tournee').imageUrl;
+	}
 }

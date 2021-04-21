@@ -15,18 +15,12 @@ export class AboutListComponent implements OnInit {
 	staffs$: Observable<Staff[]>;
 
 	staffTitle = 'Mitwirkende';
-	@Input() staffName: string;
 
 	constructor(private route: ActivatedRoute, private staffService: StaffService) {
 	}
 
 	ngOnInit(): void {
 
-		this.route.params
-			.pipe(map(p => p.staffName))
-			.subscribe(nameIn => {
-				this.staffName = nameIn;
-				this.staffs$ = this.staffService.GetStaffs(nameIn).pipe(tap(res => res.sort((x, y) => x.sortOrder < y.sortOrder ? -1 : 1)));
-			});
+		this.staffs$ = this.staffService.GetStaffs();
 	}
 }

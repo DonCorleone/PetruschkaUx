@@ -9,7 +9,7 @@ import {EventDetail} from 'src/app/models/event.models';
 })
 export class MerchModalComponent implements OnInit {
 
-	@Input() eventDetail: EventDetail;
+	@Input() eventDetailId: number;
 
 	constructor(public activeModal: NgbActiveModal) {
 	}

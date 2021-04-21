@@ -19,4 +19,11 @@ export class MusicListComponent implements OnInit {
 		this.eventDetailsCD$ = this.eventService.GetEventDetails(p => p.googleAnalyticsTracker.includes('CD'));
 	}
 
+	GetName(eventDetail: EventDetail):string{
+		return EventService.GetNameFromEventDetail(eventDetail);
+	}
+
+	GetImageUrl(eventDetail: EventDetail):string{
+		return EventService.GetTicketTypeInfoFromEventDetail(eventDetail, 'CD').imageUrl;
+	}
 }

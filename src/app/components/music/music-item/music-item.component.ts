@@ -1,7 +1,6 @@
-import {Component, Input, OnInit} from '@angular/core';
+import {Component, Input} from '@angular/core';
 import {NgbModal} from '@ng-bootstrap/ng-bootstrap';
-import {EventDetail, TicketTypeInfo} from 'src/app/models/event.models';
-import {EventService} from 'src/app/services/event.service';
+import {TicketTypeInfo} from 'src/app/models/event.models';
 import {MusicModalComponent} from '../music-modal/music-modal.component';
 
 @Component({
@@ -9,10 +8,13 @@ import {MusicModalComponent} from '../music-modal/music-modal.component';
 	templateUrl: './music-item.component.html',
 	styleUrls: ['./music-item.component.scss']
 })
-export class MusicItemComponent implements OnInit {
+export class MusicItemComponent {
 
-	@Input() eventDetail: EventDetail;
+	@Input() eventDetailId: number;
+	@Input() imageUrl: string;
+	@Input() name: string;
 	@Input() usage: string;
+	@Input() start: Date;
 
 	ticketTypeInfo: TicketTypeInfo;
 
@@ -20,27 +22,15 @@ export class MusicItemComponent implements OnInit {
 	}
 
 	get comingSoon(): boolean {
-		return (this.eventDetail && this.eventDetail.start && this.eventDetail.start > new Date());
-	}
-
-	get name(): string {
-		return (this.eventDetail && this.eventDetail.eventInfos[0]) ? this.eventDetail.eventInfos[0].name : null;
+		return (this.start > new Date());
 	}
 
 	get imagePath(): string {
-		return "https://images.weserv.nl/?url=" + this.ticketTypeInfo?.imageUrl + "&w=899&h=899";
-	}
-
-	get description(): string {
-		return this.ticketTypeInfo?.description;
-	}
-
-	ngOnInit(): void {
-		this.ticketTypeInfo = EventService.GetTicketTypeInfoFromEventDetail(this.eventDetail, 'CD');
+		return "https://images.weserv.nl/?url=" + this.imageUrl + "&w=235&h=235";
 	}
 
 	openDetail(): void {
 		const modalRef = this.modalService.open(MusicModalComponent, { size:'lg' });
-		modalRef.componentInstance.eventDetail = this.eventDetail;
+		modalRef.componentInstance.eventDetailId = this.eventDetailId;
 	}
 }

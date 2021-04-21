@@ -29,8 +29,7 @@
 		</div>
 		<!--//info-content-->
 		<div class="gig-actions">
-			<a (click)="collapse.toggle()" [attr.aria-expanded]="!isCollapsed" aria-controls="collapseExample"
-				 class="btn btn-sm btn-ghost-secondary">Info</a>
+			<a (click)="openInfo()" class="btn btn-sm btn-ghost-secondary">Info</a>
 
 			<span>
         <a *ngIf="showBuyButton" [href]="[eventLink]" class="btn btn-sm btn-secondary" target="_blank">Tickets</a>
@@ -45,13 +44,5 @@
 
 		</div>
 		<!--//gig-actions-->
-		<div #collapse="ngbCollapse" [(ngbCollapse)]="isCollapsed" class="info-extra">
-			<div class="shortDesc">
-				{{ eventInfoDe.shortDescription }}
-			</div>
-			<div>
-				<p><a (click)="openInfo()" class="more-link">Mehr..</a></p>
-			</div>
-		</div>
 	</div>
 	<!--//info-extra-->

@@ -5,15 +5,16 @@ import {map} from 'rxjs/operators';
 import {Job, Staff} from '../models/staff.models';
 
 const GET_STAFFS = gql`
-  query GetStaffByName {
-    staffs (sortBy: SORTORDER_ASC){
-      name
-      bio
-      topic
-      sortOrder
-      active
-    }
-  }
+	query GetStaffByName {
+		staffs (
+		query:
+					{active: true}
+			, sortBy: SORTORDER_ASC
+		){
+			name
+			topic
+		}
+	}
 `;
 
 const GET_STAFFBYNAME = gql`
@@ -22,8 +23,6 @@ const GET_STAFFBYNAME = gql`
       name
       bio
       topic
-      sortOrder
-      active
     }
   }
 `;
@@ -44,17 +43,13 @@ export class StaffService {
 	constructor(private apollo: Apollo) {
 	}
 
-	public GetStaffs(nameIn: string): Observable<Staff[]> {
+	public GetStaffs(): Observable<Staff[]> {
 
 		return this.apollo
 			.watchQuery<GetStaffs>({
 				query: GET_STAFFS,
-				variables: {
-					name: nameIn
-				},
 			})
-			.valueChanges.pipe(map((result) => result.data.staffs.filter(
-				nameIn ? p => p.name === nameIn : o => o.name !== '').filter(p => p.active === true).sort(p => p.sortOrder)));
+			.valueChanges.pipe(map((result) => result.data.staffs));
 	}
 
 	public GetStaff(nameIn: string): Observable<Staff> {
