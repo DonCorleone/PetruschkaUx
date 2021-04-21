@@ -26,7 +26,7 @@ export class MusicItemComponent {
 	}
 
 	get imagePath(): string {
-		return "https://images.weserv.nl/?url=" + this.imageUrl + "&w=899&h=899";
+		return "https://images.weserv.nl/?url=" + this.imageUrl + "&w=235&h=235";
 	}
 
 	openDetail(): void {

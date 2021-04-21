@@ -18,7 +18,7 @@ export class MerchItemComponent {
 	}
 
 	get imagePath(): string {
-		return "https://images.weserv.nl/?url=" + this.imageUrl + "&w=899&h=899";
+		return "https://images.weserv.nl/?url=" + this.imageUrl + "&w=350&h=350";
 	}
 
 	openDetail(): void {
