@@ -22,7 +22,7 @@ export class AboutItemComponent implements OnInit {
 
 	GetImageUrl(name: string): string {
 		let imageUrl = 'https://petruschka.netlify.app/' + 'assets/images/members/' + encodeURIComponent(name) + '.jpg';
-		return "https://images.weserv.nl/?url=" + imageUrl + "&w=178&h=239";
+		return "https://images.weserv.nl/?url=" + imageUrl + "&w=179&h=240";
 	}
 
 	openStaff(staffName: string) {
