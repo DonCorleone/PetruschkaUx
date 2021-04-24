@@ -25,7 +25,7 @@
 	</div>
 	<div>
 		<div class="modal-item-content">
-			<a (click)="openLocation(locationName)" class="location-link">{{ locationName }}</a>
+			<a (click)="openLocation(locationName)" class="location-link"><i class="fas fa-external-link-square-alt"></i> {{ locationName }}</a>
 		</div>
 	</div>
 </div>
@@ -52,12 +52,12 @@
 				<div *ngIf="job.isJobSharing">
 					{{ job.name }} {{ job.name !== '' ? ' : ' : '' }}
 					<span *ngFor="let jobValue of job.values; let isLast=last">
-              <a (click)="openStaff(jobValue)" class="staff-link">{{ jobValue }}</a> {{isLast ? '' : ' & '}}
+              <a (click)="openStaff(jobValue)" class="staff-link"><i class="fas fa-external-link-square-alt"></i> {{ jobValue }}</a> {{isLast ? '' : ' & '}}
 						<!-- <a [routerLink]="['/staff', jobsharer]">{{ jobsharer }}</a> {{isLast ? '' : ' & '}} -->
             </span>
 				</div>
 				<div *ngIf="!job.isJobSharing">
-					<a (click)="openStaff(job.name)" class="staff-link">{{ job.name }}</a> {{ job.name !== '' ? ' : ' : '' }}
+					<a (click)="openStaff(job.name)" class="staff-link"><i class="fas fa-external-link-square-alt"></i> {{ job.name }}</a> {{ job.name !== '' ? ' : ' : '' }}
 					<span *ngFor="let jobValue of job.values; let isLast=last">
 						{{ jobValue }} {{isLast ? '' : ' & '}}
             </span>
