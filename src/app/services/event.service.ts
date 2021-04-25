@@ -10,8 +10,9 @@ query {
 		query: {
 			OR: [
 				{googleAnalyticsTracker_in: "CD"}
-				{googleAnalyticsTracker_in: "Tournee"}
 				{googleAnalyticsTracker_in: "CD|Tournee"}
+				{googleAnalyticsTracker_in: "Tournee"}
+				{googleAnalyticsTracker_in: "Premiere|Tournee"}
 				{googleAnalyticsTracker_in: "Tournee|CD"}
 			]
 		}
@@ -41,7 +42,12 @@ query GetUpcomingEvents($startGte: DateTime!, $startLt: DateTime!){
 	eventDetails (
 		query: {
 			AND: [
-					{googleAnalyticsTracker_in: "Premiere"}
+					{
+            OR: [
+							{googleAnalyticsTracker_in: "Premiere"}
+							{googleAnalyticsTracker_in: "Premiere|Tournee"}
+          	]
+          }
 					{start_gte: $startGte}
 					{start_lt: $startLt}
 				]
