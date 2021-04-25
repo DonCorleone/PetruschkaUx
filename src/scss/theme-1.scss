@@ -40,15 +40,4 @@ $theme-10: #AEBB4B; /* Lime */
 // Import theme styles
 @import "theme/mixins";
 @import "theme/base";
-@import "theme/header";
-@import "theme/footer";
-@import "theme/promo-section";
-@import "theme/gigs-section";
-@import "theme/music-section";
-@import "theme/about-section";
-@import "theme/merch-section";
-@import "theme/contact-section";
-@import "theme/modal";
-@import "theme/responsive";
-@import "theme/demo"; //REMOVE ON YOUR PRODUCTION SITE
 

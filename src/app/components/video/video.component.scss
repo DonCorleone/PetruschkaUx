@@ -1,0 +1,9 @@
+// Small devices (landscape phones, 576px and up)
+@media (min-width: 576px) {
+	.modal-video .modal-dialog {
+		max-width: inherit;
+	}
+	.modal-info .modal-dialog {
+		max-width: inherit;
+	}
+}

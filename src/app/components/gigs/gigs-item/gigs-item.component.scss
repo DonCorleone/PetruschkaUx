@@ -1,0 +1,70 @@
+@import "/src/scss/theme-1.scss";
+
+:host-context(.gigs-section .item) {
+	.gig-title {
+		font-size: 16px;
+		margin-top: 0;
+		margin-bottom: 10px;
+		font-weight: 700;
+	}
+	.meta-list {
+		color: $text-color-grey;
+		a {
+			color: $text-color-grey;
+		}
+		.svg-inline--fa {
+			margin-right: 5px;
+			color: $theme-color;
+			font-size: 16px;
+		}
+	}
+	.date-label {
+		background: $text-color-primary;
+		color: #fff;
+		text-align: center;
+		display: inline-block;
+		width: 45px;
+		height: 55px;
+		padding-top: 4px;
+		position: absolute;
+		left: 0;
+		top: 15px;
+		.number {
+			font-size: 20px;
+			font-weight: 700;
+		}
+		.month {
+			font-size: 12px;
+			font-weight: 600;
+			font-family: "Raleway", sans-serif;
+			color: rgba(256, 256, 256, 0.8);
+		}
+	}
+	.gig-actions {
+		position: absolute;
+		right: 0;
+		top: 15px;
+		.btn {
+			margin-right: 5px;
+			&:last-child {
+				margin-right: 0;
+			}
+		}
+	}
+
+	.info-extra {
+		color: $text-color-secondary;
+		font-size: 16px;
+	}
+}
+
+// Small devices (landscape phones, less than 992px)
+@media (max-width: 991.98px) {
+	:host-context(.gigs-section .container .item) {
+		.gig-actions {
+			position: static;
+			margin-top: 15px;
+			margin-bottom: 15px;
+		}
+	}
+}

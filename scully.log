@@ -1,0 +1,30 @@
+
+----------------------------------
+Using stored unhandled routes!.
+   To discover new routes in the angular app use "npm run scully -- --scanRoutes"
+----------------------------------
+ The render plugin "disableAngular has thrown the below error,
+              while trying to render route "unknown"
+              Scully will exitError: A stats(-es2015).json is required for the 'disableAngular' plugin.
+Please run 'ng build' with the '--stats-json' flag
+
+
+----------------------------------
+Using stored unhandled routes!.
+   To discover new routes in the angular app use "npm run scully -- --scanRoutes"
+----------------------------------
+ The render plugin "disableAngular has thrown the below error,
+              while trying to render route "unknown"
+              Scully will exitError: A stats(-es2015).json is required for the 'disableAngular' plugin.
+Please run 'ng build' with the '--stats-json' flag
+
+
+----------------------------------
+Using stored unhandled routes!.
+   To discover new routes in the angular app use "npm run scully -- --scanRoutes"
+----------------------------------
+
+----------------------------------
+Using stored unhandled routes!.
+   To discover new routes in the angular app use "npm run scully -- --scanRoutes"
+----------------------------------

@@ -1,0 +1,17 @@
+<div class="modal-header">
+	<button (click)="activeModal.dismiss('Cross click')" aria-describedby="modal-title" aria-label="Close button" class="close"
+					type="button">
+		<span aria-hidden="true">&times;</span>
+	</button>
+	<h4 *ngIf="1==1" class="modal-title text-center" id="infoModalLabel">Gallery</h4>
+</div>
+<!--//modal-header-->
+<div class="modal-body" ngbAutoFocus>
+  <ngx-masonry [options]="masonryOptions" [ordered]="true" (itemsLoaded)="itemsLoaded()" *ngIf="image4Images">
+    <div ngxMasonryItem [prepend]="image4Images[0]" *ngFor="let image of image4Images | async;index as idx" class="masonry-row">
+      <div class="masonry-vertical-gutter"></div>
+      <a (click)="openImage(image)"><img [src]="'https://cdn.image4.io/petruschka' + image.name" width="100%"></a>
+    </div>
+  </ngx-masonry>
+</div>
+<!--//modal-body-->

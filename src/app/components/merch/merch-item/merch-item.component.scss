@@ -1,0 +1,71 @@
+@import "/src/scss/theme-1.scss";
+
+// Small devices (landscape phones, less than 768px)
+@media (max-width: 767.98px) {
+	:host-context(.merch-section) {
+		.mask-inner {
+			padding-top: 30px;
+		}
+	}
+}
+
+:host-context(.merch-section .item) {
+	.item-inner {
+		position: relative;
+
+		&:hover {
+			.mask {
+				visibility: visible;
+				@include opacity(1);
+			}
+		}
+		.mask {
+			visibility: hidden;
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			color: #fff;
+			text-decoration: none;
+			@include transition(all 0.4s ease-in-out);
+			@include opacity(0);
+
+			cursor: pointer;
+
+			.mask-inner {
+				background: rgba(red($text-color-primary), green($text-color-primary), blue($text-color-primary), 0.8);
+				padding: 30px;
+				padding-top: 45px;
+				height: 100%;
+				overflow: hidden;
+				color: #fff;
+			}
+
+			.item-title {
+				font-size: 18px;
+				color: #fff;
+				margin-bottom: 5px;
+				font-family: "Raleway", sans-serif;
+				font-weight: bold;
+				text-transform: uppercase;
+				margin-top: 0;
+				margin-bottom: 15px;
+			}
+			.desc {
+				font-size: 16px;
+				margin-bottom: 30px;
+			}
+
+			span {
+				display: block;
+				&.btn {
+					display: inline-block;
+				}
+				.btn {
+					margin-top: 15px;
+				}
+			}
+		}
+	}
+}

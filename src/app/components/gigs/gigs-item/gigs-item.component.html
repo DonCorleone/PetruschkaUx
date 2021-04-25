@@ -1,0 +1,48 @@
+
+	<div class="date-label">
+		<div class="number">{{ start | date:'dd' : '' :'de-CH'}}</div>
+		<div class="month">{{ start | date:'MMM' : '' :'de-CH' }}</div>
+	</div>
+	<!--//date-label-->
+	<div class="gig-info">
+		<div class="info-content">
+			<h3 (click)="openInfo()" class="gig-title info-link">{{ eventInfoDe.name }}</h3>
+			<div class="meta">
+				<ul class="meta-list list-inline">
+					<li class="list-inline-item location">
+						<a (click)="openLocation(eventInfoDe.location)"
+																										class="location-link"><i class="fas fa-external-link-square-alt"></i>{{ eventInfoDe.location }}</a>
+					</li>
+					<li class="list-inline-item time">
+						<i class="far fa-clock"></i>{{ start | date:'EE' : '' :'de-CH'}} {{ start | date:'HH:mm' : '' :'de-CH' }}
+					</li>
+					<li class="list-inline-item price">
+						<i class="far fa-money-bill-alt"></i>
+						<span *ngFor="let ticketPrice of ticketPrices; let isLast=last">
+							{{ ticketPrice.name }}:
+							{{ ticketPrice.price | currency:'CHF ' }} {{isLast ? '' : ' | '}}
+						</span>
+					</li>
+				</ul>
+			</div>
+			<!--//meta-->
+		</div>
+		<!--//info-content-->
+		<div class="gig-actions">
+			<a (click)="openInfo()" class="btn btn-sm btn-ghost-secondary">Info</a>
+
+			<span>
+        <a *ngIf="showBuyButton" [href]="[eventLink]" class="btn btn-sm btn-secondary" target="_blank">Tickets</a>
+      </span>
+			<span *ngIf="showIsGone" class="secondary-content">
+        Vorstellung vorüber.
+      </span>
+
+			<span *ngIf="preSaleInFuture" class="secondary-content">
+        Vorverkauf ab {{ preSaleStart | date:'shortDate' : '' :'de-CH'}}
+      </span>
+
+		</div>
+		<!--//gig-actions-->
+	</div>
+	<!--//info-extra-->

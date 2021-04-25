@@ -1,0 +1,40 @@
+<div *ngIf="( eventLocation$ | async ) as eventLocation">
+	<div class="modal-item">
+		<h5 class="modal-item-title">
+			Addresse
+		</h5>
+		<div>
+			<div class="modal-item-content">
+				<address>
+					{{ eventLocation.name }} <br>
+					{{ eventLocation.street }} <br>
+					{{ eventLocation.postalCode }} {{ eventLocation.city }}
+				</address>
+			</div>
+		</div>
+	</div>
+
+	<div class="modal-item">
+		<h5 class="modal-item-title">
+			Anfahrt
+		</h5>
+		<div>
+			<div class="modal-item-content">
+				<div [innerHTML]="eventLocation.directions"></div>
+			</div>
+		</div>
+	</div>
+
+	<div class="modal-item last">
+		<h5 class="modal-item-title">
+			Geschichte
+		</h5>
+		<div>
+			<div class="modal-item-content">
+				<div [innerHTML]="eventLocation.info"></div>
+			</div>
+		</div>
+	</div>
+
+	<img [src]="GetImageUrl(eventLocation.name)" alt="eventLocation" class="img-wide">
+</div>

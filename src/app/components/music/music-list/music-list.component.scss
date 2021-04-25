@@ -1,0 +1,24 @@
+@import "../../../../scss/theme-1.scss";
+
+.music-section {
+	background: $smoky-white;
+	.sc-block {
+		max-width: 860px;
+		margin-bottom: 90px;
+		.item {
+			margin-bottom: 15px;
+		}
+	}
+	.albums-block {
+		.row {
+			justify-content: center;
+		}
+		.item {
+			margin-bottom: 45px;
+		}
+	}
+
+	.music-action {
+		margin-top: 30px;
+	}
+}

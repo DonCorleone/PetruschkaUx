@@ -1,27 +1,29 @@
-# KinderkulturUx
+# Petruschka.ch
+Frontend solution for [www.petruschka.ch](https://www.petruschka.ch)
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.3.9.
+Status PROD:
+[![Netlify Status](https://api.netlify.com/api/v1/badges/8e7e5cd9-0ea9-495e-9f96-411428cdef87/deploy-status)](https://app.netlify.com/sites/petruschka/deploys)
 
-## Development server
+Status TEST:
+[![Netlify Status](https://api.netlify.com/api/v1/badges/414ff289-67e6-4868-be3e-2b6590e48031/deploy-status)](https://app.netlify.com/sites/petruschka-dev/deploys)
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+## Frontend
+### Javascript Framework
+Angular v10 +
 
-## Code scaffolding
+### Theme
+Template Copyright @ [3rd Wave Media](http://themes.3rdwavemedia.com/)
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+## Communication
+GraphQL
 
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+## Backend
+Backend is completely outsourced into cloud-services.
+### Editing
+[ticketino.com](https://www.ticketino.com/)
+### Transfer
+Data download from Ticketino via REST-API and upload to MongoDB Realm via REST API  [.NET Core WebApi]()
+### JSON
+Data access to [MongoDB Atlas](https://www.mongodb.com/cloud/atlas) via apollo / GraphQL - client
+### Images
+Image access to [image4io](https://image4.io/) via REST API

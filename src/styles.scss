@@ -1,2 +1,139 @@
-@import url('https://fonts.googleapis.com/css?family=Raleway:400,500,600,700,800,900');
-@import url('https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,600,700,400italic,600italic,700italic');
+@import url("https://fonts.googleapis.com/css?family=Raleway:400,500,600,700,800,900");
+@import url("https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,600,700,400italic,600italic,700italic");
+
+/* Importing Bootstrap SCSS file. */
+@import "scss/bootstrap/bootstrap";
+@import "/src/scss/theme-1.scss";
+
+/* ======= Modals ======= */
+.modal-body {
+	padding-left: 30px;
+	padding-right: 30px;
+	padding-bottom: 30px;
+	font-size: 16px;
+	color: $text-color-secondary;
+	iframe {
+		max-width: 100%;
+	}
+
+	.modal-item {
+		position: relative;
+		// padding-left: 30px;
+		padding-top: 15px;
+		padding-bottom: 15px;
+		border-bottom: 1px solid $divider;
+
+		&.last {
+			border-bottom: none;
+		}
+	}
+
+	.modal-item-title {
+		font-size: 16px;
+		margin-top: 0;
+		margin-bottom: 10px;
+		font-weight: 700;
+	}
+
+	.modal-item-content {
+		padding: 15px 0;
+	}
+
+	.modal-item-footer {
+		display: flex;
+    justify-content: center;
+	}
+
+	.img-wide {
+		padding-top: 30px;
+		margin-top: -30px;
+		width: 100%;
+	}
+}
+
+
+// Small devices (landscape phones, less than 768px)
+@media (max-width: 767.98px) {
+	.modal-body {
+		padding-left: 15px;
+		padding-right: 15px;
+	}
+}
+
+.modal-content {
+	@include border-radius(0);
+}
+
+.modal-header {
+	border: none;
+	padding-top: 30px;
+	position: relative;
+	justify-content: center !important;
+}
+
+.modal button.close {
+	font-size: 36px;
+	font-weight: 300;
+	text-shadow: none;
+	background: none;
+	position: absolute;
+	right: 12px;
+	top: 7px;
+	z-index: 10;
+	@include opacity(0.6);
+	&:hover {
+		@include opacity(1);
+	}
+}
+
+.modal-backdrop.in {
+	@include opacity(0.9);
+}
+
+.modal {
+	&.modal-video {
+		.modal-dialog {
+			margin-top: 90px;
+		}
+		.modal-body {
+			padding: 0;
+			padding-top: 0;
+		}
+		.modal-header {
+			border: none;
+			padding: 0;
+		}
+		.modal-content {
+			background: none;
+			border: none;
+			@include box-shadow(none);
+		}
+
+		button.close {
+			color: #fff;
+			@include opacity(0.6);
+			background: none;
+			position: absolute;
+			top: inherit;
+			right: 0px;
+			bottom: 5px;
+			z-index: 10;
+			&:hover {
+				@include opacity(1);
+			}
+		}
+	}
+}
+
+.location-link,
+.nav-link,
+.staff-link,
+.info-link {
+	cursor: pointer;
+}
+
+.modal-xxl .modal-xl {
+	max-width: 100%;
+	height: 98vh;
+	margin:unset;
+}

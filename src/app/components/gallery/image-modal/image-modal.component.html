@@ -1,0 +1,9 @@
+<div class="flex-view">
+	<div class="flex-wrapper">
+		<button (click)="activeModal.dismiss('Cross click')" aria-describedby="modal-title" aria-label="Close button"
+			class="close" type="button">
+			<span aria-hidden="true">&times;</span>
+		</button>
+		<img [src]="'https://cdn.image4.io/petruschka' + image.name"[ngClass]="calculateClasses()">
+	</div>
+</div>
