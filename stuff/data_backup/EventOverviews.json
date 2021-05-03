@@ -1,0 +1,519 @@
+[{
+  "_id": 130744,
+  "name": "Die Zaubermuschel",
+  "start": {
+    "$date": "2017-08-19T13:00:00Z"
+  },
+  "canBeRemovedFromEventGroup": true
+},{
+  "_id": 130656,
+  "name": "Das Traumland",
+  "start": {
+    "$date": "2018-08-19T13:00:00Z"
+  },
+  "canBeRemovedFromEventGroup": true
+},{
+  "_id": 130643,
+  "name": "De wissi Wolf",
+  "start": {
+    "$date": "2018-12-01T14:00:00Z"
+  },
+  "canBeRemovedFromEventGroup": true
+},{
+  "_id": 130642,
+  "name": "Der Karneval der Tiere",
+  "start": {
+    "$date": "2019-12-07T14:00:00Z"
+  },
+  "canBeRemovedFromEventGroup": true
+},{
+  "_id": 130385,
+  "name": "De Frau Emma iri Tier",
+  "start": {
+    "$date": "2020-12-05T14:00:00Z"
+  },
+  "canBeRemovedFromEventGroup": true
+},{
+  "_id": 130179,
+  "name": "Der Mondballon",
+  "start": {
+    "$date": "2019-11-01T13:00:00Z"
+  },
+  "canBeRemovedFromEventGroup": true
+},{
+  "_id": 125956,
+  "name": "Peter und der Wolf 2",
+  "start": {
+    "$date": "2021-08-21T13:00:00Z"
+  },
+  "canBeRemovedFromEventGroup": true
+},{
+  "_id": 128212,
+  "name": "Peter und der Wolf 2",
+  "start": {
+    "$date": "2021-08-22T13:00:00Z"
+  },
+  "canBeRemovedFromEventGroup": true
+},{
+  "_id": 128220,
+  "name": "Peter und der Wolf 2",
+  "start": {
+    "$date": "2021-08-28T13:00:00Z"
+  },
+  "canBeRemovedFromEventGroup": true
+},{
+  "_id": 128227,
+  "name": "Peter und der Wolf 2",
+  "start": {
+    "$date": "2021-08-29T13:00:00Z"
+  },
+  "canBeRemovedFromEventGroup": true
+},{
+  "_id": 128213,
+  "name": "Peter und der Wolf 2",
+  "start": {
+    "$date": "2021-09-01T13:00:00Z"
+  },
+  "canBeRemovedFromEventGroup": true
+},{
+  "_id": 128221,
+  "name": "Peter und der Wolf 2",
+  "start": {
+    "$date": "2021-09-04T13:00:00Z"
+  },
+  "canBeRemovedFromEventGroup": true
+},{
+  "_id": 128228,
+  "name": "Peter und der Wolf 2",
+  "start": {
+    "$date": "2021-09-05T13:00:00Z"
+  },
+  "canBeRemovedFromEventGroup": true
+},{
+  "_id": 128215,
+  "name": "Peter und der Wolf 2",
+  "start": {
+    "$date": "2021-09-08T13:00:00Z"
+  },
+  "canBeRemovedFromEventGroup": true
+},{
+  "_id": 128222,
+  "name": "Peter und der Wolf 2",
+  "start": {
+    "$date": "2021-09-11T13:00:00Z"
+  },
+  "canBeRemovedFromEventGroup": true
+},{
+  "_id": 128229,
+  "name": "Peter und der Wolf 2",
+  "start": {
+    "$date": "2021-09-12T13:00:00Z"
+  },
+  "canBeRemovedFromEventGroup": true
+},{
+  "_id": 128216,
+  "name": "Peter und der Wolf 2",
+  "start": {
+    "$date": "2021-09-15T13:00:00Z"
+  },
+  "canBeRemovedFromEventGroup": true
+},{
+  "_id": 128223,
+  "name": "Peter und der Wolf 2",
+  "start": {
+    "$date": "2021-09-18T13:00:00Z"
+  },
+  "canBeRemovedFromEventGroup": true
+},{
+  "_id": 128230,
+  "name": "Peter und der Wolf 2",
+  "start": {
+    "$date": "2021-09-19T13:00:00Z"
+  },
+  "canBeRemovedFromEventGroup": true
+},{
+  "_id": 128217,
+  "name": "Peter und der Wolf 2",
+  "start": {
+    "$date": "2021-09-22T13:00:00Z"
+  },
+  "canBeRemovedFromEventGroup": true
+},{
+  "_id": 128224,
+  "name": "Peter und der Wolf 2",
+  "start": {
+    "$date": "2021-09-25T13:00:00Z"
+  },
+  "canBeRemovedFromEventGroup": true
+},{
+  "_id": 128250,
+  "name": "Peter und der Wolf 2 (Matinée)",
+  "start": {
+    "$date": "2021-09-26T09:00:00Z"
+  },
+  "canBeRemovedFromEventGroup": true
+},{
+  "_id": 128231,
+  "name": "Peter und der Wolf 2",
+  "start": {
+    "$date": "2021-09-26T13:00:00Z"
+  },
+  "canBeRemovedFromEventGroup": true
+},{
+  "_id": 128218,
+  "name": "Peter und der Wolf 2",
+  "start": {
+    "$date": "2021-09-29T13:00:00Z"
+  },
+  "canBeRemovedFromEventGroup": true
+},{
+  "_id": 128225,
+  "name": "Peter und der Wolf 2",
+  "start": {
+    "$date": "2021-10-02T13:00:00Z"
+  },
+  "canBeRemovedFromEventGroup": true
+},{
+  "_id": 128232,
+  "name": "Peter und der Wolf 2",
+  "start": {
+    "$date": "2021-10-03T13:00:00Z"
+  },
+  "canBeRemovedFromEventGroup": true
+},{
+  "_id": 125150,
+  "name": "Krah",
+  "start": {
+    "$date": "2011-12-01T14:00:00Z"
+  },
+  "canBeRemovedFromEventGroup": true
+},{
+  "_id": 125149,
+  "name": "S tanzende Meersäuli",
+  "start": {
+    "$date": "2012-12-01T14:00:00Z"
+  },
+  "canBeRemovedFromEventGroup": true
+},{
+  "_id": 125148,
+  "name": "De Has wott ned schlofe",
+  "start": {
+    "$date": "2013-12-01T14:00:00Z"
+  },
+  "canBeRemovedFromEventGroup": true
+},{
+  "_id": 125147,
+  "name": "Die chli Fee schickt de Winter wäg",
+  "start": {
+    "$date": "2015-12-01T14:00:00Z"
+  },
+  "canBeRemovedFromEventGroup": true
+},{
+  "_id": 125146,
+  "name": "Lutra und s’Gheimnis im See",
+  "start": {
+    "$date": "2016-12-01T14:00:00Z"
+  },
+  "canBeRemovedFromEventGroup": true
+},{
+  "_id": 125145,
+  "name": "Beschti Fründe",
+  "start": {
+    "$date": "2014-12-01T14:00:00Z"
+  },
+  "canBeRemovedFromEventGroup": true
+},{
+  "_id": 125144,
+  "name": "Sonne. Schnee ond Donnerwätter",
+  "start": {
+    "$date": "2017-12-01T14:00:00Z"
+  },
+  "canBeRemovedFromEventGroup": true
+},{
+  "_id": 121304,
+  "name": "Fliegen wär so schön",
+  "start": {
+    "$date": "2011-08-01T12:30:00Z"
+  },
+  "canBeRemovedFromEventGroup": true
+},{
+  "_id": 121292,
+  "name": "Der Abfallkobold",
+  "start": {
+    "$date": "2012-08-01T12:30:00Z"
+  },
+  "canBeRemovedFromEventGroup": true
+},{
+  "_id": 83917,
+  "name": "Der Zauberladen",
+  "start": {
+    "$date": "2019-08-17T12:30:00Z"
+  },
+  "canBeRemovedFromEventGroup": true
+},{
+  "_id": 121240,
+  "name": "Das Drachenei",
+  "start": {
+    "$date": "2008-08-01T13:00:00Z"
+  },
+  "canBeRemovedFromEventGroup": true
+},{
+  "_id": 116786,
+  "name": "Testevent",
+  "start": {
+    "$date": "2021-02-02T09:00:00Z"
+  },
+  "canBeRemovedFromEventGroup": true
+},{
+  "_id": 119729,
+  "name": "De schlaui Igel Pic",
+  "start": {
+    "$date": "2020-12-05T13:30:00Z"
+  },
+  "canBeRemovedFromEventGroup": true
+},{
+  "_id": 119730,
+  "name": "De schlaui Igel Pic",
+  "start": {
+    "$date": "2020-12-06T13:30:00Z"
+  },
+  "canBeRemovedFromEventGroup": true
+},{
+  "_id": 119732,
+  "name": "De schlaui Igel Pic",
+  "start": {
+    "$date": "2020-12-09T13:30:00Z"
+  },
+  "canBeRemovedFromEventGroup": true
+},{
+  "_id": 119734,
+  "name": "De schlaui Igel Pic",
+  "start": {
+    "$date": "2020-12-19T13:30:00Z"
+  },
+  "canBeRemovedFromEventGroup": true
+},{
+  "_id": 119735,
+  "name": "De schlaui Igel Pic",
+  "start": {
+    "$date": "2020-12-20T13:30:00Z"
+  },
+  "canBeRemovedFromEventGroup": true
+},{
+  "_id": 119737,
+  "name": "De schlaui Igel Pic",
+  "start": {
+    "$date": "2020-12-29T13:30:00Z"
+  },
+  "canBeRemovedFromEventGroup": true
+},{
+  "_id": 119738,
+  "name": "De schlaui Igel Pic",
+  "start": {
+    "$date": "2021-01-02T13:30:00Z"
+  },
+  "canBeRemovedFromEventGroup": true
+},{
+  "_id": 119739,
+  "name": "De schlaui Igel Pic",
+  "start": {
+    "$date": "2021-01-03T13:30:00Z"
+  },
+  "canBeRemovedFromEventGroup": true
+},{
+  "_id": 119740,
+  "name": "De schlaui Igel Pic",
+  "start": {
+    "$date": "2021-01-06T13:30:00Z"
+  },
+  "canBeRemovedFromEventGroup": true
+},{
+  "_id": 119742,
+  "name": "Di chli Nixe und s'Walross",
+  "start": {
+    "$date": "2020-12-12T13:30:00Z"
+  },
+  "canBeRemovedFromEventGroup": true
+},{
+  "_id": 119743,
+  "name": "Di chli Nixe und s'Walross",
+  "start": {
+    "$date": "2020-12-13T13:30:00Z"
+  },
+  "canBeRemovedFromEventGroup": true
+},{
+  "_id": 119744,
+  "name": "Di chli Nixe und s'Walross",
+  "start": {
+    "$date": "2020-12-16T13:30:00Z"
+  },
+  "canBeRemovedFromEventGroup": true
+},{
+  "_id": 119745,
+  "name": "Di chli Nixe und s'Walross",
+  "start": {
+    "$date": "2020-12-22T13:30:00Z"
+  },
+  "canBeRemovedFromEventGroup": true
+},{
+  "_id": 119746,
+  "name": "Di chli Nixe und s'Walross",
+  "start": {
+    "$date": "2020-12-23T13:30:00Z"
+  },
+  "canBeRemovedFromEventGroup": true
+},{
+  "_id": 119747,
+  "name": "Di chli Nixe und s'Walross",
+  "start": {
+    "$date": "2020-12-27T13:30:00Z"
+  },
+  "canBeRemovedFromEventGroup": true
+},{
+  "_id": 119748,
+  "name": "Di chli Nixe und s'Walross",
+  "start": {
+    "$date": "2021-01-09T13:30:00Z"
+  },
+  "canBeRemovedFromEventGroup": true
+},{
+  "_id": 119749,
+  "name": "Di chli Nixe und s'Walross",
+  "start": {
+    "$date": "2021-01-10T13:30:00Z"
+  },
+  "canBeRemovedFromEventGroup": true
+},{
+  "_id": 119750,
+  "name": "Di chli Nixe und s'Walross",
+  "start": {
+    "$date": "2021-01-16T13:30:00Z"
+  },
+  "canBeRemovedFromEventGroup": true
+},{
+  "_id": 119751,
+  "name": "Di chli Nixe und s'Walross",
+  "start": {
+    "$date": "2021-01-17T13:30:00Z"
+  },
+  "canBeRemovedFromEventGroup": true
+},{
+  "_id": 119752,
+  "name": "Di chli Nixe und s'Walross",
+  "start": {
+    "$date": "2021-01-23T13:30:00Z"
+  },
+  "canBeRemovedFromEventGroup": true
+},{
+  "_id": 119753,
+  "name": "Di chli Nixe und s'Walross",
+  "start": {
+    "$date": "2021-01-24T13:30:00Z"
+  },
+  "canBeRemovedFromEventGroup": true
+},{
+  "_id": 98623,
+  "name": "De tapferi Puck rettet s'Elferiich",
+  "start": {
+    "$date": "2020-08-26T13:00:00Z"
+  },
+  "canBeRemovedFromEventGroup": true
+},{
+  "_id": 98589,
+  "name": "De tapferi Puck rettet s'Elferiich",
+  "start": {
+    "$date": "2020-08-29T12:30:00Z"
+  },
+  "canBeRemovedFromEventGroup": true
+},{
+  "_id": 98624,
+  "name": "De tapferi Puck rettet s'Elferiich",
+  "start": {
+    "$date": "2020-08-30T12:30:00Z"
+  },
+  "canBeRemovedFromEventGroup": true
+},{
+  "_id": 98651,
+  "name": "De tapferi Puck rettet s'Elferiich",
+  "start": {
+    "$date": "2020-09-02T13:00:00Z"
+  },
+  "canBeRemovedFromEventGroup": true
+},{
+  "_id": 98652,
+  "name": "De tapferi Puck rettet s'Elferiich",
+  "start": {
+    "$date": "2020-09-05T12:30:00Z"
+  },
+  "canBeRemovedFromEventGroup": true
+},{
+  "_id": 98653,
+  "name": "De tapferi Puck rettet s'Elferiich",
+  "start": {
+    "$date": "2020-09-06T12:30:00Z"
+  },
+  "canBeRemovedFromEventGroup": true
+},{
+  "_id": 98654,
+  "name": "De tapferi Puck rettet s'Elferiich",
+  "start": {
+    "$date": "2020-09-09T13:00:00Z"
+  },
+  "canBeRemovedFromEventGroup": true
+},{
+  "_id": 98655,
+  "name": "De tapferi Puck rettet s'Elferiich",
+  "start": {
+    "$date": "2020-09-12T12:30:00Z"
+  },
+  "canBeRemovedFromEventGroup": true
+},{
+  "_id": 98656,
+  "name": "De tapferi Puck rettet s'Elferiich",
+  "start": {
+    "$date": "2020-09-13T12:30:00Z"
+  },
+  "canBeRemovedFromEventGroup": true
+},{
+  "_id": 98657,
+  "name": "De tapferi Puck rettet s'Elferiich",
+  "start": {
+    "$date": "2020-09-16T13:00:00Z"
+  },
+  "canBeRemovedFromEventGroup": true
+},{
+  "_id": 98658,
+  "name": "De tapferi Puck rettet s'Elferiich",
+  "start": {
+    "$date": "2020-09-19T12:30:00Z"
+  },
+  "canBeRemovedFromEventGroup": true
+},{
+  "_id": 98659,
+  "name": "De tapferi Puck rettet s'Elferiich",
+  "start": {
+    "$date": "2020-09-20T12:30:00Z"
+  },
+  "canBeRemovedFromEventGroup": true
+},{
+  "_id": 98660,
+  "name": "De tapferi Puck rettet s'Elferiich",
+  "start": {
+    "$date": "2020-09-23T13:00:00Z"
+  },
+  "canBeRemovedFromEventGroup": true
+},{
+  "_id": 98661,
+  "name": "De tapferi Puck rettet s'Elferiich",
+  "start": {
+    "$date": "2020-09-26T12:30:00Z"
+  },
+  "canBeRemovedFromEventGroup": true
+},{
+  "_id": 98662,
+  "name": "De tapferi Puck rettet s'Elferiich",
+  "start": {
+    "$date": "2020-09-27T12:30:00Z"
+  },
+  "canBeRemovedFromEventGroup": true
+}]
