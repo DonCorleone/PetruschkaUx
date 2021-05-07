@@ -18,4 +18,8 @@ export class ContactComponent implements OnInit {
 		const modalRef = this.modalService.open(LocationModalComponent, { size:'lg' });
 		modalRef.componentInstance.eventLocationName = locationName;
 	}
+	scrollTo(section) {
+		document.querySelector('#' + section)
+			.scrollIntoView({behavior: 'smooth',  block:'center'});
+	}
 }

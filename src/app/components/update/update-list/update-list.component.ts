@@ -13,6 +13,7 @@ export class UpdateListComponent implements OnInit {
 
 	@Input() dateGte: Date;
 	@Input() dateLt: Date;
+	@Input() usage: string;
 
 	eventDetails$: Observable<EventDetail[]>;
 
