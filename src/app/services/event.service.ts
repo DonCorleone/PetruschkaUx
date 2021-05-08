@@ -280,6 +280,7 @@ export class EventService {
 	}
 
 	GetEventDetail(id: number): Observable<EventDetail> {
+		console.log(`load event with Item ${id}`);
 		return this.apollo
 			.watchQuery<GetEventInfoById>({
 				query: GET_EVENTINFO_BYEVENTID,
@@ -291,6 +292,7 @@ export class EventService {
 	}
 
 	GetUpcomingGigs(): Observable<EventDetail[]> {
+		console.log(`load events upcoming`);
 		return this.apollo
 			.watchQuery<GetEventDetailPrototypes>({
 				query: GET_UPCOMING_GIGS,
@@ -302,6 +304,7 @@ export class EventService {
 	}
 
 	GetEventDetails(filterPredicateIn: any): Observable<EventDetail[]> {
+		console.log(`load events with predicate ${filterPredicateIn}`);
 		return this.apollo
 			.watchQuery<GetEventDetailPrototypes>({
 				query: GET_EVENTDETAILS_BYTAG
@@ -310,6 +313,7 @@ export class EventService {
 	}
 
 	GetUpcomingEventDetails(start_gte: Date, start_lt: Date): Observable<EventDetail[]> {
+		console.log(`load events with start_gte ${start_gte}, start_lt ${start_lt}`);
 		return this.apollo
 			.watchQuery<GetEventDetailPrototypes>({
 				query: GET_DATEFILTERED_EVENTS,

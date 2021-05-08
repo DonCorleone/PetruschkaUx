@@ -1,4 +1,4 @@
-import {Component, Input, OnInit} from '@angular/core';
+import {ChangeDetectionStrategy, Component, Input, OnInit} from '@angular/core';
 import {ActivatedRoute} from '@angular/router';
 import {Observable} from 'rxjs';
 import {map, tap} from 'rxjs/operators';
@@ -8,7 +8,8 @@ import {StaffService} from 'src/app/services/staff.service';
 @Component({
 	selector: 'app-about-list',
 	templateUrl: './about-list.component.html',
-	styleUrls: ['./about-list.component.scss']
+	styleUrls: ['./about-list.component.scss'],
+	changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class AboutListComponent implements OnInit {
 

@@ -6,7 +6,7 @@
 		</div>
 		<div class="members-block">
 			<div class="row">
-				<div *ngFor="let staff of staffs$ | async; index as i;" class="col-12 col-md-6 col-lg-4">
+				<div *ngFor="let staff of staffs$ | async;" class="col-12 col-md-6 col-lg-4">
 					<app-about-item [staff]="staff" class="flex">
 					</app-about-item>
 				</div>

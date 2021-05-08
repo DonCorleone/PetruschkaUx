@@ -1,11 +1,12 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { ChangeDetectionStrategy, Component, Input, OnInit } from '@angular/core';
 import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
 import { File } from 'src/app/services/images.service';
 
 @Component({
   selector: 'app-image-modal',
   templateUrl: './image-modal.component.html',
-  styleUrls: ['./image-modal.component.scss']
+  styleUrls: ['./image-modal.component.scss'],
+	changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class ImageModalComponent implements OnInit {
 
