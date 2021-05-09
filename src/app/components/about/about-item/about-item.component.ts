@@ -1,4 +1,4 @@
-import {Component, Input, OnInit} from '@angular/core';
+import {ChangeDetectionStrategy, Component, Input, OnInit} from '@angular/core';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import {Staff} from 'src/app/models/staff.models';
 import { AboutModalComponent } from '../about-modal/about-modal.component';
@@ -7,7 +7,8 @@ import { AboutModalComponent } from '../about-modal/about-modal.component';
 @Component({
 	selector: 'app-about-item',
 	templateUrl: './about-item.component.html',
-	styleUrls: ['./about-item.component.scss']
+	styleUrls: ['./about-item.component.scss'],
+	changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class AboutItemComponent implements OnInit {
 

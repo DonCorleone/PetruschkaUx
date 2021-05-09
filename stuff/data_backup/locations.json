@@ -1,0 +1,31 @@
+[{
+  "_id": {
+    "$oid": "5fecee4b10b02e457ef63892"
+  },
+  "name": "Pavillon Tribschenhorn",
+  "street": "Richard-Wagner-Weg 17",
+  "postalCode": "6005",
+  "city": "luzern",
+  "directions": "<p>Bus Nr.<br>6 (Richtung Luzern, Matthof),<br>7 (Richtung Horw, Biregghof),<br>8 (Richtung Luzern, Hirtenhof)<br><br>Haltestelle Wartegg, dann ca. 8 Min. Fussweg Richtung See</p>",
+  "info": "<p>Seit 2013 spielt Petruschka im Sommer (August/September) im Pavillon Tribschenhorn.</p><p>Hier wird dem jungen Publikum der Zugang zur klassischen Musik auf kindgerechte Art vermittelt.</p><p>Diese Stücke werden im hauseigenen Theater aufgeführt und entführen jung und alt in traumhafte Märchenwelten.</p>"
+},{
+  "_id": {
+    "$oid": "5fecee4b10b02e457ef63895"
+  },
+  "name": "Naturmuseum Luzern",
+  "street": "Kasernenplatz 6",
+  "postalCode": "6003",
+  "city": "luzern",
+  "directions": "<p>Bus Nr.<br>2 (Richtung Emmenbrücke, Sprengi),<br>9 (Richtung Luzern, Bramberg),<br>12 (Richtung Littau, Gasshof)<br><br>Haltestelle Kasernenplatz</p>",
+  "info": "<p>Das Figurentheater Petruschka gastiert einmal jährlich im Naturmuseum Luzern (Dezember/Januar).</p><p>Für diesen Ort gestalten wir Stücke zu naturnahen Themen, die meist gleichzeitig in einer Sonderausstellung zu besuchen sind.</p><p>Die Aufführungen können auch von Schulklassen für eine Morgenvorstellung gebucht werden.</p>"
+},{
+  "_id": {
+    "$oid": "5fecee4b10b02e457ef63898"
+  },
+  "name": "Schlössli Wartegg",
+  "street": "Richard-Wagner-Weg 4",
+  "postalCode": "6005",
+  "city": "luzern",
+  "directions": "<p>Bus Nr.<br>6 (Richtung Luzern, Matthof),<br>7 (Richtung Horw, Biregghof),<br>8 (Richtung Luzern, Hirtenhof)<br><br>Haltestelle Wartegg, dann ca. 2 Min. Fussweg Richtung See</p>",
+  "info": "Schlössli Wartegg"
+}]

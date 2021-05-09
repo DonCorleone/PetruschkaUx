@@ -1,4 +1,4 @@
-import {Component, OnInit} from '@angular/core';
+import {ChangeDetectionStrategy, Component, OnInit} from '@angular/core';
 import {Observable} from 'rxjs';
 import {EventDetail} from 'src/app/models/event.models';
 import {EventService} from 'src/app/services/event.service';
@@ -6,7 +6,8 @@ import {EventService} from 'src/app/services/event.service';
 @Component({
 	selector: 'app-merch-list',
 	templateUrl: './merch-list.component.html',
-	styleUrls: ['./merch-list.component.scss']
+	styleUrls: ['./merch-list.component.scss'],
+	changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class MerchListComponent implements OnInit {
 

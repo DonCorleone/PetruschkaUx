@@ -1,4 +1,4 @@
-import {Component, OnInit} from '@angular/core';
+import {ChangeDetectionStrategy, Component, OnInit} from '@angular/core';
 import {Observable} from 'rxjs';
 import {EventDetail, EventDetailEventInfo} from 'src/app/models/event.models';
 import {EventService, TicketPrice} from 'src/app/services/event.service';
@@ -6,7 +6,8 @@ import {EventService, TicketPrice} from 'src/app/services/event.service';
 @Component({
 	selector: 'app-gigs-list',
 	templateUrl: './gigs-list.component.html',
-	styleUrls: ['./gigs-list.component.scss']
+	styleUrls: ['./gigs-list.component.scss'],
+	changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class GigsListComponent implements OnInit {
 

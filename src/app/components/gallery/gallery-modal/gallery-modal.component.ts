@@ -1,4 +1,4 @@
-import {Component, Input, OnInit} from '@angular/core';
+import {ChangeDetectionStrategy, Component, Input, OnInit} from '@angular/core';
 import {Observable} from 'rxjs';
 import {NgbActiveModal, NgbModal} from '@ng-bootstrap/ng-bootstrap';
 
@@ -11,7 +11,8 @@ import { ImageModalComponent } from '../image-modal/image-modal.component';
 @Component({
   selector: 'app-gallery-modal',
   templateUrl: './gallery-modal.component.html',
-  styleUrls: ['./gallery-modal.component.scss']
+  styleUrls: ['./gallery-modal.component.scss'],
+	changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class GalleryModalComponent implements OnInit {
 

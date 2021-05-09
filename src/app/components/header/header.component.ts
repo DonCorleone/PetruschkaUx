@@ -1,9 +1,10 @@
-import {AfterViewInit, Component, Renderer2} from '@angular/core';
+import {AfterViewInit, ChangeDetectionStrategy, Component, Renderer2} from '@angular/core';
 
 @Component({
 	selector: 'app-header',
 	templateUrl: './header.component.html',
-	styleUrls: ['./header.component.scss']
+	styleUrls: ['./header.component.scss'],
+	changeDetection: ChangeDetectionStrategy.OnPush
 })
 
 export class HeaderComponent implements AfterViewInit {

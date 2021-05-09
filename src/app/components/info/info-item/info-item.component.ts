@@ -1,4 +1,4 @@
-import {Component, Input, OnChanges} from '@angular/core';
+import {ChangeDetectionStrategy, Component, Input, OnChanges} from '@angular/core';
 import {DomSanitizer} from '@angular/platform-browser';
 import {Observable} from 'rxjs';
 import {NgbModal} from '@ng-bootstrap/ng-bootstrap';
@@ -12,7 +12,8 @@ import { GalleryModalComponent } from '../../gallery/gallery-modal/gallery-modal
 @Component({
 	selector: 'app-info-item',
 	templateUrl: './info-item.component.html',
-	styleUrls: ['./info-item.component.scss']
+	styleUrls: ['./info-item.component.scss'],
+	changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class InfoComponent implements OnChanges {
 
@@ -80,7 +81,7 @@ export class InfoComponent implements OnChanges {
 
 	ngOnChanges(): void {
 		if (this.eventInfo && this.eventInfo.artists) {
-			this.artistsArray = this.staffService.GetStaffLinks(this.eventInfo.artists);
+			this.artistsArray = StaffService.GetStaffLinks(this.eventInfo.artists);
 		}
 	}
 

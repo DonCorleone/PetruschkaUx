@@ -1,18 +1,35 @@
-<div class="modal-item">
-	<h3>{{ eventName }}</h3>
+<div class="modal-item" *ngIf="eventDetail$ | async as eventDetail">
+	<h3>{{ eventName(eventDetail) }}</h3>
 	<div>
-		<p>{{ shortDesc }}</p>
+		<p>{{ shortDesc(eventDetail)}}</p>
 	</div>
-	<img [src]="imagePath" alt="" class="img-fluid">
-
-	<div class="modal-item-content">
-		<div *ngFor="let job of artistsArray">
-			<div>
-				{{ job.name }} {{ job.name !== '' ? ' : ' : '' }}
-				<span *ngFor="let jobsharer of job.jobsharers; let isLast=last">
-              <a (click)="openStaff(jobsharer)" class="staff-link">{{ jobsharer }}</a> {{isLast ? '' : ' & '}}
-					<!-- <a [routerLink]="['/staff', jobsharer]">{{ jobsharer }}</a> {{isLast ? '' : ' & '}} -->
-            </span>
+	<div *ngIf="GetTicketTypeInfoFromEventDetail(eventDetail) as ticketTypeInfo">
+		<img [src]="imagePath(ticketTypeInfo)" alt="" class="img-fluid">
+		<div *ngIf="ArtistsArray(ticketTypeInfo) as artistsArray">
+			<div *ngIf="artistsArray.length > 0">
+				<br>
+				<div class="modal-item-title">
+					Mitwirkende
+				</div>
+				<div class="modal-item-content">
+					<div *ngFor="let job of artistsArray">
+						<div *ngIf="job.isJobSharing">
+							{{ job.name }} {{ job.name !== '' ? ' : ' : '' }}
+							<span *ngFor="let jobValue of job.values; let isLast=last">
+								<a (click)="openStaff(jobValue)" class="staff-link"><i class="fas fa-external-link-square-alt"></i> {{
+									jobValue }}</a> {{isLast ? '' : ' & '}}
+								<!-- <a [routerLink]="['/staff', jobsharer]">{{ jobsharer }}</a> {{isLast ? '' : ' & '}} -->
+							</span>
+						</div>
+						<div *ngIf="!job.isJobSharing">
+							<a (click)="openStaff(job.name)" class="staff-link"><i class="fas fa-external-link-square-alt"></i> {{
+								job.name }}</a> {{ job.name !== '' ? ' : ' : '' }}
+							<span *ngFor="let jobValue of job.values; let isLast=last">
+								{{ jobValue }} {{isLast ? '' : ' & '}}
+							</span>
+						</div>
+					</div>
+				</div>
 			</div>
 		</div>
 	</div>
@@ -21,9 +38,9 @@
 	</div>
 	<div class="modal-item-content">
 		<!--<a href="mailto:nathaliehildebrand@kinderkultur.ch?subject=Bestellung_CD_Das_Drachenei"></a> -->
-		<p>Per E-Mail an <a [href]="'mailto:nathaliehildebrand?subject=Bestellung CD ' + eventName" target="_blank">nathaliehildebrand@kinderkultur.ch</a>
+		<p>Per E-Mail an <a [href]="'mailto:nathaliehildebrand?subject=Bestellung CD ' + eventName(eventDetail)" target="_blank">nathaliehildebrand@kinderkultur.ch</a>
 		</p>
-		<p>Betreff: Bestellung CD '{{ eventName }}'</p>
+		<p>Betreff: Bestellung CD '{{ eventName(eventDetail) }}'</p>
 		<p>Zusätzliche Angaben in der Mail: Anzahl CDs, Name und Adresse</p>
 	</div>
 	<div class="modal-item-footer">

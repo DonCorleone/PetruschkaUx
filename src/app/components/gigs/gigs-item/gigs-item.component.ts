@@ -1,6 +1,6 @@
-import {Component, Input, OnInit} from '@angular/core';
+import {ChangeDetectionStrategy, Component, Input, OnInit} from '@angular/core';
 import {NgbModal} from '@ng-bootstrap/ng-bootstrap';
-import {EventDetailEventInfo, TicketType} from 'src/app/models/event.models';
+import {EventDetail, EventDetailEventInfo, TicketType} from 'src/app/models/event.models';
 import { EventService, TicketPrice } from 'src/app/services/event.service';
 import {InfoModalComponent} from '../../info/info-modal/info-modal.component';
 import {LocationModalComponent} from '../../location/location-modal/location-modal.component';
@@ -8,7 +8,8 @@ import {LocationModalComponent} from '../../location/location-modal/location-mod
 @Component({
 	selector: 'app-gigs-item',
 	templateUrl: './gigs-item.component.html',
-	styleUrls: ['./gigs-item.component.scss']
+	styleUrls: ['./gigs-item.component.scss'],
+	changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class GigsItemComponent implements OnInit {
 
@@ -20,7 +21,7 @@ export class GigsItemComponent implements OnInit {
 	@Input() ticketPrices: TicketPrice[];
 	@Input() facebookPixelId: string;
 
-	constructor(private modalService: NgbModal) {
+	constructor(private modalService: NgbModal, private eventService: EventService) {
 	}
 
 	get eventLink() {
@@ -46,9 +47,7 @@ export class GigsItemComponent implements OnInit {
 		const modalRef = this.modalService.open(InfoModalComponent, { size:'lg' });
 		modalRef.componentInstance.eventDetailId = this.eventId;
 		modalRef.componentInstance.usage = '';
-		modalRef.componentInstance.playDate = this.start;
-		modalRef.componentInstance.facebookPixelId = this.facebookPixelId;
-
+		modalRef.componentInstance.eventDetail$ = this.eventService.GetEventDetail(this.eventId);
 	}
 
 	openLocation(locationName: string): void {
