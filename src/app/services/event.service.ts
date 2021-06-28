@@ -103,11 +103,9 @@ const GET_EVENTINFO_BYEVENTID = gql`
 const GET_UPCOMING_GIGS = gql`
     query GetUpcomingGigs ($today: DateTime!) {
       eventDetails (
-        query: {
-          AND: [
-            {OR: [{googleAnalyticsTracker: ""}{googleAnalyticsTracker_in: "Premiere"}]}
-            {start_gte: $today}
-          ]}){
+        query:
+           	{start_gte: $today}
+          ){
         _id,
         eventInfos{
           name
