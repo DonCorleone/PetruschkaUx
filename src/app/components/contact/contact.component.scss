@@ -52,17 +52,50 @@
     flex-direction: row;
     flex-flow: wrap;
     justify-content: space-evenly;
+	}
 
-		.history-play{
-			padding: 1px 6px;
-			margin: 6px 4px;
-			border-left: 1px solid $text-color-grey;
-			border-right: 1px solid $text-color-grey;
+	.history-play{
+		padding: 1px 6px;
+		margin: 6px 4px;
+		border-left: 1px solid $text-color-grey;
+		border-right: 1px solid $text-color-grey;
+		color: $text-color-grey;
+		text-align-last: center;
+		a {
 			color: $text-color-grey;
-			flex-grow: 4;
-			text-align-last: center;
 		}
 	}
+
+	#sponsors {
+    background-color: $smoky-white;
+		padding-top: 30px;
+	}
+
+	#sponsors .title {
+		color: $text-color-primary;
+	}
+
+	#history .history-play {
+		flex-grow: 4;
+	}
+
+	#sponsors .history-play {
+		font-size: x-large;
+    padding: 5px;
+
+		.no-border {
+			border-width: 0;
+		}
+	}
+
+	.no-border {
+			border-width: 0;
+	}
+
+	img {
+		height: 40px;
+	}
+
 	.channels-list {
 		margin-bottom: 45px;
 		a {

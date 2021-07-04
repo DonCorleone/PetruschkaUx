@@ -1,7 +1,8 @@
 <section class="contact-section section" id="contact">
 	<div class="container">
 		<h2 class="section-title text-center">Über Petruschka</h2>
-		<div class="section-intro center-block text-justify">
+		<div class="section-intro center-block text-justify" id="history">
+			<h4 class="title">Geschichte</h4>
 			<p>Das Figurentheater PETRUSCHKA existiert seit 2003. Es wurde von Marianne Hofer ins Leben gerufen und gastierte
 				erstmals mit dem „Wintermäusemärchen“ im <a (click)="openLocation('Naturmuseum Luzern')" class="location-link"><i class="fas fa-external-link-square-alt"></i> Natur-Museum Luzern.</a></p>
 			<p>Seither wurden viele Stücke für Familien, Kindergärten und Schulklassen geschaffen. Dabei werden Themen aus dem
@@ -25,23 +26,23 @@
 			<br />
 			<p><b>Stücke im <a (click)="openLocation('Naturmuseum Luzern')" class="location-link"><i class="fas fa-external-link-square-alt"></i> Natur-Museum:</a></b></p>
 			<div class="history-plays">
-				<div class="history-play">2003 Wintermäusemärchen</div>
-				<div class="history-play">2004 Das Geheimnis im Teich</div>
-				<div class="history-play">2005 Fliegen wär so schön</div>
-				<div class="history-play">2006 Ein Geschenk für den Vogel</div>
-				<div class="history-play">2007 Ach, diese Hühner</div>
-				<div class="history-play">2008 Biba baut</div>
-				<div class="history-play">2009 Ein Maulwurf fliegt weg</div>
-				<div class="history-play">2010 Der weisse Wolf</div>
-				<div class="history-play">2011 Krah</div>
-				<div class="history-play">2012 S’tanzende Meersäuli</div>
-				<div class="history-play">2013 De Has wott ned schlofe</div>
-				<div class="history-play">2014 Beschti	Fründe</div>
-				<div class="history-play">2015 Di chli Fee schickt de Winter wäg</div>
-				<div class="history-play">2016 Lutra	ond s’Gheimnis im See</div>
-				<div class="history-play">2017 Sonne, Schnee ond	Donnerwätter</div>
-				<a (click)="scrollTo('history-2018w')" class="event-link"><div class="history-play"><i class="fas fa-external-link-square-alt"></i> 2018 De wissi Wolf (Wiederaufnahme des Stücks „Der weisse Wolf“ aus dem Jahr 2010 mit Anpassung an die	aktuelle Aussstellung „Wolf“ im Natur-Museum)</div></a>
-				<a (click)="scrollTo('history-2015s')" class="event-link"><div class="history-play"><i class="fas fa-external-link-square-alt"></i> 2019 Karneval der Tiere (Wiederaufnahme des Stücks von 2015 im Naturmuseum)</div></a>
+				<div class="history-play chained">2003 Wintermäusemärchen</div>
+				<div class="history-play chained">2004 Das Geheimnis im Teich</div>
+				<div class="history-play chained">2005 Fliegen wär so schön</div>
+				<div class="history-play chained">2006 Ein Geschenk für den Vogel</div>
+				<div class="history-play chained">2007 Ach, diese Hühner</div>
+				<div class="history-play chained">2008 Biba baut</div>
+				<div class="history-play chained">2009 Ein Maulwurf fliegt weg</div>
+				<div class="history-play chained">2010 Der weisse Wolf</div>
+				<div class="history-play chained">2011 Krah</div>
+				<div class="history-play chained">2012 S’tanzende Meersäuli</div>
+				<div class="history-play chained">2013 De Has wott ned schlofe</div>
+				<div class="history-play chained">2014 Beschti	Fründe</div>
+				<div class="history-play chained">2015 Di chli Fee schickt de Winter wäg</div>
+				<div class="history-play chained">2016 Lutra	ond s’Gheimnis im See</div>
+				<div class="history-play chained">2017 Sonne, Schnee ond	Donnerwätter</div>
+				<div class="history-play chained"><a (click)="scrollTo('history-2018w')" class="event-link"><i class="fas fa-external-link-square-alt"></i> 2018 De wissi Wolf (Wiederaufnahme des Stücks „Der weisse Wolf“ aus dem Jahr 2010 mit Anpassung an die	aktuelle Aussstellung „Wolf“ im Natur-Museum)</a></div>
+				<div class="history-play chained"><a (click)="scrollTo('history-2015s')" class="event-link"><i class="fas fa-external-link-square-alt"></i> 2019 Karneval der Tiere (Wiederaufnahme des Stücks von 2015 im Naturmuseum)</a></div>
 
 			</div>
 			<br />
@@ -83,6 +84,51 @@
 				<p>Seit 2017 gibt es nun auch das PETRUSCHKA Wandertheater, das von Regula auf der Maur und Nathalie Hildebrand
 					Isler gleitet wird. Sie reisen damit in Schulen und Kindergärten und führen ihre Stücke an diversen
 					Kinderanlässen auf.</p>
+			</div>
+		</div>
+		<div class="section-intro center-block text-justify" id="sponsors">
+			<h4 class="title">Sponsoren</h4>
+			<div class="history-plays">
+					<div class="history-play text-only-sponsor">
+						Stiftung Monika Widmer
+					</div>
+			</div>
+			<div class="history-plays">
+				<div class="history-play no-border">
+					<a href="https://www.rkk-luzern.ch/" alt="rkk-luzern.ch">
+							<img src="/assets/images/sponsors/rkk.png" alt="logo rkk" />
+					</a>
+				</div>
+			</div>
+			<div class="history-plays">
+				<div class="history-play text-only-sponsor">
+					<a href="https://www.stadtluzern.ch/dienstleistungeninformation/6505" alt="link Fonds für Kinder- und Jugendfreizeit">
+							<i class="fas fa-external-link-square-alt"></i>
+							Fonds für Kinder- und Jugendfreizeit
+					</a>
+				</div>
+			</div>
+			<div class="history-plays">
+				<div class="history-play bordered-box text-only-sponsor">
+					Schüller-Stiftung
+				</div>
+			</div>
+			<div class="history-plays">
+				<div class="history-play no-border">
+				<a href="https://www.migros-kulturprozent.ch/" alt="rkk-luzern.ch">
+					<img src="/assets/images/sponsors/Logo_FGE_MK_rgb_72dpi_DE.jpg" alt="logo Migros Kulturprozent" />
+				</a>
+				</div>
+			</div>
+			<div class="history-plays">
+				<div class="history-play bordered-box text-only-sponsor">
+						Gamil-Stiftung
+				</div>
+			</div>
+			<div class="history-plays">
+					<div class="history-play no-border">
+							<img src="/assets/images/sponsors/bonitas.jpg" alt="logo Bonitas Stiftung" />
+					</div>
 			</div>
 		</div>
 		<div class="contact-block mr-auto ml-auto text-center">
