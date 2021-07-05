@@ -51,6 +51,35 @@
 	}
 }
 
+.section-intro {
+	max-width: 800px;
+	margin: 0 auto;
+	margin-bottom: 60px;
+	font-size: 16px;
+}
+
+.section-title {
+	margin-bottom: 30px;
+}
+
+.border-box{
+	display: flex;
+	flex-direction: row;
+	flex-flow: wrap;
+	justify-content: space-evenly;
+}
+
+.border-box-item{
+	padding: 1px 6px;
+	margin: 6px 4px;
+	border-left: 1px solid $text-color-grey;
+	border-right: 1px solid $text-color-grey;
+	color: $text-color-grey;
+	text-align-last: center;
+	a {
+		color: $text-color-grey;
+	}
+}
 
 // Small devices (landscape phones, less than 768px)
 @media (max-width: 767.98px) {

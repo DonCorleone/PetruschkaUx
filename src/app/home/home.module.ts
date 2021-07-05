@@ -7,6 +7,7 @@ import { AboutItemComponent } from '../components/about/about-item/about-item.co
 import { AboutListComponent } from '../components/about/about-list/about-list.component';
 import { AboutModalComponent } from '../components/about/about-modal/about-modal.component';
 import { ContactComponent } from '../components/contact/contact.component';
+import { SponsorsComponent } from '../components/sponsors/sponsors.component';
 import { FooterComponent } from '../components/footer/footer.component';
 import { GigsItemComponent } from '../components/gigs/gigs-item/gigs-item.component';
 import { GigsListComponent } from '../components/gigs/gigs-list/gigs-list.component';
@@ -44,6 +45,7 @@ import { NgxMasonryModule } from 'ngx-masonry';
 		AboutListComponent,
 		MerchListComponent,
 		ContactComponent,
+		SponsorsComponent,
 		FooterComponent,
 		VideoComponent,
 		InfoComponent,
