@@ -1,0 +1,24 @@
+@import "/src/scss/theme-1.scss";
+
+#sponsors {
+	background-color: #fff;
+	padding-top: 30px;
+}
+
+#sponsors .title {
+	color: $text-color-primary;
+}
+
+#sponsors .border-box-item {
+	font-size: x-large;
+	padding: 5px;
+
+	.no-border {
+		border-width: 0;
+	}
+}
+.border-box-item{
+	a {
+		color: $text-color-grey;
+	}
+}

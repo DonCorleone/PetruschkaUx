@@ -34,7 +34,7 @@ export function createApollo(httpLink: HttpLink): ApolloClientOptions<any> {
 	declarations: [
 		AppComponent,
 		ScrollSpyDirective,
-		ImageModalComponent
+		ImageModalComponent,
 	],
 	imports: [
 		BrowserModule,

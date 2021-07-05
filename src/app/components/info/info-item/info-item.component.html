@@ -42,7 +42,7 @@
 	</div>
 </div>
 
-<div class="modal-item last" *ngIf="artistsArray && artistsArray.length > 0">
+<div class="modal-item" *ngIf="artistsArray && artistsArray.length > 0">
 	<div class="modal-item-title">
 		Mitwirkende
 	</div>
@@ -65,4 +65,8 @@
 			</div>
 		</div>
 	</div>
+</div>
+
+<div class="modal-item last" *ngIf="artistsArray && artistsArray.length > 0">
+	<app-sponsors></app-sponsors>
 </div>
