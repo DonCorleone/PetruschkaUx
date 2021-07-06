@@ -7,11 +7,13 @@
 
 #sponsors .title {
 	color: $text-color-primary;
+	text-align: center;
 }
 
 #sponsors .border-box-item {
 	font-size: x-large;
 	padding: 5px;
+	text-align: center;
 
 	.no-border {
 		border-width: 0;
