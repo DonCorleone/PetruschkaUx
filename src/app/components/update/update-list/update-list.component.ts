@@ -23,6 +23,10 @@ export class UpdateListComponent implements OnInit {
 	}
 
 	ngOnInit() {
-		this.eventDetails$ = this.eventService.GetUpcomingEventDetails(this.dateGte, this.dateLt);
+		if (this.usage==="history") {
+			this.eventDetails$ = this.eventService.GetPastEventDetails(this.dateGte, this.dateLt);
+		}else{
+			this.eventDetails$ = this.eventService.GetUpcomingEventDetails(this.dateGte, this.dateLt);
+		}
 	}
 }
