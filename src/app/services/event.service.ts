@@ -40,6 +40,7 @@ query {
 const GET_DATEFILTERED_EVENTS = gql`
 query GetUpcomingEvents($startGte: DateTime!, $startLt: DateTime!){
 	eventDetails (
+		sortBy: START_ASC,
 		query: {
 			AND: [
 					{
@@ -51,7 +52,7 @@ query GetUpcomingEvents($startGte: DateTime!, $startLt: DateTime!){
 					{start_gte: $startGte}
 					{start_lt: $startLt}
 				]
-			}, sortBy: START_DESC
+			}
 		)
 	{
 		_id,
@@ -103,6 +104,7 @@ const GET_EVENTINFO_BYEVENTID = gql`
 const GET_UPCOMING_GIGS = gql`
     query GetUpcomingGigs ($today: DateTime!) {
       eventDetails (
+				sortBy: START_ASC,
         query:
            	{start_gte: $today}
           ){
