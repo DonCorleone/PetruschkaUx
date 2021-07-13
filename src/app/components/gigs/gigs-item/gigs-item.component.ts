@@ -37,7 +37,13 @@ export class GigsItemComponent implements OnInit {
 	}
 
 	get preSaleInFuture(): boolean {
-		return new Date(this.preSaleStart) > new Date() ;
+		return new Date(this.preSaleStart) > new Date()
+			&& new Date(this.start).getHours() !== 0;
+	}
+
+	get preSaleInSuperFuture(): boolean {
+		return new Date(this.preSaleStart) > new Date()
+		&& new Date(this.start).getHours() === 0 ;
 	}
 
 	ngOnInit(): void {

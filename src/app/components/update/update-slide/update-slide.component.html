@@ -13,8 +13,9 @@
 		<h3 class="title">{{name(eventDetail)}}</h3>
 		<div class="desc">
 			<div class="countdown">
+				<div class="countdown-box" *ngIf="superfutureEvent(eventDetail)"><span>Premiere: </span><span class="number">{{ eventDetail.start | date:'MMMM YYYY' : '' :'de-CH'}}</span></div>
 				<div class="countdown-box" *ngIf="futureEvent(eventDetail)"><span>Premiere: </span><span class="number">{{ eventDetail.start | date:'dd.MM.YY, HH:mm' : '' :'de-CH'}}</span></div>
-				<div class="countdown-box" *ngIf="!(futureEvent(eventDetail))"><span>Uraufführung: </span><span class="number">{{ eventDetail.start | date:'MMMM YYYY' : '' :'de-CH'}}</span></div>
+				<div class="countdown-box" *ngIf="pastEvent(eventDetail)"><span>Uraufführung: </span><span class="number">{{ eventDetail.start | date:'MMMM YYYY' : '' :'de-CH'}}</span></div>
 			</div>
 			<!--//countdown-->
 			<p class="intro">
@@ -23,7 +24,7 @@
 			<p class="imprtant" *ngIf="importantNotes(eventDetail)"> {{ importantNotes(eventDetail) }} </p>
 			<a class="btn btn-sm btn-ghost-primary" (click)="openInfo(eventDetail)">Info</a>
 			<a class="btn btn-sm btn-primary" (click)="openGallery(eventDetail)" *ngIf="eventDetail.facebookPixelId">Impressionen</a>
-			<a class="btn btn-sm btn-secondary" (click)="scrollTo('gigs')" *ngIf="futureEvent(eventDetail)">Tickets</a>
+			<a class="btn btn-sm btn-secondary" (click)="scrollTo('gigs')" *ngIf="futureEvent(eventDetail)">Aufführungen</a>
 			<!--//intro-->
 		</div>
 		<!--//desc-->
