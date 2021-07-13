@@ -1,7 +1,8 @@
 
 	<div class="date-label">
-		<div class="number">{{ start | date:'dd' : '' :'de-CH'}}</div>
+		<div class="number" *ngIf="!preSaleInSuperFuture">{{ start | date:'dd' : '' :'de-CH'}}</div>
 		<div class="month">{{ start | date:'MMM' : '' :'de-CH' }}</div>
+		<div class="year" *ngIf="preSaleInSuperFuture">{{ start | date:'YYYY' : '' :'de-CH'}}</div>
 	</div>
 	<!--//date-label-->
 	<div class="gig-info">
@@ -40,6 +41,10 @@
 
 			<span *ngIf="preSaleInFuture" class="secondary-content">
         Vorverkauf ab {{ preSaleStart | date:'shortDate' : '' :'de-CH'}}
+      </span>
+
+			<span *ngIf="preSaleInSuperFuture" class="secondary-content">
+        Aufführung ab {{ start | date:'MMMM YYYY' : '' :'de-CH'}}
       </span>
 
 		</div>

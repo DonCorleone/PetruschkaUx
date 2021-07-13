@@ -19,8 +19,18 @@ export class UpdateSlideComponent implements AfterViewInit {
 	constructor(private modalService: NgbModal, private eventService: EventService) {
 	}
 
+	superfutureEvent(eventDetail: EventDetail):boolean {
+		return new Date(eventDetail.start) >= new Date()
+			&& new Date(eventDetail.start).getHours() === 0;
+	}
+
 	futureEvent(eventDetail: EventDetail):boolean {
-		return new Date(eventDetail.start) > new Date();
+		return new Date(eventDetail.start) >= new Date()
+			&& new Date(eventDetail.start).getHours() !== 0;
+	}
+
+	pastEvent(eventDetail: EventDetail):boolean {
+		return new Date(eventDetail.start) < new Date()
 	}
 
 	name(eventDetail: EventDetail) {
