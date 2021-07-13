@@ -4,6 +4,13 @@ img {
 	width: 105px;
 }
 
+:host-context(.update-section) {
+	.slide {
+		padding: 10px 0;
+		border-top: 1px solid rgb(238, 238, 238, 0.3);
+	}
+}
+
 :host-context(.history-section) {
 	.slide {
 		padding: 10px 0;
