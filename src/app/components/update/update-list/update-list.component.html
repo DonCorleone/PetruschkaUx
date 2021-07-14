@@ -1,4 +1,4 @@
-<div *ngFor="let eventDetail of eventDetails$ | async; let i = index">
+<div *ngFor="let eventDetail of eventDetails$ | async; let i = index" class="updates-slider">
 	<section
 		id="{{ usage === 'history' ? usage + '-' + eventDetail.facebookPixelId : usage + '-' + eventDetail._id }}"
 		class="{{ usage !== 'history' && i > 0 ? 'update-section' : '' }}">

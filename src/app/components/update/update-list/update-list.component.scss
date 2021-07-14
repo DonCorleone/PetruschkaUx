@@ -1,3 +1,21 @@
-.update-section {
-	padding-top: 10px;
+// large devices
+@media (min-width: 992px) {
+	.updates-slider {
+		padding: 0 10px;
+		.update-section {
+			&:not(:last-child){
+				border-right: 1px solid rgb(238, 238, 238, 0.3);
+			}
+		}
+	}
 }
+
+// small and medium devices
+@media (max-width: 991px) {
+	.update-section {
+		padding-top: 10px;
+		height: 100%;
+	}
+}
+
+
