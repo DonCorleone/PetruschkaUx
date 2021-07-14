@@ -30,8 +30,6 @@
 		</div>
 		<!--//info-content-->
 		<div class="gig-actions">
-			<a (click)="openInfo()" class="btn btn-sm btn-ghost-secondary">Info</a>
-
 			<span>
         <a *ngIf="showBuyButton" [href]="[eventLink]" class="btn btn-sm btn-secondary" target="_blank">Tickets</a>
       </span>
@@ -46,7 +44,7 @@
 			<span *ngIf="preSaleInSuperFuture" class="secondary-content">
         Aufführung ab {{ start | date:'MMMM YYYY' : '' :'de-CH'}}
       </span>
-
+			<a (click)="openInfo()" class="btn btn-sm btn-ghost-secondary">Info</a>
 		</div>
 		<!--//gig-actions-->
 	</div>
