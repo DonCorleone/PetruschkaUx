@@ -29,7 +29,8 @@ export class LocationsService {
 	constructor(private  apollo: Apollo) {
 	}
 
-	public GetEventLocation(nameIn: string): Observable<EventLocation> {
+	GetEventLocation(nameIn: string): Observable<EventLocation> {
+		console.log(`GetEventLocation`);
 		return this.apollo
 			.watchQuery<GetEventLocationByName>({
 				query: GET_LOCATION_BY_NAME,

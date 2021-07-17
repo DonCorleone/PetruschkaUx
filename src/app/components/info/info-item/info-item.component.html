@@ -2,7 +2,7 @@
 		<div class="modal-item-content">
 			<div class="shortDesc">{{ shortDesc }}</div>
 	</div>
-	<div class="modal-item-footer" *ngIf="facebookPixelId">
+	<div class="modal-item-footer" *ngIf="image4Images | async">
 		<a (click)="openGallery()" class="btn btn-sm btn-ghost-secondary">Impressionen</a>
 	</div>
 </div>
@@ -42,7 +42,7 @@
 	</div>
 </div>
 
-<div class="modal-item last">
+<div class="modal-item" *ngIf="artistsArray && artistsArray.length > 0">
 	<div class="modal-item-title">
 		Mitwirkende
 	</div>
@@ -65,4 +65,8 @@
 			</div>
 		</div>
 	</div>
+</div>
+
+<div class="modal-item last" *ngIf="artistsArray && artistsArray.length > 0">
+	<app-sponsors [eventKey]=eventKey></app-sponsors>
 </div>

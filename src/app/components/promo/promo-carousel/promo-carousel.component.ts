@@ -1,10 +1,11 @@
-import {Component, ViewEncapsulation} from '@angular/core';
+import {ChangeDetectionStrategy, Component, ViewEncapsulation} from '@angular/core';
 import {NgbCarouselConfig} from '@ng-bootstrap/ng-bootstrap';
 
 @Component({
 	selector: 'app-promo-carousel',
 	templateUrl: './promo-carousel.component.html',
 	styleUrls: ['./promo-carousel.component.scss'],
+	changeDetection: ChangeDetectionStrategy.OnPush,
 	encapsulation: ViewEncapsulation.None
 })
 export class PromoCarouselComponent {

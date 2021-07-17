@@ -1,7 +1,7 @@
-<div class="updates-list slide">
-	<div class="media-holder" (click)="openInfo()">
+<div class="updates-list slide" *ngIf="eventDetail as eventDetailx">
+	<div class="media-holder" (click)="openInfo(eventDetail)">
 		<div class="media-thumb">
-			<img [src]="imagePath" alt="update image">
+			<img [src]="imagePath(eventDetail)" alt="update image">
 		</div>
 		<!--div class="media-thumb">
 			<img src="assets/images/video-thumb-1.jpg" alt="">
@@ -10,22 +10,28 @@
 	</div>
 	<!--//media-holder-->
 	<div class="list-content">
-		<h3 class="title">{{name}}</h3>
-		<div class="desc">
+		<h3 class="title">{{name(eventDetail)}}</h3>
+		<!--div class="desc"-->
 			<div class="countdown">
-				<div class="countdown-box" *ngIf="futureEvent"><span>Premiere: </span><span class="number">{{ start | date:'dd.MM.YY, HH:mm' : '' :'de-CH'}}</span></div>
-				<div class="countdown-box" *ngIf="!(futureEvent)"><span>Uraufführung: </span><span class="number">{{ start | date:'MMMM YYYY' : '' :'de-CH'}}</span></div>
+				<div class="countdown-box" *ngIf="superfutureEvent(eventDetail)"><span>Premiere: </span><span class="number">{{ eventDetail.start | date:'MMMM YYYY' : '' :'de-CH'}}</span></div>
+				<div class="countdown-box" *ngIf="futureEvent(eventDetail)"><span>Premiere: </span><span class="number">{{ eventDetail.start | date:'dd.MM.YY, HH:mm' : '' :'de-CH'}}</span></div>
+				<div class="countdown-box" *ngIf="pastEvent(eventDetail)"><span>Uraufführung: </span><span class="number">{{ eventDetail.start | date:'MMMM YYYY' : '' :'de-CH'}}</span></div>
 			</div>
 			<!--//countdown-->
-			<p class="intro">
-				{{ shortDescription }}
-			</p>
-			<p class="imprtant" *ngIf="importantNotes"> {{ importantNotes }} </p>
-			<a class="btn btn-sm btn-ghost-primary" (click)="openInfo()">Info</a>
-			<a class="btn btn-sm btn-primary" (click)="openGallery()" *ngIf="eventDetail.facebookPixelId">Impressionen</a>
-			<a class="btn btn-sm btn-secondary" (click)="scrollTo('gigs')" *ngIf="futureEvent">Tickets</a>
+			<div class="description-button-block">
+				<div>
+					<p class="intro">
+						{{ shortDescription(eventDetail) }}
+					</p>
+				</div>
+				<div>
+					<p class="imprtant" *ngIf="importantNotes(eventDetail)"> {{ importantNotes(eventDetail) }} </p>
+					<a class="btn btn-sm btn-ghost-primary" (click)="openInfo(eventDetail)">Info <span *ngIf="pastEvent(eventDetail) && eventDetail.facebookPixelId">/ Impressionen</span></a>
+					<a class="btn btn-sm btn-primary" (click)="scrollTo('gigs')" *ngIf="futureEvent(eventDetail)">Aufführungen</a>
+				</div>
+			</div>
 			<!--//intro-->
-		</div>
+		<!--/div-->
 		<!--//desc-->
 	</div>
 	<!--//content-container-->

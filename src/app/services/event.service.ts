@@ -37,9 +37,10 @@ query {
 }
 `;
 
-const GET_DATEFILTERED_EVENTS = gql`
+const GET_UPCOMING_EVENTS = gql`
 query GetUpcomingEvents($startGte: DateTime!, $startLt: DateTime!){
 	eventDetails (
+		sortBy: START_ASC,
 		query: {
 			AND: [
 					{
@@ -51,7 +52,41 @@ query GetUpcomingEvents($startGte: DateTime!, $startLt: DateTime!){
 					{start_gte: $startGte}
 					{start_lt: $startLt}
 				]
-			}, sortBy: START_DESC
+			}
+		)
+	{
+		_id,
+		eventInfos{
+			name
+			flyerImagePath
+			shortDescription
+			languageId
+			importantNotes
+		}
+		notificationEmail
+		facebookPixelId
+		googleAnalyticsTracker
+		start
+	}
+}
+`;
+
+const GET_PAST_EVENTS = gql`
+query GetPastEvents($startGte: DateTime!, $startLt: DateTime!){
+	eventDetails (
+		sortBy: START_DESC,
+		query: {
+			AND: [
+					{
+            OR: [
+							{googleAnalyticsTracker_in: "Premiere"}
+							{googleAnalyticsTracker_in: "Premiere|Tournee"}
+          	]
+          }
+					{start_gte: $startGte}
+					{start_lt: $startLt}
+				]
+			}
 		)
 	{
 		_id,
@@ -103,11 +138,10 @@ const GET_EVENTINFO_BYEVENTID = gql`
 const GET_UPCOMING_GIGS = gql`
     query GetUpcomingGigs ($today: DateTime!) {
       eventDetails (
-        query: {
-          AND: [
-            {OR: [{googleAnalyticsTracker: ""}{googleAnalyticsTracker_in: "Premiere"}]}
-            {start_gte: $today}
-          ]}){
+				sortBy: START_ASC,
+        query:
+           	{start_gte: $today}
+          ){
         _id,
         eventInfos{
           name
@@ -280,6 +314,7 @@ export class EventService {
 	}
 
 	GetEventDetail(id: number): Observable<EventDetail> {
+		console.log(`load event with Item ${id}`);
 		return this.apollo
 			.watchQuery<GetEventInfoById>({
 				query: GET_EVENTINFO_BYEVENTID,
@@ -291,6 +326,7 @@ export class EventService {
 	}
 
 	GetUpcomingGigs(): Observable<EventDetail[]> {
+		console.log(`load events upcoming`);
 		return this.apollo
 			.watchQuery<GetEventDetailPrototypes>({
 				query: GET_UPCOMING_GIGS,
@@ -302,6 +338,7 @@ export class EventService {
 	}
 
 	GetEventDetails(filterPredicateIn: any): Observable<EventDetail[]> {
+		console.log(`load events with predicate ${filterPredicateIn}`);
 		return this.apollo
 			.watchQuery<GetEventDetailPrototypes>({
 				query: GET_EVENTDETAILS_BYTAG
@@ -309,10 +346,24 @@ export class EventService {
 			.valueChanges.pipe(map((result) => result.data.eventDetails.filter(filterPredicateIn)));
 	}
 
-	GetUpcomingEventDetails(start_gte: Date, start_lt: Date): Observable<EventDetail[]> {
+	GetPastEventDetails(start_gte: Date, start_lt: Date): Observable<EventDetail[]> {
+		console.log(`load events with start_gte ${start_gte}, start_lt ${start_lt}`);
 		return this.apollo
 			.watchQuery<GetEventDetailPrototypes>({
-				query: GET_DATEFILTERED_EVENTS,
+				query: GET_PAST_EVENTS,
+				variables: {
+					startGte: start_gte,
+					startLt: start_lt
+				},
+			})
+			.valueChanges.pipe(map((result) => result.data.eventDetails));
+	}
+
+	GetUpcomingEventDetails(start_gte: Date, start_lt: Date): Observable<EventDetail[]> {
+		console.log(`load events with start_gte ${start_gte}, start_lt ${start_lt}`);
+		return this.apollo
+			.watchQuery<GetEventDetailPrototypes>({
+				query: GET_UPCOMING_EVENTS,
 				variables: {
 					startGte: start_gte,
 					startLt: start_lt

@@ -1,11 +1,12 @@
-import {Component, Input} from '@angular/core';
+import {ChangeDetectionStrategy, Component, Input} from '@angular/core';
 import {NgbModal} from '@ng-bootstrap/ng-bootstrap';
 import {MerchModalComponent} from '../merch-modal/merch-modal.component';
 
 @Component({
 	selector: 'app-merch-item',
 	templateUrl: './merch-item.component.html',
-	styleUrls: ['./merch-item.component.scss']
+	styleUrls: ['./merch-item.component.scss'],
+	changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class MerchItemComponent {
 
