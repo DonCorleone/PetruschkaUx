@@ -14,9 +14,9 @@ import { ImageModalComponent } from '../image-modal/image-modal.component';
   styleUrls: ['./gallery-modal.component.scss'],
 	changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class GalleryModalComponent implements OnInit {
+export class GalleryModalComponent {
 
-	@Input() albumHash:string;
+	@Input() image4Images: Observable<File[]>;
 
 	constructor(public activeModal: NgbActiveModal, private modalService: NgbModal, private imageService:ImagesService) {
 
@@ -26,13 +26,8 @@ export class GalleryModalComponent implements OnInit {
     gutter: 20,
   };
 
-	image4Images: Observable<File[]>;
-  limit = 15;
 
-  ngOnInit() {
-		this.image4Images = this.imageService.getAlbum(this.albumHash)
-			.pipe(map (p => p.files));
-  }
+  limit = 15;
 
 	itemsLoaded() {
     console.log('itemsloaded');

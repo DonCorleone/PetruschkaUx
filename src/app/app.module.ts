@@ -12,12 +12,13 @@ import {ApolloClientOptions, InMemoryCache} from '@apollo/client/core';
 import {HttpLink} from 'apollo-angular/http';
 
 import * as realm from './realm';
-import {HttpClientModule, HttpHeaders} from '@angular/common/http';
+import {HttpClientModule, HttpHeaders, HTTP_INTERCEPTORS} from '@angular/common/http';
 import {APOLLO_OPTIONS} from 'apollo-angular';
 import {InfoComponent} from './components/info/info-item/info-item.component';
 // import { LayoutComponent } from './layout/layout.component';
 import {ScullyLibModule} from '@scullyio/ng-lib';
 import { ImageModalComponent } from './components/gallery/image-modal/image-modal.component';
+import { HttpErrorInterceptor } from './services/http-error-interceptor.service';
 const uri = realm.graphqlUrl;
 
 export function createApollo(httpLink: HttpLink): ApolloClientOptions<any> {
@@ -49,7 +50,11 @@ export function createApollo(httpLink: HttpLink): ApolloClientOptions<any> {
 			provide: APOLLO_OPTIONS,
 			useFactory: createApollo,
 			deps: [HttpLink]
-		}
+		},{
+			provide: HTTP_INTERCEPTORS,
+			useClass: HttpErrorInterceptor,
+			multi: true,
+		},
 	],
 	bootstrap: [AppComponent]
 })

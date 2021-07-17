@@ -19,7 +19,7 @@ export class GigsItemComponent implements OnInit {
 	@Input() eventId: number;
 	@Input() eventInfoDe: EventDetailEventInfo;
 	@Input() ticketPrices: TicketPrice[];
-	@Input() facebookPixelId: string;
+	@Input() eventKey: string;
 
 	constructor(private modalService: NgbModal, private eventService: EventService) {
 	}

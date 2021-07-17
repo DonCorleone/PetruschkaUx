@@ -26,9 +26,8 @@
 				</div>
 				<div>
 					<p class="imprtant" *ngIf="importantNotes(eventDetail)"> {{ importantNotes(eventDetail) }} </p>
-					<a class="btn btn-sm btn-ghost-primary" (click)="openInfo(eventDetail)">Info</a>
-					<a class="btn btn-sm btn-primary" (click)="openGallery(eventDetail)" *ngIf="eventDetail.facebookPixelId">Impressionen</a>
-					<a class="btn btn-sm btn-secondary" (click)="scrollTo('gigs')" *ngIf="futureEvent(eventDetail)">Aufführungen</a>
+					<a class="btn btn-sm btn-ghost-primary" (click)="openInfo(eventDetail)">Info <span *ngIf="pastEvent(eventDetail) && eventDetail.facebookPixelId">/ Impressionen</span></a>
+					<a class="btn btn-sm btn-primary" (click)="scrollTo('gigs')" *ngIf="futureEvent(eventDetail)">Aufführungen</a>
 				</div>
 			</div>
 			<!--//intro-->
