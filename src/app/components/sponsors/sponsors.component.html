@@ -1,52 +1,21 @@
-<div class="section-intro center-block" id="sponsors">
-	<h4 class="title">Sponsoren</h4>
-	<div class="border-box">
-			<div class="border-box-item text-only-sponsor prime">
-				Stiftung Monika Widmer
+<div class="section-intro center-block" id="sponsors" *ngIf="sponsors$ | async as sponsors">
+	<h4 class="title" *ngIf="sponsors.length > 0">Sponsoren</h4>
+	<div *ngFor="let sponsor of sponsors">
+		<div class="border-box">
+			<div class="border-box-item" [ngClass]="{'text-only-sponsor': sponsor.image === '', 'no-border': sponsor.image === ''}">
+				<a [href]="sponsor.url" target="_blank" *ngIf="sponsor.url !== '' && sponsor.image !== ''">
+					<img [src]="sponsor.image" [alt]="'logo ' + sponsor.name"/>
+				</a>
+				<a [href]="sponsor.url" target="_blank" *ngIf="sponsor.url !== '' && sponsor.image === ''">
+					<i class="fas fa-external-link-square-alt"></i><span> {{sponsor.name}}</span>
+				</a>
+				<div *ngIf="sponsor.url === '' && sponsor.image !== ''">
+					<img [src]="sponsor.image" [alt]="'logo ' + sponsor.name"/>
+				</div>
+				<div *ngIf="sponsor.url === '' && sponsor.image === ''" [ngClass]="{'prime': getShare(sponsor) > 0.2}">
+					<i class="fas fa-external-link-square-alt" *ngIf="sponsor.url !== ''"></i><span> {{sponsor.name}}</span>
+				</div>
 			</div>
-	</div>
-	<div class="border-box">
-		<div class="border-box-item no-border">
-			<a href="http://www.ernst-goehner-stiftung.ch/" alt="ernst-goehner-stiftung.ch">
-					<img src="/assets/images/sponsors/EGS_Schriftzug_2_blau.jpg" alt="logo Ernst Göhner Stiftung" />
-			</a>
 		</div>
-	</div>
-	<div class="border-box">
-		<div class="border-box-item no-border">
-			<a href="https://www.rkk-luzern.ch/" alt="rkk-luzern.ch">
-					<img src="/assets/images/sponsors/rkk.png" alt="logo rkk" />
-			</a>
-		</div>
-	</div>
-	<div class="border-box">
-		<div class="border-box-item text-only-sponsor">
-			<a href="https://www.stadtluzern.ch/dienstleistungeninformation/6505" alt="link Fonds für Kinder- und Jugendfreizeit">
-					<i class="fas fa-external-link-square-alt"></i>
-					Fonds für Kinder- und Jugendfreizeit
-			</a>
-		</div>
-	</div>
-	<div class="border-box">
-		<div class="border-box-item bordered-box text-only-sponsor">
-			Schüller-Stiftung
-		</div>
-	</div>
-	<div class="border-box">
-		<div class="border-box-item no-border">
-		<a href="https://www.migros-kulturprozent.ch/" alt="rkk-luzern.ch">
-			<img src="/assets/images/sponsors/Logo_FGE_MK_rgb_72dpi_DE.jpg" alt="logo Migros Kulturprozent" />
-		</a>
-		</div>
-	</div>
-	<div class="border-box">
-		<div class="border-box-item bordered-box text-only-sponsor">
-				Gamil-Stiftung
-		</div>
-	</div>
-	<div class="border-box">
-			<div class="border-box-item no-border">
-					<img src="/assets/images/sponsors/bonitas.jpg" alt="logo Bonitas Stiftung" />
-			</div>
 	</div>
 </div>

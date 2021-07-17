@@ -8,6 +8,8 @@ import {LocationModalComponent} from '../../location/location-modal/location-mod
 import {Job} from '../../../models/staff.models';
 import {StaffService} from '../../../services/staff.service';
 import { GalleryModalComponent } from '../../gallery/gallery-modal/gallery-modal.component';
+import { ImagesService, File } from 'src/app/services/images.service';
+import { map } from 'rxjs/operators';
 
 @Component({
 	selector: 'app-info-item',
@@ -21,12 +23,16 @@ export class InfoComponent implements OnChanges {
 	@Input() reservationMail: string;
 	@Input() usage: string;
 	@Input() playDate: Date;
-	@Input() facebookPixelId: string;
+	@Input() eventKey: string;
 
 	artistsArray: Job[];
+	image4Images: Observable<File[]>;
 
 	constructor(
-		private sanitizer: DomSanitizer, private modalService: NgbModal, private staffService: StaffService) {
+		private sanitizer: DomSanitizer,
+		private modalService: NgbModal,
+		private staffService: StaffService,
+		private imageService: ImagesService) {
 	}
 
 	get locationName(): string {
@@ -83,6 +89,8 @@ export class InfoComponent implements OnChanges {
 		if (this.eventInfo && this.eventInfo.artists) {
 			this.artistsArray = StaffService.GetStaffLinks(this.eventInfo.artists);
 		}
+		this.image4Images = this.imageService.getAlbum(this.eventKey)
+		.pipe(map (p => p.files));
 	}
 
 	openStaff(staffName: string) {
@@ -101,7 +109,7 @@ export class InfoComponent implements OnChanges {
 
 	openGallery():void{
 		const modalRef = this.modalService.open(GalleryModalComponent, { size:'xl' });
-		modalRef.componentInstance.albumHash = this.facebookPixelId;
+		modalRef.componentInstance.image4Images = this.image4Images;
 	}
 
 }
