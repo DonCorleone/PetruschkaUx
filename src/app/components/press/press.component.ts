@@ -29,6 +29,8 @@ export class PressComponent implements OnInit {
   constructor(private pressService: PressService, config: NgbCarouselConfig) {
 		config.showNavigationArrows = false;
 		config.showNavigationIndicators = true;
+		config.pauseOnFocus = true;
+		config.pauseOnHover = true;
 	 }
 
   ngOnInit(): void {
@@ -36,9 +38,11 @@ export class PressComponent implements OnInit {
 
   }
 	arrowLeft():void{
+		this.carousel.pause();
 		this.carousel.prev();
 	}
 	arrowRight():void{
+		this.carousel.pause();
 		this.carousel.next();
 	}
 }
