@@ -33,6 +33,7 @@ import { HistoryListComponent } from '../components/history/history-list/history
 import { VideoComponent } from '../components/video/video.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { NgxMasonryModule } from 'ngx-masonry';
+import { PressComponent } from '../components/press/press.component';
 
 
 @NgModule({
@@ -66,7 +67,8 @@ import { NgxMasonryModule } from 'ngx-masonry';
 		MusicModalComponent,
 		MusicDetailComponent,
 		GalleryModalComponent,
-		HistoryListComponent
+		HistoryListComponent,
+		PressComponent,
 	],
 	imports: [
 		CommonModule,
