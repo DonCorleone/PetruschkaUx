@@ -3,6 +3,7 @@
 #pressArticles {
 	background-color: #fff;
 	padding-top: 30px;
+	max-height: 600px;
 }
 
 #pressArticles .title {
@@ -36,4 +37,8 @@
 	color: $text-color-primary;
 	font-weight: bold;
 	opacity: 0.9;
+}
+
+img {
+	height: 300px;
 }
