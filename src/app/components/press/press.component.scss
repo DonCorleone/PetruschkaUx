@@ -1,0 +1,30 @@
+@import "/src/scss/theme-1.scss";
+
+#pressArticles {
+	background-color: #fff;
+	padding-top: 30px;
+}
+
+#pressArticles .title {
+	color: $text-color-primary;
+	text-align: center;
+}
+
+.carousel-caption{
+	background-color: $theme-1;
+	color: $text-color-primary;
+	font-weight: bold;
+}
+.top-content .carousel-control-prev {
+	left: -110px;
+	border-bottom: 0;
+	font-size: 40px;
+	color:  $theme-1;
+}
+
+.top-content .carousel-control-next {
+	right: -110px;
+	border-bottom: 0;
+	font-size: 40px;
+	color:  $theme-1;
+}

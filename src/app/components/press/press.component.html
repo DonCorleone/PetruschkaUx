@@ -1,0 +1,29 @@
+<div class="section-intro center-block" id="pressArticles" *ngIf="pressArticles$ | async as pressArticles">
+	<h4 class="title" *ngIf="pressArticles.length > 0">Presse-Meldungen</h4>
+
+	<ngb-carousel *ngIf="pressArticles$" [interval]="4000" [pauseOnHover]=true [pauseOnFocus]=true [showNavigationArrows]=true [showNavigationIndicators]=true>
+		<ng-template ngbSlide *ngFor="let article of pressArticles$ | async; index as i">
+			<a [href]="'assets/images/presse/Image_' + article.nr + '.pdf'" target="_blank">
+				<img [src]="'assets/images/presse/Image_' + article.nr + '.png'" [alt]="article.desc" />
+				<div class="carousel-caption">
+					<p>
+						<span>'{{article.desc}}'</span>
+						<span *ngIf="article.author !== ''">- von {{article.author}}</span>
+						<span *ngIf="article.source !== ''">- {{article.source}}</span>
+						<span> vom {{ getDate(article) | date:'mediumDate' : '' :'de-CH' }}</span>
+					</p>
+				</div>
+			</a>
+			<a class="carousel-control-prev" href="#carousel-example" role="button" data-slide="prev">
+				<i class="fas fa-arrow-left" aria-hidden="true"></i>
+				<span class="sr-only">Previous</span>
+		</a>
+		<a class="carousel-control-next" href="#carousel-example" role="button" data-slide="next">
+				<i class="fas fa-arrow-right" aria-hidden="true"></i>
+				<span class="sr-only">Next</span>
+		</a>
+		</ng-template>
+	</ngb-carousel>
+
+
+</div>
