@@ -11,9 +11,17 @@ import { Press, PressService } from 'src/app/services/press.service';
 export class PressComponent implements OnInit {
 
 	pressArticles$: Observable<Press[]>
+	todayDate = new Date();
 
 	getDate(article:Press):Date{
-		return new Date(article?.date);
+		if (article !== undefined && article.date !== undefined) {
+			let newDate = new Date(article.date);
+			if (newDate !== undefined){
+				return newDate;
+			}else{
+				return this.todayDate;
+			}
+		}
 	}
   constructor(private pressService: PressService, config: NgbCarouselConfig) {
 		config.showNavigationArrows = false;

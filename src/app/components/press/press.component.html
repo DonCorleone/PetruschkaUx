@@ -6,11 +6,11 @@
 			<a [href]="'assets/images/presse/Image_' + article.nr + '.pdf'" target="_blank">
 				<img [src]="'assets/images/presse/Image_' + article.nr + '.png'" [alt]="article.desc" />
 				<div class="carousel-caption">
-					<p>
+					<p *ngIf="getDate(article) as articleDate">
 						<span>'{{article.desc}}'</span>
 						<span *ngIf="article.author !== ''">- von {{article.author}}</span>
 						<span *ngIf="article.source !== ''">- {{article.source}}</span>
-						<span> vom {{ getDate(article) | date:'mediumDate' : '' :'de-CH' }}</span>
+						<span *ngIf="articleDate < todayDate" > vom {{ articleDate | date:'mediumDate' : '' :'de-CH' }}</span>
 					</p>
 				</div>
 			</a>
