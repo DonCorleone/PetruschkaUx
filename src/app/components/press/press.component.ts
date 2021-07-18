@@ -1,14 +1,17 @@
-import { Component, OnInit } from '@angular/core';
-import { NgbCarouselConfig } from '@ng-bootstrap/ng-bootstrap';
+import { Component, OnInit, ViewChild } from '@angular/core';
+import { NgbCarousel, NgbCarouselConfig } from '@ng-bootstrap/ng-bootstrap';
 import { Observable } from 'rxjs';
 import { Press, PressService } from 'src/app/services/press.service';
 
 @Component({
   selector: 'app-press',
   templateUrl: './press.component.html',
-  styleUrls: ['./press.component.scss']
+  styleUrls: ['./press.component.scss'],
+	providers: [NgbCarouselConfig]
 })
 export class PressComponent implements OnInit {
+
+	@ViewChild('carousel') carousel: NgbCarousel;
 
 	pressArticles$: Observable<Press[]>
 	todayDate = new Date();
@@ -30,5 +33,12 @@ export class PressComponent implements OnInit {
 
   ngOnInit(): void {
 		this.pressArticles$ = this.pressService.GetPressArticles();
+
   }
+	arrowLeft():void{
+		this.carousel.prev();
+	}
+	arrowRight():void{
+		this.carousel.next();
+	}
 }
