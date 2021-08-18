@@ -37,6 +37,15 @@
 				[href]="'mailto:' + eventDetail.notificationEmail + '?subject=Buchungsanfrage ' + eventName(eventDetail)"
 				target="_blank">{{ eventDetail.notificationEmail }}</a><br />
 			Betreff: Buchungsanfrage '{{ eventName(eventDetail) }}'</p>
+			<div>
+				<p><strong><em>Coronamassnahmen</em></strong></p>
+				<ul>
+					<li><em>Wir bitten die Erwachsenen, im Theater Masken zu tragen</em></li>
+					<li><em>Das Theater verf&uuml;gt &uuml;ber div. Luftreiniger</em></li>
+					<li><em>Desinfektionsmittel stehen zur Verf&uuml;gung</em></li>
+					<li><em>Die Zuschauerzahl ist beschr&auml;nkt</em></li>
+				</ul>
+			</div>
 	</div>
 	<div class="modal-item-footer">
 		<a (click)="openInfo()" class="btn btn-sm btn-ghost-secondary">Infos zum Stück</a>
