@@ -2,7 +2,7 @@
 		<div class="modal-item-content">
 			<div class="shortDesc">{{ shortDesc }}</div>
 	</div>
-	<div class="modal-item-footer" *ngIf="image4Images | async">
+	<div class="modal-item-footer" *ngIf="image4Images$ | async">
 		<a (click)="openGallery()" class="btn btn-sm btn-ghost-secondary">Impressionen</a>
 	</div>
 </div>
@@ -26,6 +26,19 @@
 			</div>
 		</div>
 
+</div>
+
+<div class="modal-item" [hidden]="video.hidden">
+	<div class="modal-item-title">
+		Trailer
+	</div>
+	<div class="modal-item-content">
+			<video width="100%" controls>
+				<source #video [src]="'https://cdn.image4.io/petruschka/Movies/' + eventKey + '/' + eventKey +'.mp4'" type="video/mp4" (error)="video.hidden = true" [hidden]="video.hidden">
+				<source #video [src]="'https://cdn.image4.io/petruschka/Movies/' + eventKey + '/' + eventKey +'.webm'" type="video/webm" (error)="video.hidden = true" [hidden]="video.hidden">
+				Your browser does not support the video tag.
+			</video>
+	</div>
 </div>
 
 <div class="modal-item">

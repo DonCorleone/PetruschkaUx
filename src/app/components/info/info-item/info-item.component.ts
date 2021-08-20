@@ -26,7 +26,7 @@ export class InfoComponent implements OnChanges {
 	@Input() eventKey: string;
 
 	artistsArray: Job[];
-	image4Images: Observable<File[]>;
+	image4Images$: Observable<File[]>;
 
 	constructor(
 		private sanitizer: DomSanitizer,
@@ -89,7 +89,7 @@ export class InfoComponent implements OnChanges {
 		if (this.eventInfo && this.eventInfo.artists) {
 			this.artistsArray = StaffService.GetStaffLinks(this.eventInfo.artists);
 		}
-		this.image4Images = this.imageService.getAlbum(this.eventKey)
+		this.image4Images$ = this.imageService.getAlbum(this.eventKey)
 		.pipe(map (p => p.files));
 	}
 
@@ -109,7 +109,7 @@ export class InfoComponent implements OnChanges {
 
 	openGallery():void{
 		const modalRef = this.modalService.open(GalleryModalComponent, { size:'xl' });
-		modalRef.componentInstance.image4Images = this.image4Images;
+		modalRef.componentInstance.image4Images = this.image4Images$;
 	}
 
 }
