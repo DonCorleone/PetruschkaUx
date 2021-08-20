@@ -43,8 +43,8 @@ export class StaffService {
 	constructor(private apollo: Apollo) {
 	}
 
-	public GetStaffs(): Observable<Staff[]> {
-
+	GetStaffs(): Observable<Staff[]> {
+		console.log(`GetStaffs`);
 		return this.apollo
 			.watchQuery<GetStaffs>({
 				query: GET_STAFFS,
@@ -52,8 +52,9 @@ export class StaffService {
 			.valueChanges.pipe(map((result) => result.data.staffs));
 	}
 
-	public GetStaff(nameIn: string): Observable<Staff> {
+ 	GetStaff(nameIn: string): Observable<Staff> {
 
+		console.log(`GetStaff`);
 		return this.apollo
 			.watchQuery<GetStaff>({
 				query: GET_STAFFBYNAME,
@@ -64,12 +65,19 @@ export class StaffService {
 			.valueChanges.pipe(map((result) => result.data.staff));
 	}
 
-	public GetStaffLinks(staff: string): Job [] {
+	static GetStaffLinks(staff: string): Job [] {
+
+		const returnval: Job [] = [];
+		if (staff.length === 0) {
+			return returnval;
+		}
 
 		const jobs = staff.split('|');
-		const returnval: Job [] = [];
 
 		jobs.forEach(job => {
+
+			console.log(`map job ${job}`);
+
 			const ixOfSplitterColon = job.indexOf(':');
 			const ixOfSplitterDash = job.indexOf('-');
 

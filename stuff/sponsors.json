@@ -1,0 +1,90 @@
+[
+		{
+			"name": "Stiftung Monika Widmer",
+			"url": "",
+			"image": "",
+			"events": [
+				{
+					"event": "2021s",
+					"share": 0.21
+				}
+			]
+		},
+		{
+			"name": "Ernst Göhner Stiftung",
+			"url": "http://www.ernst-goehner-stiftung.ch",
+			"image": "/assets/images/sponsors/EGS_Schriftzug_2_blau.jpg",
+			"events": [
+				{
+					"event": "2021s",
+					"share": 0.21
+				}
+			]
+		},
+		{
+			"name": "rkk",
+			"url": "https://www.rkk-luzern.ch/",
+			"image": "/assets/images/sponsors/rkk.png",
+			"events": [
+				{
+					"event": "2021s",
+					"share": 0.17
+				}
+			]
+		},
+		{
+			"name": "Fonds für Kinder- und Jugendfreizeit",
+			"url": "https://www.stadtluzern.ch/dienstleistungeninformation/6505",
+			"image": "",
+			"events": [
+				{
+					"event": "2021s",
+					"share": 0.13
+				}
+			]
+		},
+		{
+			"name": "Schüller-Stiftung",
+			"url": "",
+			"image": "",
+			"events": [
+				{
+					"event": "2021s",
+					"share": 0.08
+				}
+			]
+		},
+		{
+			"name": "Migros Kulturprozent",
+			"url": "https://www.migros-kulturprozent.ch/",
+			"image": "/assets/images/sponsors/Logo_FGE_MK_rgb_72dpi_DE.jpg",
+			"events": [
+				{
+					"event": "2021s",
+					"share": 0.08
+				}
+			]
+		},
+		{
+			"name": "Gamil-Stiftung",
+			"url": "",
+			"image": "",
+			"events": [
+				{
+					"event": "2021s",
+					"share": 0.08
+				}
+			]
+		},
+		{
+			"name": "Bonitas Stiftung",
+			"url": "",
+			"image": "/assets/images/sponsors/bonitas.jpg",
+			"events": [
+				{
+					"event": "2021s",
+					"share": 0.04
+				}
+			]
+		}
+	]

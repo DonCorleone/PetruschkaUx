@@ -1,4 +1,4 @@
-import {AfterViewInit, Component, Input} from '@angular/core';
+import {AfterViewInit, ChangeDetectionStrategy, Component, Input} from '@angular/core';
 import {NgbModal, NgbModalOptions} from '@ng-bootstrap/ng-bootstrap';
 import {EventDetail} from 'src/app/models/event.models';
 import {EventService} from 'src/app/services/event.service';
@@ -8,39 +8,47 @@ import { InfoModalComponent } from '../../info/info-modal/info-modal.component';
 @Component({
 	selector: 'app-update-slide',
 	templateUrl: './update-slide.component.html',
-	styleUrls: ['./update-slide.component.scss']
+	styleUrls: ['./update-slide.component.scss'],
+	changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class UpdateSlideComponent implements AfterViewInit {
 
 	@Input() eventDetail: EventDetail;
 	@Input() usage: string;
 
-	constructor(private modalService: NgbModal) {
+	constructor(private modalService: NgbModal, private eventService: EventService) {
 	}
 
-	get futureEvent():boolean {
-		return new Date(this.eventDetail.start) > new Date();
+	superfutureEvent(eventDetail: EventDetail):boolean {
+		return new Date(eventDetail.start) >= new Date()
+			&& new Date(eventDetail.start).getHours() === 0;
 	}
 
-	get name() {
-		return EventService.GetNameFromEventDetail(this.eventDetail);
+	futureEvent(eventDetail: EventDetail):boolean {
+		return new Date(eventDetail.start) >= new Date()
+			&& new Date(eventDetail.start).getHours() !== 0;
 	}
 
-	get shortDescription(): string {
-		return EventService.GetShortDescFromEventDetail(this.eventDetail);
+	pastEvent(eventDetail: EventDetail):boolean {
+		return new Date(eventDetail.start) < new Date()
 	}
 
-	get importantNotes(): string {
-		return EventService.GetImportantNotesFromEventDetail(this.eventDetail);
+	name(eventDetail: EventDetail) {
+		return EventService.GetNameFromEventDetail(eventDetail);
 	}
 
-	get imagePath(): string {
-		return EventService.GetFlyerImagePathFromEventDetail(this.eventDetail);
+	shortDescription(eventDetail: EventDetail): string {
+		return EventService.GetShortDescFromEventDetail(eventDetail);
 	}
 
-	get start(): Date {
-		return this.eventDetail.start;
+	importantNotes(eventDetail: EventDetail): string {
+		return EventService.GetImportantNotesFromEventDetail(eventDetail);
 	}
+
+	imagePath(eventDetail: EventDetail): string {
+		return EventService.GetFlyerImagePathFromEventDetail(eventDetail);
+	}
+
 	ngAfterViewInit(): void {
 		/* ======= Countdown ========= */
 		// // set the date we're counting down to
@@ -98,15 +106,14 @@ export class UpdateSlideComponent implements AfterViewInit {
 	// 	secsSpan.innerHTML = '<span class="number">' + seconds + '</span>' + '<span class="unit">Secs</span>';
 	// }
 
-	openInfo(): void {
+	openInfo(eventDetail: EventDetail): void {
 		const modalRef = this.modalService.open(InfoModalComponent, { size:'lg' });
-		modalRef.componentInstance.eventDetailId = this.eventDetail._id;
-		modalRef.componentInstance.usage = ''; // else case
-		modalRef.componentInstance.playDate = this.eventDetail.start; // else case
-		modalRef.componentInstance.facebookPixelId = this.eventDetail.facebookPixelId;
+		modalRef.componentInstance.eventDetailId = eventDetail._id;
+		modalRef.componentInstance.usage = 'Premiere'; // else case
+		modalRef.componentInstance.eventDetail$ = this.eventService.GetEventDetail(eventDetail._id);
 	}
 
-	openGallery():void{
+	openGallery(eventDetail: EventDetail):void{
 		const modalRef = this.modalService.open(GalleryModalComponent, { size:'xl' });
 		modalRef.componentInstance.albumHash = this.eventDetail.facebookPixelId;
 	}

@@ -1,9 +1,10 @@
 <section class="contact-section section" id="contact">
 	<div class="container">
 		<h2 class="section-title text-center">Über Petruschka</h2>
-		<div class="section-intro center-block text-justify">
+		<div class="section-intro center-block text-justify" id="history">
+			<h4 class="title">Geschichte</h4>
 			<p>Das Figurentheater PETRUSCHKA existiert seit 2003. Es wurde von Marianne Hofer ins Leben gerufen und gastierte
-				erstmals mit dem „Wintermäusemärchen“ im Natur-Museum Luzern.</p>
+				erstmals mit dem „Wintermäusemärchen“ im <a (click)="openLocation('Naturmuseum Luzern')" class="location-link"><i class="fas fa-external-link-square-alt"></i> Natur-Museum Luzern.</a></p>
 			<p>Seither wurden viele Stücke für Familien, Kindergärten und Schulklassen geschaffen. Dabei werden Themen aus dem
 				Natur-Museum, meist aus Sonderausstellungen, aufgenommen und in kindgerechter Art präsentiert. Dieses Wissen
 				wird für Gross und Klein in Geschichten eingebaut und so in anschaulicher Art dargeboten. Dabei werden die
@@ -23,37 +24,39 @@
 				erarbeitet und gibt die Möglichkeit, den Stücken eine neue Dimension zu geben. Vor den Augen der Zuschauer
 				werden Bilder geschaffen, die das Theater erweitern und ergänzen.</p>
 			<br />
-			<p><b>Stücke im Natur-Museum:</b></p>
-			<div class="history-plays">
-				<div class="history-play">2003 Wintermäusemärchen</div>
-				<div class="history-play">2004 Das Geheimnis im Teich</div>
-				<div class="history-play">2005 Fliegen wär so schön</div>
-				<div class="history-play">2006 Ein Geschenk für den Vogel</div>
-				<div class="history-play">2007 Ach, diese Hühner</div>
-				<div class="history-play">2008 Biba baut</div>
-				<div class="history-play">2009 Ein Maulwurf fliegt weg</div>
-				<div class="history-play">2010 Der weisse Wolf</div>
-				<div class="history-play">2011 Krah</div>
-				<div class="history-play">2012 S’tanzende Meersäuli</div>
-				<div class="history-play">2013 De Has wott ned schlofe</div>
-				<div class="history-play">2014 Beschti	Fründe</div>
-				<div class="history-play">2015 Di chli Fee schickt de Winter wäg</div>
-				<div class="history-play">2016 Lutra	ond s’Gheimnis im See</div>
-				<div class="history-play">2017 Sonne, Schnee ond	Donnerwätter</div>
-				<div class="history-play">2018 De wissi Wolf (Wiederaufnahme des Stücks „Der weisse Wolf“ aus dem Jahr 2010 mit Anpassung an die	aktuelle Aussstellung „Wolf“ im Natur-Museum)</div>
-				<div class="history-play">2019 Karneval der Tiere (Wiederaufnahme des Stücks von 2015 im Naturmuseum)</div>
+			<p><b>Stücke im <a (click)="openLocation('Naturmuseum Luzern')" class="location-link"><i class="fas fa-external-link-square-alt"></i> Natur-Museum:</a></b></p>
+			<div class="border-box">
+				<div class="border-box-item chained">2003 Wintermäusemärchen</div>
+				<div class="border-box-item chained">2004 Das Geheimnis im Teich</div>
+				<div class="border-box-item chained">2005 Fliegen wär so schön</div>
+				<div class="border-box-item chained">2006 Ein Geschenk für den Vogel</div>
+				<div class="border-box-item chained">2007 Ach, diese Hühner</div>
+				<div class="border-box-item chained">2008 Biba baut</div>
+				<div class="border-box-item chained">2009 Ein Maulwurf fliegt weg</div>
+				<div class="border-box-item chained">2010 Der weisse Wolf</div>
+				<div class="border-box-item chained">2011 Krah</div>
+				<div class="border-box-item chained">2012 S’tanzende Meersäuli</div>
+				<div class="border-box-item chained">2013 De Has wott ned schlofe</div>
+				<div class="border-box-item chained">2014 Beschti	Fründe</div>
+				<div class="border-box-item chained">2015 Di chli Fee schickt de Winter wäg</div>
+				<div class="border-box-item chained">2016 Lutra	ond s’Gheimnis im See</div>
+				<div class="border-box-item chained">2017 Sonne, Schnee ond	Donnerwätter</div>
+				<div class="border-box-item chained"><a (click)="scrollTo('history-2018w')" class="event-link"><i class="fas fa-external-link-square-alt"></i> 2018 De wissi Wolf (Wiederaufnahme des Stücks „Der weisse Wolf“ aus dem Jahr 2010 mit Anpassung an die	aktuelle Aussstellung „Wolf“ im Natur-Museum)</a></div>
+				<div class="border-box-item chained"><a (click)="scrollTo('history-2015s')" class="event-link"><i class="fas fa-external-link-square-alt"></i> 2019 Karneval der Tiere (Wiederaufnahme des Stücks von 2015 im Naturmuseum)</a></div>
 
 			</div>
 			<br />
 			<p>Seit 2013 entstand eine Zusammenarbeit mit dem Lucerne Festival „Young“ im Sommer:</p>
-			<div class="history-plays">
-				<div class="history-play">2013 Der fliegende Holländer, Adaption der gleichnamigen Oper von Richard Wagner für
+			<br />
+			<p><b>Stücke im <a (click)="openLocation('Pavillon Tribschenhorn')" class="location-link"><i class="fas fa-external-link-square-alt"></i> Pavillon Tribschenhorn:</a></b></p>
+			<div class="border-box">
+				<div class="border-box-item">2013 Der fliegende Holländer, Adaption der gleichnamigen Oper von Richard Wagner für
 					Kinder (im Anschluss
 					eine Arie gesungen von Madeleine Wibom)</div>
-				<div class="history-play">2014 Rusalka Adaption der gleichnamigen Oper von Antonin Dvorak für Kinder (Im
+				<div class="border-box-item">2014 Rusalka Adaption der gleichnamigen Oper von Antonin Dvorak für Kinder (Im
 					Anschluss eine Arie gesungen
 					von Madeleine Wibom)</div>
-				<div class="history-play">2015 Der Karneval der Tiere mit der Musik von Camille Saint-Saens</div>
+				<div class="border-box-item">2015 Der Karneval der Tiere mit der Musik von Camille Saint-Saens</div>
 				<br />	<br />
 
 				<p>Wir arbeiten seit 2015 mit Musikern zusammen, die die Stücke mit klassischer und zeitgenössischer Musik
@@ -61,17 +64,17 @@
 					Schlagzeuge eingesetzt waren).</p>	<br />
 					<br />
 
-				<div class="history-play">2016 Die Aufziehprinzessin mit Musik von Bartok, Offenbach, Vivaldi und
+				<div class="border-box-item">2016 Die Aufziehprinzessin mit Musik von Bartok, Offenbach, Vivaldi und
 					Vuille.</div>
-				<div class="history-play">2017 Die Zaubermuschel mit Musik von Satie, Mussorsky und Vuille.</div>
-				<div class="history-play">2018 Das Traumland mit Musik von Grieg, Prokofiev, Rachmaninov und Vuille.</div>
-				<div class="history-play">2019 Der Zauberladen, mit Musik von Debussy, Faure, Ravel</div>
-				<div class="history-play">2020 De tapferi Puck rettet s‘Elferiich, mit der Musik von Mendelsohn, Schubert, Bizet, Brassens.</div>
+				<a (click)="scrollTo('history-2017s')" class="event-link"><div class="border-box-item"><i class="fas fa-external-link-square-alt"></i> 2017 Die Zaubermuschel mit Musik von Satie, Mussorsky und Vuille.</div></a>
+				<a (click)="scrollTo('history-2018s')" class="event-link"><div class="border-box-item"><i class="fas fa-external-link-square-alt"></i> 2018 Das Traumland mit Musik von Grieg, Prokofiev, Rachmaninov und Vuille.</div></a>
+				<a (click)="scrollTo('history-2019s')" class="event-link"><div class="border-box-item"><i class="fas fa-external-link-square-alt"></i> 2019 Der Zauberladen, mit Musik von Debussy, Faure, Ravel</div></a>
+				<a (click)="scrollTo('history-2020h')" class="event-link"><div class="border-box-item"><i class="fas fa-external-link-square-alt"></i> 2020 De tapferi Puck rettet s‘Elferiich, mit der Musik von Mendelsohn, Schubert, Bizet, Brassens.</div></a>
 
 				<br />
 				<br />
 
-				<p>In den Sommerstücken, die in unserem eigenen Theater im Pavillon Tribschenhorn stattfinden, möchten wir vor
+				<p>In den Sommerstücken, die in unserem eigenen Theater im <a (click)="openLocation('Pavillon Tribschenhorn')" class="location-link"><i class="fas fa-external-link-square-alt"></i> Pavillon Tribschenhorn</a> stattfinden, möchten wir vor
 					allem den jungen Zuschauern die klassische Musik näherbringen.</p>
 				<p>In der heutigen Zeit werden Kinder in der Regel vor allem mit einfacher Musik in Kinderliedern und Musik der
 					Popkultur konfrontiert. Wir meinen, dass aber gerade in der klassischen Musik ein Hörerlebnis stattfindet, das
@@ -83,6 +86,8 @@
 					Kinderanlässen auf.</p>
 			</div>
 		</div>
+		<app-press></app-press>
+		<app-sponsors eventKey = ""></app-sponsors>
 		<div class="contact-block mr-auto ml-auto text-center">
 			<div class="row">
 

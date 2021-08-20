@@ -1,0 +1,21 @@
+<div class="section-intro center-block" id="sponsors" *ngIf="sponsors$ | async as sponsors">
+	<h4 class="title" *ngIf="sponsors.length > 0">Sponsoren</h4>
+	<div *ngFor="let sponsor of sponsors">
+		<div class="border-box">
+			<div class="border-box-item" [ngClass]="{'text-only-sponsor': sponsor.image === '', 'no-border': sponsor.image === ''}">
+				<a [href]="sponsor.url" target="_blank" *ngIf="sponsor.url !== '' && sponsor.image !== ''">
+					<img [src]="sponsor.image" [alt]="'logo ' + sponsor.name"/>
+				</a>
+				<a [href]="sponsor.url" target="_blank" *ngIf="sponsor.url !== '' && sponsor.image === ''">
+					<i class="fas fa-external-link-square-alt"></i><span> {{sponsor.name}}</span>
+				</a>
+				<div *ngIf="sponsor.url === '' && sponsor.image !== ''">
+					<img [src]="sponsor.image" [alt]="'logo ' + sponsor.name"/>
+				</div>
+				<div *ngIf="sponsor.url === '' && sponsor.image === ''" [ngClass]="{'prime': getShare(sponsor) > 0.2}">
+					<i class="fas fa-external-link-square-alt" *ngIf="sponsor.url !== ''"></i><span> {{sponsor.name}}</span>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

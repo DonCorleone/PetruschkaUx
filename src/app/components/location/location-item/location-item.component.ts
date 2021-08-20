@@ -1,4 +1,4 @@
-import {Component, Input, OnInit} from '@angular/core';
+import {ChangeDetectionStrategy, Component, Input, OnInit} from '@angular/core';
 import {DomSanitizer} from '@angular/platform-browser';
 import {Observable} from 'rxjs';
 import {EventLocation} from 'src/app/models/location.models';
@@ -7,7 +7,8 @@ import {LocationsService} from 'src/app/services/locations.service';
 @Component({
 	selector: 'app-location-item',
 	templateUrl: './location-item.component.html',
-	styleUrls: ['./location-item.component.scss']
+	styleUrls: ['./location-item.component.scss'],
+	changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class LocationItemComponent implements OnInit {
 

@@ -39,13 +39,17 @@
 			font-family: "Raleway", sans-serif;
 			color: rgba(256, 256, 256, 0.8);
 		}
+		.year {
+			font-size: 16px;
+			font-weight: 700;
+		}
 	}
 	.gig-actions {
 		position: absolute;
 		right: 0;
 		top: 15px;
 		.btn {
-			margin-right: 5px;
+			margin-left: 5px;
 			&:last-child {
 				margin-right: 0;
 			}

@@ -1,0 +1,44 @@
+@import "/src/scss/theme-1.scss";
+
+#pressArticles {
+	background-color: #fff;
+	padding-top: 30px;
+	max-height: 600px;
+}
+
+#pressArticles .title {
+	color: $text-color-primary;
+	text-align: center;
+}
+
+.carousel-nav{
+	display:flex;
+	justify-content: space-between;
+	padding: 0 30px;
+	height: 50px;
+
+	.carousel-nav-btn {
+		height: 30px;
+		width: 40px;
+		color:$smoky-white;
+		background-color: $theme-1;
+		opacity: 0.9;
+		text-align: center;
+		.svg-inline--fa {
+			margin-top: 2px;
+			width: 24px;
+			height: 24px;
+		}
+	}
+}
+
+.carousel-caption{
+	background-color: $theme-1;
+	color: $text-color-primary;
+	font-weight: bold;
+	opacity: 0.9;
+}
+
+img {
+	height: 300px;
+}

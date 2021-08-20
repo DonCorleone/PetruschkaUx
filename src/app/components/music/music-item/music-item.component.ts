@@ -1,4 +1,4 @@
-import {Component, Input} from '@angular/core';
+import {ChangeDetectionStrategy, Component, Input} from '@angular/core';
 import {NgbModal} from '@ng-bootstrap/ng-bootstrap';
 import {TicketTypeInfo} from 'src/app/models/event.models';
 import {MusicModalComponent} from '../music-modal/music-modal.component';
@@ -6,7 +6,8 @@ import {MusicModalComponent} from '../music-modal/music-modal.component';
 @Component({
 	selector: 'app-music-item',
 	templateUrl: './music-item.component.html',
-	styleUrls: ['./music-item.component.scss']
+	styleUrls: ['./music-item.component.scss'],
+	changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class MusicItemComponent {
 
@@ -26,7 +27,7 @@ export class MusicItemComponent {
 	}
 
 	get imagePath(): string {
-		return "https://images.weserv.nl/?url=" + this.imageUrl + "&w=235&h=235";
+		return "https://images.weserv.nl/?url=" + this.imageUrl + "&w=350&h=350";
 	}
 
 	openDetail(): void {

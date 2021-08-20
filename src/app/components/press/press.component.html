@@ -1,0 +1,29 @@
+<div class="section-intro center-block" id="pressArticles" *ngIf="pressArticles$ | async as pressArticles">
+	<h4 class="title" *ngIf="pressArticles.length > 0">Presse-Meldungen</h4>
+	<div class="carousel-nav">
+		<a class="carousel-nav-btn" (click)="arrowLeft()" role="button" data-slide="prev">
+			<i class="fas fa-angle-left" aria-hidden="true"></i>
+			<span class="sr-only">Previous</span>
+		</a>
+		<a class="carousel-nav-btn" (click)="arrowRight()" role="button" data-slide="next">
+				<i class="fas fa-angle-right" aria-hidden="true"></i>
+				<span class="sr-only">Next</span>
+		</a>
+	</div>
+	<ngb-carousel #carousel *ngIf="pressArticles$">
+		<ng-template ngbSlide *ngFor="let article of pressArticles$ | async; index as i">
+			<a [href]="'assets/images/presse/Image_' + article.nr + '.pdf'" target="_blank">
+				<div class="carousel-caption">
+					<p *ngIf="getDate(article) as articleDate">
+						<span>'{{article.desc}}'</span>
+						<span *ngIf="article.author !== ''">- von {{article.author}}</span>
+						<span *ngIf="article.source !== ''">- {{article.source}}</span>
+						<span *ngIf="articleDate < todayDate" > vom {{ articleDate | date:'mediumDate' : '' :'de-CH' }}</span>
+					</p>
+				</div>
+				<img [src]="'assets/images/presse/Image_' + article.nr + '.png'" [alt]="article.desc" />
+			</a>
+		</ng-template>
+
+	</ngb-carousel>
+</div>

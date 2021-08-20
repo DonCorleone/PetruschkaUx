@@ -6,21 +6,15 @@
 
 
 	color: rgba(256, 256, 256, 0.75);
-	a {
-		color: rgba(256, 256, 256, 0.75);
-		&:hover {
-			color: $theme-color;
-		}
-	}
+	// a {
+	// 	color: rgba(256, 256, 256, 0.75);
+	// 	&:hover {
+	// 		color: $theme-color;
+	// 	}
+	//}
 	.section-title {
-		margin-bottom: 30px;
+	//	margin-bottom: 30px;
 		color: #fff;
-	}
-	.section-intro {
-		max-width: 800px;
-		margin: 0 auto;
-		margin-bottom: 60px;
-		font-size: 16px;
 	}
 
 	.contact-block {
@@ -47,22 +41,25 @@
 		}
 	}
 
-	.history-plays{
-    display: flex;
-    flex-direction: row;
-    flex-flow: wrap;
-    justify-content: space-evenly;
+	#history .title {
+		text-align: center;
+	}
 
-		.history-play{
-			padding: 1px 6px;
-			margin: 6px 4px;
-			border-left: 1px solid $text-color-grey;
-			border-right: 1px solid $text-color-grey;
+	#history .border-box-item {
+		flex-grow: 4;
+	}
+
+	.border-box-item{
+		a {
 			color: $text-color-grey;
-			flex-grow: 4;
-			text-align-last: center;
 		}
 	}
+
+
+	.no-border {
+			border-width: 0;
+	}
+
 	.channels-list {
 		margin-bottom: 45px;
 		a {

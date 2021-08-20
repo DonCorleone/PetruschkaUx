@@ -80,7 +80,6 @@
 		color: #fff;
 
 		.updates-block-inner {
-			padding-right: 15px;
 			position: relative;
 		}
 	}
@@ -88,12 +87,19 @@
 
 // Large devices (desktops, 992px and up)
 @media (min-width: 992px) {
+	app-update-list {
+		display: flex;
+		justify-content: center;
+	}
 	.promo-content {
 		padding-top: 80px;
 	}
 
 	.updates-block-inner {
 		padding-left: 60px;
+		max-width: unset;
+		margin-left: unset;
+		margin-right: 20px;
 		padding-right: 60px;
 	}
 }
@@ -105,7 +111,7 @@
 	}
 
 	.updates-block-inner {
-		padding-left: 60px;
+	//	padding-left: 60px;
 		padding-right: 60px;
 	}
 }

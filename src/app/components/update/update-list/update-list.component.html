@@ -1,5 +1,9 @@
-<div *ngFor="let eventDetail of eventDetails$ | async">
-	<app-update-slide [eventDetail]="eventDetail" usage="Premiere">
+<div *ngFor="let eventDetail of eventDetails$ | async; let i = index" class="updates-slider">
+	<section
+		id="{{ usage === 'history' ? usage + '-' + eventDetail.facebookPixelId : usage + '-' + eventDetail._id }}"
+		class="{{ usage !== 'history' && i > 0 ? 'update-section' : '' }}">
+		<app-update-slide [eventDetail]="eventDetail" usage="Premiere">
 
-	</app-update-slide>
+		</app-update-slide>
+	</section>
 </div>

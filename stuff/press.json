@@ -1,0 +1,81 @@
+[
+	{
+		"nr":1,
+		"desc":"Mit Freunden wird der Winter nicht zu kalt",
+		"source":"Neue Luzerner Zeitung",
+		"date":"2015-12-07T00:00:00Z",
+		"author":"Natalie Ehrenzweig"
+	},{
+		"nr":5,
+		"desc":"Humor und Poesie für Kinder",
+		"source":"Neue Luzerner Zeitung",
+		"date":"2015-09-11T00:00:00Z",
+		"author":"Urs Mattenberger"
+	},{
+		"nr":8,
+		"desc":"Tierische Figuren ziehen Kinder in den Bann",
+		"source":"Neue Luzerner Zeitung",
+		"date":"2015-08-17T00:00:00Z",
+		"author":"Niels Jost"
+	},{
+		"nr":7,
+		"desc":"Puppentheater berührt Herzen",
+		"source":"Neue Luzerner Zeitung",
+		"date":"2014-08-19T00:00:00Z",
+		"author":"Yvonne Imbach"
+	},{
+		"nr":6,
+		"desc":"Figurenspektakel zieht alle in seinen Bann",
+		"source":"Neue Luzerner Zeitung",
+		"date":"2013-08-19T00:00:00Z",
+		"author":"Simon Bordier"
+	},{
+		"nr":2,
+		"desc":"Gefährliche Drachen, Riesen und böse Zigeunerinnen",
+		"source":"Der Sonntag",
+		"date":"2013-02-03T00:00:00Z",
+		"author":"Christian Berzins"
+	},{
+		"nr":4,
+		"desc":"Ein Blick hinter die Kulissen",
+		"source":"Zentralschweiz am Sonntag",
+		"date":"2013-12-02T00:00:00Z",
+		"author":"Regina Grüter"
+	},{
+		"nr":3,
+		"desc":"Drei Allein unterwegs",
+		"source":"Neue Luzerner Zeitung APERO",
+		"date":"2012-11-29T00:00:00Z",
+		"author":"bug"
+	},{
+		"nr":9,
+		"desc":"Die Prinzessin will keine Primadonna sein",
+		"source":"Neue Luzerner Zeitung",
+		"date":"2016-08-23T00:00:00Z",
+		"author":"Yvonne Imbach"
+	},{
+		"nr":10,
+		"desc":"Zauberei rettet die Zukunft",
+		"source":"Neue Luzerner Zeitung",
+		"date":"2017-08-21T00:00:00Z",
+		"author":"Yvonne Imbach"
+	},{
+		"nr":11,
+		"desc":"Jede Figur ist von Hand erstellt",
+		"source":"Neue Luzerner Zeitung",
+		"date":"2013-08-19T00:00:00Z",
+		"author":"Yvonne Imbach"
+	},{
+		"nr":12,
+		"desc":"Puppentheater geht direkt ins Herz",
+		"source":"Neue Luzerner Zeitung",
+		"date":"2018-08-121T00:00:00Z",
+		"author":"Yvonne Imbach"
+	},{
+		"nr":13,
+		"desc":"Eine Freude für jedes Alter",
+		"source":"Neue Luzerner Zeitung",
+		"date":"2019-10-251T00:00:00Z",
+		"author":"Yvonne Imbach"
+	}
+]

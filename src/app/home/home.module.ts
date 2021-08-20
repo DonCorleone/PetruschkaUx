@@ -7,6 +7,7 @@ import { AboutItemComponent } from '../components/about/about-item/about-item.co
 import { AboutListComponent } from '../components/about/about-list/about-list.component';
 import { AboutModalComponent } from '../components/about/about-modal/about-modal.component';
 import { ContactComponent } from '../components/contact/contact.component';
+import { SponsorsComponent } from '../components/sponsors/sponsors.component';
 import { FooterComponent } from '../components/footer/footer.component';
 import { GigsItemComponent } from '../components/gigs/gigs-item/gigs-item.component';
 import { GigsListComponent } from '../components/gigs/gigs-list/gigs-list.component';
@@ -32,6 +33,7 @@ import { HistoryListComponent } from '../components/history/history-list/history
 import { VideoComponent } from '../components/video/video.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { NgxMasonryModule } from 'ngx-masonry';
+import { PressComponent } from '../components/press/press.component';
 
 
 @NgModule({
@@ -44,6 +46,7 @@ import { NgxMasonryModule } from 'ngx-masonry';
 		AboutListComponent,
 		MerchListComponent,
 		ContactComponent,
+		SponsorsComponent,
 		FooterComponent,
 		VideoComponent,
 		InfoComponent,
@@ -64,7 +67,8 @@ import { NgxMasonryModule } from 'ngx-masonry';
 		MusicModalComponent,
 		MusicDetailComponent,
 		GalleryModalComponent,
-		HistoryListComponent
+		HistoryListComponent,
+		PressComponent,
 	],
 	imports: [
 		CommonModule,

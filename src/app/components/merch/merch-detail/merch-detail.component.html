@@ -1,23 +1,51 @@
-<div class="modal-item">
-	<h3>{{ eventName }}</h3>
-	<img [src]="imagePath" alt="" class="img-fluid">
-	<div class="modal-item-content">
-		<div *ngFor="let job of artistsArray">
-			<div>
-				{{ job.name }} {{ job.name !== '' ? ' : ' : '' }}
-				<span *ngFor="let jobsharer of job.jobsharers; let isLast=last">
-              <a (click)="openStaff(jobsharer)" class="staff-link">{{ jobsharer }}</a> {{isLast ? '' : ' & '}}
-					<!-- <a [routerLink]="['/staff', jobsharer]">{{ jobsharer }}</a> {{isLast ? '' : ' & '}} -->
-            </span>
+<div class="modal-item" *ngIf="eventDetail$ | async as eventDetail">
+	<h3>{{ eventName(eventDetail) }}</h3>
+	<div *ngIf="GetTicketTypeInfoFromEventDetail(eventDetail) as ticketTypeInfo">
+		<img [src]="imagePath(ticketTypeInfo)" alt="" class="img-fluid">
+		<div *ngIf="ArtistsArray(ticketTypeInfo) as artistsArray">
+			<div *ngIf="artistsArray.length > 0">
+				<br>
+				<div class="modal-item-title">
+					Mitwirkende
+				</div>
+				<div class="modal-item-content">
+					<div *ngFor="let job of artistsArray">
+						<div *ngIf="job.isJobSharing">
+							{{ job.name }} {{ job.name !== '' ? ' : ' : '' }}
+							<span *ngFor="let jobValue of job.values; let isLast=last">
+								<a (click)="openStaff(jobValue)" class="staff-link"><i class="fas fa-external-link-square-alt"></i> {{
+									jobValue }}</a> {{isLast ? '' : ' & '}}
+								<!-- <a [routerLink]="['/staff', jobsharer]">{{ jobsharer }}</a> {{isLast ? '' : ' & '}} -->
+							</span>
+						</div>
+						<div *ngIf="!job.isJobSharing">
+							<a (click)="openStaff(job.name)" class="staff-link"><i class="fas fa-external-link-square-alt"></i> {{
+								job.name }}</a> {{ job.name !== '' ? ' : ' : '' }}
+							<span *ngFor="let jobValue of job.values; let isLast=last">
+								{{ jobValue }} {{isLast ? '' : ' & '}}
+							</span>
+						</div>
+					</div>
+				</div>
 			</div>
 		</div>
 	</div>
 	<div class="modal-item-content">
-		<br/>
+		<br />
 		<!-- <a href="mailto:regulaaufdermaur@kinderkultur.ch?subject=Buchungsanfrage_Drachenei">regulaaufdermaur@kinderkultur.ch</a> -->
-		<p>Buchungsanfrage per E-Mail an <a [href]="'mailto:' + reservationMail + '?subject=Buchungsanfrage ' + eventName"
-																				target="_blank">{{ reservationMail }}</a><br/>
-			Betreff: Buchungsanfrage '{{ eventName }}'</p>
+		<p>Buchungsanfrage per E-Mail an <a
+				[href]="'mailto:' + eventDetail.notificationEmail + '?subject=Buchungsanfrage ' + eventName(eventDetail)"
+				target="_blank">{{ eventDetail.notificationEmail }}</a><br />
+			Betreff: Buchungsanfrage '{{ eventName(eventDetail) }}'</p>
+			<div>
+				<p><strong><em>Coronamassnahmen</em></strong></p>
+				<ul>
+					<li><em>Wir bitten die Erwachsenen, im Theater Masken zu tragen</em></li>
+					<li><em>Das Theater verf&uuml;gt &uuml;ber div. Luftreiniger</em></li>
+					<li><em>Desinfektionsmittel stehen zur Verf&uuml;gung</em></li>
+					<li><em>Die Zuschauerzahl ist beschr&auml;nkt</em></li>
+				</ul>
+			</div>
 	</div>
 	<div class="modal-item-footer">
 		<a (click)="openInfo()" class="btn btn-sm btn-ghost-secondary">Infos zum Stück</a>

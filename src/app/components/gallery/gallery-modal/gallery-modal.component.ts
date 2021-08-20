@@ -1,4 +1,4 @@
-import {Component, Input, OnInit} from '@angular/core';
+import {ChangeDetectionStrategy, Component, Input, OnInit} from '@angular/core';
 import {Observable} from 'rxjs';
 import {NgbActiveModal, NgbModal} from '@ng-bootstrap/ng-bootstrap';
 
@@ -11,11 +11,12 @@ import { ImageModalComponent } from '../image-modal/image-modal.component';
 @Component({
   selector: 'app-gallery-modal',
   templateUrl: './gallery-modal.component.html',
-  styleUrls: ['./gallery-modal.component.scss']
+  styleUrls: ['./gallery-modal.component.scss'],
+	changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class GalleryModalComponent implements OnInit {
+export class GalleryModalComponent {
 
-	@Input() albumHash:string;
+	@Input() image4Images: Observable<File[]>;
 
 	constructor(public activeModal: NgbActiveModal, private modalService: NgbModal, private imageService:ImagesService) {
 
@@ -25,13 +26,8 @@ export class GalleryModalComponent implements OnInit {
     gutter: 20,
   };
 
-	image4Images: Observable<File[]>;
-  limit = 15;
 
-  ngOnInit() {
-		this.image4Images = this.imageService.getAlbum(this.albumHash)
-			.pipe(map (p => p.files));
-  }
+  limit = 15;
 
 	itemsLoaded() {
     console.log('itemsloaded');
