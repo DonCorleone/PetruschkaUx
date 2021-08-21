@@ -8,9 +8,12 @@ import { ChangeDetectionStrategy, Component } from '@angular/core';
 })
 export class HistoryListComponent {
 
-	dateGte: Date = new Date(new Date().setFullYear(1753));;
+	dateGte: Date = new Date(new Date().setFullYear(1753));
+
 	dateLt: Date = new Date();
 
 	constructor() {
+		let d = new Date();
+		this.dateLt.setDate(d.getDate() - 60);
 	}
 }
