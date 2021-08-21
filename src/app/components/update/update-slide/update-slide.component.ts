@@ -25,12 +25,17 @@ export class UpdateSlideComponent implements AfterViewInit {
 	}
 
 	futureEvent(eventDetail: EventDetail):boolean {
-		return new Date(eventDetail.start) >= new Date()
+
+		let d = new Date();
+		d.setDate(d.getDate() - 60);
+
+		return new Date(eventDetail.start) >= d
 			&& new Date(eventDetail.start).getHours() !== 0;
 	}
 
 	pastEvent(eventDetail: EventDetail):boolean {
-		return new Date(eventDetail.start) < new Date()
+
+		return new Date(eventDetail.start) < new Date();
 	}
 
 	name(eventDetail: EventDetail) {

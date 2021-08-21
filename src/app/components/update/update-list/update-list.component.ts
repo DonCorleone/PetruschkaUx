@@ -1,4 +1,5 @@
 import {ChangeDetectionStrategy, Component, Input, OnInit} from '@angular/core';
+import { NavigationEnd } from '@angular/router';
 import {Observable} from 'rxjs';
 import {EventDetail} from 'src/app/models/event.models';
 import {EventService} from 'src/app/services/event.service';
@@ -26,6 +27,8 @@ export class UpdateListComponent implements OnInit {
 		if (this.usage==="history") {
 			this.eventDetails$ = this.eventService.GetPastEventDetails(this.dateGte, this.dateLt);
 		}else{
+
+			this.dateGte.setDate(this.dateGte.getDate() - 60);
 			this.eventDetails$ = this.eventService.GetUpcomingEventDetails(this.dateGte, this.dateLt);
 		}
 	}
