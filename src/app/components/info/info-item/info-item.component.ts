@@ -10,6 +10,7 @@ import {StaffService} from '../../../services/staff.service';
 import { GalleryModalComponent } from '../../gallery/gallery-modal/gallery-modal.component';
 import { ImagesService, File } from 'src/app/services/images.service';
 import { map } from 'rxjs/operators';
+import { Press, PressService } from 'src/app/services/press.service';
 
 @Component({
 	selector: 'app-info-item',
@@ -27,12 +28,13 @@ export class InfoComponent implements OnChanges {
 
 	artistsArray: Job[];
 	image4Images$: Observable<File[]>;
+	pressArticle$: Observable<Press>;
 
 	constructor(
 		private sanitizer: DomSanitizer,
 		private modalService: NgbModal,
-		private staffService: StaffService,
-		private imageService: ImagesService) {
+		private imageService: ImagesService,
+		private pressService: PressService) {
 	}
 
 	get locationName(): string {
@@ -91,6 +93,10 @@ export class InfoComponent implements OnChanges {
 		}
 		this.image4Images$ = this.imageService.getAlbum(this.eventKey)
 		.pipe(map (p => p.files));
+
+		this.pressArticle$ = this.pressService.GetPressArticles().pipe(
+			map((result) => result.find(article => article.nr === this.eventKey))
+		);
 	}
 
 	openStaff(staffName: string) {

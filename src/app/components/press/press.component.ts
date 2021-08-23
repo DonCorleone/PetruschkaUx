@@ -38,8 +38,8 @@ export class PressComponent implements OnInit {
 		this.pressArticles$ = this.pressService.GetPressArticles().pipe(
 			map((result) => result.slice().sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime()))
 		);
-
   }
+
 	arrowLeft():void{
 		this.carousel.pause();
 		this.carousel.prev();
