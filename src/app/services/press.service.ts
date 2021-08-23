@@ -5,9 +5,12 @@ import {map} from 'rxjs/operators';
 
 export interface Press {
 		author: string;
-		date: any;
+		date: Date;
 		desc: string;
-		nr: number;
+		fileExtension: string;
+		link: string;
+		nr: string;
+		quote: string;
 		source: string;
 }
 
@@ -22,6 +25,9 @@ export interface GetPressArticlesResponse {
 const GET_PRESS_ARTICLES = gql`
 	query GetPressArticles {
 		presses {
+			quote
+      fileExtension
+      link
 			nr
 			desc
 			author
@@ -47,6 +53,7 @@ export class PressService {
 			.watchQuery<Articles>({
 				query: GET_PRESS_ARTICLES
 			})
-			.valueChanges.pipe(map((result) => result.data.presses));
+			.valueChanges.pipe(
+				map((result) => result.data.presses));
 	}
 }

@@ -1,6 +1,7 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { NgbCarousel, NgbCarouselConfig } from '@ng-bootstrap/ng-bootstrap';
 import { Observable } from 'rxjs';
+import { map } from 'rxjs/operators';
 import { Press, PressService } from 'src/app/services/press.service';
 
 @Component({
@@ -34,7 +35,9 @@ export class PressComponent implements OnInit {
 	 }
 
   ngOnInit(): void {
-		this.pressArticles$ = this.pressService.GetPressArticles();
+		this.pressArticles$ = this.pressService.GetPressArticles().pipe(
+			map((result) => result.slice().sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime()))
+		);
 
   }
 	arrowLeft():void{
