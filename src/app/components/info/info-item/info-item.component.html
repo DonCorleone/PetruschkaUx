@@ -26,8 +26,8 @@
 	</div>
 	<div class="modal-item-content">
 			<video width="100%" controls>
-				<source #video [src]="'https://cdn.image4.io/petruschka/Movies/' + eventKey + '/' + eventKey +'.mp4'" type="video/mp4" (error)="video.hidden = true" [hidden]="video.hidden">
-				<source #video [src]="'https://cdn.image4.io/petruschka/Movies/' + eventKey + '/' + eventKey +'.webm'" type="video/webm" (error)="video.hidden = true" [hidden]="video.hidden">
+				<source #video [src]="'assets/videos/' + eventKey + '/' + eventKey +'.mp4'" type="video/mp4" (error)="video.hidden = true" [hidden]="video.hidden">
+				<source #video [src]="'assets/videos/' + eventKey + '/' + eventKey +'.webm'" type="video/webm" (error)="video.hidden = true" [hidden]="video.hidden">
 				Your browser does not support the video tag.
 			</video>
 	</div>
@@ -81,7 +81,7 @@
 	</div>
 	<div class="modal-item-content">
 			<div *ngIf="pressArticle$ | async as article">
-				<p><em>{{article.quote}}</em></p>
+				<p><span class="quote-icon-left"><i class="fas fa-quote-left"></i></span><em>{{article.quote}}</em><span class="quote-icon-right"><i class="fas fa-quote-right"></i></span></p>
 				<div class="image-box">
 					<a [href]="'assets/images/presse/' + article.nr + '.' + article.fileExtension" target="_blank">
 						<img [src]="'assets/images/presse/' + article.nr + '.png'" [alt]="article.desc" />

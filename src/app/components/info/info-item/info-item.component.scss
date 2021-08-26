@@ -3,4 +3,21 @@
 	align-items: center;
 	flex-direction: column;
 	width: 100%;
+	a{
+		width:100%;
+		img{
+			width: 100%;
+		}
+	}
 }
+
+.quote-icon-left{
+	font-size: large;
+	padding-right: 20px;
+}
+
+.quote-icon-right{
+	font-size: large;
+	padding-left: 20px;
+}
+
