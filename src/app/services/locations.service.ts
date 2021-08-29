@@ -30,7 +30,7 @@ export class LocationsService {
 	}
 
 	GetEventLocation(nameIn: string): Observable<EventLocation> {
-		console.log(`GetEventLocation`);
+		// console.log(`GetEventLocation`);
 		return this.apollo
 			.watchQuery<GetEventLocationByName>({
 				query: GET_LOCATION_BY_NAME,

@@ -11,7 +11,7 @@ export class ImagesService {
 	}
 
 	getAlbum(albumHash:String):Observable<Image4Response> {
-		console.log(`getAlbum`);
+		// console.log(`getAlbum`);
 		const httpOptions = {
 			headers: new HttpHeaders({
 				'Content-Type':  'application/json',

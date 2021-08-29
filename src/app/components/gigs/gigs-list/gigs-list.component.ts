@@ -1,7 +1,7 @@
 import {ChangeDetectionStrategy, Component, OnInit} from '@angular/core';
 import {Observable} from 'rxjs';
-import {EventDetail, EventDetailEventInfo} from 'src/app/models/event.models';
-import {EventService, TicketPrice} from 'src/app/services/event.service';
+import {EventDetail, EventDetailEventInfo, TicketPrice} from 'src/app/models/event.models';
+import {EventService} from 'src/app/services/event.service';
 
 @Component({
 	selector: 'app-gigs-list',

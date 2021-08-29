@@ -34,7 +34,7 @@ export class SponsorsService {
 				query: GET_SPONSORING
 			})
 			.valueChanges.pipe(
-				tap((result) => console.log(JSON.stringify(result.data.sponsors))),
+				// tap((result) => // console.log(JSON.stringify(result.data.sponsors))),
 				map(
 					(result) => {
 						return event !== ""

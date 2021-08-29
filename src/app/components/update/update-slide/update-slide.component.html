@@ -13,9 +13,15 @@
 		<h3 class="title">{{name(eventDetail)}}</h3>
 		<!--div class="desc"-->
 			<div class="countdown">
-				<div class="countdown-box" *ngIf="superfutureEvent(eventDetail)"><span>Premiere: </span><span class="number">{{ eventDetail.start | date:'MMMM YYYY' : '' :'de-CH'}}</span></div>
-				<div class="countdown-box" *ngIf="futureEvent(eventDetail)"><span>Premiere: </span><span class="number">{{ eventDetail.start | date:'dd.MM.YY, HH:mm' : '' :'de-CH'}}</span></div>
-				<div class="countdown-box" *ngIf="pastEvent(eventDetail)"><span>Uraufführung: </span><span class="number">{{ eventDetail.start | date:'MMMM YYYY' : '' :'de-CH'}}</span></div>
+
+				<div *ngIf="futureEvent(eventDetail); then thenBlock else elseBlock"></div>
+					<ng-template #thenBlock>
+						<div class="countdown-box"><span [innerText]="featurePremiereEvent(eventDetail) + ': '"></span><span class="number">{{ eventDetail.start | date:'dd.MM.YY, HH:mm' : '' :'de-CH'}}</span></div>
+					</ng-template>
+					<ng-template #elseBlock>
+						<div class="countdown-box" *ngIf="superfutureEvent(eventDetail)"><span>Premiere: </span><span class="number">{{ eventDetail.start | date:'MMMM YYYY' : '' :'de-CH'}}</span></div>
+						<div class="countdown-box" *ngIf="pastEvent(eventDetail)"><span>Uraufführung: </span><span class="number">{{ eventDetail.start | date:'MMMM YYYY' : '' :'de-CH'}}</span></div>
+					</ng-template>
 			</div>
 			<!--//countdown-->
 			<div class="description-button-block">

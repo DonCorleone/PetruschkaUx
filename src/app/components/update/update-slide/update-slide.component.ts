@@ -24,13 +24,14 @@ export class UpdateSlideComponent implements AfterViewInit {
 			&& new Date(eventDetail.start).getHours() === 0;
 	}
 
+	featurePremiereEvent(eventDetail: EventDetail):string {
+		return eventDetail.googleAnalyticsTracker === "Premiere" ? "Premiere" : "Nächste Aufführung";
+	}
+
 	futureEvent(eventDetail: EventDetail):boolean {
 
-		let d = new Date();
-		d.setDate(d.getDate() - 60);
-
-		return new Date(eventDetail.start) >= d
-			&& new Date(eventDetail.start).getHours() !== 0;
+		return new Date(eventDetail.start) >= new Date()
+			&& new Date(eventDetail.start).getHours() !== 0
 	}
 
 	pastEvent(eventDetail: EventDetail):boolean {
