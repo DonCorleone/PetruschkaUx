@@ -1,6 +1,8 @@
 <div class="modal-item">
-		<div class="modal-item-content">
-			<div class="shortDesc">{{ shortDesc }}</div>
+	<div class="modal-item-content">
+			<div class="shortDesc">
+				{{ shortDesc }}
+			</div>
 	</div>
 	<div class="modal-item-footer" *ngIf="image4Images$ | async">
 		<a (click)="openGallery()" class="btn btn-sm btn-ghost-secondary">Impressionen</a>
@@ -13,19 +15,9 @@
 	<div class="modal-item-title">
 		Plot
 	</div>
-		<div class="modal-item-content">
-			<div [innerHTML]="plot"></div>
-			<div *ngIf="usage !== 'CD' && usage !== 'Tournee'">
-				<p><strong><em>Coronamassnahmen</em></strong></p>
-				<ul>
-					<li><em>Wir bitten die Erwachsenen, im Theater Masken zu tragen</em></li>
-					<li><em>Das Theater verf&uuml;gt &uuml;ber div. Luftreiniger</em></li>
-					<li><em>Desinfektionsmittel stehen zur Verf&uuml;gung</em></li>
-					<li><em>Die Zuschauerzahl ist beschr&auml;nkt</em></li>
-				</ul>
-			</div>
-		</div>
-
+	<div class="modal-item-content">
+		<div [innerHTML]="plot"></div>
+	</div>
 </div>
 
 <div class="modal-item" [hidden]="video.hidden">
@@ -34,8 +26,8 @@
 	</div>
 	<div class="modal-item-content">
 			<video width="100%" controls>
-				<source #video [src]="'https://cdn.image4.io/petruschka/Movies/' + eventKey + '/' + eventKey +'.mp4'" type="video/mp4" (error)="video.hidden = true" [hidden]="video.hidden">
-				<source #video [src]="'https://cdn.image4.io/petruschka/Movies/' + eventKey + '/' + eventKey +'.webm'" type="video/webm" (error)="video.hidden = true" [hidden]="video.hidden">
+				<source #video [src]="'assets/videos/' + eventKey + '/' + eventKey +'.mp4'" type="video/mp4" (error)="video.hidden = true" [hidden]="video.hidden">
+				<source #video [src]="'assets/videos/' + eventKey + '/' + eventKey +'.webm'" type="video/webm" (error)="video.hidden = true" [hidden]="video.hidden">
 				Your browser does not support the video tag.
 			</video>
 	</div>
@@ -45,10 +37,8 @@
 	<div class="modal-item-title">
 		{{ locationLabel }}
 	</div>
-	<div>
-		<div class="modal-item-content">
-			<a (click)="openLocation(locationName)" class="location-link"><i class="fas fa-external-link-square-alt"></i> {{ locationName }}</a>
-		</div>
+	<div class="modal-item-content">
+		<a (click)="openLocation(locationName)" class="location-link"><i class="fas fa-external-link-square-alt"></i> {{ locationName }}</a>
 	</div>
 </div>
 
@@ -56,11 +46,9 @@
 	<div class="modal-item-title">
 		{{ playDateLabel }}
 	</div>
-	<div>
 		<div class="modal-item-content">
 			<span>{{ this.playDate | date:'fullDate' : '' :'de-CH'}}</span> <span
 			*ngIf="isFutureEvent"> um {{ this.playDate | date:'HH:mm' : '' :'de-CH' }}</span>
-		</div>
 	</div>
 </div>
 
@@ -68,27 +56,62 @@
 	<div class="modal-item-title">
 		Mitwirkende
 	</div>
-	<div>
-		<div class="modal-item-content">
-			<div *ngFor="let job of artistsArray">
-				<div *ngIf="job.isJobSharing">
-					{{ job.name }} {{ job.name !== '' ? ' : ' : '' }}
-					<span *ngFor="let jobValue of job.values; let isLast=last">
-              <a (click)="openStaff(jobValue)" class="staff-link"><i class="fas fa-external-link-square-alt"></i> {{ jobValue }}</a> {{isLast ? '' : ' & '}}
-						<!-- <a [routerLink]="['/staff', jobsharer]">{{ jobsharer }}</a> {{isLast ? '' : ' & '}} -->
-            </span>
-				</div>
-				<div *ngIf="!job.isJobSharing">
-					<a (click)="openStaff(job.name)" class="staff-link"><i class="fas fa-external-link-square-alt"></i> {{ job.name }}</a> {{ job.name !== '' ? ' : ' : '' }}
-					<span *ngFor="let jobValue of job.values; let isLast=last">
-						{{ jobValue }} {{isLast ? '' : ' & '}}
-            </span>
-				</div>
+	<div class="modal-item-content">
+		<div *ngFor="let job of artistsArray">
+			<div *ngIf="job.isJobSharing">
+				{{ job.name }} {{ job.name !== '' ? ' : ' : '' }}
+				<span *ngFor="let jobValue of job.values; let isLast=last">
+						<a (click)="openStaff(jobValue)" class="staff-link"><i class="fas fa-external-link-square-alt"></i> {{ jobValue }}</a> {{isLast ? '' : ' & '}}
+					<!-- <a [routerLink]="['/staff', jobsharer]">{{ jobsharer }}</a> {{isLast ? '' : ' & '}} -->
+					</span>
+			</div>
+			<div *ngIf="!job.isJobSharing">
+				<a (click)="openStaff(job.name)" class="staff-link"><i class="fas fa-external-link-square-alt"></i> {{ job.name }}</a> {{ job.name !== '' ? ' : ' : '' }}
+				<span *ngFor="let jobValue of job.values; let isLast=last">
+					{{ jobValue }} {{isLast ? '' : ' & '}}
+					</span>
 			</div>
 		</div>
 	</div>
 </div>
 
-<div class="modal-item last" *ngIf="artistsArray && artistsArray.length > 0">
+<div class="modal-item" *ngIf="artistsArray && artistsArray.length > 0">
+	<div class="modal-item-title">
+		Pressestimmen
+	</div>
+	<div class="modal-item-content">
+			<div *ngIf="pressArticle$ | async as article">
+				<p><span class="quote-icon-left"><i class="fas fa-quote-left"></i></span><em>{{article.quote}}</em><span class="quote-icon-right"><i class="fas fa-quote-right"></i></span></p>
+				<div class="image-box">
+					<a [href]="'assets/images/presse/' + article.nr + '.' + article.fileExtension" target="_blank">
+						<img [src]="'assets/images/presse/' + article.nr + '.png'" [alt]="article.desc" />
+					</a>
+					<p><a [href]="article.link" target="_blank">Link zum Artikel</a></p>
+				</div>
+				<p>
+					<span>'{{article.desc}}'</span>
+					<span *ngIf="article.author !== ''">- von {{article.author}}</span>
+					<span *ngIf="article.source !== ''">- {{article.source}}</span>
+					<span> vom {{ article.date | date:'mediumDate' : '' :'de-CH' }}</span>
+				</p>
+			</div>
+	</div>
+</div>
+
+<div class="modal-item" *ngIf="usage !== 'CD' && usage !== 'Tournee'">
+	<div class="modal-item-title">
+		<em>Coronamassnahmen</em>
+	</div>
+	<div class="modal-item-content">
+		<ul>
+			<li><em>Wir bitten die Erwachsenen, im Theater Masken zu tragen</em></li>
+			<li><em>Das Theater verf&uuml;gt &uuml;ber div. Luftreiniger</em></li>
+			<li><em>Desinfektionsmittel stehen zur Verf&uuml;gung</em></li>
+			<li><em>Die Zuschauerzahl ist beschr&auml;nkt</em></li>
+		</ul>
+	</div>
+</div>
+
+<div class="modal-item last">
 	<app-sponsors [eventKey]=eventKey></app-sponsors>
 </div>

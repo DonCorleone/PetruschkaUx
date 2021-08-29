@@ -15,9 +15,9 @@ export class SponsorsComponent implements OnInit {
 	@Input() eventKey:String;
 
  	getShare(sponsor:Sponsor): Number{
-		console.log('EventKey: ' + this.eventKey);
-		console.log(sponsor);
-		console.log(sponsor.events);
+		// console.log('EventKey: ' + this.eventKey);
+		// console.log(sponsor);
+		// console.log(sponsor.events);
 		return sponsor?.events.find(p => p.event === this.eventKey)?.share;
 	}
   constructor(private sponsorsService:SponsorsService) { }

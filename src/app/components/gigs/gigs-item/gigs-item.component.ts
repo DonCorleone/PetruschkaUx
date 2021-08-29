@@ -1,7 +1,7 @@
 import {ChangeDetectionStrategy, Component, Input, OnInit} from '@angular/core';
 import {NgbModal} from '@ng-bootstrap/ng-bootstrap';
-import {EventDetail, EventDetailEventInfo, TicketType} from 'src/app/models/event.models';
-import { EventService, TicketPrice } from 'src/app/services/event.service';
+import {EventDetail, EventDetailEventInfo, TicketPrice, TicketType} from 'src/app/models/event.models';
+import { EventService } from 'src/app/services/event.service';
 import {InfoModalComponent} from '../../info/info-modal/info-modal.component';
 import {LocationModalComponent} from '../../location/location-modal/location-modal.component';
 

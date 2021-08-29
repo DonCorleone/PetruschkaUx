@@ -162,6 +162,41 @@ export interface EventDetail {
 	ticketTypes: TicketType[];
 }
 
+export interface EventInfo {
+		flyerImagePath: string;
+		importantNotes: string;
+		languageId: number;
+		name: string;
+		shortDescription: string;
+}
+
+export interface GetEventInfoById {
+	eventDetail: EventDetail;
+	notificationEmail: string;
+}
+
+export interface EventDetailsResponse {
+	eventDetails: EventDetail[];
+}
+
+export interface TicketPrice {
+	name:string,
+	currency:string,
+	price:number
+}
+
+export interface EventDetailViewModel {
+		eventDetail: EventDetail;
+}
+
+export interface UpcomingEventDetailsResponse {
+		nextGigPerUpcomingEvent: EventDetailViewModel[];
+}
+
+export interface PastEventDetailsResponse {
+	pastEvents: EventDetailViewModel[];
+}
+
 export interface EventCalculationDefinition {
 	currency: string;
 	fromAmount: number;

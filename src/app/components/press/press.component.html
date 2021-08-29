@@ -11,8 +11,8 @@
 		</a>
 	</div>
 	<ngb-carousel #carousel *ngIf="pressArticles$">
-		<ng-template ngbSlide *ngFor="let article of pressArticles$ | async; index as i">
-			<a [href]="'assets/images/presse/Image_' + article.nr + '.pdf'" target="_blank">
+		<ng-template ngbSlide *ngFor="let article of pressArticles$ | async">
+			<a [href]="'assets/images/presse/' + article.nr + '.' + article.fileExtension" target="_blank">
 				<div class="carousel-caption">
 					<p *ngIf="getDate(article) as articleDate">
 						<span>'{{article.desc}}'</span>
@@ -21,7 +21,7 @@
 						<span *ngIf="articleDate < todayDate" > vom {{ articleDate | date:'mediumDate' : '' :'de-CH' }}</span>
 					</p>
 				</div>
-				<img [src]="'assets/images/presse/Image_' + article.nr + '.png'" [alt]="article.desc" />
+				<img [src]="'assets/images/presse/' + article.nr + '.png'" [alt]="article.desc" />
 			</a>
 		</ng-template>
 
