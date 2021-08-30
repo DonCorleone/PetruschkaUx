@@ -1,0 +1,29 @@
+B  2003 Wintermäusemärchen
+B  2004 Das Geheimnis im Teich
+X  2005 Fliegen wär so schön
+B  2006 Ein Geschenk für den Vogel
+B  2007 Ach, diese Hühner
+B  2008 Biba baut
+B  2009 Ein Maulwurf fliegt weg
+X  2010 Der weisse Wolf
+X  2011 Krah
+X  2012 S’tanzende Meersäuli
+X  2013 De Has wott ned schlofe
+X  2014 Beschti	Fründe
+X  2015 Di chli Fee schickt de Winter wäg
+X  2016 Lutra	ond s’Gheimnis im See
+X  2017 Sonne, Schnee ond Donnerwätter
+X  <a (click)="scrollTo('history-2018w')" 2018 De wissi Wolf (Wiederaufnahme des Stücks „Der weisse Wolf“ aus dem Jahr 2010 mit Anpassung an die	aktuelle Aussstellung „Wolf“ im Natur-Museum)</a>
+X  <a (click)="scrollTo('history-2015s')" 2019 Karneval der Tiere (Wiederaufnahme des Stücks von 2015 im Naturmuseum)</a>
+  
+A  2013 Der fliegende Holländer, Adaption der gleichnamigen Oper von Richard Wagner für Kinder (im Anschluss eine Arie gesungen von Madeleine Wibom
+A  2014 Rusalka Adaption der gleichnamigen Oper von Antonin Dvorak für Kinder (Im
+
+
+X  2015 Der Karneval der Tiere mit der Musik von Camille Saint-Saens
+X  2016 Die Aufziehprinzessin mit Musik von Bartok, Offenbach, Vivaldi und Vuille.
+X  <a (click)="scrollTo('history-2017s')"2017 Die Zaubermuschel mit Musik von Satie, Mussorsky und Vuille.</a>
+X  <a (click)="scrollTo('history-2018s')"2018 Das Traumland mit Musik von Grieg, Prokofiev, Rachmaninov und Vuille.</a>
+X  <a (click)="scrollTo('history-2019s')"2019 Der Zauberladen, mit Musik von Debussy, Faure, Ravel</a>
+X  <a (click)="scrollTo('history-2020h')"2020 De tapferi Puck rettet s‘Elferiich, mit der Musik von Mendelsohn, Schubert, Bizet, Brassens.</a>
+X  <a (click)="scrollTo('history-2021h')"2021 Peter und der Wolf 2</a>
