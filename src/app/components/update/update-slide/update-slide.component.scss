@@ -11,6 +11,11 @@ img {
 	}
 }
 :host-context(.updates-block) {
+
+	.slide {
+		max-width: 500px;
+	}
+
 	.media-thumb {
 		position: relative;
 		cursor: pointer;
@@ -162,9 +167,6 @@ img {
 // Large devices (desktops, 992px and up)
 @media (min-width: 992px) {
 
-	.list-content {
-	//	padding-left: 30px;
-	}
 	.list-content .btn-cta {
 		position: absolute;
 	}
@@ -180,7 +182,6 @@ img {
 	}
 	.slide {
 		min-width: 330px;
-		max-width: 500px;
 	}
 }
 
