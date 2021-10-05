@@ -25,7 +25,12 @@ export class GigsItemComponent implements OnInit {
 	}
 
 	get eventLink() {
-		return this.eventInfoDe ? 'https://www.ticketino.com/de/Event/' + this.eventInfoDe.name + '/' + this.eventId : '';
+
+		if (this.eventInfoDe?.url?.includes('petruschka.ch')){
+			return this.eventInfoDe ? 'https://www.ticketino.com/de/Event/' + this.eventInfoDe.name + '/' + this.eventId : '';
+		}else{
+			return this.eventInfoDe?.url;
+		}
 	}
 
 	get showBuyButton(): boolean {

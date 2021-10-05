@@ -121,6 +121,7 @@ const GET_UPCOMING_GIGS = gql`
           name
           location
           languageId
+					url
         },
 				ticketTypes{
 					sortOrder
