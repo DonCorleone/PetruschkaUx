@@ -4,6 +4,7 @@ import {EventDetail, EventDetailEventInfo, TicketPrice, TicketType} from 'src/ap
 import { EventService } from 'src/app/services/event.service';
 import {InfoModalComponent} from '../../info/info-modal/info-modal.component';
 import {LocationModalComponent} from '../../location/location-modal/location-modal.component';
+import { TicketModalComponent } from '../../ticket/ticket-modal/ticket-modal.component';
 
 @Component({
 	selector: 'app-gigs-item',
@@ -27,6 +28,8 @@ export class GigsItemComponent implements OnInit {
 	get eventLink() {
 
 		if (this.eventInfoDe?.url?.includes('petruschka.ch')){
+			return 'modal';
+		}else if (this.eventInfoDe?.url?.includes('ticketino.com')){
 			return this.eventInfoDe ? 'https://www.ticketino.com/de/Event/' + this.eventInfoDe.name + '/' + this.eventId : '';
 		}else{
 			return this.eventInfoDe?.url;
@@ -52,6 +55,16 @@ export class GigsItemComponent implements OnInit {
 	}
 
 	ngOnInit(): void {
+	}
+
+
+	openTicket(): void {
+		var eventLink = this.eventLink;
+		if (eventLink == 'modal') {
+			const modalRef = this.modalService.open(TicketModalComponent, { size:'md' });
+		}else {
+			window.open(eventLink, "_blank");
+		}
 	}
 
 	openInfo(): void {

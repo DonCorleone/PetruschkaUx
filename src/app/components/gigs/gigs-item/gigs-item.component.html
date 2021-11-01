@@ -31,7 +31,7 @@
 		<!--//info-content-->
 		<div class="gig-actions">
 			<span>
-        <a *ngIf="showBuyButton" [href]="[eventLink]" class="btn btn-sm btn-secondary" target="_blank">Tickets</a>
+        <a *ngIf="showBuyButton" (click)="openTicket()" class="btn btn-sm btn-secondary">Tickets</a>
       </span>
 			<span *ngIf="showIsGone" class="secondary-content">
         Vorstellung vorüber.
