@@ -19,7 +19,6 @@ async function getValidAccessToken(): Promise<string> {
 	}
 
 	// Get a valid access token for the current user
-	localStorage.setItem('token', app.currentUser.accessToken);
 	return app.currentUser.accessToken;
 }
 

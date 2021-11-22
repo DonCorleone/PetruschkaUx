@@ -21,16 +21,38 @@ import { ImageModalComponent } from './components/gallery/image-modal/image-moda
 import { HttpErrorInterceptor } from './services/http-error-interceptor.service';
 import { TicketModalComponent } from './components/ticket/ticket-modal/ticket-modal.component';
 import { TicketItemComponent } from './components/ticket/ticket-item/ticket-item.component';
+import * as Realm from "realm-web";
 const uri = realm.graphqlUrl;
 
 export function createApollo(httpLink: HttpLink): ApolloClientOptions<any> {
+	const accessToken = getValidAccessToken();
 	return {
 		link: httpLink.create({
 			uri,
-			headers: new HttpHeaders().set('Authorization', `Bearer ${localStorage.getItem('token')}`)
+			headers: new HttpHeaders().set('Authorization', `Bearer ${accessToken}`)
 		}),
 		cache: new InMemoryCache()
 	};
+}
+
+// Connect to your MongoDB Realm app
+const app = new Realm.App(process.env.APP_ID_REALM);
+
+// Get a valid Realm user access token to authenticate requests
+function getValidAccessToken(): string {
+	if (!app.currentUser)
+		// If no user is logged in, log in an anonymous user
+	{
+		app.logIn(Realm.Credentials.anonymous());
+	} else
+		// The logged in user's access token might be stale,
+		// Refreshing custom data also refreshes the access token
+	{
+		app.currentUser.refreshCustomData();
+	}
+
+	// Get a valid access token for the current user
+	return app.currentUser.accessToken;
 }
 
 @NgModule({
