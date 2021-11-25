@@ -17,7 +17,8 @@ async function getValidAccessToken(): Promise<string> {
 		// The logged in user's access token might be stale,
 		// Refreshing custom data also refreshes the access token
 	{
-		await app.currentUser.refreshAccessToken();
+		await app.currentUser.logOut();
+		await app.logIn(Realm.Credentials.anonymous());
 		await app.currentUser.refreshCustomData();
 	}
 
