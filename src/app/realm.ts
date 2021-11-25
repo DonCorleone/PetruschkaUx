@@ -7,6 +7,8 @@ const app = new Realm.App(process.env.APP_ID_REALM);
 
 // Get a valid Realm user access token to authenticate requests
 async function getValidAccessToken(): Promise<string> {
+
+
 	if (!app.currentUser)
 		// If no user is logged in, log in an anonymous user
 	{
@@ -15,10 +17,12 @@ async function getValidAccessToken(): Promise<string> {
 		// The logged in user's access token might be stale,
 		// Refreshing custom data also refreshes the access token
 	{
+		await app.currentUser.refreshAccessToken();
 		await app.currentUser.refreshCustomData();
 	}
 
 	// Get a valid access token for the current user
+	sessionStorage.setItem('token', app.currentUser.accessToken)
 	return app.currentUser.accessToken;
 }
 
