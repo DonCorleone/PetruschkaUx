@@ -12,18 +12,24 @@ async function getValidAccessToken(): Promise<string> {
 	if (!app.currentUser)
 		// If no user is logged in, log in an anonymous user
 	{
-		await app.logIn(Realm.Credentials.anonymous());
+		await app.logIn(Realm.Credentials.anonymous()).then(o=>{
+			sessionStorage.setItem('token', app.currentUser.accessToken)
+			return app.currentUser.accessToken;
+		});
 	} else
 		// The logged in user's access token might be stale,
 		// Refreshing custom data also refreshes the access token
 	{
-		await app.currentUser.logOut();
-		await app.logIn(Realm.Credentials.anonymous());
-		await app.currentUser.refreshCustomData();
+
+
+		await app.currentUser.refreshCustomData().then(z=>{
+			sessionStorage.setItem('token', app.currentUser.accessToken)
+			return app.currentUser.accessToken;
+		});
 	}
 
 	// Get a valid access token for the current user
-	sessionStorage.setItem('token', app.currentUser.accessToken)
+
 	return app.currentUser.accessToken;
 }
 
