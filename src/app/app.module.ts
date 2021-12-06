@@ -19,13 +19,15 @@ import {InfoComponent} from './components/info/info-item/info-item.component';
 import {ScullyLibModule} from '@scullyio/ng-lib';
 import { ImageModalComponent } from './components/gallery/image-modal/image-modal.component';
 import { HttpErrorInterceptor } from './services/http-error-interceptor.service';
+import { TicketModalComponent } from './components/ticket/ticket-modal/ticket-modal.component';
+import { TicketItemComponent } from './components/ticket/ticket-item/ticket-item.component';
 const uri = realm.graphqlUrl;
 
 export function createApollo(httpLink: HttpLink): ApolloClientOptions<any> {
 	return {
 		link: httpLink.create({
 			uri,
-			headers: new HttpHeaders().set('Authorization', `Bearer ${localStorage.getItem('token')}`)
+			headers: new HttpHeaders().set('Authorization', `Bearer ${sessionStorage.getItem('token')}`)
 		}),
 		cache: new InMemoryCache()
 	};
@@ -36,6 +38,8 @@ export function createApollo(httpLink: HttpLink): ApolloClientOptions<any> {
 		AppComponent,
 		ScrollSpyDirective,
 		ImageModalComponent,
+		TicketModalComponent,
+		TicketItemComponent,
 	],
 	imports: [
 		BrowserModule,

@@ -7,6 +7,7 @@ import { EventDetail, EventDetailEventInfo, EventDetailsResponse, GetEventInfoBy
 const GET_EVENTDETAILS_BYTAG = gql`
 query {
 	eventDetails (
+    sortBy: START_DESC,
 		query: {
 			OR: [
 				{googleAnalyticsTracker_in: "CD"}
@@ -14,6 +15,7 @@ query {
 				{googleAnalyticsTracker_in: "Tournee"}
 				{googleAnalyticsTracker_in: "Premiere|Tournee"}
 				{googleAnalyticsTracker_in: "Tournee|CD"}
+				{googleAnalyticsTracker_in: "Premiere|CD"}
 			]
 		}
 	)
@@ -91,6 +93,7 @@ const GET_EVENTINFO_BYEVENTID = gql`
         location
         bannerImagePath
         artists
+				url
       }
 			notificationEmail
 			facebookPixelId
@@ -98,6 +101,7 @@ const GET_EVENTINFO_BYEVENTID = gql`
 			start
 			ticketTypes{
 				sortOrder
+        preSaleStart
 				ticketTypeInfos {
 					languageId
 					imageUrl
@@ -121,6 +125,7 @@ const GET_UPCOMING_GIGS = gql`
           name
           location
           languageId
+					url
         },
 				ticketTypes{
 					sortOrder

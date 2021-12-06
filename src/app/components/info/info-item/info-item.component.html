@@ -75,38 +75,41 @@
 	</div>
 </div>
 
-<div class="modal-item" *ngIf="artistsArray && artistsArray.length > 0">
+<div class="modal-item" *ngIf="pressArticle$ | async as article">
 	<div class="modal-item-title">
 		Pressestimmen
 	</div>
 	<div class="modal-item-content">
-			<div *ngIf="pressArticle$ | async as article">
-				<p><span class="quote-icon-left"><i class="fas fa-quote-left"></i></span><em>{{article.quote}}</em><span class="quote-icon-right"><i class="fas fa-quote-right"></i></span></p>
-				<div class="image-box">
-					<a [href]="'assets/images/presse/' + article.nr + '.' + article.fileExtension" target="_blank">
-						<img [src]="'assets/images/presse/' + article.nr + '.png'" [alt]="article.desc" />
-					</a>
-					<p><a [href]="article.link" target="_blank">Link zum Artikel</a></p>
-				</div>
-				<p>
-					<span>'{{article.desc}}'</span>
-					<span *ngIf="article.author !== ''">- von {{article.author}}</span>
-					<span *ngIf="article.source !== ''">- {{article.source}}</span>
-					<span> vom {{ article.date | date:'mediumDate' : '' :'de-CH' }}</span>
-				</p>
+			<p><span class="quote-icon-left"><i class="fas fa-quote-left"></i></span><em>{{article.quote}}</em><span class="quote-icon-right"><i class="fas fa-quote-right"></i></span></p>
+			<div class="image-box">
+				<a [href]="'assets/images/presse/' + article.nr + '.' + article.fileExtension" target="_blank">
+					<img [src]="'assets/images/presse/' + article.nr + '.png'" [alt]="article.desc" />
+				</a>
+				<p><a [href]="article.link" target="_blank">Link zum Artikel</a></p>
 			</div>
+			<p>
+				<span>'{{article.desc}}'</span>
+				<span *ngIf="article.author !== ''">- von {{article.author}}</span>
+				<span *ngIf="article.source !== ''">- {{article.source}}</span>
+				<span> vom {{ article.date | date:'mediumDate' : '' :'de-CH' }}</span>
+			</p>
 	</div>
 </div>
 
-<div class="modal-item" *ngIf="usage !== 'CD' && usage !== 'Tournee'">
+<div class="modal-item"*ngIf="showBuyButton">
+	<div class="modal-item-footer">
+		<a (click)="openTicket()" class="btn btn-sm btn-ghost-secondary">Tickets</a>
+	</div>
+</div>
+
+<div class="modal-item" *ngIf="isFutureEvent">
 	<div class="modal-item-title">
 		<em>Coronamassnahmen</em>
 	</div>
 	<div class="modal-item-content">
 		<ul>
-			<li><em>Wir bitten die Erwachsenen, im Theater Masken zu tragen</em></li>
+			<li><em>Einlass nur mit einem gültigen Covid-Zertifikat (3G: «Getestet», «Geimpft», «Genesen»)</em></li>
 			<li><em>Das Theater verf&uuml;gt &uuml;ber div. Luftreiniger</em></li>
-			<li><em>Desinfektionsmittel stehen zur Verf&uuml;gung</em></li>
 			<li><em>Die Zuschauerzahl ist beschr&auml;nkt</em></li>
 		</ul>
 	</div>
