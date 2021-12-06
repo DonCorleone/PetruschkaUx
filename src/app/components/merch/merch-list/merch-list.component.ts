@@ -30,6 +30,6 @@ export class MerchListComponent implements OnInit {
 	}
 
 	GetImageUrl(eventDetail: EventDetail):string{
-		return EventService.GetTicketTypeInfoFromEventDetail(eventDetail, 'Tournee').imageUrl;
+		return EventService.GetTicketTypeInfoFromEventDetail(eventDetail, 'Tournee')?.imageUrl;
 	}
 }

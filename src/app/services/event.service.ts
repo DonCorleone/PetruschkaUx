@@ -7,6 +7,7 @@ import { EventDetail, EventDetailEventInfo, EventDetailsResponse, GetEventInfoBy
 const GET_EVENTDETAILS_BYTAG = gql`
 query {
 	eventDetails (
+    sortBy: START_DESC,
 		query: {
 			OR: [
 				{googleAnalyticsTracker_in: "CD"}
@@ -14,6 +15,7 @@ query {
 				{googleAnalyticsTracker_in: "Tournee"}
 				{googleAnalyticsTracker_in: "Premiere|Tournee"}
 				{googleAnalyticsTracker_in: "Tournee|CD"}
+				{googleAnalyticsTracker_in: "Premiere|CD"}
 			]
 		}
 	)
