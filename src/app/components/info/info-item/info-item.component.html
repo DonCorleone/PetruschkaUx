@@ -96,6 +96,12 @@
 	</div>
 </div>
 
+<div class="modal-item"*ngIf="showBuyButton">
+	<div class="modal-item-footer">
+		<a (click)="openTicket()" class="btn btn-sm btn-ghost-secondary">Tickets</a>
+	</div>
+</div>
+
 <div class="modal-item" *ngIf="isFutureEvent">
 	<div class="modal-item-title">
 		<em>Coronamassnahmen</em>

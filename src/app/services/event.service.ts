@@ -91,6 +91,7 @@ const GET_EVENTINFO_BYEVENTID = gql`
         location
         bannerImagePath
         artists
+				url
       }
 			notificationEmail
 			facebookPixelId
@@ -98,6 +99,7 @@ const GET_EVENTINFO_BYEVENTID = gql`
 			start
 			ticketTypes{
 				sortOrder
+        preSaleStart
 				ticketTypeInfos {
 					languageId
 					imageUrl

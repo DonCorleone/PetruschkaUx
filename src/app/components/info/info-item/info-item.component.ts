@@ -11,6 +11,7 @@ import { GalleryModalComponent } from '../../gallery/gallery-modal/gallery-modal
 import { ImagesService, File } from 'src/app/services/images.service';
 import { map } from 'rxjs/operators';
 import { Press, PressService } from 'src/app/services/press.service';
+import {TicketModalComponent} from "../../ticket/ticket-modal/ticket-modal.component";
 
 @Component({
 	selector: 'app-info-item',
@@ -21,6 +22,8 @@ import { Press, PressService } from 'src/app/services/press.service';
 export class InfoComponent implements OnChanges {
 
 	@Input() eventInfo: EventDetailEventInfo;
+	@Input() eventInfoDe: EventDetailEventInfo;
+	@Input() eventId: number;
 	@Input() reservationMail: string;
 	@Input() usage: string;
 	@Input() playDate: Date;
@@ -29,12 +32,17 @@ export class InfoComponent implements OnChanges {
 	artistsArray: Job[];
 	image4Images$: Observable<File[]>;
 	pressArticle$: Observable<Press>;
+	@Input() preSaleStart: Date;
 
 	constructor(
 		private sanitizer: DomSanitizer,
 		private modalService: NgbModal,
 		private imageService: ImagesService,
 		private pressService: PressService) {
+	}
+
+	get showBuyButton(): boolean {
+		return (new Date(this.preSaleStart) <= new Date() && new Date(this.playDate) >= new Date());
 	}
 
 	get locationName(): string {
@@ -118,4 +126,22 @@ export class InfoComponent implements OnChanges {
 		modalRef.componentInstance.image4Images = this.image4Images$;
 	}
 
+	openTicket(): void {
+		var eventLink = this.eventLink;
+		if (eventLink == 'modal') {
+			const modalRef = this.modalService.open(TicketModalComponent, { size:'md' });
+		}else {
+			window.open(eventLink, "_blank");
+		}
+	}
+	get eventLink() {
+
+		if (this.eventInfoDe?.url?.includes('petruschka.ch')){
+			return 'modal';
+		}else if (this.eventInfoDe?.url?.includes('ticketino.com')){
+			return this.eventInfoDe ? 'https://www.ticketino.com/de/Event/' + this.eventInfoDe.name + '/' + this.eventId : '';
+		}else{
+			return this.eventInfoDe?.url;
+		}
+	}
 }

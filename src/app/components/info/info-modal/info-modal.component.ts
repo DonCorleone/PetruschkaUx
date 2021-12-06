@@ -33,4 +33,13 @@ export class InfoModalComponent implements OnInit {
 				)
 			)
 	}
+
+	GetPreSaleStartFromEventDetail(eventDetail: EventDetail): Date {
+		const ticketTypes = EventService.getSortedTicketType(eventDetail);
+		return ticketTypes && ticketTypes?.length > 0 ? ticketTypes[0].preSaleStart : null;
+	}
+
+	GetEventInfoFromEventDetail(eventDetail: EventDetail): EventDetailEventInfo {
+		return eventDetail.eventInfos.find(p => p.languageId === 1);
+	}
 }
