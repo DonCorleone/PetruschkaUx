@@ -174,7 +174,8 @@ const GET_UPCOMING_GIGS = gql`
 						languageId
 					}
 				},
-        start
+        start,
+        googleAnalyticsTracker
       }
     }
 `;
