@@ -7,7 +7,12 @@
 	<!--//date-label-->
 	<div class="gig-info">
 		<div class="info-content">
-			<h3 (click)="openInfo()" class="gig-title info-link">{{ eventInfoDe.name }}</h3>
+			<h3 class="gig-title info-link">
+				<span *ngIf="tag === 'cancelled'" class="cancel">Abgesagt! </span>
+				<span (click)="openInfo()" class="gig-title info-link" [ngClass]="{'cancelled' : tag === 'cancelled'}">
+					{{ eventInfoDe.name }}
+				</span>
+			</h3>
 			<div class="meta">
 				<ul class="meta-list list-inline">
 					<li class="list-inline-item location">
@@ -31,7 +36,9 @@
 		<!--//info-content-->
 		<div class="gig-actions">
 			<span>
-        <a *ngIf="showBuyButton" (click)="openTicket()" class="btn btn-sm btn-secondary">Tickets</a>
+        <a *ngIf="showBuyButton" (click)="openTicket()"
+					 class="btn btn-sm btn-secondary"
+					 [ngClass]="{'isDisabled' : tag === 'cancelled'}">Tickets</a>
       </span>
 			<span *ngIf="showIsGone" class="secondary-content">
         Vorstellung vorüber.

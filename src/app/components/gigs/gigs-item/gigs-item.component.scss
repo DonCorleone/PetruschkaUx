@@ -7,6 +7,24 @@
 		margin-bottom: 10px;
 		font-weight: 700;
 	}
+
+	span.cancel{
+			color: $error;
+	}
+
+	span.cancelled{
+		text-decoration-line: line-through;
+		text-decoration-color: $error;
+		text-decoration-thickness: 2px
+	}
+
+	a.isDisabled {
+		// color: currentColor;
+		cursor: not-allowed;
+		opacity: 0.5;
+		text-decoration: none;
+	}
+
 	.meta-list {
 		color: $text-color-grey;
 		a {
