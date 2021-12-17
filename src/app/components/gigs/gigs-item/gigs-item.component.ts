@@ -16,6 +16,7 @@ export class GigsItemComponent implements OnInit {
 
 	public isCollapsed = true;
 	@Input() start: Date;
+	@Input() tag: string;
 	@Input() preSaleStart: Date;
 	@Input() eventId: number;
 	@Input() eventInfoDe: EventDetailEventInfo;

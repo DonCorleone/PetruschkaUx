@@ -27,7 +27,7 @@ export function createApollo(httpLink: HttpLink): ApolloClientOptions<any> {
 	return {
 		link: httpLink.create({
 			uri,
-			headers: new HttpHeaders().set('Authorization', `Bearer ${sessionStorage.getItem('token')}`)
+			headers: new HttpHeaders().set('Authorization', `Bearer ${localStorage.getItem('token')}`)
 		}),
 		cache: new InMemoryCache()
 	};
