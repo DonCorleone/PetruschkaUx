@@ -3,6 +3,43 @@ import { map } from 'rxjs/operators';
 import { Observable } from 'rxjs';
 import { Apollo, gql } from 'apollo-angular';
 import { EventDetail, EventDetailEventInfo, EventDetailsResponse, GetEventInfoById, TicketPrice, TicketType, TicketTypeInfo, EventDetailViewModel, UpcomingEventDetailsResponse, PastEventDetailsResponse } from '../models/event.models';
+const GET_ALL_THE_STUFF = gql`
+query getAllTheStuff($cd: String, $tournee: String, $premiere: String) {
+  cd: eventDetailsPerUsage(input: $cd) {
+    ...eventDetail
+  }
+  tournee: eventDetailsPerUsage(input: $tournee) {
+    ...eventDetail
+  }
+	premiere: eventDetailsPerUsage(input: $premiere) {
+    ...eventDetail
+  }
+}
+
+fragment eventDetail on EventDetail {
+  _id
+  eventInfos {
+    name
+    languageId
+  }
+  facebookPixelId
+  googleAnalyticsTracker
+  ticketTypes {
+    sortOrder
+    ticketTypeInfos {
+      languageId
+      imageUrl
+      name
+    }
+  }
+}
+`;
+
+// {
+//   "cd": "cd",
+//   "tournee": "tournee",
+//   "premiere": "premiere"
+// }
 
 const GET_EVENTDETAILS_BYTAG = gql`
 query {
