@@ -11,7 +11,6 @@ import { StaffService } from 'src/app/services/staff.service';
 })
 export class AboutListComponent implements OnInit {
   staffs$: Observable<Staff[]>;
-
   staffTitle = 'Mitwirkende';
 
   constructor(private staffService: StaffService) {}

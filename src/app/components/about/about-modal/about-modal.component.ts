@@ -5,13 +5,13 @@ import { Staff } from 'src/app/models/staff.models';
 import { StaffService } from 'src/app/services/staff.service';
 
 @Component({
-  selector: 'app-about-modal',
   templateUrl: './about-modal.component.html',
   styleUrls: ['./about-modal.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class AboutModalComponent implements OnInit {
   @Input() staffName: string;
+
   staff$: Observable<Staff>;
 
   constructor(public activeModal: NgbActiveModal, private staffService: StaffService) {}
