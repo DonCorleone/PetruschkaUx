@@ -1,4 +1,5 @@
 export interface Staff {
+	imageSrc: string;
 	bio: string;
 	name: string;
 	topic: string;

@@ -1,27 +1,22 @@
-import {ChangeDetectionStrategy, Component, Input, OnInit} from '@angular/core';
-import {ActivatedRoute} from '@angular/router';
-import {Observable} from 'rxjs';
-import {map, tap} from 'rxjs/operators';
-import {Staff} from 'src/app/models/staff.models';
-import {StaffService} from 'src/app/services/staff.service';
+import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
+import { Observable } from 'rxjs';
+import { Staff } from 'src/app/models/staff.models';
+import { StaffService } from 'src/app/services/staff.service';
 
 @Component({
-	selector: 'app-about-list',
-	templateUrl: './about-list.component.html',
-	styleUrls: ['./about-list.component.scss'],
-	changeDetection: ChangeDetectionStrategy.OnPush
+  selector: 'app-about-list',
+  templateUrl: './about-list.component.html',
+  styleUrls: ['./about-list.component.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class AboutListComponent implements OnInit {
+  staffs$: Observable<Staff[]>;
 
-	staffs$: Observable<Staff[]>;
+  staffTitle = 'Mitwirkende';
 
-	staffTitle = 'Mitwirkende';
+  constructor(private staffService: StaffService) {}
 
-	constructor(private route: ActivatedRoute, private staffService: StaffService) {
-	}
-
-	ngOnInit(): void {
-
-		this.staffs$ = this.staffService.GetStaffs();
-	}
+  ngOnInit(): void {
+    this.staffs$ = this.staffService.GetStaffs();
+  }
 }

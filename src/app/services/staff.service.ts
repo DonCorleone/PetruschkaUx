@@ -1,25 +1,21 @@
-import {Injectable} from '@angular/core';
-import {Apollo, gql} from 'apollo-angular';
-import {Observable} from 'rxjs';
-import {map} from 'rxjs/operators';
-import {Job, Staff} from '../models/staff.models';
+import { Injectable } from '@angular/core';
+import { Apollo, gql } from 'apollo-angular';
+import { Observable } from 'rxjs';
+import { map } from 'rxjs/operators';
+import { Job, Staff } from '../models/staff.models';
 
 const GET_STAFFS = gql`
-	query GetStaffByName {
-		staffs (
-		query:
-					{active: true}
-			, sortBy: SORTORDER_ASC
-		){
-			name
-			topic
-		}
-	}
+  query GetStaffByName {
+    staffs(query: { active: true }, sortBy: SORTORDER_ASC) {
+      name
+      topic
+    }
+  }
 `;
 
 const GET_STAFFBYNAME = gql`
   query GetStaffByName($name: String!) {
-    staff (query:{name:$name}){
+    staff(query: { name: $name }) {
       name
       bio
       topic
@@ -28,79 +24,93 @@ const GET_STAFFBYNAME = gql`
 `;
 
 interface GetStaffs {
-	staffs: Staff[];
+  staffs: Staff[];
 }
 
 interface GetStaff {
-	staff: Staff;
+  staff: Staff;
 }
 
 @Injectable({
-	providedIn: 'root'
+  providedIn: 'root',
 })
 export class StaffService {
+  constructor(private apollo: Apollo) {}
 
-	constructor(private apollo: Apollo) {
+  GetStaffs(): Observable<Staff[]> {
+    console.log(`GetStaffs`);
+    return this.apollo
+      .watchQuery<GetStaffs>({
+        query: GET_STAFFS,
+      })
+      .valueChanges.pipe(
+        map((result) => result.data.staffs),
+        map((staffs) => {
+          return staffs.map((staff) => this.getStaffWithSrc(staff))
+        })
+      );
+  }
+
+  GetStaff(nameIn: string): Observable<Staff> {
+    console.log(`GetStaff`);
+    return this.apollo
+      .watchQuery<GetStaff>({
+        query: GET_STAFFBYNAME,
+        variables: {
+          name: nameIn,
+        },
+      })
+      .valueChanges.pipe(
+        map((result) => result.data.staff),
+        map((staff) => this.getStaffWithSrc(staff))
+      );
+  }
+
+	private getStaffWithSrc(staff: Staff) {
+		return {
+			...staff,
+			imageSrc:
+				'https://images.weserv.nl/?url=' +
+				'https://petruschka.netlify.app/' +
+				'assets/images/members/' +
+				encodeURIComponent(staff.name) +
+				'.jpg' +
+				'&w=179&h=240',
+		};
 	}
 
-	GetStaffs(): Observable<Staff[]> {
-		console.log(`GetStaffs`);
-		return this.apollo
-			.watchQuery<GetStaffs>({
-				query: GET_STAFFS,
-			})
-			.valueChanges.pipe(map((result) => result.data.staffs));
-	}
+  static GetStaffLinks(staff: string): Job[] {
+    const returnval: Job[] = [];
+    if (staff.length === 0) {
+      return returnval;
+    }
 
- 	GetStaff(nameIn: string): Observable<Staff> {
+    const jobs = staff.split('|');
 
-		console.log(`GetStaff`);
-		return this.apollo
-			.watchQuery<GetStaff>({
-				query: GET_STAFFBYNAME,
-				variables: {
-					name: nameIn
-				},
-			})
-			.valueChanges.pipe(map((result) => result.data.staff));
-	}
+    jobs.forEach((job) => {
+      console.log(`map job ${job}`);
 
-	static GetStaffLinks(staff: string): Job [] {
+      const ixOfSplitterColon = job.indexOf(':');
+      const ixOfSplitterDash = job.indexOf('-');
 
-		const returnval: Job [] = [];
-		if (staff.length === 0) {
-			return returnval;
-		}
+      const sharerArray: string[] = [];
 
-		const jobs = staff.split('|');
+      const name: string = job.slice(0, ixOfSplitterColon > 0 ? ixOfSplitterColon : ixOfSplitterDash);
+      const sharersRaw = job.substring(ixOfSplitterColon > 0 ? ixOfSplitterColon + 1 : ixOfSplitterDash + 1).split('&');
 
-		jobs.forEach(job => {
+      sharersRaw.forEach((sharerRaw) => {
+        sharerArray.push(sharerRaw.trim());
+      });
 
-			console.log(`map job ${job}`);
+      const jobObject: Job = {
+        isJobSharing: ixOfSplitterColon > 0,
+        name: name.trim(),
+        values: sharerArray,
+      };
 
-			const ixOfSplitterColon = job.indexOf(':');
-			const ixOfSplitterDash = job.indexOf('-');
+      returnval.push(jobObject);
+    });
 
-			const sharerArray: string[] = [];
-
-			const name: string = job.slice(0, ixOfSplitterColon > 0 ? ixOfSplitterColon : ixOfSplitterDash) ;
-			const sharersRaw = job.substring(ixOfSplitterColon > 0 ? ixOfSplitterColon + 1 : ixOfSplitterDash + 1).split('&');
-
-			sharersRaw.forEach(sharerRaw => {
-
-				sharerArray.push(sharerRaw.trim());
-			});
-
-			const jobObject: Job = {
-				isJobSharing: ixOfSplitterColon > 0,
-				name: name.trim(),
-				values: sharerArray
-			};
-
-			returnval.push(jobObject);
-		});
-
-		return returnval;
-	}
+    return returnval;
+  }
 }
-

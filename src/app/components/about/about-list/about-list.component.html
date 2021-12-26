@@ -1,20 +1,13 @@
 <section class="about-section section text-center" id="about">
-	<div class="container">
-		<h2 class="section-title">Team</h2>
-		<div class="section-intro ml-auto mr-auto">
-
-		</div>
-		<div class="members-block">
-			<div class="row">
-				<div *ngFor="let staff of staffs$ | async;" class="col-12 col-md-6 col-lg-4">
-					<app-about-item [staff]="staff" class="flex">
-					</app-about-item>
-				</div>
-			</div>
-			<!--//row-->
-		</div>
-		<!--//members-block-->
-	</div>
-	<!--//container-->
+  <div class="container">
+    <h2 class="section-title">Team</h2>
+    <div class="section-intro ml-auto mr-auto"></div>
+    <div class="members-block">
+      <div class="row">
+        <div *ngFor="let staff of staffs$ | async" class="col-12 col-md-6 col-lg-4">
+          <app-about-item [staff]="staff" class="flex"> </app-about-item>
+        </div>
+      </div>
+    </div>
+  </div>
 </section>
-<!--//about-section-->
