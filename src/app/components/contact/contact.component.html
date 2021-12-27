@@ -1,141 +1,248 @@
 <section class="contact-section section" id="contact">
-	<div class="container">
-		<h2 class="section-title text-center">Über Petruschka</h2>
-		<div class="section-intro center-block text-justify" id="history">
-			<h4 class="title">Geschichte</h4>
-			<p>Das Figurentheater PETRUSCHKA existiert seit 2003. Es wurde von Marianne Hofer ins Leben gerufen und gastierte
-				erstmals mit dem „Wintermäusemärchen“ im <a (click)="openLocation('Naturmuseum Luzern')" class="location-link"><i class="fas fa-external-link-square-alt"></i> Natur-Museum Luzern.</a></p>
-			<p>Seither wurden viele Stücke für Familien, Kindergärten und Schulklassen geschaffen. Dabei werden Themen aus dem
-				Natur-Museum, meist aus Sonderausstellungen, aufgenommen und in kindgerechter Art präsentiert. Dieses Wissen
-				wird für Gross und Klein in Geschichten eingebaut und so in anschaulicher Art dargeboten. Dabei werden die
-				Tiere, obschon sie sprechen können, nicht verklärt oder verniedlicht, sondern möglichst authentisch dargestellt.
-				Das Bühnenbild und die Figuren sind naturgetreu nachgebildet und sollen auch Einblick in das Leben der Tiere und
-				die Problematik Mensch-Tier geben. Wir schaffen aber auch genügend Raum für Märchenhaftes und Mystisches, das
-				die Phantasie der Kinder anregt und beflügelt.</p>
-			<p>Unser grösstes Ziel besteht darin, dass Kinder wie auch Erwachsene gleichermassen von unseren Produktionen
-				angetan sind.</p>
-			<p>Durch die spezielle Spielart des PETRUSCHKA Figurentheaters, bei welcher die Kinder miteinbezogen werden, wird
-				eine Nähe zum Publikum geschaffen, die sonst weder im Theater und schon gar nicht im Film, entstehen kann. Die
-				Spielerinnen, die alle auch pädagogisch geschult sind, verstehen es, die Reaktionen der Kinder geschickt
-				aufzunehmen und ins Spiel einfliessen zu lassen. Das verlangt über gewisse Strecken viel Flexibilität und
-				Einfühlungsvermögen. So werden die Kinder auch wirklich „mitgenommen“ und verstehen den Plot der Geschichte, bei
-				dem sie sich zum Teil auch aktiv beteiligen können.</p>
-			<p>Seit 2010 ist das Sandmalen ein Teil der Theaterproduktionen. Es wurde autodidaktisch von Marianne Hofer
-				erarbeitet und gibt die Möglichkeit, den Stücken eine neue Dimension zu geben. Vor den Augen der Zuschauer
-				werden Bilder geschaffen, die das Theater erweitern und ergänzen.</p>
-			<br />
-			<p><b>Stücke im <a (click)="openLocation('Naturmuseum Luzern')" class="location-link"><i class="fas fa-external-link-square-alt"></i> Natur-Museum:</a></b></p>
-			<div class="border-box">
-				<div class="border-box-item chained">2003 Wintermäusemärchen</div>
-				<div class="border-box-item chained">2004 Das Geheimnis im Teich</div>
-				<div class="border-box-item chained">2005 Fliegen wär so schön</div>
-				<div class="border-box-item chained">2006 Ein Geschenk für den Vogel</div>
-				<div class="border-box-item chained">2007 Ach, diese Hühner</div>
-				<div class="border-box-item chained">2008 Biba baut</div>
-				<div class="border-box-item chained">2009 Ein Maulwurf fliegt weg</div>
-				<div class="border-box-item chained">2010 Der weisse Wolf</div>
-				<div class="border-box-item chained"><a (click)="scrollTo('history-2011s')" class="event-link"><i class="fas fa-external-link-square-alt"></i> 2011 Krah</a></div>
-				<div class="border-box-item chained"><a (click)="scrollTo('history-2012s')" class="event-link"><i class="fas fa-external-link-square-alt"></i> 2012 S’tanzende Meersäuli</a></div>
-				<div class="border-box-item chained"><a (click)="scrollTo('history-2013s')" class="event-link"><i class="fas fa-external-link-square-alt"></i> 2013 De Has wott ned schlofe</a></div>
-				<div class="border-box-item chained"><a (click)="scrollTo('history-2014s')" class="event-link"><i class="fas fa-external-link-square-alt"></i> 2014 Beschti	Fründe</a></div>
-				<div class="border-box-item chained"><a (click)="scrollTo('history-2015s')" class="event-link"><i class="fas fa-external-link-square-alt"></i> 2015 Di chli Fee schickt de Winter wäg</a></div>
-				<div class="border-box-item chained"><a (click)="scrollTo('history-2016s')" class="event-link"><i class="fas fa-external-link-square-alt"></i> 2016 Lutra	ond s’Gheimnis im See</a></div>
-				<div class="border-box-item chained"><a (click)="scrollTo('history-2017w')" class="event-link"><i class="fas fa-external-link-square-alt"></i> 2017 Sonne, Schnee ond	Donnerwätter</a></div>
-				<div class="border-box-item chained"><a (click)="scrollTo('history-2018w')" class="event-link"><i class="fas fa-external-link-square-alt"></i> 2018 De wissi Wolf (Wiederaufnahme des Stücks „Der weisse Wolf“ aus dem Jahr 2010 mit Anpassung an die	aktuelle Aussstellung „Wolf“ im Natur-Museum)</a></div>
-				<div class="border-box-item chained"><a (click)="scrollTo('history-2015s')" class="event-link"><i class="fas fa-external-link-square-alt"></i> 2019 Karneval der Tiere (Wiederaufnahme des Stücks von 2015 im Naturmuseum)</a></div>
+  <div class="container">
+    <h2 class="section-title text-center">Über Petruschka</h2>
+    <div class="section-intro center-block text-justify" id="history">
+      <h4 class="title">Geschichte</h4>
+      <p>
+        Das Figurentheater PETRUSCHKA existiert seit 2003. Es wurde von Marianne Hofer ins Leben gerufen und gastierte
+        erstmals mit dem „Wintermäusemärchen“ im
+        <a (click)="openLocation('Naturmuseum Luzern')" class="location-link"
+          ><i class="fas fa-external-link-square-alt"></i> Natur-Museum Luzern.</a
+        >
+      </p>
+      <p>
+        Seither wurden viele Stücke für Familien, Kindergärten und Schulklassen geschaffen. Dabei werden Themen aus dem
+        Natur-Museum, meist aus Sonderausstellungen, aufgenommen und in kindgerechter Art präsentiert. Dieses Wissen
+        wird für Gross und Klein in Geschichten eingebaut und so in anschaulicher Art dargeboten. Dabei werden die
+        Tiere, obschon sie sprechen können, nicht verklärt oder verniedlicht, sondern möglichst authentisch dargestellt.
+        Das Bühnenbild und die Figuren sind naturgetreu nachgebildet und sollen auch Einblick in das Leben der Tiere und
+        die Problematik Mensch-Tier geben. Wir schaffen aber auch genügend Raum für Märchenhaftes und Mystisches, das
+        die Phantasie der Kinder anregt und beflügelt.
+      </p>
+      <p>
+        Unser grösstes Ziel besteht darin, dass Kinder wie auch Erwachsene gleichermassen von unseren Produktionen
+        angetan sind.
+      </p>
+      <p>
+        Durch die spezielle Spielart des PETRUSCHKA Figurentheaters, bei welcher die Kinder miteinbezogen werden, wird
+        eine Nähe zum Publikum geschaffen, die sonst weder im Theater und schon gar nicht im Film, entstehen kann. Die
+        Spielerinnen, die alle auch pädagogisch geschult sind, verstehen es, die Reaktionen der Kinder geschickt
+        aufzunehmen und ins Spiel einfliessen zu lassen. Das verlangt über gewisse Strecken viel Flexibilität und
+        Einfühlungsvermögen. So werden die Kinder auch wirklich „mitgenommen“ und verstehen den Plot der Geschichte, bei
+        dem sie sich zum Teil auch aktiv beteiligen können.
+      </p>
+      <p>
+        Seit 2010 ist das Sandmalen ein Teil der Theaterproduktionen. Es wurde autodidaktisch von Marianne Hofer
+        erarbeitet und gibt die Möglichkeit, den Stücken eine neue Dimension zu geben. Vor den Augen der Zuschauer
+        werden Bilder geschaffen, die das Theater erweitern und ergänzen.
+      </p>
+      <br />
+      <p>
+        <b
+          >Stücke im
+          <a (click)="openLocation('Naturmuseum Luzern')" class="location-link"
+            ><i class="fas fa-external-link-square-alt"></i> Natur-Museum:</a
+          ></b
+        >
+      </p>
+      <div class="border-box">
+        <div class="border-box-item chained">2003 Wintermäusemärchen</div>
+        <div class="border-box-item chained">2004 Das Geheimnis im Teich</div>
+        <div class="border-box-item chained">2005 Fliegen wär so schön</div>
+        <div class="border-box-item chained">2006 Ein Geschenk für den Vogel</div>
+        <div class="border-box-item chained">2007 Ach, diese Hühner</div>
+        <div class="border-box-item chained">2008 Biba baut</div>
+        <div class="border-box-item chained">2009 Ein Maulwurf fliegt weg</div>
+        <div class="border-box-item chained">2010 Der weisse Wolf</div>
+        <div class="border-box-item chained">
+          <a (click)="scrollTo('history-2011s')" class="event-link"
+            ><i class="fas fa-external-link-square-alt"></i> 2011 Krah</a
+          >
+        </div>
+        <div class="border-box-item chained">
+          <a (click)="scrollTo('history-2012s')" class="event-link"
+            ><i class="fas fa-external-link-square-alt"></i> 2012 S’tanzende Meersäuli</a
+          >
+        </div>
+        <div class="border-box-item chained">
+          <a (click)="scrollTo('history-2013s')" class="event-link"
+            ><i class="fas fa-external-link-square-alt"></i> 2013 De Has wott ned schlofe</a
+          >
+        </div>
+        <div class="border-box-item chained">
+          <a (click)="scrollTo('history-2014s')" class="event-link"
+            ><i class="fas fa-external-link-square-alt"></i> 2014 Beschti Fründe</a
+          >
+        </div>
+        <div class="border-box-item chained">
+          <a (click)="scrollTo('history-2015s')" class="event-link"
+            ><i class="fas fa-external-link-square-alt"></i> 2015 Di chli Fee schickt de Winter wäg</a
+          >
+        </div>
+        <div class="border-box-item chained">
+          <a (click)="scrollTo('history-2016s')" class="event-link"
+            ><i class="fas fa-external-link-square-alt"></i> 2016 Lutra ond s’Gheimnis im See</a
+          >
+        </div>
+        <div class="border-box-item chained">
+          <a (click)="scrollTo('history-2017w')" class="event-link"
+            ><i class="fas fa-external-link-square-alt"></i> 2017 Sonne, Schnee ond Donnerwätter</a
+          >
+        </div>
+        <div class="border-box-item chained">
+          <a (click)="scrollTo('history-2018w')" class="event-link"
+            ><i class="fas fa-external-link-square-alt"></i> 2018 De wissi Wolf (Wiederaufnahme des Stücks „Der weisse
+            Wolf“ aus dem Jahr 2010 mit Anpassung an die aktuelle Aussstellung „Wolf“ im Natur-Museum)</a
+          >
+        </div>
+        <div class="border-box-item chained">
+          <a (click)="scrollTo('history-2015s')" class="event-link"
+            ><i class="fas fa-external-link-square-alt"></i> 2019 Karneval der Tiere (Wiederaufnahme des Stücks von 2015
+            im Naturmuseum)</a
+          >
+        </div>
+      </div>
+      <br />
+      <p>Seit 2013 entstand eine Zusammenarbeit mit dem Lucerne Festival „Young“ im Sommer:</p>
+      <br />
+      <p>
+        <b
+          >Stücke im
+          <a (click)="openLocation('Pavillon Tribschenhorn')" class="location-link"
+            ><i class="fas fa-external-link-square-alt"></i> Pavillon Tribschenhorn:</a
+          ></b
+        >
+      </p>
+      <div class="border-box">
+        <div class="border-box-item">
+          2013 Der fliegende Holländer, Adaption der gleichnamigen Oper von Richard Wagner für Kinder (im Anschluss eine
+          Arie gesungen von Madeleine Wibom)
+        </div>
+        <div class="border-box-item">
+          2014 Rusalka Adaption der gleichnamigen Oper von Antonin Dvorak für Kinder (Im Anschluss eine Arie gesungen
+          von Madeleine Wibom)
+        </div>
+        <div class="border-box-item chained">
+          <a (click)="scrollTo('history-2015s')" class="event-link"
+            ><i class="fas fa-external-link-square-alt"></i> 2015 Der Karneval der Tiere mit der Musik von Camille
+            Saint-Saens</a
+          >
+        </div>
+        <br />
+        <br />
 
-			</div>
-			<br />
-			<p>Seit 2013 entstand eine Zusammenarbeit mit dem Lucerne Festival „Young“ im Sommer:</p>
-			<br />
-			<p><b>Stücke im <a (click)="openLocation('Pavillon Tribschenhorn')" class="location-link"><i class="fas fa-external-link-square-alt"></i> Pavillon Tribschenhorn:</a></b></p>
-			<div class="border-box">
-				<div class="border-box-item">2013 Der fliegende Holländer, Adaption der gleichnamigen Oper von Richard Wagner für
-					Kinder (im Anschluss
-					eine Arie gesungen von Madeleine Wibom)</div>
-				<div class="border-box-item">2014 Rusalka Adaption der gleichnamigen Oper von Antonin Dvorak für Kinder (Im
-					Anschluss eine Arie gesungen
-					von Madeleine Wibom)</div>
-				<div class="border-box-item chained"><a (click)="scrollTo('history-2015s')" class="event-link"><i class="fas fa-external-link-square-alt"></i> 2015 Der Karneval der Tiere mit der Musik von Camille Saint-Saens</a></div>
-				<br />	<br />
+        <p>
+          Wir arbeiten seit 2015 mit Musikern zusammen, die die Stücke mit klassischer und zeitgenössischer Musik
+          begleiten. Meist begleitet uns ein Trio (Klavier, Cello und Flöte, ausser im Karneval, wo noch zusätzlich
+          Schlagzeuge eingesetzt waren).
+        </p>
+        <br />
+        <br />
 
-				<p>Wir arbeiten seit 2015 mit Musikern zusammen, die die Stücke mit klassischer und zeitgenössischer Musik
-					begleiten. Meist begleitet uns ein Trio (Klavier, Cello und Flöte, ausser im Karneval, wo noch zusätzlich
-					Schlagzeuge eingesetzt waren).</p>	<br />
-					<br />
+        <div class="border-box-item chained">
+          <a (click)="scrollTo('history-2016s')" class="event-link"
+            ><i class="fas fa-external-link-square-alt"></i>2016 Die Aufziehprinzessin mit Musik von Bartok, Offenbach,
+            Vivaldi und Vuille.</a
+          >
+        </div>
+        <div class="border-box-item chained">
+          <a (click)="scrollTo('history-2017s')" class="event-link"
+            ><i class="fas fa-external-link-square-alt"></i> 2017 Die Zaubermuschel mit Musik von Satie, Mussorsky und
+            Vuille.</a
+          >
+        </div>
+        <div class="border-box-item chained">
+          <a (click)="scrollTo('history-2018s')" class="event-link"
+            ><i class="fas fa-external-link-square-alt"></i> 2018 Das Traumland mit Musik von Grieg, Prokofiev,
+            Rachmaninov und Vuille.</a
+          >
+        </div>
+        <div class="border-box-item chained">
+          <a (click)="scrollTo('history-2019s')" class="event-link"
+            ><i class="fas fa-external-link-square-alt"></i> 2019 Der Zauberladen, mit Musik von Debussy, Faure,
+            Ravel</a
+          >
+        </div>
+        <div class="border-box-item chained">
+          <a (click)="scrollTo('history-2020h')" class="event-link"
+            ><i class="fas fa-external-link-square-alt"></i> 2020 De tapferi Puck rettet s‘Elferiich, mit der Musik von
+            Mendelsohn, Schubert, Bizet, Brassens.</a
+          >
+        </div>
 
-					<div class="border-box-item chained"><a (click)="scrollTo('history-2016s')" class="event-link"><i class="fas fa-external-link-square-alt"></i>2016 Die Aufziehprinzessin mit Musik von Bartok, Offenbach, Vivaldi und Vuille.</a></div>
-					<div class="border-box-item chained"><a (click)="scrollTo('history-2017s')" class="event-link"><i class="fas fa-external-link-square-alt"></i> 2017 Die Zaubermuschel mit Musik von Satie, Mussorsky und Vuille.</a></div>
-					<div class="border-box-item chained"><a (click)="scrollTo('history-2018s')" class="event-link"><i class="fas fa-external-link-square-alt"></i> 2018 Das Traumland mit Musik von Grieg, Prokofiev, Rachmaninov und Vuille.</a></div>
-					<div class="border-box-item chained"><a (click)="scrollTo('history-2019s')" class="event-link"><i class="fas fa-external-link-square-alt"></i> 2019 Der Zauberladen, mit Musik von Debussy, Faure, Ravel</a></div>
-					<div class="border-box-item chained"><a (click)="scrollTo('history-2020h')" class="event-link"><i class="fas fa-external-link-square-alt"></i> 2020 De tapferi Puck rettet s‘Elferiich, mit der Musik von Mendelsohn, Schubert, Bizet, Brassens.</a></div>
+        <br />
+        <br />
 
-				<br />
-				<br />
+        <p>
+          In den Sommerstücken, die in unserem eigenen Theater im
+          <a (click)="openLocation('Pavillon Tribschenhorn')" class="location-link"
+            ><i class="fas fa-external-link-square-alt"></i> Pavillon Tribschenhorn</a
+          >
+          stattfinden, möchten wir vor allem den jungen Zuschauern die klassische Musik näherbringen.
+        </p>
+        <p>
+          In der heutigen Zeit werden Kinder in der Regel vor allem mit einfacher Musik in Kinderliedern und Musik der
+          Popkultur konfrontiert. Wir meinen, dass aber gerade in der klassischen Musik ein Hörerlebnis stattfindet, das
+          anspruchsvoller ist und Kindern neue Klangwelten eröffnet. Im Zusammenhang mit einer guten, kindgerechten
+          Geschichte sind die Kinder bereit, sich auf diese ihnen neuen Klänge einzulassen. Ganz besonders, wenn sie die
+          MusikerInnen so hautnah erleben und vielleicht sogar ihr Musikinstrument erlernen möchten.
+        </p>
+        <p>
+          Seit 2017 gibt es nun auch das PETRUSCHKA Wandertheater, das von Regula auf der Maur und Nathalie Hildebrand
+          Isler gleitet wird. Sie reisen damit in Schulen und Kindergärten und führen ihre Stücke an diversen
+          Kinderanlässen auf.
+        </p>
+      </div>
+    </div>
+    <app-press></app-press>
+    <app-sponsors eventKey=""></app-sponsors>
+    <div class="contact-block mr-auto ml-auto text-center">
+      <div class="row">
+        <div class="item col-12 col-lg-4">
+          <div class="item-inner">
+            <div class="icon-holder">
+              <i class="fas fa-info-circle"></i>
+            </div>
+            <!--//icon-holder-->
+            <h4 class="title">Allgemeine Anfragen</h4>
+            <div class="email"><a href="mailto:info@petruschka.ch">info@petruschka.ch</a></div>
+          </div>
+          <!--//item-inner-->
+        </div>
+        <!--//item-->
 
-				<p>In den Sommerstücken, die in unserem eigenen Theater im <a (click)="openLocation('Pavillon Tribschenhorn')" class="location-link"><i class="fas fa-external-link-square-alt"></i> Pavillon Tribschenhorn</a> stattfinden, möchten wir vor
-					allem den jungen Zuschauern die klassische Musik näherbringen.</p>
-				<p>In der heutigen Zeit werden Kinder in der Regel vor allem mit einfacher Musik in Kinderliedern und Musik der
-					Popkultur konfrontiert. Wir meinen, dass aber gerade in der klassischen Musik ein Hörerlebnis stattfindet, das
-					anspruchsvoller ist und Kindern neue Klangwelten eröffnet. Im Zusammenhang mit einer guten, kindgerechten
-					Geschichte sind die Kinder bereit, sich auf diese ihnen neuen Klänge einzulassen. Ganz besonders, wenn sie die
-					MusikerInnen so hautnah erleben und vielleicht sogar ihr Musikinstrument erlernen möchten.</p>
-				<p>Seit 2017 gibt es nun auch das PETRUSCHKA Wandertheater, das von Regula auf der Maur und Nathalie Hildebrand
-					Isler gleitet wird. Sie reisen damit in Schulen und Kindergärten und führen ihre Stücke an diversen
-					Kinderanlässen auf.</p>
-			</div>
-		</div>
-		<app-press></app-press>
-		<app-sponsors eventKey = ""></app-sponsors>
-		<div class="contact-block mr-auto ml-auto text-center">
-			<div class="row">
+        <div class="item col-12 col-lg-4">
+          <div class="item-inner">
+            <div class="icon-holder">
+              <i class="fas fa-calendar-check"></i>
+            </div>
+            <!--//icon-holder-->
+            <h4 class="title">Booking</h4>
+            <div class="email"><a href="mailto:mariannehofer@kinderkultur.ch">mariannehofer@kinderkultur.ch</a></div>
+          </div>
+          <!--//item-inner-->
+        </div>
+        <!--//item-->
 
-				<div class="item col-12 col-lg-4">
-					<div class="item-inner">
-						<div class="icon-holder">
-							<i class="fas fa-info-circle"></i>
-						</div>
-						<!--//icon-holder-->
-						<h4 class="title">Allgemeine Anfragen</h4>
-						<div class="email"><a href="mailto:info@petruschka.ch">info@petruschka.ch</a></div>
-					</div>
-					<!--//item-inner-->
-				</div>
-				<!--//item-->
-
-				<div class="item col-12 col-lg-4">
-					<div class="item-inner">
-						<div class="icon-holder">
-							<i class="fas fa-calendar-check"></i>
-						</div>
-						<!--//icon-holder-->
-						<h4 class="title">Booking</h4>
-						<div class="email"><a href="mailto:mariannehofer@kinderkultur.ch">mariannehofer@kinderkultur.ch</a></div>
-					</div>
-					<!--//item-inner-->
-				</div>
-				<!--//item-->
-
-				<div class="item col-12 col-lg-4">
-					<div class="item-inner">
-						<div class="icon-holder">
-							<i class="fas fa-newspaper"></i>
-						</div>
-						<!--//icon-holder-->
-						<h4 class="title">Presse</h4>
-						<div class="email"><a href="mailto:mariannehofer@kinderkultur.ch">mariannehofer@kinderkultur.ch</a></div>
-					</div>
-					<!--//item-inner-->
-				</div>
-				<!--//item-->
-			</div>
-			<!--//row-->
-		</div>
-		<!--//contact-list-->
-		<div class="channels-block">
-			<ul class="channels-list list-inline">
-
-				<!-- <li class="list-inline-item mr-3"><a href="#"><img alt="" class="icon" src="assets/images/itunes.svg"></a></li>
+        <div class="item col-12 col-lg-4">
+          <div class="item-inner">
+            <div class="icon-holder">
+              <i class="fas fa-newspaper"></i>
+            </div>
+            <!--//icon-holder-->
+            <h4 class="title">Presse</h4>
+            <div class="email"><a href="mailto:mariannehofer@kinderkultur.ch">mariannehofer@kinderkultur.ch</a></div>
+          </div>
+          <!--//item-inner-->
+        </div>
+        <!--//item-->
+      </div>
+      <!--//row-->
+    </div>
+    <!--//contact-list-->
+    <div class="channels-block">
+      <ul class="channels-list list-inline">
+        <!-- <li class="list-inline-item mr-3"><a href="#"><img alt="" class="icon" src="assets/images/itunes.svg"></a></li>
 					<li class="list-inline-item mr-3"><a href="#"><img alt="" class="icon" src="assets/images/lastfm.svg"></a></li>
 					<li class="list-inline-item mr-0 mr-md-3"><a href="#"><img alt="" class="icon" src="assets/images/vevo.svg"></a>
 					</li>
@@ -143,23 +250,26 @@
 					<li class="list-inline-item mr-3"><a href="#"><img alt="" class="icon" src="assets/images/bandcamp.svg"></a>
 					</li>
 					<li class="list-inline-item mr-0"><a href="#"><img alt="" class="icon" src="assets/images/deezer.svg"></a></li> -->
-			</ul>
-		</div>
-		<!--//channels-block-->
-		<div class="social-media-block">
-			<ul class="list-inline social-media-list">
-				<!-- <li class="list-inline-item mr-3"><a href="#"><i class="fab fa-youtube"></i></a></li> -->
-				<!-- <li class="list-inline-item mr-3"><a href="#"><i class="fab fa-soundcloud"></i></a></li>
+      </ul>
+    </div>
+    <!--//channels-block-->
+    <div class="social-media-block">
+      <ul class="list-inline social-media-list">
+        <!-- <li class="list-inline-item mr-3"><a href="#"><i class="fab fa-youtube"></i></a></li> -->
+        <!-- <li class="list-inline-item mr-3"><a href="#"><i class="fab fa-soundcloud"></i></a></li>
 					<li class="list-inline-item mr-0 mr-sm-3"><a href="#"><i class="fab fa-spotify"></i></a></li> -->
-				<li class="d-block d-sm-none"></li>
-				<li class="list-inline-item mr-3"><a href="#"><i class="fab fa-facebook-f"></i></a></li>
-				<!-- <li class="list-inline-item mr-3"><a href="#"><i class="fab fa-instagram"></i></a></li> -->
-				<li class="list-inline-item mr-0"><a href="#"><i class="fab fa-twitter"></i></a></li>
-			</ul>
-		</div>
-		<!--//social-media-block-->
-	</div>
-	<!--//containter-->
-
+        <li class="d-block d-sm-none"></li>
+        <li class="list-inline-item mr-3">
+          <a href="#"><i class="fab fa-facebook-f"></i></a>
+        </li>
+        <!-- <li class="list-inline-item mr-3"><a href="#"><i class="fab fa-instagram"></i></a></li> -->
+        <li class="list-inline-item mr-0">
+          <a href="#"><i class="fab fa-twitter"></i></a>
+        </li>
+      </ul>
+    </div>
+    <!--//social-media-block-->
+  </div>
+  <!--//containter-->
 </section>
 <!--/main-->

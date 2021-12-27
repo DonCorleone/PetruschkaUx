@@ -6,24 +6,23 @@ import { File } from 'src/app/services/images.service';
   selector: 'app-image-modal',
   templateUrl: './image-modal.component.html',
   styleUrls: ['./image-modal.component.scss'],
-	changeDetection: ChangeDetectionStrategy.OnPush
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class ImageModalComponent implements OnInit {
+export class ImageModalComponent implements OnInit{
+  @Input() image: File;
 
-	@Input() image: File;
+	classes = {};
 
-	constructor(public activeModal: NgbActiveModal) {
+  constructor(public activeModal: NgbActiveModal) {}
 
-	}
-
-  ngOnInit(): void {
-
+  private calculateClasses() {
+    return {
+      'image-strech-height': this.image.height > this.image.width,
+      'image-strech-width': this.image.width > this.image.height,
+    };
   }
 
-	calculateClasses() {
-		return {
-				'image-strech-height': this.image.height > this.image.width,
-				'image-strech-width': this.image.width > this.image.height
-		};
-}
+	ngOnInit(): void {
+		this.classes = this.calculateClasses();
+	}
 }
