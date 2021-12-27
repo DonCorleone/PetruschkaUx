@@ -20,6 +20,7 @@ import { ImageModalComponent } from './components/gallery/image-modal/image-moda
 import { HttpErrorInterceptor } from './services/http-error-interceptor.service';
 import { TicketModalComponent } from './components/ticket/ticket-modal/ticket-modal.component';
 import { TicketItemComponent } from './components/ticket/ticket-item/ticket-item.component';
+import {AboutModule} from "./modules/about/about.module";
 const uri = realm.graphqlUrl;
 
 export function createApollo(httpLink: HttpLink): ApolloClientOptions<any> {
@@ -34,7 +35,7 @@ export function createApollo(httpLink: HttpLink): ApolloClientOptions<any> {
 
 @NgModule({
   declarations: [AppComponent, ScrollSpyDirective, ImageModalComponent, TicketModalComponent, TicketItemComponent],
-  imports: [BrowserModule, AppRoutingModule, HttpClientModule, ScullyLibModule, BrowserAnimationsModule],
+  imports: [AboutModule, BrowserModule, AppRoutingModule, HttpClientModule, ScullyLibModule, BrowserAnimationsModule],
   entryComponents: [InfoComponent],
   providers: [
     {

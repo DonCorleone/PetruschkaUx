@@ -1,17 +1,15 @@
 import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
-import { Staff } from 'src/app/models/staff.models';
-import { StaffService } from 'src/app/services/staff.service';
+import { Staff } from '../../models/staff.models';
+import { StaffService } from '../staff.service';
 
 @Component({
-  selector: 'app-about-list',
-  templateUrl: './about-list.component.html',
-  styleUrls: ['./about-list.component.scss'],
+  selector: 'app-about',
+  templateUrl: './about.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class AboutListComponent implements OnInit {
+export class AboutComponent implements OnInit {
   staffs$: Observable<Staff[]>;
-  staffTitle = 'Mitwirkende';
 
   constructor(private staffService: StaffService) {}
 

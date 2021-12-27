@@ -1,6 +1,5 @@
 import {ChangeDetectionStrategy, Component, Input, OnInit} from '@angular/core';
 import {NgbActiveModal} from '@ng-bootstrap/ng-bootstrap';
-import {EventDetail} from 'src/app/models/event.models';
 
 @Component({
 	selector: 'app-music-modal',

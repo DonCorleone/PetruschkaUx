@@ -2,11 +2,10 @@ import { ChangeDetectionStrategy, Component, Input, OnInit } from '@angular/core
 import { Observable } from 'rxjs';
 import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
 import { Staff } from 'src/app/models/staff.models';
-import { StaffService } from 'src/app/services/staff.service';
+import {StaffService} from "../../staff.service";
 
 @Component({
   templateUrl: './about-modal.component.html',
-  styleUrls: ['./about-modal.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class AboutModalComponent implements OnInit {
