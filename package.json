@@ -32,7 +32,7 @@
     "codelyzer": "^6.0.1",
     "graphql": "^16.2.0",
     "masonry-layout": "^4.2.2",
-    "ngx-masonry": "^11.0.0",
+    "ngx-masonry": "^13.0.0",
     "realm-web": "^1.2.0",
     "rxjs": "~6.6.3",
     "scully-plugin-disable-angular": "^6.2.0",
