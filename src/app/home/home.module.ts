@@ -3,9 +3,6 @@ import { CommonModule } from '@angular/common';
 
 import { HomeRoutingModule } from './home-routing.module';
 import { HomeComponent } from './home.component';
-import { AboutItemComponent } from '../components/about/about-item/about-item.component';
-import { AboutListComponent } from '../components/about/about-list/about-list.component';
-import { AboutModalComponent } from '../components/about/about-modal/about-modal.component';
 import { ContactComponent } from '../components/contact/contact.component';
 import { SponsorsComponent } from '../components/sponsors/sponsors.component';
 import { FooterComponent } from '../components/footer/footer.component';
@@ -34,6 +31,7 @@ import { VideoComponent } from '../components/video/video.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { NgxMasonryModule } from 'ngx-masonry';
 import { PressComponent } from '../components/press/press.component';
+import {AboutModule} from "../modules/about/about.module";
 
 
 @NgModule({
@@ -43,7 +41,6 @@ import { PressComponent } from '../components/press/press.component';
 		PromoComponent,
 		GigsListComponent,
 		MusicListComponent,
-		AboutListComponent,
 		MerchListComponent,
 		ContactComponent,
 		SponsorsComponent,
@@ -54,14 +51,12 @@ import { PressComponent } from '../components/press/press.component';
 		PromoCarouselComponent,
 		UpdateListComponent,
 		UpdateSlideComponent,
-		AboutItemComponent,
 		MerchItemComponent,
 		MusicItemComponent,
 		// LayoutComponent,
 		LocationItemComponent,
 		InfoModalComponent,
 		LocationModalComponent,
-		AboutModalComponent,
 		MerchModalComponent,
 		MerchDetailComponent,
 		MusicModalComponent,
@@ -72,6 +67,7 @@ import { PressComponent } from '../components/press/press.component';
 	],
 	imports: [
 		CommonModule,
+		AboutModule,
 		HomeRoutingModule,
 		NgbModule,
 		NgxMasonryModule

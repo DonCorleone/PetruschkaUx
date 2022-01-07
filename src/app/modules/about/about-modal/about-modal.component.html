@@ -1,0 +1,18 @@
+<ng-container *ngIf="staff$ | async as staff">
+	<div class="modal-header">
+		<button
+			(click)="activeModal.dismiss('Cross click')"
+			aria-describedby="modal-title"
+			aria-label="Close button"
+			class="close"
+			type="button"
+		>
+			<span aria-hidden="true">&times;</span>
+		</button>
+		<h4 class="modal-title text-center" id="infoModalLabel">Mitwirkende</h4>
+	</div>
+
+	<div class="modal-body" ngbAutoFocus>
+		<app-about-item [staff]="staff" [isModal]="true"></app-about-item>
+	</div>
+</ng-container>
