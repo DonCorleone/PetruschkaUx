@@ -1,6 +1,7 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
+import {environment} from "../../environments/environment";
 
 @Injectable({
   providedIn: 'root'
@@ -15,11 +16,11 @@ export class ImagesService {
 		const httpOptions = {
 			headers: new HttpHeaders({
 				'Content-Type':  'application/json',
-				'Authorization': 'Basic ' + btoa(process.env.API_KEY_IMAGE4IO + ':' + process.env.API_SECRET_IMAGE4IO)
+				'Authorization': 'Basic ' + btoa(environment.API_KEY_IMAGE4IO + ':' + environment.API_SECRET_IMAGE4IO)
 			})
 		};
 
-		return this.http.get<Image4Response>(process.env.API_URL_IMAGE4IO + `/listFolder?path=/${albumHash}/`, httpOptions);
+		return this.http.get<Image4Response>(environment.API_URL_IMAGE4IO + `/listFolder?path=/${albumHash}/`, httpOptions);
 	}
 }
 
