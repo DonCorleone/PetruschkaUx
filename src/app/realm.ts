@@ -1,9 +1,10 @@
 import * as Realm from 'realm-web';
+import {environment} from "../environments/environment";
 
-const graphqlUrl = `https://realm.mongodb.com/api/client/v2.0/app/${process.env.APP_ID_REALM}/graphql`;
+const graphqlUrl = `https://realm.mongodb.com/api/client/v2.0/app/${environment.APP_ID_REALM}/graphql`;
 
 // Connect to your MongoDB Realm app
-const app = new Realm.App(process.env.APP_ID_REALM);
+const app = new Realm.App(environment.APP_ID_REALM);
 
 // Get a valid Realm user access token to authenticate requests
 async function getValidAccessToken(): Promise<string> {

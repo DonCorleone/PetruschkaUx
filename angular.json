@@ -15,16 +15,13 @@
       "prefix": "app",
       "architect": {
         "build": {
-          "builder": "@angular-builders/custom-webpack:browser",
+					"builder": "@angular-devkit/build-angular:browser",
           "options": {
 						"allowedCommonJsDependencies": [
 							"zen-observable",
 							"graphql-tag",
 							"ngx-masonry"
 						],
-						"customWebpackConfig": {
-							"path": "./webpack-dev.config.js"
-						},
             "outputPath": "dist/kinderkulturUx",
             "index": "src/index.html",
             "main": "src/main.ts",
@@ -46,9 +43,6 @@
           },
           "configurations": {
             "production": {
-							"customWebpackConfig": {
-                "path": "webpack-prod.config.js"
-            	},
               "fileReplacements": [
                 {
                   "replace": "src/environments/environment.ts",
@@ -78,7 +72,7 @@
           }
         },
         "serve": {
-          "builder": "@angular-builders/custom-webpack:dev-server",
+					"builder": "@angular-devkit/build-angular:dev-server",
           "options": {
             "browserTarget": "kinderkulturUx:build"
           },

@@ -1,7 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { Console } from 'node:console';
 import { Observable } from 'rxjs';
-import { EventDetail } from 'src/app/models/event.models';
 import { Sponsor } from 'src/app/models/sponsors.models';
 import { SponsorsService } from 'src/app/services/sponsors.service';
 
