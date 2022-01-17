@@ -1,2 +1,12 @@
 identifier: kald6clfld30bf78
 allowErrorCollect: true
+appPort: 1864
+staticPort: 1668
+reloadPort: 2667
+hostName: localhost
+projectName: kinderkulturUx
+homeFolder: /Users/developer/Documents/scm/petruschka-ch/petruschka-ch-frontend
+distFolder: dist/kinderkulturUx
+outDir: >-
+  /Users/developer/Documents/scm/petruschka-ch/petruschka-ch-frontend/dist/static
+handle404: ''
