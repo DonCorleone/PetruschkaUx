@@ -1,0 +1,9 @@
+[build]
+  command = "ng build --prod && npm run scully"
+  functions = "netlify/functions"
+  publish = "dist/static"
+
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
