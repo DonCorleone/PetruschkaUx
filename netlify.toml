@@ -1,5 +1,5 @@
 [build]
-  command = "npm run build --configuration production && npm run scully"
+  command = "npm run build --configuration=production && npm run scully"
   functions = "netlify/functions"
   publish = "dist/static"
 
