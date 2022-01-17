@@ -1,6 +1,12 @@
-const { writeFile } = require('fs');// Your environment.custom.ts file. Will be ignored by git.
-const targetPath = './src/environments/environment.custom.ts';// Load dotenv to work with process.env
-require('dotenv').config();// environment.ts file structure
+const { writeFile } = require('fs');
+
+// Your environment.custom.ts file. Will be ignored by git.
+const targetPath = './src/environments/environment.custom.ts';
+
+// Load dotenv to work with process.env
+require('dotenv').config();
+
+// environment.ts file structure
 
 const envConfigFile = `
 function getApiBasePath(): string {
