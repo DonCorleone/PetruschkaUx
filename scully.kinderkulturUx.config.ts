@@ -16,10 +16,5 @@ export const config: ScullyConfig = {
   // defaultPostRenderers: postRenderers,
   projectName: "kinderkulturUx",
   outDir: './dist/static',
-  routes: {
-    // '': {
-    //   type: RouteTypes.json,
-    //   url: 'http://localhost:4200/home'
-   // }
-  }
+  routes: {}
 };
