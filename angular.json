@@ -116,7 +116,7 @@
               "devServerTarget": "kinderkulturUx:serve:production"
             },
             "custom": {
-              "devServerTarget": "kinderkulturUx-name:serve:custom"
+              "devServerTarget": "kinderkulturUx:serve:custom"
             }
           }
         }
