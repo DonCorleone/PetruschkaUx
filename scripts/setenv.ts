@@ -1,13 +1,19 @@
 const { writeFile } = require('fs');
-const { argv } = require('yargs'); // read environment variables from .env file
-require('dotenv').config(); // read the command line arguments passed with yargs
-const environment = argv.environment;
-const isProduction = environment === 'prod';
-const targetPath = isProduction ? `./src/environments/environment.prod.ts` : `./src/environments/environment.ts`; // we have access to our environment variables
-// in the process.env object thanks to dotenv
-const environmentFileContent = `
+
+// Your environment.custom.ts file. Will be ignored by git.
+const targetPath = './src/environments/environment.custom.ts';
+
+// Load dotenv to work with process.env
+require('dotenv').config();
+
+// environment.ts file structure
+
+const envConfigFile = `
+function getApiBasePath(): string {
+	return (window as any).config.API_BASE_PATH  || 'default-url';
+}
 export const environment = {
-   production: ${isProduction},
+   production: false,
    API_KEY_IMAGE4IO: "${process.env.API_KEY_IMAGE4IO}",
    API_SECRET_IMAGE4IO: "${process.env.API_SECRET_IMAGE4IO}",
    API_URL_IMAGE4IO: "${process.env.API_URL_IMAGE4IO}",
@@ -15,9 +21,10 @@ export const environment = {
    NODE_VERSION: "${process.env.NODE_VERSION}"
 };
 `; // write the content to the respective file
-writeFile(targetPath, environmentFileContent, function (err) {
-  if (err) {
-    console.log(err);
-  }
-  console.log(`Wrote variables to ${targetPath}`);
+writeFile(targetPath, envConfigFile, function (err) {
+	if (err) {
+		throw console.error(err);
+	} else {
+		console.log('Using custom environment');
+	}
 });

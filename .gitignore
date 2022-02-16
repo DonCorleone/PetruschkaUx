@@ -45,9 +45,8 @@ testem.log
 .DS_Store
 Thumbs.db
 .env
-environments/*.ts
 .angular/cache/
 
 # Local Netlify folder
 .netlify
-/src/environments/
+/src/environments/environment.custom.ts
