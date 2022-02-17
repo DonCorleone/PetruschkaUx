@@ -22,8 +22,8 @@ Backend is completely outsourced into cloud-services.
 ### Editing
 [ticketino.com](https://www.ticketino.com/)
 ### Transfer
-Data download from Ticketino via REST-API and upload to MongoDB Realm via REST API  [.NET Core WebApi]()
-### JSON
-Data access to [MongoDB Atlas](https://www.mongodb.com/cloud/atlas) via apollo / GraphQL - client
+Data transfer from Ticketino via REST-API to MongoDB Atlas via REST API [.NET Core WebApi](https://github.com/DonCorleone/Ticketino-HttpClient-WebApi)
+### Serverless Backend
+[MongoDB Atlas](https://www.mongodb.com/cloud/atlas) GraphQL API
 ### Images
 Image access to [image4io](https://image4.io/) via REST API
