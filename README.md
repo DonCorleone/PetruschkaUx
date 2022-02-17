@@ -9,13 +9,13 @@ Status TEST:
 
 ## Frontend
 ### Javascript Framework
-Angular v10 +
+Angular v13 + (Node 16+)
 
 ### Theme
 Template Copyright @ [3rd Wave Media](http://themes.3rdwavemedia.com/)
 
 ## Communication
-GraphQL via Apollo-Client
+GraphQL / Apollo / MongoDB Realm driver
 
 ## Backend
 Backend is completely outsourced into cloud-services.
