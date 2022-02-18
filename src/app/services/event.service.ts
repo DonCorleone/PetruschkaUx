@@ -265,16 +265,14 @@ export class EventService {
 
 	static GetBannerImagePathPathFromEventDetail(eventDetail: EventDetail): string {
 		return (eventDetail
-			&& eventDetail.eventInfos && eventDetail.eventInfos[0]
-			&& eventDetail.eventInfos && eventDetail.eventInfos[0].bannerImagePath ?
-			"https://images.weserv.nl/?url=" + eventDetail.eventInfos && eventDetail.eventInfos[0].bannerImagePath + "&w=1137&h=339" : null);
+			&& eventDetail.eventInfos && eventDetail.eventInfos[0] && eventDetail.eventInfos[0].bannerImagePath ?
+			"https://images.weserv.nl/?url=" + eventDetail.eventInfos[0].bannerImagePath + "&w=1137&h=339" : null);
 	}
 
 	static GetFlyerImagePathFromEventDetail(eventDetail: EventDetail): string {
 		return (eventDetail
-			&& eventDetail.eventInfos && eventDetail.eventInfos[0]
-			&& eventDetail.eventInfos && eventDetail.eventInfos[0].flyerImagePath ?
-			"https://images.weserv.nl/?url=" + eventDetail.eventInfos && eventDetail.eventInfos[0].flyerImagePath + "&w=195&h=269" : null);
+			&& eventDetail.eventInfos && eventDetail.eventInfos[0] && eventDetail.eventInfos[0].flyerImagePath ?
+			"https://images.weserv.nl/?url=" + eventDetail.eventInfos[0].flyerImagePath + "&w=195&h=269" : null);
 	}
 
 	static GetShortDescFromEventDetail(eventDetail: EventDetail): string {
