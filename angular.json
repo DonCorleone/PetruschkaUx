@@ -63,6 +63,14 @@
                   "with": "src/environments/environment.custom.ts"
                 }
               ]
+            },
+            "development": {
+              "buildOptimizer": false,
+              "optimization": false,
+              "vendorChunk": true,
+              "extractLicenses": false,
+              "sourceMap": true,
+              "namedChunks": true
             }
           }
         },
@@ -77,8 +85,12 @@
             },
             "custom": {
               "browserTarget": "kinderkulturUx:build:custom"
+            },
+            "development": {
+              "browserTarget": "kinderkulturUx:build:development"
             }
-          }
+          },
+          "defaultConfiguration": "development"
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",

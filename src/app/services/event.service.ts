@@ -190,12 +190,12 @@ export class EventService {
 
 	static GetEventInfoFromEventDetail(eventDetail: EventDetail): EventDetailEventInfo {
 
-		if (!eventDetail || !eventDetail.eventInfos || eventDetail.eventInfos.length === 0) {
+		if (!eventDetail || !eventDetail.eventInfos || eventDetail.eventInfos?.length === 0) {
 			return null;
 		}
 
-		return (eventDetail.eventInfos.filter(
-			p => p.languageId === 1))?.length > 0 ? eventDetail.eventInfos.filter(
+		return (eventDetail.eventInfos?.filter(
+			p => p.languageId === 1))?.length > 0 ? eventDetail.eventInfos?.filter(
 				p => p.languageId === 1)[0] : null;
 	}
 
@@ -208,13 +208,11 @@ export class EventService {
 		let usageTicketTypes: TicketTypeInfo[];
 
 		if (eventDetail.ticketTypes.length === 1) {
-			usageTicketTypes = eventDetail.ticketTypes[0].ticketTypeInfos
-				.filter(p => p.name.toLowerCase() === usage.toLowerCase() && p.languageId === 1);
+			usageTicketTypes = eventDetail.ticketTypes[0].ticketTypeInfos?.filter(p => p.name.toLowerCase() === usage.toLowerCase() && p.languageId === 1);
 		} else {
 
 			for (const ticketType of eventDetail.ticketTypes) {
-				usageTicketTypes = ticketType.ticketTypeInfos
-					.filter(p => p.name.toLowerCase() === usage.toLowerCase() && p.languageId === 1);
+				usageTicketTypes = ticketType.ticketTypeInfos?.filter(p => p.name.toLowerCase() === usage.toLowerCase() && p.languageId === 1);
 				if (usageTicketTypes && usageTicketTypes.length > 0) {
 					break;
 				}
@@ -233,8 +231,7 @@ export class EventService {
 
 		for (const ticketType of eventDetail.ticketTypes) {
 
-			let name = ticketType.ticketTypeInfos
-				.filter(p => p.languageId === 1)[0].name;
+			let name = ticketType.ticketTypeInfos?.filter(p => p.languageId === 1)[0].name;
 
 			let price = ticketType.price;
 
@@ -268,45 +265,45 @@ export class EventService {
 
 	static GetBannerImagePathPathFromEventDetail(eventDetail: EventDetail): string {
 		return (eventDetail
-			&& eventDetail.eventInfos[0]
-			&& eventDetail.eventInfos[0].bannerImagePath ?
-			"https://images.weserv.nl/?url=" + eventDetail.eventInfos[0].bannerImagePath + "&w=1137&h=339" : null);
+			&& eventDetail.eventInfos && eventDetail.eventInfos[0]
+			&& eventDetail.eventInfos && eventDetail.eventInfos[0].bannerImagePath ?
+			"https://images.weserv.nl/?url=" + eventDetail.eventInfos && eventDetail.eventInfos[0].bannerImagePath + "&w=1137&h=339" : null);
 	}
 
 	static GetFlyerImagePathFromEventDetail(eventDetail: EventDetail): string {
 		return (eventDetail
-			&& eventDetail.eventInfos[0]
-			&& eventDetail.eventInfos[0].flyerImagePath ?
-			"https://images.weserv.nl/?url=" + eventDetail.eventInfos[0].flyerImagePath + "&w=195&h=269" : null);
+			&& eventDetail.eventInfos && eventDetail.eventInfos[0]
+			&& eventDetail.eventInfos && eventDetail.eventInfos[0].flyerImagePath ?
+			"https://images.weserv.nl/?url=" + eventDetail.eventInfos && eventDetail.eventInfos[0].flyerImagePath + "&w=195&h=269" : null);
 	}
 
 	static GetShortDescFromEventDetail(eventDetail: EventDetail): string {
 		return (eventDetail
-			&& eventDetail.eventInfos.find(p => p.languageId === 1)?.shortDescription);
+			&& eventDetail.eventInfos?.find(p => p.languageId === 1)?.shortDescription);
 	}
 
 	static GetNameFromEventDetail(eventDetail: EventDetail): string {
 		return (eventDetail
-			&& eventDetail.eventInfos[0]
-			&& eventDetail.eventInfos[0].name ?
-			eventDetail.eventInfos[0].name : null);
+			&& eventDetail.eventInfos && eventDetail.eventInfos[0]
+			&& eventDetail.eventInfos && eventDetail.eventInfos[0].name ?
+			eventDetail.eventInfos && eventDetail.eventInfos[0].name : null);
 	}
 
 	static GetLongDescriptionFromEventDetail(eventDetail: EventDetail): string {
 		return (eventDetail
-			&& eventDetail.eventInfos.find(p => p.languageId === 1)?.longDescription);
+			&& eventDetail.eventInfos?.find(p => p.languageId === 1)?.longDescription);
 	}
 
 	static GetImportantNotesFromEventDetail(eventDetail: EventDetail): string {
 		return (eventDetail
-			&& eventDetail.eventInfos.find(p => p.languageId === 1)?.importantNotes);
+			&& eventDetail.eventInfos?.find(p => p.languageId === 1)?.importantNotes);
 	}
 
 	static GetLocationFromEventDetail(eventDetail: EventDetail): string {
 		return (eventDetail
-			&& eventDetail.eventInfos[0]
-			&& eventDetail.eventInfos[0].location ?
-			eventDetail.eventInfos[0].location : null);
+			&& eventDetail.eventInfos && eventDetail.eventInfos[0]
+			&& eventDetail.eventInfos && eventDetail.eventInfos[0].location ?
+			eventDetail.eventInfos && eventDetail.eventInfos[0].location : null);
 	}
 
 	static GetStartFromEventDetail(eventDetail: EventDetail): Date {

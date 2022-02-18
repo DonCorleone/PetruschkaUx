@@ -27,6 +27,6 @@ export class MusicListComponent implements OnInit {
 	}
 
 	GetImageUrl(eventDetail: EventDetail):string{
-		return EventService.GetTicketTypeInfoFromEventDetail(eventDetail, 'CD').imageUrl;
+		return EventService.GetTicketTypeInfoFromEventDetail(eventDetail, 'CD')?.imageUrl;
 	}
 }
