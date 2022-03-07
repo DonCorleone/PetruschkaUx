@@ -13,7 +13,7 @@ import { HttpLink } from 'apollo-angular/http';
 
 import * as realm from './realm';
 import { HttpClientModule, HttpHeaders, HTTP_INTERCEPTORS } from '@angular/common/http';
-import { APOLLO_OPTIONS } from 'apollo-angular';
+import { ApolloModule, APOLLO_OPTIONS } from 'apollo-angular';
 import { InfoComponent } from './components/info/info-item/info-item.component';
 import { ScullyLibModule } from '@scullyio/ng-lib';
 import { ImageModalComponent } from './components/gallery/image-modal/image-modal.component';
@@ -56,7 +56,15 @@ export function createApollo(httpLink: HttpLink) {
 
 @NgModule({
   declarations: [AppComponent, ScrollSpyDirective, ImageModalComponent, TicketModalComponent, TicketItemComponent],
-  imports: [AboutModule, BrowserModule, AppRoutingModule, HttpClientModule, ScullyLibModule, BrowserAnimationsModule],
+  imports: [
+    ApolloModule,
+    AboutModule,
+    BrowserModule,
+    AppRoutingModule,
+    HttpClientModule,
+    ScullyLibModule,
+    BrowserAnimationsModule,
+  ],
   entryComponents: [InfoComponent],
   providers: [
     {
