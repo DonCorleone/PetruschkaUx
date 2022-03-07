@@ -11,7 +11,7 @@ import { map } from 'rxjs/operators';
 import { Press, PressService } from 'src/app/services/press.service';
 import { TicketModalComponent } from '../../ticket/ticket-modal/ticket-modal.component';
 import { AboutModalComponent } from '../../../modules/about/about-modal/about-modal.component';
-import {StaffService} from "../../../modules/staff.service";
+import {StaffService} from "../../../services/staff.service";
 
 @Component({
   selector: 'app-info-item',

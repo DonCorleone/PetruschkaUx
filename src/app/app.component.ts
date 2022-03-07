@@ -1,6 +1,7 @@
-import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
+import {ChangeDetectionStrategy, Component, Injectable, OnInit} from '@angular/core';
 import { registerLocaleData } from '@angular/common';
 import localeDeCH from '@angular/common/locales/de-CH';
+import { Apollo, gql } from 'apollo-angular';
 import jwtDecode from 'jwt-decode';
 
 @Component({
@@ -14,7 +15,7 @@ export class AppComponent implements OnInit {
     registerLocaleData(localeDeCH, 'de-CH');
   }
 
-  constructor() {
+  constructor( ) {
     // const token = localStorage.getItem('token');
 		// if (token) {
 		// 	console.log('token found');

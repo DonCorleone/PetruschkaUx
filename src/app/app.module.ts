@@ -21,43 +21,12 @@ import { HttpErrorInterceptor } from './services/http-error-interceptor.service'
 import { TicketModalComponent } from './components/ticket/ticket-modal/ticket-modal.component';
 import { TicketItemComponent } from './components/ticket/ticket-item/ticket-item.component';
 import { AboutModule } from './modules/about/about.module';
-import { setContext } from '@apollo/client/link/context';
-const uri = realm.graphqlUrl;
-
-export function createApollo(httpLink: HttpLink) {
-  const basic = setContext((operation, context) => ({
-    headers: {
-      Accept: 'charset=utf-8',
-    },
-  }));
-
-  const auth = setContext((operation, context) => {
-    const token = localStorage.getItem('token');
-
-    if (token === null) {
-      return {};
-    } else {
-      return {
-        headers: {
-          Authorization: `Bearer ${token}`,
-        },
-      };
-    }
-  });
-
-  const link = ApolloLink.from([basic, auth, httpLink.create({ uri })]);
-  const cache = new InMemoryCache();
-
-  return {
-    link,
-    cache,
-  };
-}
+import { createApollo, GraphQLModule } from './modules/graphql/graphql.module';
 
 @NgModule({
   declarations: [AppComponent, ScrollSpyDirective, ImageModalComponent, TicketModalComponent, TicketItemComponent],
   imports: [
-    ApolloModule,
+    GraphQLModule,
     AboutModule,
     BrowserModule,
     AppRoutingModule,
@@ -67,11 +36,6 @@ export function createApollo(httpLink: HttpLink) {
   ],
   entryComponents: [InfoComponent],
   providers: [
-    {
-      provide: APOLLO_OPTIONS,
-      useFactory: createApollo,
-      deps: [HttpLink],
-    },
     {
       provide: HTTP_INTERCEPTORS,
       useClass: HttpErrorInterceptor,
