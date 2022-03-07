@@ -15,13 +15,13 @@ export class AppComponent implements OnInit {
   }
 
   constructor() {
-    const token = sessionStorage.getItem('token');
+    const token = localStorage.getItem('token');
 		if (token) {
 			console.log('token found');
 			const decoded = jwtDecode(token);
 			const expDate = +decoded['exp'];
 			if (expDate < Date.now() / 1000) {
-				sessionStorage.removeItem('token')
+				localStorage.removeItem('token')
 				console.log('expired');
 			}else{
 				console.log('valid');
