@@ -20,7 +20,7 @@ async function getValidAccessToken(): Promise<string> {
 
 			console.log('Realm.Credentials.anonymous():' + JSON.stringify(o));
 			localStorage.setItem('token', app.currentUser.accessToken)
-			return app.currentUser.accessToken;
+			return o.accessToken;
 		});
 	} else
 		// The logged in user's access token might be stale,
