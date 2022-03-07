@@ -15,17 +15,17 @@ export class AppComponent implements OnInit {
   }
 
   constructor() {
-    const token = localStorage.getItem('token');
-		if (token) {
-			console.log('token found');
-			const decoded = jwtDecode(token);
-			const expDate = +decoded['exp'];
-			if (expDate < Date.now() / 1000) {
-				localStorage.removeItem('token')
-				console.log('expired');
-			}else{
-				console.log('valid');
-			}
-		}
+    // const token = localStorage.getItem('token');
+		// if (token) {
+		// 	console.log('token found');
+		// 	const decoded = jwtDecode(token);
+		// 	const expDate = +decoded['exp'];
+		// 	if (expDate < Date.now() / 1000) {
+		// 		localStorage.removeItem('token')
+		// 		console.log('expired');
+		// 	}else{
+		// 		console.log('valid');
+		// 	}
+		// }
   }
 }
