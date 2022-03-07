@@ -32,6 +32,7 @@
     "apollo-angular": "^2.6.0",
     "codelyzer": "^6.0.1",
     "graphql": "^15.8.0",
+    "jwt-decode": "^3.1.2",
     "masonry-layout": "^4.2.2",
     "ngx-masonry": "^13.0.0",
     "realm-web": "^1.2.0",
