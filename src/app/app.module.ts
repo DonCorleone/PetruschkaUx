@@ -7,7 +7,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ScrollSpyDirective } from '../directives/scroll-spy.directive';
 
-import { ApolloClientOptions, InMemoryCache } from '@apollo/client/core';
+import { ApolloClientOptions, ApolloLink, InMemoryCache } from '@apollo/client/core';
 
 import { HttpLink } from 'apollo-angular/http';
 
@@ -20,16 +20,37 @@ import { ImageModalComponent } from './components/gallery/image-modal/image-moda
 import { HttpErrorInterceptor } from './services/http-error-interceptor.service';
 import { TicketModalComponent } from './components/ticket/ticket-modal/ticket-modal.component';
 import { TicketItemComponent } from './components/ticket/ticket-item/ticket-item.component';
-import {AboutModule} from "./modules/about/about.module";
+import { AboutModule } from './modules/about/about.module';
+import { setContext } from '@apollo/client/link/context';
 const uri = realm.graphqlUrl;
 
-export function createApollo(httpLink: HttpLink): ApolloClientOptions<any> {
+export function createApollo(httpLink: HttpLink) {
+  const basic = setContext((operation, context) => ({
+    headers: {
+      Accept: 'charset=utf-8',
+    },
+  }));
+
+  const auth = setContext((operation, context) => {
+    const token = localStorage.getItem('token');
+
+    if (token === null) {
+      return {};
+    } else {
+      return {
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+      };
+    }
+  });
+
+  const link = ApolloLink.from([basic, auth, httpLink.create({ uri })]);
+  const cache = new InMemoryCache();
+
   return {
-    link: httpLink.create({
-      uri,
-      headers: new HttpHeaders().set('Authorization', `Bearer ${localStorage.getItem('token')}`),
-    }),
-    cache: new InMemoryCache(),
+    link,
+    cache,
   };
 }
 
