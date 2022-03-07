@@ -9,6 +9,7 @@ const app = new Realm.App(environment.APP_ID_REALM);
 // Get a valid Realm user access token to authenticate requests
 async function getValidAccessToken(): Promise<string> {
 
+	console.log('app.currentUser: ' + JSON.stringify(app.currentUser));
 
 	if (!app.currentUser)
 		// If no user is logged in, log in an anonymous user
