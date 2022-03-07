@@ -15,6 +15,7 @@ async function getValidAccessToken(): Promise<string> {
 	{
 		await app.logIn(Realm.Credentials.anonymous()).then(o => {
 
+			console.log('Realm.Credentials.anonymous():' + JSON.stringify(o));
 			localStorage.setItem('token', app.currentUser.accessToken)
 			return app.currentUser.accessToken;
 		});
@@ -25,6 +26,7 @@ async function getValidAccessToken(): Promise<string> {
 
 
 		await app.currentUser.refreshCustomData().then(z=>{
+			console.log('app.currentUser.refreshCustomData():' + JSON.stringify(z))
 			localStorage.setItem('token', app.currentUser.accessToken)
 			return app.currentUser.accessToken;
 		});

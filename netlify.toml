@@ -1,7 +1,7 @@
 [build]
-  command = "npm run build --configuration=production && npm run scully"
+  command = "npm run build --configuration=production"
   functions = "netlify/functions"
-  publish = "dist/static"
+  publish = "dist/kinderkulturUx"
 
 [[redirects]]
   from = "/*"

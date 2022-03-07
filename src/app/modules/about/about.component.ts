@@ -1,7 +1,7 @@
 import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Staff } from '../../models/staff.models';
-import { StaffService } from '../staff.service';
+import { StaffService } from '../../services/staff.service';
 
 @Component({
   selector: 'app-about',
