@@ -61,7 +61,7 @@ export class StaffService {
         },
       })
       .valueChanges.pipe(
-        map((result) => result.data.staff),
+        map((result) => result?.data?.staff),
         map((staff) => this.getStaffWithSrc(staff))
       );
   }
@@ -73,7 +73,7 @@ export class StaffService {
 				'https://images.weserv.nl/?url=' +
 				'https://petruschka.netlify.app/' +
 				'assets/images/members/' +
-				encodeURIComponent(staff.name) +
+				encodeURIComponent(staff?.name) +
 				'.jpg' +
 				'&w=179&h=240',
 		};
