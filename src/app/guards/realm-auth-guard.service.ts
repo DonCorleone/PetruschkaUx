@@ -18,6 +18,7 @@ export class RealmAuthGuard implements CanActivate {
 				const expDate = +decoded['exp'];
 				if (expDate < Date.now() / 1000) {
 					localStorage.removeItem('token')
+					accessToken = null;
 					console.log('expired');
 				}else{
 					console.log('valid');
