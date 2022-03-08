@@ -38,7 +38,7 @@ export function createApollo(httpLink: HttpLink) {
 			const decoded = jwtDecode(token);
 			const expDate = +decoded['exp'];
 			if (expDate < Date.now() / 1000) {
-				localStorage.removeItem('token')
+				localStorage.removeItem('token');
 				console.log('expired @ graphql-module');
 			}else{
 				console.log('valid@ graphql-module');
