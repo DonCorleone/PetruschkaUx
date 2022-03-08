@@ -51,7 +51,7 @@ function tokenExpired(currentUser:any):boolean{
 			console.log('expired @ realm');
 			return true;
 		}else{
-			console.log('valid @ realm'');
+			console.log('valid @ realm');
 			return false;
 		}
 	}
