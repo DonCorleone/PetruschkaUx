@@ -12,7 +12,7 @@ export class RealmAuthGuard implements CanActivate {
 		next: ActivatedRouteSnapshot,
 		state: RouterStateSnapshot): Promise<boolean> | boolean {
 
-		return realm.getValidAccessToken().then(accessToken => {
+		return realm.getValidAccessTokenMongoDB().then(accessToken => {
 			return accessToken ? true : false;
 		});
 	}
