@@ -37,7 +37,7 @@ async function getValidAccessToken(): Promise<string> {
 
 	// Get a valid access token for the current user
 
-	return app.currentUser.accessToken;
+//	return app.currentUser.accessToken;
 }
 
 function tokenExpired(currentUser:any):boolean{
