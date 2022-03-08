@@ -21,7 +21,7 @@ async function getValidAccessToken(): Promise<string> {
 			x = await app.logIn(Realm.Credentials.anonymous()).then(o => {
 
 			console.log('Realm.Credentials.anonymous');
-			localStorage.setItem('token', app.currentUser.accessToken)
+		//	localStorage.setItem('token', app.currentUser.accessToken)
 			return o.accessToken;
 		});
 	} else
@@ -32,7 +32,7 @@ async function getValidAccessToken(): Promise<string> {
 
 		x = await app.currentUser.refreshCustomData().then(z=>{
 			console.log('app.currentUser.refreshCustomData():' + JSON.stringify(z))
-			localStorage.setItem('token', app.currentUser.accessToken)
+		//	localStorage.setItem('token', app.currentUser.accessToken)
 			return app.currentUser.accessToken;
 		});
 	}
@@ -54,6 +54,7 @@ async function getValidAccessTokenMongoDB() {
 		// valid, we refresh the user's custom data which also refreshes their access token.
 		await app.currentUser.refreshCustomData();
 	}
+	localStorage.setItem('token', app.currentUser.accessToken);
 	return app.currentUser.accessToken;
 }
 

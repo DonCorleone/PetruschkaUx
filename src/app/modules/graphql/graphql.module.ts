@@ -1,17 +1,26 @@
 import { NgModule } from '@angular/core';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HttpHeaders } from '@angular/common/http';
 import { ApolloModule, Apollo, APOLLO_OPTIONS } from 'apollo-angular';
 import { HttpLink } from 'apollo-angular/http';
-import { InMemoryCache,ApolloLink } from '@apollo/client/core';
+import { InMemoryCache, ApolloLink, ApolloClientOptions } from '@apollo/client/core';
 import { setContext } from '@apollo/client/link/context';
-import * as realm from "../../realm";
-import jwtDecode from "jwt-decode";
+import * as realm from '../../realm';
+import jwtDecode from 'jwt-decode';
 
 const uri = realm.graphqlUrl;
 
-export function createApollo(httpLink: HttpLink) {
+export function createApolloMongoDb(httpLink: HttpLink): ApolloClientOptions<any> {
+  return {
+    link: httpLink.create({
+      uri,
+      headers: new HttpHeaders().set('Authorization', `Bearer ${localStorage.getItem('token')}`),
+    }),
+    cache: new InMemoryCache(),
+  };
+}
 
-/*	const auth = setContext(async(_, { headers }) => {
+export function createApollo(httpLink: HttpLink) {
+  /*	const auth = setContext(async(_, { headers }) => {
 		// Grab token if there is one in storage or hasn't expired
 		let token = await realm.getValidAccessTokenMongoDB();
 
@@ -31,7 +40,7 @@ export function createApollo(httpLink: HttpLink) {
 		};
 	});*/
 
-/*	const auth2 = setContext((operation, context) => {
+  /*	const auth2 = setContext((operation, context) => {
 		const token = localStorage.getItem('token');
 		if (token) {
 			console.log('token found at graphql-module');
@@ -56,7 +65,7 @@ export function createApollo(httpLink: HttpLink) {
 		}
 	});*/
 
-/*	const auth3 = setContext((operation, context) => {
+  /*	const auth3 = setContext((operation, context) => {
 		new ApolloClient({
 			link: new HttpLink({
 				uri: `https://realm.mongodb.com/api/client/v2.0/app/${APP_ID}/graphql`,
@@ -71,46 +80,43 @@ export function createApollo(httpLink: HttpLink) {
 			}),
 	});*/
 
+  const basic = setContext((operation, context) => ({
+    headers: {
+      Accept: 'charset=utf-8',
+    },
+  }));
 
+  const auth = setContext((operation, context) => {
+    realm.getValidAccessTokenMongoDB().then((token) => {
+      if (token === null) {
+        return {};
+      } else {
+        return {
+          headers: {
+            Authorization: `Bearer ${token}`,
+          },
+        };
+      }
+    });
+  });
 
-		const basic = setContext((operation, context) => ({
-			headers: {
-				Accept: 'charset=utf-8'
-			}
-		}));
+  const link = ApolloLink.from([basic, auth, httpLink.create({ uri })]);
+  const cache = new InMemoryCache();
 
-		const auth = setContext((operation, context) => {
-			const token = localStorage.getItem('token');
-
-			if (token === null) {
-				return {};
-			} else {
-				return {
-					headers: {
-						Authorization: `Bearer ${token}`
-					}
-				};
-			}
-		});
-
-		const link = ApolloLink.from([basic, auth, httpLink.create({ uri })]);
-		const cache = new InMemoryCache();
-
-		return {
-			link,
-			cache
-		}
+  return {
+    link,
+    cache,
+  };
 }
 
 @NgModule({
-	exports: [
-		HttpClientModule,
-		ApolloModule,
-	],
-	providers: [{
-		provide: APOLLO_OPTIONS,
-		useFactory: createApollo,
-		deps: [HttpLink]
-	}]
+  exports: [HttpClientModule, ApolloModule],
+  providers: [
+    {
+      provide: APOLLO_OPTIONS,
+      useFactory: createApolloMongoDb,
+      deps: [HttpLink],
+    },
+  ],
 })
 export class GraphQLModule {}
