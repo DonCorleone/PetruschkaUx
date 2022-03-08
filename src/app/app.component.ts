@@ -18,14 +18,14 @@ export class AppComponent implements OnInit {
   constructor( ) {
     const token = localStorage.getItem('token');
 		if (token) {
-			console.log('token found @ app component');
+			console.log('token found at app component');
 			const decoded = jwtDecode(token);
 			const expDate = +decoded['exp'];
 			if (expDate < Date.now() / 1000) {
 				localStorage.removeItem('token')
-				console.log('expired @ app component');
+				console.log('expired at app component');
 			}else{
-				console.log('valid @ app component');
+				console.log('valid at app component');
 			}
 		}
   }

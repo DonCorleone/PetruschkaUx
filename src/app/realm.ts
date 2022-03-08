@@ -42,16 +42,16 @@ async function getValidAccessToken(): Promise<string> {
 
 function tokenExpired(currentUser:any):boolean{
 	if (currentUser?.accessToken) {
-		console.log('token found @ realm'');
+		console.log('token found at realm'');
 		const decoded = jwtDecode(currentUser.accessToken);
 		const expDate = +decoded['exp'];
 		if (expDate < Date.now() / 1000) {
 			localStorage.removeItem('token')
 			currentUser.accessToken = null;
-			console.log('expired @ realm');
+			console.log('expired at realm');
 			return true;
 		}else{
-			console.log('valid @ realm');
+			console.log('valid at realm');
 			return false;
 		}
 	}

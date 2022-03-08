@@ -34,14 +34,14 @@ export function createApollo(httpLink: HttpLink) {
 	const auth2 = setContext((operation, context) => {
 		const token = localStorage.getItem('token');
 		if (token) {
-			console.log('token found @ graphql-module');
+			console.log('token found at graphql-module');
 			const decoded = jwtDecode(token);
 			const expDate = +decoded['exp'];
 			if (expDate < Date.now() / 1000) {
 				localStorage.removeItem('token');
-				console.log('expired @ graphql-module');
+				console.log('expired at graphql-module');
 			}else{
-				console.log('valid@ graphql-module');
+				console.log('valid at graphql-module');
 			}
 		}
 
