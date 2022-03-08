@@ -4,7 +4,7 @@
   "scripts": {
     "ng": "ng",
     "config": "ts-node ./scripts/setenv.ts",
-    "start": "npm run config && ng serve --configuration=custom",
+    "start": "npm run config && ng serve --configuration=development",
     "build": "npm run config && ng build --configuration=custom",
     "test": "ng test",
     "lint": "ng lint",
