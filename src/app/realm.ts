@@ -49,10 +49,10 @@ function tokenExpired(currentUser:any):boolean{
 			localStorage.removeItem('token')
 			currentUser.accessToken = null;
 			console.log('expired');
-			return false;
+			return true;
 		}else{
 			console.log('valid');
-			return true;
+			return false;
 		}
 	}
 }
