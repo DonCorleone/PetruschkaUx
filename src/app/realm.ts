@@ -11,7 +11,7 @@ const app = new Realm.App(environment.APP_ID_REALM);
 // Get a valid Realm user access token to authenticate requests
 async function getValidAccessToken(): Promise<string> {
 
-	console.log('app.currentUser: ');
+	console.log('app.currentUser');
 
 	if (!app.currentUser || tokenExpired(app.currentUser))
 		// If no user is logged in, log in an anonymous user
@@ -42,11 +42,11 @@ async function getValidAccessToken(): Promise<string> {
 
 function tokenExpired(currentUser:any):boolean{
 	if (currentUser?.accessToken) {
-		console.log('token found at realm'');
+		console.log('token found at realm');
 		const decoded = jwtDecode(currentUser.accessToken);
 		const expDate = +decoded['exp'];
 		if (expDate < Date.now() / 1000) {
-			localStorage.removeItem('token')
+			localStorage.removeItem('token');
 			currentUser.accessToken = null;
 			console.log('expired at realm');
 			return true;
