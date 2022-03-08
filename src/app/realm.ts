@@ -11,14 +11,14 @@ const app = new Realm.App(environment.APP_ID_REALM);
 // Get a valid Realm user access token to authenticate requests
 async function getValidAccessToken(): Promise<string> {
 
-	console.log('app.currentUser: ' + JSON.stringify(app));
+	console.log('app.currentUser: ');
 
 	if (!app.currentUser || tokenExpired(app.currentUser))
 		// If no user is logged in, log in an anonymous user
 	{
 		await app.logIn(Realm.Credentials.anonymous()).then(o => {
 
-			console.log('Realm.Credentials.anonymous():' + JSON.stringify(o));
+			console.log('Realm.Credentials.anonymous():');
 			localStorage.setItem('token', app.currentUser.accessToken)
 			return o.accessToken;
 		});
@@ -29,7 +29,7 @@ async function getValidAccessToken(): Promise<string> {
 
 
 		await app.currentUser.refreshCustomData().then(z=>{
-			console.log('app.currentUser.refreshCustomData():' + JSON.stringify(z))
+			console.log('app.currentUser.refreshCustomData():')
 			localStorage.setItem('token', app.currentUser.accessToken)
 			return app.currentUser.accessToken;
 		});
@@ -42,16 +42,16 @@ async function getValidAccessToken(): Promise<string> {
 
 function tokenExpired(currentUser:any):boolean{
 	if (currentUser?.accessToken) {
-		console.log('token found');
+		console.log('token found @ realm'');
 		const decoded = jwtDecode(currentUser.accessToken);
 		const expDate = +decoded['exp'];
 		if (expDate < Date.now() / 1000) {
 			localStorage.removeItem('token')
 			currentUser.accessToken = null;
-			console.log('expired');
+			console.log('expired @ realm');
 			return true;
 		}else{
-			console.log('valid');
+			console.log('valid @ realm'');
 			return false;
 		}
 	}
