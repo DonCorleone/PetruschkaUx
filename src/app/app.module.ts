@@ -22,6 +22,7 @@ import { TicketModalComponent } from './components/ticket/ticket-modal/ticket-mo
 import { TicketItemComponent } from './components/ticket/ticket-item/ticket-item.component';
 import { AboutModule } from './modules/about/about.module';
 import {setContext} from "@apollo/client/link/context";
+import {getValidAccessToken} from "./realm";
 const uri = realm.graphqlUrl;
 
 export function createApollo2(httpLink: HttpLink): ApolloClientOptions<any> {
@@ -41,9 +42,8 @@ export function createApollo3(httpLink: HttpLink) {
 		}
 	}));
 
-	const auth = setContext((operation, context) => {
-		const token = localStorage.getItem('token');
-
+	const auth = setContext(async (_, {headers}) => {
+		const token = await getValidAccessToken();
 		if (token === null) {
 			return {};
 		} else {
@@ -55,13 +55,13 @@ export function createApollo3(httpLink: HttpLink) {
 		}
 	});
 
-	const link = ApolloLink.from([basic, auth, httpLink.create({ uri })]);
+	const link = ApolloLink.from([basic, auth, httpLink.create({uri})]);
 	const cache = new InMemoryCache();
 
 	return {
 		link,
 		cache
-	}
+	};
 }
 
 @NgModule({
