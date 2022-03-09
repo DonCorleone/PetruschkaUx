@@ -1,5 +1,5 @@
 import * as Realm from 'realm-web';
-import {environment} from "../environments/environment";
+import { environment } from '../environments/environment';
 
 const graphqlUrl = `https://realm.mongodb.com/api/client/v2.0/app/${environment.APP_ID_REALM}/graphql`;
 
@@ -9,12 +9,10 @@ const app = new Realm.App(environment.APP_ID_REALM);
 // Get a valid Realm user access token to authenticate requests
 async function getValidAccessToken(): Promise<string> {
 
-
 	if (!app.currentUser)
 		// If no user is logged in, log in an anonymous user
 	{
-		await app.logIn(Realm.Credentials.anonymous()).then(o=>{
-			localStorage.setItem('token', app.currentUser.accessToken)
+		await app.logIn(Realm.Credentials.anonymous()).then(o => {
 			return app.currentUser.accessToken;
 		});
 	} else
@@ -23,14 +21,12 @@ async function getValidAccessToken(): Promise<string> {
 	{
 
 
-		await app.currentUser.refreshCustomData().then(z=>{
-			localStorage.setItem('token', app.currentUser.accessToken)
+		await app.currentUser.refreshCustomData().then(z => {
 			return app.currentUser.accessToken;
 		});
 	}
 
 	// Get a valid access token for the current user
-
 	return app.currentUser.accessToken;
 }
 
