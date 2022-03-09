@@ -87,7 +87,7 @@ export function createApollo(httpLink: HttpLink) {
   }));
 
   const auth = setContext((operation, context) => {
-    realm.getValidAccessTokenMongoDB().then((token) => {
+    realm.getValidAccessToken().then((token) => {
       if (token === null) {
         return {};
       } else {
@@ -114,7 +114,7 @@ export function createApollo(httpLink: HttpLink) {
   providers: [
     {
       provide: APOLLO_OPTIONS,
-      useFactory: createApolloMongoDb,
+      useFactory: createApollo,
       deps: [HttpLink],
     },
   ],
