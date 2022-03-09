@@ -25,6 +25,7 @@ export class InfoComponent implements OnChanges {
   @Input() eventId: number;
   @Input() reservationMail: string;
   @Input() usage: string;
+	@Input() tag: string;
   @Input() playDate: Date;
   @Input() eventKey: string;
 
@@ -125,6 +126,9 @@ export class InfoComponent implements OnChanges {
   }
 
   openTicket(): void {
+		if (this.tag === 'sold-out'){
+			return;
+		}
     var eventLink = this.eventLink;
     if (eventLink == 'modal') {
       const modalRef = this.modalService.open(TicketModalComponent, { size: 'md' });

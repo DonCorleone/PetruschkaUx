@@ -14,6 +14,7 @@ import { EventService } from 'src/app/services/event.service';
 export class InfoModalComponent implements OnInit {
   @Input() eventDetailId: number;
   @Input() usage: string;
+	@Input() tag: string;
   @Input() eventDetail$: Observable<EventDetail>;
 
   eventInfo$: Observable<EventDetailEventInfo>;
