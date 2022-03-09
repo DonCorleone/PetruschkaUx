@@ -53,12 +53,12 @@ async function getValidAccessToken(): Promise<string> {
 function removeExpiredTokens(storageKey: string) {
 	let storedToken = localStorage.getItem(storageKey);
 	if (storedToken) {
-		console.log('storedToken found');
+		console.log(`found ${storageKey}`);
 		const decoded = jwtDecode(storedToken);
 		const expDate = +decoded['exp'];
 		if (expDate < Date.now() / 1000) {
-			localStorage.removeItem('storedToken');
-			console.log('expired');
+			localStorage.removeItem(storageKey);
+			console.log(`expired - removed ${storageKey}`);
 		} else {
 			console.log('valid');
 		}
