@@ -60,6 +60,9 @@ export class GigsItemComponent implements OnInit {
 
 
 	openTicket(): void {
+		if (this.tag === 'sold-out'){
+			return;
+		}
 		var eventLink = this.eventLink;
 		if (eventLink == 'modal') {
 			const modalRef = this.modalService.open(TicketModalComponent, { size:'md' });
@@ -72,6 +75,7 @@ export class GigsItemComponent implements OnInit {
 		const modalRef = this.modalService.open(InfoModalComponent, { size:'lg' });
 		modalRef.componentInstance.eventDetailId = this.eventId;
 		modalRef.componentInstance.usage = '';
+		modalRef.componentInstance.tag = this.tag;
 		modalRef.componentInstance.eventDetail$ = this.eventService.GetEventDetail(this.eventId);
 	}
 

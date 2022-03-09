@@ -1,105 +1,123 @@
 <div class="modal-item">
-	<div class="modal-item-content">
-			<div class="shortDesc">
-				{{ shortDesc }}
-			</div>
-	</div>
-	<div class="modal-item-footer" *ngIf="image4Images$ | async">
-		<a (click)="openGallery()" class="btn btn-sm btn-ghost-secondary">Impressionen</a>
-	</div>
+  <div class="modal-item-content">
+    <div class="shortDesc">
+      {{ shortDesc }}
+    </div>
+  </div>
+  <div class="modal-item-footer" *ngIf="image4Images$ | async">
+    <a (click)="openGallery()" class="btn btn-sm btn-ghost-secondary">Impressionen</a>
+  </div>
 </div>
 
-<img [src]="bannerImagePath" alt="bannerImagePath" class="bannerImage img-wide"/>
+<img [src]="bannerImagePath" alt="bannerImagePath" class="bannerImage img-wide" />
 
 <div class="modal-item">
-	<div class="modal-item-title">
-		Plot
-	</div>
-	<div class="modal-item-content">
-		<div [innerHTML]="plot"></div>
-	</div>
+  <div class="modal-item-title">Plot</div>
+  <div class="modal-item-content">
+    <div [innerHTML]="plot"></div>
+  </div>
 </div>
 
 <div class="modal-item" [hidden]="video.hidden">
-	<div class="modal-item-title">
-		Trailer
-	</div>
-	<div class="modal-item-content">
-			<video width="100%" controls>
-				<source #video [src]="'assets/videos/' + eventKey + '/' + eventKey +'.mp4'" type="video/mp4" (error)="video.hidden = true" [hidden]="video.hidden">
-				<source #video [src]="'assets/videos/' + eventKey + '/' + eventKey +'.webm'" type="video/webm" (error)="video.hidden = true" [hidden]="video.hidden">
-				Your browser does not support the video tag.
-			</video>
-	</div>
+  <div class="modal-item-title">Trailer</div>
+  <div class="modal-item-content">
+    <video width="100%" controls>
+      <source
+        #video
+        [src]="'assets/videos/' + eventKey + '/' + eventKey + '.mp4'"
+        type="video/mp4"
+        (error)="video.hidden = true"
+        [hidden]="video.hidden"
+      />
+      <source
+        #video
+        [src]="'assets/videos/' + eventKey + '/' + eventKey + '.webm'"
+        type="video/webm"
+        (error)="video.hidden = true"
+        [hidden]="video.hidden"
+      />
+      Your browser does not support the video tag.
+    </video>
+  </div>
 </div>
 
 <div class="modal-item">
-	<div class="modal-item-title">
-		{{ locationLabel }}
-	</div>
-	<div class="modal-item-content">
-		<a (click)="openLocation(locationName)" class="location-link"><i class="fas fa-external-link-square-alt"></i> {{ locationName }}</a>
-	</div>
+  <div class="modal-item-title">
+    {{ locationLabel }}
+  </div>
+  <div class="modal-item-content">
+    <a (click)="openLocation(locationName)" class="location-link"
+      ><i class="fas fa-external-link-square-alt"></i> {{ locationName }}</a
+    >
+  </div>
 </div>
 
 <div class="modal-item">
-	<div class="modal-item-title">
-		{{ playDateLabel }}
-	</div>
-		<div class="modal-item-content">
-			<span>{{ this.playDate | date:'fullDate' : '' :'de-CH'}}</span> <span
-			*ngIf="isFutureEvent"> um {{ this.playDate | date:'HH:mm' : '' :'de-CH' }}</span>
-	</div>
+  <div class="modal-item-title">
+    {{ playDateLabel }}
+  </div>
+  <div class="modal-item-content">
+    <span>{{ this.playDate | date: 'fullDate':'':'de-CH' }}</span>
+    <span *ngIf="isFutureEvent"> um {{ this.playDate | date: 'HH:mm':'':'de-CH' }}</span>
+  </div>
 </div>
 
 <div class="modal-item" *ngIf="artistsArray && artistsArray.length > 0">
-	<div class="modal-item-title">
-		Mitwirkende
-	</div>
-	<div class="modal-item-content">
-		<div *ngFor="let job of artistsArray">
-			<div *ngIf="job.isJobSharing">
-				{{ job.name }} {{ job.name !== '' ? ' : ' : '' }}
-				<span *ngFor="let jobValue of job.values; let isLast=last">
-						<a (click)="openStaff(jobValue)" class="staff-link"><i class="fas fa-external-link-square-alt"></i> {{ jobValue }}</a> {{isLast ? '' : ' & '}}
-					<!-- <a [routerLink]="['/staff', jobsharer]">{{ jobsharer }}</a> {{isLast ? '' : ' & '}} -->
-					</span>
-			</div>
-			<div *ngIf="!job.isJobSharing">
-				<a (click)="openStaff(job.name)" class="staff-link"><i class="fas fa-external-link-square-alt"></i> {{ job.name }}</a> {{ job.name !== '' ? ' : ' : '' }}
-				<span *ngFor="let jobValue of job.values; let isLast=last">
-					{{ jobValue }} {{isLast ? '' : ' & '}}
-					</span>
-			</div>
-		</div>
-	</div>
+  <div class="modal-item-title">Mitwirkende</div>
+  <div class="modal-item-content">
+    <div *ngFor="let job of artistsArray">
+      <div *ngIf="job.isJobSharing">
+        {{ job.name }} {{ job.name !== '' ? ' : ' : '' }}
+        <span *ngFor="let jobValue of job.values; let isLast = last">
+          <a (click)="openStaff(jobValue)" class="staff-link"
+            ><i class="fas fa-external-link-square-alt"></i> {{ jobValue }}</a
+          >
+          {{ isLast ? '' : ' & ' }}
+          <!-- <a [routerLink]="['/staff', jobsharer]">{{ jobsharer }}</a> {{isLast ? '' : ' & '}} -->
+        </span>
+      </div>
+      <div *ngIf="!job.isJobSharing">
+        <a (click)="openStaff(job.name)" class="staff-link"
+          ><i class="fas fa-external-link-square-alt"></i> {{ job.name }}</a
+        >
+        {{ job.name !== '' ? ' : ' : '' }}
+        <span *ngFor="let jobValue of job.values; let isLast = last"> {{ jobValue }} {{ isLast ? '' : ' & ' }} </span>
+      </div>
+    </div>
+  </div>
 </div>
 
 <div class="modal-item" *ngIf="pressArticle$ | async as article">
-	<div class="modal-item-title">
-		Pressestimmen
-	</div>
-	<div class="modal-item-content">
-			<p><span class="quote-icon-left"><i class="fas fa-quote-left"></i></span><em>{{article.quote}}</em><span class="quote-icon-right"><i class="fas fa-quote-right"></i></span></p>
-			<div class="image-box">
-				<a [href]="'assets/images/presse/' + article.nr + '.' + article.fileExtension" target="_blank">
-					<img [src]="'assets/images/presse/' + article.nr + '.png'" [alt]="article.desc" />
-				</a>
-				<p><a [href]="article.link" target="_blank">Link zum Artikel</a></p>
-			</div>
-			<p>
-				<span>'{{article.desc}}'</span>
-				<span *ngIf="article.author !== ''">- von {{article.author}}</span>
-				<span *ngIf="article.source !== ''">- {{article.source}}</span>
-				<span> vom {{ article.date | date:'mediumDate' : '' :'de-CH' }}</span>
-			</p>
-	</div>
+  <div class="modal-item-title">Pressestimmen</div>
+  <div class="modal-item-content">
+    <p>
+      <span class="quote-icon-left"><i class="fas fa-quote-left"></i></span><em>{{ article.quote }}</em
+      ><span class="quote-icon-right"><i class="fas fa-quote-right"></i></span>
+    </p>
+    <div class="image-box">
+      <a [href]="'assets/images/presse/' + article.nr + '.' + article.fileExtension" target="_blank">
+        <img [src]="'assets/images/presse/' + article.nr + '.png'" [alt]="article.desc" />
+      </a>
+      <p><a [href]="article.link" target="_blank">Link zum Artikel</a></p>
+    </div>
+    <p>
+      <span>'{{ article.desc }}'</span>
+      <span *ngIf="article.author !== ''">- von {{ article.author }}</span>
+      <span *ngIf="article.source !== ''">- {{ article.source }}</span>
+      <span> vom {{ article.date | date: 'mediumDate':'':'de-CH' }}</span>
+    </p>
+  </div>
 </div>
 
-<div class="modal-item"*ngIf="showBuyButton">
-	<div class="modal-item-footer">
-		<a (click)="openTicket()" class="btn btn-sm btn-ghost-secondary">Tickets</a>
-	</div>
+<div class="modal-item" *ngIf="showBuyButton">
+  <div class="modal-item-footer">
+    <a
+      (click)="openTicket()"
+      class="btn btn-sm btn-ghost-secondary"
+      [ngClass]="{ isDisabled: tag === 'cancelled' || tag === 'sold-out' }"
+      >{{ tag !== 'sold-out' ? 'Tickets' : 'Ausverkauft!' }}</a
+    >
+  </div>
 </div>
 
 <!--div class="modal-item" *ngIf="isFutureEvent">
@@ -116,5 +134,5 @@
 </div-->
 
 <div class="modal-item last">
-	<app-sponsors [eventKey]=eventKey></app-sponsors>
+  <app-sponsors [eventKey]="eventKey"></app-sponsors>
 </div>
