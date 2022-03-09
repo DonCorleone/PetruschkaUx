@@ -42,8 +42,9 @@ export function createApollo3(httpLink: HttpLink) {
 		}
 	}));
 
-	const auth = setContext(async (_, {headers}) => {
-		const token = await getValidAccessToken();
+	const auth = setContext((operation, context) => {
+		const token = localStorage.getItem('token');
+
 		if (token === null) {
 			return {};
 		} else {
@@ -55,13 +56,13 @@ export function createApollo3(httpLink: HttpLink) {
 		}
 	});
 
-	const link = ApolloLink.from([basic, auth, httpLink.create({uri})]);
+	const link = ApolloLink.from([basic, auth, httpLink.create({ uri })]);
 	const cache = new InMemoryCache();
 
 	return {
 		link,
 		cache
-	};
+	}
 }
 
 @NgModule({
