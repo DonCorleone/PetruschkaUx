@@ -38,7 +38,7 @@
 			<span>
         <a *ngIf="showBuyButton" (click)="openTicket()"
 					 class="btn btn-sm btn-secondary"
-					 [ngClass]="{'isDisabled' : tag === 'cancelled'}">Tickets</a>
+					 [ngClass]="{'isDisabled' : tag === 'cancelled' || tag === 'sold-out' }">{{ tag !== 'sold-out' ? 'Tickets':'Ausverkauft!' }}</a>
       </span>
 			<span *ngIf="showIsGone" class="secondary-content">
         Vorstellung vorüber.
