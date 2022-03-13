@@ -25,7 +25,7 @@
     "@angular/router": "~13.1.1",
     "@apollo/client": "^3.5.10",
     "@ng-bootstrap/ng-bootstrap": "^11.0.0",
-    "@scullyio/init": "^2.1.0",
+    "@scullyio/init": "^2.1.25",
     "@scullyio/ng-lib": "^2.1.5",
     "@scullyio/scully": "^2.1.0",
     "@scullyio/scully-plugin-puppeteer": "^2.1.5",
