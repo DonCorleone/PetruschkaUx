@@ -1,5 +1,5 @@
 import * as Realm from 'realm-web';
-import { environment } from '../environments/environment';
+import { environment } from '../environments/environment.custom';
 import jwtDecode from 'jwt-decode';
 
 const graphqlUrl = `https://realm.mongodb.com/api/client/v2.0/app/${environment.APP_ID_REALM}/graphql`;

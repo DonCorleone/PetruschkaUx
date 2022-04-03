@@ -1,5 +1,5 @@
 <!-- ******Promo Section****** -->
-<section class="promo-section section" id="promo">
+<section class="promo-section section" [ngClass]="{'hasData': hasData}" id="promo">
 	<div class="promo-carousel-holder">
 		<app-promo-carousel></app-promo-carousel>
 		<!--//promo-carousel-->
@@ -14,9 +14,9 @@
 		</div>
 	</div>
 	<!--//container-->
-	<div class="updates-block">
+	<div *ngIf="hasData" class="updates-block">
 		<div class="container updates-block-inner">
-			<app-update-list [dateGte]=dateGte [dateLt]=dateLt usage="upcoming"></app-update-list>
+			<app-update-list [dateGte]=dateGte [dateLt]=dateLt usage="upcoming" (hasData)="hasDataChanged($event)"></app-update-list>
 		</div>
 		<!--//container-->
 	</div>

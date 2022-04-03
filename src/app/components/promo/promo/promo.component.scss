@@ -120,8 +120,9 @@
 // Small devices (landscape phones, less than 768px)
 @media (max-width: 767.98px) {
 	.promo-section {
-		height: auto;
-
+		&.hasData {
+			height: auto;
+		}
 		.promo-content {
 			padding-top: 0px;
 			.logo-holder {

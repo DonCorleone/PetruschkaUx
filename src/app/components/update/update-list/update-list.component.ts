@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component, Input, OnInit } from '@angular/core';
+import {ChangeDetectionStrategy, Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 import { from, of, zip, Observable } from 'rxjs';
 import { groupBy, map, mergeMap, toArray } from 'rxjs/operators';
 import { EventDetail, EventDetailViewModel } from 'src/app/models/event.models';
@@ -17,6 +17,8 @@ export class UpdateListComponent implements OnInit {
 	@Input() dateLt: Date;
 	@Input() usage: string;
 
+	@Output() hasData: EventEmitter<boolean> = new EventEmitter();
+
 	eventDetails$: Observable<EventDetailViewModel[]>;
 
 	constructor(private eventService: EventService) {
@@ -29,5 +31,9 @@ export class UpdateListComponent implements OnInit {
 		} else {
 			this.eventDetails$ =this.eventService.GetUpcomingEventDetails();
 		}
+	}
+
+	changeHasData(hasData: boolean) {
+		this.hasData.emit(hasData);
 	}
 }
