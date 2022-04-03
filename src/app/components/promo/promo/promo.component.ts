@@ -12,9 +12,12 @@ export class PromoComponent implements OnInit {
 	title: string;
 
 	dateGte: Date = new Date();
-	dateLt: Date = new Date(new Date().setFullYear(2099));;
+	dateLt: Date = new Date(new Date().setFullYear(2099));
+	hasData = false;
 
-	constructor() {
+	hasDataChanged(hasData: boolean) {
+		this.hasData = hasData;
+		console.log(hasData);
 	}
 
 	ngOnInit(): void {
