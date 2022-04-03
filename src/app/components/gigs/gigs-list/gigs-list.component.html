@@ -1,19 +1,29 @@
 <section class="gigs-section section" id="gigs">
 	<div class="container">
 		<h2 class="section-title text-center">Anstehende Aufführungen</h2>
-		<div class="gigs-container">
-			<div *ngFor="let eventDetail of eventDetailsUpcoming$ | async" class="item">
-				<app-gigs-item 	[eventId]="eventDetail._id"
-												[eventInfoDe]="GetEventInfoFromEventDetail(eventDetail)"
-												[ticketPrices]="GetPricesStringFromEventDetail(eventDetail)"
-											 	[start]="eventDetail.start"
-												[tag]="eventDetail.googleAnalyticsTracker"
-											 	[preSaleStart]="GetPreSaleStartFromEventDetail(eventDetail)"
-												[eventKey]="eventDetail.facebookPixelId"
-												>
-				</app-gigs-item>
+		<div class="gigs-container" *ngIf="eventDetailsUpcoming$ | async as eventDetailsUpcoming">
+			<div *ngIf="eventDetailsUpcoming.length > 0; else elseBlock">
+				<div *ngFor="let eventDetail of eventDetailsUpcoming" class="item">
+					<app-gigs-item 	[eventId]="eventDetail._id"
+													[eventInfoDe]="GetEventInfoFromEventDetail(eventDetail)"
+													[ticketPrices]="GetPricesStringFromEventDetail(eventDetail)"
+													[start]="eventDetail.start"
+													[tag]="eventDetail.googleAnalyticsTracker"
+													[preSaleStart]="GetPreSaleStartFromEventDetail(eventDetail)"
+													[eventKey]="eventDetail.facebookPixelId"
+					>
+					</app-gigs-item>
+				</div>
 			</div>
 		</div>
+
+		<ng-template #elseBlock >
+			<div class="newsletter-block">
+				<p><strong>Wir arbeiten zur Zeit an neuen Stücken! Sie erfahren hier, wenn Tickets verfügbar sind.</strong></p>
+				<p>Hier können Sie den <strong>Newsletter</strong> abonnieren:</p>
+				<a href="http://eepurl.com/g9sVlH" target ="_blank" class="btn btn-sm btn-primary">Newsletter</a>
+			</div>
+		</ng-template>
 		<!--//gigs-container-->
 	</div>
 	<!--//container-->
