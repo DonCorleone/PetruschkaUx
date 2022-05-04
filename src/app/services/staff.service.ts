@@ -37,47 +37,43 @@ interface GetStaff {
 export class StaffService {
   constructor(private apollo: Apollo) {}
 
-  GetStaffs(): Observable<Staff[]> {
-    console.log(`GetStaffs`);
-    return this.apollo
-      .watchQuery<GetStaffs>({
-        query: GET_STAFFS,
+  staffs$ = this.apollo
+    .query<GetStaffs>({
+      query: GET_STAFFS,
+    })
+    .pipe(
+      map((result) => result.data.staffs),
+      map((staffs) => {
+        return staffs.map((staff) => this.getStaffWithSrc(staff));
       })
-      .valueChanges.pipe(
-        map((result) => result.data.staffs),
-        map((staffs) => {
-          return staffs.map((staff) => this.getStaffWithSrc(staff))
-        })
-      );
-  }
+    );
 
   GetStaff(nameIn: string): Observable<Staff> {
-    console.log(`GetStaff`);
     return this.apollo
-      .watchQuery<GetStaff>({
+      .query<GetStaff>({
         query: GET_STAFFBYNAME,
         variables: {
           name: nameIn,
         },
       })
-      .valueChanges.pipe(
+      .pipe(
         map((result) => result?.data?.staff),
         map((staff) => this.getStaffWithSrc(staff))
       );
   }
 
-	private getStaffWithSrc(staff: Staff) {
-		return {
-			...staff,
-			imageSrc:
-				'https://images.weserv.nl/?url=' +
-				'https://petruschka.netlify.app/' +
-				'assets/images/members/' +
-				encodeURIComponent(staff?.name) +
-				'.jpg' +
-				'&w=179&h=240',
-		};
-	}
+  private getStaffWithSrc(staff: Staff) {
+    return {
+      ...staff,
+      imageSrc:
+        'https://images.weserv.nl/?url=' +
+        'https://petruschka.netlify.app/' +
+        'assets/images/members/' +
+        encodeURIComponent(staff?.name) +
+        '.jpg' +
+        '&w=179&h=240',
+    };
+  }
 
   static GetStaffLinks(staff: string): Job[] {
     const returnval: Job[] = [];

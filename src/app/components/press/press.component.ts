@@ -1,6 +1,5 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
+import { Component, ViewChild } from '@angular/core';
 import { NgbCarousel, NgbCarouselConfig } from '@ng-bootstrap/ng-bootstrap';
-import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 import { Press, PressService } from 'src/app/services/press.service';
 
@@ -8,44 +7,40 @@ import { Press, PressService } from 'src/app/services/press.service';
   selector: 'app-press',
   templateUrl: './press.component.html',
   styleUrls: ['./press.component.scss'],
-	providers: [NgbCarouselConfig]
+  providers: [NgbCarouselConfig],
 })
-export class PressComponent implements OnInit {
+export class PressComponent {
+  @ViewChild('carousel') carousel: NgbCarousel;
 
-	@ViewChild('carousel') carousel: NgbCarousel;
+  pressArticles$ = this.pressService.pressArticles$.pipe(
+    map((result) => result.slice().sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime()))
+  );
 
-	pressArticles$: Observable<Press[]>
-	todayDate = new Date();
+  todayDate = new Date();
 
-	getDate(article:Press):Date{
-		if (article !== undefined && article.date !== undefined) {
-			let newDate = new Date(article.date);
-			if (newDate !== undefined){
-				return newDate;
-			}else{
-				return this.todayDate;
-			}
-		}
-	}
+  getDate(article: Press): Date {
+    if (article !== undefined && article.date !== undefined) {
+      let newDate = new Date(article.date);
+      if (newDate !== undefined) {
+        return newDate;
+      } else {
+        return this.todayDate;
+      }
+    }
+  }
   constructor(private pressService: PressService, config: NgbCarouselConfig) {
-		config.showNavigationArrows = false;
-		config.showNavigationIndicators = true;
-		config.pauseOnFocus = true;
-		config.pauseOnHover = true;
-	 }
-
-  ngOnInit(): void {
-		this.pressArticles$ = this.pressService.GetPressArticles().pipe(
-			map((result) => result.slice().sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime()))
-		);
+    config.showNavigationArrows = false;
+    config.showNavigationIndicators = true;
+    config.pauseOnFocus = true;
+    config.pauseOnHover = true;
   }
 
-	arrowLeft():void{
-		this.carousel.pause();
-		this.carousel.prev();
-	}
-	arrowRight():void{
-		this.carousel.pause();
-		this.carousel.next();
-	}
+  arrowLeft(): void {
+    this.carousel.pause();
+    this.carousel.prev();
+  }
+  arrowRight(): void {
+    this.carousel.pause();
+    this.carousel.next();
+  }
 }

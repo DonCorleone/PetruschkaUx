@@ -2,37 +2,48 @@ import { Injectable } from '@angular/core';
 import { map } from 'rxjs/operators';
 import { Observable } from 'rxjs';
 import { Apollo, gql } from 'apollo-angular';
-import { EventDetail, EventDetailEventInfo, EventDetailsResponse, GetEventInfoById, TicketPrice, TicketType, TicketTypeInfo, EventDetailViewModel, UpcomingEventDetailsResponse, PastEventDetailsResponse } from '../models/event.models';
+import {
+  EventDetail,
+  EventDetailEventInfo,
+  EventDetailsResponse,
+  GetEventInfoById,
+  TicketPrice,
+  TicketType,
+  TicketTypeInfo,
+  EventDetailViewModel,
+  UpcomingEventDetailsResponse,
+  PastEventDetailsResponse,
+} from '../models/event.models';
 const GET_ALL_THE_STUFF = gql`
-query getAllTheStuff($cd: String, $tournee: String, $premiere: String) {
-  cd: eventDetailsPerUsage(input: $cd) {
-    ...eventDetail
-  }
-  tournee: eventDetailsPerUsage(input: $tournee) {
-    ...eventDetail
-  }
-	premiere: eventDetailsPerUsage(input: $premiere) {
-    ...eventDetail
-  }
-}
-
-fragment eventDetail on EventDetail {
-  _id
-  eventInfos {
-    name
-    languageId
-  }
-  facebookPixelId
-  googleAnalyticsTracker
-  ticketTypes {
-    sortOrder
-    ticketTypeInfos {
-      languageId
-      imageUrl
-      name
+  query getAllTheStuff($cd: String, $tournee: String, $premiere: String) {
+    cd: eventDetailsPerUsage(input: $cd) {
+      ...eventDetail
+    }
+    tournee: eventDetailsPerUsage(input: $tournee) {
+      ...eventDetail
+    }
+    premiere: eventDetailsPerUsage(input: $premiere) {
+      ...eventDetail
     }
   }
-}
+
+  fragment eventDetail on EventDetail {
+    _id
+    eventInfos {
+      name
+      languageId
+    }
+    facebookPixelId
+    googleAnalyticsTracker
+    ticketTypes {
+      sortOrder
+      ticketTypeInfos {
+        languageId
+        imageUrl
+        name
+      }
+    }
+  }
 `;
 
 // {
@@ -42,86 +53,85 @@ fragment eventDetail on EventDetail {
 // }
 
 const GET_EVENTDETAILS_BYTAG = gql`
-query {
-	eventDetails (
-    sortBy: START_DESC,
-		query: {
-			OR: [
-				{googleAnalyticsTracker_in: "CD"}
-				{googleAnalyticsTracker_in: "CD|Tournee"}
-				{googleAnalyticsTracker_in: "Tournee"}
-				{googleAnalyticsTracker_in: "Premiere|Tournee"}
-				{googleAnalyticsTracker_in: "Tournee|CD"}
-				{googleAnalyticsTracker_in: "Premiere|CD"}
-			]
-		}
-	)
-	{
-		_id,
-		eventInfos{
-			name
-			languageId
-		}
-		facebookPixelId
-		googleAnalyticsTracker
-		ticketTypes{
-			sortOrder
-			ticketTypeInfos{
-				languageId
-				imageUrl
-				name
-			}
-		}
-	}
-}
+  query {
+    eventDetails(
+      sortBy: START_DESC
+      query: {
+        OR: [
+          { googleAnalyticsTracker_in: "CD" }
+          { googleAnalyticsTracker_in: "CD|Tournee" }
+          { googleAnalyticsTracker_in: "Tournee" }
+          { googleAnalyticsTracker_in: "Premiere|Tournee" }
+          { googleAnalyticsTracker_in: "Tournee|CD" }
+          { googleAnalyticsTracker_in: "Premiere|CD" }
+        ]
+      }
+    ) {
+      _id
+      eventInfos {
+        name
+        languageId
+      }
+      facebookPixelId
+      googleAnalyticsTracker
+      ticketTypes {
+        sortOrder
+        ticketTypeInfos {
+          languageId
+          imageUrl
+          name
+        }
+      }
+    }
+  }
 `;
 
 const GET_UPCOMING_EVENTS = gql`
-	query{
-		nextGigPerUpcomingEvent{
-			eventDetail{
-			_id,
-			eventInfos{
-				name
-				flyerImagePath
-				shortDescription
-				languageId
-				importantNotes
-			}
-			notificationEmail
-			facebookPixelId
-			googleAnalyticsTracker
-			start
-			}
-		}
-	}
+  query {
+    nextGigPerUpcomingEvent {
+      eventDetail {
+        _id
+        eventInfos {
+          name
+          flyerImagePath
+          shortDescription
+          languageId
+          importantNotes
+        }
+        notificationEmail
+        facebookPixelId
+        googleAnalyticsTracker
+        start
+      }
+    }
+  }
 `;
 
 const GET_PAST_EVENTS = gql`
-	query{
-		pastEvents{
-			eventDetail{
-			_id,
-			eventInfos{
-				name
-				flyerImagePath
-				shortDescription
-				languageId
-				importantNotes
-			}
-			notificationEmail
-			facebookPixelId
-			googleAnalyticsTracker
-			start
-			}
-		}
-	}
+  query {
+    pastEvents {
+      eventDetail {
+        _id
+        eventInfos {
+          name
+          flyerImagePath
+          shortDescription
+          languageId
+          importantNotes
+        }
+        notificationEmail
+        facebookPixelId
+        googleAnalyticsTracker
+        start
+      }
+    }
+  }
 `;
 
 const GET_EVENTINFO_BYEVENTID = gql`
-  query GetEventByGroupId($eventId: Int!){
-    eventDetail(query:{_id:$eventId}){
-      eventInfos{
+  query GetEventByGroupId($eventId: Int!) {
+    eventDetail(query: { _id: $eventId }) {
+      eventInfos {
         name
         languageId
         shortDescription
@@ -130,235 +140,223 @@ const GET_EVENTINFO_BYEVENTID = gql`
         location
         bannerImagePath
         artists
-				url
+        url
       }
-			notificationEmail
-			facebookPixelId
-			googleAnalyticsTracker
-			start
-			ticketTypes{
-				sortOrder
+      notificationEmail
+      facebookPixelId
+      googleAnalyticsTracker
+      start
+      ticketTypes {
+        sortOrder
         preSaleStart
-				ticketTypeInfos {
-					languageId
-					imageUrl
-					name
-					description
-				}
-			}
+        ticketTypeInfos {
+          languageId
+          imageUrl
+          name
+          description
+        }
+      }
     }
   }
 `;
 
 const GET_UPCOMING_GIGS = gql`
-    query GetUpcomingGigs ($today: DateTime!) {
-      eventDetails (
-				sortBy: START_ASC,
-        query:
-           	{start_gte: $today}
-          ){
-        _id,
-        eventInfos{
-          name
-          location
-          languageId
-					url
-        },
-				ticketTypes{
-					sortOrder
-					price
-					currency
-          preSaleStart
-					ticketTypeInfos{
-						name,
-						languageId
-					}
-				},
-        start,
-        googleAnalyticsTracker
+  query GetUpcomingGigs($today: DateTime!) {
+    eventDetails(sortBy: START_ASC, query: { start_gte: $today }) {
+      _id
+      eventInfos {
+        name
+        location
+        languageId
+        url
       }
+      ticketTypes {
+        sortOrder
+        price
+        currency
+        preSaleStart
+        ticketTypeInfos {
+          name
+          languageId
+        }
+      }
+      start
+      googleAnalyticsTracker
     }
+  }
 `;
 
 @Injectable({
-	providedIn: 'root'
+  providedIn: 'root',
 })
 export class EventService {
+  constructor(private apollo: Apollo) {}
 
-	constructor(private apollo: Apollo) {
-	}
+  static GetEventInfoFromEventDetail(eventDetail: EventDetail): EventDetailEventInfo {
+    if (!eventDetail || !eventDetail.eventInfos || eventDetail.eventInfos?.length === 0) {
+      return null;
+    }
 
-	static GetEventInfoFromEventDetail(eventDetail: EventDetail): EventDetailEventInfo {
+    return eventDetail.eventInfos?.filter((p) => p.languageId === 1)?.length > 0
+      ? eventDetail.eventInfos?.filter((p) => p.languageId === 1)[0]
+      : null;
+  }
 
-		if (!eventDetail || !eventDetail.eventInfos || eventDetail.eventInfos?.length === 0) {
-			return null;
-		}
+  static GetTicketTypeInfoFromEventDetail(eventDetail: EventDetail, usage: string): TicketTypeInfo {
+    if (!eventDetail || !eventDetail.ticketTypes || eventDetail.ticketTypes.length === 0) {
+      return null;
+    }
 
-		return (eventDetail.eventInfos?.filter(
-			p => p.languageId === 1))?.length > 0 ? eventDetail.eventInfos?.filter(
-				p => p.languageId === 1)[0] : null;
-	}
+    let usageTicketTypes: TicketTypeInfo[];
 
-	static GetTicketTypeInfoFromEventDetail(eventDetail: EventDetail, usage: string): TicketTypeInfo {
+    if (eventDetail.ticketTypes.length === 1) {
+      usageTicketTypes = eventDetail.ticketTypes[0].ticketTypeInfos?.filter(
+        (p) => p.name.toLowerCase() === usage.toLowerCase() && p.languageId === 1
+      );
+    } else {
+      for (const ticketType of eventDetail.ticketTypes) {
+        usageTicketTypes = ticketType.ticketTypeInfos?.filter(
+          (p) => p.name.toLowerCase() === usage.toLowerCase() && p.languageId === 1
+        );
+        if (usageTicketTypes && usageTicketTypes.length > 0) {
+          break;
+        }
+      }
+    }
+    return usageTicketTypes != null && usageTicketTypes.length > 0 ? usageTicketTypes[0] : null;
+  }
 
-		if (!eventDetail || !eventDetail.ticketTypes || eventDetail.ticketTypes.length === 0) {
-			return null;
-		}
+  static GetPricesStringFromEventDetail(eventDetail: EventDetail): TicketPrice[] {
+    if (!eventDetail || !eventDetail.ticketTypes || eventDetail.ticketTypes.length === 0) {
+      return null;
+    }
 
-		let usageTicketTypes: TicketTypeInfo[];
+    let returnArray: TicketPrice[] = [];
 
-		if (eventDetail.ticketTypes.length === 1) {
-			usageTicketTypes = eventDetail.ticketTypes[0].ticketTypeInfos?.filter(p => p.name.toLowerCase() === usage.toLowerCase() && p.languageId === 1);
-		} else {
+    for (const ticketType of eventDetail.ticketTypes) {
+      let name = ticketType.ticketTypeInfos?.filter((p) => p.languageId === 1)[0].name;
 
-			for (const ticketType of eventDetail.ticketTypes) {
-				usageTicketTypes = ticketType.ticketTypeInfos?.filter(p => p.name.toLowerCase() === usage.toLowerCase() && p.languageId === 1);
-				if (usageTicketTypes && usageTicketTypes.length > 0) {
-					break;
-				}
-			}
-		}
-		return usageTicketTypes != null && usageTicketTypes.length > 0 ? usageTicketTypes[0] : null;
-	}
+      let price = ticketType.price;
 
-	static GetPricesStringFromEventDetail(eventDetail: EventDetail): TicketPrice[] {
+      let unit = ticketType.currency;
 
-		if (!eventDetail || !eventDetail.ticketTypes || eventDetail.ticketTypes.length === 0) {
-			return null;
-		}
+      let ticketPrice: TicketPrice = {
+        name: name,
+        currency: unit,
+        price: price,
+      };
 
-		let returnArray: TicketPrice[] = [];
+      returnArray.push(ticketPrice);
+    }
 
-		for (const ticketType of eventDetail.ticketTypes) {
+    return returnArray;
+  }
 
-			let name = ticketType.ticketTypeInfos?.filter(p => p.languageId === 1)[0].name;
+  static getSortedTicketType(eventDetail: EventDetail): TicketType[] {
+    if (!eventDetail || !eventDetail.ticketTypes) {
+      return null;
+    }
 
-			let price = ticketType.price;
+    if (eventDetail.ticketTypes.length === 1) {
+      return eventDetail.ticketTypes;
+    }
 
-			let unit = ticketType.currency;
+    return eventDetail.ticketTypes;
+  }
 
-			let ticketPrice: TicketPrice = {
-				name: name,
-				currency: unit,
-				price: price
+  static GetBannerImagePathPathFromEventDetail(eventDetail: EventDetail): string {
+    return eventDetail &&
+      eventDetail.eventInfos &&
+      eventDetail.eventInfos[0] &&
+      eventDetail.eventInfos[0].bannerImagePath
+      ? 'https://images.weserv.nl/?url=' + eventDetail.eventInfos[0].bannerImagePath + '&w=1137&h=339'
+      : null;
+  }
 
-			};
+  static GetFlyerImagePathFromEventDetail(eventDetail: EventDetail): string {
+    return eventDetail &&
+      eventDetail.eventInfos &&
+      eventDetail.eventInfos[0] &&
+      eventDetail.eventInfos[0].flyerImagePath
+      ? 'https://images.weserv.nl/?url=' + eventDetail.eventInfos[0].flyerImagePath + '&w=195&h=269'
+      : null;
+  }
 
-			returnArray.push(ticketPrice);
-		}
+  static GetShortDescFromEventDetail(eventDetail: EventDetail): string {
+    return eventDetail && eventDetail.eventInfos?.find((p) => p.languageId === 1)?.shortDescription;
+  }
 
-		return returnArray;
-	}
+  static GetNameFromEventDetail(eventDetail: EventDetail): string {
+    return eventDetail &&
+      eventDetail.eventInfos &&
+      eventDetail.eventInfos[0] &&
+      eventDetail.eventInfos &&
+      eventDetail.eventInfos[0].name
+      ? eventDetail.eventInfos && eventDetail.eventInfos[0].name
+      : null;
+  }
 
-	static getSortedTicketType(eventDetail: EventDetail): TicketType[] {
+  static GetLongDescriptionFromEventDetail(eventDetail: EventDetail): string {
+    return eventDetail && eventDetail.eventInfos?.find((p) => p.languageId === 1)?.longDescription;
+  }
 
-		if (!eventDetail || !eventDetail.ticketTypes) {
-			return null;
-		}
+  static GetImportantNotesFromEventDetail(eventDetail: EventDetail): string {
+    return eventDetail && eventDetail.eventInfos?.find((p) => p.languageId === 1)?.importantNotes;
+  }
 
-		if (eventDetail.ticketTypes.length === 1) {
-			return eventDetail.ticketTypes;
-		}
+  static GetLocationFromEventDetail(eventDetail: EventDetail): string {
+    return eventDetail &&
+      eventDetail.eventInfos &&
+      eventDetail.eventInfos[0] &&
+      eventDetail.eventInfos &&
+      eventDetail.eventInfos[0].location
+      ? eventDetail.eventInfos && eventDetail.eventInfos[0].location
+      : null;
+  }
 
-		return eventDetail.ticketTypes;
-	}
+  static GetStartFromEventDetail(eventDetail: EventDetail): Date {
+    return eventDetail && eventDetail.start ? eventDetail.start : null;
+  }
 
-	static GetBannerImagePathPathFromEventDetail(eventDetail: EventDetail): string {
-		return (eventDetail
-			&& eventDetail.eventInfos && eventDetail.eventInfos[0] && eventDetail.eventInfos[0].bannerImagePath ?
-			"https://images.weserv.nl/?url=" + eventDetail.eventInfos[0].bannerImagePath + "&w=1137&h=339" : null);
-	}
+  GetEventDetail(id: number): Observable<EventDetail> {
+    // console.log(`load event with Item ${id}`);
+    return this.apollo
+      .query<GetEventInfoById>({
+        query: GET_EVENTINFO_BYEVENTID,
+        variables: {
+          eventId: id,
+        },
+      })
+      .pipe(map((result) => result.data.eventDetail));
+  }
 
-	static GetFlyerImagePathFromEventDetail(eventDetail: EventDetail): string {
-		return (eventDetail
-			&& eventDetail.eventInfos && eventDetail.eventInfos[0] && eventDetail.eventInfos[0].flyerImagePath ?
-			"https://images.weserv.nl/?url=" + eventDetail.eventInfos[0].flyerImagePath + "&w=195&h=269" : null);
-	}
+  upcomingGigs$ = this.apollo
+    .query<EventDetailsResponse>({
+      query: GET_UPCOMING_GIGS,
+      variables: {
+        today: new Date(),
+      },
+    })
+    .pipe(map((result) => result.data.eventDetails));
 
-	static GetShortDescFromEventDetail(eventDetail: EventDetail): string {
-		return (eventDetail
-			&& eventDetail.eventInfos?.find(p => p.languageId === 1)?.shortDescription);
-	}
+  GetEventDetails(filterPredicateIn: any): Observable<EventDetail[]> {
+    // console.log(`load events with predicate ${filterPredicateIn}`);
+    return this.apollo
+      .query<EventDetailsResponse>({
+        query: GET_EVENTDETAILS_BYTAG,
+      })
+      .pipe(map((result) => result.data.eventDetails.filter(filterPredicateIn)));
+  }
 
-	static GetNameFromEventDetail(eventDetail: EventDetail): string {
-		return (eventDetail
-			&& eventDetail.eventInfos && eventDetail.eventInfos[0]
-			&& eventDetail.eventInfos && eventDetail.eventInfos[0].name ?
-			eventDetail.eventInfos && eventDetail.eventInfos[0].name : null);
-	}
+  pastEventDetails$ = this.apollo
+    .query<PastEventDetailsResponse>({
+      query: GET_PAST_EVENTS,
+    })
+    .pipe(map((result) => result.data.pastEvents));
 
-	static GetLongDescriptionFromEventDetail(eventDetail: EventDetail): string {
-		return (eventDetail
-			&& eventDetail.eventInfos?.find(p => p.languageId === 1)?.longDescription);
-	}
-
-	static GetImportantNotesFromEventDetail(eventDetail: EventDetail): string {
-		return (eventDetail
-			&& eventDetail.eventInfos?.find(p => p.languageId === 1)?.importantNotes);
-	}
-
-	static GetLocationFromEventDetail(eventDetail: EventDetail): string {
-		return (eventDetail
-			&& eventDetail.eventInfos && eventDetail.eventInfos[0]
-			&& eventDetail.eventInfos && eventDetail.eventInfos[0].location ?
-			eventDetail.eventInfos && eventDetail.eventInfos[0].location : null);
-	}
-
-	static GetStartFromEventDetail(eventDetail: EventDetail): Date {
-		return (eventDetail
-			&& eventDetail.start ?
-			eventDetail.start : null);
-	}
-
-	GetEventDetail(id: number): Observable<EventDetail> {
-		// console.log(`load event with Item ${id}`);
-		return this.apollo
-			.watchQuery<GetEventInfoById>({
-				query: GET_EVENTINFO_BYEVENTID,
-				variables: {
-					eventId: id,
-				},
-			})
-			.valueChanges.pipe(map((result) => result.data.eventDetail));
-	}
-
-	GetUpcomingGigs(): Observable<EventDetail[]> {
-		// console.log(`load events upcoming`);
-		return this.apollo
-			.watchQuery<EventDetailsResponse>({
-				query: GET_UPCOMING_GIGS,
-				variables: {
-					today: new Date()
-				},
-			})
-			.valueChanges.pipe(map((result) => result.data.eventDetails));
-	}
-
-	GetEventDetails(filterPredicateIn: any): Observable<EventDetail[]> {
-		// console.log(`load events with predicate ${filterPredicateIn}`);
-		return this.apollo
-			.watchQuery<EventDetailsResponse>({
-				query: GET_EVENTDETAILS_BYTAG
-			})
-			.valueChanges.pipe(map((result) => result.data.eventDetails.filter(filterPredicateIn)));
-	}
-
-	GetPastEventDetails(): Observable<EventDetailViewModel[]> {
-		// console.log(`load events with start_gte ${start_gte}, start_lt ${start_lt}`);
-		return this.apollo
-			.watchQuery<PastEventDetailsResponse>({
-				query: GET_PAST_EVENTS
-			})
-			.valueChanges.pipe(map((result) => result.data.pastEvents));
-	}
-
-	GetUpcomingEventDetails(): Observable<EventDetailViewModel[]> {
-		// console.log(`load events with start_gte ${start_gte}, start_lt ${start_lt}`);
-		return this.apollo
-			.watchQuery<UpcomingEventDetailsResponse>({
-				query: GET_UPCOMING_EVENTS
-			})
-			.valueChanges.pipe(
-				map(x => x.data.nextGigPerUpcomingEvent))
-	}
+  upcomingEventDetails$ = this.apollo
+    .query<UpcomingEventDetailsResponse>({
+      query: GET_UPCOMING_EVENTS,
+    })
+    .pipe(map((x) => x.data.nextGigPerUpcomingEvent));
 }
