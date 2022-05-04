@@ -1,39 +1,32 @@
-import {ChangeDetectionStrategy, Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
+import { ChangeDetectionStrategy, Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { from, of, zip, Observable } from 'rxjs';
-import { groupBy, map, mergeMap, toArray } from 'rxjs/operators';
+import { groupBy, map, mergeMap, take, toArray } from 'rxjs/operators';
 import { EventDetail, EventDetailViewModel } from 'src/app/models/event.models';
 import { EventService } from 'src/app/services/event.service';
 
 @Component({
-	selector: 'app-update-list',
-	templateUrl: './update-list.component.html',
-	styleUrls: ['./update-list.component.scss'],
-	changeDetection: ChangeDetectionStrategy.OnPush
+  selector: 'app-update-list',
+  templateUrl: './update-list.component.html',
+  styleUrls: ['./update-list.component.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class UpdateListComponent implements OnInit {
+  @Input() dateGte: Date;
+  @Input() dateLt: Date;
+  @Input() usage: string;
 
+  @Output() hasData: EventEmitter<boolean> = new EventEmitter();
 
-	@Input() dateGte: Date;
-	@Input() dateLt: Date;
-	@Input() usage: string;
+  eventDetails$: Observable<EventDetailViewModel[]>;
 
-	@Output() hasData: EventEmitter<boolean> = new EventEmitter();
+  constructor(private eventService: EventService) {}
 
-	eventDetails$: Observable<EventDetailViewModel[]>;
-
-	constructor(private eventService: EventService) {
-
-	}
-
-	ngOnInit() {
-		if (this.usage === "history") {
-			this.eventDetails$ = this.eventService.GetPastEventDetails();
-		} else {
-			this.eventDetails$ =this.eventService.GetUpcomingEventDetails();
-		}
-	}
-
-	changeHasData(hasData: boolean) {
-		this.hasData.emit(hasData);
-	}
+  ngOnInit() {
+    if (this.usage === 'history') {
+      this.eventDetails$ = this.eventService.GetPastEventDetails();
+    } else {
+      this.eventDetails$ = this.eventService.GetUpcomingEventDetails();
+    }
+    this.eventDetails$.pipe(take(1)).subscribe((value) => this.hasData.emit(value.length > 0));
+  }
 }
