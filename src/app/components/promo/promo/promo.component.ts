@@ -13,7 +13,7 @@ export class PromoComponent implements OnInit {
 
 	dateGte: Date = new Date();
 	dateLt: Date = new Date(new Date().setFullYear(2099));
-	hasData = false;
+	hasData = true;
 
 	hasDataChanged(hasData: boolean) {
 		this.hasData = hasData;
