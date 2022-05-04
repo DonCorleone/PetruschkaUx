@@ -11,7 +11,7 @@ import { map } from 'rxjs/operators';
 import { Press, PressService } from 'src/app/services/press.service';
 import { TicketModalComponent } from '../../ticket/ticket-modal/ticket-modal.component';
 import { AboutModalComponent } from '../../../modules/about/about-modal/about-modal.component';
-import {StaffService} from "../../../services/staff.service";
+import { StaffService } from '../../../services/staff.service';
 
 @Component({
   selector: 'app-info-item',
@@ -25,13 +25,16 @@ export class InfoComponent implements OnChanges {
   @Input() eventId: number;
   @Input() reservationMail: string;
   @Input() usage: string;
-	@Input() tag: string;
+  @Input() tag: string;
   @Input() playDate: Date;
   @Input() eventKey: string;
 
   artistsArray: Job[];
   image4Images$: Observable<File[]>;
-  pressArticle$: Observable<Press>;
+  pressArticle$ = this.pressService.pressArticles$.pipe(
+    map((result) => result.find((article) => article.nr === this.eventKey))
+  );
+
   @Input() preSaleStart: Date;
 
   constructor(
@@ -100,10 +103,6 @@ export class InfoComponent implements OnChanges {
       this.artistsArray = StaffService.GetStaffLinks(this.eventInfo.artists);
     }
     this.image4Images$ = this.imageService.getAlbum(this.eventKey).pipe(map((p) => p.files));
-
-    this.pressArticle$ = this.pressService
-      .GetPressArticles()
-      .pipe(map((result) => result.find((article) => article.nr === this.eventKey)));
   }
 
   openStaff(staffName: string) {
@@ -126,9 +125,9 @@ export class InfoComponent implements OnChanges {
   }
 
   openTicket(): void {
-		if (this.tag === 'sold-out'){
-			return;
-		}
+    if (this.tag === 'sold-out') {
+      return;
+    }
     var eventLink = this.eventLink;
     if (eventLink == 'modal') {
       const modalRef = this.modalService.open(TicketModalComponent, { size: 'md' });

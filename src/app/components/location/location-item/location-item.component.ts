@@ -10,10 +10,12 @@ import {LocationsService} from 'src/app/services/locations.service';
 	styleUrls: ['./location-item.component.scss'],
 	changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class LocationItemComponent implements OnInit {
+export class LocationItemComponent {
 
 	eventLocation$: Observable<EventLocation>;
-	@Input() eventLocationName: string;
+	@Input() set eventLocationName(value :string){
+		this.eventLocation$ = this.locationsService.GetEventLocation(value);
+	}
 
 	constructor(private locationsService: LocationsService, private sanitizer: DomSanitizer) {
 	}
@@ -21,11 +23,6 @@ export class LocationItemComponent implements OnInit {
 	GetImageUrl(name: string): string {
 		let imageUrl = 'https://petruschka.netlify.app/' + 'assets/images/members/' + encodeURIComponent(name) + '.jpg';
 		return "https://images.weserv.nl/?url=" + imageUrl + "&w583&h=738";
-	}
-
-	ngOnInit(): void {
-
-		this.eventLocation$ = this.locationsService.GetEventLocation(this.eventLocationName);
 	}
 
 	transformHtml(htmlTextWithStyle) {

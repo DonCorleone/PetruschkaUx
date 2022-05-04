@@ -1,5 +1,4 @@
-import {ChangeDetectionStrategy, Component, OnInit} from '@angular/core';
-import {Observable} from 'rxjs';
+import {ChangeDetectionStrategy, Component} from '@angular/core';
 import {EventDetail, EventDetailEventInfo, TicketPrice} from 'src/app/models/event.models';
 import {EventService} from 'src/app/services/event.service';
 
@@ -9,16 +8,13 @@ import {EventService} from 'src/app/services/event.service';
 	styleUrls: ['./gigs-list.component.scss'],
 	changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class GigsListComponent implements OnInit {
+export class GigsListComponent {
 
-	eventDetailsUpcoming$: Observable<EventDetail[]>;
+	eventDetailsUpcoming$ = this.eventService.upcomingGigs$;
 
 	constructor(private eventService: EventService) {
 	}
 
-	ngOnInit() {
-		this.eventDetailsUpcoming$ = this.eventService.GetUpcomingGigs();
-	}
 
 	GetEventInfoFromEventDetail(eventDetail: EventDetail): EventDetailEventInfo {
 		return eventDetail.eventInfos?.find(p => p.languageId === 1);

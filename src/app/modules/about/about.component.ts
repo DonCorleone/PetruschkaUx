@@ -1,6 +1,4 @@
-import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
-import { Observable } from 'rxjs';
-import { Staff } from '../../models/staff.models';
+import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { StaffService } from '../../services/staff.service';
 
 @Component({
@@ -8,12 +6,8 @@ import { StaffService } from '../../services/staff.service';
   templateUrl: './about.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class AboutComponent implements OnInit {
-  staffs$: Observable<Staff[]>;
+export class AboutComponent {
+  staffs$ = this.staffService.staffs$;
 
   constructor(private staffService: StaffService) {}
-
-  ngOnInit(): void {
-    this.staffs$ = this.staffService.GetStaffs();
-  }
 }
