@@ -23,9 +23,9 @@ export class UpdateListComponent implements OnInit {
 
   ngOnInit() {
     if (this.usage === 'history') {
-      this.eventDetails$ = this.eventService.GetPastEventDetails();
+      this.eventDetails$ = this.eventService.pastEventDetails$;
     } else {
-      this.eventDetails$ = this.eventService.GetUpcomingEventDetails();
+      this.eventDetails$ = this.eventService.upcomingEventDetails$;
     }
     this.eventDetails$.pipe(take(1)).subscribe((value) => this.hasData.emit(value.length > 0));
   }

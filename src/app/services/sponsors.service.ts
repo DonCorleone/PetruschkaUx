@@ -30,10 +30,10 @@ export class SponsorsService {
 
 	GetSponsors(event:String): Observable<Sponsor[]> {
 		return this.apollo
-			.watchQuery<SponsorsData>({
+			.query<SponsorsData>({
 				query: GET_SPONSORING
 			})
-			.valueChanges.pipe(
+			.pipe(
 				// tap((result) => // console.log(JSON.stringify(result.data.sponsors))),
 				map(
 					(result) => {
