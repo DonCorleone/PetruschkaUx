@@ -139,7 +139,7 @@ export class InfoComponent implements OnChanges {
     if (this.eventInfoDe?.url?.includes('petruschka.ch')) {
       return 'modal';
     } else if (this.eventInfoDe?.url?.includes('ticketino.com')) {
-      return this.eventInfoDe ? 'https://www.ticketino.com/de/Event/' + this.eventInfoDe.name + '/' + this.eventId : '';
+      return this.eventInfoDe ? this.eventInfoDe?.url + this.eventId : '';
     } else {
       return this.eventInfoDe?.url;
     }
