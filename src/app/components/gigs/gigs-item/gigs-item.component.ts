@@ -31,7 +31,7 @@ export class GigsItemComponent implements OnInit {
 		if (this.eventInfoDe?.url?.includes('petruschka.ch')){
 			return 'modal';
 		}else if (this.eventInfoDe?.url?.includes('ticketino.com')){
-			return this.eventInfoDe?.url + this.eventId;
+			return this.eventInfoDe ? this.eventInfoDe?.url + this.eventId : '';
 		}else{
 			return this.eventInfoDe?.url;
 		}
