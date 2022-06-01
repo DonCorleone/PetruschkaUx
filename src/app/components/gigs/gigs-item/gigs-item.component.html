@@ -36,7 +36,7 @@
 		<!--//info-content-->
 		<div class="gig-actions">
 			<span>
-        <a *ngIf="showBuyButton" href="http://eepurl.com/g9sVlH" target =_blank
+        <a *ngIf="showBuyButton" (click)="openTicket()"
 					 class="btn btn-sm btn-secondary"
 					 [ngClass]="{'isDisabled' : tag === 'cancelled' || tag === 'sold-out' }">{{ tag !== 'sold-out' ? 'Tickets':'Ausverkauft!' }}</a>
       </span>
