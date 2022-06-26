@@ -9,6 +9,6 @@
     >
       <span aria-hidden="true">&times;</span>
     </button>
-    <img [src]="'https://cdn.image4.io/petruschka' + image.name" [ngClass]="classes" />
+    <img #container [src]="image.path" [ngClass]="classes"  [alt]="image.id"/>
   </div>
 </div>

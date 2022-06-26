@@ -11,15 +11,15 @@
   <h4 class="modal-title text-center" id="infoModalLabel">Gallery</h4>
 </div>
 <div class="modal-body" ngbAutoFocus>
-  <ngx-masonry [options]="masonryOptions" [ordered]="true" (itemsLoaded)="itemsLoaded()" *ngIf="image4Images">
+  <ngx-masonry [options]="masonryOptions" [ordered]="true" (itemsLoaded)="itemsLoaded()" *ngIf="files$">
     <div
       ngxMasonryItem
-      [prepend]="image4Images[0]"
-      *ngFor="let image of image4Images | async; index as idx"
+      [prepend]="files$[0]"
+      *ngFor="let image of files$ | async; index as idx"
       class="masonry-row"
     >
       <div class="masonry-vertical-gutter"></div>
-      <a (click)="openImage(image)"><img [src]="'https://cdn.image4.io/petruschka' + image.name" width="100%" /></a>
+      <a (click)="openImage(image)"><img [src]="image.path + '?nf_resize=fit&w=320'" width="100%" /></a>
     </div>
   </ngx-masonry>
 </div>

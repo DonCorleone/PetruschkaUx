@@ -1,17 +1,19 @@
-import { ChangeDetectionStrategy, Component, Input, OnChanges } from '@angular/core';
+import { ChangeDetectionStrategy, Component, Input, OnChanges, OnDestroy } from '@angular/core';
+import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
 import { DomSanitizer } from '@angular/platform-browser';
-import { Observable } from 'rxjs';
+import { Observable, Subject } from 'rxjs';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { EventDetailEventInfo } from 'src/app/models/event.models';
 import { LocationModalComponent } from '../../location/location-modal/location-modal.component';
 import { Job } from '../../../models/staff.models';
 import { GalleryModalComponent } from '../../gallery/gallery-modal/gallery-modal.component';
-import { ImagesService, File } from 'src/app/services/images.service';
-import { map } from 'rxjs/operators';
+import {ImagesService, Netlifile} from 'src/app/services/images.service';
+import { map, takeUntil } from 'rxjs/operators';
 import { Press, PressService } from 'src/app/services/press.service';
 import { TicketModalComponent } from '../../ticket/ticket-modal/ticket-modal.component';
 import { AboutModalComponent } from '../../../modules/about/about-modal/about-modal.component';
 import { StaffService } from '../../../services/staff.service';
+import { environment } from '../../../../environments/environment';
 
 @Component({
   selector: 'app-info-item',
@@ -19,7 +21,7 @@ import { StaffService } from '../../../services/staff.service';
   styleUrls: ['./info-item.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class InfoComponent implements OnChanges {
+export class InfoComponent implements OnChanges, OnDestroy {
   @Input() eventInfo: EventDetailEventInfo;
   @Input() eventInfoDe: EventDetailEventInfo;
   @Input() eventId: number;
@@ -30,18 +32,21 @@ export class InfoComponent implements OnChanges {
   @Input() eventKey: string;
 
   artistsArray: Job[];
-  image4Images$: Observable<File[]>;
+	files$: Observable<Netlifile[]>;
   pressArticle$ = this.pressService.pressArticles$.pipe(
     map((result) => result.find((article) => article.nr === this.eventKey))
   );
 
   @Input() preSaleStart: Date;
 
+  private _ngDestroy$ = new Subject<void>();
+
   constructor(
     private sanitizer: DomSanitizer,
     private modalService: NgbModal,
     private imageService: ImagesService,
-    private pressService: PressService
+    private pressService: PressService,
+    private breakpointObserver: BreakpointObserver
   ) {}
 
   get showBuyButton(): boolean {
@@ -102,7 +107,28 @@ export class InfoComponent implements OnChanges {
     if (this.eventInfo && this.eventInfo.artists) {
       this.artistsArray = StaffService.GetStaffLinks(this.eventInfo.artists);
     }
-    this.image4Images$ = this.imageService.getAlbum(this.eventKey).pipe(map((p) => p.files));
+
+    this.breakpointObserver
+      .observe([Breakpoints.XSmall, Breakpoints.Small, Breakpoints.Medium, Breakpoints.Large, Breakpoints.XLarge])
+      .pipe(takeUntil(this._ngDestroy$))
+      .subscribe((result) => {
+        for (const query of Object.keys(result.breakpoints)) {
+          if (result.breakpoints[query]) {
+            const match = query.match('\\(max-width:\\s(\\d+)\\.98px\\)');
+            const width = match?.length ? match[1] : '2048';
+
+            this.files$ = this.imageService.listAssets('/assets/images/impressionen/' + this.eventKey).pipe(
+              map((p) => {
+                p.forEach((image) => (image.path = `${environment.URL}${image.path}`));
+                return p;
+              })
+            );
+            break;
+          }
+        }
+      });
+
+  //  this.image4Images$ = this.imageService.getAlbum(this.eventKey).pipe(map((p) => p.files));
   }
 
   openStaff(staffName: string) {
@@ -121,7 +147,7 @@ export class InfoComponent implements OnChanges {
 
   openGallery(): void {
     const modalRef = this.modalService.open(GalleryModalComponent, { size: 'xl' });
-    modalRef.componentInstance.image4Images = this.image4Images$;
+    modalRef.componentInstance.files$ = this.files$;
   }
 
   openTicket(): void {
@@ -144,4 +170,9 @@ export class InfoComponent implements OnChanges {
       return this.eventInfoDe?.url;
     }
   }
+
+	ngOnDestroy() {
+		this._ngDestroy$.next();
+		this._ngDestroy$.complete();
+	}
 }

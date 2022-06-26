@@ -1,9 +1,9 @@
-import { ChangeDetectionStrategy, Component, Input, OnInit } from '@angular/core';
+import {ChangeDetectionStrategy, Component, Input, OnChanges, OnInit, SimpleChanges} from '@angular/core';
 import { Observable } from 'rxjs';
 import { NgbActiveModal, NgbModal } from '@ng-bootstrap/ng-bootstrap';
 
 import { NgxMasonryOptions, NgxMasonryComponent } from 'ngx-masonry';
-import { File, ImagesService } from 'src/app/services/images.service';
+import { ImagesService, Netlifile } from 'src/app/services/images.service';
 import { resultKeyNameFromField } from '@apollo/client/utilities';
 import { map } from 'rxjs/operators';
 import { ImageModalComponent } from '../image-modal/image-modal.component';
@@ -14,8 +14,8 @@ import { ImageModalComponent } from '../image-modal/image-modal.component';
   styleUrls: ['./gallery-modal.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class GalleryModalComponent {
-  @Input() image4Images: Observable<File[]>;
+export class GalleryModalComponent implements OnChanges{
+  @Input() files$: Observable<Netlifile[]>;
 
   constructor(
     public activeModal: NgbActiveModal,
@@ -33,7 +33,7 @@ export class GalleryModalComponent {
     console.log('itemsloaded');
   }
 
-  openImage(image: File) {
+  openImage(image: Netlifile) {
     const modalRef = this.modalService.open(ImageModalComponent, {
       size: 'xl' as 'lg',
       windowClass: 'modal-xxl',
@@ -41,4 +41,8 @@ export class GalleryModalComponent {
     });
     modalRef.componentInstance.image = image;
   }
+
+	ngOnChanges(changes: SimpleChanges): void {
+		this.files$.subscribe(p => console.log(p));
+	}
 }

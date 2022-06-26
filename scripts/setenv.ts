@@ -18,7 +18,11 @@ export const environment = {
    API_SECRET_IMAGE4IO: "${process.env.API_SECRET_IMAGE4IO}",
    API_URL_IMAGE4IO: "${process.env.API_URL_IMAGE4IO}",
    APP_ID_REALM: "${process.env.APP_ID_REALM}",
-   NODE_VERSION: "${process.env.NODE_VERSION}"
+   NODE_VERSION: "${process.env.NODE_VERSION}",
+      SITE_ID: "${process.env?.['SITE_ID']}",
+   API_KEY_NETLIFY: "${process.env?.['API_KEY_NETLIFY']}",
+   URL: "${process.env?.['URL']}",
+
 };
 `; // write the content to the respective file
 writeFile(targetPath, envConfigFile, function (err) {
