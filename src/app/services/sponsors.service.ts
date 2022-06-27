@@ -4,8 +4,6 @@ import { Observable } from 'rxjs';
 import { Apollo, gql } from 'apollo-angular';
 import { Sponsor, SponsorsData, SponsorsResponse } from '../models/sponsors.models';
 
-
-
 const GET_SPONSORING = gql`
 query {
 	sponsors  {
