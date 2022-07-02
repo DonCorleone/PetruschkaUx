@@ -4,8 +4,10 @@
       {{ shortDesc }}
     </div>
   </div>
-  <div class="modal-item-footer" *ngIf="files$ | async">
-    <a (click)="openGallery()" class="btn btn-sm btn-ghost-secondary">Impressionen</a>
+  <div class="modal-item-footer" *ngIf="files$ | async as files">
+		<ng-container *ngIf="files.length">
+			<a (click)="openGallery()" class="btn btn-sm btn-ghost-secondary">Impressionen</a>
+		</ng-container>
   </div>
 </div>
 
