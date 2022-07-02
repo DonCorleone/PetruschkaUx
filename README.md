@@ -26,4 +26,4 @@ Data transfer from Ticketino via REST-API to MongoDB Atlas via REST API [.NET Co
 ### Serverless Backend
 [MongoDB Atlas](https://www.mongodb.com/cloud/atlas) GraphQL API
 ### Images
-Image access to [image4io](https://image4.io/) via REST API
+Netlify Image Transformation  [docs.netlify.com](https://docs.netlify.com/large-media/transform-images/) via REST API
