@@ -5,12 +5,12 @@ import { map } from 'rxjs/operators';
 import { Job, Staff } from '../models/staff.models';
 
 const GET_STAFFS = gql`
-  query GetStaffByName {
-    staffs(query: { active: true }, sortBy: SORTORDER_ASC) {
-      name
-      topic
-    }
-  }
+	query {
+		staffs: staffOverviews {
+			name
+			topic
+		}
+	}
 `;
 
 const GET_STAFFBYNAME = gql`
