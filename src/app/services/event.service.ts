@@ -3,16 +3,16 @@ import { map } from 'rxjs/operators';
 import { Observable } from 'rxjs';
 import { Apollo, gql } from 'apollo-angular';
 import {
-  EventDetail,
-  EventDetailEventInfo,
-  EventDetailsResponse,
-  GetEventInfoById,
-  TicketPrice,
-  TicketType,
-  TicketTypeInfo,
-  EventDetailViewModel,
-  UpcomingEventDetailsResponse,
-  PastEventDetailsResponse,
+	EventDetail,
+	EventDetailEventInfo,
+	EventDetailsResponse,
+	GetEventInfoById,
+	TicketPrice,
+	TicketType,
+	TicketTypeInfo,
+	EventDetailViewModel,
+	UpcomingEventDetailsResponse,
+	PastEventDetailsResponse, UpComingEventsResponse,
 } from '../models/event.models';
 const GET_ALL_THE_STUFF = gql`
   query getAllTheStuff($cd: String, $tournee: String, $premiere: String) {
@@ -161,29 +161,29 @@ const GET_EVENTINFO_BYEVENTID = gql`
 `;
 
 const GET_UPCOMING_GIGS = gql`
-  query GetUpcomingGigs($today: DateTime!) {
-    eventDetails(sortBy: START_ASC, query: { start_gte: $today }) {
-      _id
-      eventInfos {
-        name
-        location
-        languageId
-        url
-      }
-      ticketTypes {
-        sortOrder
-        price
-        currency
-        preSaleStart
-        ticketTypeInfos {
-          name
-          languageId
-        }
-      }
-      start
-      googleAnalyticsTracker
-    }
-  }
+	{
+		upcomingEvents {
+			_id
+			eventInfos {
+				name
+				location
+				languageId
+				url
+			}
+			ticketTypes {
+				sortOrder
+				price
+				currency
+				preSaleStart
+				ticketTypeInfos {
+					name
+					languageId
+				}
+			}
+			start
+			googleAnalyticsTracker
+		}
+	}
 `;
 
 @Injectable({
@@ -331,13 +331,10 @@ export class EventService {
   }
 
   upcomingGigs$ = this.apollo
-    .query<EventDetailsResponse>({
+    .query<UpComingEventsResponse>({
       query: GET_UPCOMING_GIGS,
-      variables: {
-        today: new Date(),
-      },
     })
-    .pipe(map((result) => result.data.eventDetails));
+    .pipe(map((result) => result.data.upcomingEvents));
 
   GetEventDetails(filterPredicateIn: any): Observable<EventDetail[]> {
     // console.log(`load events with predicate ${filterPredicateIn}`);
