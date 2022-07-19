@@ -108,24 +108,24 @@ const GET_UPCOMING_EVENTS = gql`
 `;
 
 const GET_PAST_EVENTS = gql`
-  query {
-    pastEvents {
-      eventDetail {
-        _id
-        eventInfos {
-          name
-          flyerImagePath
-          shortDescription
-          languageId
-          importantNotes
-        }
-        notificationEmail
-        facebookPixelId
-        googleAnalyticsTracker
-        start
-      }
-    }
-  }
+	{
+		pastEvents {
+			_id
+			eventDetail {
+				facebookPixelId
+				notificationEmail
+				googleAnalyticsTracker
+				start
+				eventInfos {
+					name
+					languageId
+					shortDescription
+					importantNotes
+					flyerImagePath
+				}
+			}
+		}
+	}
 `;
 
 const GET_EVENTINFO_BYEVENTID = gql`

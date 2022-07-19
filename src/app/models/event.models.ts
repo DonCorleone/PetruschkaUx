@@ -121,9 +121,9 @@ export interface EventDetail {
 	// maxTickets: number;
 	// maxTicketsProOrder: number;
 	// countryId: number;
-	openDoor: Date;
+	// openDoor: Date;
 	start: Date;
-	end: Date;
+	// end: Date;
 	// eventGenreValue: number;
 	// googleCoordinates?: any;
 	// isActiveForSale?: any;
@@ -198,6 +198,7 @@ export interface UpcomingEventDetailsResponse {
 }
 
 export interface PastEventDetailsResponse {
+	_id: string
 	pastEvents: EventDetailViewModel[];
 }
 
