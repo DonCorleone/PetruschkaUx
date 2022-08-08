@@ -180,7 +180,7 @@ export interface EventDetailsResponse {
 }
 
 export interface UpComingEventsResponse {
-	upcomingEvents: EventDetail[];
+	upcomingEventsActives: EventDetail[];
 }
 
 export interface TicketPrice {

@@ -162,7 +162,7 @@ const GET_EVENTINFO_BYEVENTID = gql`
 
 const GET_UPCOMING_GIGS = gql`
 	{
-		upcomingEvents {
+		upcomingEventsActives {
 			_id
 			eventInfos {
 				name
@@ -334,7 +334,7 @@ export class EventService {
     .query<UpComingEventsResponse>({
       query: GET_UPCOMING_GIGS,
     })
-    .pipe(map((result) => result.data.upcomingEvents));
+    .pipe(map((result) => result.data.upcomingEventsActives));
 
   GetEventDetails(filterPredicateIn: any): Observable<EventDetail[]> {
     // console.log(`load events with predicate ${filterPredicateIn}`);
