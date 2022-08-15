@@ -11,13 +11,13 @@ const app = new Realm.App(environment.APP_ID_REALM);
 async function getValidAccessToken(): Promise<string> {
 
 	console.log(`getValidAccessToken`);
-	let varxy:any;
+	let promiseResponse:any;
 	if (!app.currentUser) {
 
 		console.log(`!app.currentUser`);
 
 		// If no user is logged in, log in an anonymous user
-		varxy = await app.logIn(Realm.Credentials.anonymous()).then((o) => {
+		promiseResponse = await app.logIn(Realm.Credentials.anonymous()).then((o: any) => {
 
 			console.log(`app.logIn - `+ JSON.stringify(o));
 
@@ -55,8 +55,10 @@ async function getValidAccessToken(): Promise<string> {
 		if (!removeExpiredTokens(storageKey)){
 
 			console.log(`logout user`);
-			app.currentUser.logOut();
-			return null;
+			await app.currentUser.logOut().then(() => {
+				window.location.reload();
+        return null;
+      });
 		};
 
 		storageKey =
@@ -72,11 +74,13 @@ async function getValidAccessToken(): Promise<string> {
 
 			console.log(`logout user`);
 
-			app.currentUser.logOut();
-			return null;
+			await app.currentUser.logOut().then(() => {
+				window.location.reload();
+				return null;
+			});
 		};
 
-		varxy = await app.currentUser.refreshCustomData().then((z) => {
+		promiseResponse = await app.currentUser.refreshCustomData().then((z:any) => {
 
 			console.log(`app.currentUser.refreshCustomData() - `+ JSON.stringify(z));
 
@@ -98,7 +102,7 @@ async function getValidAccessToken(): Promise<string> {
 
 	// Get a valid access token for the current user
 
-	return varxy;
+	return promiseResponse;
 }
 
 function removeExpiredTokens(storageKey: string): boolean {
