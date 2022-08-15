@@ -100,6 +100,7 @@ function removeExpiredTokens(storageKey: string): boolean {
 	let storedToken = localStorage.getItem(storageKey);
 	if (storedToken) {
 		console.log(`found ${storageKey}`);
+		console.log(`found token ${JSON.stringify(storedToken)}`);
 		const decoded = jwtDecode(storedToken);
 		const expDate = +decoded['exp'];
 		if (expDate < Date.now() / 1000) {
