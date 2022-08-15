@@ -9,9 +9,17 @@ const app = new Realm.App(environment.APP_ID_REALM);
 
 // Get a valid Realm user access token to authenticate requests
 async function getValidAccessToken(): Promise<string> {
+
+	console.log(`getValidAccessToken`);
 	if (!app.currentUser) {
+
+		console.log(`!app.currentUser`);
+
 		// If no user is logged in, log in an anonymous user
 		await app.logIn(Realm.Credentials.anonymous()).then((o) => {
+
+			console.log(`app.logIn - `+ JSON.stringify(o));
+
 			let storageKey =
 				app.storage['storage']['keyPart'] +
 				':' +
@@ -20,15 +28,20 @@ async function getValidAccessToken(): Promise<string> {
 				app.currentUser['storage']['keyPart'] +
 				':' +
 				'accessToken';
-			
+
 			localStorage.setItem(storageKey, app.currentUser.accessToken);
 			localStorage.setItem('token', app.currentUser.accessToken);
+
+			console.log(`return app.currentUser.accessToken` + app.currentUser.accessToken);
 			return app.currentUser.accessToken;
 		});
 	}
 		// The logged in user's access token might be stale,
 	// Refreshing custom data also refreshes the access token
 	else {
+
+		console.log(`app.currentUser`);
+
 		let storageKey =
 			app.storage['storage']['keyPart'] +
 			':' +
@@ -37,6 +50,7 @@ async function getValidAccessToken(): Promise<string> {
 			app.currentUser['storage']['keyPart'] +
 			':' +
 			'accessToken';
+
 		removeExpiredTokens(storageKey);
 
 		storageKey =
@@ -47,10 +61,13 @@ async function getValidAccessToken(): Promise<string> {
 			app.currentUser['storage']['keyPart'] +
 			':' +
 			'refreshToken';
+
 		removeExpiredTokens(storageKey);
 
 		await app.currentUser.refreshCustomData().then((z) => {
-			
+
+			console.log(`app.currentUser.refreshCustomData() - `+ JSON.stringify(z));
+
 			let storageKey =
 				app.storage['storage']['keyPart'] +
 				':' +
@@ -59,10 +76,10 @@ async function getValidAccessToken(): Promise<string> {
 				app.currentUser['storage']['keyPart'] +
 				':' +
 				'accessToken';
-			
+
 			localStorage.setItem(storageKey, app.currentUser.accessToken);
 			localStorage.setItem('token', app.currentUser.accessToken);
-			
+
 			return app.currentUser.accessToken;
 		});
 	}
