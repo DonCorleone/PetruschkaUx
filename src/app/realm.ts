@@ -52,6 +52,7 @@ async function getValidAccessToken(): Promise<string> {
 			'accessToken';
 
 		if (!removeExpiredTokens(storageKey)){
+			console.log(`localStorage.setItem`+ ' ' + storageKey + ` ` + JSON.stringify(app.currentUser.accessToken));
 			localStorage.setItem(storageKey, app.currentUser.accessToken);
 		};
 
@@ -65,6 +66,8 @@ async function getValidAccessToken(): Promise<string> {
 			'refreshToken';
 
 		if (!removeExpiredTokens(storageKey)){
+
+			console.log(`localStorage.setItem`+ ' ' + storageKey + ` ` + JSON.stringify(app.currentUser.accessToken));
 			localStorage.setItem(storageKey, app.currentUser.accessToken);
 		};
 
