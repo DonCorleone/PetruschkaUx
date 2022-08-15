@@ -12,6 +12,16 @@ async function getValidAccessToken(): Promise<string> {
 	if (!app.currentUser) {
 		// If no user is logged in, log in an anonymous user
 		await app.logIn(Realm.Credentials.anonymous()).then((o) => {
+			let storageKey =
+				app.storage['storage']['keyPart'] +
+				':' +
+				app.storage['keyPart'] +
+				':' +
+				app.currentUser['storage']['keyPart'] +
+				':' +
+				'accessToken';
+			
+			localStorage.setItem(storageKey, app.currentUser.accessToken);
 			localStorage.setItem('token', app.currentUser.accessToken);
 			return app.currentUser.accessToken;
 		});
@@ -40,7 +50,19 @@ async function getValidAccessToken(): Promise<string> {
 		removeExpiredTokens(storageKey);
 
 		await app.currentUser.refreshCustomData().then((z) => {
+			
+			let storageKey =
+				app.storage['storage']['keyPart'] +
+				':' +
+				app.storage['keyPart'] +
+				':' +
+				app.currentUser['storage']['keyPart'] +
+				':' +
+				'accessToken';
+			
+			localStorage.setItem(storageKey, app.currentUser.accessToken);
 			localStorage.setItem('token', app.currentUser.accessToken);
+			
 			return app.currentUser.accessToken;
 		});
 	}
