@@ -199,7 +199,7 @@ export interface UpcomingEventDetailsResponse {
 
 export interface PastEventDetailsResponse {
 	_id: string
-	pastEvents: EventDetailViewModel[];
+	pastEventsWithIds: EventDetailViewModel[];
 }
 
 /*export interface EventCalculationDefinition {

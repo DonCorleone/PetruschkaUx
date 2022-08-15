@@ -25,7 +25,7 @@ export class InfoModalComponent implements OnInit {
     this.eventInfo$ = this.eventDetail$.pipe(
       tap((c) => console.log(c)),
       map((p) => {
-        return p.eventInfos?.find((f) => f.languageId === 1);
+        return p.eventInfos?.find((f) => f.languageId === 0);
       })
     );
   }
@@ -36,6 +36,6 @@ export class InfoModalComponent implements OnInit {
   }
 
   GetEventInfoFromEventDetail(eventDetail: EventDetail): EventDetailEventInfo {
-    return eventDetail.eventInfos?.find((p) => p.languageId === 1);
+    return eventDetail.eventInfos?.find((p) => p.languageId === 0);
   }
 }

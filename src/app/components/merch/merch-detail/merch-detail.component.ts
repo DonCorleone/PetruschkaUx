@@ -29,8 +29,8 @@ export class MerchDetailComponent implements OnInit {
   }
 
   eventName(eventDetail: EventDetail): string {
-    return (eventDetail && eventDetail.eventInfos?.filter((p) => p.languageId === 1))?.length > 0
-      ? eventDetail.eventInfos?.filter((p) => p.languageId === 1)[0].name
+    return (eventDetail && eventDetail.eventInfos?.filter((p) => p.languageId === 0))?.length > 0
+      ? eventDetail.eventInfos?.filter((p) => p.languageId === 0)[0].name
       : null;
   }
 

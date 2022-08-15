@@ -109,9 +109,10 @@ const GET_UPCOMING_EVENTS = gql`
 
 const GET_PAST_EVENTS = gql`
 	{
-		pastEvents {
+		pastEventsWithIds {
 			_id
 			eventDetail {
+				_id
 				facebookPixelId
 				notificationEmail
 				googleAnalyticsTracker
@@ -197,8 +198,8 @@ export class EventService {
       return null;
     }
 
-    return eventDetail.eventInfos?.filter((p) => p.languageId === 1)?.length > 0
-      ? eventDetail.eventInfos?.filter((p) => p.languageId === 1)[0]
+    return eventDetail.eventInfos?.filter((p) => p.languageId === 0)?.length > 0
+      ? eventDetail.eventInfos?.filter((p) => p.languageId === 0)[0]
       : null;
   }
 
@@ -211,12 +212,12 @@ export class EventService {
 
     if (eventDetail.ticketTypes.length === 1) {
       usageTicketTypes = eventDetail.ticketTypes[0].ticketTypeInfos?.filter(
-        (p) => p.name.toLowerCase() === usage.toLowerCase() && p.languageId === 1
+        (p) => p.name.toLowerCase() === usage.toLowerCase() && p.languageId === 0
       );
     } else {
       for (const ticketType of eventDetail.ticketTypes) {
         usageTicketTypes = ticketType.ticketTypeInfos?.filter(
-          (p) => p.name.toLowerCase() === usage.toLowerCase() && p.languageId === 1
+          (p) => p.name.toLowerCase() === usage.toLowerCase() && p.languageId === 0
         );
         if (usageTicketTypes && usageTicketTypes.length > 0) {
           break;
@@ -234,7 +235,7 @@ export class EventService {
     let returnArray: TicketPrice[] = [];
 
     for (const ticketType of eventDetail.ticketTypes) {
-      let name = ticketType.ticketTypeInfos?.filter((p) => p.languageId === 1)[0].name;
+      let name = ticketType.ticketTypeInfos?.filter((p) => p.languageId === 0)[0].name;
 
       let price = ticketType.price;
 
@@ -283,7 +284,7 @@ export class EventService {
   }
 
   static GetShortDescFromEventDetail(eventDetail: EventDetail): string {
-    return eventDetail && eventDetail.eventInfos?.find((p) => p.languageId === 1)?.shortDescription;
+    return eventDetail && eventDetail.eventInfos?.find((p) => p.languageId === 0)?.shortDescription;
   }
 
   static GetNameFromEventDetail(eventDetail: EventDetail): string {
@@ -297,11 +298,11 @@ export class EventService {
   }
 
   static GetLongDescriptionFromEventDetail(eventDetail: EventDetail): string {
-    return eventDetail && eventDetail.eventInfos?.find((p) => p.languageId === 1)?.longDescription;
+    return eventDetail && eventDetail.eventInfos?.find((p) => p.languageId === 0)?.longDescription;
   }
 
   static GetImportantNotesFromEventDetail(eventDetail: EventDetail): string {
-    return eventDetail && eventDetail.eventInfos?.find((p) => p.languageId === 1)?.importantNotes;
+    return eventDetail && eventDetail.eventInfos?.find((p) => p.languageId === 0)?.importantNotes;
   }
 
   static GetLocationFromEventDetail(eventDetail: EventDetail): string {
@@ -349,7 +350,7 @@ export class EventService {
     .query<PastEventDetailsResponse>({
       query: GET_PAST_EVENTS,
     })
-    .pipe(map((result) => result.data.pastEvents));
+    .pipe(map((result) => result.data.pastEventsWithIds));
 
   upcomingEventDetails$ = this.apollo
     .query<UpcomingEventDetailsResponse>({

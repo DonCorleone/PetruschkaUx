@@ -17,7 +17,7 @@ export class GigsListComponent {
 
 
 	GetEventInfoFromEventDetail(eventDetail: EventDetail): EventDetailEventInfo {
-		return eventDetail.eventInfos?.find(p => p.languageId === 1);
+		return eventDetail.eventInfos?.find(p => p.languageId === 0);
 	}
 
 	GetPricesStringFromEventDetail(eventDetail: EventDetail): TicketPrice[] {
