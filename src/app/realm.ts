@@ -53,8 +53,10 @@ async function getValidAccessToken(): Promise<string> {
 			'accessToken';
 
 		if (!removeExpiredTokens(storageKey)){
-			console.log(`localStorage.setItem`+ ' ' + storageKey + ` ` + JSON.stringify(app.currentUser.accessToken));
-			localStorage.setItem(storageKey, app.currentUser.accessToken);
+
+			console.log(`logout user`);
+			app.currentUser.logOut();
+			return null;
 		};
 
 		storageKey =
@@ -68,8 +70,10 @@ async function getValidAccessToken(): Promise<string> {
 
 		if (!removeExpiredTokens(storageKey)){
 
-			console.log(`localStorage.setItem`+ ' ' + storageKey + ` ` + JSON.stringify(app.currentUser.accessToken));
-			localStorage.setItem(storageKey, app.currentUser.accessToken);
+			console.log(`logout user`);
+
+			app.currentUser.logOut();
+			return null;
 		};
 
 		varxy = await app.currentUser.refreshCustomData().then((z) => {
