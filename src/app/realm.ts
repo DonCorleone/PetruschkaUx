@@ -51,7 +51,9 @@ async function getValidAccessToken(): Promise<string> {
 			':' +
 			'accessToken';
 
-		removeExpiredTokens(storageKey);
+		if (!removeExpiredTokens(storageKey)){
+			localStorage.setItem(storageKey, app.currentUser.accessToken);
+		};
 
 		storageKey =
 			app.storage['storage']['keyPart'] +
@@ -62,7 +64,9 @@ async function getValidAccessToken(): Promise<string> {
 			':' +
 			'refreshToken';
 
-		removeExpiredTokens(storageKey);
+		if (!removeExpiredTokens(storageKey)){
+			localStorage.setItem(storageKey, app.currentUser.accessToken);
+		};
 
 		await app.currentUser.refreshCustomData().then((z) => {
 
@@ -89,7 +93,7 @@ async function getValidAccessToken(): Promise<string> {
 	return app.currentUser.accessToken;
 }
 
-function removeExpiredTokens(storageKey: string) {
+function removeExpiredTokens(storageKey: string): boolean {
 	let storedToken = localStorage.getItem(storageKey);
 	if (storedToken) {
 		console.log(`found ${storageKey}`);
@@ -101,7 +105,9 @@ function removeExpiredTokens(storageKey: string) {
 		} else {
 			console.log('valid');
 		}
+		return true;
 	}
+	return false;
 }
 
 export { graphqlUrl, getValidAccessToken };
