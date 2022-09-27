@@ -1,53 +1,33 @@
 import { Injectable } from '@angular/core';
-import { Apollo, gql } from 'apollo-angular';
-import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
+import { HttpClient } from '@angular/common/http';
 
 export interface Press {
-  author: string;
-  date: Date;
+  _id: string;
+  nr: string;
   desc: string;
+  source: string;
+  date: Date;
+  author: string;
   fileExtension: string;
   link: string;
-  nr: string;
   quote: string;
-  source: string;
 }
 
-export interface Articles {
-  presses: Press[];
+interface Message {
+	documents: Press[];
 }
 
-export interface GetPressArticlesResponse {
-  data: Articles;
+interface GetPressArticlesResponse {
+  message: Message;
 }
-
-const GET_PRESS_ARTICLES = gql`
-  query GetPressArticles {
-    presses {
-      quote
-      fileExtension
-      link
-      nr
-      desc
-      author
-      source
-      date
-    }
-  }
-`;
-
-``;
 
 @Injectable({
   providedIn: 'root',
 })
 export class PressService {
-  constructor(private apollo: Apollo) {}
+  constructor(private httpClient: HttpClient) {}
 
-  pressArticles$ = this.apollo
-    .query<Articles>({
-      query: GET_PRESS_ARTICLES,
-    })
-    .pipe(map((result) => result.data.presses));
+  pressArticles$ = this.httpClient.get<GetPressArticlesResponse>('.netlify/functions/get_press')
+		.pipe(map((result) => result.message.documents));
 }

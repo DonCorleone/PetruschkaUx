@@ -5,14 +5,13 @@ import { Observable, Subject } from 'rxjs';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { EventDetailEventInfo } from 'src/app/models/event.models';
 import { LocationModalComponent } from '../../location/location-modal/location-modal.component';
-import { Job } from '../../../models/staff.models';
 import { GalleryModalComponent } from '../../gallery/gallery-modal/gallery-modal.component';
-import {ImagesService, Netlifile} from 'src/app/services/images.service';
+import { ImagesService, Netlifile } from 'src/app/services/images.service';
 import { map, takeUntil } from 'rxjs/operators';
 import { Press, PressService } from 'src/app/services/press.service';
 import { TicketModalComponent } from '../../ticket/ticket-modal/ticket-modal.component';
 import { AboutModalComponent } from '../../../modules/about/about-modal/about-modal.component';
-import { StaffService } from '../../../services/staff.service';
+import { Job, StaffService } from '../../../services/staff.service';
 import { environment } from '../../../../environments/environment';
 
 @Component({
@@ -32,7 +31,7 @@ export class InfoComponent implements OnChanges, OnDestroy {
   @Input() eventKey: string;
 
   artistsArray: Job[];
-	files$: Observable<Netlifile[]>;
+  files$: Observable<Netlifile[]>;
   pressArticle$ = this.pressService.pressArticles$.pipe(
     map((result) => result.find((article) => article.nr === this.eventKey))
   );
@@ -128,7 +127,7 @@ export class InfoComponent implements OnChanges, OnDestroy {
         }
       });
 
-  //  this.image4Images$ = this.imageService.getAlbum(this.eventKey).pipe(map((p) => p.files));
+    //  this.image4Images$ = this.imageService.getAlbum(this.eventKey).pipe(map((p) => p.files));
   }
 
   openStaff(staffName: string) {
@@ -171,8 +170,8 @@ export class InfoComponent implements OnChanges, OnDestroy {
     }
   }
 
-	ngOnDestroy() {
-		this._ngDestroy$.next();
-		this._ngDestroy$.complete();
-	}
+  ngOnDestroy() {
+    this._ngDestroy$.next();
+    this._ngDestroy$.complete();
+  }
 }
