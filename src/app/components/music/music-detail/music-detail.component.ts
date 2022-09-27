@@ -4,9 +4,8 @@ import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { EventDetail, EventDetailEventInfo, TicketTypeInfo } from 'src/app/models/event.models';
 import { EventService } from 'src/app/services/event.service';
 import { InfoModalComponent } from '../../info/info-modal/info-modal.component';
-import { Job } from '../../../models/staff.models';
 import { AboutModalComponent } from '../../../modules/about/about-modal/about-modal.component';
-import {StaffService} from "../../../services/staff.service";
+import { Job, StaffService } from '../../../services/staff.service';
 
 @Component({
   selector: 'app-music-detail',

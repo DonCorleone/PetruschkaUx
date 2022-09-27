@@ -1,7 +1,7 @@
 import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
-import { Staff } from 'src/app/models/staff.models';
 import { AboutModalComponent } from '../about-modal/about-modal.component';
+import { Staff } from '../../../services/staff.service';
 
 @Component({
   selector: 'app-about-item',

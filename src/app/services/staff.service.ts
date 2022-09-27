@@ -1,65 +1,49 @@
 import { Injectable } from '@angular/core';
-import { Apollo, gql } from 'apollo-angular';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
-import { Job, Staff } from '../models/staff.models';
+import { HttpClient } from '@angular/common/http';
 
-const GET_STAFFS = gql`
-	query {
-		staffs: staffOverviews {
-			name
-			topic
-		}
-	}
-`;
-
-const GET_STAFFBYNAME = gql`
-  query GetStaffByName($name: String!) {
-    staff(query: { name: $name }) {
-      name
-      bio
-      topic
-    }
-  }
-`;
-
-interface GetStaffs {
-  staffs: Staff[];
+export interface Staff {
+  imageSrc: string;
+  bio: string;
+  name: string;
+  topic: string;
+  active: boolean;
+  sortOrder: number;
 }
 
-interface GetStaff {
-  staff: Staff;
+export interface Job {
+  isJobSharing: boolean;
+  name: string;
+  values: string[];
+}
+
+interface Message {
+  documents: Staff[];
+}
+
+interface GetStaffOverviewResponse {
+  message: Message;
 }
 
 @Injectable({
   providedIn: 'root',
 })
 export class StaffService {
-  constructor(private apollo: Apollo) {}
+  constructor(private httpClient: HttpClient) {}
 
-  staffs$ = this.apollo
-    .query<GetStaffs>({
-      query: GET_STAFFS,
+  staffs$ = this.httpClient.get<GetStaffOverviewResponse>('.netlify/functions/get_staff_overview').pipe(
+    map((result) => result.message.documents),
+    map((staffs) => {
+      return staffs.map((staff) => this.getStaffWithSrc(staff));
     })
-    .pipe(
-      map((result) => result.data.staffs),
-      map((staffs) => {
-        return staffs.map((staff) => this.getStaffWithSrc(staff));
-      })
-    );
+  );
 
   GetStaff(nameIn: string): Observable<Staff> {
-    return this.apollo
-      .query<GetStaff>({
-        query: GET_STAFFBYNAME,
-        variables: {
-          name: nameIn,
-        },
-      })
-      .pipe(
-        map((result) => result?.data?.staff),
-        map((staff) => this.getStaffWithSrc(staff))
-      );
+    return this.httpClient.get<GetStaffOverviewResponse>('.netlify/functions/get_staff').pipe(
+      map((result) => result?.message?.documents),
+      map((staff) => this.getStaffWithSrc(staff.find((x) => x.name == nameIn)))
+    );
   }
 
   private getStaffWithSrc(staff: Staff) {

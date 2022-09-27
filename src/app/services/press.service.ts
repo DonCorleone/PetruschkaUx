@@ -1,11 +1,6 @@
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 import { HttpClient } from '@angular/common/http';
-
-export interface Message {
-  documents: Press[];
-}
 
 export interface Press {
   _id: string;
@@ -19,7 +14,11 @@ export interface Press {
   quote: string;
 }
 
-export interface GetPressArticlesResponse {
+interface Message {
+	documents: Press[];
+}
+
+interface GetPressArticlesResponse {
   message: Message;
 }
 
