@@ -3,17 +3,19 @@ import { map } from 'rxjs/operators';
 import { Observable } from 'rxjs';
 import { Apollo, gql } from 'apollo-angular';
 import {
-	EventDetail,
-	EventDetailEventInfo,
-	EventDetailsResponse,
-	GetEventInfoById,
-	TicketPrice,
-	TicketType,
-	TicketTypeInfo,
-	EventDetailViewModel,
-	UpcomingEventDetailsResponse,
-	PastEventDetailsResponse, UpComingEventsResponse,
+  EventDetail,
+  EventDetailEventInfo,
+  EventDetailsResponse,
+  GetEventInfoById,
+  TicketPrice,
+  TicketType,
+  TicketTypeInfo,
+  EventDetailViewModel,
+  UpcomingEventDetailsResponse,
+  UpComingEventsResponse,
 } from '../models/event.models';
+import { HttpClient } from '@angular/common/http';
+import { EventLocation } from '../models/location.models';
 const GET_ALL_THE_STUFF = gql`
   query getAllTheStuff($cd: String, $tournee: String, $premiere: String) {
     cd: eventDetailsPerUsage(input: $cd) {
@@ -108,25 +110,25 @@ const GET_UPCOMING_EVENTS = gql`
 `;
 
 const GET_PAST_EVENTS = gql`
-	{
-		pastEventsWithIds {
-			_id
-			eventDetail {
-				_id
-				facebookPixelId
-				notificationEmail
-				googleAnalyticsTracker
-				start
-				eventInfos {
-					name
-					languageId
-					shortDescription
-					importantNotes
-					flyerImagePath
-				}
-			}
-		}
-	}
+  {
+    pastEventsWithIds {
+      _id
+      eventDetail {
+        _id
+        facebookPixelId
+        notificationEmail
+        googleAnalyticsTracker
+        start
+        eventInfos {
+          name
+          languageId
+          shortDescription
+          importantNotes
+          flyerImagePath
+        }
+      }
+    }
+  }
 `;
 
 const GET_EVENTINFO_BYEVENTID = gql`
@@ -162,36 +164,46 @@ const GET_EVENTINFO_BYEVENTID = gql`
 `;
 
 const GET_UPCOMING_GIGS = gql`
-	{
-		upcomingEventsActives {
-			_id
-			eventInfos {
-				name
-				location
-				languageId
-				url
-			}
-			ticketTypes {
-				sortOrder
-				price
-				currency
-				preSaleStart
-				ticketTypeInfos {
-					name
-					languageId
-				}
-			}
-			start
-			googleAnalyticsTracker
-		}
-	}
+  {
+    upcomingEventsActives {
+      _id
+      eventInfos {
+        name
+        location
+        languageId
+        url
+      }
+      ticketTypes {
+        sortOrder
+        price
+        currency
+        preSaleStart
+        ticketTypeInfos {
+          name
+          languageId
+        }
+      }
+      start
+      googleAnalyticsTracker
+    }
+  }
 `;
+
+interface Message {
+  _id: string;
+  documents: EventDetailViewModel[];
+}
+
+interface GetEventLocationResponse {}
+interface PastEventDetailsResponse {
+  message: Message;
+}
 
 @Injectable({
   providedIn: 'root',
 })
 export class EventService {
-  constructor(private apollo: Apollo) {}
+  constructor(private apollo: Apollo, private httpClient: HttpClient) {}
 
   static GetEventInfoFromEventDetail(eventDetail: EventDetail): EventDetailEventInfo {
     if (!eventDetail || !eventDetail.eventInfos || eventDetail.eventInfos?.length === 0) {
@@ -346,11 +358,9 @@ export class EventService {
       .pipe(map((result) => result.data.eventDetails.filter(filterPredicateIn)));
   }
 
-  pastEventDetails$ = this.apollo
-    .query<PastEventDetailsResponse>({
-      query: GET_PAST_EVENTS,
-    })
-    .pipe(map((result) => result.data.pastEventsWithIds));
+  pastEventDetails$ = this.httpClient
+    .get<PastEventDetailsResponse>('.netlify/functions/get_events')
+    .pipe(map((result) => result.message.documents));
 
   upcomingEventDetails$ = this.apollo
     .query<UpcomingEventDetailsResponse>({

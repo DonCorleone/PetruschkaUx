@@ -197,11 +197,6 @@ export interface UpcomingEventDetailsResponse {
 		nextGigPerUpcomingEvent: EventDetailViewModel[];
 }
 
-export interface PastEventDetailsResponse {
-	_id: string
-	pastEventsWithIds: EventDetailViewModel[];
-}
-
 /*export interface EventCalculationDefinition {
 	currency: string;
 	fromAmount: number;
