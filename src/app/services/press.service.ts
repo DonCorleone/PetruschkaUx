@@ -1,10 +1,10 @@
 import { Injectable } from '@angular/core';
 import { map } from 'rxjs/operators';
 import { HttpClient } from '@angular/common/http';
-import {Press} from "../models/press.models";
+import { Press } from '../models/press.models';
 
 interface Message {
-	documents: Press[];
+  documents: Press[];
 }
 
 interface GetPressArticlesResponse {
@@ -17,6 +17,7 @@ interface GetPressArticlesResponse {
 export class PressService {
   constructor(private httpClient: HttpClient) {}
 
-  pressArticles$ = this.httpClient.get<GetPressArticlesResponse>('.netlify/functions/get_press')
-		.pipe(map((result) => result.message.documents));
+  pressArticles$ = this.httpClient
+    .get<GetPressArticlesResponse>('.netlify/functions/get_press')
+    .pipe(map((result) => result.message.documents));
 }

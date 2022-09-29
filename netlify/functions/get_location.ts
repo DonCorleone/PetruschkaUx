@@ -2,10 +2,6 @@ import { Handler } from '@netlify/functions';
 const axios = require('axios');
 
 const handler: Handler = async (event, context) => {
-
-	console.log('JSON.stringify(event)');
-	console.log(JSON.stringify(event.queryStringParameters.location));
-
 	const data = JSON.stringify({
     collection: 'locations',
     database: 'staticDb',
