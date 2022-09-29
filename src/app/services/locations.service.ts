@@ -1,44 +1,35 @@
-import {Injectable} from '@angular/core';
-import {Apollo, gql} from 'apollo-angular';
-import {Observable} from 'rxjs';
-import {map} from 'rxjs/operators';
-import {EventLocation} from '../models/location.models';
+import { Injectable } from '@angular/core';
+import { map } from 'rxjs/operators';
+import { HttpClient } from '@angular/common/http';
+import { Observable } from 'rxjs';
 
-interface GetEventLocationByName {
-	eventLocation: EventLocation;
+export interface EventLocation {
+  _id: string;
+  city: string;
+  directions: string;
+  info: string;
+  name: string;
+  postalCode: string;
+  street: string;
 }
 
-const GET_LOCATION_BY_NAME = gql`
-  query GetLocationByName($name: String!) {
-    eventLocation:location(query:{name:$name}){
-      name
-      street
-      postalCode
-      city
-      directions
-      info
-    }
-  }
-`;
+interface Message {
+  documents: EventLocation[];
+}
+
+interface GetEventLocationResponse {
+  message: Message;
+}
 
 @Injectable({
-	providedIn: 'root'
+  providedIn: 'root',
 })
 export class LocationsService {
+  constructor(private httpClient: HttpClient) {}
 
-	constructor(private  apollo: Apollo) {
-	}
-
-	GetEventLocation(nameIn: string): Observable<EventLocation> {
-		// console.log(`GetEventLocation`);
-		return this.apollo
-			.query<GetEventLocationByName>({
-				query: GET_LOCATION_BY_NAME,
-				variables: {
-					name: nameIn
-				},
-			})
-			.pipe(map((result) => result.data.eventLocation));
-	}
+  GetEventLocation(nameIn: string): Observable<EventLocation> {
+    return this.httpClient
+      .get<GetEventLocationResponse>(`.netlify/functions/get_location?location=${nameIn}`)
+      .pipe(map((result) => result.message.documents.find(p => p.name == nameIn)));
+  }
 }
-
