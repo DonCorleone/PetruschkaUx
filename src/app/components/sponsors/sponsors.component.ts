@@ -1,7 +1,8 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
-import { Sponsor, SponsorsService } from 'src/app/services/sponsors.service';
+import { SponsorsService } from 'src/app/services/sponsors.service';
 import { environment } from '../../../environments/environment';
+import { Sponsor } from '../../models/sponsors.models';
 
 @Component({
   selector: 'app-sponsors',

@@ -2,18 +2,7 @@ import { Injectable } from '@angular/core';
 import { map } from 'rxjs/operators';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
-
-export interface Event {
-  event: string;
-  share: number;
-}
-
-export interface Sponsor {
-  events: Event[];
-  image: string;
-  name: string;
-  url: string;
-}
+import { Sponsor } from '../models/sponsors.models';
 
 interface Message {
   documents: Sponsor[];

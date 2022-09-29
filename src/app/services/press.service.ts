@@ -1,18 +1,7 @@
 import { Injectable } from '@angular/core';
 import { map } from 'rxjs/operators';
 import { HttpClient } from '@angular/common/http';
-
-export interface Press {
-  _id: string;
-  nr: string;
-  desc: string;
-  source: string;
-  date: Date;
-  author: string;
-  fileExtension: string;
-  link: string;
-  quote: string;
-}
+import {Press} from "../models/press.models";
 
 interface Message {
 	documents: Press[];

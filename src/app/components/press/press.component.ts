@@ -1,7 +1,8 @@
 import { Component, ViewChild } from '@angular/core';
 import { NgbCarousel, NgbCarouselConfig } from '@ng-bootstrap/ng-bootstrap';
 import { map } from 'rxjs/operators';
-import { Press, PressService } from 'src/app/services/press.service';
+import { PressService } from 'src/app/services/press.service';
+import {Press} from "../../models/press.models";
 
 @Component({
   selector: 'app-press',
