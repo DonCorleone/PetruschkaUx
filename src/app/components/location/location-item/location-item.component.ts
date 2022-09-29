@@ -1,7 +1,8 @@
 import { ChangeDetectionStrategy, Component, Input, OnInit } from '@angular/core';
 import { DomSanitizer } from '@angular/platform-browser';
 import { Observable } from 'rxjs';
-import { EventLocation, LocationsService } from 'src/app/services/locations.service';
+import { LocationsService } from 'src/app/services/locations.service';
+import { EventLocation } from '../../../models/location.models';
 
 @Component({
   selector: 'app-location-item',
