@@ -2,21 +2,7 @@ import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 import { HttpClient } from '@angular/common/http';
-
-export interface Staff {
-  imageSrc: string;
-  bio: string;
-  name: string;
-  topic: string;
-  active: boolean;
-  sortOrder: number;
-}
-
-export interface Job {
-  isJobSharing: boolean;
-  name: string;
-  values: string[];
-}
+import {Job, Staff} from "../models/staff.models";
 
 interface Message {
   documents: Staff[];

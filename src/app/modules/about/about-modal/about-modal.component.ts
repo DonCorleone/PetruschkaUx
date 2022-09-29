@@ -1,7 +1,8 @@
 import { ChangeDetectionStrategy, Component, Input, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
 import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
-import { Staff, StaffService } from '../../../services/staff.service';
+import { StaffService } from '../../../services/staff.service';
+import { Staff } from '../../../models/staff.models';
 
 @Component({
   templateUrl: './about-modal.component.html',

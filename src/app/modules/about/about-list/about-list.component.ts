@@ -1,5 +1,5 @@
 import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
-import {Staff} from "../../../services/staff.service";
+import {Staff} from "../../../models/staff.models";
 
 @Component({
   selector: 'app-about-list',

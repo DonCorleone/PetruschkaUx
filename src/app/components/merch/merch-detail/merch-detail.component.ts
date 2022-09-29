@@ -1,11 +1,11 @@
 import { ChangeDetectionStrategy, Component, Input, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
-import { EventDetail, EventDetailEventInfo, TicketTypeInfo } from 'src/app/models/event.models';
+import { EventDetail, TicketTypeInfo } from 'src/app/models/event.models';
 import { EventService } from 'src/app/services/event.service';
 import { InfoModalComponent } from '../../info/info-modal/info-modal.component';
 import { AboutModalComponent } from '../../../modules/about/about-modal/about-modal.component';
-import {Job, StaffService} from '../../../services/staff.service';
+import { StaffService } from '../../../services/staff.service';
 
 @Component({
   selector: 'app-merch-detail',
@@ -17,7 +17,6 @@ export class MerchDetailComponent implements OnInit {
   @Input() eventDetailId: number;
 
   eventDetail$: Observable<EventDetail>;
-  artistsArray: Job[];
 
   GetTicketTypeInfoFromEventDetail(eventDetail: EventDetail) {
     return EventService.GetTicketTypeInfoFromEventDetail(eventDetail, 'Tournee');
