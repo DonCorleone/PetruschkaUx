@@ -179,9 +179,6 @@ export interface EventDetailsResponse {
 	eventDetails: EventDetail[];
 }
 
-export interface UpComingEventsResponse {
-	upcomingEventsActives: EventDetail[];
-}
 
 export interface TicketPrice {
 	name:string,

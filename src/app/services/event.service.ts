@@ -10,9 +10,7 @@ import {
   TicketPrice,
   TicketType,
   TicketTypeInfo,
-  EventDetailViewModel,
-  UpcomingEventDetailsResponse,
-  UpComingEventsResponse,
+  EventDetailViewModel
 } from '../models/event.models';
 import { HttpClient } from '@angular/common/http';
 import { EventLocation } from '../models/location.models';
@@ -146,14 +144,21 @@ const GET_UPCOMING_GIGS = gql`
   }
 `;
 
-interface Message {
+interface MessageEventDetail {
+	documents: EventDetail[];
+}
+
+interface MessageEventDetailViewModel {
   _id: string;
   documents: EventDetailViewModel[];
 }
 
-interface GetEventLocationResponse {}
+interface UpComingEventsResponse {
+	message: MessageEventDetail;
+}
+
 interface PastEventDetailsResponse {
-  message: Message;
+  message: MessageEventDetailViewModel;
 }
 
 @Injectable({
@@ -300,11 +305,9 @@ export class EventService {
       .pipe(map((result) => result.data.eventDetail));
   }
 
-  upcomingGigs$ = this.apollo
-    .query<UpComingEventsResponse>({
-      query: GET_UPCOMING_GIGS,
-    })
-    .pipe(map((result) => result.data.upcomingEventsActives));
+  upcomingGigs$ = this.httpClient
+		.get<UpComingEventsResponse>('.netlify/functions/get_events?collection=UpcomingEventsActive')
+		.pipe(map((result) => result.message.documents));
 
   GetEventDetails(filterPredicateIn: any): Observable<EventDetail[]> {
     // console.log(`load events with predicate ${filterPredicateIn}`);
