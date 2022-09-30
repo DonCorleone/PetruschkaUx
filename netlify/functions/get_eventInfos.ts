@@ -1,0 +1,43 @@
+import { Handler } from '@netlify/functions';
+const axios = require('axios');
+
+const handler: Handler = async (event, context) => {
+
+	console.log(JSON.stringify(event?.queryStringParameters));
+
+	const data = JSON.stringify({
+    collection: 'EventDetails',
+    database: 'eventDb',
+    dataSource: 'Cluster0',
+		filter: {
+			_id: +event?.queryStringParameters?.eventid
+		},
+  });
+
+  const config = {
+    method: 'post',
+    url: 'https://data.mongodb-api.com/app/data-gtgec/endpoint/data/beta/action/find',
+    headers: {
+      'Content-Type': 'application/json',
+      'Access-Control-Request-Headers': '*',
+      'api-key': process.env.API_KEY_MONGODB,
+    },
+    data: data,
+  };
+
+  return axios(config)
+    .then(function (response) {
+      return {
+        statusCode: 200,
+        body: JSON.stringify({ message: response.data }),
+      };
+    })
+    .catch(function (error) {
+      return {
+        statusCode: 200,
+        body: JSON.stringify({ message: error }),
+      };
+    });
+};
+
+export { handler };

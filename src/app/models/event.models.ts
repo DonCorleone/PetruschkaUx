@@ -170,11 +170,6 @@ export interface EventDetail {
 		shortDescription: string;
 }*/
 
-export interface GetEventInfoById {
-	eventDetail: EventDetail;
-	notificationEmail: string;
-}
-
 
 
 

@@ -5,117 +5,17 @@ import { Apollo, gql } from 'apollo-angular';
 import {
   EventDetail,
   EventDetailEventInfo,
-  GetEventInfoById,
   TicketPrice,
   TicketType,
   TicketTypeInfo,
   EventDetailViewModel
 } from '../models/event.models';
 import { HttpClient } from '@angular/common/http';
-import { EventLocation } from '../models/location.models';
-const GET_ALL_THE_STUFF = gql`
-  query getAllTheStuff($cd: String, $tournee: String, $premiere: String) {
-    cd: eventDetailsPerUsage(input: $cd) {
-      ...eventDetail
-    }
-    tournee: eventDetailsPerUsage(input: $tournee) {
-      ...eventDetail
-    }
-    premiere: eventDetailsPerUsage(input: $premiere) {
-      ...eventDetail
-    }
-  }
 
-  fragment eventDetail on EventDetail {
-    _id
-    eventInfos {
-      name
-      languageId
-    }
-    facebookPixelId
-    googleAnalyticsTracker
-    ticketTypes {
-      sortOrder
-      ticketTypeInfos {
-        languageId
-        imageUrl
-        name
-      }
-    }
-  }
-`;
+export interface GetEventInfoById {
+	message: MessageEventDetail;
+}
 
-// {
-//   "cd": "cd",
-//   "tournee": "tournee",
-//   "premiere": "premiere"
-// }
-
-const GET_EVENTDETAILS_BYTAG = gql`
-  query {
-    eventDetails(
-      sortBy: START_DESC
-      query: {
-        OR: [
-          { googleAnalyticsTracker_in: "CD" }
-          { googleAnalyticsTracker_in: "CD|Tournee" }
-          { googleAnalyticsTracker_in: "Tournee" }
-          { googleAnalyticsTracker_in: "Premiere|Tournee" }
-          { googleAnalyticsTracker_in: "Tournee|CD" }
-          { googleAnalyticsTracker_in: "Premiere|CD" }
-        ]
-      }
-    ) {
-      _id
-      eventInfos {
-        name
-        languageId
-      }
-      facebookPixelId
-      googleAnalyticsTracker
-      ticketTypes {
-        sortOrder
-        ticketTypeInfos {
-          languageId
-          imageUrl
-          name
-        }
-      }
-    }
-  }
-`;
-
-const GET_EVENTINFO_BYEVENTID = gql`
-  query GetEventByGroupId($eventId: Int!) {
-    eventDetail(query: { _id: $eventId }) {
-      eventInfos {
-        name
-        languageId
-        shortDescription
-        longDescription
-        address
-        location
-        bannerImagePath
-        artists
-        url
-      }
-      notificationEmail
-      facebookPixelId
-      googleAnalyticsTracker
-      start
-      ticketTypes {
-        sortOrder
-        preSaleStart
-        ticketTypeInfos {
-          languageId
-          imageUrl
-          name
-          description
-        }
-      }
-    }
-  }
-`;
 
 interface MessageEventDetail {
 	documents: EventDetail[];
@@ -272,14 +172,9 @@ export class EventService {
 
   GetEventDetail(id: number): Observable<EventDetail> {
     // console.log(`load event with Item ${id}`);
-    return this.apollo
-      .query<GetEventInfoById>({
-        query: GET_EVENTINFO_BYEVENTID,
-        variables: {
-          eventId: id,
-        },
-      })
-      .pipe(map((result) => result.data.eventDetail));
+    return this.httpClient
+			.get<GetEventInfoById>(`.netlify/functions/get_eventInfos?eventid=${id}`)
+      .pipe(map((result) => result.message.documents.find(p => p._id === id)));
   }
 
   upcomingGigs$ = this.httpClient
