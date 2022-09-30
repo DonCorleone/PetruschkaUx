@@ -118,32 +118,6 @@ const GET_EVENTINFO_BYEVENTID = gql`
   }
 `;
 
-const GET_UPCOMING_GIGS = gql`
-  {
-    upcomingEventsActives {
-      _id
-      eventInfos {
-        name
-        location
-        languageId
-        url
-      }
-      ticketTypes {
-        sortOrder
-        price
-        currency
-        preSaleStart
-        ticketTypeInfos {
-          name
-          languageId
-        }
-      }
-      start
-      googleAnalyticsTracker
-    }
-  }
-`;
-
 interface MessageEventDetail {
 	documents: EventDetail[];
 }
