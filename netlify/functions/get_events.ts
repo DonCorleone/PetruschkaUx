@@ -2,8 +2,7 @@ import { Handler } from '@netlify/functions';
 const axios = require('axios');
 
 const handler: Handler = async (event, context) => {
-
-	const data = JSON.stringify({
+  const data = JSON.stringify({
     collection: event?.queryStringParameters?.collection,
     database: 'eventDb',
     dataSource: 'Cluster0',
@@ -34,5 +33,4 @@ const handler: Handler = async (event, context) => {
       };
     });
 };
-
 export { handler };

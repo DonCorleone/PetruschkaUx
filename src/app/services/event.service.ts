@@ -1,7 +1,6 @@
 import { Injectable } from '@angular/core';
 import { map } from 'rxjs/operators';
 import { Observable } from 'rxjs';
-import { Apollo, gql } from 'apollo-angular';
 import {
   EventDetail,
   EventDetailEventInfo,
@@ -42,7 +41,7 @@ interface PastEventDetailsResponse {
   providedIn: 'root',
 })
 export class EventService {
-  constructor(private apollo: Apollo, private httpClient: HttpClient) {}
+  constructor(private httpClient: HttpClient) {}
 
   static GetEventInfoFromEventDetail(eventDetail: EventDetail): EventDetailEventInfo {
     if (!eventDetail || !eventDetail.eventInfos || eventDetail.eventInfos?.length === 0) {
