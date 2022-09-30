@@ -2,16 +2,15 @@ import { Handler } from '@netlify/functions';
 const axios = require('axios');
 
 const handler: Handler = async (event, context) => {
+  console.log(JSON.stringify(event?.queryStringParameters));
 
-	console.log(JSON.stringify(event?.queryStringParameters));
-
-	const data = JSON.stringify({
+  const data = JSON.stringify({
     collection: 'EventDetails',
     database: 'eventDb',
     dataSource: 'Cluster0',
-		filter: {
-			_id: +event?.queryStringParameters?.eventid
-		},
+    filter: {
+      _id: +event?.queryStringParameters?.eventid,
+    },
   });
 
   const config = {

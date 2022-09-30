@@ -1,7 +1,7 @@
 import { ChangeDetectionStrategy, Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
-import { from, of, zip, Observable } from 'rxjs';
-import { groupBy, map, mergeMap, take, toArray } from 'rxjs/operators';
-import { EventDetail, EventDetailViewModel } from 'src/app/models/event.models';
+import { Observable } from 'rxjs';
+import { take } from 'rxjs/operators';
+import { EventDetailViewModel } from 'src/app/models/event.models';
 import { EventService } from 'src/app/services/event.service';
 
 @Component({
