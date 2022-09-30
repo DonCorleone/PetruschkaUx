@@ -4,7 +4,7 @@ const axios = require('axios');
 const handler: Handler = async (event, context) => {
 
 	const data = JSON.stringify({
-    collection: 'PastEventsWithId',
+    collection: event?.queryStringParameters?.collection,
     database: 'eventDb',
     dataSource: 'Cluster0',
   });

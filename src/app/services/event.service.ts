@@ -88,49 +88,6 @@ const GET_EVENTDETAILS_BYTAG = gql`
   }
 `;
 
-const GET_UPCOMING_EVENTS = gql`
-  query {
-    nextGigPerUpcomingEvent {
-      eventDetail {
-        _id
-        eventInfos {
-          name
-          flyerImagePath
-          shortDescription
-          languageId
-          importantNotes
-        }
-        notificationEmail
-        facebookPixelId
-        googleAnalyticsTracker
-        start
-      }
-    }
-  }
-`;
-
-const GET_PAST_EVENTS = gql`
-  {
-    pastEventsWithIds {
-      _id
-      eventDetail {
-        _id
-        facebookPixelId
-        notificationEmail
-        googleAnalyticsTracker
-        start
-        eventInfos {
-          name
-          languageId
-          shortDescription
-          importantNotes
-          flyerImagePath
-        }
-      }
-    }
-  }
-`;
-
 const GET_EVENTINFO_BYEVENTID = gql`
   query GetEventByGroupId($eventId: Int!) {
     eventDetail(query: { _id: $eventId }) {
@@ -359,12 +316,10 @@ export class EventService {
   }
 
   pastEventDetails$ = this.httpClient
-    .get<PastEventDetailsResponse>('.netlify/functions/get_events')
+    .get<PastEventDetailsResponse>('.netlify/functions/get_events?collection=PastEventsWithId')
     .pipe(map((result) => result.message.documents));
 
-  upcomingEventDetails$ = this.apollo
-    .query<UpcomingEventDetailsResponse>({
-      query: GET_UPCOMING_EVENTS,
-    })
-    .pipe(map((x) => x.data.nextGigPerUpcomingEvent));
+  upcomingEventDetails$ = this.httpClient
+		.get<PastEventDetailsResponse>('.netlify/functions/get_events?collection=UpcomingPremieres')
+		.pipe(map((result) => result.message.documents));
 }
