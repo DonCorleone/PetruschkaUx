@@ -5,7 +5,6 @@ import { Apollo, gql } from 'apollo-angular';
 import {
   EventDetail,
   EventDetailEventInfo,
-  EventDetailsResponse,
   GetEventInfoById,
   TicketPrice,
   TicketType,
@@ -125,6 +124,10 @@ interface MessageEventDetail {
 interface MessageEventDetailViewModel {
   _id: string;
   documents: EventDetailViewModel[];
+}
+
+interface EventDetailsResponse {
+	message: MessageEventDetail;
 }
 
 interface UpComingEventsResponse {
@@ -285,11 +288,9 @@ export class EventService {
 
   GetEventDetails(filterPredicateIn: any): Observable<EventDetail[]> {
     // console.log(`load events with predicate ${filterPredicateIn}`);
-    return this.apollo
-      .query<EventDetailsResponse>({
-        query: GET_EVENTDETAILS_BYTAG,
-      })
-      .pipe(map((result) => result.data.eventDetails.filter(filterPredicateIn)));
+    return this.httpClient
+			.get<EventDetailsResponse>('.netlify/functions/get_events?collection=EventDetailsTaggedUsage')
+			.pipe(map((result) => result.message.documents.filter(filterPredicateIn)));
   }
 
   pastEventDetails$ = this.httpClient

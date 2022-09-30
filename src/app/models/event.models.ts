@@ -175,9 +175,7 @@ export interface GetEventInfoById {
 	notificationEmail: string;
 }
 
-export interface EventDetailsResponse {
-	eventDetails: EventDetail[];
-}
+
 
 
 export interface TicketPrice {
