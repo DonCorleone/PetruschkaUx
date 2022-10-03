@@ -3,6 +3,7 @@
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
+		"netlify": "NODE_OPTIONS=--inspect netlify functions:serve",
     "config-develop": "ts-node ./scripts/setenv.ts --environment=develop",
     "config-prod": "ts-node ./scripts/setenv.ts --environment=prod",
     "start": "npm run config-develop --environment=develop && ng serve --configuration=custom",
@@ -25,7 +26,6 @@
     "@angular/platform-browser": "~13.1.1",
     "@angular/platform-browser-dynamic": "~13.1.1",
     "@angular/router": "~13.1.1",
-    "@apollo/client": "^3.5.10",
     "@netlify/functions": "^1.2.0",
     "@ng-bootstrap/ng-bootstrap": "^11.0.0",
     "axios": "^0.27.2",

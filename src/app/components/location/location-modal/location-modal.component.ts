@@ -1,19 +1,14 @@
-import {ChangeDetectionStrategy, Component, Input, OnInit} from '@angular/core';
-import {NgbActiveModal} from '@ng-bootstrap/ng-bootstrap';
+import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
+import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
+import { LocationIdName } from 'src/app/models/location.models';
 
 @Component({
-	selector: 'app-location-modal',
-	templateUrl: './location-modal.component.html',
-	styleUrls: ['./location-modal.component.scss'],
-	changeDetection: ChangeDetectionStrategy.OnPush
+  selector: 'app-location-modal',
+  templateUrl: './location-modal.component.html',
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class LocationModalComponent implements OnInit {
+export class LocationModalComponent {
+  @Input() eventLocationIdName: LocationIdName;
 
-	@Input() eventLocationName: string;
-
-	constructor(public activeModal: NgbActiveModal) {
-	}
-
-	ngOnInit(): void {
-	}
+  constructor(public activeModal: NgbActiveModal) {}
 }

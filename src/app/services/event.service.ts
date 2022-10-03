@@ -155,16 +155,6 @@ export class EventService {
     return eventDetail && eventDetail.eventInfos?.find((p) => p.languageId === 0)?.importantNotes;
   }
 
-  static GetLocationFromEventDetail(eventDetail: EventDetail): string {
-    return eventDetail &&
-      eventDetail.eventInfos &&
-      eventDetail.eventInfos[0] &&
-      eventDetail.eventInfos &&
-      eventDetail.eventInfos[0].location
-      ? eventDetail.eventInfos && eventDetail.eventInfos[0].location
-      : null;
-  }
-
   static GetStartFromEventDetail(eventDetail: EventDetail): Date {
     return eventDetail && eventDetail.start ? eventDetail.start : null;
   }
