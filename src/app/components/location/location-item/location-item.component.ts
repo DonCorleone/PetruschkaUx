@@ -2,17 +2,17 @@ import { ChangeDetectionStrategy, Component, Input, OnInit } from '@angular/core
 import { DomSanitizer } from '@angular/platform-browser';
 import { Observable } from 'rxjs';
 import { LocationsService } from 'src/app/services/locations.service';
-import { EventLocation } from '../../../models/location.models';
+import { EventLocation, LocationIdName } from '../../../models/location.models';
 
 @Component({
   selector: 'app-location-item',
   templateUrl: './location-item.component.html',
-  styleUrls: ['./location-item.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class LocationItemComponent {
   eventLocation$: Observable<EventLocation>;
-  @Input() set eventLocationName(value: string) {
+
+  @Input() set eventLocationIdName(value: LocationIdName) {
     this.eventLocation$ = this.locationsService.GetEventLocation(value);
   }
 

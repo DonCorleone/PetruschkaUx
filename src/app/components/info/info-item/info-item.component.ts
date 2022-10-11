@@ -14,6 +14,7 @@ import { AboutModalComponent } from '../../../modules/about/about-modal/about-mo
 import { StaffService } from '../../../services/staff.service';
 import { environment } from '../../../../environments/environment';
 import { Job } from '../../../models/staff.models';
+import { LocationIdName } from 'src/app/models/location.models';
 
 @Component({
   selector: 'app-info-item',
@@ -53,8 +54,11 @@ export class InfoComponent implements OnChanges, OnDestroy {
     return new Date(this.preSaleStart) <= new Date() && new Date(this.playDate) >= new Date();
   }
 
-  get locationName(): string {
-    return this.eventInfo && this.eventInfo.location ? this.eventInfo.location : null;
+  get locationIdName(): LocationIdName {
+    return {
+			ef_id: this.eventInfo.locationIds?.some ? this.eventInfo.locationIds[0] : null,
+			name: this.eventInfo.location,
+		};
   }
 
   get artists(): Job[] {
@@ -136,9 +140,9 @@ export class InfoComponent implements OnChanges, OnDestroy {
     modalRef.componentInstance.staffName = staffName;
   }
 
-  openLocation(locationName: string) {
-    const modalRef = this.modalService.open(LocationModalComponent, { size: 'lg' });
-    modalRef.componentInstance.eventLocationName = locationName;
+  openLocation() {
+		const modalRef = this.modalService.open(LocationModalComponent, { size: 'lg' });
+    modalRef.componentInstance.eventLocationIdName = this.locationIdName;
   }
 
   transformHtml(htmlTextWithStyle) {

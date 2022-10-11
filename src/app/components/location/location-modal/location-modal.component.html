@@ -1,12 +1,17 @@
 <div class="modal-header">
-	<button (click)="activeModal.dismiss('Cross click')" aria-describedby="modal-title" aria-label="Close button" class="close"
-					type="button">
-		<span aria-hidden="true">&times;</span>
-	</button>
-	<h4 class="modal-title text-center" id="infoModalLabel">{{ eventLocationName }}</h4>
+  <button
+    (click)="activeModal.dismiss('Cross click')"
+    aria-describedby="modal-title"
+    aria-label="Close button"
+    class="close"
+    type="button"
+  >
+    <span aria-hidden="true">&times;</span>
+  </button>
+  <h4 class="modal-title text-center" id="infoModalLabel">{{ eventLocationIdName?.name }}</h4>
 </div>
 <!--//modal-header-->
 <div class="modal-body" ngbAutoFocus>
-	<app-location-item [eventLocationName]=eventLocationName></app-location-item>
+  <app-location-item [eventLocationIdName]="eventLocationIdName"></app-location-item>
 </div>
 <!--//modal-body-->

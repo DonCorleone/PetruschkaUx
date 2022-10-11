@@ -5,9 +5,9 @@
     </div>
   </div>
   <div class="modal-item-footer" *ngIf="files$ | async as files">
-		<ng-container *ngIf="files.length">
-			<a (click)="openGallery()" class="btn btn-sm btn-ghost-secondary">Impressionen</a>
-		</ng-container>
+    <ng-container *ngIf="files.length">
+      <a (click)="openGallery()" class="btn btn-sm btn-ghost-secondary">Impressionen</a>
+    </ng-container>
   </div>
 </div>
 
@@ -48,8 +48,8 @@
     {{ locationLabel }}
   </div>
   <div class="modal-item-content">
-    <a (click)="openLocation(locationName)" class="location-link"
-      ><i class="fas fa-external-link-square-alt"></i> {{ locationName }}</a
+    <a (click)="openLocation()" class="location-link"
+      ><i class="fas fa-external-link-square-alt"></i> {{ locationIdName?.name }}</a
     >
   </div>
 </div>

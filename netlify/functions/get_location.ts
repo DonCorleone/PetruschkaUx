@@ -2,14 +2,28 @@ import { Handler } from '@netlify/functions';
 const axios = require('axios');
 
 const handler: Handler = async (event, context) => {
-	const data = JSON.stringify({
+  var data;
+  var datax = {
     collection: 'locations',
     database: 'staticDb',
     dataSource: 'Cluster0',
-    filter: {
-      name: event?.queryStringParameters?.location,
-    },
-  });
+  };
+
+  if (event?.queryStringParameters?.ef_id) {
+    data = {
+      ...datax,
+      filter: {
+        ef_id: event?.queryStringParameters?.ef_id,
+      },
+    };
+  } else {
+    data = {
+      ...datax,
+      filter: {
+        name: event?.queryStringParameters?.location,
+      },
+    };
+  }
 
   const config = {
     method: 'post',
@@ -19,7 +33,7 @@ const handler: Handler = async (event, context) => {
       'Access-Control-Request-Headers': '*',
       'api-key': process.env.API_KEY_MONGODB,
     },
-    data: data,
+    data: JSON.stringify(data),
   };
 
   return axios(config)
