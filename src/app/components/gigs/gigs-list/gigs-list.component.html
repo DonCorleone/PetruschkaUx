@@ -11,6 +11,7 @@
 													[tag]="eventDetail.googleAnalyticsTracker"
 													[preSaleStart]="GetPreSaleStartFromEventDetail(eventDetail)"
 													[eventKey]="eventDetail.facebookPixelId"
+													[ef_locationId]="eventDetail.locationIds?.some? eventDetail.locationIds[0] : null"
 					>
 					</app-gigs-item>
 				</div>

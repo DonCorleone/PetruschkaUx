@@ -11,7 +11,6 @@ export interface EventDetailEventInfo {
   url: string;
   // city: string;
   location: string;
-  locationIds: number[];
   // address: string;
   // zipCode: string;
   bannerImagePath?: any;
@@ -160,6 +159,7 @@ export interface EventDetail {
   // externalEventCode?: any;
   // forceEmptySeats: number;
   eventInfos: EventDetailEventInfo[];
+	locationIds: number[];
   ticketTypes: TicketType[];
 }
 
