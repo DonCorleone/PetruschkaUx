@@ -50,3 +50,4 @@ Thumbs.db
 # Local Netlify folder
 .netlify
 /src/environments/environment.custom.ts
+stuff/ef_backup/postman.sh
