@@ -5,7 +5,7 @@ import { EventService } from 'src/app/services/event.service';
 import { InfoModalComponent } from '../../info/info-modal/info-modal.component';
 import { LocationModalComponent } from '../../location/location-modal/location-modal.component';
 import { TicketModalComponent } from '../../ticket/ticket-modal/ticket-modal.component';
-import {LocationIdName} from "../../../models/location.models";
+import { LocationIdName } from '../../../models/location.models';
 
 @Component({
   selector: 'app-gigs-item',
@@ -22,6 +22,7 @@ export class GigsItemComponent {
   @Input() eventInfoDe: EventDetailEventInfo;
   @Input() ticketPrices: TicketPrice[];
   @Input() eventKey: string;
+  @Input() ef_locationId?: number;
 
   constructor(private modalService: NgbModal, private eventService: EventService) {}
 
@@ -55,7 +56,7 @@ export class GigsItemComponent {
     if (this.tag === 'sold-out') {
       return;
     }
-    var eventLink = this.eventLink;
+    const eventLink = this.eventLink;
     if (eventLink == 'modal') {
       const modalRef = this.modalService.open(TicketModalComponent, { size: 'md' });
     } else {
@@ -71,15 +72,14 @@ export class GigsItemComponent {
     modalRef.componentInstance.eventDetail$ = this.eventService.GetEventDetail(this.eventId);
   }
 
-	get locationIdName(): LocationIdName {
-		return {
-			ef_id: this.eventInfoDe.locationIds?.some ? this.eventInfoDe.locationIds[0] : null,
-			name: this.eventInfoDe.location,
-		};
-	}
+  get locationIdName(): LocationIdName {
+    return {
+      ef_id: this.ef_locationId,
+      name: this.eventInfoDe.location,
+    };
+  }
 
-
-	openLocation(): void {
+  openLocation(): void {
     const modalRef = this.modalService.open(LocationModalComponent, { size: 'lg' });
     modalRef.componentInstance.eventLocationIdName = this.locationIdName;
   }

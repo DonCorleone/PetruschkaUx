@@ -31,6 +31,7 @@ export class InfoComponent implements OnChanges, OnDestroy {
   @Input() tag: string;
   @Input() playDate: Date;
   @Input() eventKey: string;
+	@Input() ef_locationId?: number;
 
   artistsArray: Job[];
   files$: Observable<Netlifile[]>;
@@ -56,7 +57,7 @@ export class InfoComponent implements OnChanges, OnDestroy {
 
   get locationIdName(): LocationIdName {
     return {
-			ef_id: this.eventInfo.locationIds?.some ? this.eventInfo.locationIds[0] : null,
+			ef_id: this.ef_locationId,
 			name: this.eventInfo.location,
 		};
   }

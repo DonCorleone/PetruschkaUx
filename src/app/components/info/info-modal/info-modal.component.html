@@ -16,6 +16,7 @@
 			[usage]=usage
 			[tag]=this.tag
 			[eventKey]=eventDetail.facebookPixelId
+			[ef_locationId]="eventDetail.locationIds?.some? eventDetail.locationIds[0] : null"
 			[preSaleStart]="GetPreSaleStartFromEventDetail(eventDetail)"></app-info-item>
 	</div>
 	<!--//modal-body-->
