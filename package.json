@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
-		"netlify": "NODE_OPTIONS=--inspect netlify functions:serve",
+    "netlify": "NODE_OPTIONS=--inspect netlify functions:serve",
     "config-develop": "ts-node ./scripts/setenv.ts --environment=develop",
     "config-prod": "ts-node ./scripts/setenv.ts --environment=prod",
     "start": "npm run config-develop --environment=develop && ng serve --configuration=custom",

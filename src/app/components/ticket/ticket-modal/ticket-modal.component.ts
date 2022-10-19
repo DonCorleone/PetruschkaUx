@@ -1,14 +1,13 @@
-import {ChangeDetectionStrategy, Component} from '@angular/core';
-import {NgbActiveModal} from '@ng-bootstrap/ng-bootstrap';
+import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
+import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
+import {TicketPrice, TicketType} from '../../../models/event.models';
 
 @Component({
   selector: 'app-ticket-modal',
   templateUrl: './ticket-modal.component.html',
-  styleUrls: ['./ticket-modal.component.scss'],
-	changeDetection: ChangeDetectionStrategy.OnPush
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class TicketModalComponent {
-
-	constructor(public activeModal: NgbActiveModal) {
-	}
+  @Input() ticketPrices: TicketPrice[];
+  constructor(public activeModal: NgbActiveModal) {}
 }

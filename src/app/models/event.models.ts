@@ -173,6 +173,7 @@ export interface EventDetail {
 
 export interface TicketPrice {
   name: string;
+	description: string;
   currency: string;
   price: number;
 }

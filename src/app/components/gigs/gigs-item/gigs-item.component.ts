@@ -59,6 +59,7 @@ export class GigsItemComponent {
     const eventLink = this.eventLink;
     if (eventLink == 'modal') {
       const modalRef = this.modalService.open(TicketModalComponent, { size: 'md' });
+      modalRef.componentInstance.ticketPrices = this.ticketPrices;
     } else {
       window.open(eventLink, '_blank');
     }

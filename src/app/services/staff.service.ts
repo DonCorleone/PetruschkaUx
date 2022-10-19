@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 import { HttpClient } from '@angular/common/http';
-import {Job, Staff} from "../models/staff.models";
+import { Job, Staff } from '../models/staff.models';
 
 interface Message {
   documents: Staff[];
@@ -54,7 +54,6 @@ export class StaffService {
     const jobs = staff.split('|');
 
     jobs.forEach((job) => {
-      console.log(`map job ${job}`);
 
       const ixOfSplitterColon = job.indexOf(':');
       const ixOfSplitterDash = job.indexOf('-');

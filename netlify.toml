@@ -1,3 +1,6 @@
+[functions]
+external_node_modules = ["axios"]
+
 [build]
   command = "npm run build --configuration=production"
   functions = "netlify/functions"
