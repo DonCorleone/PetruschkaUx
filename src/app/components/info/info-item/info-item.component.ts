@@ -183,6 +183,6 @@ export class InfoComponent implements OnInit, OnChanges, OnDestroy {
   ngOnDestroy() {
     this._ngDestroy$.next();
     this._ngDestroy$.complete();
-    this.breakpointObserver.ngOnDestroy();
+    // this.breakpointObserver.ngOnDestroy();
   }
 }
