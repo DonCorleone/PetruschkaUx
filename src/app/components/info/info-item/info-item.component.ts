@@ -1,6 +1,6 @@
 import { ChangeDetectionStrategy, Component, Input, OnChanges, OnDestroy, OnInit } from '@angular/core';
 import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
-import { DomSanitizer } from '@angular/platform-browser';
+import {DomSanitizer, SafeHtml} from '@angular/platform-browser';
 import { Observable, Subject } from 'rxjs';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { EventDetailEventInfo, TicketPrice } from 'src/app/models/event.models';
@@ -81,7 +81,7 @@ export class InfoComponent implements OnInit, OnChanges, OnDestroy {
     return this.eventInfo && this.eventInfo.shortDescription ? this.eventInfo.shortDescription : null;
   }
 
-  get plot() {
+  get plot(): SafeHtml {
     return this.eventInfo && this.eventInfo.longDescription ? this.transformHtml(this.eventInfo.longDescription) : null;
   }
 
