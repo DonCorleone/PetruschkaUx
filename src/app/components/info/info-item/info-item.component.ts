@@ -1,6 +1,6 @@
-import { ChangeDetectionStrategy, Component, Input, OnChanges, OnDestroy, OnInit } from '@angular/core';
+import { ChangeDetectionStrategy, Component, Input, OnDestroy, OnInit } from '@angular/core';
 import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
-import {DomSanitizer, SafeHtml} from '@angular/platform-browser';
+import { DomSanitizer, SafeHtml } from '@angular/platform-browser';
 import { Observable, Subject } from 'rxjs';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { EventDetailEventInfo, TicketPrice } from 'src/app/models/event.models';
@@ -22,7 +22,7 @@ import { LocationIdName } from 'src/app/models/location.models';
   styleUrls: ['./info-item.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class InfoComponent implements OnInit, OnChanges, OnDestroy {
+export class InfoComponent implements OnInit, OnDestroy {
   @Input() eventInfo: EventDetailEventInfo;
   @Input() eventInfoDe: EventDetailEventInfo;
   @Input() ticketPrices: TicketPrice[];
@@ -56,6 +56,25 @@ export class InfoComponent implements OnInit, OnChanges, OnDestroy {
     if (this.eventInfo && this.eventInfo.artists) {
       this.artistsArray = StaffService.GetStaffLinks(this.eventInfo.artists);
     }
+    this.breakpointObserver
+      .observe([Breakpoints.XSmall, Breakpoints.Small, Breakpoints.Medium, Breakpoints.Large, Breakpoints.XLarge])
+      .pipe(takeUntil(this._ngDestroy$))
+      .subscribe((result) => {
+        for (const query of Object.keys(result.breakpoints)) {
+          if (result.breakpoints[query]) {
+            const match = query.match('\\(max-width:\\s(\\d+)\\.98px\\)');
+            const width = match?.length ? match[1] : '2048';
+
+            this.files$ = this.imageService.listAssets('/assets/images/impressionen/' + this.eventKey).pipe(
+              map((p) => {
+                p.forEach((image) => (image.path = `${environment.URL}${image.path}`));
+                return p;
+              })
+            );
+            break;
+          }
+        }
+      });
   }
 
   get showBuyButton(): boolean {
@@ -115,29 +134,10 @@ export class InfoComponent implements OnInit, OnChanges, OnDestroy {
     }
   }
 
-  ngOnChanges(): void {
-    this.breakpointObserver
-      .observe([Breakpoints.XSmall, Breakpoints.Small, Breakpoints.Medium, Breakpoints.Large, Breakpoints.XLarge])
-      .pipe(takeUntil(this._ngDestroy$))
-      .subscribe((result) => {
-        for (const query of Object.keys(result.breakpoints)) {
-          if (result.breakpoints[query]) {
-            const match = query.match('\\(max-width:\\s(\\d+)\\.98px\\)');
-            const width = match?.length ? match[1] : '2048';
+  //ngOnInit(): void {
 
-            this.files$ = this.imageService.listAssets('/assets/images/impressionen/' + this.eventKey).pipe(
-              map((p) => {
-                p.forEach((image) => (image.path = `${environment.URL}${image.path}`));
-                return p;
-              })
-            );
-            break;
-          }
-        }
-      });
-
-    //  this.image4Images$ = this.imageService.getAlbum(this.eventKey).pipe(map((p) => p.files));
-  }
+  //  this.image4Images$ = this.imageService.getAlbum(this.eventKey).pipe(map((p) => p.files));
+  // }
 
   openStaff(staffName: string) {
     const modalRef = this.modalService.open(AboutModalComponent, { size: 'sm' });
