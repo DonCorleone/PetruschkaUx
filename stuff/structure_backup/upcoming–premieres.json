@@ -1,6 +1,11 @@
 [{
  $match: {
-  status: 1
+  status: 1,
+	 googleAnalyticsTracker: {
+   $in: [
+    'Premiere'
+   ]
+  }
  }
 }, {
  $addFields: {
@@ -10,7 +15,7 @@
  $addFields: {
   diff: {
    $dateDiff: {
-    startDate: '$start',
+    startDate: '$start',l
     endDate: '$now',
     unit: 'day'
    }
