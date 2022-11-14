@@ -41,4 +41,8 @@ export class InfoModalComponent implements OnInit {
   GetEventInfoFromEventDetail(eventDetail: EventDetail): EventDetailEventInfo {
     return eventDetail.eventInfos?.find((p) => p.languageId === 0);
   }
+
+	GetTicketDescFromEventDetail(eventDetail: EventDetail) {
+		return EventService.GetTicketTypeInfoFromEventDetail(eventDetail, "Erwachsene");
+	}
 }

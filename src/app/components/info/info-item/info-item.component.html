@@ -16,7 +16,11 @@
 <div class="modal-item">
   <div
     class="modal-item-title"
-    *ngIf="!(eventInfo?.longDescription?.toLowerCase().startsWith('Figurentheater PETRUSCHKA'.toLowerCase(), '<p><strong>'.length))"
+    *ngIf="
+      !eventInfo?.longDescription
+        ?.toLowerCase()
+        .startsWith('Figurentheater PETRUSCHKA'.toLowerCase(), '<p><strong>'.length)
+    "
   >
     Plot
   </div>
@@ -117,6 +121,7 @@
 </div>
 
 <div class="modal-item" *ngIf="showBuyButton">
+  <div class="modal-body">{{ eventTicketDesc?.description }}</div>
   <div class="modal-item-footer">
     <a
       (click)="openTicket()"

@@ -3,7 +3,7 @@ import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
 import { DomSanitizer, SafeHtml } from '@angular/platform-browser';
 import { Observable, Subject } from 'rxjs';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
-import { EventDetailEventInfo, TicketPrice } from 'src/app/models/event.models';
+import { EventDetailEventInfo, TicketPrice, TicketTypeInfo } from 'src/app/models/event.models';
 import { LocationModalComponent } from '../../location/location-modal/location-modal.component';
 import { GalleryModalComponent } from '../../gallery/gallery-modal/gallery-modal.component';
 import { ImagesService, Netlifile } from 'src/app/services/images.service';
@@ -25,6 +25,7 @@ import { LocationIdName } from 'src/app/models/location.models';
 export class InfoComponent implements OnInit, OnDestroy {
   @Input() eventInfo: EventDetailEventInfo;
   @Input() eventInfoDe: EventDetailEventInfo;
+  @Input() eventTicketDesc: TicketTypeInfo;
   @Input() ticketPrices: TicketPrice[];
   @Input() eventId: number;
   @Input() reservationMail: string;
