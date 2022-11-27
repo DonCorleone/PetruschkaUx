@@ -1,13 +1,5 @@
 [
   {
-    $match: {
-      status: 1,
-      googleAnalyticsTracker: {
-        $in: ["", "Premiere"],
-      },
-    },
-  },
-  {
     $addFields: {
       now: "$$NOW",
     },
@@ -34,8 +26,6 @@
     $project: {
       start: 1,
       googleAnalyticsTracker: 1,
-      status: 1,
-      locationIds: 1,
       "eventInfos.name": 1,
       "eventInfos.location": 1,
       "eventInfos.languageId": 1,
@@ -46,7 +36,6 @@
       "ticketTypes.preSaleStart": 1,
       "ticketTypes.ticketTypeInfos.name": 1,
       "ticketTypes.ticketTypeInfos.languageId": 1,
-      "ticketTypes.ticketTypeInfos.description": 1,
     },
   },
   {

@@ -1,0 +1,58 @@
+[
+  {
+    $addFields: {
+      now: "$$NOW",
+    },
+  },
+  {
+    $addFields: {
+      diff: {
+        $dateDiff: {
+          startDate: "$start",
+          endDate: "$now",
+          unit: "day",
+        },
+      },
+    },
+  },
+  {
+    $match: {
+      diff: {
+        $gte: 0,
+      },
+      facebookPixelId: {
+        $ne: "",
+      },
+    },
+  },
+  {
+    $group: {
+      _id: "$facebookPixelId",
+      start: {
+        $max: "$start",
+      },
+      eventDetail: {
+        $first: "$$CURRENT",
+      },
+    },
+  },
+  {
+    $sort: {
+      start: -1,
+    },
+  },
+  {
+    $project: {
+      _id: 1,
+      "eventDetail.eventInfos.name": 1,
+      "eventDetail.eventInfos.flyerImagePath": 1,
+      "eventDetail.eventInfos.shortDescription": 1,
+      "eventDetail.eventInfos.languageId": 1,
+      "eventDetail.eventInfos.importantNotes": 1,
+      "eventDetail.notificationEmail": 1,
+      "eventDetail.facebookPixelId": 1,
+      "eventDetail.googleAnalyticsTracker": 1,
+      "eventDetail.start": 1,
+    },
+  },
+]

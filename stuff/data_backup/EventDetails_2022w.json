@@ -1,0 +1,2881 @@
+[{
+  "_id": {
+    "$numberLong": "1670765400000"
+  },
+  "accountAddressId": "0",
+  "agendaEntryOnly": true,
+  "bankAccountPaymentPeriodInDays": null,
+  "bankAccountSaleEndDate": null,
+  "begin": "2022-12-11T14:30:00+01:00",
+  "campaignPriceString": "0.19 CHF pro Ticket und Gutschein exkl. MwSt.",
+  "cancelled": false,
+  "cancelledDescription": null,
+  "cashlessPaymentActive": false,
+  "checklistProgress": 45,
+  "coronaSeatBlocking": false,
+  "countryOfOrigin": "CH",
+  "creationDate": "2022-10-19T22:53:58+02:00",
+  "creatorId": "2279256",
+  "currencyId": 1,
+  "currencySymbol": "CHF",
+  "emblemToShow": {
+    "url": "/upload/rm/20/22/2022w-1.jpg",
+    "width": 784,
+    "height": 479
+  },
+  "end": "2022-12-11T15:30:00+01:00",
+  "eventDateString": "Sonntag, 11. Dezember 2022, 14:30 Uhr - 14:30 Uhr",
+  "eventInfos": [
+    {
+      "name": "Peter und der Wolf 2",
+      "languageId": 0,
+      "importantNotes": "",
+      "artists": "Marianne Hofer - Konzept, Figurenspiel &amp; Sandmalerei | Nathalie Hildebrand Isler - Figurenspiel | Elmar Büeler - Figurenspiel | Robert Hofer - Bühnenbau und Technik | Evamaria Felder - Flöte, Akkordeon (Tonaufnahme) | Mirjam Wagner - Klavier, Xylophon (Tonaufnahme) | Robin Keller - Cello, Melodica (Tonaufnahme)",
+      "location": "Natur-Museum",
+      "flyerImagePath": "https://petruschka.netlify.app/assets/images/main/portrait/2022w.jpg",
+      "shortDescription": "Ein Wintermärchen für grosse und kleine Zuschauer ab 5 Jahren - Mit der Musik von Sergei Prokofjew (Bearbeitung für Trio)\n",
+      "longDescription": "<p><strong>Figurentheater PETRUSCHKA - Peter und der Wolf 2</strong></p> \n<p>Peter darf die Winterferien bei seinem Grossvater in einem tief verschneiten Dorf verbringen. Dort trifft er einen Schausteller, der einen Wolf in einem engen Käfig den Leuten für Geld zeigt.</p> \n<p>Peter hat Mitleid mit dem armen Tier und befreit heimlich den unglücklichen Wolf. Dieser verspricht ihm, dass sie von nun an Freunde sind.</p> \n<p>Wie geht dieses Abenteuer wohl weiter?</p> \n<p><strong>Aufführung</strong></p> \n<p>Jeweils 14:30 Uhr, Dauer ca. 1 h, Eintritt (inkl. Besuch Natur-Museum, inkl. Billettsteuer):</p> \n<p>Kinder: CHF 11.00, Erwachsene: CHF 22.00</p> \n",
+      "bannerImagePath": "https://petruschka.netlify.app/assets/images/main/landscape/2022w.jpg",
+      "url": "https://petruschka.ch"
+    }
+  ],
+  "facebookPixelId": "2022w",
+  "freeEventMaxTicketPrice": 75,
+  "googleAnalyticsTracker": "",
+  "groupId": "6988603169748984461",
+  "hasFullBrandingCampaign": false,
+  "hasSeatmap": false,
+  "hasSoldOrBlockedTickets": false,
+  "id": "6988603169816093334",
+  "isCoronaDonation": false,
+  "isFreeEvent": true,
+  "isHelpGastro": false,
+  "isStreamingEvent": false,
+  "legalCountry": "CH",
+  "locationIds": [
+    "6986084481808385766"
+  ],
+  "maxTicketPrice": 20000,
+  "model": "free",
+  "modelPlusPrice": "0.49 CHF pro Ticket + 1.9% exkl. MwSt.",
+  "modelProPrice": "0.69 CHF pro Ticket + 3.9% exkl. MwSt.",
+  "modifyDate": null,
+  "notificationEmail": "",
+  "organizerId": "0",
+  "organizerName": "Figurentheater PETRUSCHKA",
+  "partner": "none",
+  "payBackGuaranteeEnabled": false,
+  "payBackGuaranteeMode": "none",
+  "phoneVerificationEnabled": false,
+  "published": true,
+  "saleState": "sold_out",
+  "start": {
+    "$date": {
+      "$numberLong": "1670765400000"
+    }
+  },
+  "state": "published",
+  "status": 1,
+  "ticketTax": 7.7,
+  "ticketTypes": [
+    {
+      "ticketTypeInfos": [
+        {
+          "languageId": 0,
+          "imageUrl": "",
+          "description": "Tickets sind erhältlich via Natur-Museum, entweder direkt an der Kasse oder unter 041 228 54 11 (DI - SO, 10:00 - 17:00 Uhr)\n\nVorstellungen für Kindergärten und Schulen auf Wunsch- Anmeldung an Regula Auf der Maur: regulaaufdermaur@kinderkultur.ch",
+          "name": "Kinder"
+        }
+      ],
+      "sortOrder": 0,
+      "preSaleStart": {
+        "$date": {
+          "$numberLong": "1666213602873"
+        }
+      },
+      "price": 11,
+      "currency": "CHF"
+    },
+    {
+      "ticketTypeInfos": [
+        {
+          "languageId": 0,
+          "imageUrl": "",
+          "description": "Tickets sind erhältlich via Natur-Museum, entweder direkt an der Kasse oder unter 041 228 54 11 (DI - SO, 10:00 - 17:00 Uhr)\n\nVorstellungen für Kindergärten und Schulen auf Wunsch- Anmeldung an Regula Auf der Maur: regulaaufdermaur@kinderkultur.ch",
+          "name": "Erwachsene"
+        }
+      ],
+      "sortOrder": 1,
+      "preSaleStart": {
+        "$date": {
+          "$numberLong": "1666213602873"
+        }
+      },
+      "price": 22,
+      "currency": "CHF"
+    }
+  ],
+  "title": "Peter und der Wolf 2",
+  "url": "/de/p/kinderveranstaltungen/puppentheater/peter-und-der-wolf-2-6988603169816093334.html",
+  "visible": true
+},{
+  "_id": {
+    "$numberLong": "1671024600000"
+  },
+  "accountAddressId": "0",
+  "agendaEntryOnly": true,
+  "bankAccountPaymentPeriodInDays": null,
+  "bankAccountSaleEndDate": null,
+  "begin": "2022-12-14T14:30:00+01:00",
+  "campaignPriceString": "0.19 CHF pro Ticket und Gutschein exkl. MwSt.",
+  "cancelled": false,
+  "cancelledDescription": null,
+  "cashlessPaymentActive": false,
+  "checklistProgress": 45,
+  "coronaSeatBlocking": false,
+  "countryOfOrigin": "CH",
+  "creationDate": "2022-10-19T22:53:58+02:00",
+  "creatorId": "2279256",
+  "currencyId": 1,
+  "currencySymbol": "CHF",
+  "emblemToShow": {
+    "url": "/upload/rm/20/22/2022w-1.jpg",
+    "width": 784,
+    "height": 479
+  },
+  "end": "2022-12-14T15:30:00+01:00",
+  "eventDateString": "Mittwoch, 14. Dezember 2022, 14:30 Uhr - 14:30 Uhr",
+  "eventInfos": [
+    {
+      "name": "Peter und der Wolf 2",
+      "languageId": 0,
+      "importantNotes": "",
+      "artists": "Marianne Hofer - Konzept, Figurenspiel &amp; Sandmalerei | Nathalie Hildebrand Isler - Figurenspiel | Elmar Büeler - Figurenspiel | Robert Hofer - Bühnenbau und Technik | Evamaria Felder - Flöte, Akkordeon (Tonaufnahme) | Mirjam Wagner - Klavier, Xylophon (Tonaufnahme) | Robin Keller - Cello, Melodica (Tonaufnahme)",
+      "location": "Natur-Museum",
+      "flyerImagePath": "https://petruschka.netlify.app/assets/images/main/portrait/2022w.jpg",
+      "shortDescription": "Ein Wintermärchen für grosse und kleine Zuschauer ab 5 Jahren - Mit der Musik von Sergei Prokofjew (Bearbeitung für Trio)\n",
+      "longDescription": "<p><strong>Figurentheater PETRUSCHKA - Peter und der Wolf 2</strong></p> \n<p>Peter darf die Winterferien bei seinem Grossvater in einem tief verschneiten Dorf verbringen. Dort trifft er einen Schausteller, der einen Wolf in einem engen Käfig den Leuten für Geld zeigt.</p> \n<p>Peter hat Mitleid mit dem armen Tier und befreit heimlich den unglücklichen Wolf. Dieser verspricht ihm, dass sie von nun an Freunde sind.</p> \n<p>Wie geht dieses Abenteuer wohl weiter?</p> \n<p><strong>Aufführung</strong></p> \n<p>Jeweils 14:30 Uhr, Dauer ca. 1 h, Eintritt (inkl. Besuch Natur-Museum, inkl. Billettsteuer):</p> \n<p>Kinder: CHF 11.00, Erwachsene: CHF 22.00</p> \n",
+      "bannerImagePath": "https://petruschka.netlify.app/assets/images/main/landscape/2022w.jpg",
+      "url": "https://petruschka.ch"
+    }
+  ],
+  "facebookPixelId": "2022w",
+  "freeEventMaxTicketPrice": 75,
+  "googleAnalyticsTracker": "",
+  "groupId": "6988603169748984461",
+  "hasFullBrandingCampaign": false,
+  "hasSeatmap": false,
+  "hasSoldOrBlockedTickets": false,
+  "id": "6988603169992254612",
+  "isCoronaDonation": false,
+  "isFreeEvent": true,
+  "isHelpGastro": false,
+  "isStreamingEvent": false,
+  "legalCountry": "CH",
+  "locationIds": [
+    "6986084481808385766"
+  ],
+  "maxTicketPrice": 20000,
+  "model": "free",
+  "modelPlusPrice": "0.49 CHF pro Ticket + 1.9% exkl. MwSt.",
+  "modelProPrice": "0.69 CHF pro Ticket + 3.9% exkl. MwSt.",
+  "modifyDate": null,
+  "notificationEmail": "",
+  "organizerId": "0",
+  "organizerName": "Figurentheater PETRUSCHKA",
+  "partner": "none",
+  "payBackGuaranteeEnabled": false,
+  "payBackGuaranteeMode": "none",
+  "phoneVerificationEnabled": false,
+  "published": true,
+  "saleState": "sold_out",
+  "start": {
+    "$date": {
+      "$numberLong": "1671024600000"
+    }
+  },
+  "state": "published",
+  "status": 1,
+  "ticketTax": 7.7,
+  "ticketTypes": [
+    {
+      "ticketTypeInfos": [
+        {
+          "languageId": 0,
+          "imageUrl": "",
+          "description": "Tickets sind erhältlich via Natur-Museum, entweder direkt an der Kasse oder unter 041 228 54 11 (DI - SO, 10:00 - 17:00 Uhr)\n\nVorstellungen für Kindergärten und Schulen auf Wunsch- Anmeldung an Regula Auf der Maur: regulaaufdermaur@kinderkultur.ch",
+          "name": "Kinder"
+        }
+      ],
+      "sortOrder": 0,
+      "preSaleStart": {
+        "$date": {
+          "$numberLong": "1666213607266"
+        }
+      },
+      "price": 11,
+      "currency": "CHF"
+    },
+    {
+      "ticketTypeInfos": [
+        {
+          "languageId": 0,
+          "imageUrl": "",
+          "description": "Tickets sind erhältlich via Natur-Museum, entweder direkt an der Kasse oder unter 041 228 54 11 (DI - SO, 10:00 - 17:00 Uhr)\n\nVorstellungen für Kindergärten und Schulen auf Wunsch- Anmeldung an Regula Auf der Maur: regulaaufdermaur@kinderkultur.ch",
+          "name": "Erwachsene"
+        }
+      ],
+      "sortOrder": 1,
+      "preSaleStart": {
+        "$date": {
+          "$numberLong": "1666213607266"
+        }
+      },
+      "price": 22,
+      "currency": "CHF"
+    }
+  ],
+  "title": "Peter und der Wolf 2",
+  "url": "/de/p/kinderveranstaltungen/puppentheater/peter-und-der-wolf-2-6988603169992254612.html",
+  "visible": true
+},{
+  "_id": {
+    "$numberLong": "1671283800000"
+  },
+  "accountAddressId": "0",
+  "agendaEntryOnly": true,
+  "bankAccountPaymentPeriodInDays": null,
+  "bankAccountSaleEndDate": null,
+  "begin": "2022-12-17T14:30:00+01:00",
+  "campaignPriceString": "0.19 CHF pro Ticket und Gutschein exkl. MwSt.",
+  "cancelled": false,
+  "cancelledDescription": null,
+  "cashlessPaymentActive": false,
+  "checklistProgress": 45,
+  "coronaSeatBlocking": false,
+  "countryOfOrigin": "CH",
+  "creationDate": "2022-10-19T22:53:58+02:00",
+  "creatorId": "2279256",
+  "currencyId": 1,
+  "currencySymbol": "CHF",
+  "emblemToShow": {
+    "url": "/upload/rm/20/22/2022w-1.jpg",
+    "width": 784,
+    "height": 479
+  },
+  "end": "2022-12-17T15:30:00+01:00",
+  "eventDateString": "Samstag, 17. Dezember 2022, 14:30 Uhr - 14:30 Uhr",
+  "eventInfos": [
+    {
+      "name": "Peter und der Wolf 2",
+      "languageId": 0,
+      "importantNotes": "",
+      "artists": "Marianne Hofer - Konzept, Figurenspiel &amp; Sandmalerei | Nathalie Hildebrand Isler - Figurenspiel | Elmar Büeler - Figurenspiel | Robert Hofer - Bühnenbau und Technik | Evamaria Felder - Flöte, Akkordeon (Tonaufnahme) | Mirjam Wagner - Klavier, Xylophon (Tonaufnahme) | Robin Keller - Cello, Melodica (Tonaufnahme)",
+      "location": "Natur-Museum",
+      "flyerImagePath": "https://petruschka.netlify.app/assets/images/main/portrait/2022w.jpg",
+      "shortDescription": "Ein Wintermärchen für grosse und kleine Zuschauer ab 5 Jahren - Mit der Musik von Sergei Prokofjew (Bearbeitung für Trio)\n",
+      "longDescription": "<p><strong>Figurentheater PETRUSCHKA - Peter und der Wolf 2</strong></p> \n<p>Peter darf die Winterferien bei seinem Grossvater in einem tief verschneiten Dorf verbringen. Dort trifft er einen Schausteller, der einen Wolf in einem engen Käfig den Leuten für Geld zeigt.</p> \n<p>Peter hat Mitleid mit dem armen Tier und befreit heimlich den unglücklichen Wolf. Dieser verspricht ihm, dass sie von nun an Freunde sind.</p> \n<p>Wie geht dieses Abenteuer wohl weiter?</p> \n<p><strong>Aufführung</strong></p> \n<p>Jeweils 14:30 Uhr, Dauer ca. 1 h, Eintritt (inkl. Besuch Natur-Museum, inkl. Billettsteuer):</p> \n<p>Kinder: CHF 11.00, Erwachsene: CHF 22.00</p> \n",
+      "bannerImagePath": "https://petruschka.netlify.app/assets/images/main/landscape/2022w.jpg",
+      "url": "https://petruschka.ch"
+    }
+  ],
+  "facebookPixelId": "2022w",
+  "freeEventMaxTicketPrice": 75,
+  "googleAnalyticsTracker": "",
+  "groupId": "6988603169748984461",
+  "hasFullBrandingCampaign": false,
+  "hasSeatmap": false,
+  "hasSoldOrBlockedTickets": false,
+  "id": "6988603170126472482",
+  "isCoronaDonation": false,
+  "isFreeEvent": true,
+  "isHelpGastro": false,
+  "isStreamingEvent": false,
+  "legalCountry": "CH",
+  "locationIds": [
+    "6986084481808385766"
+  ],
+  "maxTicketPrice": 20000,
+  "model": "free",
+  "modelPlusPrice": "0.49 CHF pro Ticket + 1.9% exkl. MwSt.",
+  "modelProPrice": "0.69 CHF pro Ticket + 3.9% exkl. MwSt.",
+  "modifyDate": null,
+  "notificationEmail": "",
+  "organizerId": "0",
+  "organizerName": "Figurentheater PETRUSCHKA",
+  "partner": "none",
+  "payBackGuaranteeEnabled": false,
+  "payBackGuaranteeMode": "none",
+  "phoneVerificationEnabled": false,
+  "published": true,
+  "saleState": "sold_out",
+  "start": {
+    "$date": {
+      "$numberLong": "1671283800000"
+    }
+  },
+  "state": "published",
+  "status": 1,
+  "ticketTax": 7.7,
+  "ticketTypes": [
+    {
+      "ticketTypeInfos": [
+        {
+          "languageId": 0,
+          "imageUrl": "",
+          "description": "Tickets sind erhältlich via Natur-Museum, entweder direkt an der Kasse oder unter 041 228 54 11 (DI - SO, 10:00 - 17:00 Uhr)\n\nVorstellungen für Kindergärten und Schulen auf Wunsch- Anmeldung an Regula Auf der Maur: regulaaufdermaur@kinderkultur.ch",
+          "name": "Kinder"
+        }
+      ],
+      "sortOrder": 0,
+      "preSaleStart": {
+        "$date": {
+          "$numberLong": "1666213611641"
+        }
+      },
+      "price": 11,
+      "currency": "CHF"
+    },
+    {
+      "ticketTypeInfos": [
+        {
+          "languageId": 0,
+          "imageUrl": "",
+          "description": "Tickets sind erhältlich via Natur-Museum, entweder direkt an der Kasse oder unter 041 228 54 11 (DI - SO, 10:00 - 17:00 Uhr)\n\nVorstellungen für Kindergärten und Schulen auf Wunsch- Anmeldung an Regula Auf der Maur: regulaaufdermaur@kinderkultur.ch",
+          "name": "Erwachsene"
+        }
+      ],
+      "sortOrder": 1,
+      "preSaleStart": {
+        "$date": {
+          "$numberLong": "1666213611642"
+        }
+      },
+      "price": 22,
+      "currency": "CHF"
+    }
+  ],
+  "title": "Peter und der Wolf 2",
+  "url": "/de/p/kinderveranstaltungen/puppentheater/peter-und-der-wolf-2-6988603170126472482.html",
+  "visible": true
+},{
+  "_id": {
+    "$numberLong": "1671370200000"
+  },
+  "accountAddressId": "0",
+  "agendaEntryOnly": true,
+  "bankAccountPaymentPeriodInDays": null,
+  "bankAccountSaleEndDate": null,
+  "begin": "2022-12-18T14:30:00+01:00",
+  "campaignPriceString": "0.19 CHF pro Ticket und Gutschein exkl. MwSt.",
+  "cancelled": false,
+  "cancelledDescription": null,
+  "cashlessPaymentActive": false,
+  "checklistProgress": 45,
+  "coronaSeatBlocking": false,
+  "countryOfOrigin": "CH",
+  "creationDate": "2022-10-19T22:53:58+02:00",
+  "creatorId": "2279256",
+  "currencyId": 1,
+  "currencySymbol": "CHF",
+  "emblemToShow": {
+    "url": "/upload/rm/20/22/2022w-1.jpg",
+    "width": 784,
+    "height": 479
+  },
+  "end": "2022-12-18T15:30:00+01:00",
+  "eventDateString": "Sonntag, 18. Dezember 2022, 14:30 Uhr - 14:30 Uhr",
+  "eventInfos": [
+    {
+      "name": "Peter und der Wolf 2",
+      "languageId": 0,
+      "importantNotes": "",
+      "artists": "Marianne Hofer - Konzept, Figurenspiel &amp; Sandmalerei | Nathalie Hildebrand Isler - Figurenspiel | Elmar Büeler - Figurenspiel | Robert Hofer - Bühnenbau und Technik | Evamaria Felder - Flöte, Akkordeon (Tonaufnahme) | Mirjam Wagner - Klavier, Xylophon (Tonaufnahme) | Robin Keller - Cello, Melodica (Tonaufnahme)",
+      "location": "Natur-Museum",
+      "flyerImagePath": "https://petruschka.netlify.app/assets/images/main/portrait/2022w.jpg",
+      "shortDescription": "Ein Wintermärchen für grosse und kleine Zuschauer ab 5 Jahren - Mit der Musik von Sergei Prokofjew (Bearbeitung für Trio)\n",
+      "longDescription": "<p><strong>Figurentheater PETRUSCHKA - Peter und der Wolf 2</strong></p> \n<p>Peter darf die Winterferien bei seinem Grossvater in einem tief verschneiten Dorf verbringen. Dort trifft er einen Schausteller, der einen Wolf in einem engen Käfig den Leuten für Geld zeigt.</p> \n<p>Peter hat Mitleid mit dem armen Tier und befreit heimlich den unglücklichen Wolf. Dieser verspricht ihm, dass sie von nun an Freunde sind.</p> \n<p>Wie geht dieses Abenteuer wohl weiter?</p> \n<p><strong>Aufführung</strong></p> \n<p>Jeweils 14:30 Uhr, Dauer ca. 1 h, Eintritt (inkl. Besuch Natur-Museum, inkl. Billettsteuer):</p> \n<p>Kinder: CHF 11.00, Erwachsene: CHF 22.00</p> \n",
+      "bannerImagePath": "https://petruschka.netlify.app/assets/images/main/landscape/2022w.jpg",
+      "url": "https://petruschka.ch"
+    }
+  ],
+  "facebookPixelId": "2022w",
+  "freeEventMaxTicketPrice": 75,
+  "googleAnalyticsTracker": "",
+  "groupId": "6988603169748984461",
+  "hasFullBrandingCampaign": false,
+  "hasSeatmap": false,
+  "hasSoldOrBlockedTickets": false,
+  "id": "6988603170256495916",
+  "isCoronaDonation": false,
+  "isFreeEvent": true,
+  "isHelpGastro": false,
+  "isStreamingEvent": false,
+  "legalCountry": "CH",
+  "locationIds": [
+    "6986084481808385766"
+  ],
+  "maxTicketPrice": 20000,
+  "model": "free",
+  "modelPlusPrice": "0.49 CHF pro Ticket + 1.9% exkl. MwSt.",
+  "modelProPrice": "0.69 CHF pro Ticket + 3.9% exkl. MwSt.",
+  "modifyDate": null,
+  "notificationEmail": "",
+  "organizerId": "0",
+  "organizerName": "Figurentheater PETRUSCHKA",
+  "partner": "none",
+  "payBackGuaranteeEnabled": false,
+  "payBackGuaranteeMode": "none",
+  "phoneVerificationEnabled": false,
+  "published": true,
+  "saleState": "sold_out",
+  "start": {
+    "$date": {
+      "$numberLong": "1671370200000"
+    }
+  },
+  "state": "published",
+  "status": 1,
+  "ticketTax": 7.7,
+  "ticketTypes": [
+    {
+      "ticketTypeInfos": [
+        {
+          "languageId": 0,
+          "imageUrl": "",
+          "description": "Tickets sind erhältlich via Natur-Museum, entweder direkt an der Kasse oder unter 041 228 54 11 (DI - SO, 10:00 - 17:00 Uhr)\n\nVorstellungen für Kindergärten und Schulen auf Wunsch- Anmeldung an Regula Auf der Maur: regulaaufdermaur@kinderkultur.ch",
+          "name": "Kinder"
+        }
+      ],
+      "sortOrder": 0,
+      "preSaleStart": {
+        "$date": {
+          "$numberLong": "1666213616022"
+        }
+      },
+      "price": 11,
+      "currency": "CHF"
+    },
+    {
+      "ticketTypeInfos": [
+        {
+          "languageId": 0,
+          "imageUrl": "",
+          "description": "Tickets sind erhältlich via Natur-Museum, entweder direkt an der Kasse oder unter 041 228 54 11 (DI - SO, 10:00 - 17:00 Uhr)\n\nVorstellungen für Kindergärten und Schulen auf Wunsch- Anmeldung an Regula Auf der Maur: regulaaufdermaur@kinderkultur.ch",
+          "name": "Erwachsene"
+        }
+      ],
+      "sortOrder": 1,
+      "preSaleStart": {
+        "$date": {
+          "$numberLong": "1666213616022"
+        }
+      },
+      "price": 22,
+      "currency": "CHF"
+    }
+  ],
+  "title": "Peter und der Wolf 2",
+  "url": "/de/p/kinderveranstaltungen/puppentheater/peter-und-der-wolf-2-6988603170256495916.html",
+  "visible": true
+},{
+  "_id": {
+    "$numberLong": "1671629400000"
+  },
+  "accountAddressId": "0",
+  "agendaEntryOnly": true,
+  "bankAccountPaymentPeriodInDays": null,
+  "bankAccountSaleEndDate": null,
+  "begin": "2022-12-21T14:30:00+01:00",
+  "campaignPriceString": "0.19 CHF pro Ticket und Gutschein exkl. MwSt.",
+  "cancelled": false,
+  "cancelledDescription": null,
+  "cashlessPaymentActive": false,
+  "checklistProgress": 45,
+  "coronaSeatBlocking": false,
+  "countryOfOrigin": "CH",
+  "creationDate": "2022-10-19T22:53:58+02:00",
+  "creatorId": "2279256",
+  "currencyId": 1,
+  "currencySymbol": "CHF",
+  "emblemToShow": {
+    "url": "/upload/rm/20/22/2022w-1.jpg",
+    "width": 784,
+    "height": 479
+  },
+  "end": "2022-12-21T15:30:00+01:00",
+  "eventDateString": "Mittwoch, 21. Dezember 2022, 14:30 Uhr - 14:30 Uhr",
+  "eventInfos": [
+    {
+      "name": "Peter und der Wolf 2",
+      "languageId": 0,
+      "importantNotes": "",
+      "artists": "Marianne Hofer - Konzept, Figurenspiel &amp; Sandmalerei | Nathalie Hildebrand Isler - Figurenspiel | Elmar Büeler - Figurenspiel | Robert Hofer - Bühnenbau und Technik | Evamaria Felder - Flöte, Akkordeon (Tonaufnahme) | Mirjam Wagner - Klavier, Xylophon (Tonaufnahme) | Robin Keller - Cello, Melodica (Tonaufnahme)",
+      "location": "Natur-Museum",
+      "flyerImagePath": "https://petruschka.netlify.app/assets/images/main/portrait/2022w.jpg",
+      "shortDescription": "Ein Wintermärchen für grosse und kleine Zuschauer ab 5 Jahren - Mit der Musik von Sergei Prokofjew (Bearbeitung für Trio)\n",
+      "longDescription": "<p><strong>Figurentheater PETRUSCHKA - Peter und der Wolf 2</strong></p> \n<p>Peter darf die Winterferien bei seinem Grossvater in einem tief verschneiten Dorf verbringen. Dort trifft er einen Schausteller, der einen Wolf in einem engen Käfig den Leuten für Geld zeigt.</p> \n<p>Peter hat Mitleid mit dem armen Tier und befreit heimlich den unglücklichen Wolf. Dieser verspricht ihm, dass sie von nun an Freunde sind.</p> \n<p>Wie geht dieses Abenteuer wohl weiter?</p> \n<p><strong>Aufführung</strong></p> \n<p>Jeweils 14:30 Uhr, Dauer ca. 1 h, Eintritt (inkl. Besuch Natur-Museum, inkl. Billettsteuer):</p> \n<p>Kinder: CHF 11.00, Erwachsene: CHF 22.00</p> \n",
+      "bannerImagePath": "https://petruschka.netlify.app/assets/images/main/landscape/2022w.jpg",
+      "url": "https://petruschka.ch"
+    }
+  ],
+  "facebookPixelId": "2022w",
+  "freeEventMaxTicketPrice": 75,
+  "googleAnalyticsTracker": "",
+  "groupId": "6988603169748984461",
+  "hasFullBrandingCampaign": false,
+  "hasSeatmap": false,
+  "hasSoldOrBlockedTickets": false,
+  "id": "6988603170382325038",
+  "isCoronaDonation": false,
+  "isFreeEvent": true,
+  "isHelpGastro": false,
+  "isStreamingEvent": false,
+  "legalCountry": "CH",
+  "locationIds": [
+    "6986084481808385766"
+  ],
+  "maxTicketPrice": 20000,
+  "model": "free",
+  "modelPlusPrice": "0.49 CHF pro Ticket + 1.9% exkl. MwSt.",
+  "modelProPrice": "0.69 CHF pro Ticket + 3.9% exkl. MwSt.",
+  "modifyDate": null,
+  "notificationEmail": "",
+  "organizerId": "0",
+  "organizerName": "Figurentheater PETRUSCHKA",
+  "partner": "none",
+  "payBackGuaranteeEnabled": false,
+  "payBackGuaranteeMode": "none",
+  "phoneVerificationEnabled": false,
+  "published": true,
+  "saleState": "sold_out",
+  "start": {
+    "$date": {
+      "$numberLong": "1671629400000"
+    }
+  },
+  "state": "published",
+  "status": 1,
+  "ticketTax": 7.7,
+  "ticketTypes": [
+    {
+      "ticketTypeInfos": [
+        {
+          "languageId": 0,
+          "imageUrl": "",
+          "description": "Tickets sind erhältlich via Natur-Museum, entweder direkt an der Kasse oder unter 041 228 54 11 (DI - SO, 10:00 - 17:00 Uhr)\n\nVorstellungen für Kindergärten und Schulen auf Wunsch- Anmeldung an Regula Auf der Maur: regulaaufdermaur@kinderkultur.ch",
+          "name": "Kinder"
+        }
+      ],
+      "sortOrder": 0,
+      "preSaleStart": {
+        "$date": {
+          "$numberLong": "1666213620398"
+        }
+      },
+      "price": 11,
+      "currency": "CHF"
+    },
+    {
+      "ticketTypeInfos": [
+        {
+          "languageId": 0,
+          "imageUrl": "",
+          "description": "Tickets sind erhältlich via Natur-Museum, entweder direkt an der Kasse oder unter 041 228 54 11 (DI - SO, 10:00 - 17:00 Uhr)\n\nVorstellungen für Kindergärten und Schulen auf Wunsch- Anmeldung an Regula Auf der Maur: regulaaufdermaur@kinderkultur.ch",
+          "name": "Erwachsene"
+        }
+      ],
+      "sortOrder": 1,
+      "preSaleStart": {
+        "$date": {
+          "$numberLong": "1666213620398"
+        }
+      },
+      "price": 22,
+      "currency": "CHF"
+    }
+  ],
+  "title": "Peter und der Wolf 2",
+  "url": "/de/p/kinderveranstaltungen/puppentheater/peter-und-der-wolf-2-6988603170382325038.html",
+  "visible": true
+},{
+  "_id": {
+    "$numberLong": "1672234200000"
+  },
+  "accountAddressId": "0",
+  "agendaEntryOnly": true,
+  "bankAccountPaymentPeriodInDays": null,
+  "bankAccountSaleEndDate": null,
+  "begin": "2022-12-28T14:30:00+01:00",
+  "campaignPriceString": "0.19 CHF pro Ticket und Gutschein exkl. MwSt.",
+  "cancelled": false,
+  "cancelledDescription": null,
+  "cashlessPaymentActive": false,
+  "checklistProgress": 45,
+  "coronaSeatBlocking": false,
+  "countryOfOrigin": "CH",
+  "creationDate": "2022-10-19T22:53:58+02:00",
+  "creatorId": "2279256",
+  "currencyId": 1,
+  "currencySymbol": "CHF",
+  "emblemToShow": {
+    "url": "/upload/rm/20/22/2022w-1.jpg",
+    "width": 784,
+    "height": 479
+  },
+  "end": "2022-12-28T15:30:00+01:00",
+  "eventDateString": "Mittwoch, 28. Dezember 2022, 14:30 Uhr - 14:30 Uhr",
+  "eventInfos": [
+    {
+      "name": "Peter und der Wolf 2",
+      "languageId": 0,
+      "importantNotes": "",
+      "artists": "Marianne Hofer - Konzept, Figurenspiel &amp; Sandmalerei | Nathalie Hildebrand Isler - Figurenspiel | Elmar Büeler - Figurenspiel | Robert Hofer - Bühnenbau und Technik | Evamaria Felder - Flöte, Akkordeon (Tonaufnahme) | Mirjam Wagner - Klavier, Xylophon (Tonaufnahme) | Robin Keller - Cello, Melodica (Tonaufnahme)",
+      "location": "Natur-Museum",
+      "flyerImagePath": "https://petruschka.netlify.app/assets/images/main/portrait/2022w.jpg",
+      "shortDescription": "Ein Wintermärchen für grosse und kleine Zuschauer ab 5 Jahren - Mit der Musik von Sergei Prokofjew (Bearbeitung für Trio)\n",
+      "longDescription": "<p><strong>Figurentheater PETRUSCHKA - Peter und der Wolf 2</strong></p> \n<p>Peter darf die Winterferien bei seinem Grossvater in einem tief verschneiten Dorf verbringen. Dort trifft er einen Schausteller, der einen Wolf in einem engen Käfig den Leuten für Geld zeigt.</p> \n<p>Peter hat Mitleid mit dem armen Tier und befreit heimlich den unglücklichen Wolf. Dieser verspricht ihm, dass sie von nun an Freunde sind.</p> \n<p>Wie geht dieses Abenteuer wohl weiter?</p> \n<p><strong>Aufführung</strong></p> \n<p>Jeweils 14:30 Uhr, Dauer ca. 1 h, Eintritt (inkl. Besuch Natur-Museum, inkl. Billettsteuer):</p> \n<p>Kinder: CHF 11.00, Erwachsene: CHF 22.00</p> \n",
+      "bannerImagePath": "https://petruschka.netlify.app/assets/images/main/landscape/2022w.jpg",
+      "url": "https://petruschka.ch"
+    }
+  ],
+  "facebookPixelId": "2022w",
+  "freeEventMaxTicketPrice": 75,
+  "googleAnalyticsTracker": "",
+  "groupId": "6988603169748984461",
+  "hasFullBrandingCampaign": false,
+  "hasSeatmap": false,
+  "hasSoldOrBlockedTickets": false,
+  "id": "6988603170801755444",
+  "isCoronaDonation": false,
+  "isFreeEvent": true,
+  "isHelpGastro": false,
+  "isStreamingEvent": false,
+  "legalCountry": "CH",
+  "locationIds": [
+    "6986084481808385766"
+  ],
+  "maxTicketPrice": 20000,
+  "model": "free",
+  "modelPlusPrice": "0.49 CHF pro Ticket + 1.9% exkl. MwSt.",
+  "modelProPrice": "0.69 CHF pro Ticket + 3.9% exkl. MwSt.",
+  "modifyDate": null,
+  "notificationEmail": "",
+  "organizerId": "0",
+  "organizerName": "Figurentheater PETRUSCHKA",
+  "partner": "none",
+  "payBackGuaranteeEnabled": false,
+  "payBackGuaranteeMode": "none",
+  "phoneVerificationEnabled": false,
+  "published": true,
+  "saleState": "sold_out",
+  "start": {
+    "$date": {
+      "$numberLong": "1672234200000"
+    }
+  },
+  "state": "published",
+  "status": 1,
+  "ticketTax": 7.7,
+  "ticketTypes": [
+    {
+      "ticketTypeInfos": [
+        {
+          "languageId": 0,
+          "imageUrl": "",
+          "description": "Tickets sind erhältlich via Natur-Museum, entweder direkt an der Kasse oder unter 041 228 54 11 (DI - SO, 10:00 - 17:00 Uhr)\n\nVorstellungen für Kindergärten und Schulen auf Wunsch- Anmeldung an Regula Auf der Maur: regulaaufdermaur@kinderkultur.ch",
+          "name": "Kinder"
+        }
+      ],
+      "sortOrder": 0,
+      "preSaleStart": {
+        "$date": {
+          "$numberLong": "1666213629196"
+        }
+      },
+      "price": 11,
+      "currency": "CHF"
+    },
+    {
+      "ticketTypeInfos": [
+        {
+          "languageId": 0,
+          "imageUrl": "",
+          "description": "Tickets sind erhältlich via Natur-Museum, entweder direkt an der Kasse oder unter 041 228 54 11 (DI - SO, 10:00 - 17:00 Uhr)\n\nVorstellungen für Kindergärten und Schulen auf Wunsch- Anmeldung an Regula Auf der Maur: regulaaufdermaur@kinderkultur.ch",
+          "name": "Erwachsene"
+        }
+      ],
+      "sortOrder": 1,
+      "preSaleStart": {
+        "$date": {
+          "$numberLong": "1666213629196"
+        }
+      },
+      "price": 22,
+      "currency": "CHF"
+    }
+  ],
+  "title": "Peter und der Wolf 2",
+  "url": "/de/p/kinderveranstaltungen/puppentheater/peter-und-der-wolf-2-6988603170801755444.html",
+  "visible": true
+},{
+  "_id": {
+    "$numberLong": "1672407000000"
+  },
+  "accountAddressId": "0",
+  "agendaEntryOnly": true,
+  "bankAccountPaymentPeriodInDays": null,
+  "bankAccountSaleEndDate": null,
+  "begin": "2022-12-30T14:30:00+01:00",
+  "campaignPriceString": "0.19 CHF pro Ticket und Gutschein exkl. MwSt.",
+  "cancelled": false,
+  "cancelledDescription": null,
+  "cashlessPaymentActive": false,
+  "checklistProgress": 45,
+  "coronaSeatBlocking": false,
+  "countryOfOrigin": "CH",
+  "creationDate": "2022-10-19T22:53:59+02:00",
+  "creatorId": "2279256",
+  "currencyId": 1,
+  "currencySymbol": "CHF",
+  "emblemToShow": {
+    "url": "/upload/rm/20/22/2022w-1.jpg",
+    "width": 784,
+    "height": 479
+  },
+  "end": "2022-12-30T15:30:00+01:00",
+  "eventDateString": "Freitag, 30. Dezember 2022, 14:30 Uhr - 14:30 Uhr",
+  "eventInfos": [
+    {
+      "name": "Peter und der Wolf 2",
+      "languageId": 0,
+      "importantNotes": "",
+      "artists": "Marianne Hofer - Konzept, Figurenspiel &amp; Sandmalerei | Nathalie Hildebrand Isler - Figurenspiel | Elmar Büeler - Figurenspiel | Robert Hofer - Bühnenbau und Technik | Evamaria Felder - Flöte, Akkordeon (Tonaufnahme) | Mirjam Wagner - Klavier, Xylophon (Tonaufnahme) | Robin Keller - Cello, Melodica (Tonaufnahme)",
+      "location": "Natur-Museum",
+      "flyerImagePath": "https://petruschka.netlify.app/assets/images/main/portrait/2022w.jpg",
+      "shortDescription": "Ein Wintermärchen für grosse und kleine Zuschauer ab 5 Jahren - Mit der Musik von Sergei Prokofjew (Bearbeitung für Trio)\n",
+      "longDescription": "<p><strong>Figurentheater PETRUSCHKA - Peter und der Wolf 2</strong></p> \n<p>Peter darf die Winterferien bei seinem Grossvater in einem tief verschneiten Dorf verbringen. Dort trifft er einen Schausteller, der einen Wolf in einem engen Käfig den Leuten für Geld zeigt.</p> \n<p>Peter hat Mitleid mit dem armen Tier und befreit heimlich den unglücklichen Wolf. Dieser verspricht ihm, dass sie von nun an Freunde sind.</p> \n<p>Wie geht dieses Abenteuer wohl weiter?</p> \n<p><strong>Aufführung</strong></p> \n<p>Jeweils 14:30 Uhr, Dauer ca. 1 h, Eintritt (inkl. Besuch Natur-Museum, inkl. Billettsteuer):</p> \n<p>Kinder: CHF 11.00, Erwachsene: CHF 22.00</p> \n",
+      "bannerImagePath": "https://petruschka.netlify.app/assets/images/main/landscape/2022w.jpg",
+      "url": "https://petruschka.ch"
+    }
+  ],
+  "facebookPixelId": "2022w",
+  "freeEventMaxTicketPrice": 75,
+  "googleAnalyticsTracker": "",
+  "groupId": "6988603169748984461",
+  "hasFullBrandingCampaign": false,
+  "hasSeatmap": false,
+  "hasSoldOrBlockedTickets": false,
+  "id": "6988603170948556086",
+  "isCoronaDonation": false,
+  "isFreeEvent": true,
+  "isHelpGastro": false,
+  "isStreamingEvent": false,
+  "legalCountry": "CH",
+  "locationIds": [
+    "6986084481808385766"
+  ],
+  "maxTicketPrice": 20000,
+  "model": "free",
+  "modelPlusPrice": "0.49 CHF pro Ticket + 1.9% exkl. MwSt.",
+  "modelProPrice": "0.69 CHF pro Ticket + 3.9% exkl. MwSt.",
+  "modifyDate": "2022-10-19T23:00:25+02:00",
+  "notificationEmail": "",
+  "organizerId": "0",
+  "organizerName": "Figurentheater PETRUSCHKA",
+  "partner": "none",
+  "payBackGuaranteeEnabled": false,
+  "payBackGuaranteeMode": "none",
+  "phoneVerificationEnabled": false,
+  "published": true,
+  "saleState": "sold_out",
+  "start": {
+    "$date": {
+      "$numberLong": "1672407000000"
+    }
+  },
+  "state": "published",
+  "status": 1,
+  "ticketTax": 7.7,
+  "ticketTypes": [
+    {
+      "ticketTypeInfos": [
+        {
+          "languageId": 0,
+          "imageUrl": "",
+          "description": "Tickets sind erhältlich via Natur-Museum, entweder direkt an der Kasse oder unter 041 228 54 11 (DI - SO, 10:00 - 17:00 Uhr)\n\nVorstellungen für Kindergärten und Schulen auf Wunsch- Anmeldung an Regula Auf der Maur: regulaaufdermaur@kinderkultur.ch",
+          "name": "Kinder"
+        }
+      ],
+      "sortOrder": 0,
+      "preSaleStart": {
+        "$date": {
+          "$numberLong": "1666213633580"
+        }
+      },
+      "price": 11,
+      "currency": "CHF"
+    },
+    {
+      "ticketTypeInfos": [
+        {
+          "languageId": 0,
+          "imageUrl": "",
+          "description": "Tickets sind erhältlich via Natur-Museum, entweder direkt an der Kasse oder unter 041 228 54 11 (DI - SO, 10:00 - 17:00 Uhr)\n\nVorstellungen für Kindergärten und Schulen auf Wunsch- Anmeldung an Regula Auf der Maur: regulaaufdermaur@kinderkultur.ch",
+          "name": "Erwachsene"
+        }
+      ],
+      "sortOrder": 1,
+      "preSaleStart": {
+        "$date": {
+          "$numberLong": "1666213633580"
+        }
+      },
+      "price": 22,
+      "currency": "CHF"
+    }
+  ],
+  "title": "Peter und der Wolf 2",
+  "url": "/de/p/kinderveranstaltungen/puppentheater/peter-und-der-wolf-2-6988603170948556086.html",
+  "visible": true
+},{
+  "_id": {
+    "$numberLong": "1672839000000"
+  },
+  "accountAddressId": "0",
+  "agendaEntryOnly": true,
+  "bankAccountPaymentPeriodInDays": null,
+  "bankAccountSaleEndDate": null,
+  "begin": "2023-01-04T14:30:00+01:00",
+  "campaignPriceString": "0.19 CHF pro Ticket und Gutschein exkl. MwSt.",
+  "cancelled": false,
+  "cancelledDescription": null,
+  "cashlessPaymentActive": false,
+  "checklistProgress": 45,
+  "coronaSeatBlocking": false,
+  "countryOfOrigin": "CH",
+  "creationDate": "2022-10-19T22:53:59+02:00",
+  "creatorId": "2279256",
+  "currencyId": 1,
+  "currencySymbol": "CHF",
+  "emblemToShow": {
+    "url": "/upload/rm/20/22/2022w-1.jpg",
+    "width": 784,
+    "height": 479
+  },
+  "end": "2023-01-04T15:30:00+01:00",
+  "eventDateString": "Mittwoch, 4. Januar 2023, 14:30 Uhr - 14:30 Uhr",
+  "eventInfos": [
+    {
+      "name": "Peter und der Wolf 2",
+      "languageId": 0,
+      "importantNotes": "",
+      "artists": "Marianne Hofer - Konzept, Figurenspiel &amp; Sandmalerei | Nathalie Hildebrand Isler - Figurenspiel | Elmar Büeler - Figurenspiel | Robert Hofer - Bühnenbau und Technik | Evamaria Felder - Flöte, Akkordeon (Tonaufnahme) | Mirjam Wagner - Klavier, Xylophon (Tonaufnahme) | Robin Keller - Cello, Melodica (Tonaufnahme)",
+      "location": "Natur-Museum",
+      "flyerImagePath": "https://petruschka.netlify.app/assets/images/main/portrait/2022w.jpg",
+      "shortDescription": "Ein Wintermärchen für grosse und kleine Zuschauer ab 5 Jahren - Mit der Musik von Sergei Prokofjew (Bearbeitung für Trio)\n",
+      "longDescription": "<p><strong>Figurentheater PETRUSCHKA - Peter und der Wolf 2</strong></p> \n<p>Peter darf die Winterferien bei seinem Grossvater in einem tief verschneiten Dorf verbringen. Dort trifft er einen Schausteller, der einen Wolf in einem engen Käfig den Leuten für Geld zeigt.</p> \n<p>Peter hat Mitleid mit dem armen Tier und befreit heimlich den unglücklichen Wolf. Dieser verspricht ihm, dass sie von nun an Freunde sind.</p> \n<p>Wie geht dieses Abenteuer wohl weiter?</p> \n<p><strong>Aufführung</strong></p> \n<p>Jeweils 14:30 Uhr, Dauer ca. 1 h, Eintritt (inkl. Besuch Natur-Museum, inkl. Billettsteuer):</p> \n<p>Kinder: CHF 11.00, Erwachsene: CHF 22.00</p> \n",
+      "bannerImagePath": "https://petruschka.netlify.app/assets/images/main/landscape/2022w.jpg",
+      "url": "https://petruschka.ch"
+    }
+  ],
+  "facebookPixelId": "2022w",
+  "freeEventMaxTicketPrice": 75,
+  "googleAnalyticsTracker": "",
+  "groupId": "6988603169748984461",
+  "hasFullBrandingCampaign": false,
+  "hasSeatmap": false,
+  "hasSoldOrBlockedTickets": false,
+  "id": "6988603171254740282",
+  "isCoronaDonation": false,
+  "isFreeEvent": true,
+  "isHelpGastro": false,
+  "isStreamingEvent": false,
+  "legalCountry": "CH",
+  "locationIds": [
+    "6986084481808385766"
+  ],
+  "maxTicketPrice": 20000,
+  "model": "free",
+  "modelPlusPrice": "0.49 CHF pro Ticket + 1.9% exkl. MwSt.",
+  "modelProPrice": "0.69 CHF pro Ticket + 3.9% exkl. MwSt.",
+  "modifyDate": null,
+  "notificationEmail": "",
+  "organizerId": "0",
+  "organizerName": "Figurentheater PETRUSCHKA",
+  "partner": "none",
+  "payBackGuaranteeEnabled": false,
+  "payBackGuaranteeMode": "none",
+  "phoneVerificationEnabled": false,
+  "published": true,
+  "saleState": "sold_out",
+  "start": {
+    "$date": {
+      "$numberLong": "1672839000000"
+    }
+  },
+  "state": "published",
+  "status": 1,
+  "ticketTax": 7.7,
+  "ticketTypes": [
+    {
+      "ticketTypeInfos": [
+        {
+          "languageId": 0,
+          "imageUrl": "",
+          "description": "Tickets sind erhältlich via Natur-Museum, entweder direkt an der Kasse oder unter 041 228 54 11 (DI - SO, 10:00 - 17:00 Uhr)\n\nVorstellungen für Kindergärten und Schulen auf Wunsch- Anmeldung an Regula Auf der Maur: regulaaufdermaur@kinderkultur.ch",
+          "name": "Kinder"
+        }
+      ],
+      "sortOrder": 0,
+      "preSaleStart": {
+        "$date": {
+          "$numberLong": "1666213642348"
+        }
+      },
+      "price": 11,
+      "currency": "CHF"
+    },
+    {
+      "ticketTypeInfos": [
+        {
+          "languageId": 0,
+          "imageUrl": "",
+          "description": "Tickets sind erhältlich via Natur-Museum, entweder direkt an der Kasse oder unter 041 228 54 11 (DI - SO, 10:00 - 17:00 Uhr)\n\nVorstellungen für Kindergärten und Schulen auf Wunsch- Anmeldung an Regula Auf der Maur: regulaaufdermaur@kinderkultur.ch",
+          "name": "Erwachsene"
+        }
+      ],
+      "sortOrder": 1,
+      "preSaleStart": {
+        "$date": {
+          "$numberLong": "1666213642348"
+        }
+      },
+      "price": 22,
+      "currency": "CHF"
+    }
+  ],
+  "title": "Peter und der Wolf 2",
+  "url": "/de/p/kinderveranstaltungen/puppentheater/peter-und-der-wolf-2-6988603171254740282.html",
+  "visible": true
+},{
+  "_id": {
+    "$numberLong": "1673098200000"
+  },
+  "accountAddressId": "0",
+  "agendaEntryOnly": true,
+  "bankAccountPaymentPeriodInDays": null,
+  "bankAccountSaleEndDate": null,
+  "begin": "2023-01-07T14:30:00+01:00",
+  "campaignPriceString": "0.19 CHF pro Ticket und Gutschein exkl. MwSt.",
+  "cancelled": false,
+  "cancelledDescription": null,
+  "cashlessPaymentActive": false,
+  "checklistProgress": 45,
+  "coronaSeatBlocking": false,
+  "countryOfOrigin": "CH",
+  "creationDate": "2022-10-19T22:53:59+02:00",
+  "creatorId": "2279256",
+  "currencyId": 1,
+  "currencySymbol": "CHF",
+  "emblemToShow": {
+    "url": "/upload/rm/20/22/2022w-1.jpg",
+    "width": 784,
+    "height": 479
+  },
+  "end": "2023-01-07T15:30:00+01:00",
+  "eventDateString": "Samstag, 7. Januar 2023, 14:30 Uhr - 14:30 Uhr",
+  "eventInfos": [
+    {
+      "name": "Peter und der Wolf 2",
+      "languageId": 0,
+      "importantNotes": "",
+      "artists": "Marianne Hofer - Konzept, Figurenspiel &amp; Sandmalerei | Nathalie Hildebrand Isler - Figurenspiel | Elmar Büeler - Figurenspiel | Robert Hofer - Bühnenbau und Technik | Evamaria Felder - Flöte, Akkordeon (Tonaufnahme) | Mirjam Wagner - Klavier, Xylophon (Tonaufnahme) | Robin Keller - Cello, Melodica (Tonaufnahme)",
+      "location": "Natur-Museum",
+      "flyerImagePath": "https://petruschka.netlify.app/assets/images/main/portrait/2022w.jpg",
+      "shortDescription": "Ein Wintermärchen für grosse und kleine Zuschauer ab 5 Jahren - Mit der Musik von Sergei Prokofjew (Bearbeitung für Trio)\n",
+      "longDescription": "<p><strong>Figurentheater PETRUSCHKA - Peter und der Wolf 2</strong></p> \n<p>Peter darf die Winterferien bei seinem Grossvater in einem tief verschneiten Dorf verbringen. Dort trifft er einen Schausteller, der einen Wolf in einem engen Käfig den Leuten für Geld zeigt.</p> \n<p>Peter hat Mitleid mit dem armen Tier und befreit heimlich den unglücklichen Wolf. Dieser verspricht ihm, dass sie von nun an Freunde sind.</p> \n<p>Wie geht dieses Abenteuer wohl weiter?</p> \n<p><strong>Aufführung</strong></p> \n<p>Jeweils 14:30 Uhr, Dauer ca. 1 h, Eintritt (inkl. Besuch Natur-Museum, inkl. Billettsteuer):</p> \n<p>Kinder: CHF 11.00, Erwachsene: CHF 22.00</p> \n",
+      "bannerImagePath": "https://petruschka.netlify.app/assets/images/main/landscape/2022w.jpg",
+      "url": "https://petruschka.ch"
+    }
+  ],
+  "facebookPixelId": "2022w",
+  "freeEventMaxTicketPrice": 75,
+  "googleAnalyticsTracker": "",
+  "groupId": "6988603169748984461",
+  "hasFullBrandingCampaign": false,
+  "hasSeatmap": false,
+  "hasSoldOrBlockedTickets": false,
+  "id": "6988603171393152316",
+  "isCoronaDonation": false,
+  "isFreeEvent": true,
+  "isHelpGastro": false,
+  "isStreamingEvent": false,
+  "legalCountry": "CH",
+  "locationIds": [
+    "6986084481808385766"
+  ],
+  "maxTicketPrice": 20000,
+  "model": "free",
+  "modelPlusPrice": "0.49 CHF pro Ticket + 1.9% exkl. MwSt.",
+  "modelProPrice": "0.69 CHF pro Ticket + 3.9% exkl. MwSt.",
+  "modifyDate": null,
+  "notificationEmail": "",
+  "organizerId": "0",
+  "organizerName": "Figurentheater PETRUSCHKA",
+  "partner": "none",
+  "payBackGuaranteeEnabled": false,
+  "payBackGuaranteeMode": "none",
+  "phoneVerificationEnabled": false,
+  "published": true,
+  "saleState": "sold_out",
+  "start": {
+    "$date": {
+      "$numberLong": "1673098200000"
+    }
+  },
+  "state": "published",
+  "status": 1,
+  "ticketTax": 7.7,
+  "ticketTypes": [
+    {
+      "ticketTypeInfos": [
+        {
+          "languageId": 0,
+          "imageUrl": "",
+          "description": "Tickets sind erhältlich via Natur-Museum, entweder direkt an der Kasse oder unter 041 228 54 11 (DI - SO, 10:00 - 17:00 Uhr)\n\nVorstellungen für Kindergärten und Schulen auf Wunsch- Anmeldung an Regula Auf der Maur: regulaaufdermaur@kinderkultur.ch",
+          "name": "Kinder"
+        }
+      ],
+      "sortOrder": 0,
+      "preSaleStart": {
+        "$date": {
+          "$numberLong": "1666213646725"
+        }
+      },
+      "price": 11,
+      "currency": "CHF"
+    },
+    {
+      "ticketTypeInfos": [
+        {
+          "languageId": 0,
+          "imageUrl": "",
+          "description": "Tickets sind erhältlich via Natur-Museum, entweder direkt an der Kasse oder unter 041 228 54 11 (DI - SO, 10:00 - 17:00 Uhr)\n\nVorstellungen für Kindergärten und Schulen auf Wunsch- Anmeldung an Regula Auf der Maur: regulaaufdermaur@kinderkultur.ch",
+          "name": "Erwachsene"
+        }
+      ],
+      "sortOrder": 1,
+      "preSaleStart": {
+        "$date": {
+          "$numberLong": "1666213646725"
+        }
+      },
+      "price": 22,
+      "currency": "CHF"
+    }
+  ],
+  "title": "Peter und der Wolf 2",
+  "url": "/de/p/kinderveranstaltungen/puppentheater/peter-und-der-wolf-2-6988603171393152316.html",
+  "visible": true
+},{
+  "_id": {
+    "$numberLong": "1673184600000"
+  },
+  "accountAddressId": "0",
+  "agendaEntryOnly": true,
+  "bankAccountPaymentPeriodInDays": null,
+  "bankAccountSaleEndDate": null,
+  "begin": "2023-01-08T14:30:00+01:00",
+  "campaignPriceString": "0.19 CHF pro Ticket und Gutschein exkl. MwSt.",
+  "cancelled": false,
+  "cancelledDescription": null,
+  "cashlessPaymentActive": false,
+  "checklistProgress": 45,
+  "coronaSeatBlocking": false,
+  "countryOfOrigin": "CH",
+  "creationDate": "2022-10-19T22:53:59+02:00",
+  "creatorId": "2279256",
+  "currencyId": 1,
+  "currencySymbol": "CHF",
+  "emblemToShow": {
+    "url": "/upload/rm/20/22/2022w-1.jpg",
+    "width": 784,
+    "height": 479
+  },
+  "end": "2023-01-08T15:30:00+01:00",
+  "eventDateString": "Sonntag, 8. Januar 2023, 14:30 Uhr - 14:30 Uhr",
+  "eventInfos": [
+    {
+      "name": "Peter und der Wolf 2",
+      "languageId": 0,
+      "importantNotes": "",
+      "artists": "Marianne Hofer - Konzept, Figurenspiel &amp; Sandmalerei | Nathalie Hildebrand Isler - Figurenspiel | Elmar Büeler - Figurenspiel | Robert Hofer - Bühnenbau und Technik | Evamaria Felder - Flöte, Akkordeon (Tonaufnahme) | Mirjam Wagner - Klavier, Xylophon (Tonaufnahme) | Robin Keller - Cello, Melodica (Tonaufnahme)",
+      "location": "Natur-Museum",
+      "flyerImagePath": "https://petruschka.netlify.app/assets/images/main/portrait/2022w.jpg",
+      "shortDescription": "Ein Wintermärchen für grosse und kleine Zuschauer ab 5 Jahren - Mit der Musik von Sergei Prokofjew (Bearbeitung für Trio)\n",
+      "longDescription": "<p><strong>Figurentheater PETRUSCHKA - Peter und der Wolf 2</strong></p> \n<p>Peter darf die Winterferien bei seinem Grossvater in einem tief verschneiten Dorf verbringen. Dort trifft er einen Schausteller, der einen Wolf in einem engen Käfig den Leuten für Geld zeigt.</p> \n<p>Peter hat Mitleid mit dem armen Tier und befreit heimlich den unglücklichen Wolf. Dieser verspricht ihm, dass sie von nun an Freunde sind.</p> \n<p>Wie geht dieses Abenteuer wohl weiter?</p> \n<p><strong>Aufführung</strong></p> \n<p>Jeweils 14:30 Uhr, Dauer ca. 1 h, Eintritt (inkl. Besuch Natur-Museum, inkl. Billettsteuer):</p> \n<p>Kinder: CHF 11.00, Erwachsene: CHF 22.00</p> \n",
+      "bannerImagePath": "https://petruschka.netlify.app/assets/images/main/landscape/2022w.jpg",
+      "url": "https://petruschka.ch"
+    }
+  ],
+  "facebookPixelId": "2022w",
+  "freeEventMaxTicketPrice": 75,
+  "googleAnalyticsTracker": "",
+  "groupId": "6988603169748984461",
+  "hasFullBrandingCampaign": false,
+  "hasSeatmap": false,
+  "hasSoldOrBlockedTickets": false,
+  "id": "6988603171531564350",
+  "isCoronaDonation": false,
+  "isFreeEvent": true,
+  "isHelpGastro": false,
+  "isStreamingEvent": false,
+  "legalCountry": "CH",
+  "locationIds": [
+    "6986084481808385766"
+  ],
+  "maxTicketPrice": 20000,
+  "model": "free",
+  "modelPlusPrice": "0.49 CHF pro Ticket + 1.9% exkl. MwSt.",
+  "modelProPrice": "0.69 CHF pro Ticket + 3.9% exkl. MwSt.",
+  "modifyDate": null,
+  "notificationEmail": "",
+  "organizerId": "0",
+  "organizerName": "Figurentheater PETRUSCHKA",
+  "partner": "none",
+  "payBackGuaranteeEnabled": false,
+  "payBackGuaranteeMode": "none",
+  "phoneVerificationEnabled": false,
+  "published": true,
+  "saleState": "sold_out",
+  "start": {
+    "$date": {
+      "$numberLong": "1673184600000"
+    }
+  },
+  "state": "published",
+  "status": 1,
+  "ticketTax": 7.7,
+  "ticketTypes": [
+    {
+      "ticketTypeInfos": [
+        {
+          "languageId": 0,
+          "imageUrl": "",
+          "description": "Tickets sind erhältlich via Natur-Museum, entweder direkt an der Kasse oder unter 041 228 54 11 (DI - SO, 10:00 - 17:00 Uhr)\n\nVorstellungen für Kindergärten und Schulen auf Wunsch- Anmeldung an Regula Auf der Maur: regulaaufdermaur@kinderkultur.ch",
+          "name": "Kinder"
+        }
+      ],
+      "sortOrder": 0,
+      "preSaleStart": {
+        "$date": {
+          "$numberLong": "1666213651100"
+        }
+      },
+      "price": 11,
+      "currency": "CHF"
+    },
+    {
+      "ticketTypeInfos": [
+        {
+          "languageId": 0,
+          "imageUrl": "",
+          "description": "Tickets sind erhältlich via Natur-Museum, entweder direkt an der Kasse oder unter 041 228 54 11 (DI - SO, 10:00 - 17:00 Uhr)\n\nVorstellungen für Kindergärten und Schulen auf Wunsch- Anmeldung an Regula Auf der Maur: regulaaufdermaur@kinderkultur.ch",
+          "name": "Erwachsene"
+        }
+      ],
+      "sortOrder": 1,
+      "preSaleStart": {
+        "$date": {
+          "$numberLong": "1666213651100"
+        }
+      },
+      "price": 22,
+      "currency": "CHF"
+    }
+  ],
+  "title": "Peter und der Wolf 2",
+  "url": "/de/p/kinderveranstaltungen/puppentheater/peter-und-der-wolf-2-6988603171531564350.html",
+  "visible": true
+},{
+  "_id": {
+    "$numberLong": "1673443800000"
+  },
+  "accountAddressId": "0",
+  "agendaEntryOnly": true,
+  "bankAccountPaymentPeriodInDays": null,
+  "bankAccountSaleEndDate": null,
+  "begin": "2023-01-11T14:30:00+01:00",
+  "campaignPriceString": "0.19 CHF pro Ticket und Gutschein exkl. MwSt.",
+  "cancelled": false,
+  "cancelledDescription": null,
+  "cashlessPaymentActive": false,
+  "checklistProgress": 45,
+  "coronaSeatBlocking": false,
+  "countryOfOrigin": "CH",
+  "creationDate": "2022-10-19T22:53:59+02:00",
+  "creatorId": "2279256",
+  "currencyId": 1,
+  "currencySymbol": "CHF",
+  "emblemToShow": {
+    "url": "/upload/rm/20/22/2022w-1.jpg",
+    "width": 784,
+    "height": 479
+  },
+  "end": "2023-01-11T15:30:00+01:00",
+  "eventDateString": "Mittwoch, 11. Januar 2023, 14:30 Uhr - 14:30 Uhr",
+  "eventInfos": [
+    {
+      "name": "Peter und der Wolf 2",
+      "languageId": 0,
+      "importantNotes": "",
+      "artists": "Marianne Hofer - Konzept, Figurenspiel &amp; Sandmalerei | Nathalie Hildebrand Isler - Figurenspiel | Elmar Büeler - Figurenspiel | Robert Hofer - Bühnenbau und Technik | Evamaria Felder - Flöte, Akkordeon (Tonaufnahme) | Mirjam Wagner - Klavier, Xylophon (Tonaufnahme) | Robin Keller - Cello, Melodica (Tonaufnahme)",
+      "location": "Natur-Museum",
+      "flyerImagePath": "https://petruschka.netlify.app/assets/images/main/portrait/2022w.jpg",
+      "shortDescription": "Ein Wintermärchen für grosse und kleine Zuschauer ab 5 Jahren - Mit der Musik von Sergei Prokofjew (Bearbeitung für Trio)\n",
+      "longDescription": "<p><strong>Figurentheater PETRUSCHKA - Peter und der Wolf 2</strong></p> \n<p>Peter darf die Winterferien bei seinem Grossvater in einem tief verschneiten Dorf verbringen. Dort trifft er einen Schausteller, der einen Wolf in einem engen Käfig den Leuten für Geld zeigt.</p> \n<p>Peter hat Mitleid mit dem armen Tier und befreit heimlich den unglücklichen Wolf. Dieser verspricht ihm, dass sie von nun an Freunde sind.</p> \n<p>Wie geht dieses Abenteuer wohl weiter?</p> \n<p><strong>Aufführung</strong></p> \n<p>Jeweils 14:30 Uhr, Dauer ca. 1 h, Eintritt (inkl. Besuch Natur-Museum, inkl. Billettsteuer):</p> \n<p>Kinder: CHF 11.00, Erwachsene: CHF 22.00</p> \n",
+      "bannerImagePath": "https://petruschka.netlify.app/assets/images/main/landscape/2022w.jpg",
+      "url": "https://petruschka.ch"
+    }
+  ],
+  "facebookPixelId": "2022w",
+  "freeEventMaxTicketPrice": 75,
+  "googleAnalyticsTracker": "",
+  "groupId": "6988603169748984461",
+  "hasFullBrandingCampaign": false,
+  "hasSeatmap": false,
+  "hasSoldOrBlockedTickets": false,
+  "id": "6988603171665782080",
+  "isCoronaDonation": false,
+  "isFreeEvent": true,
+  "isHelpGastro": false,
+  "isStreamingEvent": false,
+  "legalCountry": "CH",
+  "locationIds": [
+    "6986084481808385766"
+  ],
+  "maxTicketPrice": 20000,
+  "model": "free",
+  "modelPlusPrice": "0.49 CHF pro Ticket + 1.9% exkl. MwSt.",
+  "modelProPrice": "0.69 CHF pro Ticket + 3.9% exkl. MwSt.",
+  "modifyDate": null,
+  "notificationEmail": "",
+  "organizerId": "0",
+  "organizerName": "Figurentheater PETRUSCHKA",
+  "partner": "none",
+  "payBackGuaranteeEnabled": false,
+  "payBackGuaranteeMode": "none",
+  "phoneVerificationEnabled": false,
+  "published": true,
+  "saleState": "sold_out",
+  "start": {
+    "$date": {
+      "$numberLong": "1673443800000"
+    }
+  },
+  "state": "published",
+  "status": 1,
+  "ticketTax": 7.7,
+  "ticketTypes": [
+    {
+      "ticketTypeInfos": [
+        {
+          "languageId": 0,
+          "imageUrl": "",
+          "description": "Tickets sind erhältlich via Natur-Museum, entweder direkt an der Kasse oder unter 041 228 54 11 (DI - SO, 10:00 - 17:00 Uhr)\n\nVorstellungen für Kindergärten und Schulen auf Wunsch- Anmeldung an Regula Auf der Maur: regulaaufdermaur@kinderkultur.ch",
+          "name": "Kinder"
+        }
+      ],
+      "sortOrder": 0,
+      "preSaleStart": {
+        "$date": {
+          "$numberLong": "1666213655476"
+        }
+      },
+      "price": 11,
+      "currency": "CHF"
+    },
+    {
+      "ticketTypeInfos": [
+        {
+          "languageId": 0,
+          "imageUrl": "",
+          "description": "Tickets sind erhältlich via Natur-Museum, entweder direkt an der Kasse oder unter 041 228 54 11 (DI - SO, 10:00 - 17:00 Uhr)\n\nVorstellungen für Kindergärten und Schulen auf Wunsch- Anmeldung an Regula Auf der Maur: regulaaufdermaur@kinderkultur.ch",
+          "name": "Erwachsene"
+        }
+      ],
+      "sortOrder": 1,
+      "preSaleStart": {
+        "$date": {
+          "$numberLong": "1666213655476"
+        }
+      },
+      "price": 22,
+      "currency": "CHF"
+    }
+  ],
+  "title": "Peter und der Wolf 2",
+  "url": "/de/p/kinderveranstaltungen/puppentheater/peter-und-der-wolf-2-6988603171665782080.html",
+  "visible": true
+},{
+  "_id": {
+    "$numberLong": "1673703000000"
+  },
+  "accountAddressId": "0",
+  "agendaEntryOnly": true,
+  "bankAccountPaymentPeriodInDays": null,
+  "bankAccountSaleEndDate": null,
+  "begin": "2023-01-14T14:30:00+01:00",
+  "campaignPriceString": "0.19 CHF pro Ticket und Gutschein exkl. MwSt.",
+  "cancelled": false,
+  "cancelledDescription": null,
+  "cashlessPaymentActive": false,
+  "checklistProgress": 45,
+  "coronaSeatBlocking": false,
+  "countryOfOrigin": "CH",
+  "creationDate": "2022-10-19T22:53:59+02:00",
+  "creatorId": "2279256",
+  "currencyId": 1,
+  "currencySymbol": "CHF",
+  "emblemToShow": {
+    "url": "/upload/rm/20/22/2022w-1.jpg",
+    "width": 784,
+    "height": 479
+  },
+  "end": "2023-01-14T15:30:00+01:00",
+  "eventDateString": "Samstag, 14. Januar 2023, 14:30 Uhr - 14:30 Uhr",
+  "eventInfos": [
+    {
+      "name": "Peter und der Wolf 2",
+      "languageId": 0,
+      "importantNotes": "",
+      "artists": "Marianne Hofer - Konzept, Figurenspiel &amp; Sandmalerei | Nathalie Hildebrand Isler - Figurenspiel | Elmar Büeler - Figurenspiel | Robert Hofer - Bühnenbau und Technik | Evamaria Felder - Flöte, Akkordeon (Tonaufnahme) | Mirjam Wagner - Klavier, Xylophon (Tonaufnahme) | Robin Keller - Cello, Melodica (Tonaufnahme)",
+      "location": "Natur-Museum",
+      "flyerImagePath": "https://petruschka.netlify.app/assets/images/main/portrait/2022w.jpg",
+      "shortDescription": "Ein Wintermärchen für grosse und kleine Zuschauer ab 5 Jahren - Mit der Musik von Sergei Prokofjew (Bearbeitung für Trio)\n",
+      "longDescription": "<p><strong>Figurentheater PETRUSCHKA - Peter und der Wolf 2</strong></p> \n<p>Peter darf die Winterferien bei seinem Grossvater in einem tief verschneiten Dorf verbringen. Dort trifft er einen Schausteller, der einen Wolf in einem engen Käfig den Leuten für Geld zeigt.</p> \n<p>Peter hat Mitleid mit dem armen Tier und befreit heimlich den unglücklichen Wolf. Dieser verspricht ihm, dass sie von nun an Freunde sind.</p> \n<p>Wie geht dieses Abenteuer wohl weiter?</p> \n<p><strong>Aufführung</strong></p> \n<p>Jeweils 14:30 Uhr, Dauer ca. 1 h, Eintritt (inkl. Besuch Natur-Museum, inkl. Billettsteuer):</p> \n<p>Kinder: CHF 11.00, Erwachsene: CHF 22.00</p> \n",
+      "bannerImagePath": "https://petruschka.netlify.app/assets/images/main/landscape/2022w.jpg",
+      "url": "https://petruschka.ch"
+    }
+  ],
+  "facebookPixelId": "2022w",
+  "freeEventMaxTicketPrice": 75,
+  "googleAnalyticsTracker": "",
+  "groupId": "6988603169748984461",
+  "hasFullBrandingCampaign": false,
+  "hasSeatmap": false,
+  "hasSoldOrBlockedTickets": false,
+  "id": "6988603171799999810",
+  "isCoronaDonation": false,
+  "isFreeEvent": true,
+  "isHelpGastro": false,
+  "isStreamingEvent": false,
+  "legalCountry": "CH",
+  "locationIds": [
+    "6986084481808385766"
+  ],
+  "maxTicketPrice": 20000,
+  "model": "free",
+  "modelPlusPrice": "0.49 CHF pro Ticket + 1.9% exkl. MwSt.",
+  "modelProPrice": "0.69 CHF pro Ticket + 3.9% exkl. MwSt.",
+  "modifyDate": null,
+  "notificationEmail": "",
+  "organizerId": "0",
+  "organizerName": "Figurentheater PETRUSCHKA",
+  "partner": "none",
+  "payBackGuaranteeEnabled": false,
+  "payBackGuaranteeMode": "none",
+  "phoneVerificationEnabled": false,
+  "published": true,
+  "saleState": "sold_out",
+  "start": {
+    "$date": {
+      "$numberLong": "1673703000000"
+    }
+  },
+  "state": "published",
+  "status": 1,
+  "ticketTax": 7.7,
+  "ticketTypes": [
+    {
+      "ticketTypeInfos": [
+        {
+          "languageId": 0,
+          "imageUrl": "",
+          "description": "Tickets sind erhältlich via Natur-Museum, entweder direkt an der Kasse oder unter 041 228 54 11 (DI - SO, 10:00 - 17:00 Uhr)\n\nVorstellungen für Kindergärten und Schulen auf Wunsch- Anmeldung an Regula Auf der Maur: regulaaufdermaur@kinderkultur.ch",
+          "name": "Kinder"
+        }
+      ],
+      "sortOrder": 0,
+      "preSaleStart": {
+        "$date": {
+          "$numberLong": "1666213659858"
+        }
+      },
+      "price": 11,
+      "currency": "CHF"
+    },
+    {
+      "ticketTypeInfos": [
+        {
+          "languageId": 0,
+          "imageUrl": "",
+          "description": "Tickets sind erhältlich via Natur-Museum, entweder direkt an der Kasse oder unter 041 228 54 11 (DI - SO, 10:00 - 17:00 Uhr)\n\nVorstellungen für Kindergärten und Schulen auf Wunsch- Anmeldung an Regula Auf der Maur: regulaaufdermaur@kinderkultur.ch",
+          "name": "Erwachsene"
+        }
+      ],
+      "sortOrder": 1,
+      "preSaleStart": {
+        "$date": {
+          "$numberLong": "1666213659858"
+        }
+      },
+      "price": 22,
+      "currency": "CHF"
+    }
+  ],
+  "title": "Peter und der Wolf 2",
+  "url": "/de/p/kinderveranstaltungen/puppentheater/peter-und-der-wolf-2-6988603171799999810.html",
+  "visible": true
+},{
+  "_id": {
+    "$numberLong": "1673789400000"
+  },
+  "accountAddressId": "0",
+  "agendaEntryOnly": true,
+  "bankAccountPaymentPeriodInDays": null,
+  "bankAccountSaleEndDate": null,
+  "begin": "2023-01-15T14:30:00+01:00",
+  "campaignPriceString": "0.19 CHF pro Ticket und Gutschein exkl. MwSt.",
+  "cancelled": false,
+  "cancelledDescription": null,
+  "cashlessPaymentActive": false,
+  "checklistProgress": 45,
+  "coronaSeatBlocking": false,
+  "countryOfOrigin": "CH",
+  "creationDate": "2022-10-19T22:53:59+02:00",
+  "creatorId": "2279256",
+  "currencyId": 1,
+  "currencySymbol": "CHF",
+  "emblemToShow": {
+    "url": "/upload/rm/20/22/2022w-1.jpg",
+    "width": 784,
+    "height": 479
+  },
+  "end": "2023-01-15T15:30:00+01:00",
+  "eventDateString": "Sonntag, 15. Januar 2023, 14:30 Uhr - 14:30 Uhr",
+  "eventInfos": [
+    {
+      "name": "Peter und der Wolf 2",
+      "languageId": 0,
+      "importantNotes": "",
+      "artists": "Marianne Hofer - Konzept, Figurenspiel &amp; Sandmalerei | Nathalie Hildebrand Isler - Figurenspiel | Elmar Büeler - Figurenspiel | Robert Hofer - Bühnenbau und Technik | Evamaria Felder - Flöte, Akkordeon (Tonaufnahme) | Mirjam Wagner - Klavier, Xylophon (Tonaufnahme) | Robin Keller - Cello, Melodica (Tonaufnahme)",
+      "location": "Natur-Museum",
+      "flyerImagePath": "https://petruschka.netlify.app/assets/images/main/portrait/2022w.jpg",
+      "shortDescription": "Ein Wintermärchen für grosse und kleine Zuschauer ab 5 Jahren - Mit der Musik von Sergei Prokofjew (Bearbeitung für Trio)\n",
+      "longDescription": "<p><strong>Figurentheater PETRUSCHKA - Peter und der Wolf 2</strong></p> \n<p>Peter darf die Winterferien bei seinem Grossvater in einem tief verschneiten Dorf verbringen. Dort trifft er einen Schausteller, der einen Wolf in einem engen Käfig den Leuten für Geld zeigt.</p> \n<p>Peter hat Mitleid mit dem armen Tier und befreit heimlich den unglücklichen Wolf. Dieser verspricht ihm, dass sie von nun an Freunde sind.</p> \n<p>Wie geht dieses Abenteuer wohl weiter?</p> \n<p><strong>Aufführung</strong></p> \n<p>Jeweils 14:30 Uhr, Dauer ca. 1 h, Eintritt (inkl. Besuch Natur-Museum, inkl. Billettsteuer):</p> \n<p>Kinder: CHF 11.00, Erwachsene: CHF 22.00</p> \n",
+      "bannerImagePath": "https://petruschka.netlify.app/assets/images/main/landscape/2022w.jpg",
+      "url": "https://petruschka.ch"
+    }
+  ],
+  "facebookPixelId": "2022w",
+  "freeEventMaxTicketPrice": 75,
+  "googleAnalyticsTracker": "",
+  "groupId": "6988603169748984461",
+  "hasFullBrandingCampaign": false,
+  "hasSeatmap": false,
+  "hasSoldOrBlockedTickets": false,
+  "id": "6988603171934217540",
+  "isCoronaDonation": false,
+  "isFreeEvent": true,
+  "isHelpGastro": false,
+  "isStreamingEvent": false,
+  "legalCountry": "CH",
+  "locationIds": [
+    "6986084481808385766"
+  ],
+  "maxTicketPrice": 20000,
+  "model": "free",
+  "modelPlusPrice": "0.49 CHF pro Ticket + 1.9% exkl. MwSt.",
+  "modelProPrice": "0.69 CHF pro Ticket + 3.9% exkl. MwSt.",
+  "modifyDate": null,
+  "notificationEmail": "",
+  "organizerId": "0",
+  "organizerName": "Figurentheater PETRUSCHKA",
+  "partner": "none",
+  "payBackGuaranteeEnabled": false,
+  "payBackGuaranteeMode": "none",
+  "phoneVerificationEnabled": false,
+  "published": true,
+  "saleState": "sold_out",
+  "start": {
+    "$date": {
+      "$numberLong": "1673789400000"
+    }
+  },
+  "state": "published",
+  "status": 1,
+  "ticketTax": 7.7,
+  "ticketTypes": [
+    {
+      "ticketTypeInfos": [
+        {
+          "languageId": 0,
+          "imageUrl": "",
+          "description": "Tickets sind erhältlich via Natur-Museum, entweder direkt an der Kasse oder unter 041 228 54 11 (DI - SO, 10:00 - 17:00 Uhr)\n\nVorstellungen für Kindergärten und Schulen auf Wunsch- Anmeldung an Regula Auf der Maur: regulaaufdermaur@kinderkultur.ch",
+          "name": "Kinder"
+        }
+      ],
+      "sortOrder": 0,
+      "preSaleStart": {
+        "$date": {
+          "$numberLong": "1666213664247"
+        }
+      },
+      "price": 11,
+      "currency": "CHF"
+    },
+    {
+      "ticketTypeInfos": [
+        {
+          "languageId": 0,
+          "imageUrl": "",
+          "description": "Tickets sind erhältlich via Natur-Museum, entweder direkt an der Kasse oder unter 041 228 54 11 (DI - SO, 10:00 - 17:00 Uhr)\n\nVorstellungen für Kindergärten und Schulen auf Wunsch- Anmeldung an Regula Auf der Maur: regulaaufdermaur@kinderkultur.ch",
+          "name": "Erwachsene"
+        }
+      ],
+      "sortOrder": 1,
+      "preSaleStart": {
+        "$date": {
+          "$numberLong": "1666213664247"
+        }
+      },
+      "price": 22,
+      "currency": "CHF"
+    }
+  ],
+  "title": "Peter und der Wolf 2",
+  "url": "/de/p/kinderveranstaltungen/puppentheater/peter-und-der-wolf-2-6988603171934217540.html",
+  "visible": true
+},{
+  "_id": {
+    "$numberLong": "1674048600000"
+  },
+  "accountAddressId": "0",
+  "agendaEntryOnly": true,
+  "bankAccountPaymentPeriodInDays": null,
+  "bankAccountSaleEndDate": null,
+  "begin": "2023-01-18T14:30:00+01:00",
+  "campaignPriceString": "0.19 CHF pro Ticket und Gutschein exkl. MwSt.",
+  "cancelled": false,
+  "cancelledDescription": null,
+  "cashlessPaymentActive": false,
+  "checklistProgress": 45,
+  "coronaSeatBlocking": false,
+  "countryOfOrigin": "CH",
+  "creationDate": "2022-10-19T22:53:59+02:00",
+  "creatorId": "2279256",
+  "currencyId": 1,
+  "currencySymbol": "CHF",
+  "emblemToShow": {
+    "url": "/upload/rm/20/22/2022w-1.jpg",
+    "width": 784,
+    "height": 479
+  },
+  "end": "2023-01-18T15:30:00+01:00",
+  "eventDateString": "Mittwoch, 18. Januar 2023, 14:30 Uhr - 14:30 Uhr",
+  "eventInfos": [
+    {
+      "name": "Peter und der Wolf 2",
+      "languageId": 0,
+      "importantNotes": "",
+      "artists": "Marianne Hofer - Konzept, Figurenspiel &amp; Sandmalerei | Nathalie Hildebrand Isler - Figurenspiel | Elmar Büeler - Figurenspiel | Robert Hofer - Bühnenbau und Technik | Evamaria Felder - Flöte, Akkordeon (Tonaufnahme) | Mirjam Wagner - Klavier, Xylophon (Tonaufnahme) | Robin Keller - Cello, Melodica (Tonaufnahme)",
+      "location": "Natur-Museum",
+      "flyerImagePath": "https://petruschka.netlify.app/assets/images/main/portrait/2022w.jpg",
+      "shortDescription": "Ein Wintermärchen für grosse und kleine Zuschauer ab 5 Jahren - Mit der Musik von Sergei Prokofjew (Bearbeitung für Trio)\n",
+      "longDescription": "<p><strong>Figurentheater PETRUSCHKA - Peter und der Wolf 2</strong></p> \n<p>Peter darf die Winterferien bei seinem Grossvater in einem tief verschneiten Dorf verbringen. Dort trifft er einen Schausteller, der einen Wolf in einem engen Käfig den Leuten für Geld zeigt.</p> \n<p>Peter hat Mitleid mit dem armen Tier und befreit heimlich den unglücklichen Wolf. Dieser verspricht ihm, dass sie von nun an Freunde sind.</p> \n<p>Wie geht dieses Abenteuer wohl weiter?</p> \n<p><strong>Aufführung</strong></p> \n<p>Jeweils 14:30 Uhr, Dauer ca. 1 h, Eintritt (inkl. Besuch Natur-Museum, inkl. Billettsteuer):</p> \n<p>Kinder: CHF 11.00, Erwachsene: CHF 22.00</p> \n",
+      "bannerImagePath": "https://petruschka.netlify.app/assets/images/main/landscape/2022w.jpg",
+      "url": "https://petruschka.ch"
+    }
+  ],
+  "facebookPixelId": "2022w",
+  "freeEventMaxTicketPrice": 75,
+  "googleAnalyticsTracker": "",
+  "groupId": "6988603169748984461",
+  "hasFullBrandingCampaign": false,
+  "hasSeatmap": false,
+  "hasSoldOrBlockedTickets": false,
+  "id": "6988603172177487174",
+  "isCoronaDonation": false,
+  "isFreeEvent": true,
+  "isHelpGastro": false,
+  "isStreamingEvent": false,
+  "legalCountry": "CH",
+  "locationIds": [
+    "6986084481808385766"
+  ],
+  "maxTicketPrice": 20000,
+  "model": "free",
+  "modelPlusPrice": "0.49 CHF pro Ticket + 1.9% exkl. MwSt.",
+  "modelProPrice": "0.69 CHF pro Ticket + 3.9% exkl. MwSt.",
+  "modifyDate": null,
+  "notificationEmail": "",
+  "organizerId": "0",
+  "organizerName": "Figurentheater PETRUSCHKA",
+  "partner": "none",
+  "payBackGuaranteeEnabled": false,
+  "payBackGuaranteeMode": "none",
+  "phoneVerificationEnabled": false,
+  "published": true,
+  "saleState": "sold_out",
+  "start": {
+    "$date": {
+      "$numberLong": "1674048600000"
+    }
+  },
+  "state": "published",
+  "status": 1,
+  "ticketTax": 7.7,
+  "ticketTypes": [
+    {
+      "ticketTypeInfos": [
+        {
+          "languageId": 0,
+          "imageUrl": "",
+          "description": "Tickets sind erhältlich via Natur-Museum, entweder direkt an der Kasse oder unter 041 228 54 11 (DI - SO, 10:00 - 17:00 Uhr)\n\nVorstellungen für Kindergärten und Schulen auf Wunsch- Anmeldung an Regula Auf der Maur: regulaaufdermaur@kinderkultur.ch",
+          "name": "Kinder"
+        }
+      ],
+      "sortOrder": 0,
+      "preSaleStart": {
+        "$date": {
+          "$numberLong": "1666213668649"
+        }
+      },
+      "price": 11,
+      "currency": "CHF"
+    },
+    {
+      "ticketTypeInfos": [
+        {
+          "languageId": 0,
+          "imageUrl": "",
+          "description": "Tickets sind erhältlich via Natur-Museum, entweder direkt an der Kasse oder unter 041 228 54 11 (DI - SO, 10:00 - 17:00 Uhr)\n\nVorstellungen für Kindergärten und Schulen auf Wunsch- Anmeldung an Regula Auf der Maur: regulaaufdermaur@kinderkultur.ch",
+          "name": "Erwachsene"
+        }
+      ],
+      "sortOrder": 1,
+      "preSaleStart": {
+        "$date": {
+          "$numberLong": "1666213668649"
+        }
+      },
+      "price": 22,
+      "currency": "CHF"
+    }
+  ],
+  "title": "Peter und der Wolf 2",
+  "url": "/de/p/kinderveranstaltungen/puppentheater/peter-und-der-wolf-2-6988603172177487174.html",
+  "visible": true
+},{
+  "_id": {
+    "$numberLong": "1674307800000"
+  },
+  "accountAddressId": "0",
+  "agendaEntryOnly": true,
+  "bankAccountPaymentPeriodInDays": null,
+  "bankAccountSaleEndDate": null,
+  "begin": "2023-01-21T14:30:00+01:00",
+  "campaignPriceString": "0.19 CHF pro Ticket und Gutschein exkl. MwSt.",
+  "cancelled": false,
+  "cancelledDescription": null,
+  "cashlessPaymentActive": false,
+  "checklistProgress": 45,
+  "coronaSeatBlocking": false,
+  "countryOfOrigin": "CH",
+  "creationDate": "2022-10-19T22:53:59+02:00",
+  "creatorId": "2279256",
+  "currencyId": 1,
+  "currencySymbol": "CHF",
+  "emblemToShow": {
+    "url": "/upload/rm/20/22/2022w-1.jpg",
+    "width": 784,
+    "height": 479
+  },
+  "end": "2023-01-21T15:30:00+01:00",
+  "eventDateString": "Samstag, 21. Januar 2023, 14:30 Uhr - 14:30 Uhr",
+  "eventInfos": [
+    {
+      "name": "Peter und der Wolf 2",
+      "languageId": 0,
+      "importantNotes": "",
+      "artists": "Marianne Hofer - Konzept, Figurenspiel &amp; Sandmalerei | Nathalie Hildebrand Isler - Figurenspiel | Elmar Büeler - Figurenspiel | Robert Hofer - Bühnenbau und Technik | Evamaria Felder - Flöte, Akkordeon (Tonaufnahme) | Mirjam Wagner - Klavier, Xylophon (Tonaufnahme) | Robin Keller - Cello, Melodica (Tonaufnahme)",
+      "location": "Natur-Museum",
+      "flyerImagePath": "https://petruschka.netlify.app/assets/images/main/portrait/2022w.jpg",
+      "shortDescription": "Ein Wintermärchen für grosse und kleine Zuschauer ab 5 Jahren - Mit der Musik von Sergei Prokofjew (Bearbeitung für Trio)\n",
+      "longDescription": "<p><strong>Figurentheater PETRUSCHKA - Peter und der Wolf 2</strong></p> \n<p>Peter darf die Winterferien bei seinem Grossvater in einem tief verschneiten Dorf verbringen. Dort trifft er einen Schausteller, der einen Wolf in einem engen Käfig den Leuten für Geld zeigt.</p> \n<p>Peter hat Mitleid mit dem armen Tier und befreit heimlich den unglücklichen Wolf. Dieser verspricht ihm, dass sie von nun an Freunde sind.</p> \n<p>Wie geht dieses Abenteuer wohl weiter?</p> \n<p><strong>Aufführung</strong></p> \n<p>Jeweils 14:30 Uhr, Dauer ca. 1 h, Eintritt (inkl. Besuch Natur-Museum, inkl. Billettsteuer):</p> \n<p>Kinder: CHF 11.00, Erwachsene: CHF 22.00</p> \n",
+      "bannerImagePath": "https://petruschka.netlify.app/assets/images/main/landscape/2022w.jpg",
+      "url": "https://petruschka.ch"
+    }
+  ],
+  "facebookPixelId": "2022w",
+  "freeEventMaxTicketPrice": 75,
+  "googleAnalyticsTracker": "",
+  "groupId": "6988603169748984461",
+  "hasFullBrandingCampaign": false,
+  "hasSeatmap": false,
+  "hasSoldOrBlockedTickets": false,
+  "id": "6988603172320093512",
+  "isCoronaDonation": false,
+  "isFreeEvent": true,
+  "isHelpGastro": false,
+  "isStreamingEvent": false,
+  "legalCountry": "CH",
+  "locationIds": [
+    "6986084481808385766"
+  ],
+  "maxTicketPrice": 20000,
+  "model": "free",
+  "modelPlusPrice": "0.49 CHF pro Ticket + 1.9% exkl. MwSt.",
+  "modelProPrice": "0.69 CHF pro Ticket + 3.9% exkl. MwSt.",
+  "modifyDate": null,
+  "notificationEmail": "",
+  "organizerId": "0",
+  "organizerName": "Figurentheater PETRUSCHKA",
+  "partner": "none",
+  "payBackGuaranteeEnabled": false,
+  "payBackGuaranteeMode": "none",
+  "phoneVerificationEnabled": false,
+  "published": true,
+  "saleState": "sold_out",
+  "start": {
+    "$date": {
+      "$numberLong": "1674307800000"
+    }
+  },
+  "state": "published",
+  "status": 1,
+  "ticketTax": 7.7,
+  "ticketTypes": [
+    {
+      "ticketTypeInfos": [
+        {
+          "languageId": 0,
+          "imageUrl": "",
+          "description": "Tickets sind erhältlich via Natur-Museum, entweder direkt an der Kasse oder unter 041 228 54 11 (DI - SO, 10:00 - 17:00 Uhr)\n\nVorstellungen für Kindergärten und Schulen auf Wunsch- Anmeldung an Regula Auf der Maur: regulaaufdermaur@kinderkultur.ch",
+          "name": "Kinder"
+        }
+      ],
+      "sortOrder": 0,
+      "preSaleStart": {
+        "$date": {
+          "$numberLong": "1666213673041"
+        }
+      },
+      "price": 11,
+      "currency": "CHF"
+    },
+    {
+      "ticketTypeInfos": [
+        {
+          "languageId": 0,
+          "imageUrl": "",
+          "description": "Tickets sind erhältlich via Natur-Museum, entweder direkt an der Kasse oder unter 041 228 54 11 (DI - SO, 10:00 - 17:00 Uhr)\n\nVorstellungen für Kindergärten und Schulen auf Wunsch- Anmeldung an Regula Auf der Maur: regulaaufdermaur@kinderkultur.ch",
+          "name": "Erwachsene"
+        }
+      ],
+      "sortOrder": 1,
+      "preSaleStart": {
+        "$date": {
+          "$numberLong": "1666213673041"
+        }
+      },
+      "price": 22,
+      "currency": "CHF"
+    }
+  ],
+  "title": "Peter und der Wolf 2",
+  "url": "/de/p/kinderveranstaltungen/puppentheater/peter-und-der-wolf-2-6988603172320093512.html",
+  "visible": true
+},{
+  "_id": {
+    "$numberLong": "1674394200000"
+  },
+  "accountAddressId": "0",
+  "agendaEntryOnly": true,
+  "bankAccountPaymentPeriodInDays": null,
+  "bankAccountSaleEndDate": null,
+  "begin": "2023-01-22T14:30:00+01:00",
+  "campaignPriceString": "0.19 CHF pro Ticket und Gutschein exkl. MwSt.",
+  "cancelled": false,
+  "cancelledDescription": null,
+  "cashlessPaymentActive": false,
+  "checklistProgress": 45,
+  "coronaSeatBlocking": false,
+  "countryOfOrigin": "CH",
+  "creationDate": "2022-10-19T22:53:59+02:00",
+  "creatorId": "2279256",
+  "currencyId": 1,
+  "currencySymbol": "CHF",
+  "emblemToShow": {
+    "url": "/upload/rm/20/22/2022w-1.jpg",
+    "width": 784,
+    "height": 479
+  },
+  "end": "2023-01-22T15:30:00+01:00",
+  "eventDateString": "Sonntag, 22. Januar 2023, 14:30 Uhr - 14:30 Uhr",
+  "eventInfos": [
+    {
+      "name": "Peter und der Wolf 2",
+      "languageId": 0,
+      "importantNotes": "",
+      "artists": "Marianne Hofer - Konzept, Figurenspiel &amp; Sandmalerei | Nathalie Hildebrand Isler - Figurenspiel | Elmar Büeler - Figurenspiel | Robert Hofer - Bühnenbau und Technik | Evamaria Felder - Flöte, Akkordeon (Tonaufnahme) | Mirjam Wagner - Klavier, Xylophon (Tonaufnahme) | Robin Keller - Cello, Melodica (Tonaufnahme)",
+      "location": "Natur-Museum",
+      "flyerImagePath": "https://petruschka.netlify.app/assets/images/main/portrait/2022w.jpg",
+      "shortDescription": "Ein Wintermärchen für grosse und kleine Zuschauer ab 5 Jahren - Mit der Musik von Sergei Prokofjew (Bearbeitung für Trio)\n",
+      "longDescription": "<p><strong>Figurentheater PETRUSCHKA - Peter und der Wolf 2</strong></p> \n<p>Peter darf die Winterferien bei seinem Grossvater in einem tief verschneiten Dorf verbringen. Dort trifft er einen Schausteller, der einen Wolf in einem engen Käfig den Leuten für Geld zeigt.</p> \n<p>Peter hat Mitleid mit dem armen Tier und befreit heimlich den unglücklichen Wolf. Dieser verspricht ihm, dass sie von nun an Freunde sind.</p> \n<p>Wie geht dieses Abenteuer wohl weiter?</p> \n<p><strong>Aufführung</strong></p> \n<p>Jeweils 14:30 Uhr, Dauer ca. 1 h, Eintritt (inkl. Besuch Natur-Museum, inkl. Billettsteuer):</p> \n<p>Kinder: CHF 11.00, Erwachsene: CHF 22.00</p> \n",
+      "bannerImagePath": "https://petruschka.netlify.app/assets/images/main/landscape/2022w.jpg",
+      "url": "https://petruschka.ch"
+    }
+  ],
+  "facebookPixelId": "2022w",
+  "freeEventMaxTicketPrice": 75,
+  "googleAnalyticsTracker": "",
+  "groupId": "6988603169748984461",
+  "hasFullBrandingCampaign": false,
+  "hasSeatmap": false,
+  "hasSoldOrBlockedTickets": false,
+  "id": "6988603172450116938",
+  "isCoronaDonation": false,
+  "isFreeEvent": true,
+  "isHelpGastro": false,
+  "isStreamingEvent": false,
+  "legalCountry": "CH",
+  "locationIds": [
+    "6986084481808385766"
+  ],
+  "maxTicketPrice": 20000,
+  "model": "free",
+  "modelPlusPrice": "0.49 CHF pro Ticket + 1.9% exkl. MwSt.",
+  "modelProPrice": "0.69 CHF pro Ticket + 3.9% exkl. MwSt.",
+  "modifyDate": null,
+  "notificationEmail": "",
+  "organizerId": "0",
+  "organizerName": "Figurentheater PETRUSCHKA",
+  "partner": "none",
+  "payBackGuaranteeEnabled": false,
+  "payBackGuaranteeMode": "none",
+  "phoneVerificationEnabled": false,
+  "published": true,
+  "saleState": "sold_out",
+  "start": {
+    "$date": {
+      "$numberLong": "1674394200000"
+    }
+  },
+  "state": "published",
+  "status": 1,
+  "ticketTax": 7.7,
+  "ticketTypes": [
+    {
+      "ticketTypeInfos": [
+        {
+          "languageId": 0,
+          "imageUrl": "",
+          "description": "Tickets sind erhältlich via Natur-Museum, entweder direkt an der Kasse oder unter 041 228 54 11 (DI - SO, 10:00 - 17:00 Uhr)\n\nVorstellungen für Kindergärten und Schulen auf Wunsch- Anmeldung an Regula Auf der Maur: regulaaufdermaur@kinderkultur.ch",
+          "name": "Kinder"
+        }
+      ],
+      "sortOrder": 0,
+      "preSaleStart": {
+        "$date": {
+          "$numberLong": "1666213677416"
+        }
+      },
+      "price": 11,
+      "currency": "CHF"
+    },
+    {
+      "ticketTypeInfos": [
+        {
+          "languageId": 0,
+          "imageUrl": "",
+          "description": "Tickets sind erhältlich via Natur-Museum, entweder direkt an der Kasse oder unter 041 228 54 11 (DI - SO, 10:00 - 17:00 Uhr)\n\nVorstellungen für Kindergärten und Schulen auf Wunsch- Anmeldung an Regula Auf der Maur: regulaaufdermaur@kinderkultur.ch",
+          "name": "Erwachsene"
+        }
+      ],
+      "sortOrder": 1,
+      "preSaleStart": {
+        "$date": {
+          "$numberLong": "1666213677416"
+        }
+      },
+      "price": 22,
+      "currency": "CHF"
+    }
+  ],
+  "title": "Peter und der Wolf 2",
+  "url": "/de/p/kinderveranstaltungen/puppentheater/peter-und-der-wolf-2-6988603172450116938.html",
+  "visible": true
+},{
+  "_id": {
+    "$numberLong": "1674653400000"
+  },
+  "accountAddressId": "0",
+  "agendaEntryOnly": true,
+  "bankAccountPaymentPeriodInDays": null,
+  "bankAccountSaleEndDate": null,
+  "begin": "2023-01-25T14:30:00+01:00",
+  "campaignPriceString": "0.19 CHF pro Ticket und Gutschein exkl. MwSt.",
+  "cancelled": false,
+  "cancelledDescription": null,
+  "cashlessPaymentActive": false,
+  "checklistProgress": 45,
+  "coronaSeatBlocking": false,
+  "countryOfOrigin": "CH",
+  "creationDate": "2022-10-19T22:53:59+02:00",
+  "creatorId": "2279256",
+  "currencyId": 1,
+  "currencySymbol": "CHF",
+  "emblemToShow": {
+    "url": "/upload/rm/20/22/2022w-1.jpg",
+    "width": 784,
+    "height": 479
+  },
+  "end": "2023-01-25T15:30:00+01:00",
+  "eventDateString": "Mittwoch, 25. Januar 2023, 14:30 Uhr - 14:30 Uhr",
+  "eventInfos": [
+    {
+      "name": "Peter und der Wolf 2",
+      "languageId": 0,
+      "importantNotes": "",
+      "artists": "Marianne Hofer - Konzept, Figurenspiel &amp; Sandmalerei | Nathalie Hildebrand Isler - Figurenspiel | Elmar Büeler - Figurenspiel | Robert Hofer - Bühnenbau und Technik | Evamaria Felder - Flöte, Akkordeon (Tonaufnahme) | Mirjam Wagner - Klavier, Xylophon (Tonaufnahme) | Robin Keller - Cello, Melodica (Tonaufnahme)",
+      "location": "Natur-Museum",
+      "flyerImagePath": "https://petruschka.netlify.app/assets/images/main/portrait/2022w.jpg",
+      "shortDescription": "Ein Wintermärchen für grosse und kleine Zuschauer ab 5 Jahren - Mit der Musik von Sergei Prokofjew (Bearbeitung für Trio)\n",
+      "longDescription": "<p><strong>Figurentheater PETRUSCHKA - Peter und der Wolf 2</strong></p> \n<p>Peter darf die Winterferien bei seinem Grossvater in einem tief verschneiten Dorf verbringen. Dort trifft er einen Schausteller, der einen Wolf in einem engen Käfig den Leuten für Geld zeigt.</p> \n<p>Peter hat Mitleid mit dem armen Tier und befreit heimlich den unglücklichen Wolf. Dieser verspricht ihm, dass sie von nun an Freunde sind.</p> \n<p>Wie geht dieses Abenteuer wohl weiter?</p> \n<p><strong>Aufführung</strong></p> \n<p>Jeweils 14:30 Uhr, Dauer ca. 1 h, Eintritt (inkl. Besuch Natur-Museum, inkl. Billettsteuer):</p> \n<p>Kinder: CHF 11.00, Erwachsene: CHF 22.00</p> \n",
+      "bannerImagePath": "https://petruschka.netlify.app/assets/images/main/landscape/2022w.jpg",
+      "url": "https://petruschka.ch"
+    }
+  ],
+  "facebookPixelId": "2022w",
+  "freeEventMaxTicketPrice": 75,
+  "googleAnalyticsTracker": "",
+  "groupId": "6988603169748984461",
+  "hasFullBrandingCampaign": false,
+  "hasSeatmap": false,
+  "hasSoldOrBlockedTickets": false,
+  "id": "6988603172580140364",
+  "isCoronaDonation": false,
+  "isFreeEvent": true,
+  "isHelpGastro": false,
+  "isStreamingEvent": false,
+  "legalCountry": "CH",
+  "locationIds": [
+    "6986084481808385766"
+  ],
+  "maxTicketPrice": 20000,
+  "model": "free",
+  "modelPlusPrice": "0.49 CHF pro Ticket + 1.9% exkl. MwSt.",
+  "modelProPrice": "0.69 CHF pro Ticket + 3.9% exkl. MwSt.",
+  "modifyDate": null,
+  "notificationEmail": "",
+  "organizerId": "0",
+  "organizerName": "Figurentheater PETRUSCHKA",
+  "partner": "none",
+  "payBackGuaranteeEnabled": false,
+  "payBackGuaranteeMode": "none",
+  "phoneVerificationEnabled": false,
+  "published": true,
+  "saleState": "sold_out",
+  "start": {
+    "$date": {
+      "$numberLong": "1674653400000"
+    }
+  },
+  "state": "published",
+  "status": 1,
+  "ticketTax": 7.7,
+  "ticketTypes": [
+    {
+      "ticketTypeInfos": [
+        {
+          "languageId": 0,
+          "imageUrl": "",
+          "description": "Tickets sind erhältlich via Natur-Museum, entweder direkt an der Kasse oder unter 041 228 54 11 (DI - SO, 10:00 - 17:00 Uhr)\n\nVorstellungen für Kindergärten und Schulen auf Wunsch- Anmeldung an Regula Auf der Maur: regulaaufdermaur@kinderkultur.ch",
+          "name": "Kinder"
+        }
+      ],
+      "sortOrder": 0,
+      "preSaleStart": {
+        "$date": {
+          "$numberLong": "1666213681932"
+        }
+      },
+      "price": 11,
+      "currency": "CHF"
+    },
+    {
+      "ticketTypeInfos": [
+        {
+          "languageId": 0,
+          "imageUrl": "",
+          "description": "Tickets sind erhältlich via Natur-Museum, entweder direkt an der Kasse oder unter 041 228 54 11 (DI - SO, 10:00 - 17:00 Uhr)\n\nVorstellungen für Kindergärten und Schulen auf Wunsch- Anmeldung an Regula Auf der Maur: regulaaufdermaur@kinderkultur.ch",
+          "name": "Erwachsene"
+        }
+      ],
+      "sortOrder": 1,
+      "preSaleStart": {
+        "$date": {
+          "$numberLong": "1666213681932"
+        }
+      },
+      "price": 22,
+      "currency": "CHF"
+    }
+  ],
+  "title": "Peter und der Wolf 2",
+  "url": "/de/p/kinderveranstaltungen/puppentheater/peter-und-der-wolf-2-6988603172580140364.html",
+  "visible": true
+},{
+  "_id": {
+    "$numberLong": "1674912600000"
+  },
+  "accountAddressId": "0",
+  "agendaEntryOnly": true,
+  "bankAccountPaymentPeriodInDays": null,
+  "bankAccountSaleEndDate": null,
+  "begin": "2023-01-28T14:30:00+01:00",
+  "campaignPriceString": "0.19 CHF pro Ticket und Gutschein exkl. MwSt.",
+  "cancelled": false,
+  "cancelledDescription": null,
+  "cashlessPaymentActive": false,
+  "checklistProgress": 45,
+  "coronaSeatBlocking": false,
+  "countryOfOrigin": "CH",
+  "creationDate": "2022-10-19T22:53:59+02:00",
+  "creatorId": "2279256",
+  "currencyId": 1,
+  "currencySymbol": "CHF",
+  "emblemToShow": {
+    "url": "/upload/rm/20/22/2022w-1.jpg",
+    "width": 784,
+    "height": 479
+  },
+  "end": "2023-01-28T15:30:00+01:00",
+  "eventDateString": "Samstag, 28. Januar 2023, 14:30 Uhr - 14:30 Uhr",
+  "eventInfos": [
+    {
+      "name": "Peter und der Wolf 2",
+      "languageId": 0,
+      "importantNotes": "",
+      "artists": "Marianne Hofer - Konzept, Figurenspiel &amp; Sandmalerei | Nathalie Hildebrand Isler - Figurenspiel | Elmar Büeler - Figurenspiel | Robert Hofer - Bühnenbau und Technik | Evamaria Felder - Flöte, Akkordeon (Tonaufnahme) | Mirjam Wagner - Klavier, Xylophon (Tonaufnahme) | Robin Keller - Cello, Melodica (Tonaufnahme)",
+      "location": "Natur-Museum",
+      "flyerImagePath": "https://petruschka.netlify.app/assets/images/main/portrait/2022w.jpg",
+      "shortDescription": "Ein Wintermärchen für grosse und kleine Zuschauer ab 5 Jahren - Mit der Musik von Sergei Prokofjew (Bearbeitung für Trio)\n",
+      "longDescription": "<p><strong>Figurentheater PETRUSCHKA - Peter und der Wolf 2</strong></p> \n<p>Peter darf die Winterferien bei seinem Grossvater in einem tief verschneiten Dorf verbringen. Dort trifft er einen Schausteller, der einen Wolf in einem engen Käfig den Leuten für Geld zeigt.</p> \n<p>Peter hat Mitleid mit dem armen Tier und befreit heimlich den unglücklichen Wolf. Dieser verspricht ihm, dass sie von nun an Freunde sind.</p> \n<p>Wie geht dieses Abenteuer wohl weiter?</p> \n<p><strong>Aufführung</strong></p> \n<p>Jeweils 14:30 Uhr, Dauer ca. 1 h, Eintritt (inkl. Besuch Natur-Museum, inkl. Billettsteuer):</p> \n<p>Kinder: CHF 11.00, Erwachsene: CHF 22.00</p> \n",
+      "bannerImagePath": "https://petruschka.netlify.app/assets/images/main/landscape/2022w.jpg",
+      "url": "https://petruschka.ch"
+    }
+  ],
+  "facebookPixelId": "2022w",
+  "freeEventMaxTicketPrice": 75,
+  "googleAnalyticsTracker": "",
+  "groupId": "6988603169748984461",
+  "hasFullBrandingCampaign": false,
+  "hasSeatmap": false,
+  "hasSoldOrBlockedTickets": false,
+  "id": "6988603172726941006",
+  "isCoronaDonation": false,
+  "isFreeEvent": true,
+  "isHelpGastro": false,
+  "isStreamingEvent": false,
+  "legalCountry": "CH",
+  "locationIds": [
+    "6986084481808385766"
+  ],
+  "maxTicketPrice": 20000,
+  "model": "free",
+  "modelPlusPrice": "0.49 CHF pro Ticket + 1.9% exkl. MwSt.",
+  "modelProPrice": "0.69 CHF pro Ticket + 3.9% exkl. MwSt.",
+  "modifyDate": null,
+  "notificationEmail": "",
+  "organizerId": "0",
+  "organizerName": "Figurentheater PETRUSCHKA",
+  "partner": "none",
+  "payBackGuaranteeEnabled": false,
+  "payBackGuaranteeMode": "none",
+  "phoneVerificationEnabled": false,
+  "published": true,
+  "saleState": "sold_out",
+  "start": {
+    "$date": {
+      "$numberLong": "1674912600000"
+    }
+  },
+  "state": "published",
+  "status": 1,
+  "ticketTax": 7.7,
+  "ticketTypes": [
+    {
+      "ticketTypeInfos": [
+        {
+          "languageId": 0,
+          "imageUrl": "",
+          "description": "Tickets sind erhältlich via Natur-Museum, entweder direkt an der Kasse oder unter 041 228 54 11 (DI - SO, 10:00 - 17:00 Uhr)\n\nVorstellungen für Kindergärten und Schulen auf Wunsch- Anmeldung an Regula Auf der Maur: regulaaufdermaur@kinderkultur.ch",
+          "name": "Kinder"
+        }
+      ],
+      "sortOrder": 0,
+      "preSaleStart": {
+        "$date": {
+          "$numberLong": "1666213686317"
+        }
+      },
+      "price": 11,
+      "currency": "CHF"
+    },
+    {
+      "ticketTypeInfos": [
+        {
+          "languageId": 0,
+          "imageUrl": "",
+          "description": "Tickets sind erhältlich via Natur-Museum, entweder direkt an der Kasse oder unter 041 228 54 11 (DI - SO, 10:00 - 17:00 Uhr)\n\nVorstellungen für Kindergärten und Schulen auf Wunsch- Anmeldung an Regula Auf der Maur: regulaaufdermaur@kinderkultur.ch",
+          "name": "Erwachsene"
+        }
+      ],
+      "sortOrder": 1,
+      "preSaleStart": {
+        "$date": {
+          "$numberLong": "1666213686317"
+        }
+      },
+      "price": 22,
+      "currency": "CHF"
+    }
+  ],
+  "title": "Peter und der Wolf 2",
+  "url": "/de/p/kinderveranstaltungen/puppentheater/peter-und-der-wolf-2-6988603172726941006.html",
+  "visible": true
+},{
+  "_id": {
+    "$numberLong": "1674999000000"
+  },
+  "accountAddressId": "0",
+  "agendaEntryOnly": true,
+  "bankAccountPaymentPeriodInDays": null,
+  "bankAccountSaleEndDate": null,
+  "begin": "2023-01-29T14:30:00+01:00",
+  "campaignPriceString": "0.19 CHF pro Ticket und Gutschein exkl. MwSt.",
+  "cancelled": false,
+  "cancelledDescription": null,
+  "cashlessPaymentActive": false,
+  "checklistProgress": 45,
+  "coronaSeatBlocking": false,
+  "countryOfOrigin": "CH",
+  "creationDate": "2022-10-19T22:53:59+02:00",
+  "creatorId": "2279256",
+  "currencyId": 1,
+  "currencySymbol": "CHF",
+  "emblemToShow": {
+    "url": "/upload/rm/20/22/2022w-1.jpg",
+    "width": 784,
+    "height": 479
+  },
+  "end": "2023-01-29T15:30:00+01:00",
+  "eventDateString": "Sonntag, 29. Januar 2023, 14:30 Uhr - 14:30 Uhr",
+  "eventInfos": [
+    {
+      "name": "Peter und der Wolf 2",
+      "languageId": 0,
+      "importantNotes": "",
+      "artists": "Marianne Hofer - Konzept, Figurenspiel &amp; Sandmalerei | Nathalie Hildebrand Isler - Figurenspiel | Elmar Büeler - Figurenspiel | Robert Hofer - Bühnenbau und Technik | Evamaria Felder - Flöte, Akkordeon (Tonaufnahme) | Mirjam Wagner - Klavier, Xylophon (Tonaufnahme) | Robin Keller - Cello, Melodica (Tonaufnahme)",
+      "location": "Natur-Museum",
+      "flyerImagePath": "https://petruschka.netlify.app/assets/images/main/portrait/2022w.jpg",
+      "shortDescription": "Ein Wintermärchen für grosse und kleine Zuschauer ab 5 Jahren - Mit der Musik von Sergei Prokofjew (Bearbeitung für Trio)\n",
+      "longDescription": "<p><strong>Figurentheater PETRUSCHKA - Peter und der Wolf 2</strong></p> \n<p>Peter darf die Winterferien bei seinem Grossvater in einem tief verschneiten Dorf verbringen. Dort trifft er einen Schausteller, der einen Wolf in einem engen Käfig den Leuten für Geld zeigt.</p> \n<p>Peter hat Mitleid mit dem armen Tier und befreit heimlich den unglücklichen Wolf. Dieser verspricht ihm, dass sie von nun an Freunde sind.</p> \n<p>Wie geht dieses Abenteuer wohl weiter?</p> \n<p><strong>Aufführung</strong></p> \n<p>Jeweils 14:30 Uhr, Dauer ca. 1 h, Eintritt (inkl. Besuch Natur-Museum, inkl. Billettsteuer):</p> \n<p>Kinder: CHF 11.00, Erwachsene: CHF 22.00</p> \n",
+      "bannerImagePath": "https://petruschka.netlify.app/assets/images/main/landscape/2022w.jpg",
+      "url": "https://petruschka.ch"
+    }
+  ],
+  "facebookPixelId": "2022w",
+  "freeEventMaxTicketPrice": 75,
+  "googleAnalyticsTracker": "",
+  "groupId": "6988603169748984461",
+  "hasFullBrandingCampaign": false,
+  "hasSeatmap": false,
+  "hasSoldOrBlockedTickets": false,
+  "id": "6988603172852770128",
+  "isCoronaDonation": false,
+  "isFreeEvent": true,
+  "isHelpGastro": false,
+  "isStreamingEvent": false,
+  "legalCountry": "CH",
+  "locationIds": [
+    "6986084481808385766"
+  ],
+  "maxTicketPrice": 20000,
+  "model": "free",
+  "modelPlusPrice": "0.49 CHF pro Ticket + 1.9% exkl. MwSt.",
+  "modelProPrice": "0.69 CHF pro Ticket + 3.9% exkl. MwSt.",
+  "modifyDate": null,
+  "notificationEmail": "",
+  "organizerId": "0",
+  "organizerName": "Figurentheater PETRUSCHKA",
+  "partner": "none",
+  "payBackGuaranteeEnabled": false,
+  "payBackGuaranteeMode": "none",
+  "phoneVerificationEnabled": false,
+  "published": true,
+  "saleState": "sold_out",
+  "start": {
+    "$date": {
+      "$numberLong": "1674999000000"
+    }
+  },
+  "state": "published",
+  "status": 1,
+  "ticketTax": 7.7,
+  "ticketTypes": [
+    {
+      "ticketTypeInfos": [
+        {
+          "languageId": 0,
+          "imageUrl": "",
+          "description": "Tickets sind erhältlich via Natur-Museum, entweder direkt an der Kasse oder unter 041 228 54 11 (DI - SO, 10:00 - 17:00 Uhr)\n\nVorstellungen für Kindergärten und Schulen auf Wunsch- Anmeldung an Regula Auf der Maur: regulaaufdermaur@kinderkultur.ch",
+          "name": "Kinder"
+        }
+      ],
+      "sortOrder": 0,
+      "preSaleStart": {
+        "$date": {
+          "$numberLong": "1666213690703"
+        }
+      },
+      "price": 11,
+      "currency": "CHF"
+    },
+    {
+      "ticketTypeInfos": [
+        {
+          "languageId": 0,
+          "imageUrl": "",
+          "description": "Tickets sind erhältlich via Natur-Museum, entweder direkt an der Kasse oder unter 041 228 54 11 (DI - SO, 10:00 - 17:00 Uhr)\n\nVorstellungen für Kindergärten und Schulen auf Wunsch- Anmeldung an Regula Auf der Maur: regulaaufdermaur@kinderkultur.ch",
+          "name": "Erwachsene"
+        }
+      ],
+      "sortOrder": 1,
+      "preSaleStart": {
+        "$date": {
+          "$numberLong": "1666213690703"
+        }
+      },
+      "price": 22,
+      "currency": "CHF"
+    }
+  ],
+  "title": "Peter und der Wolf 2",
+  "url": "/de/p/kinderveranstaltungen/puppentheater/peter-und-der-wolf-2-6988603172852770128.html",
+  "visible": true
+},{
+  "_id": {
+    "$numberLong": "1675258200000"
+  },
+  "accountAddressId": "0",
+  "agendaEntryOnly": true,
+  "bankAccountPaymentPeriodInDays": null,
+  "bankAccountSaleEndDate": null,
+  "begin": "2023-02-01T14:30:00+01:00",
+  "campaignPriceString": "0.19 CHF pro Ticket und Gutschein exkl. MwSt.",
+  "cancelled": false,
+  "cancelledDescription": null,
+  "cashlessPaymentActive": false,
+  "checklistProgress": 45,
+  "coronaSeatBlocking": false,
+  "countryOfOrigin": "CH",
+  "creationDate": "2022-10-19T22:53:59+02:00",
+  "creatorId": "2279256",
+  "currencyId": 1,
+  "currencySymbol": "CHF",
+  "emblemToShow": {
+    "url": "/upload/rm/20/22/2022w-1.jpg",
+    "width": 784,
+    "height": 479
+  },
+  "end": "2023-02-01T15:30:00+01:00",
+  "eventDateString": "Mittwoch, 1. Februar 2023, 14:30 Uhr - 14:30 Uhr",
+  "eventInfos": [
+    {
+      "name": "Peter und der Wolf 2",
+      "languageId": 0,
+      "importantNotes": "",
+      "artists": "Marianne Hofer - Konzept, Figurenspiel &amp; Sandmalerei | Nathalie Hildebrand Isler - Figurenspiel | Elmar Büeler - Figurenspiel | Robert Hofer - Bühnenbau und Technik | Evamaria Felder - Flöte, Akkordeon (Tonaufnahme) | Mirjam Wagner - Klavier, Xylophon (Tonaufnahme) | Robin Keller - Cello, Melodica (Tonaufnahme)",
+      "location": "Natur-Museum",
+      "flyerImagePath": "https://petruschka.netlify.app/assets/images/main/portrait/2022w.jpg",
+      "shortDescription": "Ein Wintermärchen für grosse und kleine Zuschauer ab 5 Jahren - Mit der Musik von Sergei Prokofjew (Bearbeitung für Trio)\n",
+      "longDescription": "<p><strong>Figurentheater PETRUSCHKA - Peter und der Wolf 2</strong></p> \n<p>Peter darf die Winterferien bei seinem Grossvater in einem tief verschneiten Dorf verbringen. Dort trifft er einen Schausteller, der einen Wolf in einem engen Käfig den Leuten für Geld zeigt.</p> \n<p>Peter hat Mitleid mit dem armen Tier und befreit heimlich den unglücklichen Wolf. Dieser verspricht ihm, dass sie von nun an Freunde sind.</p> \n<p>Wie geht dieses Abenteuer wohl weiter?</p> \n<p><strong>Aufführung</strong></p> \n<p>Jeweils 14:30 Uhr, Dauer ca. 1 h, Eintritt (inkl. Besuch Natur-Museum, inkl. Billettsteuer):</p> \n<p>Kinder: CHF 11.00, Erwachsene: CHF 22.00</p> \n",
+      "bannerImagePath": "https://petruschka.netlify.app/assets/images/main/landscape/2022w.jpg",
+      "url": "https://petruschka.ch"
+    }
+  ],
+  "facebookPixelId": "2022w",
+  "freeEventMaxTicketPrice": 75,
+  "googleAnalyticsTracker": "",
+  "groupId": "6988603169748984461",
+  "hasFullBrandingCampaign": false,
+  "hasSeatmap": false,
+  "hasSoldOrBlockedTickets": false,
+  "id": "6988603173238646186",
+  "isCoronaDonation": false,
+  "isFreeEvent": true,
+  "isHelpGastro": false,
+  "isStreamingEvent": false,
+  "legalCountry": "CH",
+  "locationIds": [
+    "6986084481808385766"
+  ],
+  "maxTicketPrice": 20000,
+  "model": "free",
+  "modelPlusPrice": "0.49 CHF pro Ticket + 1.9% exkl. MwSt.",
+  "modelProPrice": "0.69 CHF pro Ticket + 3.9% exkl. MwSt.",
+  "modifyDate": null,
+  "notificationEmail": "",
+  "organizerId": "0",
+  "organizerName": "Figurentheater PETRUSCHKA",
+  "partner": "none",
+  "payBackGuaranteeEnabled": false,
+  "payBackGuaranteeMode": "none",
+  "phoneVerificationEnabled": false,
+  "published": true,
+  "saleState": "sold_out",
+  "start": {
+    "$date": {
+      "$numberLong": "1675258200000"
+    }
+  },
+  "state": "published",
+  "status": 1,
+  "ticketTax": 7.7,
+  "ticketTypes": [
+    {
+      "ticketTypeInfos": [
+        {
+          "languageId": 0,
+          "imageUrl": "",
+          "description": "Tickets sind erhältlich via Natur-Museum, entweder direkt an der Kasse oder unter 041 228 54 11 (DI - SO, 10:00 - 17:00 Uhr)\n\nVorstellungen für Kindergärten und Schulen auf Wunsch- Anmeldung an Regula Auf der Maur: regulaaufdermaur@kinderkultur.ch",
+          "name": "Kinder"
+        }
+      ],
+      "sortOrder": 0,
+      "preSaleStart": {
+        "$date": {
+          "$numberLong": "1666213695083"
+        }
+      },
+      "price": 11,
+      "currency": "CHF"
+    },
+    {
+      "ticketTypeInfos": [
+        {
+          "languageId": 0,
+          "imageUrl": "",
+          "description": "Tickets sind erhältlich via Natur-Museum, entweder direkt an der Kasse oder unter 041 228 54 11 (DI - SO, 10:00 - 17:00 Uhr)\n\nVorstellungen für Kindergärten und Schulen auf Wunsch- Anmeldung an Regula Auf der Maur: regulaaufdermaur@kinderkultur.ch",
+          "name": "Erwachsene"
+        }
+      ],
+      "sortOrder": 1,
+      "preSaleStart": {
+        "$date": {
+          "$numberLong": "1666213695083"
+        }
+      },
+      "price": 22,
+      "currency": "CHF"
+    }
+  ],
+  "title": "Peter und der Wolf 2",
+  "url": "/de/p/kinderveranstaltungen/puppentheater/peter-und-der-wolf-2-6988603173238646186.html",
+  "visible": true
+},{
+  "_id": {
+    "$numberLong": "1675517400000"
+  },
+  "accountAddressId": "0",
+  "agendaEntryOnly": true,
+  "bankAccountPaymentPeriodInDays": null,
+  "bankAccountSaleEndDate": null,
+  "begin": "2023-02-04T14:30:00+01:00",
+  "campaignPriceString": "0.19 CHF pro Ticket und Gutschein exkl. MwSt.",
+  "cancelled": false,
+  "cancelledDescription": null,
+  "cashlessPaymentActive": false,
+  "checklistProgress": 45,
+  "coronaSeatBlocking": false,
+  "countryOfOrigin": "CH",
+  "creationDate": "2022-10-19T22:53:59+02:00",
+  "creatorId": "2279256",
+  "currencyId": 1,
+  "currencySymbol": "CHF",
+  "emblemToShow": {
+    "url": "/upload/rm/20/22/2022w-1.jpg",
+    "width": 784,
+    "height": 479
+  },
+  "end": "2023-02-04T15:30:00+01:00",
+  "eventDateString": "Samstag, 4. Februar 2023, 14:30 Uhr - 14:30 Uhr",
+  "eventInfos": [
+    {
+      "name": "Peter und der Wolf 2",
+      "languageId": 0,
+      "importantNotes": "",
+      "artists": "Marianne Hofer - Konzept, Figurenspiel &amp; Sandmalerei | Nathalie Hildebrand Isler - Figurenspiel | Elmar Büeler - Figurenspiel | Robert Hofer - Bühnenbau und Technik | Evamaria Felder - Flöte, Akkordeon (Tonaufnahme) | Mirjam Wagner - Klavier, Xylophon (Tonaufnahme) | Robin Keller - Cello, Melodica (Tonaufnahme)",
+      "location": "Natur-Museum",
+      "flyerImagePath": "https://petruschka.netlify.app/assets/images/main/portrait/2022w.jpg",
+      "shortDescription": "Ein Wintermärchen für grosse und kleine Zuschauer ab 5 Jahren - Mit der Musik von Sergei Prokofjew (Bearbeitung für Trio)\n",
+      "longDescription": "<p><strong>Figurentheater PETRUSCHKA - Peter und der Wolf 2</strong></p> \n<p>Peter darf die Winterferien bei seinem Grossvater in einem tief verschneiten Dorf verbringen. Dort trifft er einen Schausteller, der einen Wolf in einem engen Käfig den Leuten für Geld zeigt.</p> \n<p>Peter hat Mitleid mit dem armen Tier und befreit heimlich den unglücklichen Wolf. Dieser verspricht ihm, dass sie von nun an Freunde sind.</p> \n<p>Wie geht dieses Abenteuer wohl weiter?</p> \n<p><strong>Aufführung</strong></p> \n<p>Jeweils 14:30 Uhr, Dauer ca. 1 h, Eintritt (inkl. Besuch Natur-Museum, inkl. Billettsteuer):</p> \n<p>Kinder: CHF 11.00, Erwachsene: CHF 22.00</p> \n",
+      "bannerImagePath": "https://petruschka.netlify.app/assets/images/main/landscape/2022w.jpg",
+      "url": "https://petruschka.ch"
+    }
+  ],
+  "facebookPixelId": "2022w",
+  "freeEventMaxTicketPrice": 75,
+  "googleAnalyticsTracker": "",
+  "groupId": "6988603169748984461",
+  "hasFullBrandingCampaign": false,
+  "hasSeatmap": false,
+  "hasSoldOrBlockedTickets": false,
+  "id": "6988603173372863916",
+  "isCoronaDonation": false,
+  "isFreeEvent": true,
+  "isHelpGastro": false,
+  "isStreamingEvent": false,
+  "legalCountry": "CH",
+  "locationIds": [
+    "6986084481808385766"
+  ],
+  "maxTicketPrice": 20000,
+  "model": "free",
+  "modelPlusPrice": "0.49 CHF pro Ticket + 1.9% exkl. MwSt.",
+  "modelProPrice": "0.69 CHF pro Ticket + 3.9% exkl. MwSt.",
+  "modifyDate": null,
+  "notificationEmail": "",
+  "organizerId": "0",
+  "organizerName": "Figurentheater PETRUSCHKA",
+  "partner": "none",
+  "payBackGuaranteeEnabled": false,
+  "payBackGuaranteeMode": "none",
+  "phoneVerificationEnabled": false,
+  "published": true,
+  "saleState": "sold_out",
+  "start": {
+    "$date": {
+      "$numberLong": "1675517400000"
+    }
+  },
+  "state": "published",
+  "status": 1,
+  "ticketTax": 7.7,
+  "ticketTypes": [
+    {
+      "ticketTypeInfos": [
+        {
+          "languageId": 0,
+          "imageUrl": "",
+          "description": "Tickets sind erhältlich via Natur-Museum, entweder direkt an der Kasse oder unter 041 228 54 11 (DI - SO, 10:00 - 17:00 Uhr)\n\nVorstellungen für Kindergärten und Schulen auf Wunsch- Anmeldung an Regula Auf der Maur: regulaaufdermaur@kinderkultur.ch",
+          "name": "Kinder"
+        }
+      ],
+      "sortOrder": 0,
+      "preSaleStart": {
+        "$date": {
+          "$numberLong": "1666213699467"
+        }
+      },
+      "price": 11,
+      "currency": "CHF"
+    },
+    {
+      "ticketTypeInfos": [
+        {
+          "languageId": 0,
+          "imageUrl": "",
+          "description": "Tickets sind erhältlich via Natur-Museum, entweder direkt an der Kasse oder unter 041 228 54 11 (DI - SO, 10:00 - 17:00 Uhr)\n\nVorstellungen für Kindergärten und Schulen auf Wunsch- Anmeldung an Regula Auf der Maur: regulaaufdermaur@kinderkultur.ch",
+          "name": "Erwachsene"
+        }
+      ],
+      "sortOrder": 1,
+      "preSaleStart": {
+        "$date": {
+          "$numberLong": "1666213699467"
+        }
+      },
+      "price": 22,
+      "currency": "CHF"
+    }
+  ],
+  "title": "Peter und der Wolf 2",
+  "url": "/de/p/kinderveranstaltungen/puppentheater/peter-und-der-wolf-2-6988603173372863916.html",
+  "visible": true
+},{
+  "_id": {
+    "$numberLong": "1675603800000"
+  },
+  "accountAddressId": "0",
+  "agendaEntryOnly": true,
+  "bankAccountPaymentPeriodInDays": null,
+  "bankAccountSaleEndDate": null,
+  "begin": "2023-02-05T14:30:00+01:00",
+  "campaignPriceString": "0.19 CHF pro Ticket und Gutschein exkl. MwSt.",
+  "cancelled": false,
+  "cancelledDescription": null,
+  "cashlessPaymentActive": false,
+  "checklistProgress": 45,
+  "coronaSeatBlocking": false,
+  "countryOfOrigin": "CH",
+  "creationDate": "2022-10-19T22:53:59+02:00",
+  "creatorId": "2279256",
+  "currencyId": 1,
+  "currencySymbol": "CHF",
+  "emblemToShow": {
+    "url": "/upload/rm/20/22/2022w-1.jpg",
+    "width": 784,
+    "height": 479
+  },
+  "end": "2023-02-05T15:30:00+01:00",
+  "eventDateString": "Sonntag, 5. Februar 2023, 14:30 Uhr - 14:30 Uhr",
+  "eventInfos": [
+    {
+      "name": "Peter und der Wolf 2",
+      "languageId": 0,
+      "importantNotes": "",
+      "artists": "Marianne Hofer - Konzept, Figurenspiel &amp; Sandmalerei | Nathalie Hildebrand Isler - Figurenspiel | Elmar Büeler - Figurenspiel | Robert Hofer - Bühnenbau und Technik | Evamaria Felder - Flöte, Akkordeon (Tonaufnahme) | Mirjam Wagner - Klavier, Xylophon (Tonaufnahme) | Robin Keller - Cello, Melodica (Tonaufnahme)",
+      "location": "Natur-Museum",
+      "flyerImagePath": "https://petruschka.netlify.app/assets/images/main/portrait/2022w.jpg",
+      "shortDescription": "Ein Wintermärchen für grosse und kleine Zuschauer ab 5 Jahren - Mit der Musik von Sergei Prokofjew (Bearbeitung für Trio)\n",
+      "longDescription": "<p><strong>Figurentheater PETRUSCHKA - Peter und der Wolf 2</strong></p> \n<p>Peter darf die Winterferien bei seinem Grossvater in einem tief verschneiten Dorf verbringen. Dort trifft er einen Schausteller, der einen Wolf in einem engen Käfig den Leuten für Geld zeigt.</p> \n<p>Peter hat Mitleid mit dem armen Tier und befreit heimlich den unglücklichen Wolf. Dieser verspricht ihm, dass sie von nun an Freunde sind.</p> \n<p>Wie geht dieses Abenteuer wohl weiter?</p> \n<p><strong>Aufführung</strong></p> \n<p>Jeweils 14:30 Uhr, Dauer ca. 1 h, Eintritt (inkl. Besuch Natur-Museum, inkl. Billettsteuer):</p> \n<p>Kinder: CHF 11.00, Erwachsene: CHF 22.00</p> \n",
+      "bannerImagePath": "https://petruschka.netlify.app/assets/images/main/landscape/2022w.jpg",
+      "url": "https://petruschka.ch"
+    }
+  ],
+  "facebookPixelId": "2022w",
+  "freeEventMaxTicketPrice": 75,
+  "googleAnalyticsTracker": "",
+  "groupId": "6988603169748984461",
+  "hasFullBrandingCampaign": false,
+  "hasSeatmap": false,
+  "hasSoldOrBlockedTickets": false,
+  "id": "6988603173523858862",
+  "isCoronaDonation": false,
+  "isFreeEvent": true,
+  "isHelpGastro": false,
+  "isStreamingEvent": false,
+  "legalCountry": "CH",
+  "locationIds": [
+    "6986084481808385766"
+  ],
+  "maxTicketPrice": 20000,
+  "model": "free",
+  "modelPlusPrice": "0.49 CHF pro Ticket + 1.9% exkl. MwSt.",
+  "modelProPrice": "0.69 CHF pro Ticket + 3.9% exkl. MwSt.",
+  "modifyDate": null,
+  "notificationEmail": "",
+  "organizerId": "0",
+  "organizerName": "Figurentheater PETRUSCHKA",
+  "partner": "none",
+  "payBackGuaranteeEnabled": false,
+  "payBackGuaranteeMode": "none",
+  "phoneVerificationEnabled": false,
+  "published": true,
+  "saleState": "sold_out",
+  "start": {
+    "$date": {
+      "$numberLong": "1675603800000"
+    }
+  },
+  "state": "published",
+  "status": 1,
+  "ticketTax": 7.7,
+  "ticketTypes": [
+    {
+      "ticketTypeInfos": [
+        {
+          "languageId": 0,
+          "imageUrl": "",
+          "description": "Tickets sind erhältlich via Natur-Museum, entweder direkt an der Kasse oder unter 041 228 54 11 (DI - SO, 10:00 - 17:00 Uhr)\n\nVorstellungen für Kindergärten und Schulen auf Wunsch- Anmeldung an Regula Auf der Maur: regulaaufdermaur@kinderkultur.ch",
+          "name": "Kinder"
+        }
+      ],
+      "sortOrder": 0,
+      "preSaleStart": {
+        "$date": {
+          "$numberLong": "1666213703838"
+        }
+      },
+      "price": 11,
+      "currency": "CHF"
+    },
+    {
+      "ticketTypeInfos": [
+        {
+          "languageId": 0,
+          "imageUrl": "",
+          "description": "Tickets sind erhältlich via Natur-Museum, entweder direkt an der Kasse oder unter 041 228 54 11 (DI - SO, 10:00 - 17:00 Uhr)\n\nVorstellungen für Kindergärten und Schulen auf Wunsch- Anmeldung an Regula Auf der Maur: regulaaufdermaur@kinderkultur.ch",
+          "name": "Erwachsene"
+        }
+      ],
+      "sortOrder": 1,
+      "preSaleStart": {
+        "$date": {
+          "$numberLong": "1666213703838"
+        }
+      },
+      "price": 22,
+      "currency": "CHF"
+    }
+  ],
+  "title": "Peter und der Wolf 2",
+  "url": "/de/p/kinderveranstaltungen/puppentheater/peter-und-der-wolf-2-6988603173523858862.html",
+  "visible": true
+},{
+  "_id": {
+    "$numberLong": "1670506200000"
+  },
+  "accountAddressId": "0",
+  "agendaEntryOnly": true,
+  "bankAccountPaymentPeriodInDays": null,
+  "bankAccountSaleEndDate": null,
+  "begin": "2022-12-08T14:30:00+01:00",
+  "campaignPriceString": "0.19 CHF pro Ticket und Gutschein exkl. MwSt.",
+  "cancelled": false,
+  "cancelledDescription": null,
+  "cashlessPaymentActive": false,
+  "checklistProgress": 45,
+  "coronaSeatBlocking": false,
+  "countryOfOrigin": "CH",
+  "creationDate": "2022-10-19T22:53:58+02:00",
+  "creatorId": "2279256",
+  "currencyId": 1,
+  "currencySymbol": "CHF",
+  "emblemToShow": {
+    "url": "/upload/rm/20/22/2022w-1.jpg",
+    "width": 784,
+    "height": 479
+  },
+  "end": "2022-12-08T15:30:00+01:00",
+  "eventDateString": "Donnerstag, 8. Dezember 2022, 14:30 Uhr - 14:30 Uhr",
+  "eventInfos": [
+    {
+      "name": "Peter und der Wolf 2",
+      "languageId": 0,
+      "importantNotes": "",
+      "artists": "Marianne Hofer - Konzept, Figurenspiel &amp; Sandmalerei | Nathalie Hildebrand Isler - Figurenspiel | Elmar Büeler - Figurenspiel | Robert Hofer - Bühnenbau und Technik | Evamaria Felder - Flöte, Akkordeon (Tonaufnahme) | Mirjam Wagner - Klavier, Xylophon (Tonaufnahme) | Robin Keller - Cello, Melodica (Tonaufnahme)",
+      "location": "Natur-Museum",
+      "flyerImagePath": "https://petruschka.netlify.app/assets/images/main/portrait/2022w.jpg",
+      "shortDescription": "Ein Wintermärchen für grosse und kleine Zuschauer ab 5 Jahren - Mit der Musik von Sergei Prokofjew (Bearbeitung für Trio)\n",
+      "longDescription": "<p><strong>Figurentheater PETRUSCHKA - Peter und der Wolf 2</strong></p> \n<p>Peter darf die Winterferien bei seinem Grossvater in einem tief verschneiten Dorf verbringen. Dort trifft er einen Schausteller, der einen Wolf in einem engen Käfig den Leuten für Geld zeigt.</p> \n<p>Peter hat Mitleid mit dem armen Tier und befreit heimlich den unglücklichen Wolf. Dieser verspricht ihm, dass sie von nun an Freunde sind.</p> \n<p>Wie geht dieses Abenteuer wohl weiter?</p> \n<p><strong>Aufführung</strong></p> \n<p>Jeweils 14:30 Uhr, Dauer ca. 1 h, Eintritt (inkl. Besuch Natur-Museum, inkl. Billettsteuer):</p> \n<p>Kinder: CHF 11.00, Erwachsene: CHF 22.00</p> \n",
+      "bannerImagePath": "https://petruschka.netlify.app/assets/images/main/landscape/2022w.jpg",
+      "url": "https://petruschka.ch/"
+    }
+  ],
+  "facebookPixelId": "2022w",
+  "freeEventMaxTicketPrice": 75,
+  "googleAnalyticsTracker": "Premiere",
+  "groupId": "6988603169748984461",
+  "hasFullBrandingCampaign": false,
+  "hasSeatmap": false,
+  "hasSoldOrBlockedTickets": false,
+  "id": "6988603170659149106",
+  "isCoronaDonation": false,
+  "isFreeEvent": true,
+  "isHelpGastro": false,
+  "isStreamingEvent": false,
+  "legalCountry": "CH",
+  "locationIds": [
+    "6986084481808385766"
+  ],
+  "maxTicketPrice": 20000,
+  "model": "free",
+  "modelPlusPrice": "0.49 CHF pro Ticket + 1.9% exkl. MwSt.",
+  "modelProPrice": "0.69 CHF pro Ticket + 3.9% exkl. MwSt.",
+  "modifyDate": "2022-10-19T22:59:48+02:00",
+  "notificationEmail": "",
+  "organizerId": "0",
+  "organizerName": "Figurentheater PETRUSCHKA",
+  "partner": "none",
+  "payBackGuaranteeEnabled": false,
+  "payBackGuaranteeMode": "none",
+  "phoneVerificationEnabled": false,
+  "published": true,
+  "saleState": "sold_out",
+  "start": {
+    "$date": {
+      "$numberLong": "1670506200000"
+    }
+  },
+  "state": "published",
+  "status": 1,
+  "ticketTax": 7.7,
+  "ticketTypes": [
+    {
+      "ticketTypeInfos": [
+        {
+          "languageId": 0,
+          "imageUrl": "",
+          "description": "Tickets sind erhältlich via Natur-Museum, entweder direkt an der Kasse oder unter 041 228 54 11 (DI - SO, 10:00 - 17:00 Uhr)\n\nVorstellungen für Kindergärten und Schulen auf Wunsch- Anmeldung an Regula Auf der Maur: regulaaufdermaur@kinderkultur.ch",
+          "name": "Kinder"
+        }
+      ],
+      "sortOrder": 0,
+      "preSaleStart": {
+        "$date": {
+          "$numberLong": "1666213594088"
+        }
+      },
+      "price": 11,
+      "currency": "CHF"
+    },
+    {
+      "ticketTypeInfos": [
+        {
+          "languageId": 0,
+          "imageUrl": "",
+          "description": "Tickets sind erhältlich via Natur-Museum, entweder direkt an der Kasse oder unter 041 228 54 11 (DI - SO, 10:00 - 17:00 Uhr)\n\nVorstellungen für Kindergärten und Schulen auf Wunsch- Anmeldung an Regula Auf der Maur: regulaaufdermaur@kinderkultur.ch",
+          "name": "Erwachsene"
+        }
+      ],
+      "sortOrder": 1,
+      "preSaleStart": {
+        "$date": {
+          "$numberLong": "1666213594088"
+        }
+      },
+      "price": 22,
+      "currency": "CHF"
+    }
+  ],
+  "title": "Peter und der Wolf 2",
+  "url": "/de/p/kinderveranstaltungen/puppentheater/peter-und-der-wolf-2-6988603170659149106.html",
+  "visible": true
+},{
+  "_id": {
+    "$numberLong": "1670679000000"
+  },
+  "accountAddressId": "2281892",
+  "agendaEntryOnly": true,
+  "bankAccountPaymentPeriodInDays": null,
+  "bankAccountSaleEndDate": null,
+  "begin": "2022-12-10T14:30:00+01:00",
+  "campaignPriceString": "0.19 CHF pro Ticket und Gutschein exkl. MwSt.",
+  "cancelled": false,
+  "cancelledDescription": null,
+  "cashlessPaymentActive": false,
+  "checklistProgress": 61,
+  "coronaSeatBlocking": false,
+  "countryOfOrigin": "CH",
+  "creationDate": "2022-10-19T22:53:01+02:00",
+  "creatorId": "2279256",
+  "currencyId": 1,
+  "currencySymbol": "CHF",
+  "emblemToShow": {
+    "url": "/upload/rm/20/22/2022w-1.jpg?_=1666212781000",
+    "width": 784,
+    "height": 479
+  },
+  "end": "2022-12-10T15:30:00+01:00",
+  "eventDateString": "Samstag, 10. Dezember 2022, 14:30 Uhr - 14:30 Uhr",
+  "eventInfos": [
+    {
+      "name": "Peter und der Wolf 2",
+      "languageId": 0,
+      "importantNotes": "",
+      "artists": "Marianne Hofer - Konzept, Figurenspiel &amp; Sandmalerei | Nathalie Hildebrand Isler - Figurenspiel | Elmar Büeler - Figurenspiel | Robert Hofer - Bühnenbau und Technik | Evamaria Felder - Flöte, Akkordeon (Tonaufnahme) | Mirjam Wagner - Klavier, Xylophon (Tonaufnahme) | Robin Keller - Cello, Melodica (Tonaufnahme)",
+      "location": "Natur-Museum",
+      "flyerImagePath": "https://petruschka.netlify.app/assets/images/main/portrait/2022w.jpg",
+      "shortDescription": "Ein Wintermärchen für grosse und kleine Zuschauer ab 5 Jahren - Mit der Musik von Sergei Prokofjew (Bearbeitung für Trio)\n",
+      "longDescription": "<p><strong>Figurentheater PETRUSCHKA - Peter und der Wolf 2</strong></p> \n<p>Peter darf die Winterferien bei seinem Grossvater in einem tief verschneiten Dorf verbringen. Dort trifft er einen Schausteller, der einen Wolf in einem engen Käfig den Leuten für Geld zeigt.</p> \n<p>Peter hat Mitleid mit dem armen Tier und befreit heimlich den unglücklichen Wolf. Dieser verspricht ihm, dass sie von nun an Freunde sind.</p> \n<p>Wie geht dieses Abenteuer wohl weiter?</p> \n<p><strong>Aufführung</strong></p> \n<p>Jeweils 14:30 Uhr, Dauer ca. 1 h, Eintritt (inkl. Besuch Natur-Museum, inkl. Billettsteuer):</p> \n<p>Kinder: CHF 11.00, Erwachsene: CHF 22.00</p> \n",
+      "bannerImagePath": "https://petruschka.netlify.app/assets/images/main/landscape/2022w.jpg",
+      "url": "https://petruschka.ch/"
+    }
+  ],
+  "facebookPixelId": "2022w",
+  "freeEventMaxTicketPrice": 75,
+  "googleAnalyticsTracker": "",
+  "groupId": "6988603169748984461",
+  "hasFullBrandingCampaign": false,
+  "hasSeatmap": false,
+  "hasSoldOrBlockedTickets": false,
+  "id": "6988602928345815553",
+  "isCoronaDonation": false,
+  "isFreeEvent": true,
+  "isHelpGastro": false,
+  "isStreamingEvent": false,
+  "legalCountry": "CH",
+  "locationIds": [
+    "6986084481808385766"
+  ],
+  "maxTicketPrice": 20000,
+  "model": "free",
+  "modelPlusPrice": "0.49 CHF pro Ticket + 1.9% exkl. MwSt.",
+  "modelProPrice": "0.69 CHF pro Ticket + 3.9% exkl. MwSt.",
+  "modifyDate": "2022-11-11T22:59:07+01:00",
+  "notificationEmail": "",
+  "organizerId": "2281892",
+  "organizerName": null,
+  "partner": "none",
+  "payBackGuaranteeEnabled": false,
+  "payBackGuaranteeMode": "none",
+  "phoneVerificationEnabled": false,
+  "published": true,
+  "saleState": "sold_out",
+  "start": {
+    "$date": {
+      "$numberLong": "1670679000000"
+    }
+  },
+  "state": "published",
+  "status": 1,
+  "ticketTax": 7.7,
+  "ticketTypes": [
+    {
+      "ticketTypeInfos": [
+        {
+          "languageId": 0,
+          "imageUrl": "",
+          "description": "Tickets sind erhältlich via Natur-Museum, entweder direkt an der Kasse erhältlich. Reservationen können online vorgenommen werden:\n\nVorstellungen für Kindergärten und Schulen auf Wunsch- Anmeldung an Regula Auf der Maur: regulaaufdermaur@kinderkultur.ch",
+          "name": "Kinder"
+        }
+      ],
+      "sortOrder": 0,
+      "preSaleStart": {
+        "$date": {
+          "$numberLong": "1668203977672"
+        }
+      },
+      "price": 11,
+      "currency": "CHF"
+    },
+    {
+      "ticketTypeInfos": [
+        {
+          "languageId": 0,
+          "imageUrl": "",
+          "description": "Tickets sind erhältlich via Natur-Museum, entweder direkt an der Kasse erhältlich. Reservationen können online vorgenommen werden:\n\nVorstellungen für Kindergärten und Schulen auf Wunsch- Anmeldung an Regula Auf der Maur: regulaaufdermaur@kinderkultur.ch",
+          "name": "Erwachsene"
+        }
+      ],
+      "sortOrder": 1,
+      "preSaleStart": {
+        "$date": {
+          "$numberLong": "1668203977672"
+        }
+      },
+      "price": 22,
+      "currency": "CHF"
+    }
+  ],
+  "title": "Peter und der Wolf 2",
+  "url": "/de/p/kinderveranstaltungen/puppentheater/peter-und-der-wolf-2-6988602928345815553.html",
+  "visible": true
+}]
