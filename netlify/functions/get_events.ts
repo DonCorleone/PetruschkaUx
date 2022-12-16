@@ -10,7 +10,7 @@ const handler: Handler = async (event, context) => {
 
   const config = {
     method: 'post',
-    url: 'https://data.mongodb-api.com/app/data-gtgec/endpoint/data/beta/action/find',
+    url: 'https://data.mongodb-api.com/app/data-pcuoo/endpoint/data/v1/action/find',
     headers: {
       'Content-Type': 'application/json',
       'Access-Control-Request-Headers': '*',
