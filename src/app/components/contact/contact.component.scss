@@ -78,6 +78,12 @@
     .svg-inline--fa {
       font-size: 32px;
     }
+		.list-inline-item {
+			display: inline-flex;
+			flex-direction: row;
+			gap: 10px;
+			align-items: center;
+		}
   }
 }
 
