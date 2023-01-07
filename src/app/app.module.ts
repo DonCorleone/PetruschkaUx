@@ -14,17 +14,16 @@ import { AboutModule } from './modules/about/about.module';
 import { ScullyLibModule } from '@scullyio/ng-lib';
 
 @NgModule({
-  declarations: [AppComponent, ScrollSpyDirective, ImageModalComponent, TicketModalComponent, TicketItemComponent],
-  imports: [AboutModule, BrowserModule, AppRoutingModule, HttpClientModule, BrowserAnimationsModule, ScullyLibModule], // ScullyLibModule
-  entryComponents: [InfoComponent],
-  exports: [HttpClientModule],
-  providers: [
-    {
-      provide: HTTP_INTERCEPTORS,
-      useClass: HttpErrorInterceptor,
-      multi: true,
-    },
-  ],
-  bootstrap: [AppComponent],
+    declarations: [AppComponent, ScrollSpyDirective, ImageModalComponent, TicketModalComponent, TicketItemComponent],
+    imports: [AboutModule, BrowserModule, AppRoutingModule, HttpClientModule, BrowserAnimationsModule, ScullyLibModule],
+    exports: [HttpClientModule],
+    providers: [
+        {
+            provide: HTTP_INTERCEPTORS,
+            useClass: HttpErrorInterceptor,
+            multi: true,
+        },
+    ],
+    bootstrap: [AppComponent]
 })
 export class AppModule {}
