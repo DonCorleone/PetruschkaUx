@@ -12,10 +12,11 @@ import { TicketModalComponent } from './components/ticket/ticket-modal/ticket-mo
 import { TicketItemComponent } from './components/ticket/ticket-item/ticket-item.component';
 import { AboutModule } from './modules/about/about.module';
 import { ScullyLibModule } from '@scullyio/ng-lib';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 @NgModule({
     declarations: [AppComponent, ScrollSpyDirective, ImageModalComponent, TicketModalComponent, TicketItemComponent],
-    imports: [AboutModule, BrowserModule, AppRoutingModule, HttpClientModule, BrowserAnimationsModule, ScullyLibModule],
+    imports: [AboutModule, BrowserModule, AppRoutingModule, HttpClientModule, BrowserAnimationsModule, ScullyLibModule, NgbModule],
     exports: [HttpClientModule],
     providers: [
         {
