@@ -27,7 +27,6 @@
     "@angular/platform-browser-dynamic": "^14.2.12",
     "@angular/router": "^14.2.12",
     "@netlify/functions": "^1.2.0",
-    "@ng-bootstrap/ng-bootstrap": "^11.0.0",
     "@scullyio/init": "^2.1.41",
     "@scullyio/ng-lib": "^2.1.0",
     "@scullyio/scully": "^2.1.0",
