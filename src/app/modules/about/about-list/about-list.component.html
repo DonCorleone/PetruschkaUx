@@ -1,9 +1,9 @@
-<section *ngIf="staffs$ | async as staffs" class="about-section section text-center" id="about">
+<section class="about-section section text-center" id="about">
   <div class="container">
     <h2 class="section-title">Team</h2>
     <div class="section-intro ml-auto mr-auto"></div>
     <div class="members-block">
-      <div class="row">
+      <div *ngIf="staffs$ | async as staffs" class="row">
         <div *ngFor="let staff of staffs" class="col-12 col-md-6 col-lg-4">
           <app-about-item [staff]="staff" class="flex"> </app-about-item>
         </div>
