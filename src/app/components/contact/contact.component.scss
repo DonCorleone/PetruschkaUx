@@ -63,28 +63,6 @@
       margin-bottom: 15px;
     }
   }
-
-  .social-media-list {
-    margin-bottom: 0;
-    a {
-      color: rgba(256, 256, 256, 0.4);
-      &:hover {
-        color: #fff;
-      }
-    }
-    li {
-      margin-bottom: 15px;
-    }
-    .svg-inline--fa {
-      font-size: 32px;
-    }
-		.list-inline-item {
-			display: inline-flex;
-			flex-direction: row;
-			gap: 10px;
-			align-items: center;
-		}
-  }
 }
 
 // Small devices (landscape phones, less than 768px)

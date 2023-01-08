@@ -1,4 +1,4 @@
-<section *ngIf="staffs" class="about-section section text-center" id="about">
+<section *ngIf="staffs$ | async as staffs" class="about-section section text-center" id="about">
   <div class="container">
     <h2 class="section-title">Team</h2>
     <div class="section-intro ml-auto mr-auto"></div>
