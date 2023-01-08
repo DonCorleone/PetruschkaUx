@@ -1,0 +1,33 @@
+[
+  {
+    $match: {
+      googleAnalyticsTracker: {
+        $in: [
+          "CD",
+          "Premiere|Tournee",
+          "Tournee|CD",
+          "Premiere|Tournee",
+          "Tournee",
+        ],
+      },
+    },
+  },
+  {
+    $sort: {
+      start: -1,
+    },
+  },
+  {
+    $project: {
+      _id: 1,
+      facebookPixelId: 1,
+      googleAnalyticsTracker: 1,
+      "eventInfos.name": 1,
+      "eventInfos.languageId": 1,
+      "ticketTypes.sortOrder": 1,
+      "ticketTypes.ticketTypeInfos.languageId": 1,
+      "ticketTypes.ticketTypeInfos.imageUrl": 1,
+      "ticketTypes.ticketTypeInfos.name": 1,
+    },
+  },
+]

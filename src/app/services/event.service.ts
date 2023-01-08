@@ -7,17 +7,16 @@ import {
   TicketPrice,
   TicketType,
   TicketTypeInfo,
-  EventDetailViewModel
+  EventDetailViewModel,
 } from '../models/event.models';
 import { HttpClient } from '@angular/common/http';
 
 export interface GetEventInfoById {
-	message: MessageEventDetail;
+  message: MessageEventDetail;
 }
 
-
 interface MessageEventDetail {
-	documents: EventDetail[];
+  documents: EventDetail[];
 }
 
 interface MessageEventDetailViewModel {
@@ -26,11 +25,11 @@ interface MessageEventDetailViewModel {
 }
 
 interface EventDetailsResponse {
-	message: MessageEventDetail;
+  message: MessageEventDetail;
 }
 
 interface UpComingEventsResponse {
-	message: MessageEventDetail;
+  message: MessageEventDetail;
 }
 
 interface PastEventDetailsResponse {
@@ -82,19 +81,17 @@ export class EventService {
       return null;
     }
 
+		console.log(JSON.stringify(eventDetail.ticketTypes));
+
     let returnArray: TicketPrice[] = [];
 
     for (const ticketType of eventDetail.ticketTypes) {
-      let name = ticketType.ticketTypeInfos?.filter((p) => p.languageId === 0)[0].name;
-
-      let price = ticketType.price;
-
-      let unit = ticketType.currency;
-
+      const ticketTypeInfo = ticketType.ticketTypeInfos?.filter((p) => p.languageId === 0)[0];
       let ticketPrice: TicketPrice = {
-        name: name,
-        currency: unit,
-        price: price,
+        name: ticketTypeInfo?.name,
+        currency: ticketType.currency,
+        price: ticketType.price,
+        description: ticketTypeInfo?.description,
       };
 
       returnArray.push(ticketPrice);
@@ -162,19 +159,19 @@ export class EventService {
   GetEventDetail(id: number): Observable<EventDetail> {
     // console.log(`load event with Item ${id}`);
     return this.httpClient
-			.get<GetEventInfoById>(`.netlify/functions/get_eventInfos?eventid=${id}`)
-      .pipe(map((result) => result.message.documents.find(p => p._id === id)));
+      .get<GetEventInfoById>(`.netlify/functions/get_eventInfos?eventid=${id}`)
+      .pipe(map((result) => result.message.documents.find((p) => p._id === id)));
   }
 
   upcomingGigs$ = this.httpClient
-		.get<UpComingEventsResponse>('.netlify/functions/get_events?collection=UpcomingEventsActive')
-		.pipe(map((result) => result.message.documents));
+    .get<UpComingEventsResponse>('.netlify/functions/get_events?collection=UpcomingEventsActive')
+    .pipe(map((result) => result.message.documents));
 
   GetEventDetails(filterPredicateIn: any): Observable<EventDetail[]> {
     // console.log(`load events with predicate ${filterPredicateIn}`);
     return this.httpClient
-			.get<EventDetailsResponse>('.netlify/functions/get_events?collection=EventDetailsTaggedUsage')
-			.pipe(map((result) => result.message.documents.filter(filterPredicateIn)));
+      .get<EventDetailsResponse>('.netlify/functions/get_events?collection=EventDetailsTaggedUsage')
+      .pipe(map((result) => result.message.documents.filter(filterPredicateIn)));
   }
 
   pastEventDetails$ = this.httpClient
@@ -182,6 +179,6 @@ export class EventService {
     .pipe(map((result) => result.message.documents));
 
   upcomingEventDetails$ = this.httpClient
-		.get<PastEventDetailsResponse>('.netlify/functions/get_events?collection=UpcomingPremieres')
-		.pipe(map((result) => result.message.documents));
+    .get<PastEventDetailsResponse>('.netlify/functions/get_events?collection=UpcomingPremieres')
+    .pipe(map((result) => result.message.documents));
 }

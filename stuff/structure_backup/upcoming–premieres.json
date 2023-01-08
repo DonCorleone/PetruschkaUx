@@ -1,0 +1,62 @@
+[{
+ $match: {
+  status: 1,
+	 googleAnalyticsTracker: {
+   $in: [
+    'Premiere'
+   ]
+  }
+ }
+}, {
+ $addFields: {
+  now: '$$NOW'
+ }
+}, {
+ $addFields: {
+  diff: {
+   $dateDiff: {
+    startDate: '$start',l
+    endDate: '$now',
+    unit: 'day'
+   }
+  }
+ }
+}, {
+ $match: {
+  diff: {
+   $lte: 0
+  }
+ }
+, {
+ $group: {
+  _id: '$facebookPixelId',
+  start: {
+   $min: '$start'
+  },
+  eventDetail: {
+   $first: '$$CURRENT'
+  }
+ }
+}, {
+ $sort: {
+  start: 1
+ }
+}, {
+ $project: {
+  'eventDetail._id': 1,
+  'eventDetail.eventInfos.name': 1,
+  'eventDetail.eventInfos.location': 1,
+  'eventDetail.eventInfos.languageId': 1,
+  'eventDetail.eventInfos.url': 1,
+  'eventDetail.eventInfos.bannerImagePath': 1,
+  'eventDetail.eventInfos.flyerImagePath': 1,
+  'eventDetail.ticketTypes.sortOrder': 1,
+  'eventDetail.ticketTypes.price': 1,
+  'eventDetail.ticketTypes.currency': 1,
+  'eventDetail.ticketTypes.preSaleStart': 1,
+  'eventDetail.ticketTypes.ticketTypeInfos.name': 1,
+  'eventDetail.ticketTypes.ticketTypeInfos.languageId': 1,
+  'eventDetail.start': 1,
+  'eventDetail.googleAnalyticsTracker': 1
+ }
+}]

@@ -14,7 +14,16 @@
 <img [src]="bannerImagePath" alt="bannerImagePath" class="bannerImage img-wide" />
 
 <div class="modal-item">
-  <div class="modal-item-title">Plot</div>
+  <div
+    class="modal-item-title"
+    *ngIf="
+      !eventInfo?.longDescription
+        ?.toLowerCase()
+        .startsWith('Figurentheater PETRUSCHKA'.toLowerCase(), '<p><strong>'.length)
+    "
+  >
+    Plot
+  </div>
   <div class="modal-item-content">
     <div [innerHTML]="plot"></div>
   </div>
@@ -112,6 +121,7 @@
 </div>
 
 <div class="modal-item" *ngIf="showBuyButton">
+  <div class="modal-body">{{ eventTicketDesc?.description }}</div>
   <div class="modal-item-footer">
     <a
       (click)="openTicket()"

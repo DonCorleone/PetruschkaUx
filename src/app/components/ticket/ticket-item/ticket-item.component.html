@@ -1,3 +1,9 @@
-<p>Tickets sind erhältlich über das Natur-Museum, entweder direkt an der Kasse oder unter</p>
-<p><b>041 228 54 11</b> <i> (Dienstag - Sonntag, 10:00 - 17:00 Uhr)</i></p>
-<p><b>Preis</b> <i> (inkl. Besuch Natur-Museum)</i> Kinder: CHF 11.00, Erwachsene: CHF 22.00</p>
+<div *ngIf="ticketPrices?.length > 0">
+  <div *ngFor="let ticketPrice of ticketPrices">
+    <p>
+      <span><strong>{{ ticketPrice.name }}</strong> </span> : <span> {{ ticketPrice.currency }} </span>
+      <span> {{ ticketPrice.price }}</span>
+    </p>
+  </div>
+	<p class="ticketprice-description"><em>{{ ticketPrices[0]?.description }}</em></p>
+</div>

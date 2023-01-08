@@ -11,10 +11,11 @@ import { HttpErrorInterceptor } from './services/http-error-interceptor.service'
 import { TicketModalComponent } from './components/ticket/ticket-modal/ticket-modal.component';
 import { TicketItemComponent } from './components/ticket/ticket-item/ticket-item.component';
 import { AboutModule } from './modules/about/about.module';
+import { ScullyLibModule } from '@scullyio/ng-lib';
 
 @NgModule({
   declarations: [AppComponent, ScrollSpyDirective, ImageModalComponent, TicketModalComponent, TicketItemComponent],
-  imports: [AboutModule, BrowserModule, AppRoutingModule, HttpClientModule, BrowserAnimationsModule], // ScullyLibModule
+  imports: [AboutModule, BrowserModule, AppRoutingModule, HttpClientModule, BrowserAnimationsModule, ScullyLibModule], // ScullyLibModule
   entryComponents: [InfoComponent],
   exports: [HttpClientModule],
   providers: [
