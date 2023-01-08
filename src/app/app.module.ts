@@ -17,6 +17,7 @@ import { AudioModule } from './modules/audio/audio.module';
 import { HistoryModule } from './modules/history/history.module';
 import { TeamModule } from './modules/team/team.module';
 import { ContactModule } from './modules/contact/contact.module';
+import { ScullyLibModule } from '@scullyio/ng-lib';
 
 @NgModule({
   declarations: [AppComponent, ScrollSpyDirective, ImageModalComponent, TicketModalComponent, TicketItemComponent],
@@ -33,6 +34,7 @@ import { ContactModule } from './modules/contact/contact.module';
     HistoryModule,
     TeamModule,
     ContactModule,
+    ScullyLibModule,
   ],
   exports: [HttpClientModule],
   providers: [
