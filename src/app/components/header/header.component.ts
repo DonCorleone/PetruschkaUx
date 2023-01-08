@@ -28,10 +28,10 @@ export class HeaderComponent implements AfterViewInit {
 
   ngAfterViewInit(): void {
     /* ======= ScrollTo ======= */
-    const scrollTos: HTMLCollectionOf<Element> = document.getElementsByClassName('scrollto');
-    for (const key in scrollTos) {
-      if (scrollTos.hasOwnProperty(key)) {
-        const element = scrollTos[key];
+    const navElements: HTMLCollectionOf<Element> = document.getElementsByClassName('nav-item');
+    for (const key in navElements) {
+      if (navElements.hasOwnProperty(key)) {
+        const element = navElements[key];
         this.renderer.listen(element, 'click', () => {
           // Collapse mobile menu after clicking
           if (document.getElementsByClassName('navbar-collapse')[0].classList.contains('show')) {
