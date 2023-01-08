@@ -1,4 +1,4 @@
-<header class="header fixed-top" id="header">
+<header class="header fixed-top header-scrolled" id="header">
   <div class="container">
     <nav class="main-nav navbar navbar-expand-md" role="navigation">
       <button (click)="isMenuCollapsed = !isMenuCollapsed" class="navbar-toggler navbar-dark" type="button">
@@ -12,42 +12,42 @@
       >
         <ul class="nav navbar-nav">
           <li class="nav-item">
-            <a (click)="scrollTo('promo')" [ngClass]="{ active: currentSection === 'promo' }" class="nav-link">Home</a>
-          </li>
-          <li class="nav-item">
-            <a (click)="scrollTo('gigs')" [ngClass]="{ active: currentSection === 'gigs' }" class="nav-link"
-              >Aufführungen</a
+            <a class="nav-link"
+              routerLink="/">Home</a
             >
           </li>
           <li class="nav-item">
-            <a (click)="scrollTo('merch')" [ngClass]="{ active: currentSection === 'merch' }" class="nav-link"
-              >Tourneestücke</a
+            <a class="nav-link"
+              routerLink="/upcoming">Aufführungen</a
             >
           </li>
           <li class="nav-item">
-            <a (click)="scrollTo('music')" [ngClass]="{ active: currentSection === 'music' }" class="nav-link"
-              >Hörspiele</a
+            <a class="nav-link"
+              routerLink="/tour">Tourneestücke</a
             >
           </li>
           <li class="nav-item">
-            <a (click)="scrollTo('history')" [ngClass]="{ active: currentSection === 'history' }" class="nav-link"
-              >Vergangene Stücke</a
+            <a class="nav-link"
+              routerLink="/audio">Hörspiele</a
             >
           </li>
           <li class="nav-item">
-            <a (click)="scrollTo('about')" [ngClass]="{ active: currentSection === 'about' }" class="nav-link">Team</a>
+            <a class="nav-link"
+              routerLink="/history">Vergangene Stücke</a
+            >
           </li>
           <li class="nav-item">
-            <a (click)="scrollTo('contact')" [ngClass]="{ active: currentSection === 'contact' }" class="nav-link"
-              >Über uns</a
+            <a class="nav-link"
+              routerLink="/team">Team</a
+            >
+          </li>
+          <li class="nav-item">
+            <a class="nav-link"
+              routerLink="/contact">Über uns</a
             >
           </li>
         </ul>
-        <!--//nav-->
       </div>
-      <!--//navabr-collapse-->
     </nav>
-    <!--//main-nav-->
   </div>
-  <!--//container-->
 </header>
