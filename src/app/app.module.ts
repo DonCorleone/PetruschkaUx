@@ -9,7 +9,6 @@ import { ImageModalComponent } from './components/gallery/image-modal/image-moda
 import { HttpErrorInterceptor } from './services/http-error-interceptor.service';
 import { TicketModalComponent } from './components/ticket/ticket-modal/ticket-modal.component';
 import { TicketItemComponent } from './components/ticket/ticket-item/ticket-item.component';
-import { ScullyLibModule } from '@scullyio/ng-lib';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { UpcomingModule } from './modules/upcoming/upcoming.module';
 import { SharedModule } from './modules/shared/shared.module';
@@ -26,7 +25,6 @@ import { ContactModule } from './modules/contact/contact.module';
     AppRoutingModule,
     HttpClientModule,
     BrowserAnimationsModule,
-    ScullyLibModule,
     NgbModule,
     UpcomingModule,
     SharedModule,

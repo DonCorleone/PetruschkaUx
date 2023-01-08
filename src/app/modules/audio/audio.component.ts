@@ -1,7 +1,8 @@
-import { Component } from '@angular/core';
+import { ChangeDetectionStrategy, Component } from '@angular/core';
 
 @Component({
   selector: 'app-audio',
-  templateUrl: './audio.component.html'
+  templateUrl: './audio.component.html',
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class AudioComponent {}
