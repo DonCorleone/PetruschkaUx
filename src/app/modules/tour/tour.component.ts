@@ -2,7 +2,6 @@ import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-tour',
-  templateUrl: './tour.component.html',
-  styleUrls: ['./tour.component.scss']
+  templateUrl: './tour.component.html'
 })
 export class TourComponent {}
