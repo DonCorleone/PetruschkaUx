@@ -33,7 +33,6 @@ export class HeaderComponent implements AfterViewInit {
       if (navElements.hasOwnProperty(key)) {
         const element = navElements[key];
         this.renderer.listen(element, 'click', () => {
-          // Collapse mobile menu after clicking
           if (document.getElementsByClassName('navbar-collapse')[0].classList.contains('show')) {
             document.getElementsByClassName('navbar-collapse')[0].classList.remove('show');
           }
