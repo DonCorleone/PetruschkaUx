@@ -1,6 +1,6 @@
 <section class="about-section section text-center" id="about">
   <div class="container">
-    <h2 class="section-title">Team</h2>
+		<app-loading-indicator [title]="'Team'"></app-loading-indicator>
     <div class="section-intro ml-auto mr-auto"></div>
     <div class="members-block">
       <div *ngIf="staffs$ | async as staffs" class="row">
