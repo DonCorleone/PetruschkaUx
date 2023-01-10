@@ -22,7 +22,7 @@ h2 {
 		background: $theme-color;
 		left: 50%;
 		@include border-radius(1px);
-    animation: loading-indicator 1.5s linear infinite;
+    animation: loading-indicator 1s linear infinite;
   }
 
   @keyframes loading-indicator {
