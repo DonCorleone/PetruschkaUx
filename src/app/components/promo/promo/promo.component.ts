@@ -17,7 +17,6 @@ export class PromoComponent implements OnInit {
 
 	hasDataChanged(hasData: boolean) {
 		this.hasData = hasData;
-		console.log(hasData);
 	}
 
 	ngOnInit(): void {

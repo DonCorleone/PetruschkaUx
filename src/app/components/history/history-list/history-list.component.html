@@ -1,6 +1,6 @@
 <section class="history-section section text-center" id="history">
   <div class="container">
-    <h2 class="section-title">Vergangene Stücke</h2>
+		<app-loading-indicator [title]="'Vergangene Stücke'"></app-loading-indicator>
     <app-update-list [dateGte]="dateGte" [dateLt]="dateLt" [usage]="'history'"></app-update-list>
     <!--//row-->
   </div>

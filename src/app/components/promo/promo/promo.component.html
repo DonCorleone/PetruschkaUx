@@ -16,6 +16,8 @@
 	<!--//container-->
 	<div *ngIf="hasData" class="updates-block">
 		<div class="container updates-block-inner">
+			<app-loading-indicator [title]="'Aktuell'"></app-loading-indicator>
+
 			<app-update-list [dateGte]="dateGte" [dateLt]="dateLt" [usage]="'upcoming'" (hasData)="hasDataChanged($event)"></app-update-list>
 		</div>
 		<!--//container-->

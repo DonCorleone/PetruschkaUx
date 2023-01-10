@@ -26,11 +26,11 @@ a {
     @include transition (all 0.4s ease-in-out);
     &:hover, &:active {
         text-decoration: underline;
-        color: darken($theme-color, 5%);        
+        color: darken($theme-color, 5%);
     }
     &:focus {
         text-decoration: none;
-        color: darken($theme-color, 5%); 
+        color: darken($theme-color, 5%);
         outline: none;
     }
 }
@@ -42,13 +42,13 @@ a {
     letter-spacing: 0.5px;
 }
 
-a.btn-primary, .btn-primary { 
+a.btn-primary, .btn-primary {
     background: $theme-color;
     border: 2px solid $theme-color;
     color: #fff;
     text-transform: uppercase;
     @include box-shadow(inset 0 0 0 0 darken($theme-color, 15%));
-    
+
     &:hover {
         @include box-shadow(inset 0 100px 0 0 darken($theme-color, 15%));
     }
@@ -61,13 +61,13 @@ a.btn-primary, .btn-primary {
     }
 }
 
-a.btn-secondary, .btn-secondary { 
+a.btn-secondary, .btn-secondary {
     background: lighten($text-color-primary, 5%);
     border: 2px solid lighten($text-color-primary, 5%);
     color: #fff;
     text-transform: uppercase;
     @include box-shadow(inset 0 0 0 0 $theme-color);
-    
+
     &:hover {
         @include box-shadow(inset 0 100px 0 0 darken($theme-color, 15%));
     }
@@ -81,7 +81,7 @@ a.btn-secondary, .btn-secondary {
 }
 
 
-a.btn-ghost-primary, .btn-ghost-primary { 
+a.btn-ghost-primary, .btn-ghost-primary {
     background: none;
     border: 2px solid $theme-color;
     color: $theme-color;
@@ -100,7 +100,7 @@ a.btn-ghost-primary, .btn-ghost-primary {
     }
 }
 
-a.btn-ghost-secondary, .btn-ghost-secondary { 
+a.btn-ghost-secondary, .btn-ghost-secondary {
     background: none;
     border: 2px solid $text-color-primary;
     color: $text-color-primary;
@@ -112,7 +112,7 @@ a.btn-ghost-secondary, .btn-ghost-secondary {
         outline: none;
         color: $text-color-primary;
     }
-    
+
     &:hover {
         background: $text-color-primary;
         @include box-shadow(inset 0 100px 0 0 $text-color-primary);
@@ -133,11 +133,11 @@ a.btn-cta, .btn-cta {
     height: 45px;
     border-color: $divider;
     @include placeholder($grey);
-    
+
     &:focus {
         border-color: darken($divider, 5%);
         @include box-shadow(none);
-    }    
+    }
 }
 
 
@@ -145,7 +145,7 @@ input[type="text"],
 input[type="email"],
 input[type="password"],
 input[type="submit"],
-input[type="button"], 
+input[type="button"],
 textarea
 {
     appearance: none;  /* for mobile safari */
@@ -196,22 +196,24 @@ label {
 .section-title {
     text-transform: uppercase;
     margin-top: 0;
-    margin-bottom: 60px;
     font-weight: 800;
     font-size: 32px;
     position: relative;
     padding-bottom: 5px;
-    &:after {
-        content: "";
-        display: inline-block;
-        height: 4px;
-        width: 60px;
-        background: $theme-color;
-        position: absolute;
-        left: 50%;
-        bottom: -5px;
-        margin-left: -30px;
-        @include border-radius(1px);
-    }
+
+}
+.section-title-ruler{
+	&:after {
+		content: "";
+		display: inline-block;
+		height: 4px;
+		width: 60px;
+		background: $theme-color;
+		position: absolute;
+		left: 50%;
+		bottom: -5px;
+		margin-left: -30px;
+		@include border-radius(1px);
+	}
 }
 
