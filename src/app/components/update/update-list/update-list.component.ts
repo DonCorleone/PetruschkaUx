@@ -1,6 +1,14 @@
-import { ChangeDetectionStrategy, Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import {
+	ChangeDetectionStrategy,
+	ChangeDetectorRef,
+	Component,
+	EventEmitter,
+	Input,
+	OnInit,
+	Output
+} from '@angular/core';
 import { Observable } from 'rxjs';
-import { take } from 'rxjs/operators';
+import {map, take} from 'rxjs/operators';
 import { EventDetailViewModel } from 'src/app/models/event.models';
 import { EventService } from 'src/app/services/event.service';
 
@@ -19,18 +27,20 @@ export class UpdateListComponent implements OnInit {
 
   eventDetails: EventDetailViewModel[];
 
-  constructor(private eventService: EventService) {}
+  constructor(private eventService: EventService, private cdr: ChangeDetectorRef) {}
 
   ngOnInit() {
     if (this.usage === 'history') {
-      this.eventService.pastEventDetails$.pipe(take(1)).subscribe((value) => {
+      this.eventService.pastEventDetails$.pipe(take(1)).subscribe(value => {
+				this.eventDetails = value;
+				this.cdr.markForCheck();
         this.hasData.emit(value.length > 0);
-        this.eventDetails = value;
       });
     } else {
       this.eventService.upcomingEventDetails$.pipe(take(1)).subscribe((value) => {
+				this.eventDetails = value;
+				this.cdr.markForCheck();
         this.hasData.emit(value.length > 0);
-        this.eventDetails = value;
       });
     }
     //  this.eventDetails$.pipe(take(1)).subscribe((value) => this.hasData.emit(value.length > 0));
