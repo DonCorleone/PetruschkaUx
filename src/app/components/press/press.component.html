@@ -1,4 +1,4 @@
-<div class="section-intro center-block" id="pressArticles" *ngIf="pressArticles$ | async as pressArticles">
+<div class="section-intro center-block" id="pressArticles" *ngIf="pressArticles">
 	<h4 class="title" *ngIf="pressArticles.length > 0">Presse-Meldungen</h4>
 	<div class="carousel-nav">
 		<a class="carousel-nav-btn" (click)="arrowLeft()" role="button" data-slide="prev">
@@ -10,8 +10,8 @@
 				<span class="sr-only">Next</span>
 		</a>
 	</div>
-	<ngb-carousel #carousel *ngIf="pressArticles$">
-		<ng-template ngbSlide *ngFor="let article of pressArticles$ | async">
+	<ngb-carousel #carousel *ngIf="pressArticles">
+		<ng-template ngbSlide *ngFor="let article of pressArticles">
 			<a [href]="'assets/images/presse/' + article.nr + '.' + article.fileExtension" target="_blank">
 				<div class="carousel-caption">
 					<p *ngIf="getDate(article) as articleDate">
