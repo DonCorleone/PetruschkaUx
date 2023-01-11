@@ -22,41 +22,18 @@ h2 {
 		background: $theme-color;
 		left: 50%;
 		@include border-radius(1px);
-		animation-name:
-			loading-scale,
-			loading-rotate
-		;
-		animation-iteration-count:
-			1, /* The FADE animation should only run once and FILL forward. */
-			infinite /* The PULSE animation should repeat forever. */
-		;
-		animation-duration: 1000ms ; /* Same setting for both animations. */
-		animation-fill-mode: both ; /* Same setting for both animations. */		
+		animation:
+			loading-scale 1s,
+			loading-rotate 1s;
   }
 
   @keyframes loading-rotate {
-    0% {
-      transform: rotate(0deg);
-			
-    }
-	
-    100% {
-      transform: rotate(360deg);
-    }
+    0% { transform: rotate(0deg); }
+	  100% { transform: rotate(360deg); }
   }
 	
 	@keyframes loading-scale {
-    0% {
-      transform: scale(1);
-			
-    }
-		
-		50% {
-      transform: scale(0.5);	
-    }
-
-    100% {
-      transform: scale(1);
-    }
+    0%, 100% { transform: scale(1); }
+		50% { transform: scale(0.5); }
   }
 }
