@@ -17,16 +17,22 @@ export class UpdateListComponent implements OnInit {
 
   @Output() hasData: EventEmitter<boolean> = new EventEmitter();
 
-  eventDetails$: Observable<EventDetailViewModel[]>;
+  eventDetails: EventDetailViewModel[];
 
   constructor(private eventService: EventService) {}
 
   ngOnInit() {
     if (this.usage === 'history') {
-      this.eventDetails$ = this.eventService.pastEventDetails$;
+      this.eventService.pastEventDetails$.pipe(take(1)).subscribe((value) => {
+        this.hasData.emit(value.length > 0);
+        this.eventDetails = value;
+      });
     } else {
-      this.eventDetails$ = this.eventService.upcomingEventDetails$;
+      this.eventService.upcomingEventDetails$.pipe(take(1)).subscribe((value) => {
+        this.hasData.emit(value.length > 0);
+        this.eventDetails = value;
+      });
     }
-    this.eventDetails$.pipe(take(1)).subscribe((value) => this.hasData.emit(value.length > 0));
+    //  this.eventDetails$.pipe(take(1)).subscribe((value) => this.hasData.emit(value.length > 0));
   }
 }

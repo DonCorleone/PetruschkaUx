@@ -1,8 +1,8 @@
-import { Component, ViewChild } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { NgbCarousel, NgbCarouselConfig } from '@ng-bootstrap/ng-bootstrap';
-import { map } from 'rxjs/operators';
+import {map, take} from 'rxjs/operators';
 import { PressService } from 'src/app/services/press.service';
-import {Press} from "../../models/press.models";
+import { Press } from '../../models/press.models';
 
 @Component({
   selector: 'app-press',
@@ -10,12 +10,10 @@ import {Press} from "../../models/press.models";
   styleUrls: ['./press.component.scss'],
   providers: [NgbCarouselConfig],
 })
-export class PressComponent {
+export class PressComponent implements OnInit {
   @ViewChild('carousel') carousel: NgbCarousel;
 
-  pressArticles$ = this.pressService.pressArticles$.pipe(
-    map((result) => result.slice().sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime()))
-  );
+  pressArticles: Press[];
 
   todayDate = new Date();
 
@@ -43,5 +41,14 @@ export class PressComponent {
   arrowRight(): void {
     this.carousel.pause();
     this.carousel.next();
+  }
+
+  ngOnInit(): void {
+    this.pressService.pressArticles$.pipe(take(1)).subscribe(
+      result => {
+				this.pressArticles = result;
+        result.slice().sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
+      }
+    );
   }
 }
