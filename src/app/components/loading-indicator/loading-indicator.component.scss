@@ -23,8 +23,8 @@ h2 {
 		left: 50%;
 		@include border-radius(1px);
 		animation-name:
-			loading-rotate,
-			loading-scale
+			loading-scale,
+			loading-rotate
 		;
 		animation-iteration-count:
 			1, /* The FADE animation should only run once and FILL forward. */
