@@ -22,7 +22,16 @@ h2 {
 		background: $theme-color;
 		left: 50%;
 		@include border-radius(1px);
-    animation: loading-rotate 1s linear infinite, loading-scale 1s linear infinite;
+		animation-name:
+			loading-rotate,
+			loading-scale
+		;
+		animation-iteration-count:
+			1, /* The FADE animation should only run once and FILL forward. */
+			infinite /* The PULSE animation should repeat forever. */
+		;
+		animation-duration: 1000ms ; /* Same setting for both animations. */
+		animation-fill-mode: both ; /* Same setting for both animations. */		
   }
 
   @keyframes loading-rotate {
