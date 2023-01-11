@@ -22,11 +22,11 @@ h2 {
 		background: $theme-color;
 		left: 50%;
 		@include border-radius(1px);
-		animation: loading-rotate 1s;
+		animation: loading-rotate 1s infinite;
   }
 
   @keyframes loading-rotate {
-    0% { transform: rotate(0deg) scaleX(1); }		
+    0% { transform: rotate(0deg) scaleX(1); }
 		25% { transform: rotate(90deg) scaleX(0.3); }
 		50% { transform: rotate(180deg) scaleX(1); }
 		75% { transform: rotate(270deg) scaleX(0.3); }
