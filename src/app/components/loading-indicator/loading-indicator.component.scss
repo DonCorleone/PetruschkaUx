@@ -22,18 +22,12 @@ h2 {
 		background: $theme-color;
 		left: 50%;
 		@include border-radius(1px);
-		animation:
-			loading-scale 1s,
-			loading-rotate 1s;
+		animation: loading-rotate 1s;
   }
 
   @keyframes loading-rotate {
-    0% { transform: rotate(0deg); }
-	  100% { transform: rotate(360deg); }
-  }
-	
-	@keyframes loading-scale {
-    0%, 100% { transform: scale(1); }
-		50% { transform: scale(0.5); }
+    0% { transform: rotate(0deg) scale(1); }
+		50% { transform: rotate(180deg) scale(0.5); }
+	  100% { transform: rotate(360deg) scale(1); }
   }
 }
