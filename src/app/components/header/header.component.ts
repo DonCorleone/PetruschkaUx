@@ -40,11 +40,24 @@ export class HeaderComponent implements AfterViewInit {
   }
 
   ngAfterViewInit(): void {
-    /* ======= ScrollTo ======= */
-    const scrollTos: HTMLCollectionOf<Element> = document.getElementsByClassName('scrollto');
-    for (const key in scrollTos) {
-      if (scrollTos.hasOwnProperty(key)) {
-        const element = scrollTos[key];
+
+		var root = document.documentElement;
+		const lists = document.querySelectorAll('.hs');
+
+		lists.forEach(el => {
+			const listItems = el.querySelectorAll('li');
+			listItems.forEach(liEl => {
+				const n = liEl.children.length;
+				this.renderer.setProperty(liEl,'--total', n);
+			})
+
+		});
+
+    /* ======= ScrollTo =======
+    const navElements: HTMLCollectionOf<Element> = document.getElementsByClassName('nav-item');
+    for (const key in navElements) {
+      if (navElements.hasOwnProperty(key)) {
+        const element = navElements[key];
         this.renderer.listen(element, 'click', () => {
           // Collapse mobile menu after clicking
           if (document.getElementsByClassName('navbar-collapse')[0].classList.contains('show')) {
@@ -52,6 +65,6 @@ export class HeaderComponent implements AfterViewInit {
           }
         });
       }
-    }
+    }*/
   }
 }
