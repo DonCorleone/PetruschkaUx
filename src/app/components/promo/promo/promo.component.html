@@ -1,27 +1,32 @@
 <!-- ******Promo Section****** -->
-<section class="promo-section section" [ngClass]="{'hasData': hasData}" id="promo">
-	<div class="promo-carousel-holder">
-		<app-promo-carousel></app-promo-carousel>
-		<!--//promo-carousel-->
-	</div>
-	<!-- //promo-carousel-holder -->
-	<div class="overlay-mask"></div>
-	<div class="container text-center promo-content">
-		<div class="upper-wrapper">
-			<div class="logo-holder"></div>
-			<h1 class="headline">{{title}}</h1>
-			<h2 class="tagline">Das Figurentheater in Luzern</h2>
+<section class="promo-section section" [ngClass]="{ hasData: hasData }" id="promo">
+  <div class="promo-carousel-holder">
+    <app-promo-carousel></app-promo-carousel>
+  </div>
+  <div class="overlay-mask"></div>
+  <div class="container text-center promo-content">
+    <div class="upper-wrapper">
+      <div class="logo-holder"></div>
+      <h1 class="headline">{{ title }}</h1>
+      <h2 class="tagline">Das Figurentheater in Luzern</h2>
+    </div>
+  </div>
+  <div *ngIf="hasData; else newsletter" class="updates-block" >
+    <div class="container updates-block-inner">
+      <app-loading-indicator [title]="'Aktuell'"></app-loading-indicator>
+      <app-update-list
+        [dateGte]="dateGte"
+        [dateLt]="dateLt"
+        [usage]="'upcoming'"
+        (hasData)="hasDataChanged($event)"
+      ></app-update-list>
+    </div>
+  </div>
+	<ng-template #newsletter>
+		<div class="updates-block newsletter-block">
+			<p><strong>Wir arbeiten zur Zeit an neuen Stücken! Sie erfahren hier, wenn Tickets verfügbar sind.</strong></p>
+			<p>Hier können Sie den <strong>Newsletter</strong> abonnieren:</p>
+			<a href="http://eepurl.com/g9sVlH" target="_blank" class="btn btn-sm btn-primary">Newsletter</a>
 		</div>
-	</div>
-	<!--//container-->
-	<div *ngIf="hasData" class="updates-block">
-		<div class="container updates-block-inner">
-			<app-loading-indicator [title]="'Aktuell'"></app-loading-indicator>
-
-			<app-update-list [dateGte]="dateGte" [dateLt]="dateLt" [usage]="'upcoming'" (hasData)="hasDataChanged($event)"></app-update-list>
-		</div>
-		<!--//container-->
-	</div>
-	<!--//updates-block-->
+	</ng-template>
 </section>
-<!--//promo-section-->
