@@ -1,3 +1,4 @@
+src/assets/images/ticketino/** filter=lfs diff=lfs merge=lfs -text
 src/assets/images/impressionen/** filter=lfs diff=lfs merge=lfs -text
 src/assets/images/sponsoren/** filter=lfs diff=lfs merge=lfs -text
 src/assets/images/main/** filter=lfs diff=lfs merge=lfs -text
