@@ -33,7 +33,9 @@ export class MusicDetailComponent implements OnInit {
   }
 
   imagePath(ticketTypeInfo: TicketTypeInfo): string {
-    return 'https://images.weserv.nl/?url=' + ticketTypeInfo?.imageUrl + '&w=899&h=899';
+
+		const imageUrl = ticketTypeInfo?.imageUrl;
+    return imageUrl ? imageUrl + '?nf_resize=fit&w=900' : '';
   }
 
   shortDesc(eventDetail: EventDetail): string {
