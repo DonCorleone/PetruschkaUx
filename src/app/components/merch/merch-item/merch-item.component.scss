@@ -20,7 +20,7 @@
 			}
 		}
 		.mask {
-			/* visibility: hidden;  ToDo:Liw raus wenn fertig */
+			visibility: visible;
 			position: absolute;
 			top: 0;
 			left: 0;
@@ -29,7 +29,7 @@
 			color: #fff;
 			text-decoration: none;
 			@include transition(all 0.4s ease-in-out);
-			@include opacity(0.7); /* Do:Liw raus wenn fertig */
+			@include opacity(0.9);
 
 			cursor: pointer;
 

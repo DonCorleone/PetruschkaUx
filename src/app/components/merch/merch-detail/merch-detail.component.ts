@@ -33,7 +33,7 @@ export class MerchDetailComponent implements OnInit {
   }
 
   imagePath(ticketTypeInfo: TicketTypeInfo): string {
-    return ticketTypeInfo ? 'https://images.weserv.nl/?url=' + ticketTypeInfo.imageUrl + '&w=899&h=899' : null;
+    return ticketTypeInfo ? ticketTypeInfo.imageUrl + '?nf_resize=smartcrop&w=900&h=900' : '';
   }
 
   constructor(private modalService: NgbModal, private staffService: StaffService, private eventService: EventService) {}

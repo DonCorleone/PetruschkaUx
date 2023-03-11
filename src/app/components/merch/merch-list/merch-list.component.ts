@@ -30,6 +30,7 @@ export class MerchListComponent implements OnInit {
 	}
 
 	GetImageUrl(eventDetail: EventDetail):string{
-		return EventService.GetTicketTypeInfoFromEventDetail(eventDetail, 'Tournee')?.imageUrl;
+		const imageUrl = EventService.GetTicketTypeInfoFromEventDetail(eventDetail, 'Tournee')?.imageUrl;
+		return imageUrl ? imageUrl + '?nf_resize=smartcrop&w=300&h=300' : '';
 	}
 }
