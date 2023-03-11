@@ -126,7 +126,7 @@ export class EventService {
       eventDetail.eventInfos &&
       eventDetail.eventInfos[0] &&
       eventDetail.eventInfos[0].flyerImagePath
-      ? 'https://images.weserv.nl/?url=' + eventDetail.eventInfos[0].flyerImagePath + '&w=195&h=269'
+      ? eventDetail.eventInfos[0].flyerImagePath + '?nf_resize=fit&w=195'
       : null;
   }
 
