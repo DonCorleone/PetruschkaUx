@@ -111,16 +111,7 @@ export class EventService {
 
     return eventDetail.ticketTypes;
   }
-
-  static GetBannerImagePathPathFromEventDetail(eventDetail: EventDetail): string {
-    return eventDetail &&
-      eventDetail.eventInfos &&
-      eventDetail.eventInfos[0] &&
-      eventDetail.eventInfos[0].bannerImagePath
-      ? 'https://images.weserv.nl/?url=' + eventDetail.eventInfos[0].bannerImagePath + '&w=1137&h=339'
-      : null;
-  }
-
+	
   static GetFlyerImagePathFromEventDetail(eventDetail: EventDetail): string {
     return eventDetail &&
       eventDetail.eventInfos &&

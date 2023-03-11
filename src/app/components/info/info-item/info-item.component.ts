@@ -89,28 +89,17 @@ export class InfoComponent implements OnInit, OnDestroy {
     };
   }
 
-  get artists(): Job[] {
-    return this.artistsArray && this.artistsArray.length > 0 ? this.artistsArray : null;
-  }
+	get bannerImagePath(): string {
+		const imageUrl = this.eventInfo?.bannerImagePath;
+		return imageUrl ? imageUrl + '?nf_resize=smartcrop&w=766&h=400' : '';
+	}
 
   get name() {
     return this.eventInfo && this.eventInfo.name ? this.eventInfo.name : null;
   }
 
-  get shortDesc(): string {
-    return this.eventInfo && this.eventInfo.shortDescription ? this.eventInfo.shortDescription : null;
-  }
-
   get plot(): SafeHtml {
     return this.eventInfo && this.eventInfo.longDescription ? this.transformHtml(this.eventInfo.longDescription) : null;
-  }
-
-  get flyerImagePath(): string {
-    return this.eventInfo && this.eventInfo.flyerImagePath ? this.eventInfo.flyerImagePath : null;
-  }
-
-  get bannerImagePath(): string {
-    return this.eventInfo && this.eventInfo.bannerImagePath ? this.eventInfo.bannerImagePath : null;
   }
 
   get locationLabel(): string {
@@ -134,11 +123,6 @@ export class InfoComponent implements OnInit, OnDestroy {
       return `Das Stück ${this.isFutureEvent ? 'wird aufgeführt' : 'wurde uraufgeführt'} am`;
     }
   }
-
-  //ngOnInit(): void {
-
-  //  this.image4Images$ = this.imageService.getAlbum(this.eventKey).pipe(map((p) => p.files));
-  // }
 
   openStaff(staffName: string) {
     const modalRef = this.modalService.open(AboutModalComponent, { size: 'sm' });
