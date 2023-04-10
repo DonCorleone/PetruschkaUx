@@ -36,12 +36,7 @@ export class StaffService {
     return {
       ...staff,
       imageSrc:
-        'https://images.weserv.nl/?url=' +
-        'https://petruschka.netlify.app/' +
-        'assets/images/members/' +
-        encodeURIComponent(staff?.name) +
-        '.jpg' +
-        '&w=179&h=240',
+        'https://www.petruschka.ch/assets/images/staff/' + encodeURIComponent(staff?.name) + '.jpg?nf_resize=fit&h=240',
     };
   }
 
@@ -54,7 +49,6 @@ export class StaffService {
     const jobs = staff.split('|');
 
     jobs.forEach((job) => {
-
       const ixOfSplitterColon = job.indexOf(':');
       const ixOfSplitterDash = job.indexOf('-');
 

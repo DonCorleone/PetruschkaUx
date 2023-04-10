@@ -19,8 +19,9 @@ export class LocationItemComponent {
   constructor(private locationsService: LocationsService, private sanitizer: DomSanitizer) {}
 
   GetImageUrl(name: string): string {
-    let imageUrl = 'https://petruschka.netlify.app/' + 'assets/images/members/' + encodeURIComponent(name) + '.jpg';
-    return 'https://images.weserv.nl/?url=' + imageUrl + '&w583&h=738';
+    return (
+      'https://www.petruschka.ch/assets/images/staff/' + encodeURIComponent(name) + '.jpg' + '?nf_resize=fit&w=538'
+    );
   }
 
   transformHtml(htmlTextWithStyle) {
