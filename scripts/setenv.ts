@@ -14,6 +14,7 @@ const environmentFileContent = isProduction
    SITE_ID: "${process.env?.['SITE_ID']}",
    API_KEY_NETLIFY: "${process.env?.['API_KEY_NETLIFY']}",
    URL: "${process.env?.['URL']}",
+   API_KEY_MONGODB: "${process.env?.['API_KEY_MONGODB']}",
 };`
 	: `export const environment = {
    production: false,
@@ -22,6 +23,7 @@ const environmentFileContent = isProduction
    SITE_ID: "${process.env?.['SITE_ID']}",
    API_KEY_NETLIFY: "${process.env?.['API_KEY_NETLIFY']}",
    URL: "${process.env?.['URL']}",
+   API_KEY_MONGODB: "${process.env?.['API_KEY_MONGODB']}",
 };`; // write the content to the respective file
 writeFile(targetPath, environmentFileContent, function (err: any) {
 	if (err) {

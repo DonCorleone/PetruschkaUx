@@ -1,5 +1,6 @@
 import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
 import { registerLocaleData } from '@angular/common';
+import { environment } from '../environments/environment.custom';
 import localeDeCH from '@angular/common/locales/de-CH';
 
 @Component({
@@ -10,5 +11,6 @@ import localeDeCH from '@angular/common/locales/de-CH';
 export class AppComponent implements OnInit {
   ngOnInit() {
     registerLocaleData(localeDeCH, 'de-CH');
+		console.log(environment.API_KEY_MONGODB);
   }
 }
