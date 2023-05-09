@@ -111,7 +111,7 @@ export class EventService {
 
     return eventDetail.ticketTypes;
   }
-	
+
   static GetFlyerImagePathFromEventDetail(eventDetail: EventDetail): string {
     return eventDetail &&
       eventDetail.eventInfos &&
@@ -119,32 +119,6 @@ export class EventService {
       eventDetail.eventInfos[0].flyerImagePath
       ? eventDetail.eventInfos[0].flyerImagePath + '?nf_resize=fit&w=195'
       : null;
-  }
-
-  static GetShortDescFromEventDetail(eventDetail: EventDetail): string {
-    return eventDetail && eventDetail.eventInfos?.find((p) => p.languageId === 0)?.shortDescription;
-  }
-
-  static GetNameFromEventDetail(eventDetail: EventDetail): string {
-    return eventDetail &&
-      eventDetail.eventInfos &&
-      eventDetail.eventInfos[0] &&
-      eventDetail.eventInfos &&
-      eventDetail.eventInfos[0].name
-      ? eventDetail.eventInfos && eventDetail.eventInfos[0].name
-      : null;
-  }
-
-  static GetLongDescriptionFromEventDetail(eventDetail: EventDetail): string {
-    return eventDetail && eventDetail.eventInfos?.find((p) => p.languageId === 0)?.longDescription;
-  }
-
-  static GetImportantNotesFromEventDetail(eventDetail: EventDetail): string {
-    return eventDetail && eventDetail.eventInfos?.find((p) => p.languageId === 0)?.importantNotes;
-  }
-
-  static GetStartFromEventDetail(eventDetail: EventDetail): Date {
-    return eventDetail && eventDetail.start ? eventDetail.start : null;
   }
 
   GetEventDetail(id: number): Observable<EventDetail> {

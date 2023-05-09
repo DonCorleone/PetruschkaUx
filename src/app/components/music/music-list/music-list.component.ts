@@ -1,6 +1,6 @@
 import {ChangeDetectionStrategy, Component, OnInit} from '@angular/core';
 import {Observable} from 'rxjs';
-import {EventDetail} from 'src/app/models/event.models';
+import {EventDetail, EventDetailEventInfo} from 'src/app/models/event.models';
 import {EventService} from 'src/app/services/event.service';
 
 @Component({
@@ -20,13 +20,5 @@ export class MusicListComponent implements OnInit {
 		this.eventDetailsCD$ = this.eventService.GetEventDetails(
 			p => p.googleAnalyticsTracker.includes('CD')
 		);
-	}
-
-	GetName(eventDetail: EventDetail):string{
-		return EventService.GetNameFromEventDetail(eventDetail);
-	}
-
-	GetImageUrl(eventDetail: EventDetail):string{
-		return EventService.GetTicketTypeInfoFromEventDetail(eventDetail, 'CD')?.imageUrl;
 	}
 }

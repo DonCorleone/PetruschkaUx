@@ -1,9 +1,9 @@
-import {AfterViewInit, ChangeDetectionStrategy, Component, Input} from '@angular/core';
+import {AfterViewInit, ChangeDetectionStrategy, Component, Input, OnInit} from '@angular/core';
 import {NgbModal, NgbModalOptions} from '@ng-bootstrap/ng-bootstrap';
-import {EventDetail} from 'src/app/models/event.models';
+import {EventDetail, EventDetailEventInfo} from 'src/app/models/event.models';
 import {EventService} from 'src/app/services/event.service';
-import { GalleryModalComponent } from '../../gallery/gallery-modal/gallery-modal.component';
-import { InfoModalComponent } from '../../info/info-modal/info-modal.component';
+import {GalleryModalComponent} from '../../gallery/gallery-modal/gallery-modal.component';
+import {InfoModalComponent} from '../../info/info-modal/info-modal.component';
 
 @Component({
 	selector: 'app-update-slide',
@@ -11,65 +11,59 @@ import { InfoModalComponent } from '../../info/info-modal/info-modal.component';
 	styleUrls: ['./update-slide.component.scss'],
 	changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class UpdateSlideComponent {
+export class UpdateSlideComponent implements OnInit {
 
 	@Input() eventDetail: EventDetail;
 	@Input() usage: string;
 
+	eventInfo: EventDetailEventInfo;
+	superfutureEvent: boolean;
+	featurePremiereEventStr: string;
+	futureEvent: boolean;
+	pastEvent: boolean;
+	imagePath: string;
+
 	constructor(private modalService: NgbModal, private eventService: EventService) {
 	}
 
-	superfutureEvent(eventDetail: EventDetail):boolean {
+	ngOnInit(): void {
+		this.eventInfo = this.eventDetail?.eventInfos?.find((p) => p.languageId === 0)
+
+		this.superfutureEvent = this.isSuperfutureEvent(this.eventDetail);
+		this.featurePremiereEventStr = this.getFeaturePremiereEventStr(this.eventDetail);
+		this.futureEvent = this.isFutureEvent(this.eventDetail)
+		this.pastEvent = this.isPastEvent(this.eventDetail);
+		this.imagePath = this.getImagePath(this.eventDetail);
+	}
+
+	private isSuperfutureEvent(eventDetail: EventDetail): boolean {
 		return new Date(eventDetail.start) >= new Date()
 			&& new Date(eventDetail.start).getHours() === 0;
 	}
 
-	featurePremiereEvent(eventDetail: EventDetail):string {
+	private getFeaturePremiereEventStr(eventDetail: EventDetail): string {
 		return eventDetail.googleAnalyticsTracker === "Premiere" ? "Premiere" : "Nächste Aufführung";
 	}
 
-	futureEvent(eventDetail: EventDetail):boolean {
+	private isFutureEvent(eventDetail: EventDetail): boolean {
 
 		return new Date(eventDetail.start) >= new Date()
 			&& new Date(eventDetail.start).getHours() !== 0
 	}
 
-	pastEvent(eventDetail: EventDetail):boolean {
+	private isPastEvent(eventDetail: EventDetail): boolean {
 
 		return new Date(eventDetail.start) < new Date();
 	}
-
-	name(eventDetail: EventDetail) {
-		return EventService.GetNameFromEventDetail(eventDetail);
-	}
-
-	shortDescription(eventDetail: EventDetail): string {
-		return EventService.GetShortDescFromEventDetail(eventDetail);
-	}
-
-	importantNotes(eventDetail: EventDetail): string {
-		return EventService.GetImportantNotesFromEventDetail(eventDetail);
-	}
-
-	imagePath(eventDetail: EventDetail): string {
+	private getImagePath(eventDetail: EventDetail): string {
 		return EventService.GetFlyerImagePathFromEventDetail(eventDetail);
 	}
 
-	scrollTo(section) {
-		document.querySelector('#' + section)
-			.scrollIntoView({behavior: 'smooth'});
-	}
-
 	openInfo(eventDetail: EventDetail): void {
-		const modalRef = this.modalService.open(InfoModalComponent, { size:'lg' });
+		const modalRef = this.modalService.open(InfoModalComponent, {size: 'lg'});
 		modalRef.componentInstance.eventDetailId = eventDetail._id;
 		modalRef.componentInstance.usage = 'Premiere'; // else case
 		modalRef.componentInstance.tag = eventDetail.googleAnalyticsTracker;
 		modalRef.componentInstance.eventDetail$ = this.eventService.GetEventDetail(eventDetail._id);
-	}
-
-	openGallery(eventDetail: EventDetail):void{
-		const modalRef = this.modalService.open(GalleryModalComponent, { size:'xl' });
-		modalRef.componentInstance.albumHash = this.eventDetail.facebookPixelId;
 	}
 }

@@ -1,7 +1,8 @@
-import {ChangeDetectionStrategy, Component, Input} from '@angular/core';
+import {ChangeDetectionStrategy, Component, Input, OnInit} from '@angular/core';
 import {NgbModal} from '@ng-bootstrap/ng-bootstrap';
-import {TicketTypeInfo} from 'src/app/models/event.models';
+import {EventDetail, EventDetailEventInfo, TicketTypeInfo} from 'src/app/models/event.models';
 import {MusicModalComponent} from '../music-modal/music-modal.component';
+import {EventService} from "../../../services/event.service";
 
 @Component({
 	selector: 'app-music-item',
@@ -9,29 +10,27 @@ import {MusicModalComponent} from '../music-modal/music-modal.component';
 	styleUrls: ['./music-item.component.scss'],
 	changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class MusicItemComponent {
-
-	@Input() eventDetailId: number;
-	@Input() imageUrl: string;
-	@Input() name: string;
+export class MusicItemComponent implements OnInit{
+	@Input() eventDetail: EventDetail;
 	@Input() usage: string;
-	@Input() start: Date;
 
-	ticketTypeInfo: TicketTypeInfo;
+	eventInfo: EventDetailEventInfo | undefined;
+	comingSoon: boolean;
+	imageUrl: string;
 
 	constructor(private modalService: NgbModal) {
 	}
 
-	get comingSoon(): boolean {
-		return (this.start > new Date());
+	ngOnInit(): void {
+		this.eventInfo = this.eventDetail?.eventInfos?.find((p) => p.languageId === 0)
+		this.comingSoon = this.eventDetail.start > new Date();
+		this.imageUrl = this.GetImageUrl(this.eventDetail);
 	}
-
-	get imagePath(): string {
-		return this.imageUrl
-	}
-
 	openDetail(): void {
 		const modalRef = this.modalService.open(MusicModalComponent, { size:'lg' });
-		modalRef.componentInstance.eventDetailId = this.eventDetailId;
+		modalRef.componentInstance.eventDetailId = this.eventDetail?._id;
+	}
+	GetImageUrl(eventDetail: EventDetail):string{
+		return EventService.GetTicketTypeInfoFromEventDetail(eventDetail, 'CD')?.imageUrl;
 	}
 }

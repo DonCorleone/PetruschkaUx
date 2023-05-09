@@ -3,31 +3,22 @@
 		<app-loading-indicator [title]="'Hörspiele'"></app-loading-indicator>
 		<div class="sc-block ml-auto mr-auto">
 			<div class="item">
-					<!--iframe width="100%" height="166" scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/54872955&amp;color=0E0E10&amp;auto_play=false&amp;hide_related=false&amp;show_comments=true&amp;show_user=true&amp;show_reposts=false"></iframe-->
-			</div><!--//item-->
+			</div>
 			<div class="item">
-					<!--iframe width="100%" height="166" scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/44327523&amp;color=0E0E10&amp;auto_play=false&amp;hide_related=false&amp;show_comments=true&amp;show_user=true&amp;show_reposts=false"></iframe-->
-			</div><!--//item-->
-	</div><!--//sc-block-->
+			</div>
+	</div>
 		<div class="albums-block">
 			<div class="row">
 				<div *ngFor="let eventDetail of eventDetailsCD$ | async" class="item col-12 col-md-6 col-lg-4">
 					<app-music-item
-					[eventDetailId]="eventDetail._id"
-					[name]="GetName(eventDetail)"
-					[imageUrl]="GetImageUrl(eventDetail)"
-					[usage]="'Tournee'"
-					[start]="eventDetail.start">
+					[eventDetail]="eventDetail"
+					[usage]="'Tournee'">
 				</app-music-item>
 				</div>
-				<!--//item-->
 			</div>
-			<!--//row-->
 		</div>
 		<div class="music-action">
-			<!--a class="btn btn-ghost-primary" href="#">Music on iTunes</a-->
 		</div>
 	</div>
-	<!--//container-->
 </section>
-<!--//music-section-->
+x

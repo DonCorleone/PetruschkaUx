@@ -24,13 +24,4 @@ export class MerchListComponent implements OnInit {
 		let imageUrl = 'https://petruschka.netlify.app/' + 'assets/images/' + encodeURIComponent('logo-wandertheater.png');
 		return "https://images.weserv.nl/?url=" + imageUrl + "&w=444&h=126";
 	}
-
-	GetName(eventDetail: EventDetail):string{
-		return EventService.GetNameFromEventDetail(eventDetail);
-	}
-
-	GetImageUrl(eventDetail: EventDetail):string{
-		const imageUrl = EventService.GetTicketTypeInfoFromEventDetail(eventDetail, 'Tournee')?.imageUrl;
-		return imageUrl ? imageUrl + '?nf_resize=smartcrop&w=300&h=300' : '';
-	}
 }

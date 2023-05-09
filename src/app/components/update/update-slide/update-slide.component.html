@@ -1,44 +1,32 @@
 <div class="updates-list slide" *ngIf="eventDetail as eventDetailx">
 	<div class="media-holder" (click)="openInfo(eventDetail)">
 		<div class="media-thumb">
-			<img [src]="imagePath(eventDetail)" alt="update image">
+			<img [src]="imagePath" alt="update image">
 		</div>
-		<!--div class="media-thumb">
-			<img src="assets/images/video-thumb-1.jpg" alt="">
-			<a id="video-play-triggger" class="video-play-trigger" data-toggle="modal" data-target="#modal-video"><i class="fas fa-play"></i></a>
-		</div-->
 	</div>
-	<!--//media-holder-->
 	<div class="list-content">
-		<h3 class="title">{{name(eventDetail)}}</h3>
-		<!--div class="desc"-->
+		<h3 class="title">{{ eventInfo?.name }}</h3>
 			<div class="countdown">
-
-				<div *ngIf="futureEvent(eventDetail); then thenBlock else elseBlock"></div>
+				<div *ngIf="futureEvent; then thenBlock else elseBlock"></div>
 					<ng-template #thenBlock>
-						<div class="countdown-box"><span [innerText]="featurePremiereEvent(eventDetail) + ': '"></span><span class="number">{{ eventDetail.start | date:'dd.MM.YY, HH:mm' : '' :'de-CH'}}</span></div>
+						<div class="countdown-box"><span [innerText]="featurePremiereEventStr + ': '"></span><span class="number">{{ eventDetail.start | date:'dd.MM.YY, HH:mm' : '' :'de-CH'}}</span></div>
 					</ng-template>
 					<ng-template #elseBlock>
-						<div class="countdown-box" *ngIf="superfutureEvent(eventDetail)"><span>Premiere: </span><span class="number">{{ eventDetail.start | date:'MMMM YYYY' : '' :'de-CH'}}</span></div>
-						<div class="countdown-box" *ngIf="pastEvent(eventDetail)"><span>Uraufführung: </span><span class="number">{{ eventDetail.start | date:'MMMM YYYY' : '' :'de-CH'}}</span></div>
+						<div class="countdown-box" *ngIf="superfutureEvent"><span>Premiere: </span><span class="number">{{ eventDetail.start | date:'MMMM YYYY' : '' :'de-CH'}}</span></div>
+						<div class="countdown-box" *ngIf="pastEvent"><span>Uraufführung: </span><span class="number">{{ eventDetail.start | date:'MMMM YYYY' : '' :'de-CH'}}</span></div>
 					</ng-template>
 			</div>
-			<!--//countdown-->
 			<div class="description-button-block">
 				<div>
 					<p class="intro">
-						{{ shortDescription(eventDetail) }}
+						{{ eventInfo?.shortDescription }}
 					</p>
 				</div>
 				<div>
-					<p class="imprtant" *ngIf="importantNotes(eventDetail)"> {{ importantNotes(eventDetail) }} </p>
-					<a class="btn btn-sm btn-ghost-primary" (click)="openInfo(eventDetail)">Info <span *ngIf="pastEvent(eventDetail) && eventDetail.facebookPixelId">/ Impressionen</span></a>
-					<a class="btn btn-sm btn-primary" routerLink="/upcoming" *ngIf="futureEvent(eventDetail)">Aufführungen</a>
+					<p class="imprtant" *ngIf="eventInfo?.importantNotes"> {{ eventInfo?.importantNotes}} </p>
+					<a class="btn btn-sm btn-ghost-primary" (click)="openInfo(eventDetail)">Info <span *ngIf="pastEvent && eventDetail.facebookPixelId">/ Impressionen</span></a>
+					<a class="btn btn-sm btn-primary" routerLink="/upcoming" *ngIf="futureEvent">Aufführungen</a>
 				</div>
 			</div>
-			<!--//intro-->
-		<!--/div-->
-		<!--//desc-->
 	</div>
-	<!--//content-container-->
 </div>
