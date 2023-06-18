@@ -9,6 +9,13 @@
 	<link href="favicon.ico" rel="icon" type="image/x-icon">
 </head>
 <body>
+	<!-- A little help for the Netlify bots if you're not using a SSG -->
+	<form name="subscribe" netlify netlify-honeypot="bot-field" hidden 
+	action="/success">
+		<input type="text" name="first_name" />
+		<input type="text" name="last_name" />
+		<input type="email" name="email" />
+	</form>
 	<app-root></app-root>
 </body>
 </html>

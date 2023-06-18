@@ -20,9 +20,10 @@ import { ContactModule } from './modules/contact/contact.module';
 import { ScullyLibModule } from '@scullyio/ng-lib';
 import { NewsletterModalComponent } from './components/newsletter-modal/newsletter-modal.component';
 import { NewsletterItemComponent } from './components/newsletter-item/newsletter-item.component';
+import { SuccessComponent } from './components/success/success.component';
 
 @NgModule({
-  declarations: [AppComponent, ScrollSpyDirective, ImageModalComponent, TicketModalComponent, TicketItemComponent, NewsletterModalComponent, NewsletterItemComponent],
+  declarations: [AppComponent, ScrollSpyDirective, ImageModalComponent, TicketModalComponent, TicketItemComponent, NewsletterModalComponent, NewsletterItemComponent, SuccessComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
