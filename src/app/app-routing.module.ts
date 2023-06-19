@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { SuccessComponent } from './modules/success/success.component';
 
 const routes: Routes = [
   {
@@ -32,7 +33,7 @@ const routes: Routes = [
   },
   { 
     path: 'success', 
-    loadComponent: () => import('./modules/success/success.component').then((m) => m.SuccessComponent),
+    component: SuccessComponent
   }
 ];
 
