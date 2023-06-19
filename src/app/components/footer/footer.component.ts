@@ -1,6 +1,6 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
-import { NewsletterModalComponent } from '../newsletter-modal/newsletter-modal.component';
+import { NewsletterModalComponent } from '../newsletter/newsletter-modal/newsletter-modal.component';
 
 @Component({
   selector: 'app-footer',

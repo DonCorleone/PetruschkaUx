@@ -18,12 +18,10 @@ import { HistoryModule } from './modules/history/history.module';
 import { TeamModule } from './modules/team/team.module';
 import { ContactModule } from './modules/contact/contact.module';
 import { ScullyLibModule } from '@scullyio/ng-lib';
-import { NewsletterModalComponent } from './components/newsletter-modal/newsletter-modal.component';
-import { NewsletterItemComponent } from './components/newsletter-item/newsletter-item.component';
-import { SuccessComponent } from './components/success/success.component';
-
+import { NewsletterModalComponent } from './components/newsletter/newsletter-modal/newsletter-modal.component';
+import { NewsletterItemComponent } from './components/newsletter/newsletter-item/newsletter-item.component';
 @NgModule({
-  declarations: [AppComponent, ScrollSpyDirective, ImageModalComponent, TicketModalComponent, TicketItemComponent, NewsletterModalComponent, NewsletterItemComponent, SuccessComponent],
+  declarations: [AppComponent, ScrollSpyDirective, ImageModalComponent, TicketModalComponent, TicketItemComponent, NewsletterModalComponent, NewsletterItemComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
@@ -36,6 +34,7 @@ import { SuccessComponent } from './components/success/success.component';
     AudioModule,
     HistoryModule,
     TeamModule,
+    ScullyLibModule,
     ContactModule,
     ScullyLibModule,
   ],

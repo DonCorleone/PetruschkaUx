@@ -6,14 +6,12 @@ import { PromoComponent } from '../../components/promo/promo/promo.component';
 import { MerchModalComponent } from '../../components/merch/merch-modal/merch-modal.component';
 import { MusicModalComponent } from '../../components/music/music-modal/music-modal.component';
 import { LocationModalComponent } from '../../components/location/location-modal/location-modal.component';
-import { SponsorsComponent } from '../../components/sponsors/sponsors.component';
 import { GalleryModalComponent } from '../../components/gallery/gallery-modal/gallery-modal.component';
 import { MusicDetailComponent } from '../../components/music/music-detail/music-detail.component';
 import { LocationItemComponent } from '../../components/location/location-item/location-item.component';
 import { VideoComponent } from '../../components/video/video.component';
 import { InfoModalComponent } from '../../components/info/info-modal/info-modal.component';
 import { MerchDetailComponent } from '../../components/merch/merch-detail/merch-detail.component';
-import { PressComponent } from '../../components/press/press.component';
 import { InfoComponent } from '../../components/info/info-item/info-item.component';
 import { PromoCarouselComponent } from '../../components/promo/promo-carousel/promo-carousel.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
@@ -21,7 +19,7 @@ import { NgxMasonryModule } from 'ngx-masonry';
 import { SharedModule } from '../shared/shared.module';
 import { RouterModule, Routes } from '@angular/router';
 
-const routes: Routes = [{ path: '', component: HomeComponent }];
+const routes: Routes = [{ path: '', component: HomeComponent}];
 
 @NgModule({
 	declarations: [
@@ -37,7 +35,7 @@ const routes: Routes = [{ path: '', component: HomeComponent }];
 		MerchDetailComponent,
 		MusicModalComponent,
 		MusicDetailComponent,
-		GalleryModalComponent,
+		GalleryModalComponent
 	],
 	imports: [CommonModule, SharedModule, RouterModule.forChild(routes), NgbModule, NgxMasonryModule],
 })

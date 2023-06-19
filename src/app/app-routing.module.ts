@@ -18,22 +18,26 @@ const routes: Routes = [
     path: 'audio',
     loadChildren: () => import('./modules/audio/audio.module').then((m) => m.AudioModule),
   },
-	{
-		path: 'history',
-		loadChildren: () => import('./modules/history/history.module').then((m) => m.HistoryModule),
-	},
-	{
-		path: 'team',
-		loadChildren: () => import('./modules/team/team.module').then((m) => m.TeamModule),
-	},
-	{
-		path: 'contact',
-		loadChildren: () => import('./modules/contact/contact.module').then((m) => m.ContactModule),
-	},
+  {
+    path: 'history',
+    loadChildren: () => import('./modules/history/history.module').then((m) => m.HistoryModule),
+  },
+  {
+    path: 'team',
+    loadChildren: () => import('./modules/team/team.module').then((m) => m.TeamModule),
+  },
+  {
+    path: 'contact',
+    loadChildren: () => import('./modules/contact/contact.module').then((m) => m.ContactModule),
+  },
+  { 
+    path: 'success', 
+    loadComponent: () => import('./modules/success/success.component').then((m) => m.SuccessComponent),
+  }
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes, { relativeLinkResolution: 'legacy', anchorScrolling:'enabled' })],
+  imports: [RouterModule.forRoot(routes, { relativeLinkResolution: 'legacy', anchorScrolling: 'enabled' })],
   exports: [RouterModule],
 })
 export class AppRoutingModule {}
