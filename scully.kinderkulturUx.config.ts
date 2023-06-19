@@ -7,5 +7,5 @@ export const config: ScullyConfig = {
   projectName: 'kinderkulturUx',
   outDir: './dist/static',
   routes: {},
-  extraRoutes: ['/upcoming', '/tour', '/audio', '/history', '/team', '/contact'],
+  extraRoutes: ['/upcoming', '/tour', '/audio', '/history', '/team', '/contact', '/success'],
 };
