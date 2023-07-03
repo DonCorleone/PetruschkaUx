@@ -25,7 +25,10 @@ export class SponsorsComponent implements OnInit {
     this.sponsors$ = this.sponsorsService.GetSponsors(this.eventKey);
   }
 
-  getImagePath(imageName: string): string {
-    return `${this.imageUrl}/assets/images/sponsoren/sponsors_${imageName}`;
+  getImagePath(sponsor: Sponsor): string {
+		// calculate height of image based on share
+		const share = sponsor.events.find(p => p.event == this.eventKey).share;
+		const heightInt = Math.round(share * 500);
+		return `https://www.petruschka.ch/assets/images/sponsoren/sponsors_${sponsor.image}?nf_resize=fit&h=${heightInt}`;
   }
 }

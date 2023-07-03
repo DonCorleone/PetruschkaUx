@@ -4,13 +4,13 @@
 		<div class="border-box">
 			<div class="border-box-item" [ngClass]="{'text-only-sponsor': sponsor.image === '', 'no-border': sponsor.image === ''}">
 				<a [href]="sponsor.url" target="_blank" *ngIf="sponsor.url !== '' && sponsor.image !== ''">
-					<img [src]="getImagePath(sponsor.image)" [alt]="'logo ' + sponsor.name"/>
+					<img [src]="getImagePath(sponsor)" [alt]="'logo ' + sponsor.name"/>
 				</a>
 				<a [href]="sponsor.url" target="_blank" *ngIf="sponsor.url !== '' && sponsor.image === ''">
 					<i class="fas fa-external-link-square-alt"></i><span> {{sponsor.name}}</span>
 				</a>
 				<div *ngIf="sponsor.url === '' && sponsor.image !== ''">
-					<img [src]="getImagePath(sponsor.image)" [alt]="'logo ' + sponsor.name"/>
+					<img [src]="getImagePath(sponsor)" [alt]="'logo ' + sponsor.name"/>
 				</div>
 				<div *ngIf="sponsor.url === '' && sponsor.image === ''" [ngClass]="{'prime': getShare(sponsor) > 0.2}">
 					<i class="fas fa-external-link-square-alt" *ngIf="sponsor.url !== ''"></i><span> {{sponsor.name}}</span>
