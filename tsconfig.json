@@ -10,20 +10,21 @@
     "module": "es2020",
     "moduleResolution": "node",
     "importHelpers": true,
-    "target": "es2020",
-    "esModuleInterop":true,
+    "target": "ES2022",
+    "esModuleInterop": true,
     "typeRoots": [
       "node_modules/@types"
     ],
     "types": [
-			"node"
+      "node"
     ],
     "lib": [
-			"es2020",
+      "es2020",
       "dom",
       "esnext.asynciterable"
     ],
-    "allowSyntheticDefaultImports":true
+    "allowSyntheticDefaultImports": true,
+    "useDefineForClassFields": false
   },
   "angularCompilerOptions": {
     "fullTemplateTypeCheck": true,

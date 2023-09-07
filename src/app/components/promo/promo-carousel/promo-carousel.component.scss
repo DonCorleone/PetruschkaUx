@@ -1,29 +1,5 @@
 @import "/src/scss/theme-1.scss";
 
-@keyframes zoom {
-	from {
-		transform: scale(1.4, 1.4);
-	}
-	to {
-		transform: scale(1, 1);
-	}
-}
-@-webkit-keyframes zoom {
-	from {
-		-webkit-transform: scale(1.4, 1.4);
-	}
-	to {
-		-webkit-transform: scale(1, 1);
-	}
-}
-@-moz-keyframes zoom {
-	from {
-		-moz-transform: scale(1.4, 1.4);
-	}
-	to {
-		-moz-transform: scale(1, 1);
-	}
-}
 @media only screen and (orientation: landscape) {
 	@for $i from 0 through 5 {
 		.promo-carousel #slide-ngb-slide-#{$i} {
