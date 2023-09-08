@@ -7,16 +7,7 @@ import {animate, keyframes, style, transition, trigger} from "@angular/animation
 	templateUrl: './promo-carousel.component.html',
 	styleUrls: ['./promo-carousel.component.scss'],
 	changeDetection: ChangeDetectionStrategy.OnPush,
-	animations: [
-		trigger('zoom', [
-			transition('void => *', [
-				animate('0.5s', keyframes([
-					style({ transform: 'scale(1.4, 1.4)', offset: 0 }),
-					style({ transform: 'scale(1, 1)', offset: 1 })
-				]))
-			])
-		])
-	]
+	encapsulation: ViewEncapsulation.None,
 })
 export class PromoCarouselComponent {
 
