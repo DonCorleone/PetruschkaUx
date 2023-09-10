@@ -5,7 +5,7 @@ staticPort: 1668
 reloadPort: 2667
 hostName: localhost
 projectName: kinderkulturUx
-homeFolder: /Users/linus/Documents/scm/petruschka/PetruschkaUx
+homeFolder: /Users/linuswieland/Documents/scm/petruschka-ch
 distFolder: ./dist/kinderkulturUx
-outDir: /Users/linus/Documents/scm/petruschka/PetruschkaUx/dist/static
+outDir: /Users/linuswieland/Documents/scm/petruschka-ch/dist/static
 handle404: ''

@@ -1,5 +1,4 @@
 import { ChangeDetectionStrategy, Component, Input, OnDestroy, OnInit } from '@angular/core';
-import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
 import { DomSanitizer, SafeHtml } from '@angular/platform-browser';
 import { Observable, Subject } from 'rxjs';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
@@ -49,33 +48,20 @@ export class InfoComponent implements OnInit, OnDestroy {
     private sanitizer: DomSanitizer,
     private modalService: NgbModal,
     private imageService: ImagesService,
-    private pressService: PressService,
-    private breakpointObserver: BreakpointObserver
+    private pressService: PressService
   ) {}
 
   ngOnInit(): void {
     if (this.eventInfo && this.eventInfo.artists) {
       this.artistsArray = StaffService.GetStaffLinks(this.eventInfo.artists);
     }
-    this.breakpointObserver
-      .observe([Breakpoints.XSmall, Breakpoints.Small, Breakpoints.Medium, Breakpoints.Large, Breakpoints.XLarge])
-      .pipe(takeUntil(this._ngDestroy$))
-      .subscribe((result) => {
-        for (const query of Object.keys(result.breakpoints)) {
-          if (result.breakpoints[query]) {
-            const match = query.match('\\(max-width:\\s(\\d+)\\.98px\\)');
-            const width = match?.length ? match[1] : '2048';
 
-            this.files$ = this.imageService.listAssets('/assets/images/impressionen/' + this.eventKey).pipe(
-              map((p) => {
-                p.forEach((image) => (image.path = `${environment.URL}${image.path}`));
-                return p;
-              })
-            );
-            break;
-          }
-        }
-      });
+		this.files$ = this.imageService.listAssets('/assets/images/impressionen/' + this.eventKey).pipe(
+			map((p) => {
+				p.forEach((image) => (image.path = `${environment.URL}${image.path}`));
+				return p;
+			})
+		);
   }
 
   get showBuyButton(): boolean {
@@ -138,9 +124,9 @@ export class InfoComponent implements OnInit, OnDestroy {
     return this.sanitizer.bypassSecurityTrustHtml(htmlTextWithStyle);
   }
 
-  openGallery(): void {
+	openGallery(files: Netlifile[]): void {
     const modalRef = this.modalService.open(GalleryModalComponent, { size: 'xl' });
-    modalRef.componentInstance.files$ = this.files$;
+    modalRef.componentInstance.files$ = files;
   }
 
   openTicket(): void {

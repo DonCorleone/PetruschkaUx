@@ -12,8 +12,8 @@ import { ImageModalComponent } from '../image-modal/image-modal.component';
   styleUrls: ['./gallery-modal.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class GalleryModalComponent implements OnChanges {
-  @Input() files$: Observable<Netlifile[]>;
+export class GalleryModalComponent {
+  @Input() files: Netlifile[];
 
   constructor(public activeModal: NgbActiveModal, private modalService: NgbModal) {}
 
@@ -34,9 +34,5 @@ export class GalleryModalComponent implements OnChanges {
       centered: true,
     });
     modalRef.componentInstance.image = image;
-  }
-
-  ngOnChanges(changes: SimpleChanges): void {
-    this.files$.subscribe((p) => console.log(p));
   }
 }

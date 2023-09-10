@@ -24,6 +24,7 @@
 		-moz-transform: scale(1, 1);
 	}
 }
+
 @media only screen and (orientation: landscape) {
 	@for $i from 0 through 5 {
 		.promo-carousel #slide-ngb-slide-#{$i} {
