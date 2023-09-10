@@ -11,7 +11,7 @@
   <h4 class="modal-title text-center" id="infoModalLabel">Gallery</h4>
 </div>
 <div class="modal-body" ngbAutoFocus>
-  <ngx-masonry [options]="masonryOptions" [ordered]="true" (itemsLoaded)="itemsLoaded()" *ngIf="files">
+  <ngx-masonry [options]="masonryOptions" [ordered]="true" (itemsLoaded)="itemsLoaded()">
     <div
       ngxMasonryItem
       [prepend]="files.length > 0"
