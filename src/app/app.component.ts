@@ -11,6 +11,5 @@ import localeDeCH from '@angular/common/locales/de-CH';
 export class AppComponent implements OnInit {
   ngOnInit() {
     registerLocaleData(localeDeCH, 'de-CH');
-		console.log(environment.API_KEY_MONGODB);
   }
 }

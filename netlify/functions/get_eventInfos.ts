@@ -2,7 +2,6 @@ import { Handler } from '@netlify/functions';
 const axios = require('axios');
 
 const handler: Handler = async (event, context) => {
-  console.log(JSON.stringify(event?.queryStringParameters));
 
   const data = JSON.stringify({
     collection: 'EventDetails',

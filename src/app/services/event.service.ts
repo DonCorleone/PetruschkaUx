@@ -81,8 +81,6 @@ export class EventService {
       return null;
     }
 
-		console.log(JSON.stringify(eventDetail.ticketTypes));
-
     let returnArray: TicketPrice[] = [];
 
     for (const ticketType of eventDetail.ticketTypes) {
@@ -122,7 +120,6 @@ export class EventService {
   }
 
   GetEventDetail(id: number): Observable<EventDetail> {
-    // console.log(`load event with Item ${id}`);
     return this.httpClient
       .get<GetEventInfoById>(`.netlify/functions/get_eventInfos?eventid=${id}`)
       .pipe(map((result) => result.message.documents.find((p) => p._id === id)));
@@ -133,7 +130,6 @@ export class EventService {
     .pipe(map((result) => result.message.documents));
 
   GetEventDetails(filterPredicateIn: any): Observable<EventDetail[]> {
-    // console.log(`load events with predicate ${filterPredicateIn}`);
     return this.httpClient
       .get<EventDetailsResponse>('.netlify/functions/get_events?collection=EventDetailsTaggedUsage')
       .pipe(map((result) => result.message.documents.filter(filterPredicateIn)));

@@ -126,7 +126,7 @@ export class InfoComponent implements OnInit, OnDestroy {
 
 	openGallery(files: Netlifile[]): void {
     const modalRef = this.modalService.open(GalleryModalComponent, { size: 'xl' });
-    modalRef.componentInstance.files$ = files;
+    modalRef.componentInstance.files = files;
   }
 
   openTicket(): void {

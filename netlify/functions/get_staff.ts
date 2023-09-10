@@ -9,8 +9,6 @@ const handler: Handler = async (event, context) => {
 		"dataSource": "Cluster0",
 	});
 
-	console.log("header: ${process.env.API_KEY_MONGODB}");
-
 	const config = {
 		method: 'post',
 		url: 'https://data.mongodb-api.com/app/data-pcuoo/endpoint/data/v1/action/find',
