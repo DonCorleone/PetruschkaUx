@@ -13,7 +13,7 @@ export class SponsorsComponent implements OnInit {
   @Input() eventKey: String;
   private imageUrl: string;
 
-  getShare(sponsor: Sponsor): Number {
+  getShare(sponsor: Sponsor): number {
     return sponsor?.events.find((p) => p.event === this.eventKey)?.share;
   }
   constructor(private sponsorsService: SponsorsService) {}

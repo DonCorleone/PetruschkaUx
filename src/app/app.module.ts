@@ -17,7 +17,6 @@ import { AudioModule } from './modules/audio/audio.module';
 import { HistoryModule } from './modules/history/history.module';
 import { TeamModule } from './modules/team/team.module';
 import { ContactModule } from './modules/contact/contact.module';
-import { ScullyLibModule } from '@scullyio/ng-lib';
 import { NewsletterModalComponent } from './components/newsletter/newsletter-modal/newsletter-modal.component';
 import { NewsletterItemComponent } from './components/newsletter/newsletter-item/newsletter-item.component';
 @NgModule({
@@ -34,9 +33,7 @@ import { NewsletterItemComponent } from './components/newsletter/newsletter-item
     AudioModule,
     HistoryModule,
     TeamModule,
-    ScullyLibModule,
     ContactModule,
-    ScullyLibModule,
   ],
   exports: [HttpClientModule],
   providers: [
