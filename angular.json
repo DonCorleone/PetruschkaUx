@@ -21,7 +21,7 @@
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
             "allowedCommonJsDependencies": ["zen-observable", "graphql-tag", "ngx-masonry"],
-            "outputPath": "dist/kinderkulturUx",
+            "outputPath": "dist/kinderkulturUx/browser",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -143,6 +143,84 @@
               "devServerTarget": "kinderkulturUx:serve:custom"
             }
           }
+        },
+        "server": {
+          "builder": "@angular-devkit/build-angular:server",
+          "options": {
+            "outputPath": "dist/kinderkulturUx/server",
+            "main": "server.ts",
+            "tsConfig": "tsconfig.server.json"
+          },
+          "configurations": {
+            "production": {
+              "buildOptimizer": true,
+              "outputHashing": "media",
+              "fileReplacements": [
+                {
+                  "replace": "src/environments/environment.ts",
+                  "with": "src/environments/environment.prod.ts"
+                }
+              ],
+              "optimization": true,
+              "sourceMap": false,
+              "extractLicenses": true,
+              "vendorChunk": false
+            },
+            "custom": {
+              "buildOptimizer": false,
+              "fileReplacements": [
+                {
+                  "replace": "src/environments/environment.ts",
+                  "with": "src/environments/environment.custom.ts"
+                }
+              ],
+              "optimization": false,
+              "sourceMap": true,
+              "extractLicenses": false,
+              "vendorChunk": true
+            },
+            "development": {
+              "buildOptimizer": false,
+              "optimization": false,
+              "sourceMap": true,
+              "extractLicenses": false,
+              "vendorChunk": true
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "serve-ssr": {
+          "builder": "@nguniversal/builders:ssr-dev-server",
+          "configurations": {
+            "development": {
+              "browserTarget": "kinderkulturUx:build:development",
+              "serverTarget": "kinderkulturUx:server:development"
+            },
+            "production": {
+              "browserTarget": "kinderkulturUx:build:production",
+              "serverTarget": "kinderkulturUx:server:production"
+            }
+          },
+          "defaultConfiguration": "development"
+        },
+        "prerender": {
+          "builder": "@nguniversal/builders:prerender",
+          "options": {
+            "routes": [
+              "/"
+            ]
+          },
+          "configurations": {
+            "production": {
+              "browserTarget": "kinderkulturUx:build:production",
+              "serverTarget": "kinderkulturUx:server:production"
+            },
+            "development": {
+              "browserTarget": "kinderkulturUx:build:development",
+              "serverTarget": "kinderkulturUx:server:development"
+            }
+          },
+          "defaultConfiguration": "production"
         }
       }
     }
