@@ -2,7 +2,8 @@ import { Component, Input, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
 import { SponsorsService } from 'src/app/services/sponsors.service';
 import { environment } from '../../../environments/environment';
-import { Sponsor } from '../../models/sponsors.models';
+import { Sponsor, SponsorExtended } from '../../models/sponsors.models';
+import { map } from 'rxjs/operators';
 
 @Component({
   selector: 'app-sponsors',
@@ -11,24 +12,27 @@ import { Sponsor } from '../../models/sponsors.models';
 })
 export class SponsorsComponent implements OnInit {
   @Input() eventKey: String;
-  private imageUrl: string;
 
-  getShare(sponsor: Sponsor): Number {
-    return sponsor?.events.find((p) => p.event === this.eventKey)?.share;
-  }
   constructor(private sponsorsService: SponsorsService) {}
 
-  sponsors$: Observable<Sponsor[]>;
+  sponsors$: Observable<SponsorExtended[]>;
 
   ngOnInit(): void {
-    this.imageUrl = environment.URL;
-    this.sponsors$ = this.sponsorsService.GetSponsors(this.eventKey);
-  }
-
-  getImagePath(sponsor: Sponsor): string {
-		// calculate height of image based on share
-		const share = sponsor.events.find(p => p.event == this.eventKey).share;
-		const heightInt = Math.round(share * 480);
-		return `https://www.petruschka.ch/assets/images/sponsoren/sponsors_${sponsor.image}?nf_resize=fit&h=${heightInt}`;
+    const url = environment.URL;
+    this.sponsors$ = this.sponsorsService.GetSponsors(this.eventKey).pipe(
+      map((sponsors) =>
+        sponsors.map((sponsor) => {
+          const currentEvent = sponsor.events.find((p) => p.event == this.eventKey);
+          const share = currentEvent ? currentEvent.share : 0.1;   // find the event with the current eventKey
+          const heightInt = Math.round(share * 480);  // calculate height of image based on share
+          const imagePath = url + `/assets/images/sponsoren/sponsors_${sponsor.image}?nf_resize=fit&h=${heightInt}`;
+          return {
+            ...sponsor,
+            share: share,
+            imagePath: imagePath,
+          };
+        })
+      )
+    );
   }
 }

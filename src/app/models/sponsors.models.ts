@@ -9,3 +9,8 @@ export interface Sponsor {
 	name: string;
 	url: string;
 }
+
+export interface SponsorExtended extends Sponsor {
+	share : number;
+	imagePath: string;
+}
