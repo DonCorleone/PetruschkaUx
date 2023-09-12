@@ -2,7 +2,7 @@
 external_node_modules = ["axios"]
 
 [build]
-  command = "npm run prerender --configuration=production"
+  command = "npm run prerender"
   functions = "netlify/functions"
   publish = "dist/kinderkulturUx/browser"
 
