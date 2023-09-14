@@ -38,7 +38,7 @@
               "fileReplacements": [
                 {
                   "replace": "src/environments/environment.ts",
-                  "with": "src/environments/environment.prod.ts"
+                  "with": "src/environments/environment.custom.ts"
                 }
               ],
               "optimization": true,
@@ -168,12 +168,6 @@
             },
             "custom": {
               "buildOptimizer": false,
-              "fileReplacements": [
-                {
-                  "replace": "src/environments/environment.ts",
-                  "with": "src/environments/environment.custom.ts"
-                }
-              ],
               "optimization": false,
               "sourceMap": true,
               "extractLicenses": false,
@@ -220,12 +214,6 @@
               "serverTarget": "kinderkulturUx:server:production"
             },
             "custom": {
-              "fileReplacements": [
-                {
-                  "replace": "src/environments/environment.ts",
-                  "with": "src/environments/environment.custom.ts"
-                }
-              ],
               "browserTarget": "kinderkulturUx:build:custom",
               "serverTarget": "kinderkulturUx:server:custom"
             },
