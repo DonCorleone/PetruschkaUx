@@ -214,6 +214,12 @@
               "serverTarget": "kinderkulturUx:server:production"
             },
             "custom": {
+              "fileReplacements": [
+                {
+                  "replace": "src/environments/environment.ts",
+                  "with": "src/environments/environment.custom.ts"
+                }
+              ],
               "browserTarget": "kinderkulturUx:build:custom",
               "serverTarget": "kinderkulturUx:server:custom"
             },
