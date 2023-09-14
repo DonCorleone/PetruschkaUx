@@ -29,8 +29,7 @@ export class GigsItemComponent {
   constructor(
     private modalService: NgbModal,
     private eventService: EventService,
-    @Inject(PLATFORM_ID)
-    private platformId: any
+    @Inject(PLATFORM_ID) private platformId: any
   ) {}
 
   get eventLink() {

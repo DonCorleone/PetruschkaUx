@@ -49,10 +49,8 @@ export class InfoComponent implements OnInit, OnDestroy {
     private sanitizer: DomSanitizer,
     private modalService: NgbModal,
     private imageService: ImagesService,
-    private pressService: PressService
-    @Inject(PLATFORM_ID)
-    private platformId: any
-  
+    private pressService: PressService,
+    @Inject(PLATFORM_ID) private platformId: any
   ) {}
 
   ngOnInit(): void {
@@ -60,12 +58,12 @@ export class InfoComponent implements OnInit, OnDestroy {
       this.artistsArray = StaffService.GetStaffLinks(this.eventInfo.artists);
     }
 
-		this.files$ = this.imageService.listAssets('/assets/images/impressionen/' + this.eventKey).pipe(
-			map((p) => {
-				p.forEach((image) => (image.path = `${environment.URL}${image.path}`));
-				return p;
-			})
-		);
+    this.files$ = this.imageService.listAssets('/assets/images/impressionen/' + this.eventKey).pipe(
+      map((p) => {
+        p.forEach((image) => (image.path = `${environment.URL}${image.path}`));
+        return p;
+      })
+    );
   }
 
   get showBuyButton(): boolean {
@@ -79,10 +77,10 @@ export class InfoComponent implements OnInit, OnDestroy {
     };
   }
 
-	get bannerImagePath(): string {
-		const imageUrl = this.eventInfo?.bannerImagePath;
-		return imageUrl ? imageUrl + '?nf_resize=smartcrop&w=766&h=400' : '';
-	}
+  get bannerImagePath(): string {
+    const imageUrl = this.eventInfo?.bannerImagePath;
+    return imageUrl ? imageUrl + '?nf_resize=smartcrop&w=766&h=400' : '';
+  }
 
   get name() {
     return this.eventInfo && this.eventInfo.name ? this.eventInfo.name : null;
@@ -128,7 +126,7 @@ export class InfoComponent implements OnInit, OnDestroy {
     return this.sanitizer.bypassSecurityTrustHtml(htmlTextWithStyle);
   }
 
-	openGallery(files: Netlifile[]): void {
+  openGallery(files: Netlifile[]): void {
     const modalRef = this.modalService.open(GalleryModalComponent, { size: 'xl' });
     modalRef.componentInstance.files = files;
   }
@@ -142,10 +140,9 @@ export class InfoComponent implements OnInit, OnDestroy {
       const modalRef = this.modalService.open(TicketModalComponent, { size: 'md' });
       modalRef.componentInstance.ticketPrices = this.ticketPrices;
     } else {
-
       if (isPlatformBrowser(this.platformId)) {
         window.open(eventLink, '_blank');
-            }
+      }
     }
   }
   get eventLink() {
