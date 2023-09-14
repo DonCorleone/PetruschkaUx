@@ -222,7 +222,7 @@
               "serverTarget": "kinderkulturUx:server:development"
             }
           },
-          "defaultConfiguration": "production"
+          "defaultConfiguration": "custom"
         }
       }
     }
