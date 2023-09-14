@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component, Input, OnDestroy, OnInit } from '@angular/core';
+import { ChangeDetectionStrategy, Component, Inject, Input, OnDestroy, OnInit, PLATFORM_ID } from '@angular/core';
 import { DomSanitizer, SafeHtml } from '@angular/platform-browser';
 import { Observable, Subject } from 'rxjs';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
@@ -14,6 +14,7 @@ import { StaffService } from '../../../services/staff.service';
 import { environment } from '../../../../environments/environment';
 import { Job } from '../../../models/staff.models';
 import { LocationIdName } from 'src/app/models/location.models';
+import { isPlatformBrowser } from '@angular/common';
 
 @Component({
   selector: 'app-info-item',
@@ -49,6 +50,9 @@ export class InfoComponent implements OnInit, OnDestroy {
     private modalService: NgbModal,
     private imageService: ImagesService,
     private pressService: PressService
+    @Inject(PLATFORM_ID)
+    private platformId: any
+  
   ) {}
 
   ngOnInit(): void {
@@ -138,7 +142,10 @@ export class InfoComponent implements OnInit, OnDestroy {
       const modalRef = this.modalService.open(TicketModalComponent, { size: 'md' });
       modalRef.componentInstance.ticketPrices = this.ticketPrices;
     } else {
-      window.open(eventLink, '_blank');
+
+      if (isPlatformBrowser(this.platformId)) {
+        window.open(eventLink, '_blank');
+            }
     }
   }
   get eventLink() {

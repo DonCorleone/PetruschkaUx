@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
+import { ChangeDetectionStrategy, Component, Inject, Input, PLATFORM_ID } from '@angular/core';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { EventDetailEventInfo, TicketPrice } from 'src/app/models/event.models';
 import { EventService } from 'src/app/services/event.service';
@@ -6,6 +6,8 @@ import { InfoModalComponent } from '../../info/info-modal/info-modal.component';
 import { LocationModalComponent } from '../../location/location-modal/location-modal.component';
 import { TicketModalComponent } from '../../ticket/ticket-modal/ticket-modal.component';
 import { LocationIdName } from '../../../models/location.models';
+import { platform } from 'os';
+import { isPlatformBrowser } from '@angular/common';
 
 @Component({
   selector: 'app-gigs-item',
@@ -24,7 +26,12 @@ export class GigsItemComponent {
   @Input() eventKey: string;
   @Input() ef_locationId?: number;
 
-  constructor(private modalService: NgbModal, private eventService: EventService) {}
+  constructor(
+    private modalService: NgbModal,
+    private eventService: EventService,
+    @Inject(PLATFORM_ID)
+    private platformId: any
+  ) {}
 
   get eventLink() {
     if (this.eventInfoDe?.url?.includes('petruschka.ch')) {
@@ -61,7 +68,11 @@ export class GigsItemComponent {
       const modalRef = this.modalService.open(TicketModalComponent, { size: 'md' });
       modalRef.componentInstance.ticketPrices = this.ticketPrices;
     } else {
-      window.open(eventLink, '_blank');
+      if (isPlatformBrowser(this.platformId)) {
+        window.open(eventLink, '_blank');
+      } else {
+        // server specific logic
+      }
     }
   }
 
