@@ -10,6 +10,8 @@ import { RouterModule } from '@angular/router';
 import { HTTP_INTERCEPTORS } from '@angular/common/http';
 import { LoadingIndicatorComponent } from 'src/app/components/loading-indicator/loading-indicator.component';
 import { LoadingIndicatorInterceptor } from 'src/app/interceptors/loading-indicator.interceptor';
+import { SwiperComponent } from './swiper/swiper.component';
+import { register } from 'swiper/element/bundle';
 
 @NgModule({
   declarations: [
@@ -19,8 +21,9 @@ import { LoadingIndicatorInterceptor } from 'src/app/interceptors/loading-indica
     UpdateSlideComponent,
     SponsorsComponent,
     LoadingIndicatorComponent,
+    
   ],
-  imports: [CommonModule, RouterModule, NgbCollapseModule, NgbCarouselModule],
+  imports: [CommonModule, RouterModule, NgbCollapseModule,SwiperComponent],
   providers: [{ provide: HTTP_INTERCEPTORS, useClass: LoadingIndicatorInterceptor, multi: true }],
   exports: [
     FooterComponent,
@@ -31,6 +34,11 @@ import { LoadingIndicatorInterceptor } from 'src/app/interceptors/loading-indica
     UpdateSlideComponent,
     SponsorsComponent,
     LoadingIndicatorComponent,
+    SwiperComponent
   ],
 })
-export class SharedModule {}
+export class SharedModule {
+  constructor() {
+    register();
+  }
+}

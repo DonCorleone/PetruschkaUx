@@ -32,4 +32,5 @@ export interface Netlifile {
   size: number;
   site_id: string;
   deploy_id: string;
+  url?: string;
 }

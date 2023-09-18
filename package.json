@@ -21,6 +21,7 @@
   "private": true,
   "dependencies": {
     "@angular/animations": "^16.2.4",
+    "@angular/cdk": "^16.2.4",
     "@angular/common": "^16.2.4",
     "@angular/compiler": "^16.2.4",
     "@angular/core": "^16.2.4",
@@ -38,9 +39,8 @@
     "codelyzer": "^6.0.1",
     "express": "^4.15.2",
     "jwt-decode": "^3.1.2",
-    "masonry-layout": "^4.2.2",
-    "ngx-masonry": "^14.0.0",
     "realm-web": "^1.2.0",
+    "swiper": "^10.2.0",
     "tslib": "^2.0.0",
     "zone.js": "~0.13.2"
   },

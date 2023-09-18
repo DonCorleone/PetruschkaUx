@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { NgModule } from '@angular/core';
+import { CUSTOM_ELEMENTS_SCHEMA, NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ScrollSpyDirective } from '../directives/scroll-spy.directive';
@@ -19,6 +19,9 @@ import { TeamModule } from './modules/team/team.module';
 import { ContactModule } from './modules/contact/contact.module';
 import { NewsletterModalComponent } from './components/newsletter/newsletter-modal/newsletter-modal.component';
 import { NewsletterItemComponent } from './components/newsletter/newsletter-item/newsletter-item.component';
+
+
+
 @NgModule({
   declarations: [AppComponent, ScrollSpyDirective, ImageModalComponent, TicketModalComponent, TicketItemComponent, NewsletterModalComponent, NewsletterItemComponent],
   imports: [
@@ -44,5 +47,9 @@ import { NewsletterItemComponent } from './components/newsletter/newsletter-item
     },
   ],
   bootstrap: [AppComponent],
+  schemas: [CUSTOM_ELEMENTS_SCHEMA],
 })
-export class AppModule {}
+export class AppModule {
+
+}
+

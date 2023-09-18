@@ -1,0 +1,17 @@
+@import '/src/scss/theme-1.scss';
+
+swiper-container {
+  display: block;
+  width: 100%;
+  height: 80vh;
+  .swiper-button-prev {
+    color: $theme-color;
+  }
+
+  .swiper-button-next {
+    color: $theme-color;
+  }
+  @media only screen and (max-width: 600px) {
+    width: 100%;
+  }
+}

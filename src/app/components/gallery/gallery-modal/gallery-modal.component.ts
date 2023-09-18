@@ -2,7 +2,6 @@ import { ChangeDetectionStrategy, Component, Input, OnChanges, SimpleChanges } f
 import { Observable } from 'rxjs';
 import { NgbActiveModal, NgbModal } from '@ng-bootstrap/ng-bootstrap';
 
-import { NgxMasonryOptions } from 'ngx-masonry';
 import { Netlifile } from 'src/app/services/images.service';
 import { ImageModalComponent } from '../image-modal/image-modal.component';
 
@@ -16,10 +15,6 @@ export class GalleryModalComponent {
   @Input() files: Netlifile[];
 
   constructor(public activeModal: NgbActiveModal, private modalService: NgbModal) {}
-
-  public masonryOptions: NgxMasonryOptions = {
-    gutter: 20,
-  };
 
   limit = 15;
 
