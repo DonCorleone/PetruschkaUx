@@ -13,6 +13,7 @@ import { ImageModalComponent } from '../image-modal/image-modal.component';
 })
 export class GalleryModalComponent {
   @Input() files: Netlifile[];
+  @Input() eventName: string;
 
   constructor(public activeModal: NgbActiveModal, private modalService: NgbModal) {}
 

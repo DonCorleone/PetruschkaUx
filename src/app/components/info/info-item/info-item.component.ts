@@ -130,6 +130,7 @@ export class InfoComponent implements OnInit, OnDestroy {
     const modalRef = this.modalService.open(GalleryModalComponent, { size: 'xl' });
     modalRef.componentInstance.files = files;
     modalRef.componentInstance.eventKey = this.eventKey;
+    modalRef.componentInstance.eventName = this.name;
   }
 
   openTicket(): void {

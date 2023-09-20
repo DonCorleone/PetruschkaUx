@@ -34,22 +34,6 @@ export class SwiperComponent implements OnInit, AfterViewInit {
   files$: Observable<Netlifile[]> = EMPTY;
 
   @ViewChild('swiper-container') swiperContainer!: ElementRef;
-  // public config: SwiperOptions = {
-  //   modules: [],
-  //   autoHeight: true,
-  //   spaceBetween: 20,
-  //   navigation: false,
-  //   pagination: {clickable: true, dynamicBullets: true},
-  //   slidesPerView: 1,
-  //   centeredSlides: true,
-  //   breakpoints: {
-  //     400: {
-  //       slidesPerView: "auto",
-  //       centeredSlides: false
-  //     },
-  //   }
-  // }
-  private _ngDestroy$ = new Subject<void>();
 
   constructor(private imageService: ImagesService, private breakpointObserver: BreakpointObserver) {}
   ngOnInit(): void {
@@ -74,8 +58,9 @@ export class SwiperComponent implements OnInit, AfterViewInit {
         const assetsIndex = file.path.lastIndexOf('/assets');
         const path = assetsIndex !== -1 ? file.path.substring(assetsIndex) : file.path;
 
-        const height = Math.round(9/16 * +width);
-        file.url = `${url}${path}?nf_resize=fit&w=${width}`;
+        const widthOffset = Math.round(+width * 0.7);
+        const height = Math.round((9/16) * widthOffset);
+        file.url = `${url}${path}?nf_resize=fit&w=${widthOffset}&h=${height}`;
         return file;
       }),
       toArray() // Collect the mapped files into an array

@@ -8,8 +8,8 @@
   >
     <span aria-hidden="true">&times;</span>
   </button>
-  <h4 class="modal-title text-center" id="infoModalLabel">Gallery</h4>
+  <h4 class="modal-title text-center" id="infoModalLabel">{{ eventName }} - Fotos</h4>
 </div>
-<div class="modal-body" ngbAutoFocus>
+<div ngbAutoFocus>
   <app-swiper [files]="files"></app-swiper>
 </div>

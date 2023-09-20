@@ -1,6 +1,7 @@
 <swiper-container *ngIf="files$ | async as files" [init]="false" speed="500" loop="true">
   <swiper-slide *ngFor="let file of files"> 
-    <img [src]="file.url" width="100%" [alt]="file.path" />
+    <img [src]="file.url" width="100%" [alt]="file.path" loading="lazy" />
+    <div class="swiper-lazy-preloader"></div>
   </swiper-slide>
   <!-- Add Pagination -->
   <div class="swiper-pagination"></div>
