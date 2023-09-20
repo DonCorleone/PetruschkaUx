@@ -34,6 +34,7 @@ export class SwiperComponent implements OnInit, AfterViewInit {
   files$: Observable<Netlifile[]> = EMPTY;
 
   @ViewChild('swiper-container') swiperContainer!: ElementRef;
+  query: string;
 
   constructor(private imageService: ImagesService, private breakpointObserver: BreakpointObserver) {}
   ngOnInit(): void {
@@ -43,6 +44,7 @@ export class SwiperComponent implements OnInit, AfterViewInit {
       .subscribe((result) => {
         for (const query of Object.keys(result.breakpoints)) {
           if (result.breakpoints[query]) {
+            this.query = query;
             const match = query.match('\\(max-width:\\s(\\d+)\\.98px\\)');
             const width = match?.length ? match[1] : '2048';
             const url = `https://${environment.SITE_NAME}.netlify.app`;
@@ -60,7 +62,7 @@ export class SwiperComponent implements OnInit, AfterViewInit {
 
         const widthOffset = Math.round(+width * 0.7);
         const height = Math.round((9/16) * widthOffset);
-        file.url = `${url}${path}?nf_resize=fit&w=${widthOffset}&h=${height}`;
+        file.url = `${url}${path}?nf_resize=fit&w=${widthOffset}`;
         return file;
       }),
       toArray() // Collect the mapped files into an array
