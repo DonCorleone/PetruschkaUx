@@ -41,18 +41,25 @@
 		color: #fff;
 		text-align: center;
 		display: inline-block;
-		width: 45px;
-		height: 55px;
+		width: 52px;
+		height: 82px;
 		padding-top: 4px;
 		position: absolute;
 		left: 0;
 		top: 15px;
+		.weekday {
+			margin-bottom: -2px;
+			font-size: 14px;
+			font-weight: 600;
+			font-family: "Raleway", sans-serif;
+			color: rgba(256, 256, 256, 0.8);
+		}
 		.number {
-			font-size: 20px;
+			font-size: 24px;
 			font-weight: 700;
 		}
 		.month {
-			font-size: 12px;
+			font-size: 14px;
 			font-weight: 600;
 			font-family: "Raleway", sans-serif;
 			color: rgba(256, 256, 256, 0.8);
