@@ -15,7 +15,6 @@ import { MerchDetailComponent } from '../../components/merch/merch-detail/merch-
 import { InfoComponent } from '../../components/info/info-item/info-item.component';
 import { PromoCarouselComponent } from '../../components/promo/promo-carousel/promo-carousel.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
-import { NgxMasonryModule } from 'ngx-masonry';
 import { SharedModule } from '../shared/shared.module';
 import { RouterModule, Routes } from '@angular/router';
 
@@ -35,8 +34,8 @@ const routes: Routes = [{ path: '', component: HomeComponent}];
 		MerchDetailComponent,
 		MusicModalComponent,
 		MusicDetailComponent,
-		GalleryModalComponent
+		GalleryModalComponent,
 	],
-	imports: [CommonModule, SharedModule, RouterModule.forChild(routes), NgbModule, NgxMasonryModule],
+	imports: [CommonModule, SharedModule, RouterModule.forChild(routes), NgbModule],
 })
 export class HomeModule {}

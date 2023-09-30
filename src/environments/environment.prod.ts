@@ -4,4 +4,5 @@ export const environment = {
   SITE_ID: '',
   NODE_VERSION: '16',
   URL: '',
+  SITE_NAME: ''
 };

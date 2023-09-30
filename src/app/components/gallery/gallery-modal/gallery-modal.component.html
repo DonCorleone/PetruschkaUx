@@ -8,18 +8,8 @@
   >
     <span aria-hidden="true">&times;</span>
   </button>
-  <h4 class="modal-title text-center" id="infoModalLabel">Gallery</h4>
+  <h4 class="modal-title text-center" id="infoModalLabel">{{ eventName }} - Fotos</h4>
 </div>
-<div class="modal-body" ngbAutoFocus>
-  <ngx-masonry [options]="masonryOptions" [ordered]="true" (itemsLoaded)="itemsLoaded()">
-    <div
-      ngxMasonryItem
-      [prepend]="files.length > 0"
-      *ngFor="let image of files index as idx"
-      class="masonry-row"
-    >
-      <div class="masonry-vertical-gutter"></div>
-      <a (click)="openImage(image)"><img [src]="image.path + '?nf_resize=fit&w=320'" width="100%" /></a>
-    </div>
-  </ngx-masonry>
+<div ngbAutoFocus>
+  <app-swiper [files]="files"></app-swiper>
 </div>

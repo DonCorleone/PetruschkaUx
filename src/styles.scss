@@ -95,7 +95,6 @@
 
 .modal-header {
 	border: none;
-	padding-top: 30px;
 	position: relative;
 	justify-content: center !important;
 }
@@ -108,7 +107,6 @@
 	background: none;
 	position: absolute;
 	right: 12px;
-	top: 7px;
 	z-index: 10;
 	@include opacity(0.6);
 	&:hover {

@@ -1,4 +1,5 @@
-import { AfterViewInit, ChangeDetectionStrategy, Component, Renderer2 } from '@angular/core';
+import { isPlatformBrowser } from '@angular/common';
+import { AfterViewInit, ChangeDetectionStrategy, Component, Inject, PLATFORM_ID, Renderer2 } from '@angular/core';
 
 @Component({
   selector: 'app-header',
@@ -10,15 +11,19 @@ export class HeaderComponent implements AfterViewInit {
   currentSection = 'promo';
   public isMenuCollapsed = true;
 
-  constructor(private renderer: Renderer2) { }
-/*
+  constructor(
+    private renderer: Renderer2,
+    @Inject(PLATFORM_ID)
+    private platformId: any
+  ) {}
+  /*
 
   onSectionChange(sectionId: string) {
     this.currentSection = sectionId;
   }
 */
 
-/*
+  /*
   scrollTo(section) {
     document.querySelector('#' + section).scrollIntoView({ behavior: 'smooth' });
     this.onSectionChange(section);
@@ -28,6 +33,9 @@ export class HeaderComponent implements AfterViewInit {
 
   ngAfterViewInit(): void {
     /* ======= ScrollTo ======= */
+    if (!isPlatformBrowser(this.platformId)) {
+      return;
+    }
     const navElements: HTMLCollectionOf<Element> = document.getElementsByClassName('nav-item');
     for (const key in navElements) {
       if (navElements.hasOwnProperty(key)) {
