@@ -5,31 +5,31 @@ import { SuccessComponent } from './modules/success/success.component';
 const routes: Routes = [
   {
     path: '',
-    loadChildren: () => import('./modules/home/home.module').then((m) => m.HomeModule),
+    loadComponent: () => import('./components/promo/promo/promo.component').then((m) => m.PromoComponent),
   },
   {
     path: 'upcoming',
-    loadChildren: () => import('./modules/upcoming/upcoming.module').then((m) => m.UpcomingModule),
+    loadComponent: () => import('./components/gigs/gigs-list/gigs-list.component').then((m) => m.GigsListComponent),
   },
   {
     path: 'tour',
-    loadChildren: () => import('./modules/tour/tour.module').then((m) => m.TourModule),
+    loadComponent: () => import('./components/merch/merch-list/merch-list.component').then((m) => m.MerchListComponent),
   },
   {
     path: 'audio',
-    loadChildren: () => import('./modules/audio/audio.module').then((m) => m.AudioModule),
+    loadComponent: () => import('./components/music/music-list/music-list.component').then((m) => m.MusicListComponent),
   },
   {
     path: 'history',
-    loadChildren: () => import('./modules/history/history.module').then((m) => m.HistoryModule),
+    loadComponent: () => import('./components/history/history-list/history-list.component').then((m) => m.HistoryListComponent),
   },
   {
     path: 'team',
-    loadChildren: () => import('./modules/team/team.module').then((m) => m.TeamModule),
+    loadComponent: () => import('./modules/about/about-list/about-list.component').then((m) => m.AboutListComponent),
   },
   {
     path: 'contact',
-    loadChildren: () => import('./modules/contact/contact.module').then((m) => m.ContactModule),
+    loadComponent: () => import('./components/contact/contact.component').then((m) => m.ContactComponent),
   },
   { 
     path: 'success', 

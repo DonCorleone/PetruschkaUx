@@ -1,11 +1,17 @@
 import {ChangeDetectionStrategy, Component, OnInit} from '@angular/core';
+import { LoadingIndicatorComponent } from "../../loading-indicator/loading-indicator.component";
+import { UpdateListComponent } from "../../update/update-list/update-list.component";
+import { DatePipe, NgClass, NgIf } from '@angular/common';
+import { PromoCarouselComponent } from '../promo-carousel/promo-carousel.component';
 
 
 @Component({
-	selector: 'app-promo',
-	templateUrl: './promo.component.html',
-	styleUrls: ['./promo.component.scss'],
-	changeDetection: ChangeDetectionStrategy.OnPush
+    selector: 'app-promo',
+    templateUrl: './promo.component.html',
+    styleUrls: ['./promo.component.scss'],
+    standalone: true,
+    imports: [LoadingIndicatorComponent, UpdateListComponent, PromoCarouselComponent, DatePipe, NgClass, NgIf],
+    changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class PromoComponent implements OnInit {
 

@@ -1,11 +1,16 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { EventDetail, EventDetailEventInfo, TicketPrice, TicketType } from 'src/app/models/event.models';
 import { EventService } from 'src/app/services/event.service';
+import { LoadingIndicatorComponent } from '../../loading-indicator/loading-indicator.component';
+import { GigsItemComponent } from '../gigs-item/gigs-item.component';
+import { AsyncPipe, CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-gigs-list',
   templateUrl: './gigs-list.component.html',
   styleUrls: ['./gigs-list.component.scss'],
+  standalone: true,
+  imports: [GigsItemComponent, LoadingIndicatorComponent, CommonModule],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class GigsListComponent {

@@ -8,6 +8,7 @@ import {EventService} from "../../../services/event.service";
 	selector: 'app-merch-item',
 	templateUrl: './merch-item.component.html',
 	styleUrls: ['./merch-item.component.scss'],
+	standalone: true,
 	changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class MerchItemComponent implements OnInit{

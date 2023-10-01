@@ -1,22 +1,25 @@
 import {
-	ChangeDetectionStrategy,
-	ChangeDetectorRef,
-	Component,
-	EventEmitter,
-	Input,
-	OnInit,
-	Output
+  ChangeDetectionStrategy,
+  ChangeDetectorRef,
+  Component,
+  EventEmitter,
+  Input,
+  OnInit,
+  Output,
 } from '@angular/core';
-import { Observable } from 'rxjs';
-import {map, take} from 'rxjs/operators';
+import { take } from 'rxjs/operators';
 import { EventDetailViewModel } from 'src/app/models/event.models';
 import { EventService } from 'src/app/services/event.service';
+import { UpdateSlideComponent } from "../update-slide/update-slide.component";
+import { NgForOf } from '@angular/common';
 
 @Component({
-  selector: 'app-update-list',
-  templateUrl: './update-list.component.html',
-  styleUrls: ['./update-list.component.scss'],
-  changeDetection: ChangeDetectionStrategy.OnPush,
+    selector: 'app-update-list',
+    templateUrl: './update-list.component.html',
+    styleUrls: ['./update-list.component.scss'],
+    standalone: true,
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    imports: [UpdateSlideComponent, NgForOf]
 })
 export class UpdateListComponent implements OnInit {
   @Input() dateGte: Date;
@@ -31,15 +34,15 @@ export class UpdateListComponent implements OnInit {
 
   ngOnInit() {
     if (this.usage === 'history') {
-      this.eventService.pastEventDetails$.pipe(take(1)).subscribe(value => {
-				this.eventDetails = value;
-				this.cdr.markForCheck();
+      this.eventService.pastEventDetails$.pipe(take(1)).subscribe((value) => {
+        this.eventDetails = value;
+        this.cdr.markForCheck();
         this.hasData.emit(value.length > 0);
       });
     } else {
       this.eventService.upcomingEventDetails$.pipe(take(1)).subscribe((value) => {
-				this.eventDetails = value;
-				this.cdr.markForCheck();
+        this.eventDetails = value;
+        this.cdr.markForCheck();
         this.hasData.emit(value.length > 0);
       });
     }
