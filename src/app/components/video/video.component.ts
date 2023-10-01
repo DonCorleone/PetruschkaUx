@@ -6,12 +6,4 @@ import {ChangeDetectionStrategy, Component, OnInit} from '@angular/core';
 	styleUrls: ['./video.component.scss'],
 	changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class VideoComponent implements OnInit {
-
-	constructor() {
-	}
-
-	ngOnInit() {
-	}
-
-}
+export class VideoComponent {}

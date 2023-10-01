@@ -10,7 +10,6 @@ import { StaffService } from '../../../services/staff.service';
 @Component({
   selector: 'app-music-detail',
   templateUrl: './music-detail.component.html',
-  styleUrls: ['./music-detail.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class MusicDetailComponent implements OnInit {

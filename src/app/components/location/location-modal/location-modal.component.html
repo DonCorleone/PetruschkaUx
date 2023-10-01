@@ -1,4 +1,5 @@
 <div class="modal-header">
+  <h4 class="modal-title text-center" id="infoModalLabel">{{ eventLocationIdName?.name }}</h4>
   <button
     (click)="activeModal.dismiss('Cross click')"
     aria-describedby="modal-title"
@@ -8,10 +9,7 @@
   >
     <span aria-hidden="true">&times;</span>
   </button>
-  <h4 class="modal-title text-center" id="infoModalLabel">{{ eventLocationIdName?.name }}</h4>
 </div>
-<!--//modal-header-->
 <div class="modal-body" ngbAutoFocus>
   <app-location-item [eventLocationIdName]="eventLocationIdName"></app-location-item>
 </div>
-<!--//modal-body-->

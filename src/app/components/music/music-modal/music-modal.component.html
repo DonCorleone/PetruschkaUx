@@ -1,12 +1,15 @@
 <div class="modal-header">
-	<button (click)="activeModal.dismiss('Cross click')" aria-describedby="modal-title" aria-label="Close button" class="close"
-					type="button">
-		<span aria-hidden="true">&times;</span>
-	</button>
-	<h4 class="modal-title text-center" id="infoModalLabel">Bestellung Hörspiel</h4>
+  <h4 class="modal-title text-center" id="infoModalLabel">Bestellung Hörspiel</h4>
+  <button
+    (click)="activeModal.dismiss('Cross click')"
+    aria-describedby="modal-title"
+    aria-label="Close button"
+    class="close"
+    type="button"
+  >
+    <span aria-hidden="true">&times;</span>
+  </button>
 </div>
-<!--//modal-header-->
 <div class="modal-body" ngbAutoFocus>
-	<app-music-detail [eventDetailId]="eventDetailId"></app-music-detail>
+  <app-music-detail [eventDetailId]="eventDetailId"></app-music-detail>
 </div>
-<!--//modal-body-->

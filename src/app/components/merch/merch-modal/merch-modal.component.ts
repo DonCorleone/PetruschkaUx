@@ -1,20 +1,13 @@
-import {ChangeDetectionStrategy, Component, Input, OnInit} from '@angular/core';
-import {NgbActiveModal} from '@ng-bootstrap/ng-bootstrap';
-import {EventDetail} from 'src/app/models/event.models';
+import { ChangeDetectionStrategy, Component, Input, OnInit } from '@angular/core';
+import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
 
 @Component({
-	selector: 'app-merch-modal',
-	templateUrl: './merch-modal.component.html',
-	styleUrls: ['./merch-modal.component.scss'],
-	changeDetection: ChangeDetectionStrategy.OnPush
+  selector: 'app-merch-modal',
+  templateUrl: './merch-modal.component.html',
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class MerchModalComponent implements OnInit {
+export class MerchModalComponent {
+  @Input() eventDetailId: number;
 
-	@Input() eventDetailId: number;
-
-	constructor(public activeModal: NgbActiveModal) {
-	}
-
-	ngOnInit(): void {
-	}
+  constructor(public activeModal: NgbActiveModal) {}
 }
