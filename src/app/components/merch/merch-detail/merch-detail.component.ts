@@ -10,7 +10,6 @@ import { StaffService } from '../../../services/staff.service';
 @Component({
   selector: 'app-merch-detail',
   templateUrl: './merch-detail.component.html',
-  styleUrls: ['./merch-detail.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class MerchDetailComponent implements OnInit {

@@ -8,7 +8,6 @@ import { EventService } from 'src/app/services/event.service';
 @Component({
   selector: 'app-info-modal',
   templateUrl: './info-modal.component.html',
-  styleUrls: ['./info-modal.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class InfoModalComponent implements OnInit {

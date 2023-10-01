@@ -8,7 +8,6 @@ import { ImageModalComponent } from '../image-modal/image-modal.component';
 @Component({
   selector: 'app-gallery-modal',
   templateUrl: './gallery-modal.component.html',
-  styleUrls: ['./gallery-modal.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class GalleryModalComponent {
