@@ -10,19 +10,16 @@ import {
   ViewEncapsulation,
 } from '@angular/core';
 import { ImagesService, Netlifile } from 'src/app/services/images.service';
-import { EMPTY, Observable, Subject, takeUntil, map, toArray, take, from } from 'rxjs';
+import { EMPTY, Observable, map, toArray, take, from } from 'rxjs';
 import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
-import { SwiperOptions } from 'swiper/types/swiper-options';
-import { SwiperDirective } from 'src/app/directives/swiper.directive';
 import { CommonModule } from '@angular/common';
-import { environment } from '../../../../environments/environment';
-import { Swiper } from 'swiper/types';
+import { environment } from '../../../environments/environment';
 
 @Component({
   selector: 'app-swiper',
   standalone: true,
   encapsulation: ViewEncapsulation.None,
-  imports: [CommonModule, SwiperDirective],
+  imports: [CommonModule],
   templateUrl: './swiper.component.html',
   styleUrls: ['./swiper.component.scss'],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
@@ -61,7 +58,7 @@ export class SwiperComponent implements OnInit, AfterViewInit {
         const path = assetsIndex !== -1 ? file.path.substring(assetsIndex) : file.path;
 
         const widthOffset = Math.round(+width * 0.7);
-        const height = Math.round((9/16) * widthOffset);
+        const height = Math.round((9 / 16) * widthOffset);
         file.url = `${url}${path}?nf_resize=fit&w=${widthOffset}`;
         return file;
       }),
@@ -82,12 +79,8 @@ export class SwiperComponent implements OnInit, AfterViewInit {
           prevEl: '.swiper-button-prev',
         },
         spaceBetween: 30,
-        on: {
-          init() {
-            // ...
-          },
-        },
       };
+
       const swiperEl: any = document.querySelector('swiper-container');
 
       Object.assign(swiperEl, swiperParams);

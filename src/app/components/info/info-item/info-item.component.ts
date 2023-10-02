@@ -9,7 +9,7 @@ import { ImagesService, Netlifile } from 'src/app/services/images.service';
 import { map, takeUntil } from 'rxjs/operators';
 import { PressService } from 'src/app/services/press.service';
 import { TicketModalComponent } from '../../ticket/ticket-modal/ticket-modal.component';
-import { AboutModalComponent } from '../../../modules/about/about-modal/about-modal.component';
+import { AboutModalComponent } from '../../about/about-modal/about-modal.component';
 import { StaffService } from '../../../services/staff.service';
 import { environment } from '../../../../environments/environment';
 import { Job } from '../../../models/staff.models';

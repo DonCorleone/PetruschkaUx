@@ -1,14 +1,16 @@
 /// <reference types="@angular/localize" />
 
-import {enableProdMode} from '@angular/core';
-import {platformBrowserDynamic} from '@angular/platform-browser-dynamic';
+import { enableProdMode } from '@angular/core';
 
-import {AppModule} from './app/app.module';
-import {environment} from './environments/environment';
+import { environment } from './environments/environment';
+import { bootstrapApplication } from '@angular/platform-browser';
+import { AppComponent } from './app/app.component';
+import { appConfig } from './app/app.config';
+import { register } from 'swiper/element/bundle';
 
 if (environment.production) {
-	enableProdMode();
+  enableProdMode();
 }
 
-platformBrowserDynamic().bootstrapModule(AppModule)
-	.catch(err => console.error(err));
+register();
+bootstrapApplication(AppComponent, appConfig).catch((err) => console.error(err));
