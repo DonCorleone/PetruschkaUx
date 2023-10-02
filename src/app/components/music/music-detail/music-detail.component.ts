@@ -4,7 +4,7 @@ import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { EventDetail, TicketTypeInfo } from 'src/app/models/event.models';
 import { EventService } from 'src/app/services/event.service';
 import { InfoModalComponent } from '../../info/info-modal/info-modal.component';
-import { AboutModalComponent } from '../../../modules/about/about-modal/about-modal.component';
+import { AboutModalComponent } from '../../about/about-modal/about-modal.component';
 import { StaffService } from '../../../services/staff.service';
 import { CommonModule } from '@angular/common';
 

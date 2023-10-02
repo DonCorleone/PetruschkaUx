@@ -4,7 +4,7 @@ import { NgbActiveModal, NgbModal } from '@ng-bootstrap/ng-bootstrap';
 
 import { Netlifile } from 'src/app/services/images.service';
 import { ImageModalComponent } from '../image-modal/image-modal.component';
-import { SwiperComponent } from 'src/app/modules/shared/swiper/swiper.component';
+import { SwiperComponent } from 'src/app/components/swiper/swiper.component';
 
 @Component({
   selector: 'app-gallery-modal',
