@@ -7,6 +7,7 @@ import { EventLocation, LocationIdName } from '../../../models/location.models';
 @Component({
   selector: 'app-location-item',
   templateUrl: './location-item.component.html',
+  standalone: true,
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class LocationItemComponent {

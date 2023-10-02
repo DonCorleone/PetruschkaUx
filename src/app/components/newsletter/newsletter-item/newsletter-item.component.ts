@@ -5,6 +5,7 @@ import { Router } from '@angular/router';
   selector: 'app-newsletter-item',
   templateUrl: './newsletter-item.component.html',
   styleUrls: ['./newsletter-item.component.scss'],
+  standalone: true,
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class NewsletterItemComponent {

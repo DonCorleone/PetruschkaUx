@@ -5,6 +5,7 @@ import { TicketPrice } from '../../../models/event.models';
   selector: 'app-ticket-item',
   templateUrl: './ticket-item.component.html',
 	styleUrls: ['./ticket-item.component.scss'],
+  standalone: true,
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class TicketItemComponent {

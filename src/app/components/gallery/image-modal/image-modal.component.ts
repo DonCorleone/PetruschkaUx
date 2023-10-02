@@ -1,3 +1,4 @@
+import { NgClass } from '@angular/common';
 import { AfterViewInit, ChangeDetectionStrategy, Component, Input, OnInit, ViewChild } from '@angular/core';
 import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
 import { Netlifile } from 'src/app/services/images.service';
@@ -6,6 +7,8 @@ import { Netlifile } from 'src/app/services/images.service';
   selector: 'app-image-modal',
   templateUrl: './image-modal.component.html',
   styleUrls: ['./image-modal.component.scss'],
+  standalone: true,
+  imports: [NgClass],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class ImageModalComponent implements AfterViewInit {

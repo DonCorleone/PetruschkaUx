@@ -4,10 +4,14 @@ import { map, take, tap } from 'rxjs/operators';
 import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
 import {EventDetail, EventDetailEventInfo, TicketPrice} from 'src/app/models/event.models';
 import { EventService } from 'src/app/services/event.service';
+import { InfoComponent } from '../info-item/info-item.component';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-info-modal',
   templateUrl: './info-modal.component.html',
+  standalone: true,
+  imports: [CommonModule, InfoComponent],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class InfoModalComponent implements OnInit {

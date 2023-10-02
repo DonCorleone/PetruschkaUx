@@ -5,14 +5,14 @@ import { Staff } from '../../../models/staff.models';
 import { CommonModule } from '@angular/common';
 
 @Component({
-  selector: 'app-about-item',
-  templateUrl: './about-item.component.html',
-  styleUrls: ['./about-item.component.scss'],
+  selector: 'app-about-detail',
+  templateUrl: './about-detail.component.html',
+  styleUrls: ['./about-detail.component.scss'],
   standalone: true,
   imports: [CommonModule],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class AboutItemComponent {
+export class AboutDetailComponent {
   @Input() staff: Staff;
   @Input() isModal: boolean;
 

@@ -3,14 +3,17 @@ import {NgbModal} from '@ng-bootstrap/ng-bootstrap';
 import {EventDetail, EventDetailEventInfo, TicketTypeInfo} from 'src/app/models/event.models';
 import {MusicModalComponent} from '../music-modal/music-modal.component';
 import {EventService} from "../../../services/event.service";
+import { CommonModule } from '@angular/common';
 
 @Component({
 	selector: 'app-music-item',
 	templateUrl: './music-item.component.html',
 	styleUrls: ['./music-item.component.scss'],
+	standalone: true,
+	imports: [CommonModule],
 	changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class MusicItemComponent implements OnInit{
+export class 	MusicItemComponent implements OnInit{
 	@Input() eventDetail: EventDetail;
 	@Input() usage: string;
 
