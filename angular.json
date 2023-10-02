@@ -213,7 +213,8 @@
           "options": {
             "routes": [
               "/","/upcoming", "/tour", "/audio", "/history", "/team", "/contact", "/success"
-            ]
+            ],
+            "guessRoutes": false
           },
           "configurations": {
             "production": {
@@ -234,5 +235,5 @@
       }
     }
   },
-	"defaultProject": "kinderkulturUx"
+	"defaultProject": "kinderkulturUx",
 }
