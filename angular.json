@@ -212,7 +212,7 @@
           "builder": "@nguniversal/builders:prerender",
           "options": {
             "routes": [
-              "/"
+              "/","/upcoming", "/tour", "/audio", "/history", "/team", "/contact", "/success"
             ]
           },
           "configurations": {

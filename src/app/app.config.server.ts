@@ -5,6 +5,7 @@ import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { HttpErrorInterceptor } from './services/http-error-interceptor.service';
 import { provideRouter } from '@angular/router';
 import { ROUTES } from './app.routes';
+import { provideClientHydration } from '@angular/platform-browser';
 
 const serverConfig: ApplicationConfig = {
   providers: [
@@ -16,6 +17,7 @@ const serverConfig: ApplicationConfig = {
     },
     importProvidersFrom(HttpClientModule),
     provideRouter(ROUTES),
+    provideClientHydration(),
   ],
 };
 
