@@ -15,14 +15,11 @@ Angular v16 + (Node 16+)
 Template Copyright @ [3rd Wave Media](http://themes.3rdwavemedia.com/)
 
 ## Communication
-GraphQL / Apollo / MongoDB Realm driver
+Netlify Function to MongoDB
 
 ## Backend
 Backend is completely outsourced into cloud-services.
-### Editing
-[ticketino.com](https://www.ticketino.com/)
-### Transfer
-Data transfer from Ticketino via REST-API to MongoDB Atlas via REST API [.NET Core WebApi](https://github.com/DonCorleone/Ticketino-HttpClient-WebApi)
+
 ### Serverless Backend
 [MongoDB Atlas](https://www.mongodb.com/cloud/atlas) GraphQL API
 ### Images
