@@ -1,6 +1,6 @@
 <h2 [ngClass]="(loading$ | async) ? '' : 'section-title-ruler'" class="section-title text-center">
   {{ title }}
 </h2>
-<div class="loading-container" *ngIf="loading$ | async as loading">
-  <div class="loading-indicator"></div>
+<div *ngIf="loading$ | async as loading" class="loading-container">
+  <div [@loadingRotate]="loading ? 'vertical' : 'horizontal'" class="loading-indicator"></div>
 </div>
