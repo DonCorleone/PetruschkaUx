@@ -3,7 +3,7 @@
     <app-loading-indicator [title]="'Anstehende Aufführungen'"></app-loading-indicator>
     <div class="gigs-container" *ngIf="eventDetailsUpcoming$ | async as eventDetailsUpcoming">
       <div *ngIf="eventDetailsUpcoming.length > 0; else elseBlock">
-        <div *ngFor="let eventDetail of eventDetailsUpcoming" class="item">
+        <div *ngFor="let eventDetail of eventDetailsUpcoming" class="item" [@flyTopDown]="'in'">
           <app-gigs-item
             [eventId]="eventDetail._id"
             [eventInfoDe]="GetEventInfoFromEventDetail(eventDetail)"
