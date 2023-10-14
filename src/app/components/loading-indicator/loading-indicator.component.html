@@ -2,5 +2,7 @@
   {{ title }}
 </h2>
 <div *ngIf="loading$ | async as loading" class="loading-container">
-  <div [@loadingRotate]="loading ? 'vertical' : 'horizontal'" class="loading-indicator"></div>
+  <div 
+  [@flash]="animState" 
+  (@flash.done)="animState = !animState" class="loading-indicator"></div>
 </div>

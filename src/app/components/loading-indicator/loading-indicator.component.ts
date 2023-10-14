@@ -1,7 +1,9 @@
 import { Component, Input, ViewEncapsulation } from '@angular/core';
 import { LoadingIndicatorService } from '../../services/loading-indicator.service';
 import { CommonModule } from '@angular/common';
-import { animate, keyframes, style, transition, trigger } from '@angular/animations';
+import {
+  heartBeatAnimation,
+} from 'angular-animations';
 
 @Component({
   selector: 'app-loading-indicator',
@@ -10,22 +12,7 @@ import { animate, keyframes, style, transition, trigger } from '@angular/animati
   encapsulation: ViewEncapsulation.None,
   standalone: true,
   imports: [CommonModule],
-  animations: [
-    trigger('loadingRotate', [
-      transition('* => *', [
-        animate(
-          '1s',
-          keyframes([
-            style({ rotate: '0deg', transform: 'scaleX(1)', offset: 0 }),
-            style({ rotate: '90deg', transform: 'scaleX(0.3)', offset: 0.25 }),
-            style({ rotate: '180deg', transform: 'scaleX(1)', offset: 0.5 }),
-            style({ rotate: '270deg', transform: 'scaleX(0.3)', offset: 0.75 }),
-            style({ rotate: '360deg', transform: 'scaleX(1)', offset: 1 }),
-          ])
-        ),
-      ]),
-    ]),
-  ],
+  animations: [heartBeatAnimation({ anchor: 'flash', duration: 2000, scale: 1.7 })],
 })
 export class LoadingIndicatorComponent {
   @Input() title: string;
@@ -33,4 +20,5 @@ export class LoadingIndicatorComponent {
   get loading$() {
     return this.loadingIndicatorService.loading$;
   }
+  animState = false;
 }
