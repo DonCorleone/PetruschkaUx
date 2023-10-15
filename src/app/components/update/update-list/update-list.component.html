@@ -1,8 +1,8 @@
-<div *ngFor="let eventDetail of eventDetails; let i = index" class="updates-slider">
+<div *ngFor="let eventDetail of eventDetails; let i = index" [@slideInLeftOnEnter] class="updates-slider">
 	<section
 		id="{{ usage === 'history' ? usage + '-' + eventDetail.eventDetail.facebookPixelId : usage + '-' + eventDetail.eventDetail._id }}"
 		class="{{ usage !== 'history' && i > 0 ? 'update-section' : '' }}">
-		<app-update-slide  *ngIf="eventDetail" [@fadeInUpOnEnter] [eventDetail]="eventDetail.eventDetail" [usage]="'Premiere'">
+		<app-update-slide [eventDetail]="eventDetail.eventDetail" [usage]="'Premiere'">
 
 		</app-update-slide>
 	</section>

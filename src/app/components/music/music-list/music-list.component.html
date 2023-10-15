@@ -9,8 +9,8 @@
 	</div>
 		<div class="albums-block">
 			<div class="row">
-				<div *ngFor="let eventDetail of eventDetailsCD$ | async" 
-				class="item col-12 col-md-6 col-lg-4"  [@flyTopDown]="'in'">
+				<div *ngFor="let eventDetail of eventDetailsCD$ | async" [@fadeInUpOnEnter] 
+				class="item col-12 col-md-6 col-lg-4">
 					<app-music-item
 					[eventDetail]="eventDetail"
 					[usage]="'Tournee'">

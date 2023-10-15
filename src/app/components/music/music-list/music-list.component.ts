@@ -5,7 +5,7 @@ import { EventService } from 'src/app/services/event.service';
 import { LoadingIndicatorComponent } from '../../loading-indicator/loading-indicator.component';
 import { MusicItemComponent } from '../music-item/music-item.component';
 import { CommonModule } from '@angular/common';
-import { trigger, state, style, transition, animate } from '@angular/animations';
+import { fadeInUpOnEnterAnimation } from 'angular-animations';
 
 @Component({
   selector: 'app-music-list',
@@ -14,12 +14,7 @@ import { trigger, state, style, transition, animate } from '@angular/animations'
   standalone: true,
   changeDetection: ChangeDetectionStrategy.OnPush,
   imports: [CommonModule, LoadingIndicatorComponent, MusicItemComponent],
-  animations: [
-    trigger('flyTopDown', [
-      state('in', style({ transform: 'translateY(0)' })),
-      transition('void => *', [style({ transform: 'translateY(-200px)' }), animate(300)])
-    ]),
-  ],
+  animations: [fadeInUpOnEnterAnimation({ duration: 2000 })]
 })
 export class MusicListComponent implements OnInit {
   eventDetailsCD$: Observable<EventDetail[]>;

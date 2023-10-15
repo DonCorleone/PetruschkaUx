@@ -12,7 +12,7 @@ import { EventDetailViewModel } from 'src/app/models/event.models';
 import { EventService } from 'src/app/services/event.service';
 import { UpdateSlideComponent } from '../update-slide/update-slide.component';
 import { CommonModule, NgForOf } from '@angular/common';
-import { fadeInOnEnterAnimation, fadeInUpOnEnterAnimation, fadeOutOnLeaveAnimation, fadeOutUpOnLeaveAnimation } from 'angular-animations';
+import { fadeInOnEnterAnimation, fadeInUpOnEnterAnimation, fadeOutOnLeaveAnimation, fadeOutUpOnLeaveAnimation, slideInLeftOnEnterAnimation, slideInRightOnEnterAnimation } from 'angular-animations';
 
 @Component({
   selector: 'app-update-list',
@@ -21,7 +21,7 @@ import { fadeInOnEnterAnimation, fadeInUpOnEnterAnimation, fadeOutOnLeaveAnimati
   standalone: true,
   changeDetection: ChangeDetectionStrategy.OnPush,
   imports: [UpdateSlideComponent, CommonModule],
-  animations: [fadeInUpOnEnterAnimation({ duration: 5000 })]
+  animations: [slideInLeftOnEnterAnimation({ duration: 1000 })]
 })
 export class UpdateListComponent implements OnInit {
   @Input() dateGte: Date;

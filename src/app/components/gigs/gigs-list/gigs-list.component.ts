@@ -6,6 +6,7 @@ import { GigsItemComponent } from '../gigs-item/gigs-item.component';
 import { AsyncPipe, CommonModule } from '@angular/common';
 import { style, transition, trigger, query, stagger, animate, state } from '@angular/animations';
 import { Observable } from 'rxjs';
+import { slideInRightOnEnterAnimation } from 'angular-animations';
 
 @Component({
   selector: 'app-gigs-list',
@@ -14,12 +15,7 @@ import { Observable } from 'rxjs';
   standalone: true,
   imports: [GigsItemComponent, LoadingIndicatorComponent, CommonModule],
   changeDetection: ChangeDetectionStrategy.OnPush,
-  animations: [
-    trigger('flyTopDown', [
-      state('in', style({ transform: 'translateY(0)' })),
-      transition('void => *', [style({ transform: 'translateY(-200px)' }), animate(300)]),
-    ]),
-  ],
+  animations: [slideInRightOnEnterAnimation({ duration: 1000 })],
 })
 export class GigsListComponent {
   public animatePage = true;
