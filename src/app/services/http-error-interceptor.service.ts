@@ -6,11 +6,9 @@ import {
   HttpRequest,
   HttpErrorResponse,
   HttpHandler,
-  HttpEvent,
-  HttpResponse
-} from '@angular/common/http';
+  HttpEvent} from '@angular/common/http';
 
-import { Observable, EMPTY, throwError, of } from 'rxjs';
+import { Observable, EMPTY } from 'rxjs';
 import { catchError } from 'rxjs/operators';
 
 @Injectable()
