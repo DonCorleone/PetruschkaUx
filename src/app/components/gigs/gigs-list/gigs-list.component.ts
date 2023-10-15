@@ -1,11 +1,9 @@
-import { ChangeDetectionStrategy, Component, HostBinding, OnInit } from '@angular/core';
-import { EventDetail, EventDetailEventInfo, TicketPrice, TicketType } from 'src/app/models/event.models';
+import { ChangeDetectionStrategy, Component } from '@angular/core';
+import { EventDetail, EventDetailEventInfo, TicketPrice } from 'src/app/models/event.models';
 import { EventService } from 'src/app/services/event.service';
 import { LoadingIndicatorComponent } from '../../loading-indicator/loading-indicator.component';
 import { GigsItemComponent } from '../gigs-item/gigs-item.component';
-import { AsyncPipe, CommonModule } from '@angular/common';
-import { style, transition, trigger, query, stagger, animate, state } from '@angular/animations';
-import { Observable } from 'rxjs';
+import { CommonModule } from '@angular/common';
 import { slideInRightOnEnterAnimation } from 'angular-animations';
 
 @Component({

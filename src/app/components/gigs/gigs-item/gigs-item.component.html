@@ -4,7 +4,6 @@
   <div class="month">{{ start | date: 'MMM':'':'de-CH' }}</div>
   <div class="year" *ngIf="preSaleInSuperFuture">{{ start | date: 'YYYY':'':'de-CH' }}</div>
 </div>
-<!--//date-label-->
 <div class="gig-info">
   <div class="info-content">
     <h3 class="gig-title info-link">
@@ -55,6 +54,4 @@
     </span>
     <a (click)="openInfo()" class="btn btn-sm btn-ghost-secondary">Info</a>
   </div>
-  <!--//gig-actions-->
 </div>
-<!--//info-extra-->

@@ -6,13 +6,13 @@ import { CommonModule } from '@angular/common';
 import { jackInTheBoxOnEnterAnimation } from 'angular-animations';
 
 @Component({
-    selector: 'app-about-list',
-    templateUrl: './about-list.component.html',
-    styleUrls: ['./about-list.component.scss'],
-    standalone: true,
-    changeDetection: ChangeDetectionStrategy.OnPush,
-    imports: [CommonModule, LoadingIndicatorComponent, AboutItemComponent],
-    animations: [jackInTheBoxOnEnterAnimation()],
+  selector: 'app-about-list',
+  templateUrl: './about-list.component.html',
+  styleUrls: ['./about-list.component.scss'],
+  standalone: true,
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  imports: [CommonModule, LoadingIndicatorComponent, AboutItemComponent],
+  animations: [jackInTheBoxOnEnterAnimation()],
 })
 export class AboutListComponent {
   staffs$ = this.staffService.staffs$;
