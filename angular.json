@@ -152,43 +152,38 @@
             "main": "server.ts",
             "tsConfig": "tsconfig.server.json"
           },
-          "configurations": {
-            "production": {
-              "buildOptimizer": true,
-              "outputHashing": "media",
-              "fileReplacements": [
-                {
-                  "replace": "src/environments/environment.ts",
-                  "with": "src/environments/environment.prod.ts"
-                }
-              ],
-              "optimization": true,
-              "sourceMap": false,
-              "extractLicenses": true,
-              "vendorChunk": false
-            },
-            "custom": {
-              "fileReplacements": [
-                {
-                  "replace": "src/environments/environment.ts",
-                  "with": "src/environments/environment.custom.ts"
-                }
-              ],
-              "buildOptimizer": true,
-              "optimization": true,
-              "sourceMap": false,
-              "extractLicenses": true,
-              "vendorChunk": false
-            },
-            "development": {
-              "buildOptimizer": false,
-              "optimization": false,
-              "sourceMap": true,
-              "extractLicenses": false,
-              "vendorChunk": true
-            }
-          },
-          "defaultConfiguration": "custom"
+					"configurations": {
+						"production": {
+							"outputHashing": "media",
+							"fileReplacements": [
+								{
+									"replace": "src/environments/environment.ts",
+									"with": "src/environments/environment.custom.ts"
+								}
+							]
+						},
+						"custom": {
+							"buildOptimizer": false,
+							"fileReplacements": [
+								{
+									"replace": "src/environments/environment.ts",
+									"with": "src/environments/environment.custom.ts"
+								}
+							],
+							"optimization": false,
+							"sourceMap": true,
+							"extractLicenses": false,
+							"vendorChunk": true
+						},
+						"development": {
+							"buildOptimizer": false,
+							"optimization": false,
+							"sourceMap": true,
+							"extractLicenses": false,
+							"vendorChunk": true
+						}
+					},
+					"defaultConfiguration": "production"
         },
         "serve-ssr": {
           "builder": "@angular-devkit/build-angular:ssr-dev-server",
