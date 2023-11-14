@@ -7,7 +7,11 @@ import { RouterOutlet } from '@angular/router';
 
 @Component({
   selector: 'app-root',
-  templateUrl: './app.component.html',
+  template: `
+      <app-header></app-header>
+      <router-outlet></router-outlet>
+      <app-footer></app-footer>
+	`,
   standalone: true,
   changeDetection: ChangeDetectionStrategy.OnPush,
   imports: [HeaderComponent, FooterComponent, RouterOutlet],

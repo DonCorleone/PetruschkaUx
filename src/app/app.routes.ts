@@ -34,6 +34,6 @@ export const ROUTES: Route[] = [
     },
     {
       path: 'success',
-      component: SuccessComponent,
+			loadComponent: () => import('./components/success/success.component').then((m) => m.SuccessComponent),
     },
   ];

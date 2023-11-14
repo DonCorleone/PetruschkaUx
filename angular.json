@@ -30,7 +30,7 @@
             "assets": ["src/favicon.ico", "src/assets", "src/env.js",
 							"src/robots.txt"
 						],
-            "styles": ["node_modules/@fortawesome/fontawesome-free/css/all.min.css", "src/styles.scss", 
+            "styles": ["node_modules/@fortawesome/fontawesome-free/css/all.min.css", "src/styles.scss",
             "./node_modules/swiper/swiper-bundle.css"],
             "scripts": ["node_modules/@fortawesome/fontawesome-free/js/all.min.js"]
           },
@@ -103,7 +103,7 @@
               "browserTarget": "kinderkulturUx:build:development"
             }
           },
-          "defaultConfiguration": "development"
+          "defaultConfiguration": "custom"
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
@@ -188,7 +188,7 @@
               "vendorChunk": true
             }
           },
-          "defaultConfiguration": "production"
+          "defaultConfiguration": "custom"
         },
         "serve-ssr": {
           "builder": "@nguniversal/builders:ssr-dev-server",
@@ -196,7 +196,7 @@
             "development": {
               "browserTarget": "kinderkulturUx:build:development",
               "serverTarget": "kinderkulturUx:server:development"
-            },            
+            },
             "custom": {
               "browserTarget": "kinderkulturUx:build:custom",
               "serverTarget": "kinderkulturUx:server:custom"
@@ -206,15 +206,14 @@
               "serverTarget": "kinderkulturUx:server:production"
             }
           },
-          "defaultConfiguration": "development"
+          "defaultConfiguration": "custom"
         },
         "prerender": {
           "builder": "@nguniversal/builders:prerender",
           "options": {
             "routes": [
-              "/","/upcoming", "/tour", "/audio", "/history", "/team", "/contact", "/success"
-            ],
-            "guessRoutes": false
+							"/"
+             ]
           },
           "configurations": {
             "production": {
