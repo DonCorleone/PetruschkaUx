@@ -89,18 +89,18 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "kinderkulturUx:build",
-            "proxyConfig": "proxy.conf.json"
+            "proxyConfig": "proxy.conf.json",
+            "buildTarget": "kinderkulturUx:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "kinderkulturUx:build:production"
+              "buildTarget": "kinderkulturUx:build:production"
             },
             "custom": {
-              "browserTarget": "kinderkulturUx:build:custom"
+              "buildTarget": "kinderkulturUx:build:custom"
             },
             "development": {
-              "browserTarget": "kinderkulturUx:build:development"
+              "buildTarget": "kinderkulturUx:build:development"
             }
           },
           "defaultConfiguration": "custom"
@@ -108,7 +108,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "kinderkulturUx:build"
+            "buildTarget": "kinderkulturUx:build"
           }
         },
         "test": {
@@ -191,7 +191,7 @@
           "defaultConfiguration": "custom"
         },
         "serve-ssr": {
-          "builder": "@nguniversal/builders:ssr-dev-server",
+          "builder": "@angular-devkit/build-angular:ssr-dev-server",
           "configurations": {
             "development": {
               "browserTarget": "kinderkulturUx:build:development",
@@ -209,7 +209,7 @@
           "defaultConfiguration": "custom"
         },
         "prerender": {
-          "builder": "@nguniversal/builders:prerender",
+          "builder": "@angular-devkit/build-angular:prerender",
           "options": {
             "routes": [
 							"/"
