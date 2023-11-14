@@ -174,11 +174,11 @@
                   "with": "src/environments/environment.custom.ts"
                 }
               ],
-              "buildOptimizer": false,
-              "optimization": false,
-              "sourceMap": true,
-              "extractLicenses": false,
-              "vendorChunk": true
+              "buildOptimizer": true,
+              "optimization": true,
+              "sourceMap": false,
+              "extractLicenses": true,
+              "vendorChunk": false
             },
             "development": {
               "buildOptimizer": false,
