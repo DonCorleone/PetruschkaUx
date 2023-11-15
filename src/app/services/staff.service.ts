@@ -3,6 +3,7 @@ import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 import { HttpClient } from '@angular/common/http';
 import { Job, Staff } from '../models/staff.models';
+import {environment} from "../../environments/environment.custom";
 
 interface Message {
   documents: Staff[];
@@ -18,7 +19,7 @@ interface GetStaffOverviewResponse {
 export class StaffService {
   constructor(private httpClient: HttpClient) {}
 
-  staffs$ = this.httpClient.get<GetStaffOverviewResponse>('https://petruschka.netlify.app/.netlify/functions/get_staff_overview').pipe(
+  staffs$ = this.httpClient.get<GetStaffOverviewResponse>(`${environment.URL}/.netlify/functions/get_staff_overview`).pipe(
     map((result) => result.message.documents),
     map((staffs) => {
       return staffs.map((staff) => this.getStaffWithSrc(staff));
@@ -26,7 +27,7 @@ export class StaffService {
   );
 
   GetStaff(nameIn: string): Observable<Staff> {
-    return this.httpClient.get<GetStaffOverviewResponse>('https://petruschka.netlify.app/.netlify/functions/get_staff').pipe(
+    return this.httpClient.get<GetStaffOverviewResponse>(`${environment.URL}/.netlify/functions/get_staff`).pipe(
       map((result) => result?.message?.documents),
       map((staff) => this.getStaffWithSrc(staff.find((x) => x.name == nameIn)))
     );

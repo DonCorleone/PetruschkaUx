@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { map } from 'rxjs/operators';
 import { HttpClient } from '@angular/common/http';
 import { Press } from '../models/press.models';
+import {environment} from "../../environments/environment.custom";
 
 interface Message {
   documents: Press[];
@@ -18,6 +19,6 @@ export class PressService {
   constructor(private httpClient: HttpClient) {}
 
   pressArticles$ = this.httpClient
-    .get<GetPressArticlesResponse>('https://petruschka.netlify.app/.netlify/functions/get_press')
+    .get<GetPressArticlesResponse>(`${environment.URL}/.netlify/functions/get_press`)
     .pipe(map((result) => result.message.documents));
 }
