@@ -19,6 +19,6 @@ export class PressService {
   constructor(private httpClient: HttpClient) {}
 
   pressArticles$ = this.httpClient
-    .get<GetPressArticlesResponse>(`${environment.URL}/.netlify/functions/get_press`)
+    .get<GetPressArticlesResponse>(`https://${environment.BRANCH}--${environment.SITE_NAME}.netlify.app/.netlify/functions/get_press`)
     .pipe(map((result) => result.message.documents));
 }

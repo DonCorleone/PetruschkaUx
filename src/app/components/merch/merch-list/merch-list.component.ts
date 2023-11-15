@@ -33,7 +33,7 @@ export class MerchListComponent implements OnInit {
 
   get LogoWanderTheater(): string {
     const x = encodeURIComponent('logo-wandertheater.png');
-    let imageUrl = `${environment.URL}/assets/images/${x}`;
+    let imageUrl = `https://${environment.BRANCH}--${environment.SITE_NAME}.netlify.app/assets/images/${x}`;
     return 'https://images.weserv.nl/?url=' + imageUrl + '&w=444&h=126';
   }
 }

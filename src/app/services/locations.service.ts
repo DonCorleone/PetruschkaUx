@@ -22,11 +22,11 @@ export class LocationsService {
   GetEventLocation(locationIdName: LocationIdName): Observable<EventLocation> {
     if (locationIdName?.ef_id) {
       return this.httpClient
-        .get<GetEventLocationResponse>(`${environment.URL}/.netlify/functions/get_location?ef_id=${locationIdName?.ef_id}`)
+        .get<GetEventLocationResponse>(`https://${environment.BRANCH}--${environment.SITE_NAME}.netlify.app/.netlify/functions/get_location?ef_id=${locationIdName?.ef_id}`)
         .pipe(map((result) => result.message.documents.find((p) => p.ef_id == locationIdName?.ef_id)));
     } else {
       return this.httpClient
-        .get<GetEventLocationResponse>(`${environment.URL}/.netlify/functions/get_location?name=${locationIdName?.name}`)
+        .get<GetEventLocationResponse>(`https://${environment.BRANCH}--${environment.SITE_NAME}.netlify.app/.netlify/functions/get_location?name=${locationIdName?.name}`)
         .pipe(map((result) => result.message.documents.find((p) => p.name == locationIdName?.name)));
     }
   }

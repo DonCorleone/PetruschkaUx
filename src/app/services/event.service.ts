@@ -122,25 +122,25 @@ export class EventService {
 
   GetEventDetail(id: number): Observable<EventDetail> {
     return this.httpClient
-      .get<GetEventInfoById>(`${environment.URL}/.netlify/functions/get_eventInfos?eventid=${id}`)
+      .get<GetEventInfoById>(`https://${environment.BRANCH}--${environment.SITE_NAME}.netlify.app/.netlify/functions/get_eventInfos?eventid=${id}`)
       .pipe(map((result) => result.message.documents.find((p) => p._id === id)));
   }
 
   upcomingGigs$ = this.httpClient
-    .get<UpComingEventsResponse>(`${environment.URL}/.netlify/functions/get_events?collection=UpcomingEventsActive`)
+    .get<UpComingEventsResponse>(`https://${environment.BRANCH}--${environment.SITE_NAME}.netlify.app/.netlify/functions/get_events?collection=UpcomingEventsActive`)
     .pipe(map((result) => result.message.documents));
 
   GetEventDetails(filterPredicateIn: any): Observable<EventDetail[]> {
     return this.httpClient
-      .get<EventDetailsResponse>(`${environment.URL}/.netlify/functions/get_events?collection=EventDetailsTaggedUsage`)
+      .get<EventDetailsResponse>(`https://${environment.BRANCH}--${environment.SITE_NAME}.netlify.app/.netlify/functions/get_events?collection=EventDetailsTaggedUsage`)
       .pipe(map((result) => result.message.documents.filter(filterPredicateIn)));
   }
 
   pastEventDetails$ = this.httpClient
-    .get<PastEventDetailsResponse>(`${environment.URL}/.netlify/functions/get_events?collection=PastEventsWithId`)
+    .get<PastEventDetailsResponse>(`https://${environment.BRANCH}--${environment.SITE_NAME}.netlify.app/.netlify/functions/get_events?collection=PastEventsWithId`)
     .pipe(map((result) => result.message.documents));
 
   upcomingEventDetails$ = this.httpClient
-    .get<PastEventDetailsResponse>(`${environment.URL}/.netlify/functions/get_events?collection=UpcomingPremieres`)
+    .get<PastEventDetailsResponse>(`https://${environment.BRANCH}--${environment.SITE_NAME}.netlify.app/.netlify/functions/get_events?collection=UpcomingPremieres`)
     .pipe(map((result) => result.message.documents));
 }

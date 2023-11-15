@@ -20,7 +20,7 @@ export class SponsorsService {
   constructor(private httpClient: HttpClient) {}
 
   GetSponsors(event: String): Observable<Sponsor[]> {
-    return this.httpClient.get<SponsorsResponse>(`${environment.URL}//.netlify/functions/get_sponsors`).pipe(
+    return this.httpClient.get<SponsorsResponse>(`https://${environment.BRANCH}--${environment.SITE_NAME}.netlify.app/.netlify/functions/get_sponsors`).pipe(
       map((result) => {
         return event !== ''
           ? result.message.documents

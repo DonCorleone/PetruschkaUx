@@ -63,7 +63,7 @@ export class InfoComponent implements OnInit, OnDestroy {
 
     this.files$ = this.imageService.listAssets('/assets/images/impressionen/' + this.eventKey).pipe(
       map((p) => {
-        p.forEach((image) => (image.path = `${environment.URL}${image.path}`));
+        p.forEach((image) => (image.path = `https://${environment.BRANCH}--${environment.SITE_NAME}.netlify.app${image.path}`));
         return p;
       })
     );
