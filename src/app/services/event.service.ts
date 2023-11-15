@@ -121,25 +121,25 @@ export class EventService {
 
   GetEventDetail(id: number): Observable<EventDetail> {
     return this.httpClient
-      .get<GetEventInfoById>(`.netlify/functions/get_eventInfos?eventid=${id}`)
+      .get<GetEventInfoById>(`https://petruschka.netlify.app/.netlify/functions/get_eventInfos?eventid=${id}`)
       .pipe(map((result) => result.message.documents.find((p) => p._id === id)));
   }
 
   upcomingGigs$ = this.httpClient
-    .get<UpComingEventsResponse>('.netlify/functions/get_events?collection=UpcomingEventsActive')
+    .get<UpComingEventsResponse>('https://petruschka.netlify.app/.netlify/functions/get_events?collection=UpcomingEventsActive')
     .pipe(map((result) => result.message.documents));
 
   GetEventDetails(filterPredicateIn: any): Observable<EventDetail[]> {
     return this.httpClient
-      .get<EventDetailsResponse>('.netlify/functions/get_events?collection=EventDetailsTaggedUsage')
+      .get<EventDetailsResponse>('https://petruschka.netlify.app/.netlify/functions/get_events?collection=EventDetailsTaggedUsage')
       .pipe(map((result) => result.message.documents.filter(filterPredicateIn)));
   }
 
   pastEventDetails$ = this.httpClient
-    .get<PastEventDetailsResponse>('.netlify/functions/get_events?collection=PastEventsWithId')
+    .get<PastEventDetailsResponse>('https://petruschka.netlify.app/.netlify/functions/get_events?collection=PastEventsWithId')
     .pipe(map((result) => result.message.documents));
 
   upcomingEventDetails$ = this.httpClient
-    .get<PastEventDetailsResponse>('.netlify/functions/get_events?collection=UpcomingPremieres')
+    .get<PastEventDetailsResponse>('https://petruschka.netlify.app/.netlify/functions/get_events?collection=UpcomingPremieres')
     .pipe(map((result) => result.message.documents));
 }

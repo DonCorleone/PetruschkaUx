@@ -201,7 +201,7 @@
               "serverTarget": "kinderkulturUx:server:production"
             }
           },
-          "defaultConfiguration": "custom"
+          "defaultConfiguration": "production"
         },
         "prerender": {
           "builder": "@angular-devkit/build-angular:prerender",
@@ -224,7 +224,7 @@
               "serverTarget": "kinderkulturUx:server:development"
             }
           },
-          "defaultConfiguration": "custom"
+          "defaultConfiguration": "production"
         }
       }
     }
