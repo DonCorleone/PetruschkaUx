@@ -11,8 +11,6 @@
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "scully": "npx scully --",
-    "scully:serve": "npx scully serve --",
     "dev:ssr": "ng run kinderkulturUx:serve-ssr",
     "serve:ssr": "node dist/kinderkulturUx/server/main.js",
     "build:ssr": "ng build && ng run kinderkulturUx:server",

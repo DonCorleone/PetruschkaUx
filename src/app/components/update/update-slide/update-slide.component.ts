@@ -4,13 +4,14 @@ import { EventDetail, EventDetailEventInfo } from 'src/app/models/event.models';
 import { EventService } from 'src/app/services/event.service';
 import { InfoModalComponent } from '../../info/info-modal/info-modal.component';
 import { CommonModule, DatePipe } from '@angular/common';
+import {RouterLink} from "@angular/router";
 
 @Component({
   selector: 'app-update-slide',
   templateUrl: './update-slide.component.html',
   styleUrls: ['./update-slide.component.scss'],
   standalone: true,
-  imports: [DatePipe, CommonModule],
+	imports: [DatePipe, CommonModule, RouterLink],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class UpdateSlideComponent implements OnInit {
