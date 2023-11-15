@@ -30,7 +30,7 @@
             "assets": ["src/favicon.ico", "src/assets", "src/env.js",
 							"src/robots.txt"
 						],
-            "styles": ["node_modules/@fortawesome/fontawesome-free/css/all.min.css", "src/styles.scss", 
+            "styles": ["node_modules/@fortawesome/fontawesome-free/css/all.min.css", "src/styles.scss",
             "./node_modules/swiper/swiper-bundle.css"],
             "scripts": ["node_modules/@fortawesome/fontawesome-free/js/all.min.js"]
           },
@@ -89,26 +89,26 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "kinderkulturUx:build",
-            "proxyConfig": "proxy.conf.json"
+            "proxyConfig": "proxy.conf.json",
+            "buildTarget": "kinderkulturUx:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "kinderkulturUx:build:production"
+              "buildTarget": "kinderkulturUx:build:production"
             },
             "custom": {
-              "browserTarget": "kinderkulturUx:build:custom"
+              "buildTarget": "kinderkulturUx:build:custom"
             },
             "development": {
-              "browserTarget": "kinderkulturUx:build:development"
+              "buildTarget": "kinderkulturUx:build:development"
             }
           },
-          "defaultConfiguration": "development"
+          "defaultConfiguration": "custom"
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "kinderkulturUx:build"
+            "buildTarget": "kinderkulturUx:build"
           }
         },
         "test": {
@@ -152,51 +152,46 @@
             "main": "server.ts",
             "tsConfig": "tsconfig.server.json"
           },
-          "configurations": {
-            "production": {
-              "buildOptimizer": true,
-              "outputHashing": "media",
-              "fileReplacements": [
-                {
-                  "replace": "src/environments/environment.ts",
-                  "with": "src/environments/environment.prod.ts"
-                }
-              ],
-              "optimization": true,
-              "sourceMap": false,
-              "extractLicenses": true,
-              "vendorChunk": false
-            },
-            "custom": {
-              "fileReplacements": [
-                {
-                  "replace": "src/environments/environment.ts",
-                  "with": "src/environments/environment.custom.ts"
-                }
-              ],
-              "buildOptimizer": false,
-              "optimization": false,
-              "sourceMap": true,
-              "extractLicenses": false,
-              "vendorChunk": true
-            },
-            "development": {
-              "buildOptimizer": false,
-              "optimization": false,
-              "sourceMap": true,
-              "extractLicenses": false,
-              "vendorChunk": true
-            }
-          },
-          "defaultConfiguration": "production"
+					"configurations": {
+						"production": {
+							"outputHashing": "media",
+							"fileReplacements": [
+								{
+									"replace": "src/environments/environment.ts",
+									"with": "src/environments/environment.custom.ts"
+								}
+							]
+						},
+						"custom": {
+							"buildOptimizer": false,
+							"fileReplacements": [
+								{
+									"replace": "src/environments/environment.ts",
+									"with": "src/environments/environment.custom.ts"
+								}
+							],
+							"optimization": false,
+							"sourceMap": true,
+							"extractLicenses": false,
+							"vendorChunk": true
+						},
+						"development": {
+							"buildOptimizer": false,
+							"optimization": false,
+							"sourceMap": true,
+							"extractLicenses": false,
+							"vendorChunk": true
+						}
+					},
+					"defaultConfiguration": "production"
         },
         "serve-ssr": {
-          "builder": "@nguniversal/builders:ssr-dev-server",
+          "builder": "@angular-devkit/build-angular:ssr-dev-server",
           "configurations": {
             "development": {
               "browserTarget": "kinderkulturUx:build:development",
               "serverTarget": "kinderkulturUx:server:development"
-            },            
+            },
             "custom": {
               "browserTarget": "kinderkulturUx:build:custom",
               "serverTarget": "kinderkulturUx:server:custom"
@@ -206,15 +201,14 @@
               "serverTarget": "kinderkulturUx:server:production"
             }
           },
-          "defaultConfiguration": "development"
+          "defaultConfiguration": "custom"
         },
         "prerender": {
-          "builder": "@nguniversal/builders:prerender",
+          "builder": "@angular-devkit/build-angular:prerender",
           "options": {
             "routes": [
-              "/","/upcoming", "/tour", "/audio", "/history", "/team", "/contact", "/success"
-            ],
-            "guessRoutes": false
+							"/"
+             ]
           },
           "configurations": {
             "production": {
@@ -234,6 +228,5 @@
         }
       }
     }
-  },
-	"defaultProject": "kinderkulturUx",
+  }
 }

@@ -1,4 +1,4 @@
-import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
+import {HTTP_INTERCEPTORS, HttpClientModule, provideHttpClient, withFetch} from '@angular/common/http';
 import { ApplicationConfig, importProvidersFrom } from '@angular/core';
 import { HttpErrorInterceptor } from './services/http-error-interceptor.service';
 import { provideRouter } from '@angular/router';
@@ -20,6 +20,7 @@ export const appConfig: ApplicationConfig = {
     },
     importProvidersFrom(HttpClientModule),
     provideRouter(ROUTES),
+		provideHttpClient(withFetch()),
     provideAnimations()
   ],
 };

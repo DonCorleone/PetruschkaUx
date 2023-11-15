@@ -6,15 +6,14 @@ import { InfoModalComponent } from '../../info/info-modal/info-modal.component';
 import { LocationModalComponent } from '../../location/location-modal/location-modal.component';
 import { TicketModalComponent } from '../../ticket/ticket-modal/ticket-modal.component';
 import { LocationIdName } from '../../../models/location.models';
-import { platform } from 'os';
-import { CommonModule, CurrencyPipe, DatePipe, NgClass, isPlatformBrowser } from '@angular/common';
+import { CommonModule, CurrencyPipe, isPlatformBrowser } from '@angular/common';
 
 @Component({
   selector: 'app-gigs-item',
   templateUrl: './gigs-item.component.html',
   styleUrls: ['./gigs-item.component.scss'],
   standalone: true,
-  imports: [CommonModule, NgClass, DatePipe, CurrencyPipe],
+  imports: [CommonModule, CurrencyPipe],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class GigsItemComponent {

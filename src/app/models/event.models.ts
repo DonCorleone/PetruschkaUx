@@ -161,6 +161,7 @@ export interface EventDetail {
   eventInfos: EventDetailEventInfo[];
 	locationIds: number[];
   ticketTypes: TicketType[];
+  notificationEmail: string;
 }
 
 /*export interface EventInfo {

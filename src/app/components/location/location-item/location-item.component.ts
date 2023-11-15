@@ -3,11 +3,13 @@ import { DomSanitizer } from '@angular/platform-browser';
 import { Observable } from 'rxjs';
 import { LocationsService } from 'src/app/services/locations.service';
 import { EventLocation, LocationIdName } from '../../../models/location.models';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-location-item',
   templateUrl: './location-item.component.html',
   standalone: true,
+  imports: [CommonModule],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class LocationItemComponent {

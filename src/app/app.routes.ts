@@ -9,6 +9,7 @@ export const ROUTES: Route[] = [
     {
       path: 'upcoming',
       loadComponent: () => import('./components/gigs/gigs-list/gigs-list.component').then((m) => m.GigsListComponent),
+			data: { animation: 'filterPage' }
     },
     {
       path: 'tour',
@@ -33,6 +34,6 @@ export const ROUTES: Route[] = [
     },
     {
       path: 'success',
-      component: SuccessComponent,
+			loadComponent: () => import('./components/success/success.component').then((m) => m.SuccessComponent),
     },
   ];

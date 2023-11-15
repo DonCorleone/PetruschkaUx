@@ -1,9 +1,10 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
-import { EventDetail, EventDetailEventInfo, TicketPrice, TicketType } from 'src/app/models/event.models';
+import { EventDetail, EventDetailEventInfo, TicketPrice } from 'src/app/models/event.models';
 import { EventService } from 'src/app/services/event.service';
 import { LoadingIndicatorComponent } from '../../loading-indicator/loading-indicator.component';
 import { GigsItemComponent } from '../gigs-item/gigs-item.component';
-import { AsyncPipe, CommonModule } from '@angular/common';
+import { CommonModule } from '@angular/common';
+import { slideInRightOnEnterAnimation } from 'angular-animations';
 
 @Component({
   selector: 'app-gigs-list',
@@ -12,8 +13,11 @@ import { AsyncPipe, CommonModule } from '@angular/common';
   standalone: true,
   imports: [GigsItemComponent, LoadingIndicatorComponent, CommonModule],
   changeDetection: ChangeDetectionStrategy.OnPush,
+  animations: [slideInRightOnEnterAnimation({ duration: 1000 })],
 })
 export class GigsListComponent {
+  public animatePage = true;
+
   eventDetailsUpcoming$ = this.eventService.upcomingGigs$;
 
   constructor(private eventService: EventService) {}
