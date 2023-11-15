@@ -7,7 +7,7 @@
     "config-develop": "ts-node ./scripts/setenv.ts --environment=develop",
     "config-prod": "ts-node ./scripts/setenv.ts --environment=prod",
     "start": "npm run config-develop --environment=develop && ng serve --configuration=custom",
-    "build": "npm run config-prod --environment=prod && ng build --configuration=custom",
+    "build": "npm run config-prod --environment=prod && ng build --configuration=production",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
