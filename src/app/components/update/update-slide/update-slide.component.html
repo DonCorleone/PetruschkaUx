@@ -25,7 +25,7 @@
 				<div>
 					<p class="imprtant" *ngIf="eventInfo?.importantNotes"> {{ eventInfo?.importantNotes}} </p>
 					<a class="btn btn-sm btn-ghost-primary" (click)="openInfo(eventDetail)">Info <span *ngIf="pastEvent && eventDetail.facebookPixelId">/ Fotos</span></a>
-					<a class="btn btn-sm btn-primary" [routerLink]="/upcoming" *ngIf="futureEvent">Aufführungen</a>
+					<a class="btn btn-sm btn-primary" [routerLink]="'/upcoming'" *ngIf="futureEvent">Aufführungen</a>
 				</div>
 			</div>
 	</div>
