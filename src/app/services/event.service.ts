@@ -121,7 +121,7 @@ export class EventService {
 
   GetEventDetail(id: number): Observable<EventDetail> {
     return this.httpClient
-      .get<GetEventInfoById>(`https://petruschka.netlify.app/.netlify/functions/get_eventInfos?eventid=${id}`)
+      .get<GetEventInfoById>(`${process.env['URL']}/.netlify/functions/get_eventInfos?eventid=${id}`)
       .pipe(map((result) => result.message.documents.find((p) => p._id === id)));
   }
 
