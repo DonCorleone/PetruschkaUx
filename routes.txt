@@ -1,4 +1,3 @@
-/
 /upcoming
 /tour
 /audio
