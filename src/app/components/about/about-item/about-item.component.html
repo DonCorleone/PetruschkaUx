@@ -9,18 +9,18 @@
         {{ staff.name }}
       </h3>
       <div *ngIf="isModal" [innerHTML]="staff.bio" class="member-desc"></div>
-			<ng-container	*ngTemplateOutlet="xy;context:{staff: staff.name}">
+			<ng-container	*ngTemplateOutlet="xy;context:{staffName: staff.name}">
 			</ng-container>
     </div>
   </div>
 </div>
-<ng-template let-xxx="staff" #xy>
-	<a *ngIf="!isModal" (click)="myDialog.showModal()" class="btn btn-sm btn-primary"><i class="fas fa-external-link-square-alt"></i> Biografie</a>
-	<dialog #myDialog>
+<ng-template let-staffName="staffName" #xy>
+	<a *ngIf="!isModal" (click)="staffDialog.showModal()" class="btn btn-sm btn-primary">Biografie</a>
+	<dialog #staffDialog>
 		<div class="modal-header">
 			<h4 class="modal-title text-center" id="infoModalLabel">Mitwirkende</h4>
 			<button
-				(click)="myDialog.close()"
+				(click)="staffDialog.close()"
 				aria-describedby="modal-title"
 				aria-label="Close button"
 				class="close"
@@ -31,7 +31,7 @@
 		</div>
 
 		<div class="modal-body">
-			<app-about-detail [staffName]="staff.name"></app-about-detail>
+			<app-about-detail [staffName]="staffName"></app-about-detail>
 		</div>
 	</dialog>
 </ng-template>
