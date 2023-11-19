@@ -7,7 +7,7 @@ const targetPath = `./src/environments/environment.custom.ts`; // we have access
 // in the process.env object thanks to dotenv
 
 const environmentFileContent = isProduction
-	? `export const environment = {
+  ? `export const environment = {
    production: true,
    APP_ID_REALM: "${process.env.APP_ID_REALM}",
    NODE_VERSION: "${process.env.NODE_VERSION}",
@@ -17,8 +17,9 @@ const environmentFileContent = isProduction
    SITE_NAME: "${process.env?.['SITE_NAME']}",
    API_KEY_MONGODB: "${process.env?.['API_KEY_MONGODB']}",
    BRANCH: "${process.env?.['BRANCH']}",
+   CONTEXT: "${process.env?.['CONTEXT']}"
 };`
-	: `export const environment = {
+  : `export const environment = {
    production: false,
    APP_ID_REALM: "${process.env.APP_ID_REALM}",
    NODE_VERSION: "${process.env.NODE_VERSION}",
@@ -28,10 +29,11 @@ const environmentFileContent = isProduction
    API_KEY_MONGODB: "${process.env?.['API_KEY_MONGODB']}",
    SITE_NAME: "${process.env?.['SITE_NAME']}",
    BRANCH: "${process.env?.['BRANCH']}",
+   CONTEXT: "${process.env?.['CONTEXT']}"
 };`; // write the content to the respective file
 writeFile(targetPath, environmentFileContent, function (err: any) {
-	if (err) {
-		console.log(err);
-	}
-	console.log(`Wrote ${JSON.stringify(argv)} variables to ${targetPath}`);
+  if (err) {
+    console.log(err);
+  }
+  console.log(`Wrote ${JSON.stringify(argv)} variables to ${targetPath}`);
 });

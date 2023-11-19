@@ -2,7 +2,8 @@ import { Injectable } from '@angular/core';
 import { map } from 'rxjs/operators';
 import { HttpClient } from '@angular/common/http';
 import { Press } from '../models/press.models';
-import {environment} from "../../environments/environment.custom";
+import { environment } from '../../environments/environment.custom';
+import { BaseService } from './base.service';
 
 interface Message {
   documents: Press[];
@@ -15,10 +16,8 @@ interface GetPressArticlesResponse {
 @Injectable({
   providedIn: 'root',
 })
-export class PressService {
-  constructor(private httpClient: HttpClient) {}
-
+export class PressService extends BaseService {
   pressArticles$ = this.httpClient
-    .get<GetPressArticlesResponse>(`https://${environment.BRANCH}--${environment.SITE_NAME}.netlify.app/.netlify/functions/get_press`)
+    .get<GetPressArticlesResponse>(this.getUrl('get_press'))
     .pipe(map((result) => result.message.documents));
 }

@@ -1,4 +1,4 @@
-<div class="section-intro center-block" id="pressArticles" *ngIf="pressArticles">
+<div class="section-intro center-block" id="pressArticles" *ngIf="pressArticles | async as pressArticles">
 	<h4 class="title" *ngIf="pressArticles.length > 0">Presse-Meldungen</h4>
 	<div class="carousel-nav">
 		<a class="carousel-nav-btn" (click)="arrowLeft()" role="button" data-slide="prev">
@@ -24,6 +24,5 @@
 				<img [src]="'assets/images/presse/' + article.nr + '.png'" [alt]="article.desc" />
 			</a>
 		</ng-template>
-
 	</ngb-carousel>
 </div>

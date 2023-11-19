@@ -3,7 +3,8 @@ import { map } from 'rxjs/operators';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { EventLocation, LocationIdName } from '../models/location.models';
-import {environment} from "../../environments/environment.custom";
+import { environment } from '../../environments/environment.custom';
+import { BaseService } from './base.service';
 
 interface Message {
   documents: EventLocation[];
@@ -16,17 +17,15 @@ interface GetEventLocationResponse {
 @Injectable({
   providedIn: 'root',
 })
-export class LocationsService {
-  constructor(private httpClient: HttpClient) {}
-
+export class LocationsService extends BaseService {
   GetEventLocation(locationIdName: LocationIdName): Observable<EventLocation> {
     if (locationIdName?.ef_id) {
       return this.httpClient
-        .get<GetEventLocationResponse>(`https://${environment.BRANCH}--${environment.SITE_NAME}.netlify.app/.netlify/functions/get_location?ef_id=${locationIdName?.ef_id}`)
+        .get<GetEventLocationResponse>(this.getUrl(`get_location?ef_id=${locationIdName?.ef_id}`))
         .pipe(map((result) => result.message.documents.find((p) => p.ef_id == locationIdName?.ef_id)));
     } else {
       return this.httpClient
-        .get<GetEventLocationResponse>(`https://${environment.BRANCH}--${environment.SITE_NAME}.netlify.app/.netlify/functions/get_location?name=${locationIdName?.name}`)
+        .get<GetEventLocationResponse>(this.getUrl(`get_location?name=${locationIdName?.name}`))
         .pipe(map((result) => result.message.documents.find((p) => p.name == locationIdName?.name)));
     }
   }
