@@ -5,7 +5,7 @@
     <div class="members-block">
       <div *ngIf="staffs$ | async as staffs" class="row">
         <div *ngFor="let staff of staffs" [@jackInTheBoxOnEnter] class="col-12 col-md-6 col-lg-4">
-          <app-about-item [staff]="staff" class="flex"> </app-about-item>
+          <app-about-item [staff]="staff" [isModal]="false" class="flex"> </app-about-item>
         </div>
       </div>
     </div>
