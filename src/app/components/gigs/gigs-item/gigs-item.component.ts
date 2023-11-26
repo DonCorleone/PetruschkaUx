@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component, Inject, Input, PLATFORM_ID } from '@angular/core';
+import { ChangeDetectionStrategy, Component, Inject, Input, OnInit, PLATFORM_ID } from '@angular/core';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { EventDetailEventInfo, TicketPrice } from 'src/app/models/event.models';
 import { EventService } from 'src/app/services/event.service';
@@ -16,7 +16,7 @@ import { CommonModule, CurrencyPipe, isPlatformBrowser } from '@angular/common';
   imports: [CommonModule, CurrencyPipe],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class GigsItemComponent {
+export class GigsItemComponent implements OnInit {
   public isCollapsed = true;
   @Input() start: Date;
   @Input() tag: string;
@@ -26,6 +26,8 @@ export class GigsItemComponent {
   @Input() ticketPrices: TicketPrice[];
   @Input() eventKey: string;
   @Input() ef_locationId?: number;
+
+  ticketPricesTicket: TicketPrice[];
 
   constructor(
     private modalService: NgbModal,
@@ -94,5 +96,9 @@ export class GigsItemComponent {
   openLocation(): void {
     const modalRef = this.modalService.open(LocationModalComponent, { size: 'lg' });
     modalRef.componentInstance.eventLocationIdName = this.locationIdName;
+  }
+
+  ngOnInit(): void {
+    this.ticketPricesTicket = this.ticketPrices.filter((x) => x.name !== 'CD');
   }
 }

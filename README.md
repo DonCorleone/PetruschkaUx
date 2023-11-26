@@ -24,3 +24,6 @@ Backend is completely outsourced into cloud-services.
 [MongoDB Atlas](https://www.mongodb.com/cloud/atlas) GraphQL API
 ### Images
 Netlify Image Transformation  [docs.netlify.com](https://docs.netlify.com/large-media/transform-images/) via REST API
+
+Git LFS   
+[Netlify Support](https://answers.netlify.com/t/what-is-the-username-and-password-to-be-used-in-basic-auth-of-netlify-large-media-git-lfs-url-found-in-lsconfig/34681/4)

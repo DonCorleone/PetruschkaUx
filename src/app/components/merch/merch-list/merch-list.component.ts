@@ -27,7 +27,7 @@ export class MerchListComponent implements OnInit {
   constructor(private eventService: EventService) {}
 
   ngOnInit() {
-    this.eventDetailsTournee$ = this.eventService.GetEventDetails((p) => p.googleAnalyticsTracker.includes('Tournee'));
+    this.eventDetailsTournee$ = this.eventService.GetEventDetailsTournee();
   }
 
   get LogoWanderTheater(): string {
