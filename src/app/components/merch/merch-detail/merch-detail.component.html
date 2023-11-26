@@ -1,9 +1,8 @@
-<div class="modal-item" *ngIf="eventDetail$ | async as eventDetail">
-	<h3>{{ eventName(eventDetail) }}</h3>
-	<div *ngIf="GetTicketTypeInfoFromEventDetail(eventDetail) as ticketTypeInfo">
-		<img [src]="imagePath(ticketTypeInfo)" alt="" class="img-fluid">
-		<div *ngIf="ArtistsArray(ticketTypeInfo) as artistsArray">
-			<div *ngIf="artistsArray.length > 0">
+<div class="modal-item" *ngIf="eventDetail">
+	<h3>{{ eventName }}</h3>
+	<div *ngIf="ticketTypeInfo">
+		<img [ngSrc]=imagePath [width]="imageDimension" [height]="imageDimension" [alt]="'Cover ' + eventName" class="img-fluid">
+		<div *ngIf="artistsArray">
 				<br>
 				<div class="modal-item-title">
 					Mitwirkende
@@ -15,7 +14,6 @@
 							<span *ngFor="let jobValue of job.values; let isLast=last">
 								<a (click)="openStaff(jobValue)" class="staff-link"><i class="fas fa-external-link-square-alt"></i> {{
 									jobValue }}</a> {{isLast ? '' : ' & '}}
-								<!-- <a [routerLink]="['/staff', jobsharer]">{{ jobsharer }}</a> {{isLast ? '' : ' & '}} -->
 							</span>
 						</div>
 						<div *ngIf="!job.isJobSharing">
@@ -26,17 +24,15 @@
 							</span>
 						</div>
 					</div>
-				</div>
 			</div>
 		</div>
 	</div>
 	<div class="modal-item-content">
 		<br />
-		<!-- <a href="mailto:regulaaufdermaur@kinderkultur.ch?subject=Buchungsanfrage_Drachenei">regulaaufdermaur@kinderkultur.ch</a> -->
 		<p>Buchungsanfrage per E-Mail an <a
-				[href]="'mailto:' + eventDetail.notificationEmail + '?subject=Buchungsanfrage ' + eventName(eventDetail)"
+				[href]="'mailto:' + eventDetail.notificationEmail + '?subject=Buchungsanfrage ' + eventName"
 				target="_blank">{{ eventDetail.notificationEmail }}</a><br />
-			Betreff: Buchungsanfrage '{{ eventName(eventDetail) }}'</p>
+			Betreff: Buchungsanfrage '{{ eventName }}'</p>
 			<!--div>
 				<p><strong><em>Coronamassnahmen</em></strong></p>
 				<ul>
