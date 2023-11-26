@@ -1,15 +1,14 @@
 <section class="music-section section text-center" id="music">
 	<div class="container">
 		<app-loading-indicator [title]="'Hörspiele'"></app-loading-indicator>
-		<div class="sc-block ml-auto mr-auto">
-			<div class="item">
-			</div>
-			<div class="item">
-			</div>
-	</div>
+		<div class="section-intro ms-auto me-auto">
+			<p>
+				Hörspiel- CDs gibts vor Ort im Theaterraum nach den Vorstellungen zu kaufen oder hier via e-Mail zu bestellen.
+			</p>
+		</div>
 		<div class="albums-block">
 			<div class="row">
-				<div *ngFor="let eventDetail of eventDetailsCD$ | async" [@fadeInUpOnEnter] 
+				<div *ngFor="let eventDetail of eventDetailsCD$ | async" [@fadeInUpOnEnter]
 				class="item col-12 col-md-6 col-lg-4">
 					<app-music-item
 					[eventDetail]="eventDetail"

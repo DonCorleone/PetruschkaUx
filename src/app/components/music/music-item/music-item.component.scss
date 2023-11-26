@@ -1,6 +1,10 @@
 @import "../../../../scss/theme/mixins";
 @import "../../../../scss/theme-1.scss";
 
+h3 {
+	font-size: 16px;
+}
+
 .mask {
 	cursor: pointer;
 }
@@ -76,11 +80,9 @@
 			font-family: 'Raleway', sans-serif;
 			text-transform: uppercase;
 			font-weight: 700;
-			font-size: 12px;
 			padding: 10px;
 	}
 	.album-title {
-			font-size: 14px;
 			margin-bottom: 15px;
 			margin-top: 0;
 			@include truncate(235px);
