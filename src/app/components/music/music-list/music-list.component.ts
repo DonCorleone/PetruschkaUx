@@ -14,7 +14,7 @@ import { fadeInUpOnEnterAnimation } from 'angular-animations';
   standalone: true,
   changeDetection: ChangeDetectionStrategy.OnPush,
   imports: [CommonModule, LoadingIndicatorComponent, MusicItemComponent],
-  animations: [fadeInUpOnEnterAnimation({ duration: 2000 })]
+  animations: [fadeInUpOnEnterAnimation({ duration: 2000 })],
 })
 export class MusicListComponent implements OnInit {
   eventDetailsCD$: Observable<EventDetail[]>;
@@ -22,6 +22,6 @@ export class MusicListComponent implements OnInit {
   constructor(private eventService: EventService) {}
 
   ngOnInit() {
-    this.eventDetailsCD$ = this.eventService.GetEventDetails((p) => p.googleAnalyticsTracker.includes('CD'));
+    this.eventDetailsCD$ = this.eventService.GetEventDetailsAudio();
   }
 }

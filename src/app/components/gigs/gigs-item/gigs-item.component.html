@@ -24,7 +24,7 @@
         </li>
         <li class="list-inline-item price">
           <i class="far fa-money-bill-alt"></i>
-          <span *ngFor="let ticketPrice of ticketPrices; let isLast = last">
+          <span *ngFor="let ticketPrice of ticketPricesTicket; let isLast = last">
             {{ ticketPrice.name }}: {{ ticketPrice.price | currency: 'CHF ' }} {{ isLast ? '' : ' | ' }}
           </span>
         </li>
