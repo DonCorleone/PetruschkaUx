@@ -107,6 +107,10 @@ body {
   }
 }
 
+.modal-footer {
+	justify-content: center;
+	border-top: none;
+}
 .modal button.close {
   padding-right: unset;
   color: $theme-color;
