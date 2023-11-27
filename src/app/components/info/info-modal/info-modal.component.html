@@ -20,14 +20,6 @@
 			[preSaleStart]="GetPreSaleStartFromEventDetail(eventDetail)"
 			[ticketPrices]="GetPricesStringFromEventDetail(eventDetail)">
 		</app-info-item>
-		<div *ngIf="future" class="modal-footer">
-			<a
-				[routerLink]="'/upcoming'"
-				(click)="activeModal.dismiss('Cross click')"
-				class="btn btn-sm btn-ghost-secondary"
-			>Kommende Vorstellungen</a
-			>
-		</div>
 	</div>
 </div>
 

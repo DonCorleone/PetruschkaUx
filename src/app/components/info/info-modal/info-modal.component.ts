@@ -24,7 +24,6 @@ export class InfoModalComponent implements OnInit {
   eventInfo$: Observable<EventDetailEventInfo>;
 
   protected readonly close = close;
-  future: boolean;
 
   constructor(public activeModal: NgbActiveModal, private eventService: EventService) {}
 
@@ -34,9 +33,6 @@ export class InfoModalComponent implements OnInit {
         return p.eventInfos?.find((f) => f.languageId === 0);
       })
     );
-    this.eventDetail$.pipe(take(1)).subscribe((p) => {
-      this.future = new Date(p.start).getTime() - new Date().getTime() > 0;
-    });
   }
 
   GetPreSaleStartFromEventDetail(eventDetail: EventDetail): Date {

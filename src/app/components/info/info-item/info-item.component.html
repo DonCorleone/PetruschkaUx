@@ -146,4 +146,10 @@
 	</div>
 </div-->
 <app-sponsors [eventKey]="eventKey"></app-sponsors>
-
+<div *ngIf="isFutureEvent" class="modal-footer">
+	<a
+		[href]="'/upcoming'"
+		class="btn btn-sm btn-ghost-secondary"
+	>Kommende Vorstellungen</a
+	>
+</div>
