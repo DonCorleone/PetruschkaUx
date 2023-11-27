@@ -1,12 +1,11 @@
-<div class="item-inner">
+<div *ngIf="eventInfo && imageDimension && imageUrl" class="item-inner" >
 
-	<img [src]="imageUrl" alt="" class="img-fluid">
+	<img [ngSrc]="imageUrl" [width]="imageDimension" [height]="imageDimension" [alt]="'Cover Wandertheater ' + eventInfo.name " class="img-fluid">
 	<a class="mask" (click)="openDetail()">
     <span class="mask-inner">
-      <span class="item-title">{{ eventInfo?.name }}</span>
+      <span class="item-title">{{ eventInfo.name }}</span>
       <span class="desc">Dieses Stück kann gebucht werden!</span>
       <span class="btn btn-sm btn-primary">Buchen</span>
     </span>
 	</a>
 </div>
-<!--//item-inner-->

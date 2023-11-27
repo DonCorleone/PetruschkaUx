@@ -4,7 +4,7 @@ import { EventDetail } from 'src/app/models/event.models';
 import { EventService } from 'src/app/services/event.service';
 import { MerchItemComponent } from '../merch-item/merch-item.component';
 import { LoadingIndicatorComponent } from '../../loading-indicator/loading-indicator.component';
-import { CommonModule } from '@angular/common';
+import { CommonModule, NgOptimizedImage } from '@angular/common';
 import { trigger, state, style, transition, animate } from '@angular/animations';
 
 @Component({
@@ -13,7 +13,7 @@ import { trigger, state, style, transition, animate } from '@angular/animations'
   styleUrls: ['./merch-list.component.scss'],
   standalone: true,
   changeDetection: ChangeDetectionStrategy.OnPush,
-  imports: [CommonModule, MerchItemComponent, LoadingIndicatorComponent],
+  imports: [CommonModule, MerchItemComponent, LoadingIndicatorComponent, NgOptimizedImage],
   animations: [
     trigger('flyTopDown', [
       state('in', style({ transform: 'translateY(0)' })),

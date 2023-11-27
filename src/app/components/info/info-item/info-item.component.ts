@@ -16,13 +16,14 @@ import { Job } from '../../../models/staff.models';
 import { LocationIdName } from 'src/app/models/location.models';
 import { CommonModule, DatePipe, NgClass, isPlatformBrowser } from '@angular/common';
 import { SponsorsComponent } from '../../sponsors/sponsors.component';
+import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-info-item',
   templateUrl: './info-item.component.html',
   styleUrls: ['./info-item.component.scss'],
   standalone: true,
-  imports: [CommonModule, SponsorsComponent],
+  imports: [CommonModule, SponsorsComponent, RouterLink],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class InfoComponent implements OnInit, OnDestroy {

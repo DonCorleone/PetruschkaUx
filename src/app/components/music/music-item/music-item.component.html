@@ -1,15 +1,22 @@
-<div class="item-inner">
-	<h3 class="album-title">
-		{{ eventInfo?.name }}
-	</h3>
-	<div class="cover-holder">
-		<a (click)="openDetail()" class="cover-figure mask">
-			<div *ngIf="comingSoon" class="arrow-holder"></div>
-			<div class="record-holder"><img alt="" class="img-fluid" src="assets/images/record.png"></div>
-			<img [src]="imageUrl" alt="" class="cover-image img-fluid">
-			<div *ngIf="comingSoon" class="cover-label">Coming Soon</div>
-		</a>
-		<a (click)="openDetail()" *ngIf="comingSoon" class="btn btn-sm btn-ghost-secondary">Vorbestellen</a>
-		<a (click)="openDetail()" *ngIf="!comingSoon" class="btn btn-sm btn-secondary">Bestellen</a>
-	</div>
+<div *ngIf="eventInfo" class="item-inner">
+  <h3 class="album-title">
+    {{ eventInfo?.name }}
+  </h3>
+  <div class="cover-holder">
+    <a (click)="openDetail()" class="cover-figure mask">
+      <div *ngIf="comingSoon" class="arrow-holder"></div>
+      <div class="record-holder"><img alt="" class="img-fluid" src="assets/images/record.png" /></div>
+      <img
+        [ngSrc]="imageUrl"
+        [alt]="'Cover Hörspiel ' + eventInfo.name"
+        [height]="imageDimension"
+        [width]="imageDimension"
+				priority="true"
+        class="cover-image img-fluid"
+      />
+      <div *ngIf="comingSoon" class="cover-label">Coming Soon</div>
+    </a>
+  </div>
+	<a (click)="openDetail()" *ngIf="comingSoon" class="btn btn-sm btn-ghost-secondary">Vorbestellen</a>
+	<a (click)="openDetail()" *ngIf="!comingSoon" class="btn btn-sm btn-secondary">Bestellen</a>
 </div>
