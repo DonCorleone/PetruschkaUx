@@ -129,10 +129,21 @@ export class EventService extends BaseService {
     .get<UpComingEventsResponse>(this.getUrl('get_events?collection=UpcomingEventsActive'))
     .pipe(map((result) => result.message.documents));
 
-  GetEventDetails(filterPredicateIn: any): Observable<EventDetail[]> {
+  GetEventDetailsAudio(): Observable<EventDetail[]> {
     return this.httpClient
-      .get<EventDetailsResponse>(this.getUrl('get_events?collection=EventDetailsTaggedUsage'))
-      .pipe(map((result) => result.message.documents.filter(filterPredicateIn)));
+      .get<EventDetailsResponse>('.netlify/functions/get_events?collection=EventDetailsTaggedUsage')
+      .pipe(
+        map((result) => result.message.documents.filter((x) => (x.googleAnalyticsTracker as string).indexOf('CD') > -1))
+      );
+  }
+
+  GetEventDetailsTournee(): Observable<EventDetail[]> {
+    return this.httpClient
+      .get<EventDetailsResponse>('.netlify/functions/get_events?collection=EventDetailsTaggedUsage')
+      .pipe(
+        map((result) =>
+          result.message.documents.filter((x) => (x.googleAnalyticsTracker as string).indexOf('Tournee') > -1)
+        )
   }
 
   pastEventDetails$ = this.httpClient

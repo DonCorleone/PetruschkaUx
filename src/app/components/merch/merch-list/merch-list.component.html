@@ -1,16 +1,13 @@
 <section class="merch-section section text-center" id="merch">
 	<div class="container">
 		<app-loading-indicator [title]="'Tournee-Stücke'"></app-loading-indicator>
-
-		<div class="row">
-			<div class="col">
-				<div class="section-logo">
-					<img [src]="LogoWanderTheater" class="img-fluid"/>
-				</div>
-			</div>
+		<div class="section-intro ms-auto me-auto">
+			<p>
+				Das Wandertheater pausiert zur Zeit. Wir danken für Ihr Verständnis!
+			</p>
 		</div>
 		<div class = "row">
-			<div *ngFor="let eventDetail of eventDetailsTournee$ | async" 
+			<div *ngFor="let eventDetail of eventDetailsTournee$ | async"
 			class="item col-12 col-md-6 col-lg-4" [@flyTopDown]="'in'">
 				<app-merch-item
 					[eventDetail]="eventDetail"
@@ -18,17 +15,20 @@
 				</app-merch-item>
 			</div>
 		</div>
-		<!--//row-->
+		<div class="row">
+			<div class="col">
+				<div class="section-logo">
+					<img [ngSrc]="LogoWanderTheater" width="444" height="126" class="img-fluid" [alt]="'Logo Wandertheater'"/>
+				</div>
+			</div>
+		</div>
 		<div class="merch-action">
-			<!--a class="btn btn-ghost-primary" href="#">View All Items</a-->
 		</div>
 		<div class="merch-contact text-center">
 			<h4 class="title">Tourneestück buchen?</h4>
 			<p class="intro center-block"><strong>Erfordernisse Saal: </strong>Platz für Bühne (Verdunkelung sehr wichtig) |
 				Bestuhlung, ev. Teppiche für Bodensitzplätze für Kinder | Stromanschluss für mindestens 4000 Watt | Bühnen-,
 				Licht- und Tontechnik werden mitgebracht</p>
-		</div><!--//merch-->
+		</div>
 	</div>
-	<!--//container-->
 </section>
-<!--//merch-section-->
