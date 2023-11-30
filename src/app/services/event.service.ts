@@ -144,6 +144,7 @@ export class EventService extends BaseService {
         map((result) =>
           result.message.documents.filter((x) => (x.googleAnalyticsTracker as string).indexOf('Tournee') > -1)
         )
+      );
   }
 
   pastEventDetails$ = this.httpClient
