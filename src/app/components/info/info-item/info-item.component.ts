@@ -17,6 +17,8 @@ import { LocationIdName } from 'src/app/models/location.models';
 import { CommonModule, DatePipe, NgClass, isPlatformBrowser } from '@angular/common';
 import { SponsorsComponent } from '../../sponsors/sponsors.component';
 import { RouterLink } from '@angular/router';
+import { BaseService } from '../../../services/base.service';
+import { EventService } from '../../../services/event.service';
 
 @Component({
   selector: 'app-info-item',
@@ -64,7 +66,7 @@ export class InfoComponent implements OnInit, OnDestroy {
 
     this.files$ = this.imageService.listAssets('/assets/images/impressionen/' + this.eventKey).pipe(
       map((p) => {
-        p.forEach((image) => (image.path = `${environment.URL}${image.path}`));
+        p.forEach((image) => (image.path = this.pressService.getUrl(image.path)));
         return p;
       })
     );

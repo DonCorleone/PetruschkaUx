@@ -9,9 +9,11 @@ import {
   TicketTypeInfo,
   EventDetailViewModel,
 } from '../models/event.models';
-import { HttpClient } from '@angular/common/http';
+import { environment } from '../../environments/environment.custom';
+import { BaseService } from './base.service';
 
 export interface GetEventInfoById {
+  ß;
   message: MessageEventDetail;
 }
 
@@ -39,9 +41,7 @@ interface PastEventDetailsResponse {
 @Injectable({
   providedIn: 'root',
 })
-export class EventService {
-  constructor(private httpClient: HttpClient) {}
-
+export class EventService extends BaseService {
   static GetEventInfoFromEventDetail(eventDetail: EventDetail): EventDetailEventInfo {
     if (!eventDetail || !eventDetail.eventInfos || eventDetail.eventInfos?.length === 0) {
       return null;
@@ -121,12 +121,12 @@ export class EventService {
 
   GetEventDetail(id: number): Observable<EventDetail> {
     return this.httpClient
-      .get<GetEventInfoById>(`.netlify/functions/get_eventInfos?eventid=${id}`)
+      .get<GetEventInfoById>(this.getUrl(`get_eventInfos?eventid=${id}`))
       .pipe(map((result) => result.message.documents.find((p) => p._id === id)));
   }
 
   upcomingGigs$ = this.httpClient
-    .get<UpComingEventsResponse>('.netlify/functions/get_events?collection=UpcomingEventsActive')
+    .get<UpComingEventsResponse>(this.getUrl('get_events?collection=UpcomingEventsActive'))
     .pipe(map((result) => result.message.documents));
 
   GetEventDetailsAudio(): Observable<EventDetail[]> {
@@ -144,14 +144,13 @@ export class EventService {
         map((result) =>
           result.message.documents.filter((x) => (x.googleAnalyticsTracker as string).indexOf('Tournee') > -1)
         )
-      );
   }
 
   pastEventDetails$ = this.httpClient
-    .get<PastEventDetailsResponse>('.netlify/functions/get_events?collection=PastEventsWithId')
+    .get<PastEventDetailsResponse>(this.getUrl('get_events?collection=PastEventsWithId'))
     .pipe(map((result) => result.message.documents));
 
   upcomingEventDetails$ = this.httpClient
-    .get<PastEventDetailsResponse>('.netlify/functions/get_events?collection=UpcomingPremieres')
+    .get<PastEventDetailsResponse>(this.getUrl('get_events?collection=UpcomingPremieres'))
     .pipe(map((result) => result.message.documents));
 }

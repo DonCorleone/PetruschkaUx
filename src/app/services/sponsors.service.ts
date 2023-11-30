@@ -3,6 +3,8 @@ import { map } from 'rxjs/operators';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { Sponsor } from '../models/sponsors.models';
+import { environment } from 'src/environments/environment.custom';
+import { BaseService } from './base.service';
 
 interface Message {
   documents: Sponsor[];
@@ -15,11 +17,9 @@ interface SponsorsResponse {
 @Injectable({
   providedIn: 'root',
 })
-export class SponsorsService {
-  constructor(private httpClient: HttpClient) {}
-
+export class SponsorsService extends BaseService {
   GetSponsors(event: String): Observable<Sponsor[]> {
-    return this.httpClient.get<SponsorsResponse>('/.netlify/functions/get_sponsors').pipe(
+    return this.httpClient.get<SponsorsResponse>(this.getUrl('get_sponsors')).pipe(
       map((result) => {
         return event !== ''
           ? result.message.documents
