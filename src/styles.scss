@@ -134,7 +134,7 @@ dialog {
 }
 
 .modal-footer {
-	justify-content: center;
+	justify-content: center !important;
 	border-top: none;
 }
 
@@ -205,3 +205,6 @@ dialog {
   height: 98vh;
   margin: unset;
 }
+
+/* Importing Bootstrap SCSS file. */
+@import 'bootstrap/scss/bootstrap';
