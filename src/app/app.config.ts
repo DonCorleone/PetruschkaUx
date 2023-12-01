@@ -5,6 +5,7 @@ import { provideRouter } from '@angular/router';
 import { ROUTES } from './app.routes';
 import { provideAnimations } from '@angular/platform-browser/animations';
 import { LoadingIndicatorInterceptor } from './interceptors/loading-indicator.interceptor';
+import { provideClientHydration } from '@angular/platform-browser';
 
 export const appConfig: ApplicationConfig = {
   providers: [
@@ -21,6 +22,6 @@ export const appConfig: ApplicationConfig = {
     importProvidersFrom(HttpClientModule),
     provideRouter(ROUTES),
 		provideHttpClient(withFetch()),
-    provideAnimations()
+    provideAnimations(), provideClientHydration()
   ],
 };
