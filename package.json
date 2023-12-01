@@ -15,7 +15,7 @@
     "dev:ssr": "ng run kinderkulturUx:serve-ssr",
     "serve:ssr": "node dist/kinderkulturUx/server/main.js",
     "build:ssr": "ng build && ng run kinderkulturUx:server",
-    "prerender": "npm run config-prod --environment=prod && ng build --configuration=custom &&£ ng run kinderkulturUx:prerender"
+    "prerender": "npm run config-prod --environment=prod && ng build --configuration=custom && ng run kinderkulturUx:prerender"
   },
   "private": true,
   "dependencies": {
