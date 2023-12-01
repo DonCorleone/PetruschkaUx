@@ -221,6 +221,10 @@
               "browserTarget": "kinderkulturUx:build:development",
               "serverTarget": "kinderkulturUx:server:development"
             },
+						"custom": {
+							"browserTarget": "kinderkulturUx:build:custom",
+							"serverTarget": "kinderkulturUx:server:custom"
+						},
             "production": {
               "browserTarget": "kinderkulturUx:build:production",
               "serverTarget": "kinderkulturUx:server:production"
@@ -240,6 +244,10 @@
               "browserTarget": "kinderkulturUx:build:production",
               "serverTarget": "kinderkulturUx:server:production"
             },
+						"custom": {
+							"browserTarget": "kinderkulturUx:build:custom",
+							"serverTarget": "kinderkulturUx:server:custom"
+						},
             "development": {
               "browserTarget": "kinderkulturUx:build:development",
               "serverTarget": "kinderkulturUx:server:development"
