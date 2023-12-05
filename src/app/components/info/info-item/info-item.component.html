@@ -74,7 +74,7 @@
 </div>
 
 <div class="modal-item" *ngIf="showBuyButton">
-	<div class="modal-body">{{ eventTicketDesc?.description }}</div>
+	<div class="modal-item-content">{{ eventTicketDesc?.description }}</div>
 	<div class="modal-item-footer">
 		<a
 			(click)="openTicket()"
@@ -82,10 +82,13 @@
 			[ngClass]="{ isDisabled: saleState === 'cancelled' || saleState === 'sold-out' }"
 		>{{ saleState !== 'sold-out' ? 'Tickets' : 'Ausverkauft!' }}</a
 		>
+		<a  *ngIf="isFutureEvent"
+				[href]="'/upcoming'"
+				class="btn btn-sm btn-ghost-secondary"
+		>Weitere Vorstellungen</a
+		>
 	</div>
-
 </div>
-
 <div class="modal-item" *ngIf="artistsArray && artistsArray.length > 0">
   <div class="modal-item-title">Mitwirkende</div>
   <div class="modal-item-content">
@@ -146,10 +149,4 @@
 	</div>
 </div-->
 <app-sponsors [eventKey]="eventKey"></app-sponsors>
-<div *ngIf="isFutureEvent" class="modal-footer">
-	<a
-		[href]="'/upcoming'"
-		class="btn btn-sm btn-ghost-secondary"
-	>Kommende Vorstellungen</a
-	>
-</div>
+
