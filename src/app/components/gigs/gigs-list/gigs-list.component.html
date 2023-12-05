@@ -10,6 +10,7 @@
             [ticketPrices]="GetPricesStringFromEventDetail(eventDetail)"
             [start]="eventDetail.start"
             [tag]="eventDetail.googleAnalyticsTracker"
+            [saleState]="eventDetail.saleState"
             [preSaleStart]="GetPreSaleStartFromEventDetail(eventDetail)"
             [eventKey]="eventDetail.facebookPixelId"
             [ef_locationId]="eventDetail.locationIds?.some ? eventDetail.locationIds[0] : null"

@@ -35,6 +35,7 @@ export class InfoComponent implements OnInit, OnDestroy {
   @Input() reservationMail: string;
   @Input() usage: string;
   @Input() tag: string;
+  @Input() saleState: string;
   @Input() playDate: Date;
   @Input() eventKey: string;
   @Input() ef_locationId?: number;
@@ -138,7 +139,7 @@ export class InfoComponent implements OnInit, OnDestroy {
   }
 
   openTicket(): void {
-    if (this.tag === 'sold-out') {
+    if (this.saleState === 'sold-out') {
       return;
     }
     var eventLink = this.eventLink;

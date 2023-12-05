@@ -7,8 +7,8 @@
 <div class="gig-info">
   <div class="info-content">
     <h3 class="gig-title info-link">
-      <span *ngIf="tag === 'cancelled'" class="cancel">Abgesagt! </span>
-      <span (click)="openInfo()" class="gig-title info-link" [ngClass]="{ cancelled: tag === 'cancelled' }">
+      <span *ngIf="saleState === 'cancelled'" class="cancel">Abgesagt! </span>
+      <span (click)="openInfo()" class="gig-title info-link" [ngClass]="{ cancelled: saleState === 'cancelled' }">
         {{ eventInfoDe.name }}
       </span>
     </h3>
@@ -39,8 +39,8 @@
         *ngIf="showBuyButton"
         (click)="openTicket()"
         class="btn btn-sm btn-secondary"
-        [ngClass]="{ isDisabled: tag === 'cancelled' || tag === 'sold-out' }"
-        >{{ tag !== 'sold-out' ? 'Tickets' : 'Ausverkauft!' }}</a
+        [ngClass]="{ isDisabled: saleState === 'cancelled' || saleState === 'sold-out' }"
+        >{{ saleState !== 'sold-out' ? 'Tickets' : 'Ausverkauft!' }}</a
       >
     </span>
     <span *ngIf="showIsGone" class="secondary-content"> Vorstellung vorüber. </span>
