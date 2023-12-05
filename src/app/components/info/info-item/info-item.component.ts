@@ -6,7 +6,7 @@ import { EventDetailEventInfo, TicketPrice, TicketTypeInfo } from 'src/app/model
 import { LocationModalComponent } from '../../location/location-modal/location-modal.component';
 import { GalleryModalComponent } from '../../gallery/gallery-modal/gallery-modal.component';
 import { ImagesService, Netlifile } from 'src/app/services/images.service';
-import { map, takeUntil } from 'rxjs/operators';
+import { map } from 'rxjs/operators';
 import { PressService } from 'src/app/services/press.service';
 import { TicketModalComponent } from '../../ticket/ticket-modal/ticket-modal.component';
 import { AboutModalComponent } from '../../about/about-modal/about-modal.component';
@@ -14,7 +14,7 @@ import { StaffService } from '../../../services/staff.service';
 import { environment } from '../../../../environments/environment';
 import { Job } from '../../../models/staff.models';
 import { LocationIdName } from 'src/app/models/location.models';
-import { CommonModule, DatePipe, NgClass, isPlatformBrowser } from '@angular/common';
+import { CommonModule, isPlatformBrowser } from '@angular/common';
 import { SponsorsComponent } from '../../sponsors/sponsors.component';
 import { RouterLink } from '@angular/router';
 
