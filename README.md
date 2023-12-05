@@ -25,3 +25,5 @@ Netlify Image Transformation  [docs.netlify.com](https://docs.netlify.com/large-
 
 Git LFS   
 [Netlify Support](https://answers.netlify.com/t/what-is-the-username-and-password-to-be-used-in-basic-auth-of-netlify-large-media-git-lfs-url-found-in-lsconfig/34681/4)
+
+Trigger
