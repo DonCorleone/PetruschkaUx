@@ -79,8 +79,8 @@
 		<a
 			(click)="openTicket()"
 			class="btn btn-sm btn-ghost-primary"
-			[ngClass]="{ isDisabled: tag === 'cancelled' || tag === 'sold-out' }"
-		>{{ tag !== 'sold-out' ? 'Tickets' : 'Ausverkauft!' }}</a
+			[ngClass]="{ isDisabled: saleState === 'cancelled' || saleState === 'sold-out' }"
+		>{{ saleState !== 'sold-out' ? 'Tickets' : 'Ausverkauft!' }}</a
 		>
 	</div>
 
