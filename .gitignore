@@ -51,3 +51,4 @@ Thumbs.db
 .netlify
 /src/environments/environment.custom.ts
 stuff/ef_backup/postman.sh
+/workspaces/PetruschkaUx/.git/index.lock
