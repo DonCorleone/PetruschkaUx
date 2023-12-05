@@ -60,7 +60,7 @@ export class UpdateSlideComponent implements OnInit {
     const modalRef = this.modalService.open(InfoModalComponent, { size: 'lg' });
     modalRef.componentInstance.eventDetailId = eventDetail._id;
     modalRef.componentInstance.usage = 'Premiere'; // else case
-    modalRef.componentInstance.tag = eventDetail.googleAnalyticsTracker;
+    modalRef.componentInstance.saleState = eventDetail.saleState;
     modalRef.componentInstance.eventDetail$ = this.eventService.GetEventDetail(eventDetail._id);
   }
 }
