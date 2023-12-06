@@ -44,6 +44,7 @@
   }
 
   .meta-list {
+    display: flex;
     margin-block-end: 0;
     color: $text-color-grey;
     a {
