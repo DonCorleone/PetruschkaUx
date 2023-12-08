@@ -1,7 +1,6 @@
 	<ng-container *ngIf="sponsors$ | async as sponsors">
 		<ng-container *ngIf="sponsors?.length > 0">
 			<div class="section-intro center-block" id="sponsors" >
-				<div>{{sponsors | json}}</div>
 				<h4 class="title" *ngIf="sponsors.length > 0">Sponsoren</h4>
 				<div *ngFor="let sponsor of sponsors">
 					<div class="border-box">
