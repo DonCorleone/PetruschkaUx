@@ -63,7 +63,7 @@ export class GigsItemComponent implements OnInit {
   }
 
   openTicket(): void {
-    if (this.saleState === 'sold-out') {
+    if (this.saleState === '0') {
       return;
     }
     const eventLink = this.eventLink;

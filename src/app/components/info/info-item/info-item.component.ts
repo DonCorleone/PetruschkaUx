@@ -139,11 +139,11 @@ export class InfoComponent implements OnInit, OnDestroy {
   }
 
   openTicket(): void {
-    if (this.saleState === 'sold-out') {
+    if (this.saleState === '0') {
       return;
     }
-    var eventLink = this.eventLink;
-    if (eventLink == 'modal') {
+		const eventLink = this.eventLink;
+		if (eventLink == 'modal') {
       const modalRef = this.modalService.open(TicketModalComponent, { size: 'md' });
       modalRef.componentInstance.ticketPrices = this.ticketPrices;
     } else {

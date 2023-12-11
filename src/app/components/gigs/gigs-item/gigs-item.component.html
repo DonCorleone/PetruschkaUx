@@ -38,8 +38,8 @@
         *ngIf="showBuyButton"
         (click)="openTicket()"
         class="btn btn-sm btn-secondary"
-        [ngClass]="{ isDisabled: saleState === 'cancelled' || saleState === 'sold-out' }"
-        >{{ saleState !== 'sold-out' ? 'Tickets' : 'Ausverkauft!' }}</a
+        [ngClass]="{ isDisabled: saleState === 'cancelled' || saleState === '0' }"
+        >{{ saleState !== '0' ? 'Tickets' : 'Ausverkauft!' }}</a
       >
     <span *ngIf="showIsGone" class="secondary-content"> Vorstellung vorüber. </span>
 
