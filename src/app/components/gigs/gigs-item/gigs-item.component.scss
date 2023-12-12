@@ -2,7 +2,7 @@
 
 :host {
   display: flex;
-  gap: 15px;
+	gap: 15px;
   .gig-info {
     display: flex;
     justify-content: space-between;
@@ -15,6 +15,12 @@
       height: 100%;
     }
   }
+	.gig-row {
+		width: 100%;
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
+	}
 }
 
 
@@ -45,6 +51,8 @@
 
   .meta-list {
     display: flex;
+		flex-flow: wrap;
+		flex-direction: row;
     margin-block-end: 0;
     color: $text-color-grey;
     a {
@@ -70,14 +78,11 @@
   .date-label {
     background: $text-color-primary;
     color: #fff;
-    text-align: center;
-  //  display: inline-block;
-    width: 52px;
-    height: 82px;
-    padding-top: 4px;
-  //  position: absolute;
-    left: 0;
-    top: 15px;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		padding: 10px;
     .weekday {
       margin-bottom: -2px;
       font-size: 14px;
@@ -102,8 +107,9 @@
   }
   .gig-actions {
     display: flex;
-    place-items: baseline;
-    top: 15px;
+    place-content: flex-end;
+		align-items: baseline;
+		width: 100%;
     .btn {
       margin-left: 5px;
       &:last-child {
