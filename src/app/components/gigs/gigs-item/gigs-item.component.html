@@ -21,10 +21,10 @@
 						>
 					</li>
 					<li class="list-inline-item time">
-						<i class="far fa-clock"></i>{{ start | date: 'EE':'':'de-CH' }} {{ start | date: 'HH:mm':'':'de-CH' }}
+						<i class="fas fa-clock"></i>{{ start | date: 'EE':'':'de-CH' }} {{ start | date: 'HH:mm':'':'de-CH' }}
 					</li>
 					<li class="list-inline-item price">
-						<i class="far fa-money-bill-alt"></i>
+						<i class="fas fa-money-bill-alt"></i>
 						<div *ngFor="let ticketPrice of ticketPricesTicket; let isLast = last">
 							<div class="ticket-item">
 								{{ ticketPrice.name }}: {{ ticketPrice.price | currency: 'CHF ' }} {{ isLast ? '' : ' |  ' }}
@@ -32,7 +32,7 @@
 						</div>
 					</li>
 					<li class="list-inline-item availability">
-						<i class="far fa-hourglass-half"></i>Verfügbare Plätze: {{ saleState }}
+						<i class="fas fa-ticket-alt"></i>Verfügbare Plätze: {{ saleState }}
 					</li>
 				</ul>
 			</div>
