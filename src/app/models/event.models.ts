@@ -162,6 +162,7 @@ export interface EventDetail {
 	locationIds: number[];
   ticketTypes: TicketType[];
   notificationEmail: string;
+  saleState: string;
 }
 
 /*export interface EventInfo {

@@ -71,7 +71,13 @@ dialog {
 
   .modal-item-footer {
     display: flex;
-    justify-content: center;
+    justify-content: left;
+
+		a {
+			& + a {
+				margin-left: 10px; // Adjust the value to set the desired gap
+			}
+		}
   }
 
   .img-wide {

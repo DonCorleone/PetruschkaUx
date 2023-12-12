@@ -1,57 +1,60 @@
 <div class="date-label">
-  <div class="weekday">{{ (start | date: 'ccc':'':'de-CH').toUpperCase() }}</div>
-  <div class="number" *ngIf="!preSaleInSuperFuture">{{ start | date: 'dd':'':'de-CH' }}</div>
-  <div class="month">{{ start | date: 'MMM':'':'de-CH' }}</div>
-  <div class="year" *ngIf="preSaleInSuperFuture">{{ start | date: 'YYYY':'':'de-CH' }}</div>
+	<div class="weekday">{{ (start | date: 'ccc':'':'de-CH').toUpperCase() }}</div>
+	<div class="number" *ngIf="!preSaleInSuperFuture">{{ start | date: 'dd':'':'de-CH' }}</div>
+	<div class="month">{{ start | date: 'MMM':'':'de-CH' }}</div>
+	<div class="year" *ngIf="preSaleInSuperFuture">{{ start | date: 'YYYY':'':'de-CH' }}</div>
 </div>
-<div class="gig-info">
-  <div class="info-content">
-    <h3 class="gig-title info-link">
-      <span *ngIf="tag === 'cancelled'" class="cancel">Abgesagt! </span>
-      <span (click)="openInfo()" class="gig-title info-link" [ngClass]="{ cancelled: tag === 'cancelled' }">
+<div class="gig-row">
+	<div class="gig-info">
+		<div class="info-content">
+			<h3 class="gig-title info-link">
+				<span *ngIf="saleState === 'cancelled'" class="cancel">Abgesagt! </span>
+				<span (click)="openInfo()" class="gig-title info-link" [ngClass]="{ cancelled: saleState === 'cancelled' }">
         {{ eventInfoDe.name }}
       </span>
-    </h3>
-    <div class="meta">
-      <ul class="meta-list list-inline">
-        <li class="list-inline-item location">
-          <a (click)="openLocation()" class="location-link"
-            ><i class="fas fa-external-link-square-alt"></i>{{ eventInfoDe.location }}</a
-          >
-        </li>
-        <li class="list-inline-item time">
-          <i class="far fa-clock"></i>{{ start | date: 'EE':'':'de-CH' }} {{ start | date: 'HH:mm':'':'de-CH' }}
-        </li>
-        <li class="list-inline-item price">
-          <i class="far fa-money-bill-alt"></i>
-          <span *ngFor="let ticketPrice of ticketPricesTicket; let isLast = last">
-            {{ ticketPrice.name }}: {{ ticketPrice.price | currency: 'CHF ' }} {{ isLast ? '' : ' | ' }}
-          </span>
-        </li>
-      </ul>
-    </div>
-    <!--//meta-->
-  </div>
-  <!--//info-content-->
-  <div class="gig-actions">
-    <span>
-      <a
-        *ngIf="showBuyButton"
-        (click)="openTicket()"
-        class="btn btn-sm btn-secondary"
-        [ngClass]="{ isDisabled: tag === 'cancelled' || tag === 'sold-out' }"
-        >{{ tag !== 'sold-out' ? 'Tickets' : 'Ausverkauft!' }}</a
-      >
-    </span>
-    <span *ngIf="showIsGone" class="secondary-content"> Vorstellung vorüber. </span>
+			</h3>
+			<div class="meta">
+				<ul class="meta-list list-inline">
+					<li class="list-inline-item location">
+						<a (click)="openLocation()" class="location-link"
+						><i class="fas fa-external-link-square-alt"></i>{{ eventInfoDe.location }}</a
+						>
+					</li>
+					<li class="list-inline-item time">
+						<i class="fas fa-clock"></i>{{ start | date: 'EE':'':'de-CH' }} {{ start | date: 'HH:mm':'':'de-CH' }}
+					</li>
+					<li class="list-inline-item price">
+						<i class="fas fa-money-bill-alt"></i>
+						<div *ngFor="let ticketPrice of ticketPricesTicket; let isLast = last">
+							<div class="ticket-item">
+								{{ ticketPrice.name }}: {{ ticketPrice.price | currency: 'CHF ' }} {{ isLast ? '' : ' |  ' }}
+							</div>
+						</div>
+					</li>
+					<li class="list-inline-item availability">
+						<i class="fas fa-ticket-alt"></i>Verfügbare Plätze: {{ saleState }}
+					</li>
+				</ul>
+			</div>
+		</div>
+	</div>
+	<div class="gig-actions">
+		<a
+			*ngIf="showBuyButton"
+			(click)="openTicket()"
+			class="btn btn-sm btn-secondary"
+			[ngClass]="{ isDisabled: saleState === 'cancelled' || saleState === '0' }"
+		>{{ saleState !== '0' ? 'Reservation' : 'Ausverkauft!' }}</a
+		>
+		<span *ngIf="showIsGone" class="secondary-content"> Vorstellung vorüber. </span>
 
-    <span *ngIf="preSaleInFuture" class="secondary-content">
+		<span *ngIf="preSaleInFuture" class="secondary-content">
       Vorverkauf ab {{ preSaleStart | date: 'shortDate':'':'de-CH' }}
     </span>
 
-    <span *ngIf="preSaleInSuperFuture" class="secondary-content">
+		<span *ngIf="preSaleInSuperFuture" class="secondary-content">
       Aufführung ab {{ start | date: 'MMMM YYYY':'':'de-CH' }}
     </span>
-    <a (click)="openInfo()" class="btn btn-sm btn-ghost-secondary">Info</a>
-  </div>
+		<a (click)="openInfo()" class="btn btn-sm btn-ghost-secondary">Info</a>
+	</div>
 </div>

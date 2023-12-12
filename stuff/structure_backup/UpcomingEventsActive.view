@@ -3,7 +3,12 @@
     $match: {
       status: 1,
       googleAnalyticsTracker: {
-        $in: ["", "Premiere"],
+        $in: [
+          "",
+          "Premiere",
+          "Premiere|Tournee",
+          "Premiere|CD",
+        ],
       },
     },
   },
@@ -16,9 +21,9 @@
     $addFields: {
       diff: {
         $dateDiff: {
+          unit: "day",
           startDate: "$start",
           endDate: "$now",
-          unit: "day",
         },
       },
     },
@@ -32,21 +37,22 @@
   },
   {
     $project: {
-      start: 1,
-      googleAnalyticsTracker: 1,
       status: 1,
       locationIds: 1,
       "eventInfos.name": 1,
-      "eventInfos.location": 1,
-      "eventInfos.languageId": 1,
       "eventInfos.url": 1,
-      "ticketTypes.sortOrder": 1,
-      "ticketTypes.currency": 1,
-      "ticketTypes.price": 1,
-      "ticketTypes.preSaleStart": 1,
-      "ticketTypes.ticketTypeInfos.name": 1,
-      "ticketTypes.ticketTypeInfos.languageId": 1,
       "ticketTypes.ticketTypeInfos.description": 1,
+      "eventInfos.languageId": 1,
+      "ticketTypes.ticketTypeInfos.languageId": 1,
+      "ticketTypes.price": 1,
+      googleAnalyticsTracker: 1,
+      "eventInfos.location": 1,
+      "ticketTypes.currency": 1,
+      "ticketTypes.ticketTypeInfos.name": 1,
+      "ticketTypes.preSaleStart": 1,
+      "ticketTypes.sortOrder": 1,
+      start: 1,
+      saleState: 1,
     },
   },
   {

@@ -1,5 +1,29 @@
 @import '/src/scss/theme-1.scss';
 
+:host {
+  display: flex;
+	gap: 15px;
+  .gig-info {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+
+    .info-content {
+      justify-content: space-between;
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+    }
+  }
+	.gig-row {
+		width: 100%;
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
+	}
+}
+
+
 :host-context(.gigs-section .item) {
   .gig-title {
     font-size: 16px;
@@ -26,6 +50,10 @@
   }
 
   .meta-list {
+    display: flex;
+		flex-flow: wrap;
+		flex-direction: row;
+    margin-block-end: 0;
     color: $text-color-grey;
     a {
       color: $text-color-grey;
@@ -35,18 +63,26 @@
       color: $theme-color;
       font-size: 16px;
     }
+
+    .price {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+
+      .ticket-item {
+        text-wrap: nowrap;
+      }
+    }
+
   }
   .date-label {
     background: $text-color-primary;
     color: #fff;
-    text-align: center;
-    display: inline-block;
-    width: 52px;
-    height: 82px;
-    padding-top: 4px;
-    position: absolute;
-    left: 0;
-    top: 15px;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		padding: 10px;
     .weekday {
       margin-bottom: -2px;
       font-size: 14px;
@@ -70,14 +106,21 @@
     }
   }
   .gig-actions {
-    position: absolute;
-    right: 0;
-    top: 15px;
+    display: flex;
+    place-content: flex-end;
+		align-items: baseline;
+		width: 100%;
     .btn {
       margin-left: 5px;
       &:last-child {
         margin-right: 0;
       }
+    }
+    .secondary-content {
+      text-wrap: nowrap;
+    }
+    .btn-ghost-secondary {
+      height: fit-content;
     }
   }
 
@@ -91,9 +134,12 @@
 @media (max-width: 991.98px) {
   :host-context(.gigs-section .container .item) {
     .gig-actions {
-      position: static;
-      margin-top: 15px;
-      margin-bottom: 15px;
+      align-self: flex-end;
+      margin-top: 10px;
+    }
+
+    .gig-info {
+      flex-direction: column;
     }
   }
 }

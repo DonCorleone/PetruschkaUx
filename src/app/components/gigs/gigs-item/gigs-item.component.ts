@@ -20,6 +20,7 @@ export class GigsItemComponent implements OnInit {
   public isCollapsed = true;
   @Input() start: Date;
   @Input() tag: string;
+  @Input() saleState: string;
   @Input() preSaleStart: Date;
   @Input() eventId: number;
   @Input() eventInfoDe: EventDetailEventInfo;
@@ -62,7 +63,7 @@ export class GigsItemComponent implements OnInit {
   }
 
   openTicket(): void {
-    if (this.tag === 'sold-out') {
+    if (this.saleState === '0') {
       return;
     }
     const eventLink = this.eventLink;
@@ -82,7 +83,7 @@ export class GigsItemComponent implements OnInit {
     const modalRef = this.modalService.open(InfoModalComponent, { size: 'lg' });
     modalRef.componentInstance.eventDetailId = this.eventId;
     modalRef.componentInstance.usage = '';
-    modalRef.componentInstance.tag = this.tag;
+    modalRef.componentInstance.saleState = this.saleState;
     modalRef.componentInstance.eventDetail$ = this.eventService.GetEventDetail(this.eventId);
   }
 
