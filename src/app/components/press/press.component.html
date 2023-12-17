@@ -1,7 +1,4 @@
-yyy
-
 <div class="section-intro center-block" id="pressArticles" *ngIf="pressArticles$ | async as pressArticles ">
-	xxx
 	<h4 class="title" *ngIf="pressArticles.length > 0">Presse-Meldungen</h4>
 	<div class="carousel-nav">
 		<a class="carousel-nav-btn" (click)="arrowLeft()" role="button" data-slide="prev">
@@ -24,7 +21,7 @@ yyy
 						<span *ngIf="articleDate < todayDate" > vom {{ articleDate | date:'mediumDate' : '' :'de-CH' }}</span>
 					</p>
 				</div>
-				<img [src]="'assets/images/presse/' + article.nr + '.png'" [alt]="article.desc" />
+				<img [src]="'assets/images/presse/' + article.nr + '.png?nf_resize=fit&w=550'" [alt]="article.desc" />
 			</a>
 		</ng-template>
 

@@ -5,7 +5,9 @@
   <div class="cover-holder">
     <a (click)="openDetail()" class="cover-figure mask">
       <div *ngIf="comingSoon" class="arrow-holder"></div>
-      <div class="record-holder"><img alt="" class="img-fluid" src="assets/images/record.png" /></div>
+      <div class="record-holder">
+				<img alt="" class="img-fluid" src="assets/images/record.png" />
+			</div>
       <img
         [ngSrc]="imageUrl"
         [alt]="'Cover Hörspiel ' + eventInfo.name"
