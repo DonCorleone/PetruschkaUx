@@ -37,6 +37,6 @@ export class MusicItemComponent implements OnInit {
   }
   private getImageUrl(eventDetail: EventDetail): string {
     const imageUrl = EventService.GetTicketTypeInfoFromEventDetail(eventDetail, 'CD')?.imageUrl;
-    return `${imageUrl}?nf_resize=smartcrop&w=${this.imageDimension}&h=${this.imageDimension}`;
+    return `${imageUrl}?nf_resize=fit&w=${this.imageDimension}&h=${this.imageDimension}`;
   }
 }
