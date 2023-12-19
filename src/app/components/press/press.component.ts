@@ -1,23 +1,23 @@
 import { ChangeDetectionStrategy, Component, OnInit, ViewChild } from '@angular/core';
-import { NgbCarousel, NgbCarouselConfig } from '@ng-bootstrap/ng-bootstrap';
-import { take } from 'rxjs/operators';
+import { NgbCarousel, NgbCarouselConfig, NgbSlide } from '@ng-bootstrap/ng-bootstrap';
 import { PressService } from 'src/app/services/press.service';
 import { Press } from '../../models/press.models';
 import { CommonModule, DatePipe } from '@angular/common';
+import { Observable, of } from 'rxjs';
 
 @Component({
   selector: 'app-press',
   templateUrl: './press.component.html',
   styleUrls: ['./press.component.scss'],
   standalone: true,
-  imports: [NgbCarousel, CommonModule],
+  imports: [NgbCarousel, CommonModule, NgbSlide],
   providers: [NgbCarouselConfig],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class PressComponent implements OnInit {
   @ViewChild('carousel') carousel: NgbCarousel;
 
-  pressArticles: Press[];
+  pressArticles$: Observable<Press[]>;
 
   todayDate = new Date();
 
@@ -48,9 +48,6 @@ export class PressComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.pressService.pressArticles$.pipe(take(1)).subscribe((result) => {
-      this.pressArticles = result;
-      result.slice().sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
-    });
+    this.pressArticles$ = this.pressService.pressArticles$;
   }
 }
