@@ -62,6 +62,10 @@ export class GigsItemComponent implements OnInit {
     return new Date(this.preSaleStart) > new Date() && new Date(this.start).getHours() === 0;
   }
 
+	get showYear(): boolean {
+		return new Date(this.start).getFullYear() !== new Date().getFullYear();
+	}
+
   openTicket(): void {
     if (this.saleState === '0') {
       return;
