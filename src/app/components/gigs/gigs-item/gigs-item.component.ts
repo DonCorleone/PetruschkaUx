@@ -66,17 +66,31 @@ export class GigsItemComponent implements OnInit {
 		return new Date(this.start).getFullYear() !== new Date().getFullYear();
 	}
 
+	get buyButtonText(): string {
+		if (this.saleState === '0') {
+			return 'Ausverkauft';
+		} else if (this.saleState === 'cancelled') {
+			return 'Abgesagt';
+		} else {
+			if (this.eventLink === 'modal') {
+				return 'Reservation';
+			}else{
+				return 'Tickets';
+			}
+		}
+	}
+
   openTicket(): void {
     if (this.saleState === '0') {
       return;
     }
-    const eventLink = this.eventLink;
-    if (eventLink == 'modal') {
+    this.eventLink;
+    if (this.eventLink == 'modal') {
       const modalRef = this.modalService.open(TicketModalComponent, { size: 'md' });
       modalRef.componentInstance.ticketPrices = this.ticketPrices;
     } else {
       if (isPlatformBrowser(this.platformId)) {
-        window.open(eventLink, '_blank');
+        window.open(this.eventLink, '_blank');
       } else {
         // server specific logic
       }

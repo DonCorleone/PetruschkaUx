@@ -44,7 +44,7 @@
 			(click)="openTicket()"
 			class="btn btn-sm btn-secondary"
 			[ngClass]="{ isDisabled: saleState === 'cancelled' || saleState === '0' }"
-		>{{ saleState !== '0' ? 'Reservation' : 'Ausverkauft!' }}</a
+		>{{ buyButtonText }}</a
 		>
 		<span *ngIf="showIsGone" class="secondary-content"> Vorstellung vorüber. </span>
 
