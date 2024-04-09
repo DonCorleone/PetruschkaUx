@@ -78,6 +78,7 @@
   }
   .date-label {
     background: $text-color-primary;
+		min-width: 56px;
     color: #fff;
 		display: flex;
 		flex-direction: column;
