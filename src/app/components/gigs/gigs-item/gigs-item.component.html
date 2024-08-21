@@ -2,7 +2,7 @@
 	<div class="weekday">{{ (start | date: 'ccc':'':'de-CH').toUpperCase() }}</div>
 	<div class="number" *ngIf="!preSaleInSuperFuture">{{ start | date: 'dd':'':'de-CH' }}</div>
 	<div class="month">{{ start | date: 'MMM':'':'de-CH' }}</div>
-	<div class="year" *ngIf="preSaleInSuperFuture">{{ start | date: 'YYYY':'':'de-CH' }}</div>
+	<div class="year" *ngIf="preSaleInSuperFuture || showYear">{{ start | date: 'YYYY':'':'de-CH' }}</div>
 </div>
 <div class="gig-row">
 	<div class="gig-info">
@@ -44,7 +44,7 @@
 			(click)="openTicket()"
 			class="btn btn-sm btn-secondary"
 			[ngClass]="{ isDisabled: saleState === 'cancelled' || saleState === '0' }"
-		>{{ saleState !== '0' ? 'Reservation' : 'Ausverkauft!' }}</a
+		>{{ buyButtonText }}</a
 		>
 		<span *ngIf="showIsGone" class="secondary-content"> Vorstellung vorüber. </span>
 

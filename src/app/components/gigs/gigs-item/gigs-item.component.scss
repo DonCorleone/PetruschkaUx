@@ -53,6 +53,7 @@
     display: flex;
 		flex-flow: wrap;
 		flex-direction: row;
+		justify-content: space-between;
     margin-block-end: 0;
     color: $text-color-grey;
     a {
@@ -77,6 +78,7 @@
   }
   .date-label {
     background: $text-color-primary;
+		min-width: 56px;
     color: #fff;
 		display: flex;
 		flex-direction: column;

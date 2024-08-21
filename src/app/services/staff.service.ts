@@ -21,7 +21,7 @@ export class StaffService {
   staffs$ = this.httpClient.get<GetStaffOverviewResponse>('.netlify/functions/get_staff_overview').pipe(
     map((result) => result.message.documents),
     map((staffs) => {
-      return staffs.map((staff) => this.getStaffWithSrc(staff));
+      return staffs.filter(y => y.active).map((staff) => this.getStaffWithSrc(staff));
     })
   );
 
