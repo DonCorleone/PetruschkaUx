@@ -1,6 +1,6 @@
 <section class="gigs-section section" id="gigs">
   <div class="container">
-    <app-loading-indicator [title]="'Anstehende Aufführungen'"></app-loading-indicator>
+    <app-loading-indicator [title]="gigName ?? 'Anstehende Aufführungen'"></app-loading-indicator>
     <div class="gigs-container" *ngIf="eventDetailsUpcoming$ | async as eventDetailsUpcoming">
       <div *ngIf="eventDetailsUpcoming.length > 0; else elseBlock">
         <div *ngFor="let eventDetail of eventDetailsUpcoming" class="item" [@slideInRightOnEnter]>

@@ -2,8 +2,6 @@
 	<section
 		id="{{ usage === 'history' ? usage + '-' + eventDetail.eventDetail.facebookPixelId : usage + '-' + eventDetail.eventDetail._id }}"
 		class="{{ usage !== 'history' && i > 0 ? 'update-section' : '' }}">
-		<app-update-slide [eventDetail]="eventDetail.eventDetail" [usage]="'Premiere'">
-
-		</app-update-slide>
+		<app-update-slide [eventDetail]="eventDetail.eventDetail" [eventKey]="eventDetail._id" [usage]="'Premiere'"></app-update-slide>
 	</section>
 </div>

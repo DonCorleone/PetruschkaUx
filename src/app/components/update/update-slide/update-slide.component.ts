@@ -17,6 +17,7 @@ import {RouterLink} from "@angular/router";
 export class UpdateSlideComponent implements OnInit {
   @Input() eventDetail: EventDetail;
   @Input() usage: string;
+	@Input() eventKey: string;
 
   eventInfo: EventDetailEventInfo;
   superfutureEvent: boolean;

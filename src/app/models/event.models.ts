@@ -181,6 +181,7 @@ export interface TicketPrice {
 }
 
 export interface EventDetailViewModel {
+	_id: string;
   eventDetail: EventDetail;
 }
 

@@ -82,8 +82,8 @@
 			[ngClass]="{ isDisabled: saleState === 'cancelled' || saleState === '0' }"
 		>{{ saleState !== '0' ? 'Tickets' : 'Ausverkauft!' }}</a
 		>
-		<a  *ngIf="isFutureEvent"
-				[href]="'/upcoming'"
+		<a *ngIf="isFutureEvent"
+				[href]="'/upcoming/' + eventKey"
 				class="btn btn-sm btn-ghost-secondary"
 		>Weitere Vorstellungen</a
 		>
