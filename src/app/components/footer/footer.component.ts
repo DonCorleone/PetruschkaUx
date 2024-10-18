@@ -1,6 +1,7 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { NewsletterModalComponent } from '../newsletter/newsletter-modal/newsletter-modal.component';
+import {ImpressumModalComponent} from "../impressum-modal/impressum-modal.component";
 
 @Component({
   selector: 'app-footer',
@@ -16,4 +17,8 @@ export class FooterComponent {
   openNewsletterForm(): void {
     const modalRef = this.modalService.open(NewsletterModalComponent, { size: 'lg' });
   }
+
+	openImpressum(): void {
+		const modalRef = this.modalService.open(ImpressumModalComponent, { size: 'lg' });
+	}
 }
