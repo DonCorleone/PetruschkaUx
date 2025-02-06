@@ -11,8 +11,13 @@
 	}
 }
 
+a.cancelled {
+	color: rgb(230, 83, 72);
+	border-color: rgb(230, 83, 72);
+}
 a.cancelled:hover {
 	background-color: rgb(230, 83, 72) !important;
+
 }
 
 a.isDisabled {
