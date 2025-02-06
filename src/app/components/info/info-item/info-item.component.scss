@@ -11,6 +11,15 @@
 	}
 }
 
+a.cancelled {
+	color: rgb(230, 83, 72);
+	border-color: rgb(230, 83, 72);
+
+	&:hover {
+		background-color: rgb(230, 83, 72);
+
+	}
+}
 a.isDisabled {
 	// color: currentColor;
 	cursor: not-allowed;
