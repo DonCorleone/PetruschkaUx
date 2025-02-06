@@ -142,6 +142,10 @@ export class InfoComponent implements OnInit, OnDestroy {
     if (this.saleState === '0') {
       return;
     }
+		if (this.saleState === 'cancelled') {
+			return;
+		}
+
 		const eventLink = this.eventLink;
 		if (eventLink == 'modal') {
       const modalRef = this.modalService.open(TicketModalComponent, { size: 'md' });
