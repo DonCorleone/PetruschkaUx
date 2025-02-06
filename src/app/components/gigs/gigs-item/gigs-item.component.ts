@@ -84,6 +84,9 @@ export class GigsItemComponent implements OnInit {
     if (this.saleState === '0') {
       return;
     }
+		if (this.saleState === 'cancelled') {
+			return;
+		}
     this.eventLink;
     if (this.eventLink == 'modal') {
       const modalRef = this.modalService.open(TicketModalComponent, { size: 'md' });

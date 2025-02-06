@@ -43,6 +43,7 @@
 			*ngIf="showBuyButton"
 			(click)="openTicket()"
 			class="btn btn-sm btn-secondary"
+			[class.cancelled]= "saleState === 'cancelled'"
 			[ngClass]="{ isDisabled: saleState === 'cancelled' || saleState === '0' }"
 		>{{ buyButtonText }}</a
 		>

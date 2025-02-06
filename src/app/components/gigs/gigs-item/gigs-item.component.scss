@@ -49,6 +49,16 @@
     text-decoration: none;
   }
 
+	a.cancelled {
+		color: rgb(230, 83, 72);
+		border-color: rgb(230, 83, 72);
+	}
+	a.cancelled:hover {
+		background-color: rgb(230, 83, 72);
+		box-shadow: none;
+		color: #101113;
+	}
+
   .meta-list {
     display: flex;
 		flex-flow: wrap;
