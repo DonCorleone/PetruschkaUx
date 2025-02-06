@@ -79,8 +79,9 @@
 		<a
 			(click)="openTicket()"
 			class="btn btn-sm btn-ghost-primary"
+			[class.cancelled]= "saleState === 'cancelled'"
 			[ngClass]="{ isDisabled: saleState === 'cancelled' || saleState === '0' }"
-		>{{ saleState !== '0' ? 'Tickets' : 'Ausverkauft!' }}</a
+		>{{ saleState !== '0' ? saleState === 'cancelled' ? 'Abgesagt!' : 'Tickets' : 'Ausverkauft!' }}</a
 		>
 		<a *ngIf="isFutureEvent"
 				[href]="'/upcoming/' + eventKey"
