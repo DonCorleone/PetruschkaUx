@@ -36,18 +36,20 @@
     padding-top: 80px;
     position: relative;
     z-index: 20;
+    font-family: 'Raleway', sans-serif;
+    font-weight: 900;
 
     .headline {
       color: black;
       opacity: 0.9;
-      font-size: 48px;
+      font-size: 10cqi;
       text-transform: uppercase;
       text-shadow: 0px 0px 15px rgba(255, 255, 255, 0.9);
     }
     .tagline {
       color: white;
       opacity: 0.9;
-      font-size: 24px;
+      font-size: 4cqi;
       font-weight: 600;
       margin-bottom: 90px;
       text-shadow: 0px 0px 10px rgba(0, 0, 0, 0.9);
@@ -133,12 +135,6 @@
       padding-top: 0px;
       .logo-holder {
         height: 150px;
-      }
-      .headline {
-        font-size: 30px;
-      }
-      .tagline {
-        font-size: 20px;
       }
     }
 
