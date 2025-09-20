@@ -6,6 +6,9 @@ external_node_modules = ["axios"]
   functions = "netlify/functions"
   publish = "dist/kinderkulturUx/browser"
 
+[images]
+  remote_images = ["https://petruschka-analog-mongo.onrender.com/.*"]
+	
 [[redirects]]
   from = "/*"
   to = "/index.html"
